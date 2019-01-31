@@ -118,7 +118,7 @@
 <meta property="og:site_name" content="胡搅蛮缠">
 <meta property="og:description" content="每次新增一篇博文后备份到 github 仓库中，这样是比较合理的。今天也算是初步学会了怎样去操作。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-01-31T09:37:47.562Z">
+<meta property="og:updated_time" content="2019-01-31T10:04:23.238Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="通过git运用在github仓库中备份hexo博客">
 <meta name="twitter:description" content="每次新增一篇博文后备份到 github 仓库中，这样是比较合理的。今天也算是初步学会了怎样去操作。">
@@ -394,7 +394,7 @@
                 
               
 
-              <time title="创建时间：2019-01-31 14:33:32 / 修改时间：17:37:47" itemprop="dateCreated datePublished" datetime="2019-01-31T14:33:32+08:00">2019-01-31</time>
+              <time title="创建时间：2019-01-31 14:33:32 / 修改时间：18:04:23" itemprop="dateCreated datePublished" datetime="2019-01-31T14:33:32+08:00">2019-01-31</time>
             
 
             
@@ -472,7 +472,8 @@
 <p>逻辑上我们应该在搭建博客之初的第一步创建一个空的<code>source</code>仓库，然后 clone 到本地，然后，在这个所 clone 的文件夹下搭建博客。其中 clone 的操作命令如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/username/仓库名.git  </span><br><span class="line">// 替换成自己的仓库</span><br></pre></td></tr></table></figure>
 <p>下面记录下 git 的用法。</p>
-<h2 id="如何上传"><a href="#如何上传" class="headerlink" title="如何上传"></a>如何上传</h2><p>至于如何上传，主要参考的这篇博文——<a href="https://www.cnblogs.com/cxk1995/p/5800196.html" target="_blank" rel="noopener">使用git将项目上传到github（最简单方法）</a>，还有这篇<a href="https://www.cnblogs.com/alex-415/p/6912294.html" target="_blank" rel="noopener">博文</a>。主要的步骤是：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1. git init //初始化仓库</span><br><span class="line">2. git add .(文件name) //添加文件到本地仓库</span><br><span class="line">3. git commit -m &quot;first commit&quot; //添加文件描述信息</span><br><span class="line">4. git remote add origin + 远程仓库地址 //链接远程仓库，创建主分支 </span><br><span class="line">5. git push -u origin master //把本地仓库的文件推送到远程仓库</span><br></pre></td></tr></table></figure></p>
+<h2 id="如何上传"><a href="#如何上传" class="headerlink" title="如何上传"></a>如何上传</h2><p>若 git 版本太低，链接不上远程时，需要先更新下 git。</p>
+<p>至于如何上传，主要参考的这篇博文——<a href="https://www.cnblogs.com/cxk1995/p/5800196.html" target="_blank" rel="noopener">使用git将项目上传到github（最简单方法）</a>，还有这篇<a href="https://www.cnblogs.com/alex-415/p/6912294.html" target="_blank" rel="noopener">博文</a>。主要的步骤是：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1. git init //初始化仓库</span><br><span class="line">2. git add .(文件name) //添加文件到本地仓库</span><br><span class="line">3. git commit -m &quot;first commit&quot; //添加文件描述信息</span><br><span class="line">4. git remote add origin + 远程仓库地址 //链接远程仓库，创建主分支 </span><br><span class="line">5. git push -u origin master //把本地仓库的文件推送到远程仓库</span><br></pre></td></tr></table></figure></p>
 <p>有可能出现错误：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hint: Updates were rejected because the remote contains work that you do</span><br><span class="line">hint: not have locally. This is usually caused by another repository pushing</span><br><span class="line">hint: to the same ref. You may want to first integrate the remote changes</span><br><span class="line">hint: (e.g., &apos;git pull ...&apos;) before pushing again.</span><br><span class="line">hint: See the &apos;Note about fast-forwards&apos; in &apos;git push --help&apos; for details.</span><br></pre></td></tr></table></figure></p>
 <p>根据提示在步骤 4 和 5 之间添加一行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1. git init //初始化仓库</span><br><span class="line">2. git add .(文件name) //添加文件到本地仓库</span><br><span class="line">3. git commit -m &quot;first commit&quot; //添加文件描述信息</span><br><span class="line">4. git remote add origin + 远程仓库地址 //链接远程仓库，创建主分支；</span><br><span class="line">// 若失败，git remote rm origin 后重复。</span><br><span class="line">5. git pull origin master // 把本地仓库的变化连接到远程仓库主分支</span><br><span class="line">6. git push -u origin master //把本地仓库的文件推送到远程仓库</span><br></pre></td></tr></table></figure></p>
 <p>如果远程分支我们不需要了，我们可以运用<a href="https://blog.csdn.net/lplife/article/details/79818097" target="_blank" rel="noopener">命令强制覆盖掉</a>：</p>
