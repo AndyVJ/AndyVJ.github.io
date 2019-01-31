@@ -118,7 +118,7 @@
 <meta property="og:site_name" content="胡搅蛮缠">
 <meta property="og:description" content="每次新增一篇博文后备份到 github 仓库中，这样是比较合理的。今天也算是初步学会了怎样去操作。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-01-31T07:13:22.607Z">
+<meta property="og:updated_time" content="2019-01-31T07:22:24.288Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="通过git运用在github仓库中备份hexo博客">
 <meta name="twitter:description" content="每次新增一篇博文后备份到 github 仓库中，这样是比较合理的。今天也算是初步学会了怎样去操作。">
@@ -394,7 +394,7 @@
                 
               
 
-              <time title="创建时间：2019-01-31 14:33:32 / 修改时间：15:13:22" itemprop="dateCreated datePublished" datetime="2019-01-31T14:33:32+08:00">2019-01-31</time>
+              <time title="创建时间：2019-01-31 14:33:32 / 修改时间：15:22:24" itemprop="dateCreated datePublished" datetime="2019-01-31T14:33:32+08:00">2019-01-31</time>
             
 
             
@@ -472,13 +472,13 @@
 <p>逻辑上我们应该在搭建博客之初的第一步创建一个<code>source</code>仓库，然后 clone 到本地，然后，在这个所 clone 的文件夹下搭建博客。其中 clone 的操作命令如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/username/仓库名.git  </span><br><span class="line">// 替换成自己的仓库</span><br></pre></td></tr></table></figure>
 <p>下面记录下 git 的用法。</p>
-<h3 id="如何上传"><a href="#如何上传" class="headerlink" title="如何上传"></a>如何上传</h3><p>至于如何上传，主要参考的这篇博文——<a href="https://www.cnblogs.com/cxk1995/p/5800196.html" target="_blank" rel="noopener">使用git将项目上传到github（最简单方法）</a>。主要的步骤是：</p>
+<h2 id="如何上传"><a href="#如何上传" class="headerlink" title="如何上传"></a>如何上传</h2><p>至于如何上传，主要参考的这篇博文——<a href="https://www.cnblogs.com/cxk1995/p/5800196.html" target="_blank" rel="noopener">使用git将项目上传到github（最简单方法）</a>。主要的步骤是：</p>
 <ol>
 <li>git add . (<code>.</code> 代表添加当前文件夹下面的所有文件)</li>
 <li>git commit - m “备注信息”</li>
 <li>git push -u origin master (push 到 github 的仓库中，可能需要填写账号密码等信息)</li>
 </ol>
-<h3 id="gitignore-的写法"><a href="#gitignore-的写法" class="headerlink" title=".gitignore 的写法"></a>.gitignore 的写法</h3><p>主要参考着两篇博文，<a href="https://www.cnblogs.com/ShaYeBlog/p/5355951.html" target="_blank" rel="noopener">.gitignore详解</a> 和 <a href="https://www.cnblogs.com/kevingrace/p/5690241.html" target="_blank" rel="noopener">Git忽略提交规则 - .gitignore配置运维总结过</a>。</p>
+<h2 id="gitignore-的写法"><a href="#gitignore-的写法" class="headerlink" title=".gitignore 的写法"></a>.gitignore 的写法</h2><p>主要参考着两篇博文，<a href="https://www.cnblogs.com/ShaYeBlog/p/5355951.html" target="_blank" rel="noopener">.gitignore详解</a> 和 <a href="https://www.cnblogs.com/kevingrace/p/5690241.html" target="_blank" rel="noopener">Git忽略提交规则 - .gitignore配置运维总结过</a>。</p>
 <p>用到的几个：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> /mtk/           表示过滤整个文件夹</span><br><span class="line">*.zip           表示过滤所有.zip文件</span><br><span class="line">/mtk/do.c       表示过滤某个具体文件</span><br></pre></td></tr></table></figure>
 <p>以及：</p>
@@ -486,7 +486,7 @@
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 此为注释 – 将被 Git 忽略</span><br><span class="line"> </span><br><span class="line">*.a       # 忽略所有 .a 结尾的文件</span><br><span class="line">!lib.a    # 但 lib.a 除外</span><br><span class="line">/TODO     # 仅仅忽略项目根目录下的 TODO 文件，不包括 subdir/TODO</span><br><span class="line">build/    # 忽略 build/ 目录下的所有文件</span><br><span class="line">doc/*.txt # 会忽略 doc/notes.txt 但不包括 doc/server/arch.txt</span><br></pre></td></tr></table></figure>
 <p>可以通过一些过滤方法，过滤掉一些没有必要备份的文件。</p>
-<h3 id="另外"><a href="#另外" class="headerlink" title="另外"></a>另外</h3><p>若果在<code>git add .</code>之前需要<code>git init</code>，然后链接远程仓库<code>git remote add origin xxx.git</code>，由于不熟悉可能反复操作链接不上了，会出现如下的错误信息：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fatal: remote origin already exists.</span><br></pre></td></tr></table></figure></p>
+<h2 id="另外"><a href="#另外" class="headerlink" title="另外"></a>另外</h2><p>若果在<code>git add .</code>之前需要<code>git init</code>，然后链接远程仓库<code>git remote add origin xxx.git</code>，由于不熟悉可能反复操作链接不上了，会出现如下的错误信息：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fatal: remote origin already exists.</span><br></pre></td></tr></table></figure></p>
 <p><a href="https://blog.csdn.net/dengjianqiang2011/article/details/9260435" target="_blank" rel="noopener">可以这样解决</a>：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1、先输入$ git remote rm origin</span><br><span class="line"></span><br><span class="line">2、再输入$ git remote add origin git@github.com:djqiang/gitdemo.git 就不会报错了！</span><br></pre></td></tr></table></figure></p>
 <p>然后再使用之前的命令应该就可以链接上去了。</p>
 <p>博客从头到尾的搭建可以参考这篇非常详细的<a href="https://blog.csdn.net/u010820857/article/details/81880568" target="_blank" rel="noopener">博文</a>。</p>
@@ -738,7 +738,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#如何上传"><span class="nav-number">1.</span> <span class="nav-text">如何上传</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gitignore-的写法"><span class="nav-number">2.</span> <span class="nav-text">.gitignore 的写法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#另外"><span class="nav-number">3.</span> <span class="nav-text">另外</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#如何上传"><span class="nav-number">1.</span> <span class="nav-text">如何上传</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gitignore-的写法"><span class="nav-number">2.</span> <span class="nav-text">.gitignore 的写法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#另外"><span class="nav-number">3.</span> <span class="nav-text">另外</span></a></li></ol></div>
             
 
           </div>
