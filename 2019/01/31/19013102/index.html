@@ -110,18 +110,20 @@
 
 
 
-  <meta name="description" content="每次新增一篇博文后备份到 github 仓库中，这样是比较合理的。今天也算是初步学会了怎样去操作。">
+  <meta name="description" content="主要参考的博客：《github+hexo 搭建个人博客(超详细)》，《GitHub平台上Hexo博客系统的搭建》。过程简略的记录一下，把遇到麻烦的地方写详细点。">
 <meta name="keywords" content="hexo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="通过git运用在github仓库中备份hexo博客">
-<meta property="og:url" content="http://www.andyvj.com/2019/01/31/19013101/index.html">
+<meta property="og:title" content="Hexo+github 博客搭建以及 NexT 主题配置">
+<meta property="og:url" content="http://www.andyvj.com/2019/01/31/19013102/index.html">
 <meta property="og:site_name" content="胡搅蛮缠">
-<meta property="og:description" content="每次新增一篇博文后备份到 github 仓库中，这样是比较合理的。今天也算是初步学会了怎样去操作。">
+<meta property="og:description" content="主要参考的博客：《github+hexo 搭建个人博客(超详细)》，《GitHub平台上Hexo博客系统的搭建》。过程简略的记录一下，把遇到麻烦的地方写详细点。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-01-31T10:10:40.840Z">
+<meta property="og:image" content="http://wx2.sinaimg.cn/mw690/006mcMYXgy1fzqok77jz2j30y0062jrv.jpg">
+<meta property="og:updated_time" content="2019-02-01T03:20:13.323Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="通过git运用在github仓库中备份hexo博客">
-<meta name="twitter:description" content="每次新增一篇博文后备份到 github 仓库中，这样是比较合理的。今天也算是初步学会了怎样去操作。">
+<meta name="twitter:title" content="Hexo+github 博客搭建以及 NexT 主题配置">
+<meta name="twitter:description" content="主要参考的博客：《github+hexo 搭建个人博客(超详细)》，《GitHub平台上Hexo博客系统的搭建》。过程简略的记录一下，把遇到麻烦的地方写详细点。">
+<meta name="twitter:image" content="http://wx2.sinaimg.cn/mw690/006mcMYXgy1fzqok77jz2j30y0062jrv.jpg">
 
 
 
@@ -130,7 +132,7 @@
 
 
 
-  <link rel="canonical" href="http://www.andyvj.com/2019/01/31/19013101/">
+  <link rel="canonical" href="http://www.andyvj.com/2019/01/31/19013102/">
 
 
 
@@ -140,7 +142,7 @@
   };
 </script>
 
-  <title>通过git运用在github仓库中备份hexo博客 | 胡搅蛮缠</title>
+  <title>Hexo+github 博客搭建以及 NexT 主题配置 | 胡搅蛮缠</title>
   
 
 
@@ -352,7 +354,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.andyvj.com/2019/01/31/19013101/">
+    <link itemprop="mainEntityOfPage" href="http://www.andyvj.com/2019/01/31/19013102/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="AndyVJ">
@@ -369,7 +371,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">通过git运用在github仓库中备份hexo博客
+          <h2 class="post-title" itemprop="name headline">Hexo+github 博客搭建以及 NexT 主题配置
               
             
           </h2>
@@ -394,12 +396,24 @@
                 
               
 
-              <time title="创建时间：2019-01-31 14:33:32 / 修改时间：18:10:40" itemprop="dateCreated datePublished" datetime="2019-01-31T14:33:32+08:00">2019-01-31</time>
+              <time title="创建时间：2019-01-31 20:31:36" itemprop="dateCreated datePublished" datetime="2019-01-31T20:31:36+08:00">2019-01-31</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-02-01 11:20:13" itemprop="dateModified" datetime="2019-02-01T11:20:13+08:00">2019-02-01</time>
               
             
           </span>
@@ -431,8 +445,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/01/31/19013101/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/01/31/19013101/" itemprop="commentCount"></span>
+                <a href="/2019/01/31/19013102/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/01/31/19013102/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -467,30 +481,99 @@
       
 
       
-        <p>每次新增一篇博文后备份到 github 仓库中，这样是比较合理的。今天也算是初步学会了怎样去操作。</p>
+        <p>主要参考的博客：<a href="https://blog.csdn.net/u010820857/article/details/81880568" target="_blank" rel="noopener">《github+hexo 搭建个人博客(超详细)》</a>，<a href="https://www.bigwin.ml/2018/11/23/github-hexo-blog/" target="_blank" rel="noopener">《GitHub平台上Hexo博客系统的搭建》</a>。过程简略的记录一下，把遇到麻烦的地方写详细点。</p>
 <a id="more"></a>
-<p>逻辑上我们应该在搭建博客之初的第一步创建一个空的<code>source</code>仓库，然后 clone 到本地，然后，在这个所 clone 的文件夹下搭建博客。其中 clone 的操作命令如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/username/仓库名.git  </span><br><span class="line">// 替换成自己的仓库</span><br></pre></td></tr></table></figure>
-<p>下面记录下 git 的用法。</p>
-<h2 id="如何上传"><a href="#如何上传" class="headerlink" title="如何上传"></a>如何上传</h2><p>若 git 版本太低，链接不上远程时，需要先更新下 git。</p>
-<p>至于如何上传，主要参考的这篇博文——<a href="https://www.cnblogs.com/cxk1995/p/5800196.html" target="_blank" rel="noopener">使用git将项目上传到github（最简单方法）</a>，还有这篇<a href="https://www.cnblogs.com/alex-415/p/6912294.html" target="_blank" rel="noopener">博文</a>。主要的步骤是：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1. git init //初始化仓库</span><br><span class="line">2. git add .(文件name) //添加文件到本地仓库</span><br><span class="line">3. git commit -m &quot;first commit&quot; //添加文件描述信息</span><br><span class="line">4. git remote add origin + 远程仓库地址 //链接远程仓库，创建主分支 </span><br><span class="line">5. git push -u origin master //把本地仓库的文件推送到远程仓库</span><br></pre></td></tr></table></figure></p>
-<p>有可能出现错误：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hint: Updates were rejected because the remote contains work that you do</span><br><span class="line">hint: not have locally. This is usually caused by another repository pushing</span><br><span class="line">hint: to the same ref. You may want to first integrate the remote changes</span><br><span class="line">hint: (e.g., &apos;git pull ...&apos;) before pushing again.</span><br><span class="line">hint: See the &apos;Note about fast-forwards&apos; in &apos;git push --help&apos; for details.</span><br></pre></td></tr></table></figure></p>
-<p>根据提示在步骤 4 和 5 之间添加一行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1. git init //初始化仓库</span><br><span class="line">2. git add .(文件name) //添加文件到本地仓库</span><br><span class="line">3. git commit -m &quot;first commit&quot; //添加文件描述信息</span><br><span class="line">4. git remote add origin + 远程仓库地址 //链接远程仓库，创建主分支；</span><br><span class="line">// 若失败，git remote rm origin 后重复。</span><br><span class="line">5. git pull origin master // 把本地仓库的变化连接到远程仓库主分支</span><br><span class="line">6. git push -u origin master //把本地仓库的文件推送到远程仓库</span><br></pre></td></tr></table></figure></p>
-<p>如果远程分支我们不需要了，我们可以运用<a href="https://blog.csdn.net/lplife/article/details/79818097" target="_blank" rel="noopener">命令强制覆盖掉</a>：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin master -f</span><br></pre></td></tr></table></figure>
-<h2 id="gitignore-的写法"><a href="#gitignore-的写法" class="headerlink" title=".gitignore 的写法"></a>.gitignore 的写法</h2><p>主要参考着两篇博文，<a href="https://www.cnblogs.com/ShaYeBlog/p/5355951.html" target="_blank" rel="noopener">.gitignore详解</a> 和 <a href="https://www.cnblogs.com/kevingrace/p/5690241.html" target="_blank" rel="noopener">Git忽略提交规则 - .gitignore配置运维总结过</a>。</p>
-<p>用到的几个：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> /mtk/           表示过滤整个文件夹</span><br><span class="line">*.zip           表示过滤所有.zip文件</span><br><span class="line">/mtk/do.c       表示过滤某个具体文件</span><br></pre></td></tr></table></figure>
-<p>以及：</p>
-<blockquote>
+<h2 id="本地环境搭建"><a href="#本地环境搭建" class="headerlink" title="本地环境搭建"></a>本地环境搭建</h2><ul>
+<li><a href="https://www.git-scm.com/download/" target="_blank" rel="noopener"><strong>安装 git。</strong></a></li>
+<li><p><strong>配置 git</strong>。</p>
+<ul>
+<li><code>git config --global user.email &quot;xxx@qq.com&quot;</code> # 填写你github注册并且验证的邮箱；</li>
+<li><code>git config --global user.name &quot;xxxx&quot;</code> # github 用户名；</li>
+<li><code>ssh-keygen</code># 会出现下面的内容，一直按Enter键就行；</li>
+<li>打开用户目录下的 <code>.ssh</code>目录下面生成 <code>id_rsa(私钥)`</code>id_rsa.pub(公钥)<code>两个文件，打开</code>id_rsa.pub<code>，复制里面的内容,到 github:</code>Settings -&gt; New SSH key -&gt; SSH and GPG keys -&gt; (填写)Title -&gt; (粘贴)Key -&gt; Add SSH Key`；</li>
+<li>测试 <code>ssh -T git@github.com</code>，<strong>输出 You’ve successfully authenticated 表示添加key 成功。</strong><ul>
+<li><strong>建主页仓库：</strong></li>
+<li>github 账号注册；</li>
+<li><code>New repository -&gt; (XXXX.github.io) Repository name -&gt; Public -&gt; (勾上)Initialize ... -&gt; Creator repository</code>；</li>
+<li>同样的方法，另建一个仓库存放<em>配置</em>和<em>文章</em>，<code>blogSource</code>。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>创建本地仓库</strong></p>
+<ul>
+<li>新建<code>gitBlog</code>文件夹，然后，在此文件夹路径下<code>git clone xxx/github/io.git</code>。</li>
+</ul>
+</li>
+<li><p><strong>博客安装配置</strong> </p>
+<ul>
+<li><a href="https://nodejs.org/en/" target="_blank" rel="noopener">安装 Node.js</a></li>
+<li><code>node -v //查看版本, 验证成功否</code></li>
+<li><p>安装 ，打开git 或cmd</p>
+<ul>
+<li><code>npm config set registry http://registry.cnpmjs.org/ # node 的源有很多，切换方式也很多，可以自行选择</code>  </li>
+<li>npm install hexo -g　　　#全局安装hexo,可能需要3分钟 出现warn警告信息不用管。</li>
+<li>npm update hexo -g   　　# 更新</li>
+<li>npm install hexo-server –save 　#安装服务</li>
+<li>npm install hexo-deployer-git –save  </li>
+</ul>
+<ul>
+<li><p><code>D:\gitblog\hexo</code> 目录下初始化 hexo。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">mkdir hexo            # 创建一个文件夹，初始化hexocd hexo</span><br><span class="line">hexo init             # 初始化 hexo 文件夹 成功就会提示</span><br><span class="line">当你看到Start blogging with Hexo! 恭喜！框架就已经搭建好了</span><br><span class="line">执行以下命令就可以在本地起服务,进入hexo 目录下</span><br><span class="line">hexo server</span><br><span class="line">然后访问 http://localhost:4000/，就能看到自己博客的雏形了</span><br><span class="line">hexo文件夹的作用</span><br><span class="line">hexo/_config.yml      # 这个是 hexo 站点配置文件</span><br><span class="line">hexo/.deploy_git/     # 这个目录下面存放的是hexo 自带的git 配置</span><br><span class="line">hexo/node_modules/    # hexo 需要的node js 模块</span><br><span class="line">hexo/.npmignore       # 文件里面存放的是npm需要忽略的文件</span><br><span class="line">hexo/package.json     # node.js 的配置文件</span><br><span class="line">hexo/public/          # 存放要生成的静态网页，需要发布的内容</span><br><span class="line">hexo/scaffolds/       # 生成文档的格式，用于 hexo new 命令 默认是post格式</span><br><span class="line">hexo/source/          # 存放hexo new 生成的源文件，我们写的 md 博客就是在这里</span><br><span class="line">hexo/themes/          # hexo 的主题 都在这里面</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装hexo依赖包和模块</p>
+<ul>
+<li><code>npm install</code></li>
+<li><code>node_modules</code>文件夹中查看是否已安装的扩展(<em>直接搜索扩展名字，有就代表安装了</em>)，<a href="https://hexo.io/plugins/" target="_blank" rel="noopener">官网扩展</a>； <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-server --save     # Hexo3把hexo-server服务器独立成模块,一些版本可能需要安装才能运行</span><br><span class="line">npm install hexo-deployer-git --save </span><br><span class="line">npm install hexo-generator-searchdb --save   # 本地搜索</span><br><span class="line">npm install hexo-generator-feed --save       # 用于生成RSS订阅</span><br><span class="line">npm install hexo-generator-sitemap --save    # 用于生成搜索引擎网站地图</span><br><span class="line">npm install hexo-generator-baidu-sitemap --save    # 用于生成百度搜索引擎网站地图</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>博客常用命令：<br>命令|    命令简写|    描述<br>—|—|—|—<br>hexo new “标题”    |hexo n “标题”|    新建文章<br>hexo new page “标题”|    hexo n page “标题”|    新建页面<br>hexo server    |hexo s|    本地预览,Ctrl+C关闭<br>hexo generate    |hexo g    |生成本地静态网页(有时候需要两次才能编译好)<br>hexo deploy    |hexo d    |部署网页到仓库<br>hexo clean|        |清除缓存<br>cd    |    |切换操作路径,如 cd /d/hexo 就是切换到D盘hexo文件夹</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="主题配置"><a href="#主题配置" class="headerlink" title="主题配置"></a>主题配置</h2><p>主题是克隆的这个哥们的（<a href="https://github.com/yanchangyou/hexo-theme-next" target="_blank" rel="noopener">点击</a>），并在此基础上做了下修改。同时他的这两篇博文也有用(<a href="http://blog.321zou.com/2018/10/01/2018-10-01-writeblogwithgithub.html" target="_blank" rel="noopener">点击1</a>，<a href="http://blog.321zou.com/2018/10/03/2018-10-03-blogwithext.html" target="_blank" rel="noopener">点击2</a>)。官网的<a href="https://hexo.io/themes/" target="_blank" rel="noopener">主题</a>站，也可以进去选自己喜欢的主题。我比较喜欢 NexT 主题，因为它比较简洁。（<a href="https://www.jianshu.com/p/4ee16916ff64" target="_blank" rel="noopener">可参考</a>）。</p>
+<p><a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="noopener">NexT 主题官方</a>，<a href="https://xdlrt.github.io/2016/02/17/2016-02-17/" target="_blank" rel="noopener">参考博文</a>。</p>
+<p>配置过程：1. 将主题文件 clone 之 themes 文件夹下；2. 去站点配置文件<code>_config.yml</code>(<em>其在 hexo 文件夹下，另外的主题配置文件<code>_config.yml</code>在相应的主题文件夹下</em>)下更改配置项为<code>theme: next</code>。</p>
+<h3 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h3><p>所有配置项后的<code>:</code>之后都要留至少<strong>一个空格</strong>。</p>
+<h3 id="百度统计："><a href="#百度统计：" class="headerlink" title="百度统计："></a>百度统计：</h3><p>自行注册（<a href="https://tongji.baidu.com/web/welcome/login" target="_blank" rel="noopener">点击</a>），另可参考这里（<a href="https://blog.csdn.net/lcyaiym/article/details/76796540" target="_blank" rel="noopener">点击</a>）。</p>
+<p>但是，他的“点击2”中的百度统计有关<code>_layouts/default.html</code>文件添加一段代码是<strong>针对他的另一重博客(jekyll)而言的</strong>，hexo 只需要去<em>主题配置</em>中添加<code>hm.src = &quot;https://hm.baidu.com/hm.js?uuid&quot;; 中的</code>uuid换成自己的即可，搜索关键字<code>baidu_analytics</code>后进行参数替换。</p>
+<h3 id="图标："><a href="#图标：" class="headerlink" title="图标："></a>图标：</h3><p>好像有两种方法，也不知道那种有效，方正我都照做了。</p>
+<ol>
+<li><code>主题文件夹/source/images/</code>下的<code>favicon-16x16-next.png</code>和<code>favicon-32x32-next.png</code>替换成自己想要的图标(<a href="https://www.iconfont.cn/?_blank" target="_blank" rel="noopener">点击</a>)。</li>
+<li></li>
+</ol>
+<h3 id="阅读数，访问量："><a href="#阅读数，访问量：" class="headerlink" title="阅读数，访问量："></a>阅读数，访问量：</h3><p>搜索关键字<code>busuanzi_count</code>。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">busuanzi_count:</span><br><span class="line">    enable: true</span><br><span class="line">    total_visitors: true</span><br><span class="line">    total_visitors_icon: user</span><br><span class="line">    total_views: true</span><br><span class="line">    total_views_icon: eye</span><br><span class="line">    post_views: true</span><br><span class="line">    post_views_icon: eye</span><br></pre></td></tr></table></figure></p>
+<p>这里是和<code>leancloud</code>一样的功能，开了这个就不用开<code>leancloud</code>了吧？？</p>
+<p>可以参考：（<a href="https://blog.csdn.net/qw8880000/article/details/80235391" target="_blank" rel="noopener">点击</a>）。</p>
+<h3 id="评论："><a href="#评论：" class="headerlink" title="评论："></a>评论：</h3><p>搜索关键字<code>valine</code>，替换成自己<code>leancloud</code>的 apikey 和  appkey。<a href="https://valine.js.org/" target="_blank" rel="noopener">传送至 <code>valine</code></a>。<a href="https://leancloud.cn/" target="_blank" rel="noopener">传送至<code>leancloud</code></a>。</p>
+<h3 id="站内搜索"><a href="#站内搜索" class="headerlink" title="站内搜索"></a>站内搜索</h3><p>安装 hexo-generator-search:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-search --save</span><br></pre></td></tr></table></figure></p>
+<p>在站点配置文件中加入：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">search:</span><br><span class="line">    path: search.xml</span><br><span class="line">    field: post</span><br></pre></td></tr></table></figure></p>
+<p>参考：（<a href="https://blog.csdn.net/linshuhe1/article/details/52424573" target="_blank" rel="noopener">点击</a>）。</p>
+<h3 id="打赏功能"><a href="#打赏功能" class="headerlink" title="打赏功能"></a>打赏功能</h3><p>主题配置文件下搜索关键字<code>reward_comment</code>进行<a href="https://blog.csdn.net/lcyaiym/article/details/76796545" target="_blank" rel="noopener">配置</a>：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">reward_comment: 坚持原创技术分享，您的支持将鼓励我继续创作！   # 可以修改自己的话</span><br><span class="line">wechatpay: /images/wechat.jpg    # 换成自己的，图片放置路径：themes/next/source/images</span><br><span class="line">alipay: /images/aipay.png    # 换成自己的</span><br></pre></td></tr></table></figure></p>
+<h3 id="“关于”和“标签”页面"><a href="#“关于”和“标签”页面" class="headerlink" title="“关于”和“标签”页面"></a>“关于”和“标签”页面</h3><blockquote>
+<p>2、在命令行中输入$ hexo new page tags</p>
+<p>3、这时会在在sources/tags里面有个index.md的文件，打开这个文件编辑</p>
+<p>—title: tags<br>date: 2016-11-11 21:40:58<br>type: “tags”<br>—type: 改成tags</p>
+<p>4、在主题配置文件中，在menu项下，要把tags页打开如menu:</p>
+<p>home: /<br>categories: /categories</p>
+<p>#about: /about<br>archives: /archives<br>tags: /tags    　　　　　<strong>＃ 配置项需要修改，确保标签页已打开。</strong></p>
+<p>#schedule: /schedule     </p>
+<p>#commonweal: /404.html<br>参考：（<a href="https://www.zhihu.com/question/29017171" target="_blank" rel="noopener">点击</a>）。</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 此为注释 – 将被 Git 忽略</span><br><span class="line"> </span><br><span class="line">*.a       # 忽略所有 .a 结尾的文件</span><br><span class="line">!lib.a    # 但 lib.a 除外</span><br><span class="line">/TODO     # 仅仅忽略项目根目录下的 TODO 文件，不包括 subdir/TODO</span><br><span class="line">build/    # 忽略 build/ 目录下的所有文件</span><br><span class="line">doc/*.txt # 会忽略 doc/notes.txt 但不包括 doc/server/arch.txt</span><br></pre></td></tr></table></figure>
-<p>可以通过一些过滤方法，过滤掉一些没有必要备份的文件。</p>
-<h2 id="另外"><a href="#另外" class="headerlink" title="另外"></a>另外</h2><p>如果链接远程仓库<code>git remote add origin xxx.git</code>时出现如下的错误信息：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fatal: remote origin already exists.</span><br></pre></td></tr></table></figure></p>
-<p><a href="https://blog.csdn.net/dengjianqiang2011/article/details/9260435" target="_blank" rel="noopener">可以这样解决</a>：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1、先输入$ git remote rm origin</span><br><span class="line"></span><br><span class="line">2、再输入$ git remote add origin git@github.com:djqiang/gitdemo.git 就不会报错了！</span><br></pre></td></tr></table></figure></p>
-<p>然后再使用之前的命令应该就可以链接上去了。</p>
-<p>其实这个链接已经存在，不再链接应该也是可以的，直接 push 就行了。<br><br></p>
-<p>博客从头到尾的搭建可以参考这篇非常详细的<a href="https://blog.csdn.net/u010820857/article/details/81880568" target="_blank" rel="noopener">博文</a>。</p>
+<p>关于页面：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 关于我</span><br><span class="line">date: 2019-01-29 14:05:54</span><br><span class="line">comments: false     # 可以关闭评论</span><br><span class="line">---</span><br></pre></td></tr></table></figure></p>
+<h3 id="关于图床"><a href="#关于图床" class="headerlink" title="关于图床"></a>关于图床</h3><p>七牛云需要自己备案的域名，那只能从简书或者微博上做图床吧。</p>
+<h3 id="其他："><a href="#其他：" class="headerlink" title="其他："></a>其他：</h3><p>主题配置<code>:_config.yml</code>中搜索<code>social:</code>项，将<code>github</code>和<code>微信</code>配置项换成自己的链接。  </p>
+<p>主题配置<code>:_config.yml</code>中搜索<code>avatar:</code>项目：将其下<code>url:</code>项换成自己的头像链接。</p>
+<h2 id="绑定域名"><a href="#绑定域名" class="headerlink" title="绑定域名"></a>绑定域名</h2><p>申请域名有很多途径，阿里云，腾讯与等都可以，自己注册申请。</p>
+<p>配置有问题是，会收到警告邮件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">The page build completed successfully, but returned the following warning for the `master` branch:</span><br><span class="line"></span><br><span class="line">Your site&apos;s DNS settings are using a custom subdomain, www.andyvj.com, that&apos;s set up as an A record. We recommend you change this to a CNAME record pointing at AndyVJ.github.io. For more information, see https://help.github.com/articles/using-a-custom-domain-with-github-pages/.</span><br><span class="line"></span><br><span class="line">For information on troubleshooting Jekyll see:</span><br><span class="line"></span><br><span class="line">  https://help.github.com/articles/troubleshooting-jekyll-builds</span><br><span class="line"></span><br><span class="line">If you have any questions you can contact us by replying to this email.</span><br></pre></td></tr></table></figure></p>
+<p>相应的主页的<code>设置</code>下的<code>GitHub Pages</code>处也会有警告显示，原因是域名解析没设置对。把<code>CNAME</code>主机记录改成<code>www</code>，具体如下：<br><img src="http://wx2.sinaimg.cn/mw690/006mcMYXgy1fzqok77jz2j30y0062jrv.jpg" alt="域名解析"></p>
+<p><a href="https://help.github.com/articles/setting-up-an-apex-domain/#configuring-a-records-with-your-dns-provider" target="_blank" rel="noopener">官方 help 页</a>，<a href="https://help.github.com/articles/troubleshooting-custom-domains/" target="_blank" rel="noopener">官方 help 页1</a>，<a href="https://segmentfault.com/q/1010000011240038" target="_blank" rel="noopener">网友提问</a>，<a href="https://help.github.com/articles/custom-domain-redirects-for-github-pages-sites/" target="_blank" rel="noopener">github help</a>，<a href="https://help.github.com/articles/using-a-custom-domain-with-github-pages/" target="_blank" rel="noopener">github help2</a>。</p>
+<h3 id="生成站点地图收录至搜索引擎"><a href="#生成站点地图收录至搜索引擎" class="headerlink" title="生成站点地图收录至搜索引擎"></a>生成站点地图收录至搜索引擎</h3><p>安装好这两个插件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-sitemap --save    # 用于生成搜索引擎网站地图</span><br><span class="line">npm install hexo-generator-baidu-sitemap --save    # 用于生成百度搜索引擎网站地图</span><br></pre></td></tr></table></figure></p>
+<p>可以参考：（<a href="https://www.jianshu.com/p/9c2d6db2f855" target="_blank" rel="noopener">点击1</a>），（<a href="https://www.jianshu.com/p/f2b648afba2f" target="_blank" rel="noopener">点击2</a>），<a href="https://jingyan.baidu.com/article/a3761b2bf716631576f9aa3a.html" target="_blank" rel="noopener">百度经验</a>。</p>
 
       
     </div>
@@ -541,7 +624,7 @@
     <strong>本文作者： </strong>AndyVJ</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://www.andyvj.com/2019/01/31/19013101/" title="通过git运用在github仓库中备份hexo博客">http://www.andyvj.com/2019/01/31/19013101/</a>
+    <a href="http://www.andyvj.com/2019/01/31/19013102/" title="Hexo+github 博客搭建以及 NexT 主题配置">http://www.andyvj.com/2019/01/31/19013102/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
@@ -567,8 +650,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/01/30/19013001/" rel="next" title="开启个人博客之旅">
-                <i class="fa fa-chevron-left"></i> 开启个人博客之旅
+              <a href="/2019/01/31/19013101/" rel="next" title="通过git运用在github仓库中备份hexo博客">
+                <i class="fa fa-chevron-left"></i> 通过git运用在github仓库中备份hexo博客
               </a>
             
           </div>
@@ -576,10 +659,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/01/31/19013102/" rel="prev" title="Hexo+github 博客搭建以及 NexT 主题配置">
-                Hexo+github 博客搭建以及 NexT 主题配置 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -743,7 +822,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#如何上传"><span class="nav-number">1.</span> <span class="nav-text">如何上传</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gitignore-的写法"><span class="nav-number">2.</span> <span class="nav-text">.gitignore 的写法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#另外"><span class="nav-number">3.</span> <span class="nav-text">另外</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#本地环境搭建"><span class="nav-number">1.</span> <span class="nav-text">本地环境搭建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#主题配置"><span class="nav-number">2.</span> <span class="nav-text">主题配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#注意："><span class="nav-number">2.1.</span> <span class="nav-text">注意：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#百度统计："><span class="nav-number">2.2.</span> <span class="nav-text">百度统计：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图标："><span class="nav-number">2.3.</span> <span class="nav-text">图标：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#阅读数，访问量："><span class="nav-number">2.4.</span> <span class="nav-text">阅读数，访问量：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#评论："><span class="nav-number">2.5.</span> <span class="nav-text">评论：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#站内搜索"><span class="nav-number">2.6.</span> <span class="nav-text">站内搜索</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#打赏功能"><span class="nav-number">2.7.</span> <span class="nav-text">打赏功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#“关于”和“标签”页面"><span class="nav-number">2.8.</span> <span class="nav-text">“关于”和“标签”页面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于图床"><span class="nav-number">2.9.</span> <span class="nav-text">关于图床</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他："><span class="nav-number">2.10.</span> <span class="nav-text">其他：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#绑定域名"><span class="nav-number">3.</span> <span class="nav-text">绑定域名</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#生成站点地图收录至搜索引擎"><span class="nav-number">3.1.</span> <span class="nav-text">生成站点地图收录至搜索引擎</span></a></li></ol></li></ol></div>
             
 
           </div>
