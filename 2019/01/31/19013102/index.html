@@ -119,7 +119,7 @@
 <meta property="og:description" content="主要参考的博客：《github+hexo 搭建个人博客(超详细)》，《GitHub平台上Hexo博客系统的搭建》。过程简略的记录一下，把遇到麻烦的地方写详细点。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://wx2.sinaimg.cn/mw690/006mcMYXgy1fzqok77jz2j30y0062jrv.jpg">
-<meta property="og:updated_time" content="2019-02-01T16:06:21.058Z">
+<meta property="og:updated_time" content="2019-02-02T00:15:47.255Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo+github 博客搭建以及 NexT 主题配置">
 <meta name="twitter:description" content="主要参考的博客：《github+hexo 搭建个人博客(超详细)》，《GitHub平台上Hexo博客系统的搭建》。过程简略的记录一下，把遇到麻烦的地方写详细点。">
@@ -421,7 +421,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-02-02 00:06:21" itemprop="dateModified" datetime="2019-02-02T00:06:21+08:00">2019-02-02</time>
+                <time title="修改时间：2019-02-02 08:15:47" itemprop="dateModified" datetime="2019-02-02T08:15:47+08:00">2019-02-02</time>
               
             
           </span>
@@ -532,17 +532,17 @@
 <li><code>npm install hexo-deployer-git --save</code></li>
 </ul>
 <ol start="4">
-<li><p><code>D:\gitblog\hexo</code> 目录下初始化 hexo。</p>
+<li><code>D:\gitblog\hexo</code> 目录下初始化 hexo。  </li>
+</ol>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">mkdir hexo            # 创建一个文件夹，初始化hexocd hexo</span><br><span class="line">hexo init             # 初始化 hexo 文件夹 成功就会提示</span><br><span class="line">当你看到Start blogging with Hexo! 恭喜！框架就已经搭建好了</span><br><span class="line">执行以下命令就可以在本地起服务,进入hexo 目录下</span><br><span class="line">hexo server</span><br><span class="line">然后访问 http://localhost:4000/，就能看到自己博客的雏形了</span><br><span class="line">hexo文件夹的作用</span><br><span class="line">hexo/_config.yml      # 这个是 hexo 站点配置文件</span><br><span class="line">hexo/.deploy_git/     # 这个目录下面存放的是hexo 自带的git 配置</span><br><span class="line">hexo/node_modules/    # hexo 需要的node js 模块</span><br><span class="line">hexo/.npmignore       # 文件里面存放的是npm需要忽略的文件</span><br><span class="line">hexo/package.json     # node.js 的配置文件</span><br><span class="line">hexo/public/          # 存放要生成的静态网页，需要发布的内容</span><br><span class="line">hexo/scaffolds/       # 生成文档的格式，用于 hexo new 命令 默认是post格式</span><br><span class="line">hexo/source/          # 存放hexo new 生成的源文件，我们写的 md 博客就是在这里</span><br><span class="line">hexo/themes/          # hexo 的主题 都在这里面</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>安装hexo依赖包和模块</p>
-</li>
+<ol start="5">
+<li>安装hexo依赖包和模块</li>
 </ol>
 <ul>
 <li><code>npm install</code></li>
-<li><code>node_modules</code>文件夹中查看是否已安装的扩展(<em>直接搜索扩展名字，有就代表安装了</em>)，<a href="https://hexo.io/plugins/" target="_blank" rel="noopener">官网扩展</a>；<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-server --save     # Hexo3把hexo-server服务器独立成模块,一些版本可能需要安装才能运行</span><br><span class="line">npm install hexo-deployer-git --save </span><br><span class="line">npm install hexo-generator-searchdb --save   # 本地搜索</span><br><span class="line">npm install hexo-generator-feed --save       # 用于生成RSS订阅</span><br><span class="line">npm install hexo-generator-sitemap --save    # 用于生成搜索引擎网站地图</span><br><span class="line">npm install hexo-generator-baidu-sitemap --save    # 用于生成百度搜索引擎网站地图</span><br></pre></td></tr></table></figure>
-</li>
+<li><code>node_modules</code>文件夹中查看是否已安装的扩展(<em>直接搜索扩展名字，有就代表安装了</em>)，<a href="https://hexo.io/plugins/" target="_blank" rel="noopener">官网扩展</a>；  </li>
 </ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-server --save     # Hexo3把hexo-server服务器独立成模块,一些版本可能需要安装才能运行</span><br><span class="line">npm install hexo-deployer-git --save </span><br><span class="line">npm install hexo-generator-searchdb --save   # 本地搜索</span><br><span class="line">npm install hexo-generator-feed --save       # 用于生成RSS订阅</span><br><span class="line">npm install hexo-generator-sitemap --save    # 用于生成搜索引擎网站地图</span><br><span class="line">npm install hexo-generator-baidu-sitemap --save    # 用于生成百度搜索引擎网站地图</span><br></pre></td></tr></table></figure>
 <ol start="6">
 <li>博客常用命令：</li>
 </ol>
@@ -598,7 +598,7 @@
 <h3 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h3><p>所有配置项后的<code>:</code>之后都要留至少<strong>一个空格</strong>。</p>
 <h3 id="百度统计："><a href="#百度统计：" class="headerlink" title="百度统计："></a>百度统计：</h3><p>自行注册（<a href="https://tongji.baidu.com/web/welcome/login" target="_blank" rel="noopener">点击</a>），另可参考这里（<a href="https://blog.csdn.net/lcyaiym/article/details/76796540" target="_blank" rel="noopener">hexo的next百度统计</a>）。</p>
 <p>但是，他的“点击2”中的百度统计有关<code>_layouts/default.html</code>文件添加一段代码是<strong>针对他的另一重博客(jekyll)而言的</strong>，hexo 只需要去<em>主题配置</em>中添加<code>hm.src = &quot;https://hm.baidu.com/hm.js?uuid&quot;; 中的</code>uuid换成自己的即可，搜索关键字<code>baidu_analytics</code>后进行参数替换。</p>
-<h3 id="图标："><a href="#图标：" class="headerlink" title="图标："></a>图标：</h3><p>好像有两种方法，也不知道那种有效，方正我都照做了。</p>
+<h3 id="图标："><a href="#图标：" class="headerlink" title="图标："></a>图标：</h3><p>好像有两种方法，也不知道那种有效，反正我都照做了。</p>
 <ol>
 <li><code>主题文件夹/source/images/</code>下的<code>favicon-16x16-next.png</code>和<code>favicon-32x32-next.png</code>替换成自己想要的图标(<a href="https://www.iconfont.cn/?_blank" target="_blank" rel="noopener">点击</a>)。</li>
 <li>改名后的 ico <code>favicon.ico</code>要放在所用主题的 source 下，因为不确定，我站点 source 也放了，各种放。</li>
