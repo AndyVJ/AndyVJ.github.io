@@ -1,1 +1,0 @@
-AndyVJ's blog.
