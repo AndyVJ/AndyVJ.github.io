@@ -112,18 +112,18 @@
 
 
 
-  <meta name="description" content="const 关键字用来保护数据不被修改，简而言之就像常量一样，它类似于 ”符号常量” #define指令。 #define“符号常量”宏定义是这样：1#define PI 3.14159 宏定义的本质其实就是字符替换，很容易出错，所以要特别注意加括号()。 const变量这样声明：1const double PI = 3.14159; const的用法相比#define形式的”符号常量”更加灵活。">
+  <meta name="description" content="const 关键字用来保护数据不被修改，简而言之就像常量一样，它类似于 ”符号常量” #define指令。">
 <meta name="keywords" content="C&#x2F;C++">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C&#x2F;C++ 语言关于 const">
 <meta property="og:url" content="http://www.andyvj.com/2017/02/18/19021001/index.html">
 <meta property="og:site_name" content="胡搅蛮缠">
-<meta property="og:description" content="const 关键字用来保护数据不被修改，简而言之就像常量一样，它类似于 ”符号常量” #define指令。 #define“符号常量”宏定义是这样：1#define PI 3.14159 宏定义的本质其实就是字符替换，很容易出错，所以要特别注意加括号()。 const变量这样声明：1const double PI = 3.14159; const的用法相比#define形式的”符号常量”更加灵活。">
+<meta property="og:description" content="const 关键字用来保护数据不被修改，简而言之就像常量一样，它类似于 ”符号常量” #define指令。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-10T13:13:00.070Z">
+<meta property="og:updated_time" content="2019-02-10T13:29:04.784Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C&#x2F;C++ 语言关于 const">
-<meta name="twitter:description" content="const 关键字用来保护数据不被修改，简而言之就像常量一样，它类似于 ”符号常量” #define指令。 #define“符号常量”宏定义是这样：1#define PI 3.14159 宏定义的本质其实就是字符替换，很容易出错，所以要特别注意加括号()。 const变量这样声明：1const double PI = 3.14159; const的用法相比#define形式的”符号常量”更加灵活。">
+<meta name="twitter:description" content="const 关键字用来保护数据不被修改，简而言之就像常量一样，它类似于 ”符号常量” #define指令。">
 
 
 
@@ -421,7 +421,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-02-10 21:13:00" itemprop="dateModified" datetime="2019-02-10T21:13:00+08:00">2019-02-10</time>
+                <time title="修改时间：2019-02-10 21:29:04" itemprop="dateModified" datetime="2019-02-10T21:29:04+08:00">2019-02-10</time>
               
             
           </span>
@@ -489,7 +489,7 @@
       
 
       
-        <p><code>const</code> 关键字用来保护数据不被修改，简而言之就像常量一样，它类似于 <strong>”符号常量”</strong> <code>#define</code>指令。</p>
+        <p><code>const</code> 关键字用来保护数据不被修改，简而言之就像常量一样，它类似于 <strong>”符号常量”</strong> <code>#define</code>指令。<br><a id="more"></a></p>
 <p><code>#define</code>“符号常量”宏定义是这样：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#define PI 3.14159</span><br></pre></td></tr></table></figure></p>
 <p>宏定义的本质其实就是字符替换，很容易出错，所以要特别注意加括号<code>()</code>。</p>
 <p><code>const</code>变量这样声明：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const double PI = 3.14159;</span><br></pre></td></tr></table></figure></p>
@@ -508,11 +508,7 @@
 <p>C++ 中不允许把 <code>const 指针</code>赋给<code>非 const 指针</code>。而 C 是可以的。上面的代码示例中，如果通过<code>p1</code>修改 <code>y</code>的值，其行为是未定义的。 </p>
 <p>这里还必须注意的的地方是，把 <code>const</code> 指针赋给<code>非 const 指针</code>是不安全的，因为这样可以通过使用新的指针改变 <code>const 指针</code>指向的数据。编译器可能给出警告，然而执行这样的代码是未定义的。不过，把<code>非 const 指针</code>赋给 <code>const 指针</code>没有问题。</p>
 <hr>
-<p><font color="gray"><small><br>参考： </small></font></p>
-<ol>
-<li>《C Primer Plus》<br><font color="gray"></font></li>
-</ol>
-
+<font size="2" color="gray"><br>参考： <br><br>1. 《C Primer Plus》<br></font>
       
     </div>
 
@@ -675,7 +671,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">11</span>
+                    <span class="site-state-item-count">12</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
