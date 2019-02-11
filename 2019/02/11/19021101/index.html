@@ -112,16 +112,22 @@
 
 
 
-  <meta name="description" content="构建一个自己的知识体系">
-<meta property="og:type" content="website">
-<meta property="og:title" content="胡搅蛮缠">
-<meta property="og:url" content="http://www.andyvj.com/archives/2017/02/index.html">
+  <meta name="description" content="win 系统中文下输出会出现乱码的情况，需要将编码改成GBK编码；在命令行中增加一个参数(-fexec-charset=GBK)：">
+<meta name="keywords" content="C&#x2F;C++">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vscode 下 MinGW 编译 C&#x2F;C++ 中文输出乱码问题解决">
+<meta property="og:url" content="http://www.andyvj.com/2019/02/11/19021101/index.html">
 <meta property="og:site_name" content="胡搅蛮缠">
-<meta property="og:description" content="构建一个自己的知识体系">
+<meta property="og:description" content="win 系统中文下输出会出现乱码的情况，需要将编码改成GBK编码；在命令行中增加一个参数(-fexec-charset=GBK)：">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://ws3.sinaimg.cn/large/006mcMYXgy1g02gem98e0j30n307nt91.jpg">
+<meta property="og:image" content="http://wx4.sinaimg.cn/large/006mcMYXgy1g02gh6pqq4j30md06odg2.jpg">
+<meta property="og:image" content="http://ws2.sinaimg.cn/large/006mcMYXgy1g02gizvu7tj30ti0jdjtq.jpg">
+<meta property="og:updated_time" content="2019-02-11T06:43:51.872Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="胡搅蛮缠">
-<meta name="twitter:description" content="构建一个自己的知识体系">
+<meta name="twitter:title" content="vscode 下 MinGW 编译 C&#x2F;C++ 中文输出乱码问题解决">
+<meta name="twitter:description" content="win 系统中文下输出会出现乱码的情况，需要将编码改成GBK编码；在命令行中增加一个参数(-fexec-charset=GBK)：">
+<meta name="twitter:image" content="http://ws3.sinaimg.cn/large/006mcMYXgy1g02gem98e0j30n307nt91.jpg">
 
 
 
@@ -130,7 +136,7 @@
 
 
 
-  <link rel="canonical" href="http://www.andyvj.com/archives/2017/02/">
+  <link rel="canonical" href="http://www.andyvj.com/2019/02/11/19021101/">
 
 
 
@@ -140,7 +146,7 @@
   };
 </script>
 
-  <title>归档 | 胡搅蛮缠</title>
+  <title>vscode 下 MinGW 编译 C/C++ 中文输出乱码问题解决 | 胡搅蛮缠</title>
   
 
 
@@ -197,7 +203,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -270,7 +276,7 @@
         
         
           
-          <li class="menu-item menu-item-archives menu-item-active">
+          <li class="menu-item menu-item-archives">
     <a href="/archives/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
   </li>
@@ -340,142 +346,262 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
 
-      
-      <span class="archive-page-counter">
-        
-        
-        
-          
-        
-        嗯..! 目前共计 14 篇日志。 继续努力。
-      </span>
-      
-
-      
-
-        
-        
-        
-
-        
-          
-          <div class="collection-title">
-            <h2 class="archive-year" id="archive-year-2017">2017</h2>
-          </div>
-        
-        
-
-        
+  
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.andyvj.com/2019/02/11/19021101/">
 
-      <h3 class="post-title">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="AndyVJ">
+      <meta itemprop="description" content="构建一个自己的知识体系">
+      <meta itemprop="image" content="https://wx1.sinaimg.cn/mw690/006mcMYXgy1fznoi9icbij30sg0sg3yz.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="胡搅蛮缠">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2017/02/18/19021001/" itemprop="url">
-              
-                <span itemprop="name">C/C++ 语言关于 const</span>
-              
-            </a>
         
-      </h3>
+          <h2 class="post-title" itemprop="name headline">vscode 下 MinGW 编译 C/C++ 中文输出乱码问题解决
+              
+            
+          </h2>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2017-02-18T20:53:19+08:00" content="2017-02-18">
-          02-18
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
 
-    </header>
-  </article>
+            
+            
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
 
+              
+                
+              
+
+              <time title="创建时间：2019-02-11 14:00:27 / 修改时间：14:43:51" itemprop="dateCreated datePublished" datetime="2019-02-11T14:00:27+08:00">2019-02-11</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/编程爱好/" itemprop="url" rel="index"><span itemprop="name">编程爱好</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/02/11/19021101/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/02/11/19021101/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2017/02/01/19020905/" itemprop="url">
-              
-                <span itemprop="name">春节日记</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2017-02-01T21:13:07+08:00" content="2017-02-01">
-          02-01
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
+      
+        <p>win 系统中文下输出会出现乱码的情况，需要将编码改成<code>GBK</code>编码；在命令行中增加一个参数(<code>-fexec-charset=GBK</code>)：<br><a id="more"></a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">g++ -fexec-charset=GBK test.cpp -o test</span><br></pre></td></tr></table></figure>
+<p>vscode 中用 MinGW 编译，修改<code>Code Runner</code>对编译的设置。</p>
+<ol>
+<li>在设置中搜索<code>code-runner.executorMap</code>。<br><img src="http://ws3.sinaimg.cn/large/006mcMYXgy1g02gem98e0j30n307nt91.jpg" alt="image"></li>
+<li>点击<code>在setting.json中编辑</code>。</li>
+<li>点击选项前面的齿轮 -&gt; 复制为 JSON 文本 -&gt; 粘贴到第 2 步中 -&gt; 将参数添加到命令行中 -&gt; 保存。<br><img src="http://wx4.sinaimg.cn/large/006mcMYXgy1g02gh6pqq4j30md06odg2.jpg" alt="image"><br><img src="http://ws2.sinaimg.cn/large/006mcMYXgy1g02gizvu7tj30ti0jdjtq.jpg" alt="image"></li>
+</ol>
+<hr>
+<font size="2" color="gray"><br>参考：<br>1. <a href="https://blog.csdn.net/qq_31359295/article/details/75113078" target="_blank" rel="noopener">link-01</a><br>2. <a href="https://blog.csdn.net/timekeeperl/article/details/68266218" target="_blank" rel="noopener">link-02</a><br>3. <a href="https://www.douban.com/note/658146000/?from=author" target="_blank" rel="noopener">link-03</a><br></font>
+      
     </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>感谢支持！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/WeChatPay.jpg" alt="AndyVJ 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/Alipay.jpg" alt="AndyVJ 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>AndyVJ</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://www.andyvj.com/2019/02/11/19021101/" title="vscode 下 MinGW 编译 C/C++ 中文输出乱码问题解决">http://www.andyvj.com/2019/02/11/19021101/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/C-C/" rel="tag"># C/C++</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/02/10/19021002/" rel="next" title="三条路">
+                <i class="fa fa-chevron-left"></i> 三条路
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+  </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -756,6 +882,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.2"></script>
+
+
 
   
 

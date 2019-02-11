@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[vscode 下 MinGW 编译 C/C++ 中文输出乱码问题解决]]></title>
+    <url>%2F2019%2F02%2F11%2F19021101%2F</url>
+    <content type="text"><![CDATA[win 系统中文下输出会出现乱码的情况，需要将编码改成GBK编码；在命令行中增加一个参数(-fexec-charset=GBK)： 1g++ -fexec-charset=GBK test.cpp -o test vscode 中用 MinGW 编译，修改Code Runner对编译的设置。 在设置中搜索code-runner.executorMap。 点击在setting.json中编辑。 点击选项前面的齿轮 -&gt; 复制为 JSON 文本 -&gt; 粘贴到第 2 步中 -&gt; 将参数添加到命令行中 -&gt; 保存。 参考：1. link-012. link-023. link-03]]></content>
+      <categories>
+        <category>编程爱好</category>
+      </categories>
+      <tags>
+        <tag>C/C++</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[三条路]]></title>
     <url>%2F2019%2F02%2F10%2F19021002%2F</url>
     <content type="text"><![CDATA[现在要学会做减法，要规划一下自己，结合自己的资源，最有可能成功的一条路径。在没有特别好机会的情况下三年内按这个方向走。 产品方向建模造型 + 模流分析 + 电子。 建模造型UG 或 Creo 的(曲面)建模造型能力，主要是图片造型能力。 模流分析主要是常用产品材料属性，产品分型。 电子产品肯定需要电子，非专业以了解为主。 可能的结果 成为软件专家方向。做教程，卖教程；做自己的网站论坛，做培训等； 产品结构专家。造型能力 + 材料属性 + 模流分析； 研发销售一体化。前期代理销售 -&gt; 仿造 -&gt; 规模做大 -&gt; 成立公司。 机械方向其实，越来越觉得这不是一个很好的反向。本着“鸡蛋不能放在同一个篮子里的原则”，这个方向还是很有必要的。 机械原理各种机构的熟悉，运动仿真等。 电气 PLC以销售二手 PLC 为原点，窥探行业机会。电气控制专业化去服务，挖掘一些客户；如果这样可行，会有一些机会。 上位机SCADA非专业，做兴趣定位。 可能的结果 机械结构 + 电气控制 + 上位机 全栈专家； 有做公司的机会。 工作职业做好现有的工作，成为专家。工作中其实大的方向上都含有上面两部分。 主要机会在于： 机器本身； 服装业。 总结围绕上面展开，需要具体做的事情有很多，做下减法主要是下面几个： 造型； 机械结构运动仿真 + PLC； 店开起来，维护起来，推广起来。 电子电气，编程知识就放在兴趣方面吧。]]></content>
@@ -97,6 +108,17 @@
       </categories>
       <tags>
         <tag>随感</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[数组指针移动注意]]></title>
+    <url>%2F2016%2F09%2F22%2F19021102%2F</url>
+    <content type="text"><![CDATA[代码：123456789101112#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;int main(void)&#123; int a[5] = &#123;1, 2, 3, 4, 5&#125;; int *ptr = (int *)(&amp;a + 1); printf(&quot;%d %d\n&quot;, *(a + 1), *(ptr - 1)); system (&quot;pause&quot;); return 0;&#125; 输出：122 5请按任意键继续. . . 从输出 2 可见a是和a[0]是一样的； &amp;a + 1移动的是一个整个数组的长度，(int *)(&amp;a + 1)强制类型转换为 int 型，*(ptr - 1))再往后移动一个 int，所以输出的是 5。]]></content>
+      <categories>
+        <category>编程爱好</category>
+      </categories>
+      <tags>
+        <tag>C/C++</tag>
       </tags>
   </entry>
   <entry>
