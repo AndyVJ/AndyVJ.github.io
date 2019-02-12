@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[BaiduPCS-Go出现403 Forbidden错误不能下载问题]]></title>
+    <url>%2F2019%2F02%2F12%2F19021201%2F</url>
+    <content type="text"><![CDATA[当使用 BaiduPCS-go 下载时出现下载文件错误, 403 Forbidden错误时，如何解决这个问题？ 一般性配置用登陆过网页版百度网盘并保存过密码的浏览器登录这个网址，会出现如下信息： 1&#123;&quot;error_code&quot;:31064,&quot;error_msg&quot;:&quot;file is not authorized&quot;,&quot;request_id&quot;:xxxxxxxxxxxxxxxxxxxx&#125; 去百度网盘查看：我的应用数据 -&gt; baidu_shurufa。将需要下载的文件移动到这个baidu_shurufa文件夹下，应用下面命令进行配置： 12cd /apps/baidu_shurufa // 进入文件夹config set -appid=265486 // 原理是为了保证输入法的用户体验，输入法的 AppID 不会限速? 配置完成后就可以下载。 还有个问题进行了上面的配置以后，发现一个问题，终端不能进行常规操作了；例如，不能cd切换目录，不能ls查看文件等，出现如下错误：12获取文件/目录的元信息: 遇到错误, 远端服务器返回错误, 代码: 31301, 消息: not stream file 我的解决办法： config set -appid 266719，将 AppID 切换回去。这样后就能进行常规操作了； cd /apps/baidu_shurufa -&gt; config set -appid=265486，再进行一次这样的配置，就可以下载。 这样有点繁琐，还没找到其他更好的办法，也至少能用了。 两个命令 使用百度 BDUSS 来登录百度帐号: login -bduss=&lt;BDUSS&gt;。 // 去浏览器中找到百度的 cookie，BDUSS。 h，查看帮助。 参考：1. link-012. BaiduPCS-go github 地址 README // 有详细使用方法]]></content>
+      <categories>
+        <category>其他</category>
+      </categories>
+      <tags>
+        <tag>效率工具</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[vscode 下 MinGW 编译 C/C++ 中文输出乱码问题解决]]></title>
     <url>%2F2019%2F02%2F11%2F19021101%2F</url>
     <content type="text"><![CDATA[win 系统中文下输出会出现乱码的情况，需要将编码改成GBK编码；在命令行中增加一个参数(-fexec-charset=GBK)： 1g++ -fexec-charset=GBK test.cpp -o test vscode 中用 MinGW 编译，修改Code Runner对编译的设置。 在设置中搜索code-runner.executorMap。 点击在setting.json中编辑。 点击选项前面的齿轮 -&gt; 复制为 JSON 文本 -&gt; 粘贴到第 2 步中 -&gt; 将参数添加到命令行中 -&gt; 保存。 参考：1. link-012. link-023. link-03]]></content>

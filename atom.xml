@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.andyvj.com/"/>
-  <updated>2019-02-11T06:43:51.872Z</updated>
+  <updated>2019-02-12T06:38:48.748Z</updated>
   <id>http://www.andyvj.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>BaiduPCS-Go出现403 Forbidden错误不能下载问题</title>
+    <link href="http://www.andyvj.com/2019/02/12/19021201/"/>
+    <id>http://www.andyvj.com/2019/02/12/19021201/</id>
+    <published>2019-02-12T06:00:18.000Z</published>
+    <updated>2019-02-12T06:38:48.748Z</updated>
+    
+    <content type="html"><![CDATA[<p>当使用 BaiduPCS-go 下载时出现<code>下载文件错误, 403 Forbidden</code>错误时，如何解决这个问题？<br><a id="more"></a></p><h2 id="一般性配置"><a href="#一般性配置" class="headerlink" title="一般性配置"></a>一般性配置</h2><p>用登陆过网页版百度网盘并保存过密码的浏览器登录这个<a href="http://pcs.baidu.com/rest/2.0/pcs/file?app_id=265486&amp;method=list&amp;path=%2F" target="_blank" rel="noopener">网址</a>，会出现如下信息：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&quot;error_code&quot;:31064,&quot;error_msg&quot;:&quot;file is not authorized&quot;,&quot;request_id&quot;:xxxxxxxxxxxxxxxxxxxx&#125;</span><br></pre></td></tr></table></figure><p>去百度网盘查看：<strong>我的应用数据 -&gt; baidu_shurufa</strong>。<strong>将需要下载的文件移动到这个<code>baidu_shurufa</code>文件夹下</strong>，应用下面命令进行配置：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /apps/baidu_shurufa    // 进入文件夹</span><br><span class="line">config set -appid=265486    // 原理是为了保证输入法的用户体验，输入法的 AppID 不会限速?</span><br></pre></td></tr></table></figure><p>配置完成后就可以下载。</p><h2 id="还有个问题"><a href="#还有个问题" class="headerlink" title="还有个问题"></a>还有个问题</h2><p>进行了上面的配置以后，发现一个问题，终端不能进行常规操作了；例如，不能<code>cd</code>切换目录，不能<code>ls</code>查看文件等，出现如下错误：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">获取文件/目录的元信息: 遇到错误, 远端服务器返回错误, 代码: 31301, 消息: not stre</span><br><span class="line">am file</span><br></pre></td></tr></table></figure></p><p>我的解决办法：</p><ol><li><code>config set -appid 266719</code>，将 AppID 切换回去。这样后就能进行常规操作了；</li><li><code>cd /apps/baidu_shurufa</code> -&gt; <code>config set -appid=265486</code>，再进行一次这样的配置，就可以下载。</li></ol><p>这样有点繁琐，还没找到其他更好的办法，也至少能用了。</p><h2 id="两个命令"><a href="#两个命令" class="headerlink" title="两个命令"></a>两个命令</h2><ol><li><p>使用百度 BDUSS 来登录百度帐号: <code>login -bduss=&lt;BDUSS&gt;</code>。   // 去浏览器中找到百度的 cookie，<strong>BDUSS</strong>。</p><p> <img src="http://wx4.sinaimg.cn/large/006mcMYXgy1g03mn57y0aj30yi0baaas.jpg" alt="image"></p></li><li><p><code>h</code>，查看帮助。</p></li></ol><hr><font size="2" color="gray"><br>参考：<br><br>1. <a href="https://blog.csdn.net/a564126786/article/details/85948412" target="_blank" rel="noopener">link-01</a><br>2. <a href="https://github.com/iikira/BaiduPCS-Go" target="_blank" rel="noopener">BaiduPCS-go github 地址 README</a>   // 有详细使用方法<br></font>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;当使用 BaiduPCS-go 下载时出现&lt;code&gt;下载文件错误, 403 Forbidden&lt;/code&gt;错误时，如何解决这个问题？&lt;br&gt;
+    
+    </summary>
+    
+      <category term="其他" scheme="http://www.andyvj.com/categories/%E5%85%B6%E4%BB%96/"/>
+    
+    
+      <category term="效率工具" scheme="http://www.andyvj.com/tags/%E6%95%88%E7%8E%87%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
   
   <entry>
     <title>vscode 下 MinGW 编译 C/C++ 中文输出乱码问题解决</title>
