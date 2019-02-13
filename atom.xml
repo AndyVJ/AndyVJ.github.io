@@ -18,8 +18,8 @@
   
   <entry>
     <title>hexo 中插入视频音频的方法</title>
-    <link href="http://www.andyvj.com/2019/02/12/19021301/"/>
-    <id>http://www.andyvj.com/2019/02/12/19021301/</id>
+    <link href="http://www.andyvj.com/2019/02/12/190213-01/"/>
+    <id>http://www.andyvj.com/2019/02/12/190213-01/</id>
     <published>2019-02-12T09:11:15.000Z</published>
     <updated>2019-02-13T05:08:04.468Z</updated>
     
@@ -41,8 +41,8 @@
   
   <entry>
     <title>BaiduPCS-Go出现403 Forbidden错误不能下载问题</title>
-    <link href="http://www.andyvj.com/2019/02/12/19021201/"/>
-    <id>http://www.andyvj.com/2019/02/12/19021201/</id>
+    <link href="http://www.andyvj.com/2019/02/12/190212-01/"/>
+    <id>http://www.andyvj.com/2019/02/12/190212-01/</id>
     <published>2019-02-12T06:00:18.000Z</published>
     <updated>2019-02-12T06:38:48.748Z</updated>
     
@@ -63,8 +63,8 @@
   
   <entry>
     <title>vscode 下 MinGW 编译 C/C++ 中文输出乱码问题解决</title>
-    <link href="http://www.andyvj.com/2019/02/11/19021101/"/>
-    <id>http://www.andyvj.com/2019/02/11/19021101/</id>
+    <link href="http://www.andyvj.com/2019/02/11/190211-01/"/>
+    <id>http://www.andyvj.com/2019/02/11/190211-01/</id>
     <published>2019-02-11T06:00:27.000Z</published>
     <updated>2019-02-11T06:43:51.872Z</updated>
     
@@ -85,8 +85,8 @@
   
   <entry>
     <title>三条路</title>
-    <link href="http://www.andyvj.com/2019/02/10/19021002/"/>
-    <id>http://www.andyvj.com/2019/02/10/19021002/</id>
+    <link href="http://www.andyvj.com/2019/02/10/190210-02/"/>
+    <id>http://www.andyvj.com/2019/02/10/190210-02/</id>
     <published>2019-02-10T13:27:42.000Z</published>
     <updated>2019-02-10T14:39:41.253Z</updated>
     
@@ -107,8 +107,8 @@
   
   <entry>
     <title>过完年再次回到深圳</title>
-    <link href="http://www.andyvj.com/2019/02/08/19020801/"/>
-    <id>http://www.andyvj.com/2019/02/08/19020801/</id>
+    <link href="http://www.andyvj.com/2019/02/08/190208-01/"/>
+    <id>http://www.andyvj.com/2019/02/08/190208-01/</id>
     <published>2019-02-08T14:34:12.000Z</published>
     <updated>2019-02-09T12:28:55.394Z</updated>
     
@@ -129,8 +129,8 @@
   
   <entry>
     <title>总结和展望：2019</title>
-    <link href="http://www.andyvj.com/2019/02/02/19020201/"/>
-    <id>http://www.andyvj.com/2019/02/02/19020201/</id>
+    <link href="http://www.andyvj.com/2019/02/02/190202-01/"/>
+    <id>http://www.andyvj.com/2019/02/02/190202-01/</id>
     <published>2019-02-02T01:41:39.000Z</published>
     <updated>2019-02-02T03:27:17.452Z</updated>
     
@@ -151,8 +151,8 @@
   
   <entry>
     <title>Hexo+github 博客搭建以及 NexT 主题配置</title>
-    <link href="http://www.andyvj.com/2019/01/31/19013102/"/>
-    <id>http://www.andyvj.com/2019/01/31/19013102/</id>
+    <link href="http://www.andyvj.com/2019/01/31/190131-02/"/>
+    <id>http://www.andyvj.com/2019/01/31/190131-02/</id>
     <published>2019-01-31T12:31:36.000Z</published>
     <updated>2019-02-02T00:15:47.255Z</updated>
     
@@ -173,8 +173,8 @@
   
   <entry>
     <title>通过git运用在github仓库中备份hexo博客</title>
-    <link href="http://www.andyvj.com/2019/01/31/19013101/"/>
-    <id>http://www.andyvj.com/2019/01/31/19013101/</id>
+    <link href="http://www.andyvj.com/2019/01/31/190131-01/"/>
+    <id>http://www.andyvj.com/2019/01/31/190131-01/</id>
     <published>2019-01-31T06:33:32.000Z</published>
     <updated>2019-02-02T01:35:09.343Z</updated>
     
@@ -195,8 +195,8 @@
   
   <entry>
     <title>开启个人博客之旅</title>
-    <link href="http://www.andyvj.com/2019/01/30/19013001/"/>
-    <id>http://www.andyvj.com/2019/01/30/19013001/</id>
+    <link href="http://www.andyvj.com/2019/01/30/190130-01/"/>
+    <id>http://www.andyvj.com/2019/01/30/190130-01/</id>
     <published>2019-01-30T02:45:33.000Z</published>
     <updated>2019-01-30T04:12:01.622Z</updated>
     
@@ -216,9 +216,31 @@
   </entry>
   
   <entry>
+    <title>机械设计的中各种原则的理解：最大实体，最小实体，泰勒原则，包容原则等</title>
+    <link href="http://www.andyvj.com/2017/04/23/190213-02/"/>
+    <id>http://www.andyvj.com/2017/04/23/190213-02/</id>
+    <published>2017-04-23T14:35:26.000Z</published>
+    <updated>2019-02-13T14:41:18.023Z</updated>
+    
+    <content type="html"><![CDATA[<p>机械中的「最大实体」、「最小实体」、「泰勒原则」、「包容原则」等各种原则确实有点复杂，工作中这方面标注的也并不多，一是即使标注了也没能力去检，二是供应商也不会太理解这些东西。<a id="more"></a>但随着越来越规范的的要求，形位公差这方面肯定是需要的，如何做的「合理」两字确实挺难，需要不断经验积累、验证和调整。下面是我对这些技术原则的一些理解并做一些记录。</p><p>原文：<a href="https://blog.csdn.net/un_giveup/article/details/84063992" target="_blank" rel="noopener">传送</a>。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;机械中的「最大实体」、「最小实体」、「泰勒原则」、「包容原则」等各种原则确实有点复杂，工作中这方面标注的也并不多，一是即使标注了也没能力去检，二是供应商也不会太理解这些东西。
+    
+    </summary>
+    
+      <category term="机械结构" scheme="http://www.andyvj.com/categories/%E6%9C%BA%E6%A2%B0%E7%BB%93%E6%9E%84/"/>
+    
+    
+      <category term="机械设计" scheme="http://www.andyvj.com/tags/%E6%9C%BA%E6%A2%B0%E8%AE%BE%E8%AE%A1/"/>
+    
+  </entry>
+  
+  <entry>
     <title>C/C++ 语言关于 const</title>
-    <link href="http://www.andyvj.com/2017/02/18/19021001/"/>
-    <id>http://www.andyvj.com/2017/02/18/19021001/</id>
+    <link href="http://www.andyvj.com/2017/02/18/190210-01/"/>
+    <id>http://www.andyvj.com/2017/02/18/190210-01/</id>
     <published>2017-02-18T12:53:19.000Z</published>
     <updated>2019-02-10T13:29:04.784Z</updated>
     
@@ -239,8 +261,8 @@
   
   <entry>
     <title>春节日记</title>
-    <link href="http://www.andyvj.com/2017/02/01/19020905/"/>
-    <id>http://www.andyvj.com/2017/02/01/19020905/</id>
+    <link href="http://www.andyvj.com/2017/02/01/190209-05/"/>
+    <id>http://www.andyvj.com/2017/02/01/190209-05/</id>
     <published>2017-02-01T13:13:07.000Z</published>
     <updated>2019-02-09T13:42:57.134Z</updated>
     
@@ -264,8 +286,8 @@
   
   <entry>
     <title>启程/回归</title>
-    <link href="http://www.andyvj.com/2017/01/22/19020904/"/>
-    <id>http://www.andyvj.com/2017/01/22/19020904/</id>
+    <link href="http://www.andyvj.com/2017/01/22/190209-04/"/>
+    <id>http://www.andyvj.com/2017/01/22/190209-04/</id>
     <published>2017-01-22T13:06:45.000Z</published>
     <updated>2019-02-09T13:08:25.403Z</updated>
     
@@ -286,8 +308,8 @@
   
   <entry>
     <title>数组指针移动注意</title>
-    <link href="http://www.andyvj.com/2016/09/22/19021102/"/>
-    <id>http://www.andyvj.com/2016/09/22/19021102/</id>
+    <link href="http://www.andyvj.com/2016/09/22/190211-02/"/>
+    <id>http://www.andyvj.com/2016/09/22/190211-02/</id>
     <published>2016-09-22T06:21:48.000Z</published>
     <updated>2019-02-11T06:38:53.106Z</updated>
     
@@ -308,8 +330,8 @@
   
   <entry>
     <title>天空下起了雨</title>
-    <link href="http://www.andyvj.com/2016/09/18/19020903/"/>
-    <id>http://www.andyvj.com/2016/09/18/19020903/</id>
+    <link href="http://www.andyvj.com/2016/09/18/190209-03/"/>
+    <id>http://www.andyvj.com/2016/09/18/190209-03/</id>
     <published>2016-09-18T12:55:32.000Z</published>
     <updated>2019-02-09T12:56:42.503Z</updated>
     
@@ -331,8 +353,8 @@
   
   <entry>
     <title>要保持健康的生活状态</title>
-    <link href="http://www.andyvj.com/2016/09/18/19020902/"/>
-    <id>http://www.andyvj.com/2016/09/18/19020902/</id>
+    <link href="http://www.andyvj.com/2016/09/18/190209-02/"/>
+    <id>http://www.andyvj.com/2016/09/18/190209-02/</id>
     <published>2016-09-18T12:46:11.000Z</published>
     <updated>2019-02-09T12:53:18.603Z</updated>
     
@@ -353,8 +375,8 @@
   
   <entry>
     <title>要学会管理时间</title>
-    <link href="http://www.andyvj.com/2016/09/18/19020901/"/>
-    <id>http://www.andyvj.com/2016/09/18/19020901/</id>
+    <link href="http://www.andyvj.com/2016/09/18/190209-01/"/>
+    <id>http://www.andyvj.com/2016/09/18/190209-01/</id>
     <published>2016-09-18T12:30:25.000Z</published>
     <updated>2019-02-09T12:54:29.003Z</updated>
     
