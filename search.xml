@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[hexo 中插入视频音频的方法]]></title>
+    <url>%2F2019%2F02%2F12%2F19021301%2F</url>
+    <content type="text"><![CDATA[都使用iframe标签。音乐或视频下的分享 -&gt; 复制 iframe 通用代码 -&gt; 粘贴进来，这样就可以了。 插入网易云音乐：1&lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=330 height=86 src=&quot;//music.163.com/outchain/player?type=2&amp;id=167655&amp;auto=1&amp;height=66&quot;&gt;&lt;/iframe&gt; 插入 bilibili 视频：1&lt;iframe src=&quot;//player.bilibili.com/player.html?aid=26884158&amp;cid=46285677&amp;page=1&quot; scrolling=&quot;no&quot; border=&quot;0&quot; frameborder=&quot;no&quot; framespacing=&quot;0&quot; allowfullscreen=&quot;true&quot; height=&quot;500&quot; width=&quot;750&quot; quality=&quot;high&quot; &gt; &lt;/iframe&gt; 插入腾讯视频：1&lt;iframe frameborder=&quot;0&quot; height=&quot;550&quot; width=&quot;750&quot; src=&quot;https://v.qq.com/txp/iframe/player.html?vid=t0028bp4lsn&quot; allowFullScreen=&quot;true&quot;&gt;&lt;/iframe&gt; 插入 youku 视频： 不知道怎么调 youku 视频的长和宽。]]></content>
+      <categories>
+        <category>其他</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[BaiduPCS-Go出现403 Forbidden错误不能下载问题]]></title>
     <url>%2F2019%2F02%2F12%2F19021201%2F</url>
     <content type="text"><![CDATA[当使用 BaiduPCS-go 下载时出现下载文件错误, 403 Forbidden错误时，如何解决这个问题？ 一般性配置用登陆过网页版百度网盘并保存过密码的浏览器登录这个网址，会出现如下信息： 1&#123;&quot;error_code&quot;:31064,&quot;error_msg&quot;:&quot;file is not authorized&quot;,&quot;request_id&quot;:xxxxxxxxxxxxxxxxxxxx&#125; 去百度网盘查看：我的应用数据 -&gt; baidu_shurufa。将需要下载的文件移动到这个baidu_shurufa文件夹下，应用下面命令进行配置： 12cd /apps/baidu_shurufa // 进入文件夹config set -appid=265486 // 原理是为了保证输入法的用户体验，输入法的 AppID 不会限速? 配置完成后就可以下载。 还有个问题进行了上面的配置以后，发现一个问题，终端不能进行常规操作了；例如，不能cd切换目录，不能ls查看文件等，出现如下错误：12获取文件/目录的元信息: 遇到错误, 远端服务器返回错误, 代码: 31301, 消息: not stream file 我的解决办法： config set -appid 266719，将 AppID 切换回去。这样后就能进行常规操作了； cd /apps/baidu_shurufa -&gt; config set -appid=265486，再进行一次这样的配置，就可以下载。 这样有点繁琐，还没找到其他更好的办法，也至少能用了。 两个命令 使用百度 BDUSS 来登录百度帐号: login -bduss=&lt;BDUSS&gt;。 // 去浏览器中找到百度的 cookie，BDUSS。 h，查看帮助。 参考：1. link-012. BaiduPCS-go github 地址 README // 有详细使用方法]]></content>
