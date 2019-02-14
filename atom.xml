@@ -216,6 +216,94 @@
   </entry>
   
   <entry>
+    <title>雨后见彩虹</title>
+    <link href="http://www.andyvj.com/2017/05/13/190214-04/"/>
+    <id>http://www.andyvj.com/2017/05/13/190214-04/</id>
+    <published>2017-05-12T16:00:00.000Z</published>
+    <updated>2019-02-14T10:41:57.450Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天看见彩虹了，就在路日下的雨后，非常漂亮。我已然不记得上一次看见彩虹是什么时候，隐约记得小时候的一个夏天在屋后的谷场忽然的暴雨让我们措手不及，雨停了空山新雨后，我们看见了彩虹，父亲、母亲、姐姐还有我。</p><a id="more"></a><p><img src="http://ws3.sinaimg.cn/large/006mcMYXgy1g062fnfr0nj30hs0dc44j.jpg" alt="image"></p><p>彩虹的原理我们早在小学的「自然」课中就已经学过了，阳光照进空气中的水滴，由于不同的波长折射率不一样，阳光通过水滴的折射和反射形成了色散，然后就出现了我们能看见的彩虹。记得小学课本里还有一个实验，向空气里喷水雾就能看见“彩虹”，我每次饭后洗完碗装一碗井水，在会教室的路上，灿烂的阳光下，用嘴喷几口井水，总能看见彩虹。这个方法教给小伙伴们，从而引起一阵潮流。</p><p><img src="http://ws1.sinaimg.cn/large/006mcMYXgy1g062fy7tdoj30hs0dc0yg.jpg" alt="image"></p><p>小学语文课文中好像有一篇毛泽东的词写过有关彩虹的句子，“赤橙黄绿青蓝紫，谁持彩练当空舞”。刚了解了下毛泽东写下这首词的背景，真实感受到了伟人的乐观、豁达与豪放。</p><blockquote><p>《菩萨蛮·大柏地》</p><p>毛泽东   一九三三年夏  </p><p>赤橙黄绿青蓝紫，<br>谁持彩练当空舞？<br>雨后复斜阳，<br>关山阵阵苍。<br>当年鏖战急，<br>弹洞前村壁。<br>装点此关山，<br>今朝更好看。  </p></blockquote><p><img src="http://ws1.sinaimg.cn/large/006mcMYXgy1g062h1gl6lj30hs0dc7ao.jpg" alt="image"></p><p>彩虹总是象征着美好的事物，象征着我们所追求的梦想。很多歌曲中都有彩虹的身影的出现，《阳光总在风雨后》中就这样唱到，“阳光总在风雨后，请相信一定有彩虹，风风雨雨都接受…”，非常的温暖美好又励志。直接以「彩虹」命名的歌曲也不少，周杰伦的《彩虹》，羽泉的《彩虹》，许巍的《彩虹》，伍佰的《彩虹》等等，记得有一段时间我单曲循环着伍佰的《彩虹》很久，这首歌让我感动。</p><p><img src="http://wx3.sinaimg.cn/large/006mcMYXgy1g062hioaxlj30hs0dc43z.jpg" alt="image"></p><p>愿美好的彩虹常常出现，愿美好的愿望都能实现。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天看见彩虹了，就在路日下的雨后，非常漂亮。我已然不记得上一次看见彩虹是什么时候，隐约记得小时候的一个夏天在屋后的谷场忽然的暴雨让我们措手不及，雨停了空山新雨后，我们看见了彩虹，父亲、母亲、姐姐还有我。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="其他" scheme="http://www.andyvj.com/categories/%E5%85%B6%E4%BB%96/"/>
+    
+    
+      <category term="随感" scheme="http://www.andyvj.com/tags/%E9%9A%8F%E6%84%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>UG_NX 带边着色线太粗如何设置</title>
+    <link href="http://www.andyvj.com/2017/05/01/190214-03/"/>
+    <id>http://www.andyvj.com/2017/05/01/190214-03/</id>
+    <published>2017-04-30T16:00:00.000Z</published>
+    <updated>2019-02-14T10:41:57.313Z</updated>
+    
+    <content type="html"><![CDATA[<p>新安装的 UG 建模时带边显示的线特别粗，需要修改可以这样。</p><a id="more"></a><h2 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h2><p><code>Ctrl + Shif + J</code>或者<code>视图 -&gt; 首选项 -&gt; 可视 -&gt; 边显示设置</code>：</p><p><img src="http://wx1.sinaimg.cn/large/006mcMYXgy1g0622b7w8rj30b30fqwf5.jpg" alt="image"></p><p><img src="http://ws1.sinaimg.cn/large/006mcMYXgy1g0622jr3vmj30a70ho42e.jpg" alt="image"></p><p>把宽度值改成细一点的，如， 0.13mm。</p><h2 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h2><p>选中实体，<code>Ctrl  + V</code>编辑对象显示，直接更改线宽。<strong>这个方法好像更快捷有效。</strong></p><p><img src="http://wx1.sinaimg.cn/large/006mcMYXgy1g06256p49fj30940h3q3c.jpg" alt="image"></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;新安装的 UG 建模时带边显示的线特别粗，需要修改可以这样。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="机械结构" scheme="http://www.andyvj.com/categories/%E6%9C%BA%E6%A2%B0%E7%BB%93%E6%9E%84/"/>
+    
+    
+      <category term="UG_NX" scheme="http://www.andyvj.com/tags/UG-NX/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>UG 常用设置：箭头，尺寸线，实体颜色，尺寸字体，草绘字体，小数位，视图边框等</title>
+    <link href="http://www.andyvj.com/2017/04/30/190214-02/"/>
+    <id>http://www.andyvj.com/2017/04/30/190214-02/</id>
+    <published>2017-04-29T16:00:00.000Z</published>
+    <updated>2019-02-14T10:41:57.554Z</updated>
+    
+    <content type="html"><![CDATA[<p>主要设置——<strong>默认模板位置，实体、片体颜色、线宽等，修改精度和小数位及尺寸后置零，尺寸延伸线延展，尺寸延伸线间隙，尺寸文本字体，取消工程图视图边界框，尺寸箭头，更改草绘字体大小，把 UG 设置成英文；以及一些常用快捷键。</strong></p><a id="more"></a><h3 id="默认模板位置"><a href="#默认模板位置" class="headerlink" title="默认模板位置"></a>默认模板位置</h3><p>可以打开 UG 的默认模板，进行设置选项的更改和保存，这样每次新建文件就会起到作用了。模板文件的路径如下：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">安装目录\NX\LOCALIZATION\prc\simpl_chinese\startup\model-plain-1-mm-template.prt</span><br></pre></td></tr></table></figure><p>改这一个模板已经够用了，零件和组件。</p><h3 id="实体、片体颜色、线宽等"><a href="#实体、片体颜色、线宽等" class="headerlink" title="实体、片体颜色、线宽等"></a>实体、片体颜色、线宽等</h3><p>在模板文件中更改保存。</p><p><code>Ctrl+Shift+J</code>或者<code>文件 -&gt; 首选项 -&gt; 对象</code>：</p><p><img src="http://ws1.sinaimg.cn/large/006mcMYXgy1g060rv6hltj30gb0acwih.jpg" alt="image"></p><font color="gray"><center><small>▲ 修改实体颜色</small></center></font><p><img src="http://ws4.sinaimg.cn/large/006mcMYXgy1g060t862j5j30900fowfu.jpg" alt="image"></p><font color="gray"><center><small>▲ 修改线宽</small></center></font><h3 id="修改精度和小数位及尺寸后置零"><a href="#修改精度和小数位及尺寸后置零" class="headerlink" title="修改精度和小数位及尺寸后置零"></a>修改精度和小数位及尺寸后置零</h3><p><code>文件 -&gt; 首选项 -&gt; 制图 -&gt;</code>  ：</p><p><img src="http://wx1.sinaimg.cn/large/006mcMYXgy1g060vhoqhbj30g90fs7ak.jpg" alt="image"></p><font color="gray"><center><small>▲ 小数位</small></center></font><br><img src="http://wx3.sinaimg.cn/large/006mcMYXgy1g060wdved8j30hs0eh437.jpg" alt="image"><br><font color="gray"><center><small>▲ 后置零</small></center></font><h3 id="制图首选项"><a href="#制图首选项" class="headerlink" title="制图首选项"></a>制图首选项</h3><p><code>制图首选项 -&gt; 公共 -&gt; 直线/箭头 -&gt; 延伸线。</code></p><h4 id="尺寸延伸线延展"><a href="#尺寸延伸线延展" class="headerlink" title="尺寸延伸线延展"></a>尺寸延伸线延展</h4><p><img src="http://wx1.sinaimg.cn/large/006mcMYXgy1g0610ezvxaj30hs0d3gpu.jpg" alt="image"><br><img src="http://wx4.sinaimg.cn/large/006mcMYXgy1g0610re8ecj30hs03mwet.jpg" alt="image"></p><h4 id="尺寸延伸线间隙"><a href="#尺寸延伸线间隙" class="headerlink" title="尺寸延伸线间隙"></a>尺寸延伸线间隙</h4><p><img src="http://wx1.sinaimg.cn/large/006mcMYXgy1g0615pedmhj30gb0d442q.jpg" alt="image"><br><img src="http://ws2.sinaimg.cn/large/006mcMYXgy1g0615wr5l8j30f1057q31.jpg" alt="image"></p><h4 id="尺寸文本字体"><a href="#尺寸文本字体" class="headerlink" title="尺寸文本字体"></a>尺寸文本字体</h4><p><img src="http://ws2.sinaimg.cn/large/006mcMYXgy1g0616jclfdj30hn0d543z.jpg" alt="image"></p><h4 id="取消工程图视图边界框"><a href="#取消工程图视图边界框" class="headerlink" title="取消工程图视图边界框"></a>取消工程图视图边界框</h4><p><img src="http://wx3.sinaimg.cn/large/006mcMYXgy1g06171bye5j30hs0cpq8m.jpg" alt="image"></p><h4 id="尺寸箭头"><a href="#尺寸箭头" class="headerlink" title="尺寸箭头"></a>尺寸箭头</h4><p><code>文件-&gt;首选项-&gt;制图-&gt;公共-&gt;文字-&gt;箭头</code></p><p><img src="http://wx1.sinaimg.cn/large/006mcMYXgy1g0619dd6n5j30hs0ehjvt.jpg" alt="image"></p><p>箭头：<strong>长度，3.5；角度，18°；圆点直径，1.5。</strong></p><h3 id="草图首选项"><a href="#草图首选项" class="headerlink" title="草图首选项"></a>草图首选项</h3><p><code>文件-&gt;首选项-&gt;草图</code>。这里可以更改线的颜色等。这里是指三维建模里的草图。</p><p><img src="http://ws2.sinaimg.cn/large/006mcMYXgy1g061amj0ohj30940e7go1.jpg" alt="image"></p><h3 id="更改草绘字体大小"><a href="#更改草绘字体大小" class="headerlink" title="更改草绘字体大小"></a>更改草绘字体大小</h3><p><code>文件-&gt;实用工具-&gt;用户默认设置。</code></p><p><img src="http://ws1.sinaimg.cn/large/006mcMYXgy1g061c8wnskj30hs0cawjk.jpg" alt="image"></p><h3 id="把-UG-设置成英文"><a href="#把-UG-设置成英文" class="headerlink" title="把 UG 设置成英文"></a>把 UG 设置成英文</h3><p>如果装逼蛋痛的话，更改环境变量 simpl_chinese 改成 english。</p><p><img src="http://wx3.sinaimg.cn/large/006mcMYXgy1g061d77ysqj30au0b50vv.jpg" alt="image"></p><h3 id="常用快捷键"><a href="#常用快捷键" class="headerlink" title="常用快捷键"></a>常用快捷键</h3><p>系统快捷键：</p><table><thead><tr><th style="text-align:left">命令</th><th style="text-align:left">快捷键 </th></tr></thead><tbody><tr><td style="text-align:left">适合窗口</td><td style="text-align:left">Ctrl+F</td></tr><tr><td style="text-align:left">草绘对齐屏幕</td><td style="text-align:left">Shif+F8</td></tr><tr><td style="text-align:left">法向对齐</td><td style="text-align:left">F8</td></tr><tr><td style="text-align:left">拉伸</td><td style="text-align:left">X</td></tr><tr><td style="text-align:left">直线</td><td style="text-align:left">L</td></tr><tr><td style="text-align:left">圆</td><td style="text-align:left">O</td></tr><tr><td style="text-align:left">矩形</td><td style="text-align:left">R</td></tr><tr><td style="text-align:left">移动</td><td style="text-align:left">Ctrl+T</td></tr><tr><td style="text-align:left">对象首选项</td><td style="text-align:left">Ctrl+Shift+J</td></tr><tr><td style="text-align:left">建模</td><td style="text-align:left">Ctrl+M</td></tr><tr><td style="text-align:left">工程图</td><td style="text-align:left">Ctrl+Shift+D</td></tr><tr><td style="text-align:left">定制快捷键</td><td style="text-align:left">Ctrl+1</td></tr></tbody></table>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;主要设置——&lt;strong&gt;默认模板位置，实体、片体颜色、线宽等，修改精度和小数位及尺寸后置零，尺寸延伸线延展，尺寸延伸线间隙，尺寸文本字体，取消工程图视图边界框，尺寸箭头，更改草绘字体大小，把 UG 设置成英文；以及一些常用快捷键。&lt;/strong&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="机械结构" scheme="http://www.andyvj.com/categories/%E6%9C%BA%E6%A2%B0%E7%BB%93%E6%9E%84/"/>
+    
+    
+      <category term="UG_NX" scheme="http://www.andyvj.com/tags/UG-NX/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>aboutCode</title>
+    <link href="http://www.andyvj.com/2017/04/26/190214-01/"/>
+    <id>http://www.andyvj.com/2017/04/26/190214-01/</id>
+    <published>2017-04-25T16:00:00.000Z</published>
+    <updated>2019-02-14T10:41:57.465Z</updated>
+    
+    <content type="html"><![CDATA[<p>code 就像曾经想爱而没有爱到的姑娘一样，让人难以忘怀，时常让我想起。<br><a id="more"></a><br>它永远存在于我最美好的想象中，像蒙娜丽莎一样神秘，离我又远又近，总有一种神秘的吸引，告诉我不能停止，不能忘记。</p><p>也许像所有的事物一样，美好终不过一种想象，难以平静的是你的内心。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;code 就像曾经想爱而没有爱到的姑娘一样，让人难以忘怀，时常让我想起。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="其他" scheme="http://www.andyvj.com/categories/%E5%85%B6%E4%BB%96/"/>
+    
+    
+      <category term="随感" scheme="http://www.andyvj.com/tags/%E9%9A%8F%E6%84%9F/"/>
+    
+  </entry>
+  
+  <entry>
     <title>机械设计的中各种原则的理解：最大实体，最小实体，泰勒原则，包容原则等</title>
     <link href="http://www.andyvj.com/2017/04/23/190213-02/"/>
     <id>http://www.andyvj.com/2017/04/23/190213-02/</id>
@@ -234,6 +322,29 @@
     
     
       <category term="机械设计" scheme="http://www.andyvj.com/tags/%E6%9C%BA%E6%A2%B0%E8%AE%BE%E8%AE%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>重温《大话西游》</title>
+    <link href="http://www.andyvj.com/2017/04/16/190214-05/"/>
+    <id>http://www.andyvj.com/2017/04/16/190214-05/</id>
+    <published>2017-04-15T16:00:00.000Z</published>
+    <updated>2019-02-14T10:41:57.504Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://ws3.sinaimg.cn/large/006mcMYXgy1g060585kgxj30hs0dcn2u.jpg" alt="image"></p><p>《大话西游》又重映了，今天又特异去电影院看了一场。这个电影虽然已经看过好多遍，就像至尊宝说他生平说过无数的谎话一样，电影的情节也早已烂熟，连台词都能背了，不过看的是“情怀”。别问我是和谁去看的，一个人。一个人看电影对很多人来说觉得不可思议，但对我来说早已驾轻就熟了，多看几次看着看着就习惯了，就像至尊宝吐着吐着就习惯了一样。</p><a id="more"></a><p><img src="http://ws4.sinaimg.cn/large/006mcMYXgy1g0605pfe1aj30hs0dcgp6.jpg" alt="image"></p><p>看《大话西游》的人还是有很多，但是影院还是没有坐满，可能都是看《速8》去了吧。我开始以为来看的可能都是成双成对的情侣，到时候会遭受暴击的伤害，不过还好，我左边右边都是两条“狗”，还都是男的，唉，真为他们感到悲哀，一个人来看电影。</p><p><img src="http://ws1.sinaimg.cn/large/006mcMYXgy1g0605y8gaej30hs0dcwji.jpg" alt="image"></p><p>对《大话西游》的解读已经够多的了，我也不想说什么，只是喜欢这部电影喜欢周星驰就去看了，可能这些票房和周星驰没有半毛钱关系，不过这也无所谓。周星驰现在依然是一个人，有人说是因为朱茵，但谁知道呢？每次看他的访谈，看见他的白发，也并不像电影里那么健谈和搞笑，能感受到他的不善言语和交际的一面甚至还有些许的自卑，其实他早就是成功人士了。喜欢一个人难免会不自觉的去自我代入、对号入座吧。</p><p><img src="http://wx3.sinaimg.cn/large/006mcMYXgy1g06069ohmnj30hs0dcdk6.jpg" alt="image"></p><p>另外，《大话西游》里紫霞仙子真的美，朱茵在《逃学威龙》里面也挺可人的。期待周星驰的下一部新电影，是《功夫2》吧？！他会亲自上阵吗？</p><p><img src="http://ws2.sinaimg.cn/large/006mcMYXgy1g0606mstxvj30hs0dcwix.jpg" alt="image"></p><font color="gray"><center><small>一个转身也许就是一辈子</small></center></font>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://ws3.sinaimg.cn/large/006mcMYXgy1g060585kgxj30hs0dcn2u.jpg&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
+&lt;p&gt;《大话西游》又重映了，今天又特异去电影院看了一场。这个电影虽然已经看过好多遍，就像至尊宝说他生平说过无数的谎话一样，电影的情节也早已烂熟，连台词都能背了，不过看的是“情怀”。别问我是和谁去看的，一个人。一个人看电影对很多人来说觉得不可思议，但对我来说早已驾轻就熟了，多看几次看着看着就习惯了，就像至尊宝吐着吐着就习惯了一样。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="其他" scheme="http://www.andyvj.com/categories/%E5%85%B6%E4%BB%96/"/>
+    
+    
+      <category term="随感" scheme="http://www.andyvj.com/tags/%E9%9A%8F%E6%84%9F/"/>
     
   </entry>
   
@@ -348,50 +459,6 @@
     
     
       <category term="随感" scheme="http://www.andyvj.com/tags/%E9%9A%8F%E6%84%9F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>要保持健康的生活状态</title>
-    <link href="http://www.andyvj.com/2016/09/18/190209-02/"/>
-    <id>http://www.andyvj.com/2016/09/18/190209-02/</id>
-    <published>2016-09-18T12:46:11.000Z</published>
-    <updated>2019-02-09T12:53:18.603Z</updated>
-    
-    <content type="html"><![CDATA[<p>希望自己以后能保持健康的生活状态, 希望自己能做到一下几点：<br><a id="more"></a></p><ol><li>有时间跑步，坚持锻炼；<br><br></li><li>走路不玩手机；</li><li>吃饭不玩手机；</li><li>拉屎不玩手机；</li><li>躺在床上不玩手机；</li><li>睡觉前不玩手机；</li><li>起床醒来不玩手机；<br><br></li><li>饿了就要吃饭;</li><li>困了就要睡觉。</li></ol><p>身体是一切的基础和根本，是最宝贵的财富，没有健康的体魄，一切都是空谈。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;希望自己以后能保持健康的生活状态, 希望自己能做到一下几点：&lt;br&gt;
-    
-    </summary>
-    
-      <category term="其他" scheme="http://www.andyvj.com/categories/%E5%85%B6%E4%BB%96/"/>
-    
-    
-      <category term="随想" scheme="http://www.andyvj.com/tags/%E9%9A%8F%E6%83%B3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>要学会管理时间</title>
-    <link href="http://www.andyvj.com/2016/09/18/190209-01/"/>
-    <id>http://www.andyvj.com/2016/09/18/190209-01/</id>
-    <published>2016-09-18T12:30:25.000Z</published>
-    <updated>2019-02-09T12:54:29.003Z</updated>
-    
-    <content type="html"><![CDATA[<p> 一直以来自己对时间的管理是没有概念的，从来没有想过时间该怎么分配的问题，这个导致很多时候做事没有高的效率。有时候因为被一个牛角尖的问题所吸引不能自拔，而浪费了大把的时间。<a id="more"></a>虽然有时能解决一些问题获得满足感，然而这本是可有可无的；能解决固然是好，不能解决却也无妨，只是心里不爽而已，这样花的时间价值并不是很高，好时间应该用在刀刃上面，花在最核心的部分。这样才能有效率，有收获。<strong>时间成本可能是最昂贵的成本。</strong></p><p>以前看过一些文章是说，最重要的事情和最紧急的事情我们该怎样去安排。其结论大概是。<strong>永远先做最重要的事情，尽量不要把事情拖成紧急事件。</strong> 从回报，满足感等等各个方面去判定什么是重要的事情，什么是紧急的事情。以后还是要分清下什么是重要的事情，什么是紧急的事情。永远先做最重要的事情，<font color="blue">一些不重要也不紧急的事情留在零碎的时间去做</font>。要学会慢慢的管理好自己的时间。 </p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt; 一直以来自己对时间的管理是没有概念的，从来没有想过时间该怎么分配的问题，这个导致很多时候做事没有高的效率。有时候因为被一个牛角尖的问题所吸引不能自拔，而浪费了大把的时间。
-    
-    </summary>
-    
-      <category term="其他" scheme="http://www.andyvj.com/categories/%E5%85%B6%E4%BB%96/"/>
-    
-    
-      <category term="随想" scheme="http://www.andyvj.com/tags/%E9%9A%8F%E6%83%B3/"/>
     
   </entry>
   
