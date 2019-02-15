@@ -223,7 +223,7 @@
   <entry>
     <title><![CDATA[数组指针移动注意]]></title>
     <url>%2F2016%2F09%2F22%2F190211-02%2F</url>
-    <content type="text"><![CDATA[代码：123456789101112#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;int main(void)&#123; int a[5] = &#123;1, 2, 3, 4, 5&#125;; int *ptr = (int *)(&amp;a + 1); printf(&quot;%d %d\n&quot;, *(a + 1), *(ptr - 1)); system (&quot;pause&quot;); return 0;&#125; 输出：122 5请按任意键继续. . . 从输出 2 可见a是和a[0]是一样的； &amp;a + 1移动的是一个整个数组的长度，(int *)(&amp;a + 1)强制类型转换为 int 型，*(ptr - 1))再往后移动一个 int，所以输出的是 5。]]></content>
+    <content type="text"><![CDATA[代码：123456789101112#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;int main(void)&#123; int a[5] = &#123;1, 2, 3, 4, 5&#125;; int *ptr = (int *)(&amp;a + 1); printf("%d %d\n", *(a + 1), *(ptr - 1)); system ("pause"); return 0;&#125; 输出：122 5请按任意键继续. . . 从输出 2 可见a是和a[0]是一样的； &amp;a + 1移动的是一个整个数组的长度，(int *)(&amp;a + 1)强制类型转换为 int 型，*(ptr - 1))再往后移动一个 int，所以输出的是 5。]]></content>
       <categories>
         <category>编程爱好</category>
       </categories>
