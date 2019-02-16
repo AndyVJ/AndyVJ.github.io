@@ -238,6 +238,50 @@
   </entry>
   
   <entry>
+    <title>UG-NX 标注时候如何任意摆放尺寸</title>
+    <link href="http://www.andyvj.com/2017/05/18/190216-02/"/>
+    <id>http://www.andyvj.com/2017/05/18/190216-02/</id>
+    <published>2017-05-18T05:25:48.000Z</published>
+    <updated>2019-02-16T05:29:06.752Z</updated>
+    
+    <content type="html"><![CDATA[<p>标注尺寸的时候按住 <code>Alt 键</code>就可以任意的摆放尺寸了，抑制住原本的捕捉。</p><a id="more"></a><p><img src="https://ws2.sinaimg.cn/large/006mcMYXgy1g087a1s2ndj305907e745.jpg" alt="image"></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;标注尺寸的时候按住 &lt;code&gt;Alt 键&lt;/code&gt;就可以任意的摆放尺寸了，抑制住原本的捕捉。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="机械结构" scheme="http://www.andyvj.com/categories/%E6%9C%BA%E6%A2%B0%E7%BB%93%E6%9E%84/"/>
+    
+    
+      <category term="UG_NX" scheme="http://www.andyvj.com/tags/UG-NX/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>UG-NX 标注假尺寸</title>
+    <link href="http://www.andyvj.com/2017/05/17/190216-01/"/>
+    <id>http://www.andyvj.com/2017/05/17/190216-01/</id>
+    <published>2017-05-17T05:17:05.000Z</published>
+    <updated>2019-02-16T05:25:34.511Z</updated>
+    
+    <content type="html"><![CDATA[<p><code>尺寸设置 -&gt; 文本 -&gt; 格式 -&gt; 替代尺寸文本</code>，然后输入你想更改的尺寸值也可以输入文本，汉字也是可以的。</p><a id="more"></a><p>将<code>Φ</code>改成螺纹标注的<code>M</code>也可以用这样的方法。</p><p><img src="https://ws1.sinaimg.cn/large/006mcMYXgy1g0871brmqqj30gb0d4wf3.jpg" alt="image"></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;code&gt;尺寸设置 -&amp;gt; 文本 -&amp;gt; 格式 -&amp;gt; 替代尺寸文本&lt;/code&gt;，然后输入你想更改的尺寸值也可以输入文本，汉字也是可以的。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="机械结构" scheme="http://www.andyvj.com/categories/%E6%9C%BA%E6%A2%B0%E7%BB%93%E6%9E%84/"/>
+    
+    
+      <category term="UG_NX" scheme="http://www.andyvj.com/tags/UG-NX/"/>
+    
+  </entry>
+  
+  <entry>
     <title>陪自己度过漫长的岁月</title>
     <link href="http://www.andyvj.com/2017/05/16/190215-01/"/>
     <id>http://www.andyvj.com/2017/05/16/190215-01/</id>
@@ -411,53 +455,6 @@
     
     
       <category term="C/C++" scheme="http://www.andyvj.com/tags/C-C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>春节日记</title>
-    <link href="http://www.andyvj.com/2017/02/01/190209-05/"/>
-    <id>http://www.andyvj.com/2017/02/01/190209-05/</id>
-    <published>2017-02-01T13:13:07.000Z</published>
-    <updated>2019-02-15T14:07:07.940Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="一"><a href="#一" class="headerlink" title="一"></a>一</h2><p>回家也有好几天了，基本上过着“衣食无忧”的生活——不用早起，不用做饭，不用洗碗，啥都不用——只管吃。过年时节是一年到头来最享受的日子（手动龇牙。</p><p><img src="https://wx4.sinaimg.cn/mw690/006mcMYXgy1g00hmkezprj30hs0dc76w.jpg" alt=""></p><font color="gray"><center><small>▲ 故乡的田野</small></center></font><p>记忆中过年的氛围也在慢慢的变化着，小时候过年就意味着有鸡鸭鱼肉吃、有糖吃、有新衣服穿、有炮仗玩、还有期待的下雪天。然而，现在呢？对于物质上的期待可以说是没有，连「下雪」、「寒冷」都难得了，话说去年是全球有记录以来最暖和的一年。小时候的小伙伴们，女孩嫁人了，男孩结婚了，有的开着小车村头村尾穿行着，也挺人模人样的，想想以前和谁一起打玻璃弹珠、掏鸟窝的情景还历历在目呢。我知道，每个人都有自己的人生，我们再也回不去的是曾经的年少。</p><p>我想大家都一样，每到过年都会被亲戚长辈们旁敲侧击道，「今年赚了多少钱啊？」「在外能拿多少工资啊？」「找女朋友了没有啊？」「要不要在城里买房啊？」「什么时候买车啊？」。面对这些问题我总是无言以对，打个哈哈过去罢了;其实面对这些我们也可以当做一种鞭策和激励吧，“革命尚未成功，同志仍须努力”。</p><p><img src="https://wx3.sinaimg.cn/mw690/006mcMYXgy1g00i0lrvwhj30zk0qnwf0.jpg" alt=""></p><font color="gray"><center><small>▲ 故乡落日下的黄昏</small></center></font><p>太阳落山后的冬季还是有一丝凉意。</p><p>家乡的夜是真的黑夜，家乡的夜是真的静夜，家乡的启明星分外的明亮。我感受这身边的夜，感受这身边的一切，这个世界原本是美好的？</p><p><em><small>2017/01/26</small></em></p><h2 id="二"><a href="#二" class="headerlink" title="二"></a>二</h2><p>今天想说一下环境问题。</p><p>大年初一清早姐姐说：“昨晚的嗓子咳了一晚”，因为昨天的霾太重了。为什么霾会这么重呢，还是在乡下！我想大家都知道原因，除夕夜乡下放了一晚的烟花爆竹。我们这儿有三轮集中的几乎同一时间的”轰炸”，第一轮是晚上六点左右的年夜饭时候，第二轮是晚上十二点的时候，第三轮是早上六点开大门的时候。经过三轮“轰炸”后，大年初一早晨的霾悬浮在空中，太阳的光到达地面总有一种吃力的感觉。</p><p>以前也放鞭炮，不过量没有现在这么大，大多数放一下那种一条一条的鞭炮。然而现在不一样了，人们有钱了，鞭炮自然是要越长越好，燃放的时间越久越好，除了放鞭炮还要放冲天的烟花。这样一来污染量就更大了。很多时候的后果都是人类自己一手造成的，意识到问题之后再来亡羊补牢。现在环境的破坏和污染有向农村转移的趋势，绝大部分农村人对环境的保护意识基本为零，所以在本地能看到的杀鸡取卵的事情比比皆是。</p><p><img src="https://wx2.sinaimg.cn/mw690/006mcMYXgy1g00i0m6u7dj30zk0qnaga.jpg" alt=""></p><font color="gray"><center><small>▲ 被挖的山体</small></center></font><p>好些年前这里的人们就开始，把大片大片的青山植被推掉种植西瓜，然后打造一个“西瓜之乡”的噱头。人们确实比以前赚钱了，经济发展了，但也是一部分人，这些都是以牺牲绿化为代价的。还有掏矿，挖机把整个山都挖掉，活生生的挖一个巨坑出来。不远处的沙场也胡乱堆放着乱七八糟的东西，淹没了以前的农田。砖厂背靠着一座山，就地取材，一座山也快没了。对面的一个所谓“矿产冶炼”公司，废水直接排在门前的池塘，小时候我还去摸过田螺，有时候烟筒也冒着烟。这些有没有经过净化处理呢？我从来都不惮以最坏的恶意来揣测他们的。</p><p><img src="https://wx4.sinaimg.cn/mw690/006mcMYXgy1g00i0kxphhj30zk0qnq9q.jpg" alt=""></p><font color="gray"><center><small>▲ 巨坑</small></center></font><p>人们环境意识的淡薄，用网子捕鸟，大鸟小鸟真可谓『一网打尽』;用药水毒鱼，大鱼小鱼真可谓『满门抄斩』。环境一天天破坏，污染一天天的积累，等从量变到质变，总有一天要付出代价。我们知道，农村每家每户都是自己打井的，深度也不过十来米，人们还是饮的地表水。环境好的时候没什么问题，等哪天污染慢慢积累了，地表水也污染了，第一个找上人们的肯定是疾病。</p><p><img src="https://wx3.sinaimg.cn/mw690/006mcMYXgy1g00i0kicetj30zk0qnqc3.jpg" alt=""></p><font color="gray"><center><small>▲ 被挖的山体</small></center></font><p>可以看到，地方政府对农村的环境保护意识的宣传工作基本没有，但也不要引进和接受一些城市淘汰的高污染企业了。人们也要有环境保护意识的自我觉悟，不要等到哪天疾病缠身的时候，为时晚矣。</p><p><small><em>2017/01/29</em></small></p><h2 id="三"><a href="#三" class="headerlink" title="三"></a>三</h2><p>明早就要离开家乡返回深圳了，于我而言春节也算是过完了。今天的气温也变得很低，晚上只有两三度，还飘起了蒙蒙雨，真是有些符合冬天的记忆了。</p><p><img src="https://wx1.sinaimg.cn/mw690/006mcMYXgy1g00i0k6a65j30zk1beqia.jpg" alt=""></p><p>和往常一样，母亲会唠叨着要我带这带那的，我又是一个嫌麻烦的人，总要讨价还价一点(哈哈。一个善良的母亲怎能不让我怜爱牵挂。每次回家看见父母新添的白发，总是愧疚，只求时间善待天下父母，愿他们被岁月温柔以待。</p><p><img src="https://wx4.sinaimg.cn/mw690/006mcMYXgy1g00i0l9zsaj30k00zkmz9.jpg" alt=""></p><p>漆黑的夜什么也看不见，我听见屋外雨滴在薄膜纸上的声音，想了很多事情，过去现在和将来。很多话语写了又删，还是算了吧，放在肚子里比较合适。只愿将来不辜负自己，不辜负家人，不辜负给我期待的每一个人。</p><p><small><em>2017/02/01 晚上</em></small></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;一&quot;&gt;&lt;a href=&quot;#一&quot; class=&quot;headerlink&quot; title=&quot;一&quot;&gt;&lt;/a&gt;一&lt;/h2&gt;&lt;p&gt;回家也有好几天了，基本上过着“衣食无忧”的生活——不用早起，不用做饭，不用洗碗，啥都不用——只管吃。过年时节是一年到头来最享受的日子（手动龇牙。&lt;/
-      
-    
-    </summary>
-    
-      <category term="其他" scheme="http://www.andyvj.com/categories/%E5%85%B6%E4%BB%96/"/>
-    
-    
-      <category term="随感" scheme="http://www.andyvj.com/tags/%E9%9A%8F%E6%84%9F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>启程/回归</title>
-    <link href="http://www.andyvj.com/2017/01/22/190209-04/"/>
-    <id>http://www.andyvj.com/2017/01/22/190209-04/</id>
-    <published>2017-01-22T13:06:45.000Z</published>
-    <updated>2019-02-09T13:08:25.403Z</updated>
-    
-    <content type="html"><![CDATA[<p>今天启程回家，又是一年过年时。今年是这么几年我唯一一次没有迫切想要回家的心理，也许是今年中途回过几次家的原因吧，或是觉得失败，但过年还是要回去的。<br><a id="more"></a></p><p>人们每到过年是不是都要给过去的一年做一个总结，对未来的一年做一些期许呢？但好像每年说的话都一样，对未来的期许好像也没怎么实现，只是把每年说的话重复了一遍，豪情壮志也不见得持续多久时间；既然这样，豪情壮语的话也就算了吧。</p><p>过去的一年对于我来说确实经历了一些，思想上比以前有了一些的改变，不知道该叫“成熟”还是该叫“平庸”；也许什么都不是，只是学会了隐藏。有时候只是感叹，人最难的莫过于是了解自己；最幸福的是错了还有再来一次的机会。我知道，那些曾经的少年也会慢慢变得老去，那些曾经的锐气不是死亡而是凋零；人越长大，却越相信命运；信念的坍塌与重建，死去与重生，你终将承认和接受你曾不愿承认和接受的一切，勇气也变得珍贵。</p><p>我看看窗外的阳光，如阳春三月；常青树也是盎然，这南国的冬天也这么有朝气。是时候收拾行李，整装待发了。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;今天启程回家，又是一年过年时。今年是这么几年我唯一一次没有迫切想要回家的心理，也许是今年中途回过几次家的原因吧，或是觉得失败，但过年还是要回去的。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="其他" scheme="http://www.andyvj.com/categories/%E5%85%B6%E4%BB%96/"/>
-    
-    
-      <category term="随感" scheme="http://www.andyvj.com/tags/%E9%9A%8F%E6%84%9F/"/>
     
   </entry>
   
