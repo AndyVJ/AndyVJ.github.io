@@ -3,11 +3,12 @@
   <entry>
     <title><![CDATA[UG NX 变螺距螺旋线]]></title>
     <url>%2F2019%2F02%2F17%2F190217-01%2F</url>
-    <content type="text"><![CDATA[如图，螺旋线圈数为 5，半径为 50，每一圈的节距分别为，10、20、30、40、50，总长为 150。 Z 向画一根脊线，长度为 150。 使用曲线 -&gt; 螺旋线命令： 效果如下：]]></content>
+    <content type="text"><![CDATA[如图，螺旋线圈数为 5，半径为 50，每一圈的节距分别为，10、20、30、40、50，总长为 150。 Z 向草图画一根脊线，直线长度为 150。 使用曲线 -&gt; 螺旋线命令： 效果如下：]]></content>
       <categories>
         <category>机械结构</category>
       </categories>
       <tags>
+        <tag>UG_NX</tag>
         <tag>造型</tag>
       </tags>
   </entry>

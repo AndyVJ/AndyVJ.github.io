@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.andyvj.com/"/>
-  <updated>2019-02-17T13:44:48.622Z</updated>
+  <updated>2019-02-17T14:09:22.679Z</updated>
   <id>http://www.andyvj.com/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://www.andyvj.com/2019/02/17/190217-01/"/>
     <id>http://www.andyvj.com/2019/02/17/190217-01/</id>
     <published>2019-02-17T13:27:43.000Z</published>
-    <updated>2019-02-17T13:44:48.622Z</updated>
+    <updated>2019-02-17T14:09:22.679Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="https://ws1.sinaimg.cn/large/006mcMYXgy1g09qwyia5qj30ay09ogmp.jpg" alt="image"></p><a id="more"></a><p>如图，螺旋线圈数为 5，半径为 50，每一圈的节距分别为，10、20、30、40、50，总长为 150。</p><ol><li>Z 向画一根<code>脊线</code>，长度为 150。</li></ol><p><img src="https://wx1.sinaimg.cn/large/006mcMYXgy1g09r2ogm2xj30960iy0sr.jpg" alt="image"></p><ol start="2"><li>使用<code>曲线 -&gt; 螺旋线</code>命令：</li></ol><p><img src="https://wx2.sinaimg.cn/large/006mcMYXgy1g09r0dew8pj30gx04dwf0.jpg" alt="image"></p><p><img src="https://wx1.sinaimg.cn/large/006mcMYXgy1g09r6wc57wj30b00mujso.jpg" alt="image"></p><p>效果如下：</p><p><img src="https://ws3.sinaimg.cn/large/006mcMYXgy1g09r7ps3p9j30dq0el3yt.jpg" alt="image"></p>]]></content>
+    <content type="html"><![CDATA[<p><img src="https://ws1.sinaimg.cn/large/006mcMYXgy1g09qwyia5qj30ay09ogmp.jpg" alt="image"></p><a id="more"></a><p>如图，螺旋线圈数为 5，半径为 50，每一圈的节距分别为，10、20、30、40、50，总长为 150。</p><ol><li>Z 向草图画一根<code>脊线</code>，直线长度为 150。</li></ol><p><img src="https://wx1.sinaimg.cn/large/006mcMYXgy1g09r2ogm2xj30960iy0sr.jpg" alt="image"></p><ol start="2"><li>使用<code>曲线 -&gt; 螺旋线</code>命令：</li></ol><p><img src="https://wx2.sinaimg.cn/large/006mcMYXgy1g09r0dew8pj30gx04dwf0.jpg" alt="image"></p><p><img src="https://wx1.sinaimg.cn/large/006mcMYXgy1g09r6wc57wj30b00mujso.jpg" alt="image"></p><p>效果如下：</p><p><img src="https://ws3.sinaimg.cn/large/006mcMYXgy1g09r7ps3p9j30dq0el3yt.jpg" alt="image"></p>]]></content>
     
     <summary type="html">
     
@@ -33,6 +33,8 @@
     
       <category term="机械结构" scheme="http://www.andyvj.com/categories/%E6%9C%BA%E6%A2%B0%E7%BB%93%E6%9E%84/"/>
     
+    
+      <category term="UG_NX" scheme="http://www.andyvj.com/tags/UG-NX/"/>
     
       <category term="造型" scheme="http://www.andyvj.com/tags/%E9%80%A0%E5%9E%8B/"/>
     
