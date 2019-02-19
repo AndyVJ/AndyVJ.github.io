@@ -123,7 +123,7 @@
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/006mcMYXgy1g0c0iw689uj30sz08et9n.jpg">
 <meta property="og:image" content="https://ws3.sinaimg.cn/large/006mcMYXgy1g0bubrsj31j30ae05ajrk.jpg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/006mcMYXgy1g0c0rcctlxj30jg08xabe.jpg">
-<meta property="og:updated_time" content="2019-02-19T14:38:43.489Z">
+<meta property="og:updated_time" content="2019-02-19T14:50:30.174Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo 迁移更换电脑，或多电脑终端更新博客">
 <meta name="twitter:description" content="在已经部署成功过的情况下。">
@@ -408,7 +408,7 @@
                 
               
 
-              <time title="创建时间：2019-02-19 22:25:39 / 修改时间：22:38:43" itemprop="dateCreated datePublished" datetime="2019-02-19T22:25:39+08:00">2019-02-19</time>
+              <time title="创建时间：2019-02-19 22:25:39 / 修改时间：22:50:30" itemprop="dateCreated datePublished" datetime="2019-02-19T22:25:39+08:00">2019-02-19</time>
             
 
             
@@ -498,8 +498,7 @@
 <p><code>仓库-&gt;Settings-&gt;Branches-&gt;Default branch中将默认分支设为xxx，save保存。</code></p>
 <p><img src="https://ws1.sinaimg.cn/large/006mcMYXgy1g0c0rcctlxj30jg08xabe.jpg" alt="image"></p>
 <p><strong>四、clone 至本地</strong></p>
-<p>本地新建一个文件夹用来管理博客，将分支克隆至本地。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone XXXXX.io</span><br></pre></td></tr></table></figure>
+<p>本地新建一个文件夹用来管理博客，将分支克隆至本地。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone XXXXX.io</span><br></pre></td></tr></table></figure></p>
 <p><code>cd</code>进入 clone 下来的<code>username.github.io</code>文件夹，在此文件夹目录下<code>git bash</code>执行<code>git branch</code>命令，应该是新建的分支名 <code>xxx</code>。</p>
 <p><strong>五、新电脑生成<code>ssh key</code>并添加至 gitHub</strong></p>
 <p>将新电脑生成的<code>ssh key</code>添加到<code>gitHub</code>账户上（生成并添加<code>ssh key</code>的方法参考<a href="https://www.andyvj.com/2019/01/31/190131-02/">Hexo+github 博客搭建以及 NexT 主题配置</a>）。 </p>
@@ -517,7 +516,7 @@
 <li><code>.gitignore</code>（限定在提交的时候哪些文件可以忽略）；</li>
 </ol>
 <p>总结：<strong><code>_config.yml</code>，<code>theme/</code>，<code>source/</code>，<code>scaffolds/</code>，<code>package.json</code>，<code>.gitignore</code>，6 个文件需要拷贝。</strong></p>
-<font color="red"><strong>注意：</strong></font><strong>不要<code>hexo init</code>去整体初始化</strong>，因为需要的文件我们已经拷贝过来了。<br><br>其他：<code>.git/</code>，<code>node_modules/</code>，<code>public/</code>，<code>.deploy_git/</code>，<code>db.json</code>文件需要删除。<br><br><em>除了现在的这个方法外，也可以另建一个仓库进行<a href="https://www.andyvj.com/2019/01/31/190131-01/">备份</a>。</em><br><br>利用<code>.gitignore</code>文件忽略备份的文件如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">/.deploy_git/</span><br><span class="line">/blogSource/</span><br><span class="line">/node_modules/</span><br><span class="line">/public/</span><br><span class="line">*.db</span><br><span class="line">*.json</span><br><span class="line">!package.json</span><br><span class="line">!package-lock.json</span><br></pre></td></tr></table></figure><br><br>忽略掉的文件会在部署过程中自己生成。<br><br><strong>九、提交本地至<code>XXX</code>分支</strong><br><br>进入username.github.io文件目录下，依次执行：<br><br>1. <code>git add</code>.<br>2. <code>git commit -m ‘新电脑部署’</code>（引号内容可改）<br>3. <code>git push</code><br><br>这样，<code>master分支</code>用于保存博客静态资源，提供博客页面供人访问；<code>xxx分支</code>用于备份博客部署文件，供自己修改和更新，两者在一个GitHub仓库内互不冲突。<br><br><strong>十、安装 hexo 依赖的包</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure><br><br>所依赖的包都在上一步中的<code>package.json</code>备份文件里，所以直接这一个命令就可以了。<br><br><strong>十一、新旧电脑更新博客</strong><br><br>1. <code>git pull</code>；<br>2. 编辑、撰写文章或其他博客更新改动，就是你要对博客进行的修改，或新增文章；<br>3. <code>git add .</code>；<br>4. <code>git commit -m ‘在新电脑上提交新文章’</code>（引号内容可改）;<br>5. <code>git push</code>指令，保证xxx分支版本为最新版本。<br>6. <code>hexo clean</code>  // 可选；<br>7. <code>hexo g</code>；<br>8. <code>hexo s</code>；<br>9. <code>hexo d</code>。<br><br><br><br><font size="2" color="gray"><br>参考：<br>1. <a href="https://blog.csdn.net/xr469786706/article/details/79837602" target="_blank" rel="noopener">link-01</a>；<br>2. <a href="https://blog.csdn.net/ShmilyCoder/article/details/79916973" target="_blank" rel="noopener">link-02</a>;<br>3. <a href="https://kursaal.vip/2018/03/28/%E5%A4%9A%E5%8F%B0%E7%94%B5%E8%84%91%E6%93%8D%E4%BD%9Chexo%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/#more" target="_blank" rel="noopener">link-03</a>；<br>4. <a href="https://blog.csdn.net/Zhangxiaorui_9/article/details/79723288" target="_blank" rel="noopener">link-04</a>。<br><br></font>
+<font color="red"><strong>注意：</strong></font><strong>不要<code>hexo init</code>去整体初始化</strong>，因为需要的文件我们已经拷贝过来了。<br><br>其他：<code>.git/</code>，<code>node_modules/</code>，<code>public/</code>，<code>.deploy_git/</code>，<code>db.json</code>文件需要删除。<br><br><em>除了现在的这个方法外，也可以另建一个仓库进行<a href="https://www.andyvj.com/2019/01/31/190131-01/">备份</a>。</em><br><br>利用<code>.gitignore</code>文件忽略备份的文件如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">/.deploy_git/</span><br><span class="line">/blogSource/</span><br><span class="line">/node_modules/</span><br><span class="line">/public/</span><br><span class="line">*.db</span><br><span class="line">*.json</span><br><span class="line">!package.json</span><br><span class="line">!package-lock.json</span><br></pre></td></tr></table></figure><br><br>忽略掉的文件会在部署过程中自己生成。<br><br><strong>九、提交本地至<code>XXX</code>分支</strong><br><br>进入username.github.io文件目录下，依次执行：<br>1. <code>git add</code>.<br>2. <code>git commit -m ‘新电脑部署’</code>（引号内容可改）<br>3. <code>git push</code><br>这样，<code>master分支</code>用于保存博客静态资源，提供博客页面供人访问；<code>xxx分支</code>用于备份博客部署文件，供自己修改和更新，两者在一个GitHub仓库内互不冲突。<br><br><strong>十、安装 hexo 依赖的包</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure><br><br>所依赖的包都在上一步中的<code>package.json</code>备份文件里，所以直接这一个命令就可以了。<br><br><strong>十一、新旧电脑更新博客</strong><br><br>1. <code>git pull</code>；<br>2. 编辑、撰写文章或其他博客更新改动，就是你要对博客进行的修改，或新增文章；<br>3. <code>git add .</code>；<br>4. <code>git commit -m ‘在新电脑上提交新文章’</code>（引号内容可改）;<br>5. <code>git push</code>指令，保证xxx分支版本为最新版本。<br>6. <code>hexo clean</code>  // 可选；<br>7. <code>hexo g</code>；<br>8. <code>hexo s</code>；<br>9. <code>hexo d</code>。<br><br>—<br><br><font size="2" color="gray"><br>参考：<br>1. <a href="https://blog.csdn.net/xr469786706/article/details/79837602" target="_blank" rel="noopener">link-01</a>；<br>2. <a href="https://blog.csdn.net/ShmilyCoder/article/details/79916973" target="_blank" rel="noopener">link-02</a>;<br>3. <a href="https://kursaal.vip/2018/03/28/%E5%A4%9A%E5%8F%B0%E7%94%B5%E8%84%91%E6%93%8D%E4%BD%9Chexo%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/#more" target="_blank" rel="noopener">link-03</a>；<br>4. <a href="https://blog.csdn.net/Zhangxiaorui_9/article/details/79723288" target="_blank" rel="noopener">link-04</a>。<br><br></font>
 
       
     </div>
@@ -594,8 +593,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/02/19/190219-02/" rel="next" title="UG NX 移动对象之『动态』技巧">
-                <i class="fa fa-chevron-left"></i> UG NX 移动对象之『动态』技巧
+              <a href="/2019/02/19/190219-01/" rel="next" title="UG NX 坐标对齐移动——解决实体与原始坐标不对齐的问题">
+                <i class="fa fa-chevron-left"></i> UG NX 坐标对齐移动——解决实体与原始坐标不对齐的问题
               </a>
             
           </div>

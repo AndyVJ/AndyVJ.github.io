@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[hexo 迁移更换电脑，或多电脑终端更新博客]]></title>
     <url>%2F2019%2F02%2F19%2F190219-03%2F</url>
-    <content type="text"><![CDATA[在已经部署成功过的情况下。 一、本地 Node.js 和 Git 安装 官网下载安装： 安装 Node.js； 安装 Git。 二、gitHub 新建分支 在XXX.io仓库下： 分支名称任意，例如：hexo。 三、设置分支为默认仓库 仓库-&gt;Settings-&gt;Branches-&gt;Default branch中将默认分支设为xxx，save保存。 四、clone 至本地 本地新建一个文件夹用来管理博客，将分支克隆至本地。 1git clone XXXXX.io cd进入 clone 下来的username.github.io文件夹，在此文件夹目录下git bash执行git branch命令，应该是新建的分支名 xxx。 五、新电脑生成ssh key并添加至 gitHub 将新电脑生成的ssh key添加到gitHub账户上（生成并添加ssh key的方法参考Hexo+github 博客搭建以及 NexT 主题配置）。 六、安装 hexo 1npm install hexo-cli -g 七、将原博客备份文件复制至username.github.io文件夹 _config.yml，theme/，source/，scaffolds/，package.json，.gitignore，6 个文件需要拷贝。 需要备份的文件如下: 站点配置_config.yml； theme文件夹里面的主题； source文件夹； scaffolds文件夹（文章的模板）； package.json（说明使用哪些包）； .gitignore（限定在提交的时候哪些文件可以忽略）； 总结：_config.yml，theme/，source/，scaffolds/，package.json，.gitignore，6 个文件需要拷贝。 注意：不要hexo init去整体初始化，因为需要的文件我们已经拷贝过来了。其他：.git/，node_modules/，public/，.deploy_git/，db.json文件需要删除。除了现在的这个方法外，也可以另建一个仓库进行备份。利用.gitignore文件忽略备份的文件如下：12345678/.deploy_git//blogSource//node_modules//public/*.db*.json!package.json!package-lock.json忽略掉的文件会在部署过程中自己生成。九、提交本地至XXX分支进入username.github.io文件目录下，依次执行：1. git add.2. git commit -m ‘新电脑部署’（引号内容可改）3. git push这样，master分支用于保存博客静态资源，提供博客页面供人访问；xxx分支用于备份博客部署文件，供自己修改和更新，两者在一个GitHub仓库内互不冲突。十、安装 hexo 依赖的包1npm install所依赖的包都在上一步中的package.json备份文件里，所以直接这一个命令就可以了。十一、新旧电脑更新博客1. git pull；2. 编辑、撰写文章或其他博客更新改动，就是你要对博客进行的修改，或新增文章；3. git add .；4. git commit -m ‘在新电脑上提交新文章’（引号内容可改）;5. git push指令，保证xxx分支版本为最新版本。6. hexo clean // 可选；7. hexo g；8. hexo s；9. hexo d。参考：1. link-01；2. link-02;3. link-03；4. link-04。]]></content>
+    <content type="text"><![CDATA[在已经部署成功过的情况下。 一、本地 Node.js 和 Git 安装 官网下载安装： 安装 Node.js； 安装 Git。 二、gitHub 新建分支 在XXX.io仓库下： 分支名称任意，例如：hexo。 三、设置分支为默认仓库 仓库-&gt;Settings-&gt;Branches-&gt;Default branch中将默认分支设为xxx，save保存。 四、clone 至本地 本地新建一个文件夹用来管理博客，将分支克隆至本地。1git clone XXXXX.io cd进入 clone 下来的username.github.io文件夹，在此文件夹目录下git bash执行git branch命令，应该是新建的分支名 xxx。 五、新电脑生成ssh key并添加至 gitHub 将新电脑生成的ssh key添加到gitHub账户上（生成并添加ssh key的方法参考Hexo+github 博客搭建以及 NexT 主题配置）。 六、安装 hexo 1npm install hexo-cli -g 七、将原博客备份文件复制至username.github.io文件夹 _config.yml，theme/，source/，scaffolds/，package.json，.gitignore，6 个文件需要拷贝。 需要备份的文件如下: 站点配置_config.yml； theme文件夹里面的主题； source文件夹； scaffolds文件夹（文章的模板）； package.json（说明使用哪些包）； .gitignore（限定在提交的时候哪些文件可以忽略）； 总结：_config.yml，theme/，source/，scaffolds/，package.json，.gitignore，6 个文件需要拷贝。 注意：不要hexo init去整体初始化，因为需要的文件我们已经拷贝过来了。其他：.git/，node_modules/，public/，.deploy_git/，db.json文件需要删除。除了现在的这个方法外，也可以另建一个仓库进行备份。利用.gitignore文件忽略备份的文件如下：12345678/.deploy_git//blogSource//node_modules//public/*.db*.json!package.json!package-lock.json忽略掉的文件会在部署过程中自己生成。九、提交本地至XXX分支进入username.github.io文件目录下，依次执行：1. git add.2. git commit -m ‘新电脑部署’（引号内容可改）3. git push这样，master分支用于保存博客静态资源，提供博客页面供人访问；xxx分支用于备份博客部署文件，供自己修改和更新，两者在一个GitHub仓库内互不冲突。十、安装 hexo 依赖的包1npm install所依赖的包都在上一步中的package.json备份文件里，所以直接这一个命令就可以了。十一、新旧电脑更新博客1. git pull；2. 编辑、撰写文章或其他博客更新改动，就是你要对博客进行的修改，或新增文章；3. git add .；4. git commit -m ‘在新电脑上提交新文章’（引号内容可改）;5. git push指令，保证xxx分支版本为最新版本。6. hexo clean // 可选；7. hexo g；8. hexo s；9. hexo d。—参考：1. link-01；2. link-02;3. link-03；4. link-04。]]></content>
       <categories>
         <category>其他</category>
       </categories>
@@ -12,9 +12,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[UG NX 移动对象之『动态』技巧]]></title>
-    <url>%2F2019%2F02%2F19%2F190219-02%2F</url>
-    <content type="text"><![CDATA[动态绕某一点旋转，而旋转手柄又不在此点上，如何操作？ Ctrl + T 移动对象，勾选只移动手柄，将手柄点选移动到需要旋转的点。 取消勾选只移动手柄，点选手柄节点，输入旋转角度，确定。]]></content>
+    <title><![CDATA[UG NX 坐标对齐移动——解决实体与原始坐标不对齐的问题]]></title>
+    <url>%2F2019%2F02%2F19%2F190219-01%2F</url>
+    <content type="text"><![CDATA[有时候通过WAVE链接过来的实体会出现实体与原始坐标不对齐的情况，如： 可以用坐标到坐标移动的方式将实体摆正。 新建与实体对齐的坐标系。 Ctrl + T 移动。 这样后，实体就与原始坐标对齐了：]]></content>
       <categories>
         <category>机械结构</category>
       </categories>
@@ -23,9 +23,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[UG NX 坐标对齐移动——解决实体与原始坐标不对齐的问题]]></title>
-    <url>%2F2019%2F02%2F19%2F190219-01%2F</url>
-    <content type="text"><![CDATA[有时候通过WAVE链接过来的实体会出现实体与原始坐标不对齐的情况，如： 可以用坐标到坐标移动的方式将实体摆正。 新建与实体对齐的坐标系。 Ctrl + T 移动。 这样后，实体就与原始坐标对齐了：]]></content>
+    <title><![CDATA[UG NX 移动对象之『动态』技巧]]></title>
+    <url>%2F2019%2F02%2F19%2F190219-02%2F</url>
+    <content type="text"><![CDATA[动态绕某一点旋转，而旋转手柄又不在此点上，如何操作？ Ctrl + T 移动对象，勾选只移动手柄，将手柄点选移动到需要旋转的点。 取消勾选只移动手柄，点选手柄节点，输入旋转角度，确定。]]></content>
       <categories>
         <category>机械结构</category>
       </categories>
