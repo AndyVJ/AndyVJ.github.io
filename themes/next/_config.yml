@@ -121,7 +121,7 @@ menu:
   about: about/about.html || user
   #博客: /tags/blog || tags
   tags: /tags/ || tags
-  categories: /categories || th
+  categories: /categories/ || th
   #categories: /categories.html || th
   archives: /archives/ || archive
   #schedule: /schedule/ || calendar
@@ -134,7 +134,7 @@ menu:
 menu_settings:
   icons: true
   badges: false
-
+  
 # ---------------------------------------------------------------
 # Scheme Settings
 # ---------------------------------------------------------------
@@ -169,7 +169,7 @@ social:
   #YouTube: https://youtube.com/yourname || youtube
   #Instagram: https://instagram.com/yourname || instagram
   #Skype: skype:yourname?call|chat || skype
-  微信: https://wx4.sinaimg.cn/mw690/006mcMYXgy1fznq0v1x5qj30by0by3zb.jpg?raw=true
+  微信: https://wx4.sinaimg.cn/mw690/006mcMYXgy1fznq0v1x5qj30by0by3zb.jpg?raw=true  || weixin
   #公众号: https://wx3.sinaimg.cn/mw690/006mcMYXgy1fzock1q511j30by0bywfa.jpg
 
 social_icons:

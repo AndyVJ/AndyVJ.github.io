@@ -1,5 +1,5 @@
 ﻿/.deploy_git/
-/blogSource/
+/.git/
 /node_modules/
 /public/
 *.db
