@@ -120,7 +120,7 @@ menu:
   home: / || home
   about: about/about.html || user
   #博客: /tags/blog || tags
-  标签: /tags/ || tags
+  tags: /tags/ || tags
   categories: /categories || th
   #categories: /categories.html || th
   archives: /archives/ || archive
