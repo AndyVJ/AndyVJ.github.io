@@ -12,5 +12,5 @@ Disallow: /fonts/
 Disallow: /vendors/
 Disallow: /fancybox/
 
-Sitemap: http://www.andyvj.com/sitemap.xml
-Sitemap: http://www.andyvj.com/baidusitemap.xml
+Sitemap: https://www.andyvj.com/sitemap.xml
+Sitemap: https://www.andyvj.com/baidusitemap.xml
