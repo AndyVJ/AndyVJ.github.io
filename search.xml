@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[hexo NexT 主题菜单栏没有图标 logo 的问题]]></title>
+    <url>%2F2019%2F02%2F20%2F190220-01%2F</url>
+    <content type="text"><![CDATA[如上一篇部署后，直接clone到本地后，只需：1npm install 就可以用了。前提是，安装了node.js、git和hexo。 自己失误的一个地方在之前备份hexo主题的时候少备份了一些文件，导致菜单栏的标志不显示。从这里重新下载，整个文件夹合并，相同文件取消覆盖，这样只添加了缺失的文件。这样操作后问题就解决了。 路径XXX\themes\next\source\lib\下原本应该有如下文件： 而我备份的却有缺失： 将缺失的文件添加进来12git add -f \themes\next\*git push 另一台电脑需要的操作：123git fetch --all git reset --hard origin/yigao // “yigao”替换成自己的分支名字。git pull 如果git fetch -all有错误提示，需先：1git stash next 主题添加 logo 的方法如： menu: home: / || home archives: /archives || archive categories: /categories || th tags: /tags || tags about: /about || user 其中||后面的就是 logo 名字，可以在这里搜索 logo 的名字进行替换更改。 参考：1. link-01；2. link-02；3. link-03；4. link-04。]]></content>
+      <categories>
+        <category>其他</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[hexo 迁移更换电脑，或多电脑终端更新博客]]></title>
     <url>%2F2019%2F02%2F19%2F190219-03%2F</url>
-    <content type="text"><![CDATA[在已经部署成功过的情况下。 一、本地 Node.js 和 Git 安装 官网下载安装： 安装 Node.js； 安装 Git。 二、gitHub 新建分支 在XXX.io仓库下： 分支名称任意，例如：hexo。 三、设置分支为默认仓库 仓库-&gt;Settings-&gt;Branches-&gt;Default branch中将默认分支设为xxx，save保存。 四、clone 至本地 本地新建一个文件夹用来管理博客，将分支克隆至本地。1git clone XXXXX.io cd进入 clone 下来的username.github.io文件夹，在此文件夹目录下git bash执行git branch命令，应该是新建的分支名 xxx。 五、新电脑生成ssh key并添加至 gitHub 将新电脑生成的ssh key添加到gitHub账户上（生成并添加ssh key的方法参考Hexo+github 博客搭建以及 NexT 主题配置）。 六、安装 hexo 1npm install hexo-cli -g 七、将原博客备份文件复制至username.github.io文件夹 _config.yml，theme/，source/，scaffolds/，package.json，.gitignore，6 个文件需要拷贝。 需要备份的文件如下: 站点配置_config.yml； theme文件夹里面的主题； source文件夹； scaffolds文件夹（文章的模板）； package.json（说明使用哪些包）； .gitignore（限定在提交的时候哪些文件可以忽略）； 总结：_config.yml，theme/，source/，scaffolds/，package.json，.gitignore，6 个文件需要拷贝。 注意：不要hexo init去整体初始化，因为需要的文件我们已经拷贝过来了。其他：.git/，node_modules/，public/，.deploy_git/，db.json文件需要删除。除了现在的这个方法外，也可以另建一个仓库进行备份。利用.gitignore文件忽略备份的文件如下：12345678/.deploy_git//blogSource//node_modules//public/*.db*.json!package.json!package-lock.json忽略掉的文件会在部署过程中自己生成。九、提交本地至XXX分支进入username.github.io文件目录下，依次执行：1. git add.2. git commit -m ‘新电脑部署’（引号内容可改）3. git push这样，master分支用于保存博客静态资源，提供博客页面供人访问；xxx分支用于备份博客部署文件，供自己修改和更新，两者在一个GitHub仓库内互不冲突。十、安装 hexo 依赖的包1npm install所依赖的包都在上一步中的package.json备份文件里，所以直接这一个命令就可以了。十一、新旧电脑更新博客1. git pull；2. 编辑、撰写文章或其他博客更新改动，就是你要对博客进行的修改，或新增文章；3. git add .；4. git commit -m ‘在新电脑上提交新文章’（引号内容可改）;5. git push指令，保证xxx分支版本为最新版本。6. hexo clean // 可选；7. hexo g；8. hexo s；9. hexo d。—参考：1. link-01；2. link-02;3. link-03；4. link-04。]]></content>
+    <content type="text"><![CDATA[在已经部署成功过的情况下。 一、本地 Node.js 和 Git 安装 官网下载安装： 安装 Node.js； 安装 Git。 二、gitHub 新建分支 在XXX.io仓库下： 分支名称任意，例如：hexo。 三、设置分支为默认仓库 仓库-&gt;Settings-&gt;Branches-&gt;Default branch中将默认分支设为xxx，save保存。 四、clone 至本地 本地新建一个文件夹用来管理博客，将分支克隆至本地。1git clone XXXXX.io cd进入 clone 下来的username.github.io文件夹，在此文件夹目录下git bash执行git branch命令，应该是新建的分支名 xxx。 五、新电脑生成ssh key并添加至 gitHub 将新电脑生成的ssh key添加到gitHub账户上（生成并添加ssh key的方法参考Hexo+github 博客搭建以及 NexT 主题配置）。 六、安装 hexo 1npm install hexo-cli -g 七、将原博客备份文件复制至username.github.io文件夹 _config.yml，theme/，source/，scaffolds/，package.json，.gitignore，6 个文件需要拷贝。 需要备份的文件如下: 站点配置_config.yml； theme文件夹里面的主题； source文件夹； scaffolds文件夹（文章的模板）； package.json（说明使用哪些包）； .gitignore（限定在提交的时候哪些文件可以忽略）； 总结：_config.yml，theme/，source/，scaffolds/，package.json，.gitignore，6 个文件需要拷贝。 注意：不要hexo init去整体初始化，因为需要的文件我们已经拷贝过来了。其他：.git/，node_modules/，public/，.deploy_git/，db.json文件需要删除。除了现在的这个方法外，也可以另建一个仓库进行备份。利用.gitignore文件忽略备份的文件如下：12345678/.deploy_git/ /blogSource/ /node_modules/ /public/ *.db *.json !package.json !package-lock.json忽略掉的文件会在部署过程中自己生成。九、提交本地至XXX分支进入username.github.io文件目录下，依次执行：1. git add.2. git commit -m ‘新电脑部署’（引号内容可改）3. git push这样，master分支用于保存博客静态资源，提供博客页面供人访问；xxx分支用于备份博客部署文件，供自己修改和更新，两者在一个GitHub仓库内互不冲突。十、安装 hexo 依赖的包1npm install所依赖的包都在上一步中的package.json备份文件里，所以直接这一个命令就可以了。十一、新旧电脑更新博客1. git pull；2. hexo n xxx，编辑、撰写文章或其他博客更新改动，就是你要对博客进行的修改，或新增文章；3. hexo clean // 可选；4. hexo g；5. hexo s；6. hexo d。7. git add .；8. git commit -m ‘在新电脑上提交新文章’（引号内容可改）;9. git push指令，保证xxx分支版本为最新版本。—参考：1. link-01；2. link-02;3. link-03；4. link-04。]]></content>
       <categories>
         <category>其他</category>
       </categories>
