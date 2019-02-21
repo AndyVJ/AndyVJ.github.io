@@ -68,29 +68,6 @@
   </entry>
   
   <entry>
-    <title>UG NX 移动对象之『动态』技巧</title>
-    <link href="http://www.andyvj.com/2019/02/19/190219-02/"/>
-    <id>http://www.andyvj.com/2019/02/19/190219-02/</id>
-    <published>2019-02-18T16:00:00.000Z</published>
-    <updated>2019-02-19T12:07:25.076Z</updated>
-    
-    <content type="html"><![CDATA[<p><code>动态</code>绕某一点旋转，而旋转手柄又不在此点上，如何操作？</p><p><img src="https://wx2.sinaimg.cn/large/006mcMYXgy1g0bo8r3k9jj30iz0g7jt8.jpg" alt="image"><br><a id="more"></a></p><ol><li><code>Ctrl + T</code> 移动对象，勾选<code>只移动手柄</code>，将手柄点选移动到需要旋转的点。</li></ol><p><img src="https://ws3.sinaimg.cn/large/006mcMYXgy1g0bob2m123j30940f4jrx.jpg" alt="image"></p><p><img src="https://ws3.sinaimg.cn/large/006mcMYXgy1g0bocqqa0jj30fn0fa3zz.jpg" alt="image"></p><ol start="2"><li>取消勾选<code>只移动手柄</code>，点选手柄<code>节点</code>，输入旋转角度，确定。</li></ol><p><img src="https://wx2.sinaimg.cn/large/006mcMYXgy1g0boffrgskj30kw0cr0u8.jpg" alt="image"></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;code&gt;动态&lt;/code&gt;绕某一点旋转，而旋转手柄又不在此点上，如何操作？&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://wx2.sinaimg.cn/large/006mcMYXgy1g0bo8r3k9jj30iz0g7jt8.jpg&quot; alt=&quot;image&quot;&gt;&lt;br&gt;
-    
-    </summary>
-    
-      <category term="机械结构" scheme="http://www.andyvj.com/categories/%E6%9C%BA%E6%A2%B0%E7%BB%93%E6%9E%84/"/>
-    
-    
-      <category term="UG_NX" scheme="http://www.andyvj.com/tags/UG-NX/"/>
-    
-  </entry>
-  
-  <entry>
     <title>UG NX 坐标对齐移动——解决实体与原始坐标不对齐的问题</title>
     <link href="http://www.andyvj.com/2019/02/19/190219-01/"/>
     <id>http://www.andyvj.com/2019/02/19/190219-01/</id>
@@ -103,6 +80,29 @@
     
       &lt;p&gt;有时候通过&lt;code&gt;WAVE&lt;/code&gt;链接过来的实体会出现&lt;strong&gt;实体与原始坐标不对齐的情况&lt;/strong&gt;，如：&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://wx1.sinaimg.cn/large/006mcMYXgy1g0bhli2dwsj309i0cxjrf.jpg&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="机械结构" scheme="http://www.andyvj.com/categories/%E6%9C%BA%E6%A2%B0%E7%BB%93%E6%9E%84/"/>
+    
+    
+      <category term="UG_NX" scheme="http://www.andyvj.com/tags/UG-NX/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>UG NX 移动对象之『动态』技巧</title>
+    <link href="http://www.andyvj.com/2019/02/19/190219-02/"/>
+    <id>http://www.andyvj.com/2019/02/19/190219-02/</id>
+    <published>2019-02-18T16:00:00.000Z</published>
+    <updated>2019-02-19T12:07:25.076Z</updated>
+    
+    <content type="html"><![CDATA[<p><code>动态</code>绕某一点旋转，而旋转手柄又不在此点上，如何操作？</p><p><img src="https://wx2.sinaimg.cn/large/006mcMYXgy1g0bo8r3k9jj30iz0g7jt8.jpg" alt="image"><br><a id="more"></a></p><ol><li><code>Ctrl + T</code> 移动对象，勾选<code>只移动手柄</code>，将手柄点选移动到需要旋转的点。</li></ol><p><img src="https://ws3.sinaimg.cn/large/006mcMYXgy1g0bob2m123j30940f4jrx.jpg" alt="image"></p><p><img src="https://ws3.sinaimg.cn/large/006mcMYXgy1g0bocqqa0jj30fn0fa3zz.jpg" alt="image"></p><ol start="2"><li>取消勾选<code>只移动手柄</code>，点选手柄<code>节点</code>，输入旋转角度，确定。</li></ol><p><img src="https://wx2.sinaimg.cn/large/006mcMYXgy1g0boffrgskj30kw0cr0u8.jpg" alt="image"></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;code&gt;动态&lt;/code&gt;绕某一点旋转，而旋转手柄又不在此点上，如何操作？&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://wx2.sinaimg.cn/large/006mcMYXgy1g0bo8r3k9jj30iz0g7jt8.jpg&quot; alt=&quot;image&quot;&gt;&lt;br&gt;
     
     </summary>
     
@@ -359,83 +359,61 @@
   </entry>
   
   <entry>
-    <title>UG-NX 标注时候如何任意摆放尺寸</title>
-    <link href="http://www.andyvj.com/2017/05/18/190216-02/"/>
-    <id>http://www.andyvj.com/2017/05/18/190216-02/</id>
-    <published>2017-05-18T05:25:48.000Z</published>
-    <updated>2019-02-19T12:07:25.071Z</updated>
+    <title>C51 - 静态数码管流水显示</title>
+    <link href="http://www.andyvj.com/2017/06/01/190221-05/"/>
+    <id>http://www.andyvj.com/2017/06/01/190221-05/</id>
+    <published>2017-06-01T06:32:04.000Z</published>
+    <updated>2019-02-21T15:53:06.751Z</updated>
     
-    <content type="html"><![CDATA[<p>标注尺寸的时候按住 <code>Alt 键</code>就可以任意的摆放尺寸了，抑制住原本的捕捉。</p><a id="more"></a><p><img src="https://ws2.sinaimg.cn/large/006mcMYXgy1g087a1s2ndj305907e745.jpg" alt="image"></p>]]></content>
+    <content type="html"><![CDATA[<p><img src="https://wx4.sinaimg.cn/large/006mcMYXgy1g0e1amofeej30j50dbgq5.jpg" alt="image"></p><a id="more"></a><div style="font-size:13px;color:gray;text-align:center">▲ 开发板原理图</div><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;reg52.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">delay10ms</span><span class="params">(<span class="keyword">unsigned</span> <span class="keyword">int</span> n)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//0~15 编码</span></span><br><span class="line"><span class="keyword">unsigned</span> <span class="keyword">char</span> code num[] = &#123;<span class="number">0x3F</span>, <span class="number">0x06</span>, <span class="number">0x5B</span>, <span class="number">0x4F</span>, <span class="number">0x66</span>, <span class="number">0x6D</span>, <span class="number">0x7D</span>, <span class="number">0x07</span>,</span><br><span class="line">                            <span class="number">0x7F</span>, <span class="number">0x6F</span>, <span class="number">0x77</span>, <span class="number">0x7C</span>, <span class="number">0x39</span>, <span class="number">0x5E</span>, <span class="number">0x79</span>, <span class="number">0x71</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">unsigned</span> <span class="keyword">char</span> i;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt;= <span class="number">15</span>; i++) &#123;</span><br><span class="line">            P0 = ~num[i]; <span class="comment">// 共阳极，取反</span></span><br><span class="line">            delay10ms(<span class="number">50</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * 延时 10 ms 子函数</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">delay10ms</span><span class="params">(<span class="keyword">unsigned</span> <span class="keyword">int</span> n)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">unsigned</span> <span class="keyword">char</span> a, b;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (; n &gt; <span class="number">0</span>; n--) &#123;</span><br><span class="line">        <span class="keyword">for</span> (a = <span class="number">38</span>; a &gt; <span class="number">0</span>; a--) &#123;</span><br><span class="line">            <span class="keyword">for</span> (b = <span class="number">130</span>; b &gt; <span class="number">0</span>; b--);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;标注尺寸的时候按住 &lt;code&gt;Alt 键&lt;/code&gt;就可以任意的摆放尺寸了，抑制住原本的捕捉。&lt;/p&gt;
+      &lt;p&gt;&lt;img src=&quot;https://wx4.sinaimg.cn/large/006mcMYXgy1g0e1amofeej30j50dbgq5.jpg&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
     
     </summary>
     
-      <category term="机械结构" scheme="http://www.andyvj.com/categories/%E6%9C%BA%E6%A2%B0%E7%BB%93%E6%9E%84/"/>
+      <category term="电子电气" scheme="http://www.andyvj.com/categories/%E7%94%B5%E5%AD%90%E7%94%B5%E6%B0%94/"/>
     
     
-      <category term="UG_NX" scheme="http://www.andyvj.com/tags/UG-NX/"/>
+      <category term="51_单片机" scheme="http://www.andyvj.com/tags/51-%E5%8D%95%E7%89%87%E6%9C%BA/"/>
     
   </entry>
   
   <entry>
-    <title>UG-NX 标注假尺寸</title>
-    <link href="http://www.andyvj.com/2017/05/17/190216-01/"/>
-    <id>http://www.andyvj.com/2017/05/17/190216-01/</id>
-    <published>2017-05-17T05:17:05.000Z</published>
-    <updated>2019-02-19T12:07:25.070Z</updated>
+    <title>C51 - Hello world</title>
+    <link href="http://www.andyvj.com/2017/05/29/190221-04/"/>
+    <id>http://www.andyvj.com/2017/05/29/190221-04/</id>
+    <published>2017-05-29T05:36:59.000Z</published>
+    <updated>2019-02-21T15:53:06.749Z</updated>
     
-    <content type="html"><![CDATA[<p><code>尺寸设置 -&gt; 文本 -&gt; 格式 -&gt; 替代尺寸文本</code>，然后输入你想更改的尺寸值也可以输入文本，汉字也是可以的。</p><a id="more"></a><p>将<code>Φ</code>改成螺纹标注的<code>M</code>也可以用这样的方法。</p><p><img src="https://ws1.sinaimg.cn/large/006mcMYXgy1g0871brmqqj30gb0d4wf3.jpg" alt="image"></p>]]></content>
+    <content type="html"><![CDATA[<p>C51 单片机，点了个灯，话说所有的单片机学习都是从点灯开始的，就像所有的编程语言都是从 <code>HelloWorld</code> 开始一样。</p><a id="more"></a><p><img src="https://wx4.sinaimg.cn/large/006mcMYXgy1g0dznalk4oj30ub0fkk5o.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 原理图-LED 灯为共阴极，置 1 灯亮</div><h2 id="位操作方式"><a href="#位操作方式" class="headerlink" title="位操作方式"></a>位操作方式</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;reg52.h&gt;</span></span></span><br><span class="line"></span><br><span class="line">sbit led1 = P0^<span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    P0 = <span class="number">0x00</span>;</span><br><span class="line">    led1 = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="总线方式"><a href="#总线方式" class="headerlink" title="总线方式"></a>总线方式</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;reg52.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    P0 = <span class="number">0x01</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;&lt;code&gt;尺寸设置 -&amp;gt; 文本 -&amp;gt; 格式 -&amp;gt; 替代尺寸文本&lt;/code&gt;，然后输入你想更改的尺寸值也可以输入文本，汉字也是可以的。&lt;/p&gt;
+      &lt;p&gt;C51 单片机，点了个灯，话说所有的单片机学习都是从点灯开始的，就像所有的编程语言都是从 &lt;code&gt;HelloWorld&lt;/code&gt; 开始一样。&lt;/p&gt;
     
     </summary>
     
-      <category term="机械结构" scheme="http://www.andyvj.com/categories/%E6%9C%BA%E6%A2%B0%E7%BB%93%E6%9E%84/"/>
+      <category term="电子电气" scheme="http://www.andyvj.com/categories/%E7%94%B5%E5%AD%90%E7%94%B5%E6%B0%94/"/>
     
     
-      <category term="UG_NX" scheme="http://www.andyvj.com/tags/UG-NX/"/>
+      <category term="51_单片机" scheme="http://www.andyvj.com/tags/51-%E5%8D%95%E7%89%87%E6%9C%BA/"/>
     
   </entry>
   
   <entry>
-    <title>陪自己度过漫长的岁月</title>
-    <link href="http://www.andyvj.com/2017/05/16/190215-01/"/>
-    <id>http://www.andyvj.com/2017/05/16/190215-01/</id>
-    <published>2017-05-15T16:00:00.000Z</published>
-    <updated>2019-02-19T12:07:25.067Z</updated>
+    <title>木棉花</title>
+    <link href="http://www.andyvj.com/2017/05/29/190221-03/"/>
+    <id>http://www.andyvj.com/2017/05/29/190221-03/</id>
+    <published>2017-05-29T05:26:33.000Z</published>
+    <updated>2019-02-21T15:53:06.747Z</updated>
     
-    <content type="html"><![CDATA[<p>上周说要多出去走走，活动活动的，今天周日就在外面玩了一天，感觉甚好。以后是该多出去走走，劳逸结合健康生活。今天的活动主要是两个，园山采杨梅和看电影吃烤鱼。<br><a id="more"></a></p><h2 id="园山采杨梅"><a href="#园山采杨梅" class="headerlink" title="园山采杨梅"></a>园山采杨梅</h2><p>园山采杨梅是我在磨坊找的活动，这也是我第一次参加户外活动，目的也非采杨梅，只是运动休闲一下，出出汗也好，还叫上了纯哥一起。</p><h3 id="一"><a href="#一" class="headerlink" title="一"></a>一</h3><p>在横岗公园集合的时候，进去了横岗公园转了一下，这还是我第一次进入这个公园，虽然每次坐地铁都经过这里。公园里面有一个好东西，有一个铁疙瘩——坦克，非常威武霸气。</p><p><img src="https://wx4.sinaimg.cn/large/006mcMYXgy1g062sludn3j30hs0dcgx9.jpg" alt="image"></p><font color="gray"><center><small>▲ T62 坦克</small></center></font><p>这辆坦克是否也曾驰骋沙场，扬起尘土和硝烟？我觉得那是肯定的，估计还有着一代又一代战士们的血和汗，以及建功立业梦想。</p><p><img src="https://ws2.sinaimg.cn/large/006mcMYXgy1g062ttx8mkj30hs0dc140.jpg" alt="image"></p><font color="gray"><center><small>▲ T62 坦克侧视</small></center></font><h3 id="二"><a href="#二" class="headerlink" title="二"></a>二</h3><p>坐了一趟公交来到园山脚下，之后等着我们的是一串漫长的山路。</p><p><img src="https://wx3.sinaimg.cn/large/006mcMYXgy1g062upxp0zj30hs0dcthp.jpg" alt="image"></p><font color="gray"><center><small>▲ 走过 一段开荒的路</small></center></font><p>今天虽然有一些太阳，但在林子里穿行，太阳也照不进来，感觉还好。</p><p><img src="https://wx3.sinaimg.cn/large/006mcMYXgy1g062v5n665j30hs0dcwyp.jpg" alt="image"></p><font color="gray"><center><small>▲ 穿行在密林中</small></center></font><p>园山相传是康熙 23 年，村民为躲避战乱举家迁于园山山林，解放前夕才搬下山去。</p><p><img src="https://ws1.sinaimg.cn/large/006mcMYXgy1g062vkgb1aj30hs0dcdsw.jpg" alt="image"></p><font color="gray"><center><small>▲ 陡峭的山崖</small></center></font><p>现在这里早已没有人居住，但这里留下很多人们曾经的活动。石头砌成的阶梯延绵在密林之中，碎石堆砌的砖墙与护坡现在也只剩下断壁残垣，一片片的山芋，还有古老的杨梅树等等，这些都是前人们活动留下的痕迹，现在的人们踩着先人们旧日的足迹去采摘他们种下的杨梅，有一种“此月曾经照古人”的感觉，甚是奇妙。</p><p><img src="https://ws3.sinaimg.cn/large/006mcMYXgy1g062w4jgjfj30hs0dc7o7.jpg" alt="image"></p><font color="gray"><center><small>▲ 断壁残垣</small></center></font><p>山路蜿蜒又陡峭，衣服湿了又干干了又湿，感觉身体被掏空。长时间没有运动，体力确实有点虚，深感运动的必要性，这是健康的保证。</p><p><img src="https://wx1.sinaimg.cn/large/006mcMYXgy1g062wmsmy4j30hs0dc7nv.jpg" alt="image"></p><font color="gray"><center><small>▲ 朽木</small></center></font><p>有时候总有一种热带雨林的错觉，虽然我从未去过热带雨林。</p><p><img src="https://wx4.sinaimg.cn/large/006mcMYXgy1g062x05kerj30hs0np7ts.jpg" alt="image"></p><font color="gray"><center><small>▲ 野蘑菇</small></center></font><h3 id="三"><a href="#三" class="headerlink" title="三"></a>三</h3><p>经过一个多小时的爬涉，终于到达有杨梅的地方。这些山林里来的人还挺多，都是来摘杨梅的，看看这里的路就知道这里是常有人走过的，园山采杨梅应该是深圳的一个经典户外路线，来的人还真不少。</p><p><img src="https://wx2.sinaimg.cn/large/006mcMYXgy1g062xhjuxrj30hs0dckb6.jpg" alt="image"></p><font color="gray"><center><small>▲ 一片野山芋</small></center></font><p>看着有人摘了一大袋子返程的，向它要两颗尝一尝，真的酸，原来曹操的望梅止渴真的行。</p><p><img src="https://ws1.sinaimg.cn/large/006mcMYXgy1g062xy1t7fj30hs0dcat4.jpg" alt="image"></p><font color="gray"><center><small>▲ 这两位同志真厉害</small></center></font><p>经过一段时间的寻找，小伙伴们找到一个还未被采摘的杨梅树，很多熟红的也有尚未成熟的青杨梅。</p><p><img src="https://ws3.sinaimg.cn/large/006mcMYXgy1g062zxhzvyj30hs0np1kx.jpg" alt="image"></p><font color="gray"><center><small>▲ 杨梅</small></center></font><p>这些有着历史的杨梅树都好高，想要采摘那得必须有些爬树的本领，还要冒一些危险，昨夜的雨也让树干变得湿滑。</p><p><img src="https://wx3.sinaimg.cn/large/006mcMYXgy1g0631dqg7pj30hs0np7wh.jpg" alt="image"></p><font color="gray"><center><small>▲ 正在爬树的小伙伴</small></center></font><p>两个小伙伴都是爬树高手，而我和纯哥两人都是热爱生命的人就看着他们摘，我是爬不上这么高的树，也对杨梅没有那么强烈的欲望，吃吃小鱼仔和蛋糕喝喝水恢复下体力，不过小伙伴们可是要泡杨梅酒的。</p><p><img src="https://wx2.sinaimg.cn/large/006mcMYXgy1g07g5k0814j30hs0np7wh.jpg" alt="image"></p><font color="gray"><center><small>▲ 小伙伴身手了得</small></center></font><p>其中一个小伙伴摘了好几袋，泡杨梅酒我想是够了。</p><p><img src="https://wx3.sinaimg.cn/large/006mcMYXgy1g07g6md46dj30hs0npqpv.jpg" alt="image"></p><font color="gray"><center><small>▲ 我就借别人的拍个照而已</small></center></font><h3 id="四"><a href="#四" class="headerlink" title="四"></a>四</h3><p>我和纯哥准备先下山，中途在古老的石阶上魏然的树荫下吃了些干粮算是中餐了，也顺便等下下山的小伙伴们，和小伙伴汇合后就一起下了山，坐车去了横岗，各自散去。</p><h2 id="电影-《摔跤吧！爸爸》"><a href="#电影-《摔跤吧！爸爸》" class="headerlink" title="电影 | 《摔跤吧！爸爸》"></a>电影 | 《摔跤吧！爸爸》</h2><p>这是我这几年看过的最好的一部电影，在观影中几次感动的湿润了眼眶几乎流下了眼泪。</p><p>演员的演技也好，无可挑剔，实打实的摔跤场面，不像有些中国的小鲜肉，让人一看就知道他在演戏。</p><p>看完电影主要有几点感想：</p><ul><li><p>要做成功一件事情，吃苦、努力、付出、坚持等等这些我们成长过程中被关灌输过无数次的观念确实是必不可少的，只是有多少人真正做到；</p></li><li><p>在我们追求的路上，有贵人的相助和指点真的很重要，他们的爸爸就是他们的贵人，然而我们也得明白这是可遇不可求的；</p></li><li><p>父母或长辈对我们的要求是真的对我们好，不过做父母的需引导而非强制；</p></li><li><p>做正确的事情，让别人嘲笑好了；</p></li><li><p>交友需谨慎；</p></li><li><p>人生需自律；</p></li><li><p>没有人可以永远帮你，最终还得靠你自己。</p></li></ul><h2 id="吃鱼"><a href="#吃鱼" class="headerlink" title="吃鱼"></a>吃鱼</h2><p>和纯哥看完电影后，吃了个烤鱼，之后去公园逛了下，消化消化后各回各家。</p><h2 id="母情节"><a href="#母情节" class="headerlink" title="母情节"></a>母情节</h2><p>今天是母亲节，晚上回来给母亲打了个电话，祝她母亲节快乐，随意的聊了些。</p><p>每次电话，感觉母亲总在担心我在外面过的开不开心。</p><font color="gray"><small><em>2017.05.14</em><small></small></small></font>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;上周说要多出去走走，活动活动的，今天周日就在外面玩了一天，感觉甚好。以后是该多出去走走，劳逸结合健康生活。今天的活动主要是两个，园山采杨梅和看电影吃烤鱼。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="其他" scheme="http://www.andyvj.com/categories/%E5%85%B6%E4%BB%96/"/>
-    
-    
-      <category term="点滴" scheme="http://www.andyvj.com/tags/%E7%82%B9%E6%BB%B4/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>雨后见彩虹</title>
-    <link href="http://www.andyvj.com/2017/05/13/190214-04/"/>
-    <id>http://www.andyvj.com/2017/05/13/190214-04/</id>
-    <published>2017-05-12T16:00:00.000Z</published>
-    <updated>2019-02-19T12:07:25.064Z</updated>
-    
-    <content type="html"><![CDATA[<p>今天看见彩虹了，就在路日下的雨后，非常漂亮。我已然不记得上一次看见彩虹是什么时候，隐约记得小时候的一个夏天在屋后的谷场忽然的暴雨让我们措手不及，雨停了空山新雨后，我们看见了彩虹，父亲、母亲、姐姐还有我。</p><a id="more"></a><p><img src="https://ws3.sinaimg.cn/large/006mcMYXgy1g062fnfr0nj30hs0dc44j.jpg" alt="image"></p><p>彩虹的原理我们早在小学的「自然」课中就已经学过了，阳光照进空气中的水滴，由于不同的波长折射率不一样，阳光通过水滴的折射和反射形成了色散，然后就出现了我们能看见的彩虹。记得小学课本里还有一个实验，向空气里喷水雾就能看见“彩虹”，我每次饭后洗完碗装一碗井水，在会教室的路上，灿烂的阳光下，用嘴喷几口井水，总能看见彩虹。这个方法教给小伙伴们，从而引起一阵潮流。</p><p><img src="https://ws1.sinaimg.cn/large/006mcMYXgy1g062fy7tdoj30hs0dc0yg.jpg" alt="image"></p><p>小学语文课文中好像有一篇毛泽东的词写过有关彩虹的句子，“赤橙黄绿青蓝紫，谁持彩练当空舞”。刚了解了下毛泽东写下这首词的背景，真实感受到了伟人的乐观、豁达与豪放。</p><blockquote><p>《菩萨蛮·大柏地》</p><p>毛泽东   一九三三年夏  </p><p>赤橙黄绿青蓝紫，<br>谁持彩练当空舞？<br>雨后复斜阳，<br>关山阵阵苍。<br>当年鏖战急，<br>弹洞前村壁。<br>装点此关山，<br>今朝更好看。  </p></blockquote><p><img src="https://ws1.sinaimg.cn/large/006mcMYXgy1g062h1gl6lj30hs0dc7ao.jpg" alt="image"></p><p>彩虹总是象征着美好的事物，象征着我们所追求的梦想。很多歌曲中都有彩虹的身影的出现，《阳光总在风雨后》中就这样唱到，“阳光总在风雨后，请相信一定有彩虹，风风雨雨都接受…”，非常的温暖美好又励志。直接以「彩虹」命名的歌曲也不少，周杰伦的《彩虹》，羽泉的《彩虹》，许巍的《彩虹》，伍佰的《彩虹》等等，记得有一段时间我单曲循环着伍佰的《彩虹》很久，这首歌让我感动。</p><p><img src="https://wx3.sinaimg.cn/large/006mcMYXgy1g062hioaxlj30hs0dc43z.jpg" alt="image"></p><p>愿美好的彩虹常常出现，愿美好的愿望都能实现。</p>]]></content>
+    <content type="html"><![CDATA[<p><img src="https://wx2.sinaimg.cn/large/006mcMYXgy1g0dzgixv23j30cj08cjw2.jpg" alt="image"></p><a id="more"></a><p>深圳五月的街头飘絮着漫天的木棉花，弥漫在空气中，像冬天飘落的雪。一大坨木棉撞在我的脸上与我来了一个亲密接触，我又怕吸进鼻孔里去了，赶紧把它抓掉。我先前本不知道这些漫天飞舞的玩意儿叫什么，朋友告诉我这叫木棉花。这让我想起了前段时间走过工业区的天桥，马路边盛开的木棉，鲜红的花蕾挂满整个树枝，相当漂亮好看，很多路过的人们都掏出手机驻足拍照；同事还告诉我说木棉花还可以吃，我也是大吃一惊。没想到先前的漂亮鲜红的木棉花成熟以后真的有棉花一样的絮，真的不愧是“木棉花”的称呼。</p><p>先前的花瓣掉落了，现在成熟的棉絮飘落，季节更迭，一季又一季，真他妈感觉到什么叫做时不待我。</p><p>诗兴大发，忽然想吟诗一首，“弃我去者，昨日之日不可留。 乱我心者，今日之日多烦忧。”。唉，别在这里瞎BB了，早餐没吃我就问你你饿不饿？尼玛现在头都是昏的，赶紧吃饭去。</p>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;今天看见彩虹了，就在路日下的雨后，非常漂亮。我已然不记得上一次看见彩虹是什么时候，隐约记得小时候的一个夏天在屋后的谷场忽然的暴雨让我们措手不及，雨停了空山新雨后，我们看见了彩虹，父亲、母亲、姐姐还有我。&lt;/p&gt;
+      &lt;p&gt;&lt;img src=&quot;https://wx2.sinaimg.cn/large/006mcMYXgy1g0dzgixv23j30cj08cjw2.jpg&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
     
     </summary>
     
@@ -447,17 +425,39 @@
   </entry>
   
   <entry>
-    <title>UG_NX 带边着色线太粗如何设置</title>
-    <link href="http://www.andyvj.com/2017/05/01/190214-03/"/>
-    <id>http://www.andyvj.com/2017/05/01/190214-03/</id>
-    <published>2017-04-30T16:00:00.000Z</published>
-    <updated>2019-02-19T12:07:25.063Z</updated>
+    <title>UG NX 打印线宽设置</title>
+    <link href="http://www.andyvj.com/2017/05/23/190221-02/"/>
+    <id>http://www.andyvj.com/2017/05/23/190221-02/</id>
+    <published>2017-05-23T04:01:16.000Z</published>
+    <updated>2019-02-21T15:53:06.744Z</updated>
     
-    <content type="html"><![CDATA[<p>新安装的 UG 建模时带边显示的线特别粗，需要修改可以这样。</p><a id="more"></a><h2 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h2><p><code>Ctrl + Shif + J</code>或者<code>视图 -&gt; 首选项 -&gt; 可视 -&gt; 边显示设置</code>：</p><p><img src="https://wx1.sinaimg.cn/large/006mcMYXgy1g0622b7w8rj30b30fqwf5.jpg" alt="image"></p><p><img src="https://ws1.sinaimg.cn/large/006mcMYXgy1g0622jr3vmj30a70ho42e.jpg" alt="image"></p><p>把宽度值改成细一点的，如， 0.13mm。</p><h2 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h2><p>选中实体，<code>Ctrl  + V</code>编辑对象显示，直接更改线宽。<strong>这个方法好像更快捷有效。</strong></p><p><img src="https://wx1.sinaimg.cn/large/006mcMYXgy1g06256p49fj30940h3q3c.jpg" alt="image"></p>]]></content>
+    <content type="html"><![CDATA[<p>打印 pdf 和直接打印机打印都适用。设置打印的比例因子。</p><a id="more"></a><p>在保持，视图可见线软件默认为 0.7，隐藏线默认为 0.35，两个值不变的情况下。(<strong>粗细 0.7，细线 0.35</strong>默认的情况下。)</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">width 6        设置为 2   // 控制的是可见线 0.7 宽的打印值</span><br><span class="line">Custom Normal  设置为 2</span><br><span class="line">Custom Thin    设置为 0 </span><br><span class="line">width 4        设置为 0  // 控制的是隐藏线什么的 0.35 的打印宽度值</span><br><span class="line">其他 width    都设置为 0   // 工程图中的可见线设置成 0.7，隐藏线 0.3</span><br></pre></td></tr></table></figure><p><img src="https://ws4.sinaimg.cn/large/006mcMYXgy1g0dxtvnzhyj30940l8dgh.jpg" alt="image"></p><p>新安装的 UG 只需要设置一次，打印一次后会自动记忆，下一次不需要再设置。</p>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;新安装的 UG 建模时带边显示的线特别粗，需要修改可以这样。&lt;/p&gt;
+      &lt;p&gt;打印 pdf 和直接打印机打印都适用。设置打印的比例因子。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="机械结构" scheme="http://www.andyvj.com/categories/%E6%9C%BA%E6%A2%B0%E7%BB%93%E6%9E%84/"/>
+    
+    
+      <category term="UG_NX" scheme="http://www.andyvj.com/tags/UG-NX/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>UG NX 局部剖的画法</title>
+    <link href="http://www.andyvj.com/2017/05/19/190221-01/"/>
+    <id>http://www.andyvj.com/2017/05/19/190221-01/</id>
+    <published>2017-05-19T00:24:36.000Z</published>
+    <updated>2019-02-21T15:53:06.738Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://wx1.sinaimg.cn/large/006mcMYXgy1g0dqpitdz6j309408tmx7.jpg" alt="image"></p><a id="more"></a><h2 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h2><h3 id="①"><a href="#①" class="headerlink" title="①"></a>①</h3><p><strong>选择视图</strong>。选择你要表现剖视的视图，自动进入下一步。</p><h3 id="②"><a href="#②" class="headerlink" title="②"></a>②</h3><p><strong>指出基点</strong>。这个是剖切面经过的点，在局部剖视图的父视图或者其他的视图相同位置法向选取。<br>这步需要注意的地方是，选择完后<strong>需要中键确认</strong>。</p><h3 id="③"><a href="#③" class="headerlink" title="③"></a>③</h3><p>拉伸矢量方向。这个一般默认就可以了。同上一步，也需要中键确定。</p><h3 id="④"><a href="#④" class="headerlink" title="④"></a>④</h3><p>选择曲线。<strong>这个曲线需要在前面的①②③步之前做好</strong>，具体方法如下：</p><ol><li>右键视图「展开」。</li><li><p><code>Ctrl+1</code> 把<code>「曲线」</code>隐藏命令拖到 <code>ribbon</code> 工具栏方便使用；<br> <img src="https://wx4.sinaimg.cn/large/006mcMYXgy1g0dqs1zlqlj30d60epmy7.jpg" alt="image"></p></li><li><p>样条曲线圈出要剖视的区域。</p></li><li>右键<code>「扩大」</code>返回工程图界面。</li></ol><p><strong>在做局剖剖之前就要先做好曲线</strong>，在需要选择曲线的时候才有曲线让你选择。</p><h2 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h2><p>上面应该是一种方法，应该还有另外一种画曲线的方法，在活动草图里面画。<strong>右键视图进图活动草图，然后圈出要局部剖的区域</strong>，再退出活动草图，待选择曲线时选择草图曲线。</p><h2 id="两种方法的区别"><a href="#两种方法的区别" class="headerlink" title="两种方法的区别"></a>两种方法的区别</h2><p>自己并没有验证：</p><p>方法一，当 3D 图更改了以后工程图中的局部剖视图也会随着更改；</p><p>方法二，当 3D 图更改后，由于曲线是在草图中画的，所以它不会随着 3D 图的更改而自动更新。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://wx1.sinaimg.cn/large/006mcMYXgy1g0dqpitdz6j309408tmx7.jpg&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
     
     </summary>
     

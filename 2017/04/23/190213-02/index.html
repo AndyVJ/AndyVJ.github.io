@@ -112,18 +112,28 @@
 
 
 
-  <meta name="description" content="机械中的「最大实体」、「最小实体」、「泰勒原则」、「包容原则」等各种原则确实有点复杂，工作中这方面标注的也并不多，一是即使标注了也没能力去检，二是供应商也不会太理解这些东西。">
+  <meta name="description" content="机械中的「最大实体」、「最小实体」、「泰勒原则」、「包容原则」等各种原则确实有点复杂，工作中这方面标注的也并不多，一是即使标注了也没能力去检，二是供应商也不会太理解这些东西。但随着越来越规范的的要求，形位公差这方面肯定是需要的，如何做的「合理」两字确实挺难，需要不断经验积累、验证和调整。下面是我对这些技术原则的一些理解并做一些记录。">
 <meta name="keywords" content="机械设计">
 <meta property="og:type" content="article">
 <meta property="og:title" content="机械设计的中各种原则的理解：最大实体，最小实体，泰勒原则，包容原则等">
 <meta property="og:url" content="http://www.andyvj.com/2017/04/23/190213-02/index.html">
 <meta property="og:site_name" content="胡搅蛮缠">
-<meta property="og:description" content="机械中的「最大实体」、「最小实体」、「泰勒原则」、「包容原则」等各种原则确实有点复杂，工作中这方面标注的也并不多，一是即使标注了也没能力去检，二是供应商也不会太理解这些东西。">
+<meta property="og:description" content="机械中的「最大实体」、「最小实体」、「泰勒原则」、「包容原则」等各种原则确实有点复杂，工作中这方面标注的也并不多，一是即使标注了也没能力去检，二是供应商也不会太理解这些东西。但随着越来越规范的的要求，形位公差这方面肯定是需要的，如何做的「合理」两字确实挺难，需要不断经验积累、验证和调整。下面是我对这些技术原则的一些理解并做一些记录。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-19T12:07:25.058Z">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20181114111746299.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3VuX2dpdmV1cA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20181114111922496.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3VuX2dpdmV1cA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20181114112804254.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3VuX2dpdmV1cA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20181114112838969.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3VuX2dpdmV1cA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20181114112913728.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3VuX2dpdmV1cA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20181114112935639.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3VuX2dpdmV1cA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20181114113139694.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3VuX2dpdmV1cA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20181114113242901.jpg">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2018111411364972.jpg">
+<meta property="og:updated_time" content="2019-02-21T16:03:27.792Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机械设计的中各种原则的理解：最大实体，最小实体，泰勒原则，包容原则等">
-<meta name="twitter:description" content="机械中的「最大实体」、「最小实体」、「泰勒原则」、「包容原则」等各种原则确实有点复杂，工作中这方面标注的也并不多，一是即使标注了也没能力去检，二是供应商也不会太理解这些东西。">
+<meta name="twitter:description" content="机械中的「最大实体」、「最小实体」、「泰勒原则」、「包容原则」等各种原则确实有点复杂，工作中这方面标注的也并不多，一是即使标注了也没能力去检，二是供应商也不会太理解这些东西。但随着越来越规范的的要求，形位公差这方面肯定是需要的，如何做的「合理」两字确实挺难，需要不断经验积累、验证和调整。下面是我对这些技术原则的一些理解并做一些记录。">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20181114111746299.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3VuX2dpdmV1cA==,size_16,color_FFFFFF,t_70">
 
 
 
@@ -421,7 +431,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-02-19 20:07:25" itemprop="dateModified" datetime="2019-02-19T20:07:25+08:00">2019-02-19</time>
+                <time title="修改时间：2019-02-22 00:03:27" itemprop="dateModified" datetime="2019-02-22T00:03:27+08:00">2019-02-22</time>
               
             
           </span>
@@ -489,8 +499,71 @@
       
 
       
-        <p>机械中的「最大实体」、「最小实体」、「泰勒原则」、「包容原则」等各种原则确实有点复杂，工作中这方面标注的也并不多，一是即使标注了也没能力去检，二是供应商也不会太理解这些东西。<a id="more"></a>但随着越来越规范的的要求，形位公差这方面肯定是需要的，如何做的「合理」两字确实挺难，需要不断经验积累、验证和调整。下面是我对这些技术原则的一些理解并做一些记录。</p>
-<p>原文：<a href="https://blog.csdn.net/un_giveup/article/details/84063992" target="_blank" rel="noopener">传送</a>。</p>
+        <p>机械中的「最大实体」、「最小实体」、「泰勒原则」、「包容原则」等各种原则确实有点复杂，工作中这方面标注的也并不多，一是即使标注了也没能力去检，二是供应商也不会太理解这些东西。但随着越来越规范的的要求，形位公差这方面肯定是需要的，如何做的「合理」两字确实挺难，需要不断经验积累、验证和调整。下面是我对这些技术原则的一些理解并做一些记录。</p>
+<a id="more"></a>
+<h3 id="独立原则"><a href="#独立原则" class="headerlink" title="独立原则"></a>独立原则</h3><p>至于独立原应该是很好理解的，就是图纸给出的形状、位置公差和尺寸公差之间各自独立没有关系，各自控制各自的极限。独立原则是没有符号的，其实我们大部分时候都用的是独立原则。</p>
+<p>例如：<br><img src="https://img-blog.csdnimg.cn/20181114111746299.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3VuX2dpdmV1cA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h3 id="包容原则"><a href="#包容原则" class="headerlink" title="包容原则"></a>包容原则</h3><blockquote>
+<p>在要保证零件配合性质的情况下,要素的尺寸公差和形状公差的关系要按包容原则处理,即实际要素上各点必须位于最大实体边界(具有理想形状的包容面,其尺寸为最大实体尺寸) 以内。如果实际要素处处达到最大实体边界时,不得有任何形状误差,只有在实际耍素偏离最大实体边界后,才允许有形状误差,才能受到给定的形位公差控制。因此,尺寸公差不仅控制要素的实际尺寸,还限制要素的形状误差。</p>
+</blockquote>
+<p>包容原则的符号是圈里加个 E，见下图。</p>
+<p><img src="https://img-blog.csdnimg.cn/20181114111922496.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3VuX2dpdmV1cA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>上图中:</p>
+<p>当销轴的实际尺寸是 Φ10 的时候，直线度误差是 0，当销轴的实际尺寸是 Φ9.9 的时候，直线度可以到 0.1；但即使销轴的实际尺寸在 Φ9.9-Φ9.8 之间直线度的误差也不能超过 0.1。</p>
+<p>这个例子能够简要的说明包容原则。</p>
+<h3 id="泰勒原则"><a href="#泰勒原则" class="headerlink" title="泰勒原则"></a>泰勒原则</h3><blockquote>
+<p>孔或轴的作用尺寸不允许超过最大实体尺寸即对于孔其作用尺寸应不小于最小极限尺寸对于轴,则应不大于最大极限尺寸,在任何位置上的实际尺寸不允许超过最小实体尺寸,即对于孔,其实际尺寸应不大于最大极限尺寸,对于轴,则应不小于最小极限尺寸。<br><br><br>这样规定,最大实体尺寸用以控制作用尺寸,保证了尺寸、配合互换;最小实体尺寸用以控制实际尺寸,保证零件的强度亦即零件的功能互换。</p>
+</blockquote>
+<p>这里面有个「作用尺寸」和「实际尺寸」的概念需要理解，什么意思这里还是自行百度解决吧。</p>
+<p>百科里有个例子，Φ100(H7/h6) 的孔轴配合，当孔轴都做到 Φ100 的时候轴有可能装不进去，因为孔、轴存在形状误差。泰勒原则就是用来解决类似的形状公差和尺寸公差之间的关系的。</p>
+<p><strong>包容原则和泰勒原则是完全一致的，符号都是圈里面加个 E。</strong></p>
+<h3 id="最大实体原则"><a href="#最大实体原则" class="headerlink" title="最大实体原则"></a>最大实体原则</h3><p>最大实体原则好像是用的挺多的，比较常见到，复杂一点的是结合可逆要求一起的情况。最大实体要求的符号是一个圈中间一个 M，可你要求的符号是一个圈加一个 R，下面的插图中会出现。</p>
+<blockquote>
+<p><br><br>最大实体要求是表明形位公差与尺寸公差相互关联，且当被测要素或基准要素偏离最大实体状态时，其形位公差能从尺寸公差中获得补偿的一种公差要求。最大实体要求用于被测要素、基准要素时，其尺寸公差补偿给形位公差，但不能超出最大实体实效边界；可逆要求用于最大实体要求时，尺寸公差和形位公差之间可以相互补偿。</p>
+</blockquote>
+<p>这里有三种情况。</p>
+<h4 id="一、最大实体要求用于被测要素时"><a href="#一、最大实体要求用于被测要素时" class="headerlink" title="一、最大实体要求用于被测要素时"></a>一、最大实体要求用于被测要素时</h4><p>如图：</p>
+<p><img src="https://img-blog.csdnimg.cn/20181114112804254.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3VuX2dpdmV1cA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>其中，直线度 Φ0.1 最大实体要求时，如果图样的直径 Φ20(0/-0.3) 偏离最大实体的时候，他的公差可以补偿给这里的形位公差直线度。例如，当实际尺寸做到下公差 Φ19.7 的时候，直线度可以补偿到 Φ0.1 + Φ0.3 = Φ0.4 的最大值。最大实体要求用于被测要素时， 尺寸公差对形位公差的补偿。</p>
+<p>有一种特殊情况，零形位公差。</p>
+<p>如图：<br><img src="https://img-blog.csdnimg.cn/20181114112838969.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3VuX2dpdmV1cA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>同理，当零件在最大实体状态下，内径 Φ49.92的时候，图样直线度位 Φ0，当偏离最大实体时候对直线度进行补偿；当直径为 Φ50.13 的时候，偏移量 Φ0.13 补偿给直线度 Φ0，这是直线度是 Φ0.13。</p>
+<h4 id="二、最大实体要求用于被测要素和基准要素时"><a href="#二、最大实体要求用于被测要素和基准要素时" class="headerlink" title="二、最大实体要求用于被测要素和基准要素时"></a>二、最大实体要求用于被测要素和基准要素时</h4><p>来看看这种情况下尺寸公差是对形位公差图和补偿的。</p>
+<p><img src="https://img-blog.csdnimg.cn/20181114112913728.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3VuX2dpdmV1cA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20181114112935639.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3VuX2dpdmV1cA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>当基准 A 的加工尺寸至下差 Φ24．95，基准轴线在 Φ0.05 的范围内浮动，当加工轴至最小尺寸 Φ11.95 的时候，此时同轴度的公差补偿到最大：Φ0.04 + Φ0.05 + Φ0.05 = Φ0.14，这应该是好理解的。</p>
+<h4 id="三、可逆要求应用于最大实体要求时"><a href="#三、可逆要求应用于最大实体要求时" class="headerlink" title="三、可逆要求应用于最大实体要求时"></a>三、可逆要求应用于最大实体要求时</h4><p>在这种情况下，尺寸公差和形位公差之间会相互补偿。<br><img src="https://img-blog.csdnimg.cn/20181114113139694.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3VuX2dpdmV1cA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>通过上面的两种情况，我们已经知道了如何补偿。简而言之：</p>
+<ul>
+<li><p>当被测要素实际尺寸为 Φ19.7 的时候直线度可以补偿到 Φ0.4 = Φ0.1 + Φ0.3；</p>
+</li>
+<li><p>当被测要素轴线的直线度为 0 时，零件的加工尺寸可以从其获得补偿至 Φ20.1 = Φ20 + Φ0.1，也就是说加工的最大尺寸可以到 Φ20.1。</p>
+</li>
+</ul>
+<h3 id="最小实体原则"><a href="#最小实体原则" class="headerlink" title="最小实体原则"></a>最小实体原则</h3><p>有了最大实体原则的基础，最小实体原则应该是好理解的，其符号是一个圈中间一个 L。</p>
+<blockquote>
+<p>最小实体要求是当被测要素或基准要素偏离最小实体状态时，形位公差可获得补偿值的一种公差要求。被测要素可以与基准要素同时采用最小实体要求，此时，形位公差可得到来自两方面的补偿值。</p>
+</blockquote>
+<p><img src="https://img-blog.csdnimg.cn/20181114113242901.jpg" alt="在这里插入图片描述"></p>
+<blockquote>
+<p>图a表示孔最小实体要求的应用的轴线对A基准的位置度公差采用最小实体要求。当被测要素处于最小实体状态时，其轴线对A基准的位置度公差为φ0.4 mm，如图b所示。图c给出了表达上述关系的动态公差带图该孔应满足下列要求：<br><br></p>
+<ol>
+<li>实际尺寸为φ8～φ8.25mm  </li>
+<li>实际轮廓不超出关联最小实体实效边界，即其关联体内作用尺寸不大于最小实体实效尺寸DLV=DL+t=8.65mm<br><br><br><br> </li>
+</ol>
+<p>当该孔处于最大实体状态时，其轴线对A基准的位置度误差允许达到最大值，即等于图样给出的位置度公差（φ0.4 mm）与孔的尺寸公差（φ0.25 mm）之和φ0.65 mm。</p>
+</blockquote>
+<p><img src="https://img-blog.csdnimg.cn/2018111411364972.jpg" alt="在这里插入图片描述"></p>
+<blockquote>
+<p>图d表示孔最小实体要求的应用的轴线对A基准的位置度公差采用最小实体要求的零形位公差该孔应满足下列要求：<br><br></p>
+<ol>
+<li><p>实际尺寸不小于φ8 mm</p>
+</li>
+<li><p>实际轮廓不超出关联最小实体边界，即其关联体内作用尺寸不大于最小实体尺寸DL=φ8.65 mm<br><br><br><br> </p>
+</li>
+</ol>
+<p>当该孔处于最小实体状态时，其轴线对A基准的位置度误差应为零，如图e所示。当该孔处于最大实体状态时，其轴线对A基准的位置度误差允许达到最大值，即孔的尺寸公差φ0.65 mm。图f给出了表达上述关系的动态公差带图。</p>
+</blockquote>
+<h3 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h3><p>公差确实是一门很深的学问，首先得理解能看懂，其次是如何运用且运用的合理就需要一定的经验和理论基础了。每一门学问都不简单。</p>
+<hr>
+<p><strong><em>参考：</em></strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">● http://www.iw168.cn/yewuchengjie/jixiezhitujichu/6957/</span><br><span class="line">● 泰勒原则包容原则最大实体原则之间的关系及应用_文广友</span><br><span class="line">● 基于最大实体要求的尺寸和形位公差之间的补偿_李美芳</span><br><span class="line">● http://www.ttcad.com/news/jxzt/8438.html</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -627,8 +700,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -645,7 +727,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">31</span>
+                    <span class="site-state-item-count">36</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -664,7 +746,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">3</span>
+                      
+                    
+                    <span class="site-state-item-count">4</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -695,7 +779,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">9</span>
+                      
+                    
+                    <span class="site-state-item-count">10</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -742,6 +828,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#独立原则"><span class="nav-number">1.</span> <span class="nav-text">独立原则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#包容原则"><span class="nav-number">2.</span> <span class="nav-text">包容原则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#泰勒原则"><span class="nav-number">3.</span> <span class="nav-text">泰勒原则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最大实体原则"><span class="nav-number">4.</span> <span class="nav-text">最大实体原则</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#一、最大实体要求用于被测要素时"><span class="nav-number">4.1.</span> <span class="nav-text">一、最大实体要求用于被测要素时</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二、最大实体要求用于被测要素和基准要素时"><span class="nav-number">4.2.</span> <span class="nav-text">二、最大实体要求用于被测要素和基准要素时</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三、可逆要求应用于最大实体要求时"><span class="nav-number">4.3.</span> <span class="nav-text">三、可逆要求应用于最大实体要求时</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最小实体原则"><span class="nav-number">5.</span> <span class="nav-text">最小实体原则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结语"><span class="nav-number">6.</span> <span class="nav-text">结语</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
