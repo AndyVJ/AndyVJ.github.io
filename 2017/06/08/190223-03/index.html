@@ -120,7 +120,7 @@
 <meta property="og:site_name" content="胡搅蛮缠">
 <meta property="og:description" content="测试代码:12345678910#include &amp;lt;stdio.h&amp;gt;   #define __DEBUG__   #ifdef __DEBUG__    #define DEBUG(format, ...) printf(&quot;文件:&quot;__FILE__ &quot;\n行号:%d\n输出:&quot;format&quot;\n&quot;, __LINE__, ##__VA_ARGS__)      #else    #def">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-23T04:31:05.526Z">
+<meta property="og:updated_time" content="2019-02-23T05:02:51.582Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C 语言可变参数宏(用于调试)">
 <meta name="twitter:description" content="测试代码:12345678910#include &amp;lt;stdio.h&amp;gt;   #define __DEBUG__   #ifdef __DEBUG__    #define DEBUG(format, ...) printf(&quot;文件:&quot;__FILE__ &quot;\n行号:%d\n输出:&quot;format&quot;\n&quot;, __LINE__, ##__VA_ARGS__)      #else    #def">
@@ -421,7 +421,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-02-23 12:31:05" itemprop="dateModified" datetime="2019-02-23T12:31:05+08:00">2019-02-23</time>
+                <time title="修改时间：2019-02-23 13:02:51" itemprop="dateModified" datetime="2019-02-23T13:02:51+08:00">2019-02-23</time>
               
             
           </span>
@@ -490,6 +490,7 @@
 
       
         <p>测试代码:<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;   </span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> __DEBUG__   </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> __DEBUG__    </span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> DEBUG(format, ...) printf(<span class="meta-string">"文件:"</span>__FILE__ <span class="meta-string">"\n行号:%d\n输出:"</span>format<span class="meta-string">"\n"</span>, __LINE__, ##__VA_ARGS__)      </span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span>    </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> DEBUG(format, ...)   </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> **argv)</span> </span></span><br><span class="line"><span class="function"></span>&#123;  </span><br><span class="line">    <span class="keyword">char</span> str[] = <span class="string">"Hello World"</span>; </span><br><span class="line">    <span class="keyword">float</span> a = <span class="number">889.5</span>;  </span><br><span class="line">    DEBUG(<span class="string">"A ha, check me: %s%.2f"</span>, str, a); </span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>运行测试输出结果:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">文件:e:\cdoc\c 语言练习\c 语言练习\c_exercise.c</span><br><span class="line">行号:15</span><br><span class="line">输出:A ha, check me: Hello World889.50</span><br><span class="line">请按任意键继续. . .</span><br></pre></td></tr></table></figure>
@@ -590,8 +591,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/01/30/190130-01/" rel="prev" title="开启个人博客之旅">
-                开启个人博客之旅 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/03/06/190223-04/" rel="prev" title="Creo、UG_NX、 SolidWorks 鼠标中间滚轮方向设置">
+                Creo、UG_NX、 SolidWorks 鼠标中间滚轮方向设置 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -658,7 +659,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">40</span>
+                    <span class="site-state-item-count">41</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -714,7 +715,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">11</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">13</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>

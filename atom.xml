@@ -68,29 +68,6 @@
   </entry>
   
   <entry>
-    <title>UG NX 移动对象之『动态』技巧</title>
-    <link href="http://www.andyvj.com/2019/02/19/190219-02/"/>
-    <id>http://www.andyvj.com/2019/02/19/190219-02/</id>
-    <published>2019-02-18T16:00:00.000Z</published>
-    <updated>2019-02-19T12:07:25.076Z</updated>
-    
-    <content type="html"><![CDATA[<p><code>动态</code>绕某一点旋转，而旋转手柄又不在此点上，如何操作？</p><p><img src="https://wx2.sinaimg.cn/large/006mcMYXgy1g0bo8r3k9jj30iz0g7jt8.jpg" alt="image"><br><a id="more"></a></p><ol><li><code>Ctrl + T</code> 移动对象，勾选<code>只移动手柄</code>，将手柄点选移动到需要旋转的点。</li></ol><p><img src="https://ws3.sinaimg.cn/large/006mcMYXgy1g0bob2m123j30940f4jrx.jpg" alt="image"></p><p><img src="https://ws3.sinaimg.cn/large/006mcMYXgy1g0bocqqa0jj30fn0fa3zz.jpg" alt="image"></p><ol start="2"><li>取消勾选<code>只移动手柄</code>，点选手柄<code>节点</code>，输入旋转角度，确定。</li></ol><p><img src="https://wx2.sinaimg.cn/large/006mcMYXgy1g0boffrgskj30kw0cr0u8.jpg" alt="image"></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;code&gt;动态&lt;/code&gt;绕某一点旋转，而旋转手柄又不在此点上，如何操作？&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://wx2.sinaimg.cn/large/006mcMYXgy1g0bo8r3k9jj30iz0g7jt8.jpg&quot; alt=&quot;image&quot;&gt;&lt;br&gt;
-    
-    </summary>
-    
-      <category term="机械结构" scheme="http://www.andyvj.com/categories/%E6%9C%BA%E6%A2%B0%E7%BB%93%E6%9E%84/"/>
-    
-    
-      <category term="UG_NX" scheme="http://www.andyvj.com/tags/UG-NX/"/>
-    
-  </entry>
-  
-  <entry>
     <title>UG NX 坐标对齐移动——解决实体与原始坐标不对齐的问题</title>
     <link href="http://www.andyvj.com/2019/02/19/190219-01/"/>
     <id>http://www.andyvj.com/2019/02/19/190219-01/</id>
@@ -103,6 +80,29 @@
     
       &lt;p&gt;有时候通过&lt;code&gt;WAVE&lt;/code&gt;链接过来的实体会出现&lt;strong&gt;实体与原始坐标不对齐的情况&lt;/strong&gt;，如：&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://wx1.sinaimg.cn/large/006mcMYXgy1g0bhli2dwsj309i0cxjrf.jpg&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="机械结构" scheme="http://www.andyvj.com/categories/%E6%9C%BA%E6%A2%B0%E7%BB%93%E6%9E%84/"/>
+    
+    
+      <category term="UG_NX" scheme="http://www.andyvj.com/tags/UG-NX/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>UG NX 移动对象之『动态』技巧</title>
+    <link href="http://www.andyvj.com/2019/02/19/190219-02/"/>
+    <id>http://www.andyvj.com/2019/02/19/190219-02/</id>
+    <published>2019-02-18T16:00:00.000Z</published>
+    <updated>2019-02-19T12:07:25.076Z</updated>
+    
+    <content type="html"><![CDATA[<p><code>动态</code>绕某一点旋转，而旋转手柄又不在此点上，如何操作？</p><p><img src="https://wx2.sinaimg.cn/large/006mcMYXgy1g0bo8r3k9jj30iz0g7jt8.jpg" alt="image"><br><a id="more"></a></p><ol><li><code>Ctrl + T</code> 移动对象，勾选<code>只移动手柄</code>，将手柄点选移动到需要旋转的点。</li></ol><p><img src="https://ws3.sinaimg.cn/large/006mcMYXgy1g0bob2m123j30940f4jrx.jpg" alt="image"></p><p><img src="https://ws3.sinaimg.cn/large/006mcMYXgy1g0bocqqa0jj30fn0fa3zz.jpg" alt="image"></p><ol start="2"><li>取消勾选<code>只移动手柄</code>，点选手柄<code>节点</code>，输入旋转角度，确定。</li></ol><p><img src="https://wx2.sinaimg.cn/large/006mcMYXgy1g0boffrgskj30kw0cr0u8.jpg" alt="image"></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;code&gt;动态&lt;/code&gt;绕某一点旋转，而旋转手柄又不在此点上，如何操作？&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://wx2.sinaimg.cn/large/006mcMYXgy1g0bo8r3k9jj30iz0g7jt8.jpg&quot; alt=&quot;image&quot;&gt;&lt;br&gt;
     
     </summary>
     
@@ -359,20 +359,43 @@
   </entry>
   
   <entry>
+    <title>Creo、UG_NX、 SolidWorks 鼠标中间滚轮方向设置</title>
+    <link href="http://www.andyvj.com/2018/03/06/190223-04/"/>
+    <id>http://www.andyvj.com/2018/03/06/190223-04/</id>
+    <published>2018-03-06T04:40:44.000Z</published>
+    <updated>2019-02-23T05:00:19.523Z</updated>
+    
+    <content type="html"><![CDATA[<p>Creo、UG_NX、 SolidWorks 鼠标中键滚轮的前进后退对应的视图的放大和缩小，如何在设置选项中进行设置，将不同软件设置成一致，方便在不同软件切换时避免”神经错乱”。我们知道 AutoCAD 的滚轮前进后退分别对应的是放大和缩小，我们可以设置成与其保持一致。其实，话又说回来一切都是习惯问题。</p><a id="more"></a><h2 id="Creo："><a href="#Creo：" class="headerlink" title="Creo："></a>Creo：</h2><p>在配置选项中进行如下设置：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">use_inverted_mousewheel_zoom 　　　　 yes</span><br></pre></td></tr></table></figure></p><p><img src="https://ws2.sinaimg.cn/large/006mcMYXgy1g0g9r8lzo0j30b309n0uh.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 反转鼠标滚轮</div><h2 id="UG-NX"><a href="#UG-NX" class="headerlink" title="UG_NX:"></a>UG_NX:</h2><p><img src="https://ws3.sinaimg.cn/large/006mcMYXgy1g0g9rmxw7zj30jp0gsgru.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 用户默认设置</div><h2 id="Solidworks"><a href="#Solidworks" class="headerlink" title="Solidworks:"></a>Solidworks:</h2><p><img src="https://wx4.sinaimg.cn/large/006mcMYXgy1g0g9s698roj30j70ehn1h.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 系统选项 -&gt; 视图</div>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Creo、UG_NX、 SolidWorks 鼠标中键滚轮的前进后退对应的视图的放大和缩小，如何在设置选项中进行设置，将不同软件设置成一致，方便在不同软件切换时避免”神经错乱”。我们知道 AutoCAD 的滚轮前进后退分别对应的是放大和缩小，我们可以设置成与其保持一致。其实，话又说回来一切都是习惯问题。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="机械结构" scheme="http://www.andyvj.com/categories/%E6%9C%BA%E6%A2%B0%E7%BB%93%E6%9E%84/"/>
+    
+    
+      <category term="UG_NX" scheme="http://www.andyvj.com/tags/UG-NX/"/>
+    
+      <category term="Creo" scheme="http://www.andyvj.com/tags/Creo/"/>
+    
+      <category term="Solidworks" scheme="http://www.andyvj.com/tags/Solidworks/"/>
+    
+  </entry>
+  
+  <entry>
     <title>C 语言可变参数宏(用于调试)</title>
     <link href="http://www.andyvj.com/2017/06/08/190223-03/"/>
     <id>http://www.andyvj.com/2017/06/08/190223-03/</id>
     <published>2017-06-08T04:11:39.000Z</published>
-    <updated>2019-02-23T04:31:05.526Z</updated>
+    <updated>2019-02-23T05:02:51.582Z</updated>
     
-    <content type="html"><![CDATA[<p>测试代码:<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;   </span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> __DEBUG__   </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> __DEBUG__    </span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> DEBUG(format, ...) printf(<span class="meta-string">"文件:"</span>__FILE__ <span class="meta-string">"\n行号:%d\n输出:"</span>format<span class="meta-string">"\n"</span>, __LINE__, ##__VA_ARGS__)      </span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span>    </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> DEBUG(format, ...)   </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br></pre></td></tr></table></figure></p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> **argv)</span> </span></span><br><span class="line"><span class="function"></span>&#123;  </span><br><span class="line">    <span class="keyword">char</span> str[] = <span class="string">"Hello World"</span>; </span><br><span class="line">    <span class="keyword">float</span> a = <span class="number">889.5</span>;  </span><br><span class="line">    DEBUG(<span class="string">"A ha, check me: %s%.2f"</span>, str, a); </span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>运行测试输出结果:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">文件:e:\cdoc\c 语言练习\c 语言练习\c_exercise.c</span><br><span class="line">行号:15</span><br><span class="line">输出:A ha, check me: Hello World889.50</span><br><span class="line">请按任意键继续. . .</span><br></pre></td></tr></table></figure><p>原始的测试行:<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> DEBUG(format,...) printf(<span class="meta-string">"File: "</span>__FILE__<span class="meta-string">"\nLine: %05d \n"</span>format<span class="meta-string">"\n"</span>, __LINE__, ##__VA_ARGS__)</span></span><br></pre></td></tr></table></figure></p><p><code>%05d</code> 输出占 <code>5</code> 格, 前面不足的, 补零. 如果 <code>%5d</code>, 占 <code>5</code> 格, 不足补空格.</p><p><code>format</code> 参数名, 前后相同就行了,  <code>__VA_ARGS__</code>是可变参数宏, 宏参数对应前面的三个点(省略号), <code>##</code>的意思是，如果可变参数(<code>format</code>, 就是后面的<code>%s</code>)被忽略或为空，将使预处理器（<code>preprocessor</code> ）去除掉它前面的那个逗号。　　　</p><p><code>__LINE__</code>：在源代码中插入当前源代码行号;<br><code>__FILE__</code>：在源文件中插入当前源文件名;</p><p>另外: <code>...</code>只能放最后. 经测试, <code>format</code> 只能放第一个逗号前,且挨着<code>逗号</code>, <code>...</code>和对应的<code>_VA_ARGS_</code>只能放在最后</p><p><strong>也不用管多了, 就按照这个格式来就是了.</strong></p><hr><p><span style="color:gray;font-size:12px"></span></p><p>参考：<br>[1]: <a href="http://blog.csdn.net/hinyunsin/article/details/6546670" target="_blank" rel="noopener">http://blog.csdn.net/hinyunsin/article/details/6546670</a><br>[2]: <a href="http://blog.csdn.net/jinzhilong580231/article/details/8774259" target="_blank" rel="noopener">http://blog.csdn.net/jinzhilong580231/article/details/8774259</a><br>[3]: <a href="http://blog.csdn.net/hinyunsin/article/details/6546670" target="_blank" rel="noopener">http://blog.csdn.net/hinyunsin/article/details/6546670</a><br>[4]: <a href="http://blog.chinaunix.net/uid-22878837-id-2110544.html" target="_blank" rel="noopener">http://blog.chinaunix.net/uid-22878837-id-2110544.html</a>  </p><p></p>]]></content>
+    <content type="html"><![CDATA[<p>测试代码:<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;   </span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> __DEBUG__   </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> __DEBUG__    </span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> DEBUG(format, ...) printf(<span class="meta-string">"文件:"</span>__FILE__ <span class="meta-string">"\n行号:%d\n输出:"</span>format<span class="meta-string">"\n"</span>, __LINE__, ##__VA_ARGS__)      </span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span>    </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> DEBUG(format, ...)   </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br></pre></td></tr></table></figure></p><a id="more"></a><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> **argv)</span> </span></span><br><span class="line"><span class="function"></span>&#123;  </span><br><span class="line">    <span class="keyword">char</span> str[] = <span class="string">"Hello World"</span>; </span><br><span class="line">    <span class="keyword">float</span> a = <span class="number">889.5</span>;  </span><br><span class="line">    DEBUG(<span class="string">"A ha, check me: %s%.2f"</span>, str, a); </span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>运行测试输出结果:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">文件:e:\cdoc\c 语言练习\c 语言练习\c_exercise.c</span><br><span class="line">行号:15</span><br><span class="line">输出:A ha, check me: Hello World889.50</span><br><span class="line">请按任意键继续. . .</span><br></pre></td></tr></table></figure><p>原始的测试行:<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> DEBUG(format,...) printf(<span class="meta-string">"File: "</span>__FILE__<span class="meta-string">"\nLine: %05d \n"</span>format<span class="meta-string">"\n"</span>, __LINE__, ##__VA_ARGS__)</span></span><br></pre></td></tr></table></figure></p><p><code>%05d</code> 输出占 <code>5</code> 格, 前面不足的, 补零. 如果 <code>%5d</code>, 占 <code>5</code> 格, 不足补空格.</p><p><code>format</code> 参数名, 前后相同就行了,  <code>__VA_ARGS__</code>是可变参数宏, 宏参数对应前面的三个点(省略号), <code>##</code>的意思是，如果可变参数(<code>format</code>, 就是后面的<code>%s</code>)被忽略或为空，将使预处理器（<code>preprocessor</code> ）去除掉它前面的那个逗号。　　　</p><p><code>__LINE__</code>：在源代码中插入当前源代码行号;<br><code>__FILE__</code>：在源文件中插入当前源文件名;</p><p>另外: <code>...</code>只能放最后. 经测试, <code>format</code> 只能放第一个逗号前,且挨着<code>逗号</code>, <code>...</code>和对应的<code>_VA_ARGS_</code>只能放在最后</p><p><strong>也不用管多了, 就按照这个格式来就是了.</strong></p><hr><p><span style="color:gray;font-size:12px"></span></p><p>参考：<br>[1]: <a href="http://blog.csdn.net/hinyunsin/article/details/6546670" target="_blank" rel="noopener">http://blog.csdn.net/hinyunsin/article/details/6546670</a><br>[2]: <a href="http://blog.csdn.net/jinzhilong580231/article/details/8774259" target="_blank" rel="noopener">http://blog.csdn.net/jinzhilong580231/article/details/8774259</a><br>[3]: <a href="http://blog.csdn.net/hinyunsin/article/details/6546670" target="_blank" rel="noopener">http://blog.csdn.net/hinyunsin/article/details/6546670</a><br>[4]: <a href="http://blog.chinaunix.net/uid-22878837-id-2110544.html" target="_blank" rel="noopener">http://blog.chinaunix.net/uid-22878837-id-2110544.html</a>  </p><p></p>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;p&gt;测试代码:&lt;br&gt;&lt;figure class=&quot;highlight c&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;sp
-      
+      &lt;p&gt;测试代码:&lt;br&gt;&lt;figure class=&quot;highlight c&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;span class=&quot;meta-keyword&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;meta-string&quot;&gt;&amp;lt;stdio.h&amp;gt;   &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;span class=&quot;meta-keyword&quot;&gt;define&lt;/span&gt; __DEBUG__   &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;span class=&quot;meta-keyword&quot;&gt;ifdef&lt;/span&gt; __DEBUG__    &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;span class=&quot;meta-keyword&quot;&gt;define&lt;/span&gt; DEBUG(format, ...) printf(&lt;span class=&quot;meta-string&quot;&gt;&quot;文件:&quot;&lt;/span&gt;__FILE__ &lt;span class=&quot;meta-string&quot;&gt;&quot;\n行号:%d\n输出:&quot;&lt;/span&gt;format&lt;span class=&quot;meta-string&quot;&gt;&quot;\n&quot;&lt;/span&gt;, __LINE__, ##__VA_ARGS__)      &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;span class=&quot;meta-keyword&quot;&gt;else&lt;/span&gt;    &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;span class=&quot;meta-keyword&quot;&gt;define&lt;/span&gt; DEBUG(format, ...)   &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;span class=&quot;meta-keyword&quot;&gt;endif&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
     
     </summary>
     
@@ -449,28 +472,6 @@
     
     
       <category term="C/C++" scheme="http://www.andyvj.com/tags/C-C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>C51 - 静态数码管流水显示</title>
-    <link href="http://www.andyvj.com/2017/06/01/190221-05/"/>
-    <id>http://www.andyvj.com/2017/06/01/190221-05/</id>
-    <published>2017-06-01T06:32:04.000Z</published>
-    <updated>2019-02-21T15:53:06.751Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="https://wx4.sinaimg.cn/large/006mcMYXgy1g0e1amofeej30j50dbgq5.jpg" alt="image"></p><a id="more"></a><div style="font-size:13px;color:gray;text-align:center">▲ 开发板原理图</div><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;reg52.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">delay10ms</span><span class="params">(<span class="keyword">unsigned</span> <span class="keyword">int</span> n)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//0~15 编码</span></span><br><span class="line"><span class="keyword">unsigned</span> <span class="keyword">char</span> code num[] = &#123;<span class="number">0x3F</span>, <span class="number">0x06</span>, <span class="number">0x5B</span>, <span class="number">0x4F</span>, <span class="number">0x66</span>, <span class="number">0x6D</span>, <span class="number">0x7D</span>, <span class="number">0x07</span>,</span><br><span class="line">                            <span class="number">0x7F</span>, <span class="number">0x6F</span>, <span class="number">0x77</span>, <span class="number">0x7C</span>, <span class="number">0x39</span>, <span class="number">0x5E</span>, <span class="number">0x79</span>, <span class="number">0x71</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">unsigned</span> <span class="keyword">char</span> i;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt;= <span class="number">15</span>; i++) &#123;</span><br><span class="line">            P0 = ~num[i]; <span class="comment">// 共阳极，取反</span></span><br><span class="line">            delay10ms(<span class="number">50</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * 延时 10 ms 子函数</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">delay10ms</span><span class="params">(<span class="keyword">unsigned</span> <span class="keyword">int</span> n)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">unsigned</span> <span class="keyword">char</span> a, b;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (; n &gt; <span class="number">0</span>; n--) &#123;</span><br><span class="line">        <span class="keyword">for</span> (a = <span class="number">38</span>; a &gt; <span class="number">0</span>; a--) &#123;</span><br><span class="line">            <span class="keyword">for</span> (b = <span class="number">130</span>; b &gt; <span class="number">0</span>; b--);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;https://wx4.sinaimg.cn/large/006mcMYXgy1g0e1amofeej30j50dbgq5.jpg&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="电子电气" scheme="http://www.andyvj.com/categories/%E7%94%B5%E5%AD%90%E7%94%B5%E6%B0%94/"/>
-    
-    
-      <category term="51_单片机" scheme="http://www.andyvj.com/tags/51-%E5%8D%95%E7%89%87%E6%9C%BA/"/>
     
   </entry>
   

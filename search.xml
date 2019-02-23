@@ -23,9 +23,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[UG NX 移动对象之『动态』技巧]]></title>
-    <url>%2F2019%2F02%2F19%2F190219-02%2F</url>
-    <content type="text"><![CDATA[动态绕某一点旋转，而旋转手柄又不在此点上，如何操作？ Ctrl + T 移动对象，勾选只移动手柄，将手柄点选移动到需要旋转的点。 取消勾选只移动手柄，点选手柄节点，输入旋转角度，确定。]]></content>
+    <title><![CDATA[UG NX 坐标对齐移动——解决实体与原始坐标不对齐的问题]]></title>
+    <url>%2F2019%2F02%2F19%2F190219-01%2F</url>
+    <content type="text"><![CDATA[有时候通过WAVE链接过来的实体会出现实体与原始坐标不对齐的情况，如： 可以用坐标到坐标移动的方式将实体摆正。 新建与实体对齐的坐标系。 Ctrl + T 移动。 这样后，实体就与原始坐标对齐了：]]></content>
       <categories>
         <category>机械结构</category>
       </categories>
@@ -34,9 +34,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[UG NX 坐标对齐移动——解决实体与原始坐标不对齐的问题]]></title>
-    <url>%2F2019%2F02%2F19%2F190219-01%2F</url>
-    <content type="text"><![CDATA[有时候通过WAVE链接过来的实体会出现实体与原始坐标不对齐的情况，如： 可以用坐标到坐标移动的方式将实体摆正。 新建与实体对齐的坐标系。 Ctrl + T 移动。 这样后，实体就与原始坐标对齐了：]]></content>
+    <title><![CDATA[UG NX 移动对象之『动态』技巧]]></title>
+    <url>%2F2019%2F02%2F19%2F190219-02%2F</url>
+    <content type="text"><![CDATA[动态绕某一点旋转，而旋转手柄又不在此点上，如何操作？ Ctrl + T 移动对象，勾选只移动手柄，将手柄点选移动到需要旋转的点。 取消勾选只移动手柄，点选手柄节点，输入旋转角度，确定。]]></content>
       <categories>
         <category>机械结构</category>
       </categories>
@@ -164,6 +164,19 @@
       </categories>
       <tags>
         <tag>随感</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Creo、UG_NX、 SolidWorks 鼠标中间滚轮方向设置]]></title>
+    <url>%2F2018%2F03%2F06%2F190223-04%2F</url>
+    <content type="text"><![CDATA[Creo、UG_NX、 SolidWorks 鼠标中键滚轮的前进后退对应的视图的放大和缩小，如何在设置选项中进行设置，将不同软件设置成一致，方便在不同软件切换时避免”神经错乱”。我们知道 AutoCAD 的滚轮前进后退分别对应的是放大和缩小，我们可以设置成与其保持一致。其实，话又说回来一切都是习惯问题。 Creo：在配置选项中进行如下设置：1use_inverted_mousewheel_zoom yes ▲ 反转鼠标滚轮 UG_NX: ▲ 用户默认设置 Solidworks: ▲ 系统选项 -&gt; 视图]]></content>
+      <categories>
+        <category>机械结构</category>
+      </categories>
+      <tags>
+        <tag>UG_NX</tag>
+        <tag>Creo</tag>
+        <tag>Solidworks</tag>
       </tags>
   </entry>
   <entry>
