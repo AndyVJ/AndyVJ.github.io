@@ -18,7 +18,7 @@ sitemap:
 baidusitemap:
   path: baidusitemap.xml
 
-url: http://www.andyvj.com
+url: https://www.andyvj.com
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -31,7 +31,7 @@ archive_dir: archives
 category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
-skip_render:
+skip_render: README.md
 
 # Writing
 new_post_name: :title.md # File name of new posts
@@ -84,6 +84,8 @@ theme: next
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type: git
-  
-  repo: git@github.com:AndyVJ/AndyVJ.github.io.git
+  type: git  
+  repo: 
+    github: git@github.com:AndyVJ/AndyVJ.github.io.git
+    coding: https://git.dev.tencent.com/AndyVJ/AndyVJ.coding.me.git 
+  branch: master  
