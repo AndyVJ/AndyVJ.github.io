@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.andyvj.com/"/>
-  <updated>2019-02-20T12:44:00.393Z</updated>
+  <updated>2019-02-24T14:39:34.775Z</updated>
   <id>https://www.andyvj.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>hexo 同时部署 coding 和 github 平台，并国内外域名访问分流</title>
+    <link href="https://www.andyvj.com/2019/02/24/190224-01/"/>
+    <id>https://www.andyvj.com/2019/02/24/190224-01/</id>
+    <published>2019-02-24T13:47:59.000Z</published>
+    <updated>2019-02-24T14:39:34.775Z</updated>
+    
+    <content type="html"><![CDATA[<p>看别人说 github 屏蔽了百度的爬虫，而 coding 平台没有，可以同时部署两个平台，域名国内外分流的方式来解决。我就这样做了，也不知道这样有没有用。</p><a id="more"></a><h2 id="coding-平台注册和静态页面开启"><a href="#coding-平台注册和静态页面开启" class="headerlink" title="coding 平台注册和静态页面开启"></a>coding 平台注册和静态页面开启</h2><p>注册并登录<a href="https://dev.tencent.com/" target="_blank" rel="noopener">腾讯云开发平台</a>。</p><p> <img src="https://ws1.sinaimg.cn/large/006mcMYXgy1g0hv2ve1m3j30ep06odfw.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 1. 新建项目。</div><p><img src="https://ws3.sinaimg.cn/large/006mcMYXgy1g0hv9hqxp9j31fk0g4wfz.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 2. 仓库名必须为xxx.coding.me格式，并开通pages服务。</div><p><img src="https://ws2.sinaimg.cn/large/006mcMYXgy1g0hvbm30g5j304z06it8o.jpg" alt="image"><br><img src="https://wx1.sinaimg.cn/large/006mcMYXgy1g0hvd0h0urj30xo0b73zb.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 3. 添加ssh公钥，方式和github一样，从 C:\Users\Administrator.ssh 下把 id_rsa.pub 中的内容复制粘贴过来。</div><h2 id="修改-hexo-的-config-yml文件"><a href="#修改-hexo-的-config-yml文件" class="headerlink" title="修改 hexo 的_config.yml文件"></a>修改 hexo 的<code>_config.yml</code>文件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git  </span><br><span class="line">  repo: </span><br><span class="line">    github: git@github.com:AndyVJ/AndyVJ.github.io.git</span><br><span class="line">    coding: https://git.dev.tencent.com/AndyVJ/AndyVJ.coding.me.git </span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure><p>这样就可以了。</p><h2 id="域名解释"><a href="#域名解释" class="headerlink" title="域名解释"></a>域名解释</h2><p><img src="https://ws1.sinaimg.cn/large/006mcMYXgy1g0hvmiky6bj317f08ydgt.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 将 github 的解析改为『境外』</div><p><img src="https://wx4.sinaimg.cn/large/006mcMYXgy1g0hvpd25sej318d0hn0ua.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ Pages -&gt; 服务设置</div><p><span style="color:red"><strong>在申请 <code>SSL</code> 证书的时候需要先将域名解释中指向 github 的『CNAME』暂停掉，申请成功后再开启。</strong></span></p><p>将<code>www.andyvj.com</code>设置成为<code>优先</code>，将<code>andyvj.com</code>设置成<code>跳转至优先</code>，这样域名都是跳转显示为<code>www.andyvj.com</code>。<code>andyvj.com</code>的<code>SSL</code>证书没有申请成功，(还没有找到方法和原因)但不影响使用。</p><p>这样就算成功了。但百度 sitemap 抓取好像依然没有什么鸟用，就这样吧，不管了。</p><hr><p><span style="color:gray;font-size:12px"><br>参考：</span></p><ol><li><a href="https://blog.csdn.net/tsvico/article/details/80629452" target="_blank" rel="noopener">link-01</a>  </li><li><a href="https://coding.net/help/faq/pages/coding-pages-faq.html#Hexo" target="_blank" rel="noopener">link-02 官网帮助</a>  </li><li><a href="https://www.cnblogs.com/yulinlewis/p/9595362.html" target="_blank" rel="noopener">link-03</a><br></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;看别人说 github 屏蔽了百度的爬虫，而 coding 平台没有，可以同时部署两个平台，域名国内外分流的方式来解决。我就这样做了，也不知道这样有没有用。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="其他" scheme="https://www.andyvj.com/categories/%E5%85%B6%E4%BB%96/"/>
+    
+    
+      <category term="hexo" scheme="https://www.andyvj.com/tags/hexo/"/>
+    
+  </entry>
   
   <entry>
     <title>hexo NexT 主题菜单栏没有图标 logo 的问题</title>
@@ -68,29 +90,6 @@
   </entry>
   
   <entry>
-    <title>UG NX 坐标对齐移动——解决实体与原始坐标不对齐的问题</title>
-    <link href="https://www.andyvj.com/2019/02/19/190219-01/"/>
-    <id>https://www.andyvj.com/2019/02/19/190219-01/</id>
-    <published>2019-02-18T16:00:00.000Z</published>
-    <updated>2019-02-19T12:07:25.074Z</updated>
-    
-    <content type="html"><![CDATA[<p>有时候通过<code>WAVE</code>链接过来的实体会出现<strong>实体与原始坐标不对齐的情况</strong>，如：</p><p><img src="https://wx1.sinaimg.cn/large/006mcMYXgy1g0bhli2dwsj309i0cxjrf.jpg" alt="image"></p><a id="more"></a><p>可以用<strong>坐标到坐标移动的方式</strong>将实体摆正。</p><ol><li>新建与实体对齐的坐标系。</li></ol><p><img src="https://wx1.sinaimg.cn/large/006mcMYXgy1g0bhod7e4nj30810h5mxt.jpg" alt="image"></p><ol start="2"><li><code>Ctrl + T</code> 移动。</li></ol><p><img src="https://wx3.sinaimg.cn/large/006mcMYXgy1g0bhqawqqmj30ih0i2myi.jpg" alt="image"></p><p>这样后，实体就与原始坐标对齐了：</p><p><img src="https://wx1.sinaimg.cn/large/006mcMYXgy1g0bhrowrlwj30ad0gut8p.jpg" alt="image"></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;有时候通过&lt;code&gt;WAVE&lt;/code&gt;链接过来的实体会出现&lt;strong&gt;实体与原始坐标不对齐的情况&lt;/strong&gt;，如：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://wx1.sinaimg.cn/large/006mcMYXgy1g0bhli2dwsj309i0cxjrf.jpg&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="机械结构" scheme="https://www.andyvj.com/categories/%E6%9C%BA%E6%A2%B0%E7%BB%93%E6%9E%84/"/>
-    
-    
-      <category term="UG_NX" scheme="https://www.andyvj.com/tags/UG-NX/"/>
-    
-  </entry>
-  
-  <entry>
     <title>UG NX 移动对象之『动态』技巧</title>
     <link href="https://www.andyvj.com/2019/02/19/190219-02/"/>
     <id>https://www.andyvj.com/2019/02/19/190219-02/</id>
@@ -103,6 +102,29 @@
     
       &lt;p&gt;&lt;code&gt;动态&lt;/code&gt;绕某一点旋转，而旋转手柄又不在此点上，如何操作？&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://wx2.sinaimg.cn/large/006mcMYXgy1g0bo8r3k9jj30iz0g7jt8.jpg&quot; alt=&quot;image&quot;&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="机械结构" scheme="https://www.andyvj.com/categories/%E6%9C%BA%E6%A2%B0%E7%BB%93%E6%9E%84/"/>
+    
+    
+      <category term="UG_NX" scheme="https://www.andyvj.com/tags/UG-NX/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>UG NX 坐标对齐移动——解决实体与原始坐标不对齐的问题</title>
+    <link href="https://www.andyvj.com/2019/02/19/190219-01/"/>
+    <id>https://www.andyvj.com/2019/02/19/190219-01/</id>
+    <published>2019-02-18T16:00:00.000Z</published>
+    <updated>2019-02-19T12:07:25.074Z</updated>
+    
+    <content type="html"><![CDATA[<p>有时候通过<code>WAVE</code>链接过来的实体会出现<strong>实体与原始坐标不对齐的情况</strong>，如：</p><p><img src="https://wx1.sinaimg.cn/large/006mcMYXgy1g0bhli2dwsj309i0cxjrf.jpg" alt="image"></p><a id="more"></a><p>可以用<strong>坐标到坐标移动的方式</strong>将实体摆正。</p><ol><li>新建与实体对齐的坐标系。</li></ol><p><img src="https://wx1.sinaimg.cn/large/006mcMYXgy1g0bhod7e4nj30810h5mxt.jpg" alt="image"></p><ol start="2"><li><code>Ctrl + T</code> 移动。</li></ol><p><img src="https://wx3.sinaimg.cn/large/006mcMYXgy1g0bhqawqqmj30ih0i2myi.jpg" alt="image"></p><p>这样后，实体就与原始坐标对齐了：</p><p><img src="https://wx1.sinaimg.cn/large/006mcMYXgy1g0bhrowrlwj30ad0gut8p.jpg" alt="image"></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;有时候通过&lt;code&gt;WAVE&lt;/code&gt;链接过来的实体会出现&lt;strong&gt;实体与原始坐标不对齐的情况&lt;/strong&gt;，如：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://wx1.sinaimg.cn/large/006mcMYXgy1g0bhli2dwsj309i0cxjrf.jpg&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
     
     </summary>
     
@@ -447,31 +469,6 @@
     
     
       <category term="51_单片机" scheme="https://www.andyvj.com/tags/51-%E5%8D%95%E7%89%87%E6%9C%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>const 与指针一起使用的几种情况</title>
-    <link href="https://www.andyvj.com/2017/06/03/190222-01/"/>
-    <id>https://www.andyvj.com/2017/06/03/190222-01/</id>
-    <published>2017-06-03T05:23:20.000Z</published>
-    <updated>2019-02-22T12:53:45.262Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="指向常量的指针"><a href="#指向常量的指针" class="headerlink" title="指向常量的指针"></a>指向常量的指针</h2><p>一个指向常量的指针变量。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">char</span>  *pc = <span class="string">"abcd"</span>;   <span class="comment">// 指针指向一个字符型常量</span></span><br></pre></td></tr></table></figure></p><p> 其中，不允许改变<code>pc</code>所指向的常量的值(如<code>pc[3] = &#39;x&#39;</code>这是不允许改变的)。</p><p> <code>pc</code>只是一个普通的指针, 还可以指向其他地址(如: <code>pc = &quot;efgh&quot;</code>)。</p><h2 id="常指针"><a href="#常指针" class="headerlink" title="常指针"></a>常指针</h2><p>指针变量所指的地址是常量, 而地址中所存放的内容是可以改变的。</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> * <span class="keyword">const</span> pc = <span class="string">"abcd"</span></span><br></pre></td></tr></table></figure><p>如 :</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pc[<span class="number">3</span>] = <span class="string">'x'</span>;  <span class="comment">//正确, 可以改变  </span></span><br><span class="line">pc = <span class="string">"efgh"</span>;  <span class="comment">//错误, 不允许改变指针pc的地址</span></span><br></pre></td></tr></table></figure><h2 id="指向常量的常指针"><a href="#指向常量的常指针" class="headerlink" title="指向常量的常指针"></a>指向常量的常指针</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">char</span> * <span class="keyword">const</span> pc = <span class="string">"abcd"</span></span><br></pre></td></tr></table></figure><p>这样的声明后，上面所说的两种改变的情况都不允许, 不能改变指针<code>pc</code>的指向(地址), 也不能改变<code>地址中的值</code>。</p><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p><img src="https://wx1.sinaimg.cn/large/006mcMYXgy1g0f5c7dxyvj30rp0eawzm.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 来自《学堂在线》</div><p><code>const</code>其实是左结合的, <code>int * const</code>其中<code>const</code>是作用在 <code>*</code>上。<code>const int</code>左边没东西, 只能作用在<code>int</code>上了。</p><p>其中<code>常量指针</code>用的比较多, 不能通过<code>*p</code>修改它的值，作为函数的参数传递。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;指向常量的指针&quot;&gt;&lt;a href=&quot;#指向常量的指针&quot; class=&quot;headerlink&quot; title=&quot;指向常量的指针&quot;&gt;&lt;/a&gt;指向常量的指针&lt;/h2&gt;&lt;p&gt;一个指向常量的指针变量。&lt;br&gt;&lt;figure class=&quot;highlight c&quot;&gt;&lt;table
-      
-    
-    </summary>
-    
-      <category term="编程爱好" scheme="https://www.andyvj.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
-    
-    
-      <category term="C/C++" scheme="https://www.andyvj.com/tags/C-C/"/>
     
   </entry>
   

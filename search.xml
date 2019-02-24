@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[hexo 同时部署 coding 和 github 平台，并国内外域名访问分流]]></title>
+    <url>%2F2019%2F02%2F24%2F190224-01%2F</url>
+    <content type="text"><![CDATA[看别人说 github 屏蔽了百度的爬虫，而 coding 平台没有，可以同时部署两个平台，域名国内外分流的方式来解决。我就这样做了，也不知道这样有没有用。 coding 平台注册和静态页面开启注册并登录腾讯云开发平台。 ▲ 1. 新建项目。 ▲ 2. 仓库名必须为xxx.coding.me格式，并开通pages服务。 ▲ 3. 添加ssh公钥，方式和github一样，从 C:\Users\Administrator.ssh 下把 id_rsa.pub 中的内容复制粘贴过来。 修改 hexo 的_config.yml文件123456deploy: type: git repo: github: git@github.com:AndyVJ/AndyVJ.github.io.git coding: https://git.dev.tencent.com/AndyVJ/AndyVJ.coding.me.git branch: master 这样就可以了。 域名解释 ▲ 将 github 的解析改为『境外』 ▲ Pages -&gt; 服务设置 在申请 SSL 证书的时候需要先将域名解释中指向 github 的『CNAME』暂停掉，申请成功后再开启。 将www.andyvj.com设置成为优先，将andyvj.com设置成跳转至优先，这样域名都是跳转显示为www.andyvj.com。andyvj.com的SSL证书没有申请成功，(还没有找到方法和原因)但不影响使用。 这样就算成功了。但百度 sitemap 抓取好像依然没有什么鸟用，就这样吧，不管了。 参考： link-01 link-02 官网帮助 link-03]]></content>
+      <categories>
+        <category>其他</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[hexo NexT 主题菜单栏没有图标 logo 的问题]]></title>
     <url>%2F2019%2F02%2F20%2F190220-01%2F</url>
     <content type="text"><![CDATA[如上一篇部署后，直接clone到本地后，只需：1npm install 就可以用了。前提是，安装了node.js、git和hexo。 自己失误的一个地方在之前备份hexo主题的时候少备份了一些文件，导致菜单栏的标志不显示。从这里重新下载，整个文件夹合并，相同文件取消覆盖，这样只添加了缺失的文件。这样操作后问题就解决了。 路径XXX\themes\next\source\lib\下原本应该有如下文件： 而我备份的却有缺失： 将缺失的文件添加进来12git add -f \themes\next\*git push 另一台电脑需要的操作：123git fetch --all git reset --hard origin/yigao // “yigao”替换成自己的分支名字。git pull 如果git fetch -all有错误提示，需先：1git stash next 主题添加 logo 的方法如： menu: home: / || home archives: /archives || archive categories: /categories || th tags: /tags || tags about: /about || user 其中||后面的就是 logo 名字，可以在这里搜索 logo 的名字进行替换更改。 参考：1. link-01；2. link-02；3. link-03；4. link-04。]]></content>
@@ -23,9 +34,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[UG NX 坐标对齐移动——解决实体与原始坐标不对齐的问题]]></title>
-    <url>%2F2019%2F02%2F19%2F190219-01%2F</url>
-    <content type="text"><![CDATA[有时候通过WAVE链接过来的实体会出现实体与原始坐标不对齐的情况，如： 可以用坐标到坐标移动的方式将实体摆正。 新建与实体对齐的坐标系。 Ctrl + T 移动。 这样后，实体就与原始坐标对齐了：]]></content>
+    <title><![CDATA[UG NX 移动对象之『动态』技巧]]></title>
+    <url>%2F2019%2F02%2F19%2F190219-02%2F</url>
+    <content type="text"><![CDATA[动态绕某一点旋转，而旋转手柄又不在此点上，如何操作？ Ctrl + T 移动对象，勾选只移动手柄，将手柄点选移动到需要旋转的点。 取消勾选只移动手柄，点选手柄节点，输入旋转角度，确定。]]></content>
       <categories>
         <category>机械结构</category>
       </categories>
@@ -34,9 +45,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[UG NX 移动对象之『动态』技巧]]></title>
-    <url>%2F2019%2F02%2F19%2F190219-02%2F</url>
-    <content type="text"><![CDATA[动态绕某一点旋转，而旋转手柄又不在此点上，如何操作？ Ctrl + T 移动对象，勾选只移动手柄，将手柄点选移动到需要旋转的点。 取消勾选只移动手柄，点选手柄节点，输入旋转角度，确定。]]></content>
+    <title><![CDATA[UG NX 坐标对齐移动——解决实体与原始坐标不对齐的问题]]></title>
+    <url>%2F2019%2F02%2F19%2F190219-01%2F</url>
+    <content type="text"><![CDATA[有时候通过WAVE链接过来的实体会出现实体与原始坐标不对齐的情况，如： 可以用坐标到坐标移动的方式将实体摆正。 新建与实体对齐的坐标系。 Ctrl + T 移动。 这样后，实体就与原始坐标对齐了：]]></content>
       <categories>
         <category>机械结构</category>
       </categories>
