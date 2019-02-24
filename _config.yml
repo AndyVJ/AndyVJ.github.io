@@ -18,7 +18,8 @@ sitemap:
 baidusitemap:
   path: baidusitemap.xml
 
-url: https://www.andyvj.com
+#url: https://www.andyvj.com
+url: https://andyvj.coding.me
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
