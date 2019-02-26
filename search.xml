@@ -1,9 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[UG NX 『筋板』]]></title>
+    <url>%2F2019%2F02%2F26%2F190226-03%2F</url>
+    <content type="text"><![CDATA[▲ 『筋板』命令位置 ▲ 需要操作的命令 示例 ▲ 草绘曲线 ▲ 一些命令选项的填写；会自动延伸到体；图示预览是『垂直于剖切平面』的效果 ▲ 『帽形体』选项效果 ▲ 默认为『从截面』 ▲ 『平行于剖切平面』的效果，画“加强筋”一般用这个命令，而不是用“三角筋”的命令来画]]></content>
+      <categories>
+        <category>机械结构</category>
+      </categories>
+      <tags>
+        <tag>UG_NX</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[hexo nexT 主题插入数学公式]]></title>
+    <url>%2F2019%2F02%2F26%2F190226-02%2F</url>
+    <content type="text"><![CDATA[Hexo 默认使用 hexo-renderer-marked 引擎渲染网页，语义冲突的符号还包括_,*, {,}, \\等。 更换渲染器12npm uninstall hexo-renderer-marked --savenpm install hexo-renderer-kramed --save 修改inline.js在博客根目录下，找到node_modules\kramed\lib\rules\inline.js，把第11行的 escape 变量的值做相应的修改：12//escape: /^\\([\\`*&#123;&#125;\[\]()#$+\-.!_&gt;])/,escape: /^\\([`*\[\]()#$+\-.!_&gt;])/, 这一步是在原基础上取消了对\,{,}的转义(escape)。 同时把第20行的em变量也要做相应的修改：12//em: /^\b_((?:__|[\s\S])+?)_\b|^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,em: /^\*((?:\*\*|[\s\S])+?)\*(?!\*)/, 在 Next 主题中开启 MathJax 开关在主题配置文件中修改： 12345math: enable: true per_page: true engine: mathjax 文章发布时打开开关：12345title: hexo nexT 主题插入数学公式mathjax: truedate: 2019-02-26 13:45:18tags: hexocategories: 其他 测试1$$P = \frac{\sum_{i=1}^n (x_i- x)(y_i- y)}{\displaystyle \left[\sum_{i=1}^n (x_i-x)^2\sum_{i=1}^n (y_i-y)^2\right]^{1/2} }$$ 一些问题更改了渲染器，修改了inline.js，确实有效；但有些嵌入的html标签不能够识别，/已经被取消了转义的原因？ 换回原来的渲染器，打开公式开关，也能照样显示公式，html标签也能够识别。新版本的 hexo 博客是对这个问题已经进行了修复？？？不懂。 已经换回原来的渲染器，将开关打开就可以。 测试2$$P = \frac{\sum_{i=1}^n (x_i- x)(y_i- y)}{\displaystyle \left[\sum_{i=1}^n (x_i-x)^2\sum_{i=1}^n (y_i-y)^2\right]^{1/2} }$$ 好吧，够折腾的，就这样用吧。 参考: link-01 link-02 link-03 link-04]]></content>
+      <categories>
+        <category>其他</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[UG NX 『三角形加强筋』]]></title>
+    <url>%2F2019%2F02%2F26%2F190226-01%2F</url>
+    <content type="text"><![CDATA[▲ 『三角形加强筋』的效果 ▲ 命令位置 使用方法 ▲ 注意选面的时候第一次需要按中键，形状好像必须有圆弧 R，角度 A 必须大于 0 ▲ 通过『弧长』来确定加强筋的位置 ▲ 创建成功后的加强筋样式]]></content>
+      <categories>
+        <category>机械结构</category>
+      </categories>
+      <tags>
+        <tag>UG_NX</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[hexo 同时部署 coding 和 github 平台，并国内外域名访问分流]]></title>
     <url>%2F2019%2F02%2F24%2F190224-01%2F</url>
-    <content type="text"><![CDATA[看别人说 github 屏蔽了百度的爬虫，而 coding 平台没有，可以同时部署两个平台，域名国内外分流的方式来解决。我就这样做了，也不知道这样有没有用。 coding 平台注册和静态页面开启注册并登录腾讯云开发平台。 ▲ 1. 新建项目。 ▲ 2. 仓库名必须为xxx.coding.me格式，并开通pages服务。 ▲ 3. 添加ssh公钥，方式和github一样，从 C:\Users\Administrator.ssh 下把 id_rsa.pub 中的内容复制粘贴过来。 修改 hexo 的_config.yml文件123456deploy: type: git repo: github: git@github.com:AndyVJ/AndyVJ.github.io.git coding: https://git.dev.tencent.com/AndyVJ/AndyVJ.coding.me.git branch: master 这样就可以了。 域名解释 ▲ 将 github 的解析改为『境外』 ▲ Pages -&gt; 服务设置 在申请 SSL 证书的时候需要先将域名解释中指向 github 的『CNAME』暂停掉，申请成功后再开启。 将www.andyvj.com设置成为优先，将andyvj.com设置成跳转至优先，这样域名都是跳转显示为www.andyvj.com。andyvj.com的SSL证书没有申请成功，(还没有找到方法和原因)但不影响使用。 这样就算成功了。但百度 sitemap 抓取好像依然没有什么鸟用，就这样吧，不管了。 参考： link-01 link-02 官网帮助 link-03]]></content>
+    <content type="text"><![CDATA[看别人说 github 屏蔽了百度的爬虫，而 coding 平台没有，可以同时部署两个平台，域名国内外分流的方式来解决。我就这样做了，也不知道这样有没有用。 coding 平台注册和静态页面开启注册并登录腾讯云开发平台。 ▲ 1. 新建项目。 ▲ 2. 仓库名必须为xxx.coding.me格式，并开通pages服务。 ▲ 3. 添加ssh公钥，方式和github一样，从 C:\Users\Administrator\.ssh 下把 id_rsa.pub 中的内容复制粘贴过来。 修改 hexo 的_config.yml文件123456deploy: type: git repo: github: git@github.com:AndyVJ/AndyVJ.github.io.git coding: https://git.dev.tencent.com/AndyVJ/AndyVJ.coding.me.git branch: master 这样就可以了。 域名解释 ▲ 将 github 的解析改为『境外』 ▲ Pages -&gt; 服务设置 在申请 SSL 证书的时候需要先将域名解释中指向 github 的『CNAME』暂停掉，申请成功后再开启。 将www.andyvj.com设置成为优先，将andyvj.com设置成跳转至优先，这样域名都是跳转显示为www.andyvj.com。andyvj.com的SSL证书没有申请成功，(还没有找到方法和原因)但不影响使用。 这样就算成功了。 搜索引擎 SEO搜索引擎的 sitemap。 ▲ 360 好像还有用 ▲ 百度 一直在等待；不知道是不是『HTTPS认证』还没通过的原因 参考： link-01 link-02 官网帮助 link-03]]></content>
       <categories>
         <category>其他</category>
       </categories>
@@ -34,9 +67,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[UG NX 移动对象之『动态』技巧]]></title>
-    <url>%2F2019%2F02%2F19%2F190219-02%2F</url>
-    <content type="text"><![CDATA[动态绕某一点旋转，而旋转手柄又不在此点上，如何操作？ Ctrl + T 移动对象，勾选只移动手柄，将手柄点选移动到需要旋转的点。 取消勾选只移动手柄，点选手柄节点，输入旋转角度，确定。]]></content>
+    <title><![CDATA[UG NX 坐标对齐移动——解决实体与原始坐标不对齐的问题]]></title>
+    <url>%2F2019%2F02%2F19%2F190219-01%2F</url>
+    <content type="text"><![CDATA[有时候通过WAVE链接过来的实体会出现实体与原始坐标不对齐的情况，如： 可以用坐标到坐标移动的方式将实体摆正。 新建与实体对齐的坐标系。 Ctrl + T 移动。 这样后，实体就与原始坐标对齐了：]]></content>
       <categories>
         <category>机械结构</category>
       </categories>
@@ -45,9 +78,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[UG NX 坐标对齐移动——解决实体与原始坐标不对齐的问题]]></title>
-    <url>%2F2019%2F02%2F19%2F190219-01%2F</url>
-    <content type="text"><![CDATA[有时候通过WAVE链接过来的实体会出现实体与原始坐标不对齐的情况，如： 可以用坐标到坐标移动的方式将实体摆正。 新建与实体对齐的坐标系。 Ctrl + T 移动。 这样后，实体就与原始坐标对齐了：]]></content>
+    <title><![CDATA[UG NX 移动对象之『动态』技巧]]></title>
+    <url>%2F2019%2F02%2F19%2F190219-02%2F</url>
+    <content type="text"><![CDATA[动态绕某一点旋转，而旋转手柄又不在此点上，如何操作？ Ctrl + T 移动对象，勾选只移动手柄，将手柄点选移动到需要旋转的点。 取消勾选只移动手柄，点选手柄节点，输入旋转角度，确定。]]></content>
       <categories>
         <category>机械结构</category>
       </categories>
