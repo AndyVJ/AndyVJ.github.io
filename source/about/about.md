@@ -5,7 +5,7 @@ comments: false
 ---
 
 Nickname：AndyVJ  
-Email：huche156@foxmail.com  
+Email：andy@andyvj.com
 
 ---
 
