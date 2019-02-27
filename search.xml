@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Latex 关于集合的表示]]></title>
+    <url>%2F2019%2F02%2F27%2F190227-01%2F</url>
+    <content type="text"><![CDATA[一些关于集合的 LaTeX 大括号 -&gt; $\lbrace …\rbrace$ -&gt; $\lbrace ...\rbrace$ a 属于 B -&gt; $a \in A$ -&gt; $a \in A$ “|” -&gt; $\mid$ -&gt; $\mid$ 不属于 -&gt; $a \not\in B$ -&gt; $a \not\in B$ A 包含于 B -&gt; $A \subset B$ -&gt; $A \Subset B$ A 真包含于 B -&gt; $A\subsetneqq B$ -&gt; $A\subsetneqq B$ A 包含 B -&gt; $A\supset B$ -&gt; $A\subset B$ A 不包含 B -&gt; $A\not\supset B$ -&gt; $A\not\subset B$ A 交 B -&gt; $A\cap B$ -&gt; $A\cap B$ A 并 B -&gt; $A\cup B$ -&gt; $A\cup B$ A 的闭包 -&gt; $A\overline{A}$ -&gt; $A\overline{A}$ A 减去 B(差集) -&gt; $A\setminus B$ -&gt; $A\setminus B$ 实数集合 -&gt; $\mathbb{R}$ -&gt;$\mathbb{R}$ 空集 -&gt; $\emptyset$ -&gt; $\emptyset$ 推导，推出符号的 LaTeX1234567891011$\Rightarrow$$\rightarrow$$\longrightarrow$$\Leftarrow$$\leftarrow$$\longleftarrow$$\Leftrightarrow$$\leftrightarrow$$\longleftrightarrow$ 显示： $\Rightarrow$$\rightarrow$$\longrightarrow$ $\Leftarrow$$\leftarrow$$\longleftarrow$ $\Leftrightarrow$$\leftrightarrow$$\longleftrightarrow$ 参考： link-01 link-02 link-03]]></content>
+      <categories>
+        <category>基础学科</category>
+      </categories>
+      <tags>
+        <tag>LaTeX</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[UG NX 『筋板』]]></title>
     <url>%2F2019%2F02%2F26%2F190226-03%2F</url>
     <content type="text"><![CDATA[▲ 『筋板』命令位置 ▲ 需要操作的命令 示例 ▲ 草绘曲线 ▲ 一些命令选项的填写；会自动延伸到体；图示预览是『垂直于剖切平面』的效果 ▲ 『帽形体』选项效果,『偏置』控制筋的高度 ▲ 默认为『从截面』 ▲ 『平行于剖切平面』的效果，画“加强筋”一般用这个命令，而不是用“三角筋”的命令来画]]></content>

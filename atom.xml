@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.andyvj.com/"/>
-  <updated>2019-02-26T13:37:19.417Z</updated>
+  <updated>2019-02-27T14:07:38.409Z</updated>
   <id>https://www.andyvj.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Latex 关于集合的表示</title>
+    <link href="https://www.andyvj.com/2019/02/27/190227-01/"/>
+    <id>https://www.andyvj.com/2019/02/27/190227-01/</id>
+    <published>2019-02-27T14:01:22.000Z</published>
+    <updated>2019-02-27T14:07:38.409Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="一些关于集合的-LaTeX"><a href="#一些关于集合的-LaTeX" class="headerlink" title="一些关于集合的 LaTeX"></a>一些关于<strong>集合</strong>的 LaTeX</h3><a id="more"></a><p>大括号 -&gt; $\lbrace …\rbrace$ -&gt; <code>$\lbrace ...\rbrace$</code></p><p>a 属于 B  -&gt; $a \in A$ -&gt; <code>$a \in A$</code></p><p>“|” -&gt; $\mid$ -&gt; <code>$\mid$</code></p><p>不属于 -&gt; $a \not\in B$ -&gt; <code>$a \not\in B$</code></p><p>A 包含于 B -&gt; $A \subset B$ -&gt; <code>$A \Subset B$</code></p><p>A 真包含于 B -&gt; $A\subsetneqq B$ -&gt; <code>$A\subsetneqq B$</code></p><p>A 包含 B -&gt; $A\supset B$ -&gt; <code>$A\subset B$</code></p><p>A 不包含 B -&gt; $A\not\supset B$ -&gt; <code>$A\not\subset B$</code></p><p>A 交 B -&gt; $A\cap B$ -&gt; <code>$A\cap B$</code></p><p>A 并 B -&gt; $A\cup B$ -&gt; <code>$A\cup B$</code></p><p>A 的闭包 -&gt; $A\overline{A}$ -&gt; <code>$A\overline{A}$</code></p><p>A 减去 B(差集) -&gt; $A\setminus B$ -&gt; <code>$A\setminus B$</code></p><p>实数集合 -&gt; $\mathbb{R}$ -&gt;<code>$\mathbb{R}$</code></p><p>空集 -&gt; $\emptyset$ -&gt; <code>$\emptyset$</code></p><h2 id="推导，推出符号的-LaTeX"><a href="#推导，推出符号的-LaTeX" class="headerlink" title="推导，推出符号的 LaTeX"></a>推导，推出符号的 LaTeX</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$\Rightarrow$</span><br><span class="line">$\rightarrow$</span><br><span class="line">$\longrightarrow$</span><br><span class="line"></span><br><span class="line">$\Leftarrow$</span><br><span class="line">$\leftarrow$</span><br><span class="line">$\longleftarrow$</span><br><span class="line"></span><br><span class="line">$\Leftrightarrow$</span><br><span class="line">$\leftrightarrow$</span><br><span class="line">$\longleftrightarrow$</span><br></pre></td></tr></table></figure><p>显示：</p><p>$\Rightarrow$<br>$\rightarrow$<br>$\longrightarrow$</p><p>$\Leftarrow$<br>$\leftarrow$<br>$\longleftarrow$</p><p>$\Leftrightarrow$<br>$\leftrightarrow$<br>$\longleftrightarrow$</p><p><hr><br><span style="color:gray;font-size:12px"><br>参考：</span></p><ol><li><a href="https://www.cnblogs.com/linxd/p/4955530.html" target="_blank" rel="noopener">link-01</a></li><li><a href="http://blog.sina.com.cn/s/blog_4b1046f80101nbcn.html" target="_blank" rel="noopener">link-02</a></li><li><a href="https://blog.csdn.net/baidu_38060633/article/details/79183905" target="_blank" rel="noopener">link-03</a><br></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;一些关于集合的-LaTeX&quot;&gt;&lt;a href=&quot;#一些关于集合的-LaTeX&quot; class=&quot;headerlink&quot; title=&quot;一些关于集合的 LaTeX&quot;&gt;&lt;/a&gt;一些关于&lt;strong&gt;集合&lt;/strong&gt;的 LaTeX&lt;/h3&gt;
+    
+    </summary>
+    
+      <category term="基础学科" scheme="https://www.andyvj.com/categories/%E5%9F%BA%E7%A1%80%E5%AD%A6%E7%A7%91/"/>
+    
+    
+      <category term="LaTeX" scheme="https://www.andyvj.com/tags/LaTeX/"/>
+    
+  </entry>
   
   <entry>
     <title>UG NX 『筋板』</title>
@@ -445,32 +467,6 @@
     
     
       <category term="随感" scheme="https://www.andyvj.com/tags/%E9%9A%8F%E6%84%9F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Creo、UG_NX、 SolidWorks 鼠标中间滚轮方向设置</title>
-    <link href="https://www.andyvj.com/2018/03/06/190223-04/"/>
-    <id>https://www.andyvj.com/2018/03/06/190223-04/</id>
-    <published>2018-03-06T04:40:44.000Z</published>
-    <updated>2019-02-23T05:00:19.523Z</updated>
-    
-    <content type="html"><![CDATA[<p>Creo、UG_NX、 SolidWorks 鼠标中键滚轮的前进后退对应的视图的放大和缩小，如何在设置选项中进行设置，将不同软件设置成一致，方便在不同软件切换时避免”神经错乱”。我们知道 AutoCAD 的滚轮前进后退分别对应的是放大和缩小，我们可以设置成与其保持一致。其实，话又说回来一切都是习惯问题。</p><a id="more"></a><h2 id="Creo："><a href="#Creo：" class="headerlink" title="Creo："></a>Creo：</h2><p>在配置选项中进行如下设置：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">use_inverted_mousewheel_zoom 　　　　 yes</span><br></pre></td></tr></table></figure></p><p><img src="https://ws2.sinaimg.cn/large/006mcMYXgy1g0g9r8lzo0j30b309n0uh.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 反转鼠标滚轮</div><h2 id="UG-NX"><a href="#UG-NX" class="headerlink" title="UG_NX:"></a>UG_NX:</h2><p><img src="https://ws3.sinaimg.cn/large/006mcMYXgy1g0g9rmxw7zj30jp0gsgru.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 用户默认设置</div><h2 id="Solidworks"><a href="#Solidworks" class="headerlink" title="Solidworks:"></a>Solidworks:</h2><p><img src="https://wx4.sinaimg.cn/large/006mcMYXgy1g0g9s698roj30j70ehn1h.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 系统选项 -&gt; 视图</div>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Creo、UG_NX、 SolidWorks 鼠标中键滚轮的前进后退对应的视图的放大和缩小，如何在设置选项中进行设置，将不同软件设置成一致，方便在不同软件切换时避免”神经错乱”。我们知道 AutoCAD 的滚轮前进后退分别对应的是放大和缩小，我们可以设置成与其保持一致。其实，话又说回来一切都是习惯问题。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="机械结构" scheme="https://www.andyvj.com/categories/%E6%9C%BA%E6%A2%B0%E7%BB%93%E6%9E%84/"/>
-    
-    
-      <category term="UG_NX" scheme="https://www.andyvj.com/tags/UG-NX/"/>
-    
-      <category term="Creo" scheme="https://www.andyvj.com/tags/Creo/"/>
-    
-      <category term="Solidworks" scheme="https://www.andyvj.com/tags/Solidworks/"/>
     
   </entry>
   
