@@ -4,7 +4,7 @@ date: 2019-01-29 14:05:54
 comments: false
 ---
 
-Nickname：AndyVJ  
+Name：Andy  
 Email：andy@andyvj.com
 
 ---
