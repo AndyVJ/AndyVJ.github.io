@@ -66,13 +66,13 @@
     <link href="https://www.andyvj.com/2019/03/01/190301-01/"/>
     <id>https://www.andyvj.com/2019/03/01/190301-01/</id>
     <published>2019-03-01T04:35:00.000Z</published>
-    <updated>2019-03-01T10:49:15.930Z</updated>
+    <updated>2019-03-01T12:34:17.838Z</updated>
     
-    <content type="html"><![CDATA[<p>组件中，零件在『抑制』状态下『导出装配』时<strong>会被会略，不会导出。</strong></p><a id="more"></a><p><img src="https://wx2.sinaimg.cn/mw690/006mcMYXgy1g0n6xuc08gj30bf0lbdh9.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 可见零件在『抑制』状态下导出装配时会被忽略</div><!--<hr/><span style="color:gray;font-size:12px">参考：1. [link-01]()2. [link-01]()3. [link-01]()4. [link-01]()5. [link-01]()</span>-->]]></content>
+    <content type="html"><![CDATA[<p>组件中，零件在『抑制』状态下『导出装配』时<strong>会被忽略，不会导出。</strong></p><a id="more"></a><p><img src="https://wx2.sinaimg.cn/mw690/006mcMYXgy1g0n6xuc08gj30bf0lbdh9.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 可见零件在『抑制』状态下导出装配时会被忽略</div><!--<hr/><span style="color:gray;font-size:12px">参考：1. [link-01]()2. [link-01]()3. [link-01]()4. [link-01]()5. [link-01]()</span>-->]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;组件中，零件在『抑制』状态下『导出装配』时&lt;strong&gt;会被会略，不会导出。&lt;/strong&gt;&lt;/p&gt;
+      &lt;p&gt;组件中，零件在『抑制』状态下『导出装配』时&lt;strong&gt;会被忽略，不会导出。&lt;/strong&gt;&lt;/p&gt;
     
     </summary>
     

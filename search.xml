@@ -25,7 +25,7 @@
   <entry>
     <title><![CDATA[UG NX 零件在『抑制』状态下会被导出装配吗]]></title>
     <url>%2F2019%2F03%2F01%2F190301-01%2F</url>
-    <content type="text"><![CDATA[组件中，零件在『抑制』状态下『导出装配』时会被会略，不会导出。 ▲ 可见零件在『抑制』状态下导出装配时会被忽略]]></content>
+    <content type="text"><![CDATA[组件中，零件在『抑制』状态下『导出装配』时会被忽略，不会导出。 ▲ 可见零件在『抑制』状态下导出装配时会被忽略]]></content>
       <categories>
         <category>机械结构</category>
       </categories>
