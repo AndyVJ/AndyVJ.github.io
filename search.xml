@@ -1,6 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[UG NX 通过『赋值重量』属性参数自动更新重量]]></title>
+    <url>%2F2019%2F03%2F01%2F190301-03%2F</url>
+    <content type="text"><![CDATA[相对于前一篇关联重量的方法，这是一个比较靠谱的方法，也是强烈推荐的一种方法。 前提: 对零部件指定好材料。 官方帮助文档中的发现在GC_Toolkits_UserManual.pdf发现: ▲ 可见需要修改配置文件选项 修改配置文件选项打开gc_tool.cfg文件，修改为: 1赋值重量,WEIGHT,N,Read 找到KEY_WORD REFERENCESET_LAYER_START代码段: 123456789! configuration for Reference Set and Layer mapping settingKEY_WORD REFERENCESET_LAYER_STARTBODY | 1,4MATE | 1,5SIMPLIFIED |DRAWING | 1,4ALTERNATE | 2KEY_WORD REFERENCESET_LAYER_END 可见第一个引用集为BODY，只需要将要自动计算重量的实体收集在BODY引用集中就可以了。 如果，引用集里没有BODY引用集，新建一个即可。 ▲ BODY 引用集，『自动添加组件』可以去掉勾，自己手动添加，这样觉得比较可控。 ▲ 自动重量效果 零件明细表中自动引用重量属性参数 ▲ 显示单个重量的参数选择 如何实现零件自动总重量的显示？ http://www.ugsnx.com/thread-160149-1-8.html 复制单重列的默认文本&lt;W$=@WEIGHT&gt;,将总重列的类别设为数量,默认文本框粘贴单重的默认文本,.这样总重就能正确显示了,至于为啥会这样,我也不知道. ▲ 零件总重量显示 ▲ 小数位控制，注意『类别』为『数值』；可以选择一整列，也可以选择单个单元格。 ▲ 单个单元格小数位控制 至于如何算出顶级装配(整机)的重量，暂时还没有找到直接的方法。我想可以直接导出 excel，在 excel 中计算可行。 装配中也没有找打像 Creo 一样的过滤器，我想同样可以直接导出 excel，在 excel 中筛选操作吧，可筛选删除。]]></content>
+      <categories>
+        <category>机械结构</category>
+      </categories>
+      <tags>
+        <tag>UG_NX</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[UG NX 『gc_tool.cfg』之『属性工具』]]></title>
+    <url>%2F2019%2F03%2F01%2F190301-02%2F</url>
+    <content type="text"><![CDATA[gc_tool.cfg为 GC 工具箱的配置文件，通过修改定制，可以提高自己的出图效率。 配置文件的路径： 1C:\Program Files\Siemens\NX 10.0\LOCALIZATION\prc\gc_tools\configuration\gc_tool.cfg 添加属性参数 ▲ 命令位置 其中，控制属性的代码如下： 1234567891011121314KEY_WORD PART_ATTRIBUTE_START名称,DB_PART_NAME,N,Write图号,DB_PART_NO,N,Write赋值重量,WEIGHT,N,Write设计重量,CAL_WEIGHT,N,Write备注,REMARK,N,Write设计,DESIGNER,N,Write校对,CHECKER,N,Write审核,AUDITOR,N,Write批准,APPROVER,N,Write比例,SCALE,Y,Read共X页,NO_OF_SHEET,N,Write第X页,SHEET_NUM,N,WriteKEY_WORD PART_ATTRIBUTE_END 可见，代码的格式有如下规律： ▲ 配置文件反应到 GUI 的效果 在关键字标签中间添加自定义的属性——名称，材料，备注： 1234567891011121314151617KEY_WORD PART_ATTRIBUTE_START名称,名称,N,Write材料,材料,Y,Write备注,备注,Y,Write名称,DB_PART_NAME,N,Write图号,DB_PART_NO,N,Write赋值重量,WEIGHT,N,Write设计重量,CAL_WEIGHT,N,Write备注,REMARK,N,Write设计,DESIGNER,N,Write校对,CHECKER,N,Write审核,AUDITOR,N,Write批准,APPROVER,N,Write比例,SCALE,Y,Read共X页,NO_OF_SHEET,N,Write第X页,SHEET_NUM,N,WriteKEY_WORD PART_ATTRIBUTE_END 为新增的属性参数添加下拉菜单效果通过观察『比例』下拉菜单控制代码的格式： 12345678KEY_WORD ATTRIBUTE_TOOL_SCALE_START1:11:21:31:41:51:6KEY_WORD ATTRIBUTE_TOOL_SCALE_END 可知： ▲ 下拉菜单代码格式 通过搜索阅读GC_Toolkits_UserManual.pdf官方帮助文档： 用户可以根据自己的选择在配置文件中增加某些属性的下拉选择项。通过 KeyWord 的方式，只要用户添加了对应的配置，则显示下拉。下拉的内容对应的 KeyWord 采用 KEY_WORD ATTRIBUTE_TOOL_xxxx_START 的方式， 其中的 xxxx 即为定义的属性名称。 现在每个属性的定义有四列。第一列是中文名，第二列是英文名，第三列是确定是否需要查找关键字，找到用户是否下拉菜单的内容，如果是 Y 的话必须加关键字，如果是 N 的话可以不加关键字。 第四列为 READ 或 WRITE。 如果为READ 状态的话，必须要设定关键字，就是第三列内容必须为 Y。而且只可以选择，不可以手动输入；如果为 WRITE 状态的话，可以选择，也可以输入。 可知： 12材料,材料,Y,Write! 这样的方式，Write 既可以下拉选择又可以手写，而 Read 控制只能下拉选择参数。 为自定义的属性参数添加下拉菜单代码，如： 12345KEY_WORD ATTRIBUTE_TOOL_材料_START铝冷轧板不锈钢KEY_WORD ATTRIBUTE_TOOL_材料_END ▲ 『材料』属性参数下拉效果]]></content>
+      <categories>
+        <category>机械结构</category>
+      </categories>
+      <tags>
+        <tag>UG_NX</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[UG NX 零件在『抑制』状态下会被导出装配吗]]></title>
+    <url>%2F2019%2F03%2F01%2F190301-01%2F</url>
+    <content type="text"><![CDATA[组件中，零件在『抑制』状态下『导出装配』时会被会略，不会导出。 ▲ 可见零件在『抑制』状态下导出装配时会被忽略]]></content>
+      <categories>
+        <category>机械结构</category>
+      </categories>
+      <tags>
+        <tag>UG_NX</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[UG NX 通过『测量体』实现重量与属性参数的关联]]></title>
+    <url>%2F2019%2F02%2F28%2F190228-01%2F</url>
+    <content type="text"><![CDATA[工程图中，关联零部件的重量属性参数。前提是需要对零部件指定好材料，工具 -&gt; 更多 -&gt; 指派材料。 ▲ 指派材料 ▲ 『测量体』 ▲ 通过测量关联的方式实现的重量参数，但『去除参数』后就会没有。 这样模型树中会有一个测量特征。 ▲ 测量特征 ▲ 单元格设置，可将数值调为 2 位小数。 这样重量就关联进来了。 也可以通过对『属性』参数WEIGHT进行关联。 ▲ 这样『零件明细表』中就能够引用WEIGHT这个参数来实现重量调用了。 这种方式有个缺点，零部件去除参数以后，测量体的参数也会被去掉，这样自动关联就失效了。]]></content>
+      <categories>
+        <category>机械结构</category>
+      </categories>
+      <tags>
+        <tag>UG_NX</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Latex 关于集合的表示]]></title>
     <url>%2F2019%2F02%2F27%2F190227-01%2F</url>
     <content type="text"><![CDATA[一些关于集合的 LaTeX 大括号 -&gt; $\lbrace …\rbrace$ -&gt; $\lbrace ...\rbrace$ a 属于 B -&gt; $a \in A$ -&gt; $a \in A$ “|” -&gt; $\mid$ -&gt; $\mid$ 不属于 -&gt; $a \not\in B$ -&gt; $a \not\in B$ A 包含于 B -&gt; $A \subset B$ -&gt; $A \subset B$ A 真包含于 B -&gt; $A\subsetneqq B$ -&gt; $A\subsetneqq B$ A 包含 B -&gt; $A\supset B$ -&gt; $A\supset B$ A 不包含 B -&gt; $A\not\supset B$ -&gt; $A\not\supset B$ A 交 B -&gt; $A\cap B$ -&gt; $A\cap B$ A 并 B -&gt; $A\cup B$ -&gt; $A\cup B$ A 的闭包 -&gt; $A\overline{A}$ -&gt; $A\overline{A}$ A 减去 B(差集) -&gt; $A\setminus B$ -&gt; $A\setminus B$ 实数集合 -&gt; $\mathbb{R}$ -&gt;$\mathbb{R}$ 空集 -&gt; $\emptyset$ -&gt; $\emptyset$ 推导，推出符号的 LaTeX1234567891011$\Rightarrow$$\rightarrow$$\longrightarrow$$\Leftarrow$$\leftarrow$$\longleftarrow$$\Leftrightarrow$$\leftrightarrow$$\longleftrightarrow$ 显示： $\Rightarrow$$\rightarrow$$\longrightarrow$ $\Leftarrow$$\leftarrow$$\longleftarrow$ $\Leftrightarrow$$\leftrightarrow$$\longleftrightarrow$ 参考： link-01 link-02 link-03]]></content>
@@ -78,9 +122,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[UG NX 移动对象之『动态』技巧]]></title>
-    <url>%2F2019%2F02%2F19%2F190219-02%2F</url>
-    <content type="text"><![CDATA[动态绕某一点旋转，而旋转手柄又不在此点上，如何操作？ Ctrl + T 移动对象，勾选只移动手柄，将手柄点选移动到需要旋转的点。 取消勾选只移动手柄，点选手柄节点，输入旋转角度，确定。]]></content>
+    <title><![CDATA[UG NX 坐标对齐移动——解决实体与原始坐标不对齐的问题]]></title>
+    <url>%2F2019%2F02%2F19%2F190219-01%2F</url>
+    <content type="text"><![CDATA[有时候通过WAVE链接过来的实体会出现实体与原始坐标不对齐的情况，如： 可以用坐标到坐标移动的方式将实体摆正。 新建与实体对齐的坐标系。 Ctrl + T 移动。 这样后，实体就与原始坐标对齐了：]]></content>
       <categories>
         <category>机械结构</category>
       </categories>
@@ -89,9 +133,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[UG NX 坐标对齐移动——解决实体与原始坐标不对齐的问题]]></title>
-    <url>%2F2019%2F02%2F19%2F190219-01%2F</url>
-    <content type="text"><![CDATA[有时候通过WAVE链接过来的实体会出现实体与原始坐标不对齐的情况，如： 可以用坐标到坐标移动的方式将实体摆正。 新建与实体对齐的坐标系。 Ctrl + T 移动。 这样后，实体就与原始坐标对齐了：]]></content>
+    <title><![CDATA[UG NX 移动对象之『动态』技巧]]></title>
+    <url>%2F2019%2F02%2F19%2F190219-02%2F</url>
+    <content type="text"><![CDATA[动态绕某一点旋转，而旋转手柄又不在此点上，如何操作？ Ctrl + T 移动对象，勾选只移动手柄，将手柄点选移动到需要旋转的点。 取消勾选只移动手柄，点选手柄节点，输入旋转角度，确定。]]></content>
       <categories>
         <category>机械结构</category>
       </categories>

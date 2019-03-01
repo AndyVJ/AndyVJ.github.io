@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.andyvj.com/"/>
-  <updated>2019-02-27T14:54:12.488Z</updated>
+  <updated>2019-03-01T10:53:03.114Z</updated>
   <id>https://www.andyvj.com/</id>
   
   <author>
@@ -15,6 +15,95 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>UG NX 通过『赋值重量』属性参数自动更新重量</title>
+    <link href="https://www.andyvj.com/2019/03/01/190301-03/"/>
+    <id>https://www.andyvj.com/2019/03/01/190301-03/</id>
+    <published>2019-03-01T09:34:19.000Z</published>
+    <updated>2019-03-01T10:53:03.114Z</updated>
+    
+    <content type="html"><![CDATA[<p>相对于<a href="https://www.andyvj.com/2019/02/28/190228-01/">前一篇</a>关联重量的方法，<strong>这是一个比较靠谱的方法，也是强烈推荐的一种方法。</strong></p><p><strong>前提: 对零部件指定好材料。</strong></p><a id="more"></a><h2 id="官方帮助文档中的发现"><a href="#官方帮助文档中的发现" class="headerlink" title="官方帮助文档中的发现"></a>官方帮助文档中的发现</h2><p>在<code>GC_Toolkits_UserManual.pdf</code>发现:</p><p><img src="https://wx1.sinaimg.cn/large/006mcMYXgy1g0nfrquvzwj30xl06f0vb.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 可见需要修改配置文件选项</div><h2 id="修改配置文件选项"><a href="#修改配置文件选项" class="headerlink" title="修改配置文件选项"></a>修改配置文件选项</h2><p>打开<code>gc_tool.cfg</code>文件，修改为:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">赋值重量,WEIGHT,N,Read</span><br></pre></td></tr></table></figure><p>找到<code>KEY_WORD REFERENCESET_LAYER_START</code>代码段:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">! configuration for Reference Set and Layer mapping setting</span><br><span class="line"></span><br><span class="line">KEY_WORD REFERENCESET_LAYER_START</span><br><span class="line">BODY                    | 1,4</span><br><span class="line">MATE                    | 1,5</span><br><span class="line">SIMPLIFIED              |</span><br><span class="line">DRAWING                 | 1,4</span><br><span class="line">ALTERNATE               | 2</span><br><span class="line">KEY_WORD REFERENCESET_LAYER_END</span><br></pre></td></tr></table></figure><p>可见第一个<strong>引用集</strong>为<code>BODY</code>，只需要将要自动计算重量的实体收集在<code>BODY</code>引用集中就可以了。</p><p><strong>如果，引用集里没有<code>BODY</code>引用集，新建一个即可。</strong></p><p><img src="https://wx4.sinaimg.cn/large/006mcMYXgy1g0ng5px1joj30940g3q3q.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ BODY 引用集，『自动添加组件』可以去掉勾，自己手动添加，这样觉得比较可控。</div><p><img src="https://wx4.sinaimg.cn/large/006mcMYXgy1g0ng15mbogj306706t3yk.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 自动重量效果</div><h2 id="零件明细表中自动引用重量属性参数"><a href="#零件明细表中自动引用重量属性参数" class="headerlink" title="零件明细表中自动引用重量属性参数"></a>零件明细表中自动引用重量属性参数</h2><p><img src="https://wx2.sinaimg.cn/large/006mcMYXgy1g0ng733c78j30oq0de0td.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 显示单个重量的参数选择</div><p>如何实现零件自动总重量的显示？</p><blockquote><p><a href="http://www.ugsnx.com/thread-160149-1-8.html" target="_blank" rel="noopener">http://www.ugsnx.com/thread-160149-1-8.html</a></p><p>复制单重列的默认文本<strong>&lt;W$=@WEIGHT&gt;</strong>,将总重列的类别设为数量,默认文本框粘贴单重的默认文本,.这样总重就能正确显示了,至于为啥会这样,我也不知道.</p></blockquote><p><img src="https://ws4.sinaimg.cn/large/006mcMYXgy1g0ng8xgc1uj30pb0dewez.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 零件总重量显示</div><p><img src="https://wx2.sinaimg.cn/large/006mcMYXgy1g0ng9wa1gdj30rm0dejs5.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 小数位控制，注意『类别』为『数值』；可以选择一整列，也可以选择单个单元格。</div><p><img src="https://ws1.sinaimg.cn/large/006mcMYXgy1g0ngay0mxfj30gb0d474s.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 单个单元格小数位控制</div><p><strong>至于如何算出顶级装配(整机)的重量，暂时还没有找到直接的方法。我想可以直接导出 excel，在 excel 中计算可行。</strong></p><p><strong>装配中也没有找打像 Creo 一样的过滤器，我想同样可以直接导出 excel，在 excel 中筛选操作吧，可筛选删除。</strong></p><!--<hr/><span style="color:gray;font-size:12px">参考：1. [link-01]()2. [link-01]()3. [link-01]()4. [link-01]()5. [link-01]()</span>-->]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;相对于&lt;a href=&quot;https://www.andyvj.com/2019/02/28/190228-01/&quot;&gt;前一篇&lt;/a&gt;关联重量的方法，&lt;strong&gt;这是一个比较靠谱的方法，也是强烈推荐的一种方法。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;前提: 对零部件指定好材料。&lt;/strong&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="机械结构" scheme="https://www.andyvj.com/categories/%E6%9C%BA%E6%A2%B0%E7%BB%93%E6%9E%84/"/>
+    
+    
+      <category term="UG_NX" scheme="https://www.andyvj.com/tags/UG-NX/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>UG NX 『gc_tool.cfg』之『属性工具』</title>
+    <link href="https://www.andyvj.com/2019/03/01/190301-02/"/>
+    <id>https://www.andyvj.com/2019/03/01/190301-02/</id>
+    <published>2019-03-01T05:11:16.000Z</published>
+    <updated>2019-03-01T10:49:15.931Z</updated>
+    
+    <content type="html"><![CDATA[<p><code>gc_tool.cfg</code>为 GC 工具箱的配置文件，通过修改定制，可以提高自己的出图效率。</p><a id="more"></a><p>配置文件的路径：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\Program Files\Siemens\NX 10.0\LOCALIZATION\prc\gc_tools\configuration\gc_tool.cfg</span><br></pre></td></tr></table></figure><h2 id="添加属性参数"><a href="#添加属性参数" class="headerlink" title="添加属性参数"></a>添加属性参数</h2><p><img src="https://ws3.sinaimg.cn/large/006mcMYXgy1g0n8t9l7g0j3082049jrm.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 命令位置</div><p>其中，控制属性的代码如下：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">KEY_WORD PART_ATTRIBUTE_START</span><br><span class="line">名称,DB_PART_NAME,N,Write</span><br><span class="line">图号,DB_PART_NO,N,Write</span><br><span class="line">赋值重量,WEIGHT,N,Write</span><br><span class="line">设计重量,CAL_WEIGHT,N,Write</span><br><span class="line">备注,REMARK,N,Write</span><br><span class="line">设计,DESIGNER,N,Write</span><br><span class="line">校对,CHECKER,N,Write</span><br><span class="line">审核,AUDITOR,N,Write</span><br><span class="line">批准,APPROVER,N,Write</span><br><span class="line">比例,SCALE,Y,Read</span><br><span class="line">共X页,NO_OF_SHEET,N,Write</span><br><span class="line">第X页,SHEET_NUM,N,Write</span><br><span class="line">KEY_WORD PART_ATTRIBUTE_END</span><br></pre></td></tr></table></figure><p>可见，代码的格式有如下规律：</p><p><img src="https://ws1.sinaimg.cn/large/006mcMYXgy1g0n8650revj30gd0a7wfg.jpg" alt="image"></p><p><img src="https://wx2.sinaimg.cn/large/006mcMYXgy1g0n87yej8wj30di0jhmyi.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 配置文件反应到 GUI 的效果</div><p>在关键字标签中间添加自定义的属性——<code>名称</code>，<code>材料</code>，<code>备注</code>：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">KEY_WORD PART_ATTRIBUTE_START</span><br><span class="line">名称,名称,N,Write</span><br><span class="line">材料,材料,Y,Write</span><br><span class="line">备注,备注,Y,Write</span><br><span class="line">名称,DB_PART_NAME,N,Write</span><br><span class="line">图号,DB_PART_NO,N,Write</span><br><span class="line">赋值重量,WEIGHT,N,Write</span><br><span class="line">设计重量,CAL_WEIGHT,N,Write</span><br><span class="line">备注,REMARK,N,Write</span><br><span class="line">设计,DESIGNER,N,Write</span><br><span class="line">校对,CHECKER,N,Write</span><br><span class="line">审核,AUDITOR,N,Write</span><br><span class="line">批准,APPROVER,N,Write</span><br><span class="line">比例,SCALE,Y,Read</span><br><span class="line">共X页,NO_OF_SHEET,N,Write</span><br><span class="line">第X页,SHEET_NUM,N,Write</span><br><span class="line">KEY_WORD PART_ATTRIBUTE_END</span><br></pre></td></tr></table></figure><h2 id="为新增的属性参数添加下拉菜单效果"><a href="#为新增的属性参数添加下拉菜单效果" class="headerlink" title="为新增的属性参数添加下拉菜单效果"></a>为新增的属性参数添加下拉菜单效果</h2><p>通过观察『比例』下拉菜单控制代码的格式：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">KEY_WORD ATTRIBUTE_TOOL_SCALE_START</span><br><span class="line">1:1</span><br><span class="line">1:2</span><br><span class="line">1:3</span><br><span class="line">1:4</span><br><span class="line">1:5</span><br><span class="line">1:6</span><br><span class="line">KEY_WORD ATTRIBUTE_TOOL_SCALE_END</span><br></pre></td></tr></table></figure><p>可知：</p><p><img src="https://ws1.sinaimg.cn/large/006mcMYXgy1g0n8exvcovj30ex05ljrj.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 下拉菜单代码格式</div><p>通过搜索阅读<code>GC_Toolkits_UserManual.pdf</code>官方帮助文档：</p><blockquote><p>用户可以根据自己的选择在配置文件中增加某些属性的下拉选择项。通过 Key<br>Word 的方式，只要用户添加了对应的配置，则显示下拉。下拉的内容对应的 Key<br>Word 采用 KEY_WORD ATTRIBUTE_TOOL_xxxx_START 的方式， 其中的 xxxx 即<br>为定义的属性名称。 现在每个属性的定义有四列。第一列是中文名，第二列是英文名，<br>第三列是确定是否需要查找关键字，找到用户是否下拉菜单的内容，如果是 Y 的话必<br>须加关键字，如果是 N 的话可以不加关键字。 第四列为 READ 或 WRITE。 如果为<br>READ 状态的话，必须要设定关键字，就是第三列内容必须为 Y。而且只可以选择，<br>不可以手动输入；如果为 WRITE 状态的话，可以选择，也可以输入。</p></blockquote><p>可知：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">材料,材料,Y,Write</span><br><span class="line">! 这样的方式，Write 既可以下拉选择又可以手写，而 Read 控制只能下拉选择参数。</span><br></pre></td></tr></table></figure><p>为自定义的属性参数添加下拉菜单代码，如：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">KEY_WORD ATTRIBUTE_TOOL_材料_START</span><br><span class="line">铝</span><br><span class="line">冷轧板</span><br><span class="line">不锈钢</span><br><span class="line">KEY_WORD ATTRIBUTE_TOOL_材料_END</span><br></pre></td></tr></table></figure><p><img src="https://ws3.sinaimg.cn/large/006mcMYXgy1g0n8oaf0f0j307503rjrb.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 『材料』属性参数下拉效果</div><!--<hr/><span style="color:gray;font-size:12px">参考：1. [link-01]()2. [link-01]()3. [link-01]()4. [link-01]()5. [link-01]()</span>-->]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;code&gt;gc_tool.cfg&lt;/code&gt;为 GC 工具箱的配置文件，通过修改定制，可以提高自己的出图效率。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="机械结构" scheme="https://www.andyvj.com/categories/%E6%9C%BA%E6%A2%B0%E7%BB%93%E6%9E%84/"/>
+    
+    
+      <category term="UG_NX" scheme="https://www.andyvj.com/tags/UG-NX/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>UG NX 零件在『抑制』状态下会被导出装配吗</title>
+    <link href="https://www.andyvj.com/2019/03/01/190301-01/"/>
+    <id>https://www.andyvj.com/2019/03/01/190301-01/</id>
+    <published>2019-03-01T04:35:00.000Z</published>
+    <updated>2019-03-01T10:49:15.930Z</updated>
+    
+    <content type="html"><![CDATA[<p>组件中，零件在『抑制』状态下『导出装配』时<strong>会被会略，不会导出。</strong></p><a id="more"></a><p><img src="https://wx2.sinaimg.cn/mw690/006mcMYXgy1g0n6xuc08gj30bf0lbdh9.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 可见零件在『抑制』状态下导出装配时会被忽略</div><!--<hr/><span style="color:gray;font-size:12px">参考：1. [link-01]()2. [link-01]()3. [link-01]()4. [link-01]()5. [link-01]()</span>-->]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;组件中，零件在『抑制』状态下『导出装配』时&lt;strong&gt;会被会略，不会导出。&lt;/strong&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="机械结构" scheme="https://www.andyvj.com/categories/%E6%9C%BA%E6%A2%B0%E7%BB%93%E6%9E%84/"/>
+    
+    
+      <category term="UG_NX" scheme="https://www.andyvj.com/tags/UG-NX/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>UG NX 通过『测量体』实现重量与属性参数的关联</title>
+    <link href="https://www.andyvj.com/2019/02/28/190228-01/"/>
+    <id>https://www.andyvj.com/2019/02/28/190228-01/</id>
+    <published>2019-02-28T00:48:40.000Z</published>
+    <updated>2019-03-01T10:49:15.928Z</updated>
+    
+    <content type="html"><![CDATA[<p>工程图中，关联零部件的重量属性参数。<strong>前提是需要对零部件指定好材料</strong>，<code>工具 -&gt; 更多 -&gt; 指派材料</code>。</p><a id="more"></a><p><img src="https://ws3.sinaimg.cn/large/006mcMYXgy1g0lzgh8nvpj308e0dv3zg.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 指派材料</div><p><img src="https://ws1.sinaimg.cn/large/006mcMYXgy1g0lzkxgdxhj304x08wmxd.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 『测量体』</div><p><img src="https://wx2.sinaimg.cn/large/006mcMYXgy1g0lzm2zg3ij30ig0bbaaz.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 通过测量关联的方式实现的重量参数，但『去除参数』后就会没有。</div><p>这样<strong>模型树</strong>中会有一个测量特征。<br><img src="https://wx4.sinaimg.cn/large/006mcMYXgy1g0lzodwb29j303f00kjr5.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 测量特征</div><p><img src="https://ws4.sinaimg.cn/large/006mcMYXgy1g0lzrzhl80j30f609r0tg.jpg" alt="image"><br><img src="https://wx1.sinaimg.cn/large/006mcMYXgy1g0lzsn8kpkj30940dlt8y.jpg" alt="image"><br><img src="https://wx2.sinaimg.cn/large/006mcMYXgy1g0lztqhl4gj30i20eddgi.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 单元格设置，可将数值调为 2 位小数。</div><p>这样重量就关联进来了。</p><p>也可以通过对『属性』参数<code>WEIGHT</code>进行关联。</p><p><img src="https://ws4.sinaimg.cn/large/006mcMYXgy1g0m031irzuj30lb0dz0v1.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 这样『零件明细表』中就能够引用<code>WEIGHT</code>这个参数来实现重量调用了。</div><p><span style="color:red"><strong>这种方式有个缺点，零部件去除参数以后，测量体的参数也会被去掉，这样自动关联就失效了。</strong></span></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;工程图中，关联零部件的重量属性参数。&lt;strong&gt;前提是需要对零部件指定好材料&lt;/strong&gt;，&lt;code&gt;工具 -&amp;gt; 更多 -&amp;gt; 指派材料&lt;/code&gt;。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="机械结构" scheme="https://www.andyvj.com/categories/%E6%9C%BA%E6%A2%B0%E7%BB%93%E6%9E%84/"/>
+    
+    
+      <category term="UG_NX" scheme="https://www.andyvj.com/tags/UG-NX/"/>
+    
+  </entry>
   
   <entry>
     <title>Latex 关于集合的表示</title>
@@ -180,29 +269,6 @@
   </entry>
   
   <entry>
-    <title>UG NX 移动对象之『动态』技巧</title>
-    <link href="https://www.andyvj.com/2019/02/19/190219-02/"/>
-    <id>https://www.andyvj.com/2019/02/19/190219-02/</id>
-    <published>2019-02-18T16:00:00.000Z</published>
-    <updated>2019-02-19T12:07:25.076Z</updated>
-    
-    <content type="html"><![CDATA[<p><code>动态</code>绕某一点旋转，而旋转手柄又不在此点上，如何操作？</p><p><img src="https://wx2.sinaimg.cn/large/006mcMYXgy1g0bo8r3k9jj30iz0g7jt8.jpg" alt="image"><br><a id="more"></a></p><ol><li><code>Ctrl + T</code> 移动对象，勾选<code>只移动手柄</code>，将手柄点选移动到需要旋转的点。</li></ol><p><img src="https://ws3.sinaimg.cn/large/006mcMYXgy1g0bob2m123j30940f4jrx.jpg" alt="image"></p><p><img src="https://ws3.sinaimg.cn/large/006mcMYXgy1g0bocqqa0jj30fn0fa3zz.jpg" alt="image"></p><ol start="2"><li>取消勾选<code>只移动手柄</code>，点选手柄<code>节点</code>，输入旋转角度，确定。</li></ol><p><img src="https://wx2.sinaimg.cn/large/006mcMYXgy1g0boffrgskj30kw0cr0u8.jpg" alt="image"></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;code&gt;动态&lt;/code&gt;绕某一点旋转，而旋转手柄又不在此点上，如何操作？&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://wx2.sinaimg.cn/large/006mcMYXgy1g0bo8r3k9jj30iz0g7jt8.jpg&quot; alt=&quot;image&quot;&gt;&lt;br&gt;
-    
-    </summary>
-    
-      <category term="机械结构" scheme="https://www.andyvj.com/categories/%E6%9C%BA%E6%A2%B0%E7%BB%93%E6%9E%84/"/>
-    
-    
-      <category term="UG_NX" scheme="https://www.andyvj.com/tags/UG-NX/"/>
-    
-  </entry>
-  
-  <entry>
     <title>UG NX 坐标对齐移动——解决实体与原始坐标不对齐的问题</title>
     <link href="https://www.andyvj.com/2019/02/19/190219-01/"/>
     <id>https://www.andyvj.com/2019/02/19/190219-01/</id>
@@ -215,6 +281,29 @@
     
       &lt;p&gt;有时候通过&lt;code&gt;WAVE&lt;/code&gt;链接过来的实体会出现&lt;strong&gt;实体与原始坐标不对齐的情况&lt;/strong&gt;，如：&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://wx1.sinaimg.cn/large/006mcMYXgy1g0bhli2dwsj309i0cxjrf.jpg&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="机械结构" scheme="https://www.andyvj.com/categories/%E6%9C%BA%E6%A2%B0%E7%BB%93%E6%9E%84/"/>
+    
+    
+      <category term="UG_NX" scheme="https://www.andyvj.com/tags/UG-NX/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>UG NX 移动对象之『动态』技巧</title>
+    <link href="https://www.andyvj.com/2019/02/19/190219-02/"/>
+    <id>https://www.andyvj.com/2019/02/19/190219-02/</id>
+    <published>2019-02-18T16:00:00.000Z</published>
+    <updated>2019-02-19T12:07:25.076Z</updated>
+    
+    <content type="html"><![CDATA[<p><code>动态</code>绕某一点旋转，而旋转手柄又不在此点上，如何操作？</p><p><img src="https://wx2.sinaimg.cn/large/006mcMYXgy1g0bo8r3k9jj30iz0g7jt8.jpg" alt="image"><br><a id="more"></a></p><ol><li><code>Ctrl + T</code> 移动对象，勾选<code>只移动手柄</code>，将手柄点选移动到需要旋转的点。</li></ol><p><img src="https://ws3.sinaimg.cn/large/006mcMYXgy1g0bob2m123j30940f4jrx.jpg" alt="image"></p><p><img src="https://ws3.sinaimg.cn/large/006mcMYXgy1g0bocqqa0jj30fn0fa3zz.jpg" alt="image"></p><ol start="2"><li>取消勾选<code>只移动手柄</code>，点选手柄<code>节点</code>，输入旋转角度，确定。</li></ol><p><img src="https://wx2.sinaimg.cn/large/006mcMYXgy1g0boffrgskj30kw0cr0u8.jpg" alt="image"></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;code&gt;动态&lt;/code&gt;绕某一点旋转，而旋转手柄又不在此点上，如何操作？&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://wx2.sinaimg.cn/large/006mcMYXgy1g0bo8r3k9jj30iz0g7jt8.jpg&quot; alt=&quot;image&quot;&gt;&lt;br&gt;
     
     </summary>
     
@@ -372,94 +461,6 @@
     <summary type="html">
     
       &lt;p&gt;短暂的在家过完了年，今天回到了深圳继续漂泊，大年初四也是挺早的。有很多的感慨，也都放在心里吧，不能多说。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="其他" scheme="https://www.andyvj.com/categories/%E5%85%B6%E4%BB%96/"/>
-    
-    
-      <category term="随感" scheme="https://www.andyvj.com/tags/%E9%9A%8F%E6%84%9F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>总结和展望：2019</title>
-    <link href="https://www.andyvj.com/2019/02/02/190202-01/"/>
-    <id>https://www.andyvj.com/2019/02/02/190202-01/</id>
-    <published>2019-02-02T01:41:39.000Z</published>
-    <updated>2019-02-19T12:07:25.039Z</updated>
-    
-    <content type="html"><![CDATA[<p>2019 年的元月都已经过完，2 月都已经开始了，现在做一个“总结和展望”是不是有点太晚；好了，我们以农历春节为年终，时间却是刚刚好吧。</p><a id="more"></a><p>此刻媳妇还在屋里睡觉，还没起来。今天才是他们放假的第一天，好好补个觉，明天还要舟车劳顿回家过年。现在的我是睡不着懒觉了呢，因为焦虑无处不在。现在的我就在“胡思乱想”着，过去和现在，那也尝试做个总结和展望吧。</p><h2 id="2018-年总结"><a href="#2018-年总结" class="headerlink" title="2018 年总结"></a>2018 年总结</h2><p>过去的一年，总体感受是：<strong>内心波澜动荡不安的一年，也是内心成长成熟的一年。</strong></p><h3 id="领证"><a href="#领证" class="headerlink" title="领证"></a>领证</h3><p>有很多事情我相信是命中注定，上天安排吧。既然这样，缘分到了就去领证吧，从此肩负责任和担当携手一生。可是因为缺钱，婚礼还没办，这也将是我在 2019 年最重要的一件事情。</p><h3 id="买房"><a href="#买房" class="headerlink" title="买房"></a>买房</h3><p>在老家(湖北)买了房。还了一年的房贷，欠着银行的钱，些许压力。虽然去年的房价比较高，就算做个投资应该还是能保值的。</p><h3 id="离职-JK"><a href="#离职-JK" class="headerlink" title="离职 JK"></a>离职 JK</h3><p>四月份从工作四年的 JK 离职。原因有很多，主要考虑的是：</p><ol><li>和媳妇距离隔得太远，虽然在同一座城市，但能在一起还是比较好；</li><li>内心躁动，和朋友合计着开个门面店(早餐店)； <em><font color="blue"> // 很快失败。原因：1. 没有经验，做之前对行业了解不够深入，过于理想化，不切实际；2. 没资金。钱只够把店开起来，而后续需要持续经营的投入却显得捉襟见肘；</font></em></li><li>找工作，换了几家公司，内心强烈的不适应感；  <em><font color="blue">  // 在一家公司呆久了，就像关在笼子里太久的鸟，放飞后难以适应自然环境一样。心里建设不够，另外心里也没能完全投入工作中，想法太多。</font></em></li><li>对未来的迷茫、焦虑，想跳出现在的环境，趁还算年轻多经历一些环境，磨练积累下自己。  <em><font color="blue"> // 想要一份事业，而不是一份工作，现实和理想的差距，能力和理想的差距，让人窒息。</font></em></li></ol><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>很多事情，人生总是需要去经历的，或早或晚。经历会让人懂得。我们其实懂得很多道理，却依然过不好这一生。我们需要从自身中找找原因。</p><h2 id="2019-年规划展望"><a href="#2019-年规划展望" class="headerlink" title="2019 年规划展望"></a>2019 年规划展望</h2><p>一切都是为了对美好生活的向往。</p><h3 id="结婚"><a href="#结婚" class="headerlink" title="结婚"></a>结婚</h3><p>这是今年必须要完成的。媳妇想要个婚礼的愿望一定要满足。婚礼不在奢华，而有和没有却是质的区别。婚礼无论如何要在今年给办了。</p><h3 id="工作"><a href="#工作" class="headerlink" title="工作"></a>工作</h3><p>我对现在的这份工作其实并不满意，虽然我有信心能找一个更好的，但明年还是不要离职。1. 工作中还有能深究的东西，<strong>工作还是要投入进去，收获肯定是会有的，也看看是否会有其他机会</strong>；2. 环境和时间相对自由，可以<strong>尝试自己搞点事情</strong>。</p><h3 id="网店"><a href="#网店" class="headerlink" title="网店"></a>网店</h3><p>坚持时间和精力投入一下，不要浅尝辄止。目标：<strong>每月能额外的带来 1000~2000 元的收入</strong>。</p><h2 id="感想"><a href="#感想" class="headerlink" title="感想"></a>感想</h2><ul><li><p>不能太理想化，凡事还是需要切合实际情况，理性分析；</p></li><li><p>理想很重要，<strong>赚钱才是王道</strong>；</p></li><li><p>要规划<strong>短期目标</strong>和<strong>长期目标</strong>；</p></li><li><p>做事情考虑金钱成本外，还要考虑<strong>时间成本</strong>；</p></li><li><p>前期的加法做的太多，现在应该学会<strong>做减法</strong>。</p></li></ul><p>有很多想法细节上，有时间再另外展开来写。</p><p>希望一切都好，朝自己的理想方向发展。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;2019 年的元月都已经过完，2 月都已经开始了，现在做一个“总结和展望”是不是有点太晚；好了，我们以农历春节为年终，时间却是刚刚好吧。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="其他" scheme="https://www.andyvj.com/categories/%E5%85%B6%E4%BB%96/"/>
-    
-    
-      <category term="随想" scheme="https://www.andyvj.com/tags/%E9%9A%8F%E6%83%B3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo+github 博客搭建以及 NexT 主题配置</title>
-    <link href="https://www.andyvj.com/2019/01/31/190131-02/"/>
-    <id>https://www.andyvj.com/2019/01/31/190131-02/</id>
-    <published>2019-01-31T12:31:36.000Z</published>
-    <updated>2019-02-19T12:07:25.038Z</updated>
-    
-    <content type="html"><![CDATA[<p>主要参考的博客：<a href="https://blog.csdn.net/u010820857/article/details/81880568" target="_blank" rel="noopener">《github+hexo 搭建个人博客(超详细)》</a>，<a href="https://www.bigwin.ml/2018/11/23/github-hexo-blog/" target="_blank" rel="noopener">《GitHub平台上Hexo博客系统的搭建》</a>。过程简略的记录一下，把遇到麻烦的地方写详细点。</p><a id="more"></a><h2 id="本地环境搭建"><a href="#本地环境搭建" class="headerlink" title="本地环境搭建"></a>本地环境搭建</h2><ul><li><a href="https://www.git-scm.com/download/" target="_blank" rel="noopener"><strong>安装 git。</strong></a></li><li><strong>配置 git</strong>。</li></ul><ol><li><code>git config --global user.email &quot;xxx@qq.com&quot;</code> # 填写你github注册并且验证的邮箱；</li><li><code>git config --global user.name &quot;xxxx&quot;</code> # github 用户名；</li><li><code>ssh-keygen</code># 会出现下面的内容，一直按Enter键就行；</li><li>打开用户目录下的 <code>.ssh</code>目录下面生成 <code>id_rsa(私钥)id_rsa.pub(公钥)</code>两个文件，打开<code>id_rsa.pub</code>，复制里面的内容,到 github: <code>Settings -&gt; New SSH key -&gt; SSH and GPG keys -&gt; (填写)Title -&gt; (粘贴)Key -&gt; Add SSH Key</code>；</li><li>测试 <code>ssh -T git@github.com</code>，<strong>输出 You’ve successfully authenticated 表示添加key 成功。</strong></li></ol><ul><li><strong>建主页仓库：</strong></li></ul><ol><li>github 账号注册；</li><li><code>New repository -&gt; (XXXX.github.io) Repository name -&gt; Public -&gt; (勾上)Initialize ... -&gt; Creator repository</code>；</li><li>同样的方法，另建一个仓库存放<em>配置</em>和<em>文章</em>，<code>blogSource</code>。</li></ol><ul><li><strong>创建本地仓库</strong></li></ul><ol><li>新建<code>gitBlog</code>文件夹，然后，在此文件夹路径下<code>git clone xxx/github/io.git</code>。</li></ol><ul><li><strong>博客安装配置</strong> </li></ul><ol><li><a href="https://nodejs.org/en/" target="_blank" rel="noopener">安装 Node.js</a></li><li><code>node -v //查看版本, 验证成功否</code></li><li>安装 ，打开git 或cmd</li></ol><ul><li><code>npm config set registry http://registry.cnpmjs.org/ # node 的源有很多，切换方式也很多，可以自行选择</code>  </li><li><code>npm install hexo -g　　　#全局安装hexo,可能需要3分钟 出现warn警告信息不用管。</code></li><li><code>npm update hexo -g   　　# 更新</code></li><li><code>npm install hexo-server --save 　#安装服务</code></li><li><code>npm install hexo-deployer-git --save</code></li></ul><ol start="4"><li><code>D:\gitblog\hexo</code> 目录下初始化 hexo。  </li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">mkdir hexo            # 创建一个文件夹，初始化hexocd hexo</span><br><span class="line">hexo init             # 初始化 hexo 文件夹 成功就会提示</span><br><span class="line">当你看到Start blogging with Hexo! 恭喜！框架就已经搭建好了</span><br><span class="line">执行以下命令就可以在本地起服务,进入hexo 目录下</span><br><span class="line">hexo server</span><br><span class="line">然后访问 http://localhost:4000/，就能看到自己博客的雏形了</span><br><span class="line">hexo文件夹的作用</span><br><span class="line">hexo/_config.yml      # 这个是 hexo 站点配置文件</span><br><span class="line">hexo/.deploy_git/     # 这个目录下面存放的是hexo 自带的git 配置</span><br><span class="line">hexo/node_modules/    # hexo 需要的node js 模块</span><br><span class="line">hexo/.npmignore       # 文件里面存放的是npm需要忽略的文件</span><br><span class="line">hexo/package.json     # node.js 的配置文件</span><br><span class="line">hexo/public/          # 存放要生成的静态网页，需要发布的内容</span><br><span class="line">hexo/scaffolds/       # 生成文档的格式，用于 hexo new 命令 默认是post格式</span><br><span class="line">hexo/source/          # 存放hexo new 生成的源文件，我们写的 md 博客就是在这里</span><br><span class="line">hexo/themes/          # hexo 的主题 都在这里面</span><br></pre></td></tr></table></figure><ol start="5"><li>安装hexo依赖包和模块</li></ol><ul><li><code>npm install</code></li><li><code>node_modules</code>文件夹中查看是否已安装的扩展(<em>直接搜索扩展名字，有就代表安装了</em>)，<a href="https://hexo.io/plugins/" target="_blank" rel="noopener">官网扩展</a>；  </li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-server --save     # Hexo3把hexo-server服务器独立成模块,一些版本可能需要安装才能运行</span><br><span class="line">npm install hexo-deployer-git --save </span><br><span class="line">npm install hexo-generator-searchdb --save   # 本地搜索</span><br><span class="line">npm install hexo-generator-feed --save       # 用于生成RSS订阅</span><br><span class="line">npm install hexo-generator-sitemap --save    # 用于生成搜索引擎网站地图</span><br><span class="line">npm install hexo-generator-baidu-sitemap --save    # 用于生成百度搜索引擎网站地图</span><br></pre></td></tr></table></figure><ol start="6"><li>博客常用命令：</li></ol><table><thead><tr><th>命令</th><th>命令简写</th><th>描述</th></tr></thead><tbody><tr><td>hexo new “标题”</td><td>hexo n “标题”</td><td>新建文章</td></tr><tr><td>hexo new page“标题”</td><td>hexo n page “标题”</td><td>新建页面</td></tr><tr><td>hexo server</td><td>hexo s</td><td>本地预览,Ctrl+C关闭</td></tr><tr><td>hexo generate</td><td>hexo g</td><td>生成本地静态网页(有时候需要两次才能编译好)</td></tr><tr><td>hexo deploy</td><td>hexo d</td><td>部署网页到仓库</td></tr><tr><td>hexo clean</td><td></td><td>清除缓存</td></tr><tr><td>cd</td><td></td><td>切换操作路径,如 cd /d/hexo 就是切换到D盘hexo文件夹</td></tr></tbody></table><h2 id="主题配置"><a href="#主题配置" class="headerlink" title="主题配置"></a>主题配置</h2><p>主题是克隆的这个哥们的（<a href="https://github.com/yanchangyou/hexo-theme-next" target="_blank" rel="noopener">点击</a>），并在此基础上做了下修改。同时他的这两篇博文也有用(<a href="http://blog.321zou.com/2018/10/01/2018-10-01-writeblogwithgithub.html" target="_blank" rel="noopener">如何用github写博客</a>，<a href="http://blog.321zou.com/2018/10/03/2018-10-03-blogwithext.html" target="_blank" rel="noopener">博客的图标、统计、评论</a>)。官网的<a href="https://hexo.io/themes/" target="_blank" rel="noopener">主题</a>站，也可以进去选自己喜欢的主题。我比较喜欢 NexT 主题，因为它比较简洁。（<a href="https://www.jianshu.com/p/4ee16916ff64" target="_blank" rel="noopener">hexo theme next安装及应用</a>）。</p><p><a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="noopener">NexT 主题官方</a>，<a href="https://xdlrt.github.io/2016/02/17/2016-02-17/" target="_blank" rel="noopener">参考博文</a>。</p><p>配置过程：1. 将主题文件 clone 之 themes 文件夹下；2. 去站点配置文件<code>_config.yml</code>(<em>其在 hexo 文件夹下，另外的主题配置文件<code>_config.yml</code>在相应的主题文件夹下</em>)下更改配置项为<code>theme: next</code>。</p><h3 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h3><p>所有配置项后的<code>:</code>之后都要留至少<strong>一个空格</strong>。</p><h3 id="百度统计："><a href="#百度统计：" class="headerlink" title="百度统计："></a>百度统计：</h3><p>自行注册（<a href="https://tongji.baidu.com/web/welcome/login" target="_blank" rel="noopener">点击</a>），另可参考这里（<a href="https://blog.csdn.net/lcyaiym/article/details/76796540" target="_blank" rel="noopener">hexo的next百度统计</a>）。</p><p>但是，他的“点击2”中的百度统计有关<code>_layouts/default.html</code>文件添加一段代码是<strong>针对他的另一重博客(jekyll)而言的</strong>，hexo 只需要去<em>主题配置</em>中添加<code>hm.src = &quot;https://hm.baidu.com/hm.js?uuid&quot;; 中的</code>uuid换成自己的即可，搜索关键字<code>baidu_analytics</code>后进行参数替换。</p><h3 id="图标："><a href="#图标：" class="headerlink" title="图标："></a>图标：</h3><p>好像有两种方法，也不知道那种有效，反正我都照做了。</p><ol><li><code>主题文件夹/source/images/</code>下的<code>favicon-16x16-next.png</code>和<code>favicon-32x32-next.png</code>替换成自己想要的图标(<a href="https://www.iconfont.cn/?_blank" target="_blank" rel="noopener">点击</a>)。</li><li>改名后的 ico <code>favicon.ico</code>要放在所用主题的 source 下，因为不确定，我站点 source 也放了，各种放。</li></ol><h3 id="阅读数，访问量："><a href="#阅读数，访问量：" class="headerlink" title="阅读数，访问量："></a>阅读数，访问量：</h3><p>搜索关键字<code>busuanzi_count</code>。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">busuanzi_count:</span><br><span class="line">    enable: true</span><br><span class="line">    total_visitors: true</span><br><span class="line">    total_visitors_icon: user</span><br><span class="line">    total_views: true</span><br><span class="line">    total_views_icon: eye</span><br><span class="line">    post_views: true</span><br><span class="line">    post_views_icon: eye</span><br></pre></td></tr></table></figure></p><p>这里是和<code>leancloud</code>一样的功能，开了这个就不用开<code>leancloud</code>了吧？？</p><p>可以参考：（<a href="https://blog.csdn.net/qw8880000/article/details/80235391" target="_blank" rel="noopener">网站访问量统计 | hexo</a>）。</p><h3 id="评论："><a href="#评论：" class="headerlink" title="评论："></a>评论：</h3><p>搜索关键字<code>valine</code>，替换成自己<code>leancloud</code>的 apikey 和  appkey。<a href="https://valine.js.org/" target="_blank" rel="noopener">传送至 <code>valine</code></a>。<a href="https://leancloud.cn/" target="_blank" rel="noopener">传送至<code>leancloud</code></a>。</p><h3 id="站内搜索"><a href="#站内搜索" class="headerlink" title="站内搜索"></a>站内搜索</h3><p>安装 hexo-generator-search:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-search --save</span><br></pre></td></tr></table></figure></p><p>在站点配置文件中加入：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">search:</span><br><span class="line">    path: search.xml</span><br><span class="line">    field: post</span><br></pre></td></tr></table></figure></p><p>参考：（<a href="https://blog.csdn.net/linshuhe1/article/details/52424573" target="_blank" rel="noopener">Hexo个人免费博客(三) next主题、评论、阅读量统计和站内搜索</a>）。</p><h3 id="打赏功能"><a href="#打赏功能" class="headerlink" title="打赏功能"></a>打赏功能</h3><p>主题配置文件下搜索关键字<code>reward_comment</code>进行<a href="https://blog.csdn.net/lcyaiym/article/details/76796545" target="_blank" rel="noopener">配置</a>：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">reward_comment: 坚持原创技术分享，您的支持将鼓励我继续创作！   # 可以修改自己的话</span><br><span class="line">wechatpay: /images/wechat.jpg    # 换成自己的，图片放置路径：themes/next/source/images</span><br><span class="line">alipay: /images/aipay.png    # 换成自己的</span><br></pre></td></tr></table></figure></p><p>图片像素不能太大，200px*200px 就好，宽度太宽布局会出问题。</p><h3 id="“关于”和“标签”页面"><a href="#“关于”和“标签”页面" class="headerlink" title="“关于”和“标签”页面"></a>“关于”和“标签”页面</h3><blockquote><p>2、在命令行中输入$ hexo new page tags</p><p>3、这时会在在sources/tags里面有个index.md的文件，打开这个文件编辑</p><p>—title: tags<br>date: 2016-11-11 21:40:58<br>type: “tags”<br>—type: 改成tags</p><p>4、在主题配置文件中，在menu项下，要把tags页打开如menu:</p><p>home: /<br>categories: /categories</p><p>#about: /about<br>archives: /archives<br>tags: /tags    　　　　　<strong>＃ 配置项需要修改，确保标签页已打开。</strong></p><p>#schedule: /schedule     </p><p>#commonweal: /404.html<br>参考：（<a href="https://www.zhihu.com/question/29017171" target="_blank" rel="noopener">hexo 下的分类和表签无法显示，怎么解决？</a>）。</p></blockquote><p>关于页面：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 关于我</span><br><span class="line">date: 2019-01-29 14:05:54</span><br><span class="line">comments: false     # 可以关闭评论</span><br><span class="line">---</span><br></pre></td></tr></table></figure></p><p>标签和分页可以参考小居的这篇文章，<a href="https://xdlrt.github.io/2016/02/18/2016-02-18/" target="_blank" rel="noopener">第一篇博文及标签、分类页的建立</a>。</p><h3 id="关于图床"><a href="#关于图床" class="headerlink" title="关于图床"></a>关于图床</h3><p>七牛云需要自己备案的域名，那只能从简书或者微博上做图床吧。</p><h3 id="其他："><a href="#其他：" class="headerlink" title="其他："></a>其他：</h3><p>主题配置<code>:_config.yml</code>中搜索<code>social:</code>项，将<code>github</code>和<code>微信</code>配置项换成自己的链接。  </p><p>主题配置<code>:_config.yml</code>中搜索<code>avatar:</code>项目：将其下<code>url:</code>项换成自己的头像链接。</p><h2 id="绑定域名"><a href="#绑定域名" class="headerlink" title="绑定域名"></a>绑定域名</h2><p>申请域名有很多途径，阿里云，腾讯与等都可以，自己注册申请。</p><p>配置有问题是，会收到警告邮件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">The page build completed successfully, but returned the following warning for the `master` branch:</span><br><span class="line"></span><br><span class="line">Your site&apos;s DNS settings are using a custom subdomain, www.andyvj.com, that&apos;s set up as an A record. We recommend you change this to a CNAME record pointing at AndyVJ.github.io. For more information, see https://help.github.com/articles/using-a-custom-domain-with-github-pages/.</span><br><span class="line"></span><br><span class="line">For information on troubleshooting Jekyll see:</span><br><span class="line"></span><br><span class="line">  https://help.github.com/articles/troubleshooting-jekyll-builds</span><br><span class="line"></span><br><span class="line">If you have any questions you can contact us by replying to this email.</span><br></pre></td></tr></table></figure></p><p>相应的主页的<code>设置</code>下的<code>GitHub Pages</code>处也会有警告显示，原因是域名解析没设置对。把<code>CNAME</code>主机记录改成<code>www</code>，具体如下：<br><img src="http://wx2.sinaimg.cn/mw690/006mcMYXgy1fzqok77jz2j30y0062jrv.jpg" alt="域名解析"></p><p><a href="https://help.github.com/articles/setting-up-an-apex-domain/#configuring-a-records-with-your-dns-provider" target="_blank" rel="noopener">官方 help 页</a>，<a href="https://help.github.com/articles/troubleshooting-custom-domains/" target="_blank" rel="noopener">官方 help 页1</a>，<a href="https://segmentfault.com/q/1010000011240038" target="_blank" rel="noopener">网友提问</a>，<a href="https://help.github.com/articles/custom-domain-redirects-for-github-pages-sites/" target="_blank" rel="noopener">github help</a>，<a href="https://help.github.com/articles/using-a-custom-domain-with-github-pages/" target="_blank" rel="noopener">github help2</a>。</p><h3 id="生成站点地图收录至搜索引擎"><a href="#生成站点地图收录至搜索引擎" class="headerlink" title="生成站点地图收录至搜索引擎"></a>生成站点地图收录至搜索引擎</h3><p>安装好这两个插件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-sitemap --save    # 用于生成搜索引擎网站地图</span><br><span class="line">npm install hexo-generator-baidu-sitemap --save    # 用于生成百度搜索引擎网站地图</span><br></pre></td></tr></table></figure></p><p>可以参考：（<a href="https://www.jianshu.com/p/9c2d6db2f855" target="_blank" rel="noopener">点击1</a>），（<a href="https://www.jianshu.com/p/f2b648afba2f" target="_blank" rel="noopener">点击2</a>），<a href="https://jingyan.baidu.com/article/a3761b2bf716631576f9aa3a.html" target="_blank" rel="noopener">百度经验</a>。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;主要参考的博客：&lt;a href=&quot;https://blog.csdn.net/u010820857/article/details/81880568&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;《github+hexo 搭建个人博客(超详细)》&lt;/a&gt;，&lt;a href=&quot;https://www.bigwin.ml/2018/11/23/github-hexo-blog/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;《GitHub平台上Hexo博客系统的搭建》&lt;/a&gt;。过程简略的记录一下，把遇到麻烦的地方写详细点。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="其他" scheme="https://www.andyvj.com/categories/%E5%85%B6%E4%BB%96/"/>
-    
-    
-      <category term="hexo" scheme="https://www.andyvj.com/tags/hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>通过git运用在github仓库中备份hexo博客</title>
-    <link href="https://www.andyvj.com/2019/01/31/190131-01/"/>
-    <id>https://www.andyvj.com/2019/01/31/190131-01/</id>
-    <published>2019-01-31T06:33:32.000Z</published>
-    <updated>2019-02-19T12:07:25.036Z</updated>
-    
-    <content type="html"><![CDATA[<p>每次新增一篇博文后备份到 github 仓库中，这样是比较合理的。今天也算是初步学会了怎样去操作。</p><a id="more"></a><p>逻辑上我们应该在搭建博客之初的第一步创建一个空的<code>source</code>仓库，然后 clone 到本地，然后，在这个所 clone 的文件夹下搭建博客。其中 clone 的操作命令如下：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/username/仓库名.git  </span><br><span class="line">// 替换成自己的仓库</span><br></pre></td></tr></table></figure><p>下面记录下 git 的用法。</p><h2 id="如何上传"><a href="#如何上传" class="headerlink" title="如何上传"></a>如何上传</h2><p>若 git 版本太低，链接不上远程时，需要先更新下 git。</p><p>至于如何上传，主要参考的这篇博文——<a href="https://www.cnblogs.com/cxk1995/p/5800196.html" target="_blank" rel="noopener">使用git将项目上传到github（最简单方法）</a>，还有这篇<a href="https://www.cnblogs.com/alex-415/p/6912294.html" target="_blank" rel="noopener">博文</a>。主要的步骤是：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1. git init //初始化仓库</span><br><span class="line">2. git add .(文件name) //添加文件到本地仓库</span><br><span class="line">3. git commit -m &quot;first commit&quot; //添加文件描述信息</span><br><span class="line">4. git remote add origin + 远程仓库地址 //链接远程仓库，创建主分支；</span><br><span class="line">                                       // 若失败，git remote rm origin 后重复。</span><br><span class="line">5. git push -u origin master //把本地仓库的文件推送到远程仓库</span><br></pre></td></tr></table></figure></p><p>有可能出现错误：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hint: Updates were rejected because the remote contains work that you do</span><br><span class="line">hint: not have locally. This is usually caused by another repository pushing</span><br><span class="line">hint: to the same ref. You may want to first integrate the remote changes</span><br><span class="line">hint: (e.g., &apos;git pull ...&apos;) before pushing again.</span><br><span class="line">hint: See the &apos;Note about fast-forwards&apos; in &apos;git push --help&apos; for details.</span><br></pre></td></tr></table></figure></p><p>根据提示在步骤 4 和 5 之间添加一行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1. git init //初始化仓库</span><br><span class="line">2. git add .(文件name) //添加文件到本地仓库</span><br><span class="line">3. git commit -m &quot;first commit&quot; //添加文件描述信息</span><br><span class="line">4. git remote add origin + 远程仓库地址 //链接远程仓库，创建主分支；</span><br><span class="line">5. git pull origin master // 把本地仓库的变化连接到远程仓库主分支</span><br><span class="line">6. git push -u origin master //把本地仓库的文件推送到远程仓库</span><br></pre></td></tr></table></figure></p><p>如果远程分支我们不需要了，我们可以运用<a href="https://blog.csdn.net/lplife/article/details/79818097" target="_blank" rel="noopener">命令强制覆盖掉</a>：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin master -f</span><br></pre></td></tr></table></figure><h2 id="gitignore-的写法"><a href="#gitignore-的写法" class="headerlink" title=".gitignore 的写法"></a>.gitignore 的写法</h2><p>主要参考着两篇博文，<a href="https://www.cnblogs.com/ShaYeBlog/p/5355951.html" target="_blank" rel="noopener">.gitignore详解</a> 和 <a href="https://www.cnblogs.com/kevingrace/p/5690241.html" target="_blank" rel="noopener">Git忽略提交规则 - .gitignore配置运维总结过</a>。</p><p>用到的几个：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> /mtk/           表示过滤整个文件夹</span><br><span class="line">*.zip           表示过滤所有.zip文件</span><br><span class="line">/mtk/do.c       表示过滤某个具体文件</span><br></pre></td></tr></table></figure><p>以及：</p><blockquote></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 此为注释 – 将被 Git 忽略</span><br><span class="line"> </span><br><span class="line">*.a       # 忽略所有 .a 结尾的文件</span><br><span class="line">!lib.a    # 但 lib.a 除外</span><br><span class="line">/TODO     # 仅仅忽略项目根目录下的 TODO 文件，不包括 subdir/TODO</span><br><span class="line">build/    # 忽略 build/ 目录下的所有文件</span><br><span class="line">doc/*.txt # 会忽略 doc/notes.txt 但不包括 doc/server/arch.txt</span><br></pre></td></tr></table></figure><p>可以通过一些过滤方法，过滤掉一些没有必要备份的文件。</p><h2 id="另外"><a href="#另外" class="headerlink" title="另外"></a>另外</h2><p>如果链接远程仓库<code>git remote add origin xxx.git</code>时出现如下的错误信息：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fatal: remote origin already exists.</span><br></pre></td></tr></table></figure></p><p><a href="https://blog.csdn.net/dengjianqiang2011/article/details/9260435" target="_blank" rel="noopener">可以这样解决</a>：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1、先输入$ git remote rm origin</span><br><span class="line"></span><br><span class="line">2、再输入$ git remote add origin git@github.com:djqiang/gitdemo.git 就不会报错了！</span><br></pre></td></tr></table></figure></p><p>然后再使用之前的命令应该就可以链接上去了。</p><p>其实这个链接已经存在，不再链接应该也是可以的，直接 push 就行了。<br><br></p><p>博客从头到尾的搭建可以参考这篇非常详细的<a href="https://blog.csdn.net/u010820857/article/details/81880568" target="_blank" rel="noopener">博文</a>。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;每次新增一篇博文后备份到 github 仓库中，这样是比较合理的。今天也算是初步学会了怎样去操作。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="其他" scheme="https://www.andyvj.com/categories/%E5%85%B6%E4%BB%96/"/>
-    
-    
-      <category term="hexo" scheme="https://www.andyvj.com/tags/hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>开启个人博客之旅</title>
-    <link href="https://www.andyvj.com/2019/01/30/190130-01/"/>
-    <id>https://www.andyvj.com/2019/01/30/190130-01/</id>
-    <published>2019-01-30T02:45:33.000Z</published>
-    <updated>2019-02-19T12:07:25.034Z</updated>
-    
-    <content type="html"><![CDATA[<p>我又开始折腾搭建了一个个人博客，基于<code>Hexo + github</code>的；当然，是通过在网上查阅了很多的资料完成的，对于一个非程序员来说真不容易，虽然我对编程有着很大的兴趣，但毕竟是门外汉。耗时，耗神还伤眼睛。<br><a id="more"></a></p><p>其实，我一年多前也凭着兴趣搭建过一个博客，只是没有很多的功能，例如，评论、阅读数等；但是也仅是因为兴趣，却也不知道写点什么，荒废也就成自然了。现在我又想去记录一些东西了，什么内容都行，并要持续。我要开启我的个人博客之旅，毕竟写作可以让人思考、总结、和提升。努力构建一个自己的知识体系。</p><p>在搭建博客时也碰到了很多问题，虽然网上的大神们都有很好的解决方案，但对我来说，搜索和配置起来也挺不容易，后面我也会总结记录下来。</p><p>这个博客打算记录写什么呢？初步打算是围绕<strong>机电一体化/自动化</strong>来展开。这是一个综合性学科交叉的专业，大体包含<u>机械</u>、<u>电气</u>、<u>控制</u>，其中控制可能还牵涉到很多的计算机方面的知识，这不就是全栈吗？其实本人学的是机械自动化方面偏机械一点，现在也是从事这方面相关的工作，其他方面也不甚了解，只能说朝这个方向学习和努力。所以，可能以后博客中机械方面的内容会偏多。</p><p>自知自己的知识有限，做的也只是应用层方面的事情，大部分公司其实也只需要这样的人才。应用层于我的理解其实大部分是<em>基于经验和实践</em>的，经验性的内容可能不适合长篇大论，针对性的把一个问题讲清楚就好；而研究性的可能需要长篇大论了。所以，后面的博文每篇我也不打算写长。现在信息碎片化的时代，好像也没几个人能个耐下心来看完一篇长文。</p><p>在这个框架下，聚焦在下游的应用，广度很大，深度可能往往不够。在众多的方向中，还是需要一个深入研究的方向，对我而言有机会深入的可能还是<strong>机械</strong>方面。深入一个方向，广度尽量拉开，这也许是现代社会所需要的。“一招鲜”在现代社会，我觉得不再适用，如果你不想一份工作做到老。</p><p>最后，兴趣能驱动你去开始做这件事情，却往往不能持久让你坚持下来；带着兴趣去做事当然是最好，但我们做事还是需要有一个目的性，就是你内心最强烈的渴望，这才是支撑你持续下去的动力。一切动力的源泉无非就是爱和责任。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;我又开始折腾搭建了一个个人博客，基于&lt;code&gt;Hexo + github&lt;/code&gt;的；当然，是通过在网上查阅了很多的资料完成的，对于一个非程序员来说真不容易，虽然我对编程有着很大的兴趣，但毕竟是门外汉。耗时，耗神还伤眼睛。&lt;br&gt;
     
     </summary>
     
