@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[UG NX 零件明细表及导出excel等格式方法]]></title>
     <url>%2F2019%2F03%2F02%2F190302-01%2F</url>
-    <content type="text"><![CDATA[零件明细表参数基本设置方法 ▲ 选择整列 -&gt; 右键 -&gt; 设置 ▲ 参数修改，以『序号』为例 ▲ 可以尝试下其他控制项 ▲ 零件明细表的级别编辑 允许多个明细表参数控制环境变量文件修改默认情况下一张图纸，只允许一个明细表，当你尝试添加两个时会有提示，需要修改参数。 打开： 1&quot;C:\Program Files\Siemens\NX 10.0\UGII\ugii_env.dat&quot; 添加变量： 1UGII_UPDATE_ALL_ID_SYMBOLS_WITH_PLIST=0 这样设置后，就可以添加多个零件明细表了。 关于ugii_env.dat环境变量文件 详细可以参考文末『参考』。 导出零件明细表的方法零件明细表右键导出选择整个零件明细表，右键导出。 ▲ 导出html文件，文件的存放的路径：C:\Users\Administrator\AppData\Local\Temp。 ▲ 导出 excel 的方法，导出后可以在 excel 中进行筛选删除计算过滤等操作。 另外，导出『文件』(txt格式)，和『信息窗口』(与Ctrl+I类似)可以自行尝试。 直接命令导出 ▲ 点击这个命令时，有错误提示信息，暂时还不清楚怎么用，和问题出在哪里；我想，直接用上面的哪一种方法就好。 参考： link-01// 关于环境变量 link-02// 关于环境变量 link-03// 关于属性工具]]></content>
+    <content type="text"><![CDATA[零件明细表参数基本设置方法 ▲ 选择整列 -&gt; 右键 -&gt; 设置 ▲ 参数修改，以『序号』为例 ▲ 可以尝试下其他控制项 ▲ 零件明细表的级别编辑 允许多个明细表参数控制环境变量文件修改默认情况下一张图纸，只允许一个明细表，当你尝试添加两个时会有提示，需要修改参数。 打开： 1&quot;C:\Program Files\Siemens\NX 10.0\UGII\ugii_env.dat&quot; 添加变量： 1UGII_UPDATE_ALL_ID_SYMBOLS_WITH_PLIST=0 这样设置后，就可以添加多个零件明细表了。 关于ugii_env.dat环境变量文件 详细可以参考文末『参考』。 导出零件明细表的方法零件明细表右键导出选择整个零件明细表，右键导出。 ▲ 导出html文件，文件的存放的路径：C:\Users\Administrator\AppData\Local\Temp。 ▲ 导出 excel 的方法，导出后可以在 excel 中进行筛选删除计算过滤等操作。 另外，导出『文件』(txt格式)，和『信息窗口』(与Ctrl+I类似)可以自行尝试。 直接命令导出 ▲ 点击这个命令时，有错误提示信息，暂时还不清楚怎么用，和问题出在哪里；我想，直接用上面的哪一种方法就好。 参考：1.link-01 // 关于环境变量2.link-02 // 关于环境变量3.link-03 // 关于属性工具]]></content>
       <categories>
         <category>机械结构</category>
       </categories>
