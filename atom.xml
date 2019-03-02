@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.andyvj.com/"/>
-  <updated>2019-03-01T15:18:49.418Z</updated>
+  <updated>2019-03-02T01:31:13.560Z</updated>
   <id>https://www.andyvj.com/</id>
   
   <author>
@@ -17,13 +17,36 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>UG NX 零件明细表及导出excel等格式方法</title>
+    <link href="https://www.andyvj.com/2019/03/02/190302-01/"/>
+    <id>https://www.andyvj.com/2019/03/02/190302-01/</id>
+    <published>2019-03-02T00:55:51.000Z</published>
+    <updated>2019-03-02T01:31:13.560Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="零件明细表参数基本设置方法"><a href="#零件明细表参数基本设置方法" class="headerlink" title="零件明细表参数基本设置方法"></a>零件明细表参数基本设置方法</h2><p><img src="https://ws4.sinaimg.cn/large/006mcMYXgy1g0o68gwchmj30lj0aqdge.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 选择整列 -&gt; 右键 -&gt; 设置</div><a id="more"></a><p><img src="https://ws1.sinaimg.cn/large/006mcMYXgy1g0o69v0w17j30gb0d4t93.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 参数修改，以『序号』为例</div><p><img src="https://wx1.sinaimg.cn/large/006mcMYXgy1g0o6b7qfmmj30va0hhjso.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 可以尝试下其他控制项</div><p><img src="https://wx3.sinaimg.cn/large/006mcMYXgy1g0o6cvqa96j316l0hitaa.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 零件明细表的级别编辑</div><h2 id="允许多个明细表参数控制"><a href="#允许多个明细表参数控制" class="headerlink" title="允许多个明细表参数控制"></a>允许多个明细表参数控制</h2><h3 id="环境变量文件修改"><a href="#环境变量文件修改" class="headerlink" title="环境变量文件修改"></a>环境变量文件修改</h3><p>默认情况下一张图纸，只允许一个明细表，当你尝试添加两个时会有提示，需要修改参数。</p><p>打开：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;C:\Program Files\Siemens\NX 10.0\UGII\ugii_env.dat&quot;</span><br></pre></td></tr></table></figure><p>添加变量：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">UGII_UPDATE_ALL_ID_SYMBOLS_WITH_PLIST=0</span><br></pre></td></tr></table></figure><p>这样设置后，就可以添加多个零件明细表了。</p><h3 id="关于ugii-env-dat环境变量文件"><a href="#关于ugii-env-dat环境变量文件" class="headerlink" title="关于ugii_env.dat环境变量文件"></a>关于<code>ugii_env.dat</code>环境变量文件</h3><p><img src="https://wx4.sinaimg.cn/large/006mcMYXgy1g0o6k94hi0j30r90gin4t.jpg" alt="image"></p><p>详细可以参考文末『参考』。</p><h2 id="导出零件明细表的方法"><a href="#导出零件明细表的方法" class="headerlink" title="导出零件明细表的方法"></a>导出零件明细表的方法</h2><h3 id="零件明细表右键导出"><a href="#零件明细表右键导出" class="headerlink" title="零件明细表右键导出"></a>零件明细表右键导出</h3><p>选择整个零件明细表，右键导出。</p><p><img src="https://wx3.sinaimg.cn/large/006mcMYXgy1g0o6mbny4yj30gm0asaae.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 导出<code>html</code>文件，文件的存放的路径：<code>C:\Users\Administrator\AppData\Local\Temp</code>。</div><p><img src="https://ws3.sinaimg.cn/large/006mcMYXgy1g0o6nul0ozj309406iwek.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 导出 excel 的方法，导出后可以在 excel 中进行筛选删除计算过滤等操作。</div><p>另外，导出『文件』(txt格式)，和『信息窗口』(与Ctrl+I类似)可以自行尝试。</p><h3 id="直接命令导出"><a href="#直接命令导出" class="headerlink" title="直接命令导出"></a>直接命令导出</h3><p><img src="https://wx2.sinaimg.cn/large/006mcMYXgy1g0o6qdovf8j30dq040dg4.jpg" alt="image"></p><p><div style="font-size:13px;color:gray;text-align:center">▲ 点击这个命令时，有错误提示信息，暂时还不清楚怎么用，和问题出在哪里；我想，直接用上面的哪一种方法就好。</div></p><p><hr><br><span style="color:gray;font-size:12px"><br>参考：</span></p><ol><li><a href="https://wenku.baidu.com/view/f36235c789eb172ded63b74c.html?pn=50" target="_blank" rel="noopener">link-01</a>// 关于环境变量</li><li><a href="https://wenku.baidu.com/view/7f211e34b90d6c85ec3ac633.html" target="_blank" rel="noopener">link-01</a>// 关于环境变量</li><li><a href="http://www.ugsnx.com/thread-171235-1-4.html" target="_blank" rel="noopener">link-01</a>// 关于属性工具<br></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;零件明细表参数基本设置方法&quot;&gt;&lt;a href=&quot;#零件明细表参数基本设置方法&quot; class=&quot;headerlink&quot; title=&quot;零件明细表参数基本设置方法&quot;&gt;&lt;/a&gt;零件明细表参数基本设置方法&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;https://ws4.sinaimg.cn/large/006mcMYXgy1g0o68gwchmj30lj0aqdge.jpg&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
+&lt;div style=&quot;font-size:13px;color:gray;text-align:center&quot;&gt;▲ 选择整列 -&amp;gt; 右键 -&amp;gt; 设置&lt;/div&gt;
+    
+    </summary>
+    
+      <category term="机械结构" scheme="https://www.andyvj.com/categories/%E6%9C%BA%E6%A2%B0%E7%BB%93%E6%9E%84/"/>
+    
+    
+      <category term="UG_NX" scheme="https://www.andyvj.com/tags/UG-NX/"/>
+    
+  </entry>
+  
+  <entry>
     <title>UG NX 模型树添加属性列和明细表参数设置</title>
     <link href="https://www.andyvj.com/2019/03/01/190301-04/"/>
     <id>https://www.andyvj.com/2019/03/01/190301-04/</id>
     <published>2019-03-01T14:16:19.000Z</published>
-    <updated>2019-03-01T15:18:49.418Z</updated>
+    <updated>2019-03-02T00:44:53.861Z</updated>
     
-    <content type="html"><![CDATA[<p>这样设置后能够方便的自动填充<code>零件明细表</code>。</p><a id="more"></a><h2 id="在建模模板中添加属性参数"><a href="#在建模模板中添加属性参数" class="headerlink" title="在建模模板中添加属性参数"></a>在建模模板中添加属性参数</h2><p>在模板<code>model-plain-1-mm-template.prt</code>中添加<code>名称</code>、<code>材料</code>、<code>数量</code>参数，路径为：<code>文件 -&gt; 属性</code>。</p><h2 id="模型树添加属性列"><a href="#模型树添加属性列" class="headerlink" title="模型树添加属性列"></a>模型树添加属性列</h2><p><img src="https://wx2.sinaimg.cn/large/006mcMYXgy1g0nntaaqtpj30id0ns76q.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 装配树下：属性列 -&gt; 右键 -&gt; 列 -&gt; 配置</div><p><img src="https://ws3.sinaimg.cn/large/006mcMYXgy1g0no24vacnj30eb061mxl.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 建模树下：同样的方式将『图层』添加至最前，方便信息查看。</div><p><img src="https://wx4.sinaimg.cn/large/006mcMYXgy1g0nnv5sbatj309l0aojrv.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 新建显示属性列参数，并移至到最前面，方便显示查看；同时将需要计算重量的『体』添加到『BODY』引用集下，这样才能引用<code>WEIGHT</code>重量参数。</div><h2 id="填写参数信息"><a href="#填写参数信息" class="headerlink" title="填写参数信息"></a>填写参数信息</h2><p>在<strong>建模</strong>模式下，<code>双击激活添加的信息的零件 -&gt; 『属性工具』(快捷键自定义：Shift + S)</code>。</p><h2 id="添加零件明细表参数"><a href="#添加零件明细表参数" class="headerlink" title="添加零件明细表参数"></a>添加零件明细表参数</h2><p>在<strong>工程图</strong>模式下。</p><!--![image](https://wx1.sinaimg.cn/large/006mcMYXgy1g0no4x9roij30hc04874c.jpg)--><p><img src="https://ws3.sinaimg.cn/large/006mcMYXgy1g0np6veqscj30jg03zmx9.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 零件明细表</div><p><img src="https://ws3.sinaimg.cn/large/006mcMYXgy1g0np3ngmp9j30dc0aqaae.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 序号参数</div><p><img src="https://ws1.sinaimg.cn/large/006mcMYXgy1g0np4zdcpuj30dc0aqweu.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 自定义参数：<code>名称</code>、<code>材料</code>、<code>备注</code>的引用例。</div><p><img src="https://ws3.sinaimg.cn/large/006mcMYXgy1g0np8mk6nwj30dc0aqwer.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 数量参数</div><p><img src="https://wx4.sinaimg.cn/large/006mcMYXgy1g0np9ljxnij30dc0aqdg7.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 重量参数</div><p><img src="https://wx2.sinaimg.cn/large/006mcMYXgy1g0npadnyxjj30dc0aqglw.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 总重量参数</div><!--<hr/><span style="color:gray;font-size:12px">参考：1. [link-01]()2. [link-01]()3. [link-01]()4. [link-01]()5. [link-01]()</span>-->]]></content>
+    <content type="html"><![CDATA[<p>这样设置后能够方便的自动填充<code>零件明细表</code>。</p><a id="more"></a><h2 id="在建模模板中添加属性参数"><a href="#在建模模板中添加属性参数" class="headerlink" title="在建模模板中添加属性参数"></a>在建模模板中添加属性参数</h2><p>在模板<code>model-plain-1-mm-template.prt</code>中添加<code>名称</code>、<code>材料</code>、<code>数量</code>参数，路径为：<code>文件 -&gt; 属性</code>。</p><h2 id="模型树添加属性列"><a href="#模型树添加属性列" class="headerlink" title="模型树添加属性列"></a>模型树添加属性列</h2><p><img src="https://wx2.sinaimg.cn/large/006mcMYXgy1g0nntaaqtpj30id0ns76q.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 装配树下：属性列 -&gt; 右键 -&gt; 列 -&gt; 配置</div><p><img src="https://ws3.sinaimg.cn/large/006mcMYXgy1g0no24vacnj30eb061mxl.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 建模树下：同样的方式将『图层』添加至最前，方便信息查看。</div><p><img src="https://wx4.sinaimg.cn/large/006mcMYXgy1g0nnv5sbatj309l0aojrv.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 新建显示属性列参数，并移至到最前面，方便显示查看；同时将需要计算重量的『体』添加到『BODY』引用集下，这样才能引用<code>WEIGHT</code>重量参数。</div><h2 id="填写参数信息"><a href="#填写参数信息" class="headerlink" title="填写参数信息"></a>填写参数信息</h2><p>在<strong>建模</strong>模式下，<code>装配树中，双击激活零部件 -&gt; 『属性工具』(快捷键自定义：Shift + S)</code>。</p><h2 id="添加零件明细表参数"><a href="#添加零件明细表参数" class="headerlink" title="添加零件明细表参数"></a>添加零件明细表参数</h2><p>在<strong>工程图</strong>模式下。</p><!--![image](https://wx1.sinaimg.cn/large/006mcMYXgy1g0no4x9roij30hc04874c.jpg)--><p><img src="https://ws3.sinaimg.cn/large/006mcMYXgy1g0np6veqscj30jg03zmx9.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 零件明细表</div><p><img src="https://ws3.sinaimg.cn/large/006mcMYXgy1g0np3ngmp9j30dc0aqaae.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 序号参数</div><p><img src="https://ws1.sinaimg.cn/large/006mcMYXgy1g0np4zdcpuj30dc0aqweu.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 自定义参数：<code>名称</code>、<code>材料</code>、<code>备注</code>的引用例。</div><p><img src="https://ws3.sinaimg.cn/large/006mcMYXgy1g0np8mk6nwj30dc0aqwer.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 数量参数</div><p><img src="https://wx4.sinaimg.cn/large/006mcMYXgy1g0np9ljxnij30dc0aqdg7.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 重量参数</div><p><img src="https://wx2.sinaimg.cn/large/006mcMYXgy1g0npadnyxjj30dc0aqglw.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 总重量参数</div><!--<hr/><span style="color:gray;font-size:12px">参考：1. [link-01]()2. [link-01]()3. [link-01]()4. [link-01]()5. [link-01]()</span>-->]]></content>
     
     <summary type="html">
     
@@ -291,29 +314,6 @@
   </entry>
   
   <entry>
-    <title>UG NX 移动对象之『动态』技巧</title>
-    <link href="https://www.andyvj.com/2019/02/19/190219-02/"/>
-    <id>https://www.andyvj.com/2019/02/19/190219-02/</id>
-    <published>2019-02-18T16:00:00.000Z</published>
-    <updated>2019-02-19T12:07:25.076Z</updated>
-    
-    <content type="html"><![CDATA[<p><code>动态</code>绕某一点旋转，而旋转手柄又不在此点上，如何操作？</p><p><img src="https://wx2.sinaimg.cn/large/006mcMYXgy1g0bo8r3k9jj30iz0g7jt8.jpg" alt="image"><br><a id="more"></a></p><ol><li><code>Ctrl + T</code> 移动对象，勾选<code>只移动手柄</code>，将手柄点选移动到需要旋转的点。</li></ol><p><img src="https://ws3.sinaimg.cn/large/006mcMYXgy1g0bob2m123j30940f4jrx.jpg" alt="image"></p><p><img src="https://ws3.sinaimg.cn/large/006mcMYXgy1g0bocqqa0jj30fn0fa3zz.jpg" alt="image"></p><ol start="2"><li>取消勾选<code>只移动手柄</code>，点选手柄<code>节点</code>，输入旋转角度，确定。</li></ol><p><img src="https://wx2.sinaimg.cn/large/006mcMYXgy1g0boffrgskj30kw0cr0u8.jpg" alt="image"></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;code&gt;动态&lt;/code&gt;绕某一点旋转，而旋转手柄又不在此点上，如何操作？&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://wx2.sinaimg.cn/large/006mcMYXgy1g0bo8r3k9jj30iz0g7jt8.jpg&quot; alt=&quot;image&quot;&gt;&lt;br&gt;
-    
-    </summary>
-    
-      <category term="机械结构" scheme="https://www.andyvj.com/categories/%E6%9C%BA%E6%A2%B0%E7%BB%93%E6%9E%84/"/>
-    
-    
-      <category term="UG_NX" scheme="https://www.andyvj.com/tags/UG-NX/"/>
-    
-  </entry>
-  
-  <entry>
     <title>UG NX 坐标对齐移动——解决实体与原始坐标不对齐的问题</title>
     <link href="https://www.andyvj.com/2019/02/19/190219-01/"/>
     <id>https://www.andyvj.com/2019/02/19/190219-01/</id>
@@ -326,6 +326,29 @@
     
       &lt;p&gt;有时候通过&lt;code&gt;WAVE&lt;/code&gt;链接过来的实体会出现&lt;strong&gt;实体与原始坐标不对齐的情况&lt;/strong&gt;，如：&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://wx1.sinaimg.cn/large/006mcMYXgy1g0bhli2dwsj309i0cxjrf.jpg&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="机械结构" scheme="https://www.andyvj.com/categories/%E6%9C%BA%E6%A2%B0%E7%BB%93%E6%9E%84/"/>
+    
+    
+      <category term="UG_NX" scheme="https://www.andyvj.com/tags/UG-NX/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>UG NX 移动对象之『动态』技巧</title>
+    <link href="https://www.andyvj.com/2019/02/19/190219-02/"/>
+    <id>https://www.andyvj.com/2019/02/19/190219-02/</id>
+    <published>2019-02-18T16:00:00.000Z</published>
+    <updated>2019-02-19T12:07:25.076Z</updated>
+    
+    <content type="html"><![CDATA[<p><code>动态</code>绕某一点旋转，而旋转手柄又不在此点上，如何操作？</p><p><img src="https://wx2.sinaimg.cn/large/006mcMYXgy1g0bo8r3k9jj30iz0g7jt8.jpg" alt="image"><br><a id="more"></a></p><ol><li><code>Ctrl + T</code> 移动对象，勾选<code>只移动手柄</code>，将手柄点选移动到需要旋转的点。</li></ol><p><img src="https://ws3.sinaimg.cn/large/006mcMYXgy1g0bob2m123j30940f4jrx.jpg" alt="image"></p><p><img src="https://ws3.sinaimg.cn/large/006mcMYXgy1g0bocqqa0jj30fn0fa3zz.jpg" alt="image"></p><ol start="2"><li>取消勾选<code>只移动手柄</code>，点选手柄<code>节点</code>，输入旋转角度，确定。</li></ol><p><img src="https://wx2.sinaimg.cn/large/006mcMYXgy1g0boffrgskj30kw0cr0u8.jpg" alt="image"></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;code&gt;动态&lt;/code&gt;绕某一点旋转，而旋转手柄又不在此点上，如何操作？&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://wx2.sinaimg.cn/large/006mcMYXgy1g0bo8r3k9jj30iz0g7jt8.jpg&quot; alt=&quot;image&quot;&gt;&lt;br&gt;
     
     </summary>
     
@@ -446,28 +469,6 @@
     
     
       <category term="C/C++" scheme="https://www.andyvj.com/tags/C-C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>三条路</title>
-    <link href="https://www.andyvj.com/2019/02/10/190210-02/"/>
-    <id>https://www.andyvj.com/2019/02/10/190210-02/</id>
-    <published>2019-02-10T13:27:42.000Z</published>
-    <updated>2019-02-19T12:07:25.051Z</updated>
-    
-    <content type="html"><![CDATA[<p>现在要学会做减法，要规划一下自己，结合自己的资源，最有可能成功的一条路径。在没有特别好机会的情况下三年内按这个方向走。</p><a id="more"></a><h2 id="产品方向"><a href="#产品方向" class="headerlink" title="产品方向"></a>产品方向</h2><p><strong>建模造型 + 模流分析 + 电子。</strong></p><h3 id="建模造型"><a href="#建模造型" class="headerlink" title="建模造型"></a>建模造型</h3><p>UG 或 Creo 的<strong>(曲面)建模造型</strong>能力，主要是<strong>图片造型能力</strong>。</p><h3 id="模流分析"><a href="#模流分析" class="headerlink" title="模流分析"></a><font color="gray"><s>模流分析</s></font></h3><font color="gray"><s>主要是常用产品<strong>材料属性</strong>，<strong>产品分型。</strong></s></font><h3 id="电子"><a href="#电子" class="headerlink" title="电子"></a><font color="gray"><s>电子</s></font></h3><font color="gray"><s>产品肯定需要电子，非专业以了解为主。</s></font><h3 id="可能的结果"><a href="#可能的结果" class="headerlink" title="可能的结果"></a>可能的结果</h3><ol><li><s>成为软件专家方向。做教程，卖教程；做自己的网站论坛，做培训等；</s></li><li><s>产品结构专家。造型能力 + 材料属性 + 模流分析；</s></li><li><strong>研发销售一体化。前期代理销售 -&gt; 仿造 -&gt; 规模做大 -&gt; 成立公司。</strong></li></ol><h2 id="机械方向"><a href="#机械方向" class="headerlink" title="机械方向"></a>机械方向</h2><p>其实，越来越觉得这不是一个很好的反向。本着“鸡蛋不能放在同一个篮子里的原则”，这个方向还是很有必要的。</p><h3 id="机械原理"><a href="#机械原理" class="headerlink" title="机械原理"></a>机械原理</h3><p>各种机构的熟悉，<strong>运动仿真</strong>等。</p><h3 id="电气-PLC"><a href="#电气-PLC" class="headerlink" title="电气 PLC"></a>电气 PLC</h3><p>以销售二手 PLC 为原点，窥探行业机会。电气控制专业化去服务，挖掘一些客户；如果这样可行，会有一些机会。</p><h3 id="上位机SCADA"><a href="#上位机SCADA" class="headerlink" title="上位机SCADA"></a><font color="gray"><s>上位机SCADA</s></font></h3><p><font color="gray"><s>非专业，做兴趣定位。</s></font></p><h3 id="可能的结果-1"><a href="#可能的结果-1" class="headerlink" title="可能的结果"></a>可能的结果</h3><ol><li>机械结构 + 电气控制 + <font color="gray"><s>上位机</s></font> 全栈专家；</li><li>有做公司的机会。</li></ol><h2 id="工作职业"><a href="#工作职业" class="headerlink" title="工作职业"></a>工作职业</h2><p>做好现有的工作，成为专家。工作中其实大的方向上都含有上面两部分。</p><p>主要机会在于：</p><ol><li>机器本身；</li><li>服装业。</li></ol><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>围绕上面展开，需要具体做的事情有很多，做下减法主要是下面几个：</p><ol><li>造型；</li><li>机械结构运动仿真 + PLC；</li><li>店开起来，维护起来，推广起来。</li><li><s>电子电气，编程知识就放在兴趣方面吧。</s></li></ol>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;现在要学会做减法，要规划一下自己，结合自己的资源，最有可能成功的一条路径。在没有特别好机会的情况下三年内按这个方向走。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="其他" scheme="https://www.andyvj.com/categories/%E5%85%B6%E4%BB%96/"/>
-    
-    
-      <category term="随想" scheme="https://www.andyvj.com/tags/%E9%9A%8F%E6%83%B3/"/>
     
   </entry>
   
