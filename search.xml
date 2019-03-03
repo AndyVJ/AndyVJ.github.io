@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[UG NX 执行完『零组件更名及导出』会后窗口显示的依然是之前的原始部件]]></title>
     <url>%2F2019%2F03%2F03%2F190303-01%2F</url>
-    <content type="text"><![CDATA[执行完『零组件更名及导出』会后窗口显示的依然是之前的原始部件，而非备份的图纸。 ▲ 导出装配 ▲ 从部件属性可见，显示的还是原来的路径。]]></content>
+    <content type="text"><![CDATA[执行完『零组件更名及导出』会后窗口显示的依然是之前的原始部件，而非备份的图纸。 ▲ 导出装配备份 ▲ 从部件属性可见，显示的还是原来的路径。]]></content>
       <categories>
         <category>机械结构</category>
       </categories>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.andyvj.com/"/>
-  <updated>2019-03-03T04:27:56.340Z</updated>
+  <updated>2019-03-03T04:59:27.917Z</updated>
   <id>https://www.andyvj.com/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://www.andyvj.com/2019/03/03/190303-01/"/>
     <id>https://www.andyvj.com/2019/03/03/190303-01/</id>
     <published>2019-03-03T04:22:59.000Z</published>
-    <updated>2019-03-03T04:27:56.340Z</updated>
+    <updated>2019-03-03T04:59:27.917Z</updated>
     
-    <content type="html"><![CDATA[<p>执行完『零组件更名及导出』会后窗口显示的依然是之前的原始部件，而非备份的图纸。</p><a id="more"></a><p><img src="https://ws1.sinaimg.cn/large/006mcMYXgy1g0phqtx7kzj307w04y74g.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 导出装配</div><p><img src="https://ws1.sinaimg.cn/large/006mcMYXgy1g0phrk49fhj30d00d5gm6.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 从部件属性可见，显示的还是原来的路径。</div><!--<hr/><span style="color:gray;font-size:12px">参考：1.[link-01]()2.[link-02]()3.[link-03]()4.[link-04]()5.[link-05]()</span>-->]]></content>
+    <content type="html"><![CDATA[<p>执行完『零组件更名及导出』会后窗口显示的依然是之前的原始部件，而非备份的图纸。</p><a id="more"></a><p><img src="https://ws1.sinaimg.cn/large/006mcMYXgy1g0phqtx7kzj307w04y74g.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 导出装配备份</div><p><img src="https://ws1.sinaimg.cn/large/006mcMYXgy1g0phrk49fhj30d00d5gm6.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 从部件属性可见，显示的还是原来的路径。</div><!--<hr/><span style="color:gray;font-size:12px">参考：1.[link-01]()2.[link-02]()3.[link-03]()4.[link-04]()5.[link-05]()</span>-->]]></content>
     
     <summary type="html">
     
