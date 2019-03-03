@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[190303-02]]></title>
+    <url>%2F2019%2F03%2F03%2F190303-02%2F</url>
+    <content type="text"><![CDATA[▲ 文件 -&gt; 属性 ▲ 显示的是『部件属性』，可用于零件明细表的参数传递。 ▲ 工具 -&gt; 属性，旁边的是『对象信息』。 ▲ 显示的是『特征属性』，暂时还不知道『特征属性』的用处；当“去除参数”后原来设定的特征属性好像又没有了。&lt;!– 参考：1.link-012.link-023.link-034.link-045.link-05–&gt;]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[UG NX 执行完『零组件更名及导出』会后窗口显示的依然是之前的原始部件]]></title>
     <url>%2F2019%2F03%2F03%2F190303-01%2F</url>
     <content type="text"><![CDATA[执行完『零组件更名及导出』会后窗口显示的依然是之前的原始部件，而非备份的图纸。 ▲ 导出装配备份 ▲ 从部件属性可见，显示的还是原来的路径。]]></content>
@@ -166,9 +171,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[UG NX 移动对象之『动态』技巧]]></title>
-    <url>%2F2019%2F02%2F19%2F190219-02%2F</url>
-    <content type="text"><![CDATA[动态绕某一点旋转，而旋转手柄又不在此点上，如何操作？ Ctrl + T 移动对象，勾选只移动手柄，将手柄点选移动到需要旋转的点。 取消勾选只移动手柄，点选手柄节点，输入旋转角度，确定。]]></content>
+    <title><![CDATA[UG NX 坐标对齐移动——解决实体与原始坐标不对齐的问题]]></title>
+    <url>%2F2019%2F02%2F19%2F190219-01%2F</url>
+    <content type="text"><![CDATA[有时候通过WAVE链接过来的实体会出现实体与原始坐标不对齐的情况，如： 可以用坐标到坐标移动的方式将实体摆正。 新建与实体对齐的坐标系。 Ctrl + T 移动。 这样后，实体就与原始坐标对齐了：]]></content>
       <categories>
         <category>机械结构</category>
       </categories>
@@ -177,9 +182,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[UG NX 坐标对齐移动——解决实体与原始坐标不对齐的问题]]></title>
-    <url>%2F2019%2F02%2F19%2F190219-01%2F</url>
-    <content type="text"><![CDATA[有时候通过WAVE链接过来的实体会出现实体与原始坐标不对齐的情况，如： 可以用坐标到坐标移动的方式将实体摆正。 新建与实体对齐的坐标系。 Ctrl + T 移动。 这样后，实体就与原始坐标对齐了：]]></content>
+    <title><![CDATA[UG NX 移动对象之『动态』技巧]]></title>
+    <url>%2F2019%2F02%2F19%2F190219-02%2F</url>
+    <content type="text"><![CDATA[动态绕某一点旋转，而旋转手柄又不在此点上，如何操作？ Ctrl + T 移动对象，勾选只移动手柄，将手柄点选移动到需要旋转的点。 取消勾选只移动手柄，点选手柄节点，输入旋转角度，确定。]]></content>
       <categories>
         <category>机械结构</category>
       </categories>
