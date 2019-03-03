@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.andyvj.com/"/>
-  <updated>2019-03-03T05:16:13.673Z</updated>
+  <updated>2019-03-03T05:21:04.139Z</updated>
   <id>https://www.andyvj.com/</id>
   
   <author>
@@ -17,11 +17,34 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>190303-02</title>
+    <title>UG NX 『对象信息查询 』</title>
+    <link href="https://www.andyvj.com/2019/03/03/190303-03/"/>
+    <id>https://www.andyvj.com/2019/03/03/190303-03/</id>
+    <published>2019-03-03T05:18:00.000Z</published>
+    <updated>2019-03-03T05:21:04.139Z</updated>
+    
+    <content type="html"><![CDATA[<p>快捷键<code>Ctrl + I</code>，查看详细的对象信息。</p><p><img src="https://ws4.sinaimg.cn/large/006mcMYXgy1g0pjbo95a6j30720a2wgu.jpg" alt="image"></p><a id="more"></a><p>包含<code>图档文件信息</code>、<code>坐标信息</code>、<code>父子项</code>等信息，可以详细的查看。除了一些测量命令外，这是一个很好的<strong>信息</strong>查询命令。<a href="http://www.rjzxw.com/se-20195-153.html" target="_blank" rel="noopener">这里</a>有简单的使用方法。</p><p><img src="https://wx3.sinaimg.cn/large/006mcMYXgy1g0pjckbfiej30iq0lijsx.jpg" alt="image"></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;快捷键&lt;code&gt;Ctrl + I&lt;/code&gt;，查看详细的对象信息。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://ws4.sinaimg.cn/large/006mcMYXgy1g0pjbo95a6j30720a2wgu.jpg&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="机械结构" scheme="https://www.andyvj.com/categories/%E6%9C%BA%E6%A2%B0%E7%BB%93%E6%9E%84/"/>
+    
+    
+      <category term="UG_NX" scheme="https://www.andyvj.com/tags/UG-NX/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>UG NX 的两个属性</title>
     <link href="https://www.andyvj.com/2019/03/03/190303-02/"/>
     <id>https://www.andyvj.com/2019/03/03/190303-02/</id>
     <published>2019-03-03T05:12:16.000Z</published>
-    <updated>2019-03-03T05:16:13.673Z</updated>
+    <updated>2019-03-03T05:18:39.937Z</updated>
     
     <content type="html"><![CDATA[<p><img src="https://ws1.sinaimg.cn/large/006mcMYXgy1g0pj52gon0j30fd0ikwg3.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 文件 -&gt; 属性</div><a id="more"></a><p><img src="https://wx2.sinaimg.cn/large/006mcMYXgy1g0pj5hkz4kj30e60hhq42.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 显示的是『部件属性』，可用于零件明细表的参数传递。</div><p><img src="https://wx3.sinaimg.cn/large/006mcMYXgy1g0pj6ky141j30ap0dyq44.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 工具 -&gt; 属性，旁边的是『对象信息』。</div><p><img src="https://wx4.sinaimg.cn/large/006mcMYXgy1g0pj6xq8ygj30dn0f9mxr.jpg" alt="image"></p><p><div style="font-size:13px;color:gray;text-align:center">▲ 显示的是『特征属性』，暂时还不知道『特征属性』的用处；当“去除参数”后原来设定的特征属性好像又没有了。</div><br>&lt;!–</p><p><hr><br><span style="color:gray;font-size:12px"><br>参考：<br>1.<a href="">link-01</a><br>2.<a href="">link-02</a><br>3.<a href="">link-03</a><br>4.<a href="">link-04</a><br>5.<a href="">link-05</a><br></span><br>–&gt;</p>]]></content>
     
@@ -32,6 +55,10 @@
     
     </summary>
     
+      <category term="机械结构" scheme="https://www.andyvj.com/categories/%E6%9C%BA%E6%A2%B0%E7%BB%93%E6%9E%84/"/>
+    
+    
+      <category term="UG_NX" scheme="https://www.andyvj.com/tags/UG-NX/"/>
     
   </entry>
   
@@ -379,29 +406,6 @@
   </entry>
   
   <entry>
-    <title>UG NX 坐标对齐移动——解决实体与原始坐标不对齐的问题</title>
-    <link href="https://www.andyvj.com/2019/02/19/190219-01/"/>
-    <id>https://www.andyvj.com/2019/02/19/190219-01/</id>
-    <published>2019-02-18T16:00:00.000Z</published>
-    <updated>2019-02-19T12:07:25.074Z</updated>
-    
-    <content type="html"><![CDATA[<p>有时候通过<code>WAVE</code>链接过来的实体会出现<strong>实体与原始坐标不对齐的情况</strong>，如：</p><p><img src="https://wx1.sinaimg.cn/large/006mcMYXgy1g0bhli2dwsj309i0cxjrf.jpg" alt="image"></p><a id="more"></a><p>可以用<strong>坐标到坐标移动的方式</strong>将实体摆正。</p><ol><li>新建与实体对齐的坐标系。</li></ol><p><img src="https://wx1.sinaimg.cn/large/006mcMYXgy1g0bhod7e4nj30810h5mxt.jpg" alt="image"></p><ol start="2"><li><code>Ctrl + T</code> 移动。</li></ol><p><img src="https://wx3.sinaimg.cn/large/006mcMYXgy1g0bhqawqqmj30ih0i2myi.jpg" alt="image"></p><p>这样后，实体就与原始坐标对齐了：</p><p><img src="https://wx1.sinaimg.cn/large/006mcMYXgy1g0bhrowrlwj30ad0gut8p.jpg" alt="image"></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;有时候通过&lt;code&gt;WAVE&lt;/code&gt;链接过来的实体会出现&lt;strong&gt;实体与原始坐标不对齐的情况&lt;/strong&gt;，如：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://wx1.sinaimg.cn/large/006mcMYXgy1g0bhli2dwsj309i0cxjrf.jpg&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="机械结构" scheme="https://www.andyvj.com/categories/%E6%9C%BA%E6%A2%B0%E7%BB%93%E6%9E%84/"/>
-    
-    
-      <category term="UG_NX" scheme="https://www.andyvj.com/tags/UG-NX/"/>
-    
-  </entry>
-  
-  <entry>
     <title>UG NX 移动对象之『动态』技巧</title>
     <link href="https://www.andyvj.com/2019/02/19/190219-02/"/>
     <id>https://www.andyvj.com/2019/02/19/190219-02/</id>
@@ -414,6 +418,29 @@
     
       &lt;p&gt;&lt;code&gt;动态&lt;/code&gt;绕某一点旋转，而旋转手柄又不在此点上，如何操作？&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://wx2.sinaimg.cn/large/006mcMYXgy1g0bo8r3k9jj30iz0g7jt8.jpg&quot; alt=&quot;image&quot;&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="机械结构" scheme="https://www.andyvj.com/categories/%E6%9C%BA%E6%A2%B0%E7%BB%93%E6%9E%84/"/>
+    
+    
+      <category term="UG_NX" scheme="https://www.andyvj.com/tags/UG-NX/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>UG NX 坐标对齐移动——解决实体与原始坐标不对齐的问题</title>
+    <link href="https://www.andyvj.com/2019/02/19/190219-01/"/>
+    <id>https://www.andyvj.com/2019/02/19/190219-01/</id>
+    <published>2019-02-18T16:00:00.000Z</published>
+    <updated>2019-02-19T12:07:25.074Z</updated>
+    
+    <content type="html"><![CDATA[<p>有时候通过<code>WAVE</code>链接过来的实体会出现<strong>实体与原始坐标不对齐的情况</strong>，如：</p><p><img src="https://wx1.sinaimg.cn/large/006mcMYXgy1g0bhli2dwsj309i0cxjrf.jpg" alt="image"></p><a id="more"></a><p>可以用<strong>坐标到坐标移动的方式</strong>将实体摆正。</p><ol><li>新建与实体对齐的坐标系。</li></ol><p><img src="https://wx1.sinaimg.cn/large/006mcMYXgy1g0bhod7e4nj30810h5mxt.jpg" alt="image"></p><ol start="2"><li><code>Ctrl + T</code> 移动。</li></ol><p><img src="https://wx3.sinaimg.cn/large/006mcMYXgy1g0bhqawqqmj30ih0i2myi.jpg" alt="image"></p><p>这样后，实体就与原始坐标对齐了：</p><p><img src="https://wx1.sinaimg.cn/large/006mcMYXgy1g0bhrowrlwj30ad0gut8p.jpg" alt="image"></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;有时候通过&lt;code&gt;WAVE&lt;/code&gt;链接过来的实体会出现&lt;strong&gt;实体与原始坐标不对齐的情况&lt;/strong&gt;，如：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://wx1.sinaimg.cn/large/006mcMYXgy1g0bhli2dwsj309i0cxjrf.jpg&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
     
     </summary>
     
@@ -445,28 +472,6 @@
       <category term="UG_NX" scheme="https://www.andyvj.com/tags/UG-NX/"/>
     
       <category term="造型" scheme="https://www.andyvj.com/tags/%E9%80%A0%E5%9E%8B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>hexo 解析 https</title>
-    <link href="https://www.andyvj.com/2019/02/15/190215-02/"/>
-    <id>https://www.andyvj.com/2019/02/15/190215-02/</id>
-    <published>2019-02-14T16:00:00.000Z</published>
-    <updated>2019-02-19T12:07:25.069Z</updated>
-    
-    <content type="html"><![CDATA[<p><code>http</code>有时候不能打开网址，提示不安全。如下操作后能打开。</p><a id="more"></a><p><img src="https://ws2.sinaimg.cn/large/006mcMYXgy1g078ud0lyqj30k70htgmv.jpg" alt="image"></p><font color="gray"><center><small>▲ github 主页设置</small></center></font><p>这样设置后，浏览器地址栏前会有一个绿色的锁；如果不是，且上面有个感叹号有可能是文章中的图片引用了其他<code>http</code>的链接。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;code&gt;http&lt;/code&gt;有时候不能打开网址，提示不安全。如下操作后能打开。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="其他" scheme="https://www.andyvj.com/categories/%E5%85%B6%E4%BB%96/"/>
-    
-    
-      <category term="hexo" scheme="https://www.andyvj.com/tags/hexo/"/>
     
   </entry>
   
