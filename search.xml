@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[UG NX 『拉伸』]]></title>
+    <url>%2F2019%2F03%2F04%2F190304-02%2F</url>
+    <content type="text"><![CDATA[▲ 『拉伸』命令，快捷键X ▲ 『偏置』选项是比较好的，开放曲线可以直接加厚。另外，直接选中实体的边，然后拉伸，通过『偏置』加厚，是一个比较快捷的拉伸方式。]]></content>
+      <categories>
+        <category>机械结构</category>
+      </categories>
+      <tags>
+        <tag>UG_NX</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[UG NX 以『按照保存的』的方式打开组件]]></title>
+    <url>%2F2019%2F03%2F04%2F190304-01%2F</url>
+    <content type="text"><![CDATA[打开的时候选择「选项」； ▲ 点击选项 之后，加载的地方选在「按照保存」这样打开就能够找到放置在不同文件夹下面的零(组)件了。 ▲ 『按照保存』方式打开 通过这样的方式，能够实现将标准件单独保存在一个文件夹下面，多个组件共用。]]></content>
+      <categories>
+        <category>机械结构</category>
+      </categories>
+      <tags>
+        <tag>UG_NX</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[UG NX 『对象信息查询 』]]></title>
     <url>%2F2019%2F03%2F03%2F190303-03%2F</url>
     <content type="text"><![CDATA[快捷键Ctrl + I，查看详细的对象信息。 包含图档文件信息、坐标信息、父子项等信息，可以详细的查看。除了一些测量命令外，这是一个很好的信息查询命令。这里有简单的使用方法。]]></content>
@@ -14,7 +36,7 @@
   <entry>
     <title><![CDATA[UG NX 的两个属性]]></title>
     <url>%2F2019%2F03%2F03%2F190303-02%2F</url>
-    <content type="text"><![CDATA[▲ 文件 -&gt; 属性 ▲ 显示的是『部件属性』，可用于零件明细表的参数传递。 ▲ 工具 -&gt; 属性，旁边的是『对象信息』。 ▲ 显示的是『特征属性』，暂时还不知道『特征属性』的用处；当“去除参数”后原来设定的特征属性好像又没有了。]]></content>
+    <content type="text"><![CDATA[▲ 文件 -&gt; 属性 ▲ 显示的是『部件属性』，可用于零件明细表的参数传递。 ▲ 工具 -&gt; 属性，旁边的是『对象信息』。 ▲ 显示的是『特征属性』，暂时还不知道『特征属性』的用处；当“去除参数”后原来设定的特征属性好像又没有了。 ▲ 也可以新建和添加参数，并且也能够显示。如果执行『去除参数』操作，这些参数也会被去除，也自然不会显示了；感觉在部件内的实体添加这样的属性参数不是很实用。]]></content>
       <categories>
         <category>机械结构</category>
       </categories>
@@ -235,7 +257,7 @@
   <entry>
     <title><![CDATA[hexo 中插入视频音频的方法]]></title>
     <url>%2F2019%2F02%2F12%2F190213-01%2F</url>
-    <content type="text"><![CDATA[都使用iframe标签。音乐或视频下的分享 -&gt; 复制 iframe 通用代码 -&gt; 粘贴进来，这样就可以了。 其中，width=&quot;100%&quot; height=&quot;580&quot;。 插入网易云音乐：1&lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=330 height=86 src=&quot;//music.163.com/outchain/player?type=2&amp;id=167655&amp;auto=1&amp;height=66&quot;&gt;&lt;/iframe&gt; 插入 bilibili 视频：1&lt;iframe src=&quot;//player.bilibili.com/player.html?aid=26884158&amp;cid=46285677&amp;page=1&quot; scrolling=&quot;no&quot; border=&quot;0&quot; frameborder=&quot;no&quot; framespacing=&quot;0&quot; allowfullscreen=&quot;true&quot; width=&quot;100%&quot; height=&quot;580&quot; quality=&quot;high&quot; &gt; &lt;/iframe&gt; 插入腾讯视频：1&lt;iframe width=&quot;100%&quot; height=&quot;580&quot; frameborder=&quot;0&quot; src=&quot;https://v.qq.com/txp/iframe/player.html?vid=t0028bp4lsn&quot; allowFullScreen=&quot;true&quot;&gt;&lt;/iframe&gt; 插入 youku 视频： 1&lt;iframe width=&quot;100%&quot; height=&quot;580&quot; src=&apos;http://player.youku.com/embed/XMzc5ODM0NDE2MA==&apos; frameborder=0 &apos;allowfullscreen&apos;&gt;&lt;/iframe&gt;]]></content>
+    <content type="text"><![CDATA[都使用iframe标签。音乐或视频下的分享 -&gt; 复制 iframe 通用代码 -&gt; 粘贴进来，这样就可以了。 // 其中，width=&quot;100%&quot; height=&quot;580&quot;。 &lt;- 这种效果不好，请参看下方官方示例代码效果。 插入网易云音乐123&#123;% raw %&#125;&lt;iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&amp;id=167655&amp;auto=1&amp;height=66"&gt;&lt;/iframe&gt;&#123;% endraw %&#125; 插入 bilibili 视频1&lt;iframe src="//player.bilibili.com/player.html?aid=26884158&amp;cid=46285677&amp;page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="580" quality="high" &gt; &lt;/iframe&gt; ▲ 这样直接插入的代码手机端不能自适应，效果不完美。 1234&lt;div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;"&gt;&lt;iframe src="//player.bilibili.com/player.html?aid=39807850&amp;cid=69927212&amp;page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;"&gt; &lt;/iframe&gt;&lt;/div&gt; ▲ 官方网站中这里有插入一个 bilibili 视频，通过右键 -&gt; 查看源码，将格式代码抄过来；自己替换掉 src 路径就可以了。 插入腾讯视频1234&lt;div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;"&gt;&lt;iframe src="https://v.qq.com/txp/iframe/player.html?vid=t0028bp4lsn" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;"&gt; &lt;/iframe&gt;&lt;/div&gt; 插入 youku 视频1234&lt;div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;"&gt;&lt;iframe src="//player.youku.com/embed/XMzc5ODM0NDE2MA==" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;"&gt; &lt;/iframe&gt;&lt;/div&gt; hexo 关于{% raw %}一些内容不想被主题渲染，可以使用该标签呈现原始状态。可查看官网标签插件说明。 123&#123;% raw %&#125;content&#123;% endraw %&#125;]]></content>
       <categories>
         <category>其他</category>
       </categories>

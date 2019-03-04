@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.andyvj.com/"/>
-  <updated>2019-03-03T05:21:04.139Z</updated>
+  <updated>2019-03-04T13:53:57.323Z</updated>
   <id>https://www.andyvj.com/</id>
   
   <author>
@@ -15,6 +15,53 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>UG NX 『拉伸』</title>
+    <link href="https://www.andyvj.com/2019/03/04/190304-02/"/>
+    <id>https://www.andyvj.com/2019/03/04/190304-02/</id>
+    <published>2019-03-04T13:48:29.000Z</published>
+    <updated>2019-03-04T13:53:57.323Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://ws1.sinaimg.cn/large/006mcMYXgy1g0r3r4zdzkj308x04k0t2.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 『拉伸』命令，快捷键<code>X</code></div><a id="more"></a><p><img src="https://wx2.sinaimg.cn/large/006mcMYXgy1g0r3rjhn3aj30a10hudgm.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 『偏置』选项是比较好的，开放曲线可以直接加厚。另外，直接选中实体的<strong>边</strong>，然后拉伸，通过『偏置』加厚，是一个比较快捷的拉伸方式。</div>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://ws1.sinaimg.cn/large/006mcMYXgy1g0r3r4zdzkj308x04k0t2.jpg&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
+&lt;div style=&quot;font-size:13px;color:gray;text-align:center&quot;&gt;▲ 『拉伸』命令，快捷键&lt;code&gt;X&lt;/code&gt;&lt;/div&gt;
+    
+    </summary>
+    
+      <category term="机械结构" scheme="https://www.andyvj.com/categories/%E6%9C%BA%E6%A2%B0%E7%BB%93%E6%9E%84/"/>
+    
+    
+      <category term="UG_NX" scheme="https://www.andyvj.com/tags/UG-NX/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>UG NX 以『按照保存的』的方式打开组件</title>
+    <link href="https://www.andyvj.com/2019/03/04/190304-01/"/>
+    <id>https://www.andyvj.com/2019/03/04/190304-01/</id>
+    <published>2019-03-04T04:33:24.000Z</published>
+    <updated>2019-03-04T13:46:22.341Z</updated>
+    
+    <content type="html"><![CDATA[<p>打开的时候选择「选项」；</p><p><img src="https://wx3.sinaimg.cn/large/006mcMYXgy1g0qnqdalm2j30n00gx40u.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 点击选项</div><a id="more"></a><p>之后，加载的地方选在「按照保存」这样打开就能够找到放置在不同文件夹下面的零(组)件了。</p><p><img src="https://ws3.sinaimg.cn/large/006mcMYXgy1g0qnr9t15aj30940bdmxk.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 『按照保存』方式打开</div><p>通过这样的方式，能够实现<strong>将<code>标准件</code>单独保存在一个文件夹下面，多个组件共用。</strong></p><!--<hr/><span style="color:gray;font-size:12px">参考：1.[link-01]()2.[link-02]()3.[link-03]()4.[link-04]()5.[link-05]()</span>-->]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;打开的时候选择「选项」；&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://wx3.sinaimg.cn/large/006mcMYXgy1g0qnqdalm2j30n00gx40u.jpg&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
+&lt;div style=&quot;font-size:13px;color:gray;text-align:center&quot;&gt;▲ 点击选项&lt;/div&gt;
+    
+    </summary>
+    
+      <category term="机械结构" scheme="https://www.andyvj.com/categories/%E6%9C%BA%E6%A2%B0%E7%BB%93%E6%9E%84/"/>
+    
+    
+      <category term="UG_NX" scheme="https://www.andyvj.com/tags/UG-NX/"/>
+    
+  </entry>
   
   <entry>
     <title>UG NX 『对象信息查询 』</title>
@@ -44,9 +91,9 @@
     <link href="https://www.andyvj.com/2019/03/03/190303-02/"/>
     <id>https://www.andyvj.com/2019/03/03/190303-02/</id>
     <published>2019-03-03T05:12:16.000Z</published>
-    <updated>2019-03-03T05:40:21.126Z</updated>
+    <updated>2019-03-04T13:46:22.336Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="https://ws1.sinaimg.cn/large/006mcMYXgy1g0pj52gon0j30fd0ikwg3.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 文件 -&gt; 属性</div><a id="more"></a><p><img src="https://wx2.sinaimg.cn/large/006mcMYXgy1g0pj5hkz4kj30e60hhq42.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 显示的是『部件属性』，可用于零件明细表的参数传递。</div><p><img src="https://wx3.sinaimg.cn/large/006mcMYXgy1g0pj6ky141j30ap0dyq44.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 工具 -&gt; 属性，旁边的是『对象信息』。</div><p><img src="https://wx4.sinaimg.cn/large/006mcMYXgy1g0pj6xq8ygj30dn0f9mxr.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 显示的是『特征属性』，暂时还不知道『特征属性』的用处；当“去除参数”后原来设定的特征属性好像又没有了。</div>]]></content>
+    <content type="html"><![CDATA[<p><img src="https://ws1.sinaimg.cn/large/006mcMYXgy1g0pj52gon0j30fd0ikwg3.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 文件 -&gt; 属性</div><a id="more"></a><p><img src="https://wx2.sinaimg.cn/large/006mcMYXgy1g0pj5hkz4kj30e60hhq42.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 显示的是『部件属性』，可用于零件明细表的参数传递。</div><p><img src="https://wx3.sinaimg.cn/large/006mcMYXgy1g0pj6ky141j30ap0dyq44.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 工具 -&gt; 属性，旁边的是『对象信息』。</div><p><img src="https://wx4.sinaimg.cn/large/006mcMYXgy1g0pj6xq8ygj30dn0f9mxr.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 显示的是『特征属性』，暂时还不知道『特征属性』的用处；当“去除参数”后原来设定的特征属性好像又没有了。</div><p><img src="https://ws1.sinaimg.cn/large/006mcMYXgy1g0qpmqx80hj30n30h5mz6.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 也可以新建和添加参数，并且也能够显示。如果执行『去除参数』操作，这些参数也会被去除，也自然不会显示了；感觉在部件内的实体添加这样的属性参数不是很实用。</div>]]></content>
     
     <summary type="html">
     
@@ -425,53 +472,6 @@
     
     
       <category term="UG_NX" scheme="https://www.andyvj.com/tags/UG-NX/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>UG NX 坐标对齐移动——解决实体与原始坐标不对齐的问题</title>
-    <link href="https://www.andyvj.com/2019/02/19/190219-01/"/>
-    <id>https://www.andyvj.com/2019/02/19/190219-01/</id>
-    <published>2019-02-18T16:00:00.000Z</published>
-    <updated>2019-02-19T12:07:25.074Z</updated>
-    
-    <content type="html"><![CDATA[<p>有时候通过<code>WAVE</code>链接过来的实体会出现<strong>实体与原始坐标不对齐的情况</strong>，如：</p><p><img src="https://wx1.sinaimg.cn/large/006mcMYXgy1g0bhli2dwsj309i0cxjrf.jpg" alt="image"></p><a id="more"></a><p>可以用<strong>坐标到坐标移动的方式</strong>将实体摆正。</p><ol><li>新建与实体对齐的坐标系。</li></ol><p><img src="https://wx1.sinaimg.cn/large/006mcMYXgy1g0bhod7e4nj30810h5mxt.jpg" alt="image"></p><ol start="2"><li><code>Ctrl + T</code> 移动。</li></ol><p><img src="https://wx3.sinaimg.cn/large/006mcMYXgy1g0bhqawqqmj30ih0i2myi.jpg" alt="image"></p><p>这样后，实体就与原始坐标对齐了：</p><p><img src="https://wx1.sinaimg.cn/large/006mcMYXgy1g0bhrowrlwj30ad0gut8p.jpg" alt="image"></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;有时候通过&lt;code&gt;WAVE&lt;/code&gt;链接过来的实体会出现&lt;strong&gt;实体与原始坐标不对齐的情况&lt;/strong&gt;，如：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://wx1.sinaimg.cn/large/006mcMYXgy1g0bhli2dwsj309i0cxjrf.jpg&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="机械结构" scheme="https://www.andyvj.com/categories/%E6%9C%BA%E6%A2%B0%E7%BB%93%E6%9E%84/"/>
-    
-    
-      <category term="UG_NX" scheme="https://www.andyvj.com/tags/UG-NX/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>UG NX 变螺距螺旋线</title>
-    <link href="https://www.andyvj.com/2019/02/17/190217-01/"/>
-    <id>https://www.andyvj.com/2019/02/17/190217-01/</id>
-    <published>2019-02-17T13:27:43.000Z</published>
-    <updated>2019-02-19T12:07:25.073Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="https://ws1.sinaimg.cn/large/006mcMYXgy1g09qwyia5qj30ay09ogmp.jpg" alt="image"></p><a id="more"></a><p>如图，螺旋线圈数为 5，半径为 50，每一圈的节距分别为，10、20、30、40、50，总长为 150。</p><ol><li>Z 向草图画一根<code>脊线</code>，直线长度为 150。</li></ol><p><img src="https://wx1.sinaimg.cn/large/006mcMYXgy1g09r2ogm2xj30960iy0sr.jpg" alt="image"></p><ol start="2"><li>使用<code>曲线 -&gt; 螺旋线</code>命令：</li></ol><p><img src="https://wx2.sinaimg.cn/large/006mcMYXgy1g09r0dew8pj30gx04dwf0.jpg" alt="image"></p><p><img src="https://wx1.sinaimg.cn/large/006mcMYXgy1g09r6wc57wj30b00mujso.jpg" alt="image"></p><p>效果如下：</p><p><img src="https://ws3.sinaimg.cn/large/006mcMYXgy1g09r7ps3p9j30dq0el3yt.jpg" alt="image"></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;https://ws1.sinaimg.cn/large/006mcMYXgy1g09qwyia5qj30ay09ogmp.jpg&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="机械结构" scheme="https://www.andyvj.com/categories/%E6%9C%BA%E6%A2%B0%E7%BB%93%E6%9E%84/"/>
-    
-    
-      <category term="UG_NX" scheme="https://www.andyvj.com/tags/UG-NX/"/>
-    
-      <category term="造型" scheme="https://www.andyvj.com/tags/%E9%80%A0%E5%9E%8B/"/>
     
   </entry>
   
