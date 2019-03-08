@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.andyvj.com/"/>
-  <updated>2019-03-04T13:53:57.323Z</updated>
+  <updated>2019-03-08T14:19:26.248Z</updated>
   <id>https://www.andyvj.com/</id>
   
   <author>
@@ -15,6 +15,141 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>基本求导法则与导数公式</title>
+    <link href="https://www.andyvj.com/2019/03/08/190308-03/"/>
+    <id>https://www.andyvj.com/2019/03/08/190308-03/</id>
+    <published>2019-03-08T13:46:54.000Z</published>
+    <updated>2019-03-08T14:19:26.248Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1-常数和基本初等函数的求导公式"><a href="#1-常数和基本初等函数的求导公式" class="headerlink" title="1.常数和基本初等函数的求导公式"></a>1.常数和基本初等函数的求导公式</h2><p>(1) $(C)’＝０$<br>(2) $(x^u)’=ux^{u-1}$<br>(3) $(\sin x)’=\cos x$<br>(4) $(\cos x)’=-\sin x$<br>(5) $(\tan x)’=\sec^2x$<br><a id="more"></a><br>(6) $(\cot x)’=-\csc^2x$<br>(7) $(\sec x)’=\sec x\tan x$<br>(8) $(\csc x)’=-\csc x\cot x$<br>(9) $(a^x)’=a^x\ln a$<br>(10) $(e^x)’=e^x$  </p><p><img src="https://wx3.sinaimg.cn/large/006mcMYXgy1g0vqyxyem1j30fp0ch75z.jpg" alt="image"></p><p>未完…</p><p><hr><br><span style="color:gray;font-size:12px"><br>参考：<br>《高等数学》 同济六版 -&gt; P95<br></span></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;1-常数和基本初等函数的求导公式&quot;&gt;&lt;a href=&quot;#1-常数和基本初等函数的求导公式&quot; class=&quot;headerlink&quot; title=&quot;1.常数和基本初等函数的求导公式&quot;&gt;&lt;/a&gt;1.常数和基本初等函数的求导公式&lt;/h2&gt;&lt;p&gt;(1) $(C)’＝０$&lt;br&gt;(2) $(x^u)’=ux^{u-1}$&lt;br&gt;(3) $(\sin x)’=\cos x$&lt;br&gt;(4) $(\cos x)’=-\sin x$&lt;br&gt;(5) $(\tan x)’=\sec^2x$&lt;br&gt;
+    
+    </summary>
+    
+      <category term="基础学科" scheme="https://www.andyvj.com/categories/%E5%9F%BA%E7%A1%80%E5%AD%A6%E7%A7%91/"/>
+    
+    
+      <category term="数学" scheme="https://www.andyvj.com/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>UG NX 同步建模之『重用』</title>
+    <link href="https://www.andyvj.com/2019/03/08/190308-02/"/>
+    <id>https://www.andyvj.com/2019/03/08/190308-02/</id>
+    <published>2019-03-08T04:26:35.000Z</published>
+    <updated>2019-03-08T13:37:47.797Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://wx4.sinaimg.cn/large/006mcMYXgy1g0v9z6x9d6j30bi0f00ub.jpg" alt="image"></p><a id="more"></a><p><div style="font-size:13px;color:gray;text-align:center">▲ 『复制面(剪切面)』配合『粘贴面』使用，『镜像面』用于对称，『阵列面』阵列。这些命令都非常的好用。</div></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://wx4.sinaimg.cn/large/006mcMYXgy1g0v9z6x9d6j30bi0f00ub.jpg&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="机械结构" scheme="https://www.andyvj.com/categories/%E6%9C%BA%E6%A2%B0%E7%BB%93%E6%9E%84/"/>
+    
+    
+      <category term="UG_NX" scheme="https://www.andyvj.com/tags/UG-NX/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Creo 导出 igs 曲线</title>
+    <link href="https://www.andyvj.com/2019/03/08/190308-01/"/>
+    <id>https://www.andyvj.com/2019/03/08/190308-01/</id>
+    <published>2019-03-08T04:15:33.000Z</published>
+    <updated>2019-03-08T13:37:47.795Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://ws4.sinaimg.cn/large/006mcMYXgy1g0v9opc3f9j30ok0d8q3a.jpg" alt="image"></p><a id="more"></a><div style="font-size:13px;color:gray;text-align:center">▲ Creo 直接打开 dwg，选择“模型”；在“另存为”导出“igs”的时候，需选择<strong>『基准曲线和点』选项</strong>才能导出曲线，不然导出的是空白。注意过滤器的选择。<strong>有时候，UG 导入 dwg 有时候会失败，就用这种 Creo 配合，“曲线救国”的方式导入 igs 曲线。</strong></div>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://ws4.sinaimg.cn/large/006mcMYXgy1g0v9opc3f9j30ok0d8q3a.jpg&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="机械结构" scheme="https://www.andyvj.com/categories/%E6%9C%BA%E6%A2%B0%E7%BB%93%E6%9E%84/"/>
+    
+    
+      <category term="Creo" scheme="https://www.andyvj.com/tags/Creo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>UG NX 『槽』</title>
+    <link href="https://www.andyvj.com/2019/03/07/190307-01/"/>
+    <id>https://www.andyvj.com/2019/03/07/190307-01/</id>
+    <published>2019-03-07T00:18:11.000Z</published>
+    <updated>2019-03-08T13:37:47.793Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://wx3.sinaimg.cn/large/006mcMYXgy1g0tx7cv08jj30dq09gjsj.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 特征 -&gt; 更多 -&gt; <a href="https://jingyan.baidu.com/article/e3c78d64a38fca3c4d85f55b.html" target="_blank" rel="noopener">槽</a></div><a id="more"></a><p><img src="https://wx1.sinaimg.cn/large/006mcMYXgy1g0tx7sgtw8j309404tgli.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 三种槽的形状，下面以“矩形”槽为例。这个命令可以快速的创建<strong>卡簧槽</strong>。</div><p><img src="https://ws3.sinaimg.cn/large/006mcMYXgy1g0tx811dqyj309403lmx0.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 看左下角的提示，选择<strong>面</strong>，选择槽放置的圆柱面或圆锥面；选择完后可以直接按<strong>中键</strong>确定，可以不填写名称。</div><p><img src="https://ws4.sinaimg.cn/large/006mcMYXgy1g0tx8d4tchj309403owed.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 填写槽特征的参数</div><p><img src="https://wx1.sinaimg.cn/large/006mcMYXgy1g0tx8lde5jj30hm0ed3zl.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 切换成<strong>静态线框</strong>显示，定位槽距离边缘的距离。</div><p><img src="https://wx3.sinaimg.cn/large/006mcMYXgy1g0tx8u5c4ij30dn0cyjt5.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 完成后的样子</div>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://wx3.sinaimg.cn/large/006mcMYXgy1g0tx7cv08jj30dq09gjsj.jpg&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
+&lt;div style=&quot;font-size:13px;color:gray;text-align:center&quot;&gt;▲ 特征 -&amp;gt; 更多 -&amp;gt; &lt;a href=&quot;https://jingyan.baidu.com/article/e3c78d64a38fca3c4d85f55b.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;槽&lt;/a&gt;&lt;/div&gt;
+    
+    </summary>
+    
+      <category term="机械结构" scheme="https://www.andyvj.com/categories/%E6%9C%BA%E6%A2%B0%E7%BB%93%E6%9E%84/"/>
+    
+    
+      <category term="UG_NX" scheme="https://www.andyvj.com/tags/UG-NX/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>UG NX 标注之『文本在短划线之上』</title>
+    <link href="https://www.andyvj.com/2019/03/06/190306-02/"/>
+    <id>https://www.andyvj.com/2019/03/06/190306-02/</id>
+    <published>2019-03-06T06:16:09.000Z</published>
+    <updated>2019-03-08T13:37:47.782Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://ws1.sinaimg.cn/large/006mcMYXgy1g0t1xygtitj30f3066q2y.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 效果</div><a id="more"></a><p><img src="https://ws1.sinaimg.cn/large/006mcMYXgy1g0t1ylji1lj30gb0d4dge.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 单个设置</div><p><img src="https://ws4.sinaimg.cn/large/006mcMYXgy1g0t1z9r955j30ib0fcdgt.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 在“制图标准”中设置</div>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://ws1.sinaimg.cn/large/006mcMYXgy1g0t1xygtitj30f3066q2y.jpg&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
+&lt;div style=&quot;font-size:13px;color:gray;text-align:center&quot;&gt;▲ 效果&lt;/div&gt;
+    
+    </summary>
+    
+      <category term="机械结构" scheme="https://www.andyvj.com/categories/%E6%9C%BA%E6%A2%B0%E7%BB%93%E6%9E%84/"/>
+    
+    
+      <category term="UG_NX" scheme="https://www.andyvj.com/tags/UG-NX/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>UG NX 用配置文件进行配置</title>
+    <link href="https://www.andyvj.com/2019/03/06/190306-01/"/>
+    <id>https://www.andyvj.com/2019/03/06/190306-01/</id>
+    <published>2019-03-06T05:36:18.000Z</published>
+    <updated>2019-03-08T13:37:47.778Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="工程图、快捷键、界面等配置文件"><a href="#工程图、快捷键、界面等配置文件" class="headerlink" title="工程图、快捷键、界面等配置文件"></a>工程图、快捷键、界面等配置文件</h2><p><img src="https://ws3.sinaimg.cn/large/006mcMYXgy1g0s1n4cn4ej30l60i4q45.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 用户默认设置 -&gt; 制图标准</div><a id="more"></a><p>其中，配置文件名为：<code>nx_GB2_Drafting_Standard_User.dpv</code>,为<code>.dpv</code>格式。其路径为：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\Administrator\AppData\Local\Siemens\NX100\nx_GB2_Drafting_Standard_User.dpv</span><br></pre></td></tr></table></figure><p>这个可以导入，也可以另存为。</p><p><strong>技巧：</strong><br><span style="color:red"><br>把这个路径下的全部文件备份：<code>C:\Users\Administrator\AppData\Local\Siemens\</code>。在另一台需要配置的电脑上将全部备份文件直接覆盖掉同样路径文件。里面的配置文件包含——<code>工程图</code>、<code>自定义快捷键</code>、<code>自定义界面对话框</code>等。这样后就统一移植过来了。<a href="https://wenku.baidu.com/view/f36235c789eb172ded63b74c.html?pn=50]" target="_blank" rel="noopener">这里</a>有详细配置属性的说明；<a href="https://www.andyvj.com/2019/03/02/190302-01/">还有</a>之前的笔记也可以参考。<br></span></p><h2 id="建模、工程图图框、表格等模板"><a href="#建模、工程图图框、表格等模板" class="headerlink" title="建模、工程图图框、表格等模板"></a>建模、工程图图框、表格等模板</h2><p><code>model-plain-1-mm-template.prt</code>建模模板，路径为：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\Program Files\Siemens\NX 10.0\LOCALIZATION\prc\simpl_chinese\startup</span><br></pre></td></tr></table></figure><p>工程图图框模板，路径为：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\Program Files\Siemens\NX 10.0\LOCALIZATION\prc\simpl_chinese\startup</span><br></pre></td></tr></table></figure><p>表格模板路径，可以在自定义的表格上<code>右键 -&gt; 保存为模板</code>，其存放的路径：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\Program Files\Siemens\NX 10.0\UGII\table_files</span><br></pre></td></tr></table></figure><p>双击<code>tables.pax</code>文件可以加载到 UG NX 导航栏界面来，可以通过拖入的方式直接使用。</p><p><strong><span style="color:red">总结：</span></strong></p><p>将备份的文件直接覆盖掉相同路径的文件，这样就可以完成配置。关于<a href="https://www.andyvj.com/2019/03/02/190302-01/">多个表格</a>和<a href="https://www.andyvj.com/2019/03/01/190301-02/">gc_tool 配置</a>可以参考之前的笔记。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;工程图、快捷键、界面等配置文件&quot;&gt;&lt;a href=&quot;#工程图、快捷键、界面等配置文件&quot; class=&quot;headerlink&quot; title=&quot;工程图、快捷键、界面等配置文件&quot;&gt;&lt;/a&gt;工程图、快捷键、界面等配置文件&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;https://ws3.sinaimg.cn/large/006mcMYXgy1g0s1n4cn4ej30l60i4q45.jpg&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
+&lt;div style=&quot;font-size:13px;color:gray;text-align:center&quot;&gt;▲ 用户默认设置 -&amp;gt; 制图标准&lt;/div&gt;
+    
+    </summary>
+    
+      <category term="机械结构" scheme="https://www.andyvj.com/categories/%E6%9C%BA%E6%A2%B0%E7%BB%93%E6%9E%84/"/>
+    
+    
+      <category term="UG_NX" scheme="https://www.andyvj.com/tags/UG-NX/"/>
+    
+  </entry>
   
   <entry>
     <title>UG NX 『拉伸』</title>
@@ -159,9 +294,9 @@
     <link href="https://www.andyvj.com/2019/03/02/190302-01/"/>
     <id>https://www.andyvj.com/2019/03/02/190302-01/</id>
     <published>2019-03-02T00:55:51.000Z</published>
-    <updated>2019-03-03T02:55:57.809Z</updated>
+    <updated>2019-03-08T13:37:47.773Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="零件明细表参数基本设置方法"><a href="#零件明细表参数基本设置方法" class="headerlink" title="零件明细表参数基本设置方法"></a>零件明细表参数基本设置方法</h2><p><img src="https://ws4.sinaimg.cn/large/006mcMYXgy1g0o68gwchmj30lj0aqdge.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 选择整列 -&gt; 右键 -&gt; 设置</div><a id="more"></a><p><img src="https://ws1.sinaimg.cn/large/006mcMYXgy1g0o69v0w17j30gb0d4t93.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 参数修改，以『序号』为例</div><p><img src="https://wx1.sinaimg.cn/large/006mcMYXgy1g0o6b7qfmmj30va0hhjso.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 可以尝试下其他控制项</div><p><img src="https://wx3.sinaimg.cn/large/006mcMYXgy1g0o6cvqa96j316l0hitaa.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 零件明细表的级别编辑</div><h2 id="允许多个明细表参数控制"><a href="#允许多个明细表参数控制" class="headerlink" title="允许多个明细表参数控制"></a>允许多个明细表参数控制</h2><h3 id="环境变量文件修改"><a href="#环境变量文件修改" class="headerlink" title="环境变量文件修改"></a>环境变量文件修改</h3><p>默认情况下一张图纸，只允许一个明细表，当你尝试添加两个时会有提示，需要修改参数。</p><p>打开：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;C:\Program Files\Siemens\NX 10.0\UGII\ugii_env.dat&quot;</span><br></pre></td></tr></table></figure><p>添加变量：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">UGII_UPDATE_ALL_ID_SYMBOLS_WITH_PLIST=0</span><br></pre></td></tr></table></figure><p>这样设置后，就可以添加多个零件明细表了。</p><h3 id="关于ugii-env-dat环境变量文件"><a href="#关于ugii-env-dat环境变量文件" class="headerlink" title="关于ugii_env.dat环境变量文件"></a>关于<code>ugii_env.dat</code>环境变量文件</h3><p><img src="https://wx4.sinaimg.cn/large/006mcMYXgy1g0o6k94hi0j30r90gin4t.jpg" alt="image"></p><p>详细可以参考文末『参考』。</p><h2 id="导出零件明细表的方法"><a href="#导出零件明细表的方法" class="headerlink" title="导出零件明细表的方法"></a>导出零件明细表的方法</h2><h3 id="零件明细表右键导出"><a href="#零件明细表右键导出" class="headerlink" title="零件明细表右键导出"></a>零件明细表右键导出</h3><p>选择整个零件明细表，右键导出。</p><p><img src="https://wx3.sinaimg.cn/large/006mcMYXgy1g0o6mbny4yj30gm0asaae.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 导出<code>html</code>文件，文件的存放的路径：<code>C:\Users\Administrator\AppData\Local\Temp</code>。</div><p><img src="https://ws3.sinaimg.cn/large/006mcMYXgy1g0o6nul0ozj309406iwek.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 导出 excel 的方法，导出后可以在 excel 中进行筛选删除计算过滤等操作。</div><p>另外，导出『文件』(txt格式)，和『信息窗口』(与Ctrl+I类似)可以自行尝试。</p><h3 id="直接命令导出"><a href="#直接命令导出" class="headerlink" title="直接命令导出"></a>直接命令导出</h3><p><img src="https://wx2.sinaimg.cn/large/006mcMYXgy1g0o6qdovf8j30dq040dg4.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 点击这个命令时，有错误提示信息，暂时还不清楚怎么用，和问题出在哪里；我想，直接用上面的那一种方法就好。</div><p><img src="https://wx1.sinaimg.cn/large/006mcMYXgy1g0pefytl4ij30a9035mx3.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 错误信息提示</div><p><hr><br><span style="color:gray;font-size:12px"><br>参考：<br>1.<a href="https://wenku.baidu.com/view/f36235c789eb172ded63b74c.html?pn=50" target="_blank" rel="noopener">link-01</a> //  关于环境变量<br>2.<a href="https://wenku.baidu.com/view/7f211e34b90d6c85ec3ac633.html" target="_blank" rel="noopener">link-02</a> //  关于环境变量<br>3.<a href="http://www.ugsnx.com/thread-171235-1-4.html" target="_blank" rel="noopener">link-03</a> //  关于属性工具<br></span></p>]]></content>
+    <content type="html"><![CDATA[<h2 id="零件明细表参数基本设置方法"><a href="#零件明细表参数基本设置方法" class="headerlink" title="零件明细表参数基本设置方法"></a>零件明细表参数基本设置方法</h2><p><img src="https://ws4.sinaimg.cn/large/006mcMYXgy1g0o68gwchmj30lj0aqdge.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 选择整列 -&gt; 右键 -&gt; 设置</div><a id="more"></a><p><img src="https://ws1.sinaimg.cn/large/006mcMYXgy1g0o69v0w17j30gb0d4t93.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 参数修改，以『序号』为例</div><p><img src="https://wx1.sinaimg.cn/large/006mcMYXgy1g0o6b7qfmmj30va0hhjso.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 可以尝试下其他控制项</div><p><img src="https://wx3.sinaimg.cn/large/006mcMYXgy1g0o6cvqa96j316l0hitaa.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 零件明细表的级别编辑</div><h2 id="允许多个明细表参数控制"><a href="#允许多个明细表参数控制" class="headerlink" title="允许多个明细表参数控制"></a>允许多个明细表参数控制</h2><h3 id="环境变量文件修改"><a href="#环境变量文件修改" class="headerlink" title="环境变量文件修改"></a>环境变量文件修改</h3><p>默认情况下一张图纸，只允许一个明细表，当你尝试添加两个时会有提示，需要修改参数。</p><p>打开：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;C:\Program Files\Siemens\NX 10.0\UGII\ugii_env.dat&quot;</span><br></pre></td></tr></table></figure><p>添加变量：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">UGII_UPDATE_ALL_ID_SYMBOLS_WITH_PLIST=0</span><br></pre></td></tr></table></figure><p>这样设置后，就可以添加多个零件明细表了。</p><h3 id="关于ugii-env-dat环境变量文件"><a href="#关于ugii-env-dat环境变量文件" class="headerlink" title="关于ugii_env.dat环境变量文件"></a>关于<code>ugii_env.dat</code>环境变量文件</h3><p><img src="https://wx4.sinaimg.cn/large/006mcMYXgy1g0o6k94hi0j30r90gin4t.jpg" alt="image"></p><p>详细可以参考文末『参考』。</p><h2 id="导出零件明细表的方法"><a href="#导出零件明细表的方法" class="headerlink" title="导出零件明细表的方法"></a>导出零件明细表的方法</h2><h3 id="零件明细表右键导出"><a href="#零件明细表右键导出" class="headerlink" title="零件明细表右键导出"></a>零件明细表右键导出</h3><p>选择整个零件明细表，右键导出。</p><p><img src="https://wx3.sinaimg.cn/large/006mcMYXgy1g0o6mbny4yj30gm0asaae.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 导出<code>html</code>文件，文件的存放的路径：<code>C:\Users\Administrator\AppData\Local\Temp</code>。</div><p><img src="https://ws3.sinaimg.cn/large/006mcMYXgy1g0o6nul0ozj309406iwek.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 导出 excel 的方法，导出后可以在 excel 中进行筛选删除计算过滤等操作。</div><p>另外，导出『文件』(txt格式)，和『信息窗口』(与Ctrl+I类似)可以自行尝试。</p><h3 id="直接命令导出"><a href="#直接命令导出" class="headerlink" title="直接命令导出"></a>直接命令导出</h3><p><img src="https://wx2.sinaimg.cn/large/006mcMYXgy1g0o6qdovf8j30dq040dg4.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 点击这个命令时，有错误提示信息，暂时还不清楚怎么用，和问题出在哪里；我想，直接用上面的那一种方法就好。</div><p><img src="https://wx1.sinaimg.cn/large/006mcMYXgy1g0pefytl4ij30a9035mx3.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 错误信息提示</div><p><hr><br><span style="color:gray;font-size:12px"><br>参考：<br>1.<a href="https://wenku.baidu.com/view/f36235c789eb172ded63b74c.html?pn=50" target="_blank" rel="noopener">link-01</a> //  关于环境变量<br>2.<a href="https://wenku.baidu.com/view/7f211e34b90d6c85ec3ac633.html" target="_blank" rel="noopener">link-02</a> //  关于制作标准图框<br>3.<a href="http://www.ugsnx.com/thread-171235-1-4.html" target="_blank" rel="noopener">link-03</a> //  关于属性工具<br></span></p>]]></content>
     
     <summary type="html">
     
@@ -205,9 +340,9 @@
     <link href="https://www.andyvj.com/2019/03/01/190301-03/"/>
     <id>https://www.andyvj.com/2019/03/01/190301-03/</id>
     <published>2019-03-01T09:34:19.000Z</published>
-    <updated>2019-03-01T10:59:35.347Z</updated>
+    <updated>2019-03-08T13:37:47.765Z</updated>
     
-    <content type="html"><![CDATA[<p>相对于<a href="https://www.andyvj.com/2019/02/28/190228-01/">前一篇</a>关联重量的方法，<strong>这是一个比较靠谱的方法，也是强烈推荐的一种方法。</strong></p><p><strong>前提: 对零部件指定好材料。</strong></p><a id="more"></a><h2 id="官方帮助文档中的发现"><a href="#官方帮助文档中的发现" class="headerlink" title="官方帮助文档中的发现"></a>官方帮助文档中的发现</h2><p>在<code>GC_Toolkits_UserManual.pdf</code>发现:</p><p><img src="https://wx1.sinaimg.cn/large/006mcMYXgy1g0nfrquvzwj30xl06f0vb.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 可见需要修改配置文件选项</div><h2 id="修改配置文件选项"><a href="#修改配置文件选项" class="headerlink" title="修改配置文件选项"></a>修改配置文件选项</h2><p>打开<code>gc_tool.cfg</code>文件，修改为:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">赋值重量,WEIGHT,N,Read</span><br></pre></td></tr></table></figure><p>找到<code>KEY_WORD REFERENCESET_LAYER_START</code>代码段:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">! configuration for Reference Set and Layer mapping setting</span><br><span class="line"></span><br><span class="line">KEY_WORD REFERENCESET_LAYER_START</span><br><span class="line">BODY                    | 1,4</span><br><span class="line">MATE                    | 1,5</span><br><span class="line">SIMPLIFIED              |</span><br><span class="line">DRAWING                 | 1,4</span><br><span class="line">ALTERNATE               | 2</span><br><span class="line">KEY_WORD REFERENCESET_LAYER_END</span><br></pre></td></tr></table></figure><p>可见第一个<strong>引用集</strong>为<code>BODY</code>，只需要将要自动计算重量的实体收集在<code>BODY</code>引用集中就可以了。</p><p><strong>如果，引用集里没有<code>BODY</code>引用集，新建一个即可。</strong></p><p><img src="https://wx4.sinaimg.cn/large/006mcMYXgy1g0ng5px1joj30940g3q3q.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ BODY 引用集，『自动添加组件』可以去掉勾，自己手动添加，这样觉得比较可控。</div><p><img src="https://wx4.sinaimg.cn/large/006mcMYXgy1g0ng15mbogj306706t3yk.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 自动重量效果</div><h2 id="零件明细表中自动引用重量属性参数"><a href="#零件明细表中自动引用重量属性参数" class="headerlink" title="零件明细表中自动引用重量属性参数"></a>零件明细表中自动引用重量属性参数</h2><p><img src="https://wx2.sinaimg.cn/large/006mcMYXgy1g0ng733c78j30oq0de0td.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 显示单个重量的参数选择</div><p>如何实现零件自动总重量的显示？</p><blockquote><p><a href="http://www.ugsnx.com/thread-160149-1-8.html" target="_blank" rel="noopener">http://www.ugsnx.com/thread-160149-1-8.html</a></p><p>复制单重列的默认文本<strong>&lt;W$=@WEIGHT&gt;</strong>,将总重列的类别设为数量,默认文本框粘贴单重的默认文本,.这样总重就能正确显示了,至于为啥会这样,我也不知道.</p></blockquote><p><img src="https://ws4.sinaimg.cn/large/006mcMYXgy1g0ng8xgc1uj30pb0dewez.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 零件总重量显示</div><p><img src="https://wx2.sinaimg.cn/large/006mcMYXgy1g0ng9wa1gdj30rm0dejs5.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 小数位控制，注意『类别』为『数值』；可以选择一整列，也可以选择单个单元格。</div><p><img src="https://ws1.sinaimg.cn/large/006mcMYXgy1g0ngay0mxfj30gb0d474s.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 单个单元格小数位控制</div><p><strong>至于如何算出顶级装配(整机)的重量，暂时还没有找到直接的方法。我想可以直接导出 excel，在 excel 中计算可行。</strong></p><p><strong>装配中也没有找到像 Creo 一样的过滤器，我想同样可以直接导出 excel，在 excel 中筛选操作吧，可筛选删除。</strong></p><!--<hr/><span style="color:gray;font-size:12px">参考：1. [link-01]()2. [link-01]()3. [link-01]()4. [link-01]()5. [link-01]()</span>-->]]></content>
+    <content type="html"><![CDATA[<p>相对于<a href="https://www.andyvj.com/2019/02/28/190228-01/">前一篇</a>关联重量的方法，<strong>这是一个比较靠谱的方法，也是强烈推荐的一种方法。</strong></p><p><strong>前提: 对零部件指定好材料。</strong></p><a id="more"></a><h2 id="官方帮助文档中的发现"><a href="#官方帮助文档中的发现" class="headerlink" title="官方帮助文档中的发现"></a>官方帮助文档中的发现</h2><p>在<code>GC_Toolkits_UserManual.pdf</code>发现:</p><p><img src="https://wx1.sinaimg.cn/large/006mcMYXgy1g0nfrquvzwj30xl06f0vb.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 可见需要修改配置文件选项</div><h2 id="修改配置文件选项"><a href="#修改配置文件选项" class="headerlink" title="修改配置文件选项"></a>修改配置文件选项</h2><p>打开<code>gc_tool.cfg</code>文件，修改为:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">赋值重量,WEIGHT,N,Read</span><br></pre></td></tr></table></figure><p>找到<code>KEY_WORD REFERENCESET_LAYER_START</code>代码段:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">! configuration for Reference Set and Layer mapping setting</span><br><span class="line"></span><br><span class="line">KEY_WORD REFERENCESET_LAYER_START</span><br><span class="line">BODY                    | 1,4</span><br><span class="line">MATE                    | 1,5</span><br><span class="line">SIMPLIFIED              |</span><br><span class="line">DRAWING                 | 1,4</span><br><span class="line">ALTERNATE               | 2</span><br><span class="line">KEY_WORD REFERENCESET_LAYER_END</span><br></pre></td></tr></table></figure><p>可见第一个<strong>引用集</strong>为<code>BODY</code>，只需要将要自动计算重量的实体收集在<code>BODY</code>引用集中就可以了。</p><p><strong>如果，引用集里没有<code>BODY</code>引用集，新建一个即可。</strong></p><p><img src="https://wx4.sinaimg.cn/large/006mcMYXgy1g0ng5px1joj30940g3q3q.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ BODY 引用集，『自动添加组件』一般默认勾选比较方便；若去掉勾，自己手动添加，虽然可控，但比较麻烦。</div><p><img src="https://wx4.sinaimg.cn/large/006mcMYXgy1g0ng15mbogj306706t3yk.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 自动重量效果</div><h2 id="零件明细表中自动引用重量属性参数"><a href="#零件明细表中自动引用重量属性参数" class="headerlink" title="零件明细表中自动引用重量属性参数"></a>零件明细表中自动引用重量属性参数</h2><p><img src="https://wx2.sinaimg.cn/large/006mcMYXgy1g0ng733c78j30oq0de0td.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 显示单个重量的参数选择</div><p>如何实现零件自动总重量的显示？</p><blockquote><p><a href="http://www.ugsnx.com/thread-160149-1-8.html" target="_blank" rel="noopener">http://www.ugsnx.com/thread-160149-1-8.html</a></p><p>复制单重列的默认文本<strong>&lt;W$=@WEIGHT&gt;</strong>,将总重列的类别设为数量,默认文本框粘贴单重的默认文本,.这样总重就能正确显示了,至于为啥会这样,我也不知道.</p></blockquote><p><img src="https://ws4.sinaimg.cn/large/006mcMYXgy1g0ng8xgc1uj30pb0dewez.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 零件总重量显示</div><p><img src="https://wx2.sinaimg.cn/large/006mcMYXgy1g0ng9wa1gdj30rm0dejs5.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 小数位控制，注意『类别』为『数值』；可以选择一整列，也可以选择单个单元格。</div><p><img src="https://ws1.sinaimg.cn/large/006mcMYXgy1g0ngay0mxfj30gb0d474s.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 单个单元格小数位控制</div><p><strong>至于如何算出顶级装配(整机)的重量，暂时还没有找到直接的方法。我想可以直接导出 excel，在 excel 中计算可行。</strong></p><p><strong>装配中也没有找到像 Creo 一样的过滤器，我想同样可以直接导出 excel，在 excel 中筛选操作吧，可筛选删除。</strong></p><!--<hr/><span style="color:gray;font-size:12px">参考：1. [link-01]()2. [link-01]()3. [link-01]()4. [link-01]()5. [link-01]()</span>-->]]></content>
     
     <summary type="html">
     
@@ -324,147 +459,6 @@
     
       &lt;p&gt;&lt;img src=&quot;https://wx3.sinaimg.cn/large/006mcMYXgy1g0k4est33aj30c209b3zi.jpg&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
 &lt;div style=&quot;font-size:13px;color:gray;text-align:center&quot;&gt;▲ 『筋板』命令位置&lt;/div&gt;
-    
-    </summary>
-    
-      <category term="机械结构" scheme="https://www.andyvj.com/categories/%E6%9C%BA%E6%A2%B0%E7%BB%93%E6%9E%84/"/>
-    
-    
-      <category term="UG_NX" scheme="https://www.andyvj.com/tags/UG-NX/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>hexo nexT 主题插入数学公式</title>
-    <link href="https://www.andyvj.com/2019/02/26/190226-02/"/>
-    <id>https://www.andyvj.com/2019/02/26/190226-02/</id>
-    <published>2019-02-26T05:45:18.000Z</published>
-    <updated>2019-02-26T11:32:29.935Z</updated>
-    
-    <content type="html"><![CDATA[<p>Hexo 默认使用 <code>hexo-renderer-marked</code> 引擎渲染网页，语义冲突的符号还包括<code>_</code>,<code>*</code>, <code>{</code>,<code>}</code>, <code>\\</code>等。<br><a id="more"></a></p><h2 id="更换渲染器"><a href="#更换渲染器" class="headerlink" title="更换渲染器"></a>更换渲染器</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm uninstall hexo-renderer-marked --save</span><br><span class="line">npm install hexo-renderer-kramed --save</span><br></pre></td></tr></table></figure><h2 id="修改inline-js"><a href="#修改inline-js" class="headerlink" title="修改inline.js"></a>修改<code>inline.js</code></h2><p>在博客根目录下，找到<code>node_modules\kramed\lib\rules\inline.js</code>，把第<code>11</code>行的 <code>escape</code> 变量的值做相应的修改：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//escape: /^\\([\\`*&#123;&#125;\[\]()#$+\-.!_&gt;])/,</span><br><span class="line">escape: /^\\([`*\[\]()#$+\-.!_&gt;])/,</span><br></pre></td></tr></table></figure></p><p>这一步是在原基础上取消了对<code>\,{,}</code>的转义(<code>escape</code>)。</p><p>同时把第<code>20行</code>的<code>em</code>变量也要做相应的修改：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//em: /^\b_((?:__|[\s\S])+?)_\b|^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,</span><br><span class="line">em: /^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,</span><br></pre></td></tr></table></figure></p><h2 id="在-Next-主题中开启-MathJax-开关"><a href="#在-Next-主题中开启-MathJax-开关" class="headerlink" title="在 Next 主题中开启 MathJax 开关"></a>在 Next 主题中开启 MathJax 开关</h2><p>在主题配置文件中修改：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">math:</span><br><span class="line">  enable: true</span><br><span class="line">  per_page: true</span><br><span class="line"></span><br><span class="line">  engine: mathjax</span><br></pre></td></tr></table></figure><p>文章发布时打开开关：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">title: hexo nexT 主题插入数学公式</span><br><span class="line">mathjax: true</span><br><span class="line">date: 2019-02-26 13:45:18</span><br><span class="line">tags: hexo</span><br><span class="line">categories: 其他</span><br></pre></td></tr></table></figure></p><h2 id="测试1"><a href="#测试1" class="headerlink" title="测试1"></a>测试1</h2><p>$$<br>P = \frac<br>{\sum_{i=1}^n (x_i- x)(y_i- y)}<br>{\displaystyle \left[<br>\sum_{i=1}^n (x_i-x)^2<br>\sum_{i=1}^n (y_i-y)^2<br>\right]^{1/2} }<br>$$</p><h2 id="一些问题"><a href="#一些问题" class="headerlink" title="一些问题"></a>一些问题</h2><p>更改了渲染器，修改了<code>inline.js</code>，确实有效；但有些嵌入的<code>html标签</code>不能够识别，<code>/</code>已经被取消了转义的原因？</p><p>换回原来的渲染器，打开公式开关，也能照样显示公式，<code>html标签</code>也能够识别。<span style="color:blue">新版本的 hexo 博客是对这个问题已经进行了修复？？？不懂。</span></p><p><strong>已经换回原来的渲染器，将开关打开就可以。</strong></p><h2 id="测试2"><a href="#测试2" class="headerlink" title="测试2"></a>测试2</h2><p>$$<br>P = \frac<br>{\sum_{i=1}^n (x_i- x)(y_i- y)}<br>{\displaystyle \left[<br>\sum_{i=1}^n (x_i-x)^2<br>\sum_{i=1}^n (y_i-y)^2<br>\right]^{1/2} }<br>$$</p><p><span style="color:green">好吧，够折腾的，就这样用吧。</span></p><p><hr><br><span style="color:gray;font-size:12px"><br>参考:</span></p><ol><li><a href="https://blog.csdn.net/wgshun616/article/details/81019687" target="_blank" rel="noopener">link-01</a></li><li><a href="https://blog.csdn.net/qq_21808961/article/details/84477490" target="_blank" rel="noopener">link-02</a></li><li><a href="https://blog.csdn.net/wgshun616/article/details/81019687" target="_blank" rel="noopener">link-03</a></li><li><a href="http://www.befuncool.com/2016/11/20/Hexo-NexT%E4%B8%BB%E9%A2%98%E4%BD%BF%E7%94%A8mathjax%E8%BE%93%E5%85%A5%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/" target="_blank" rel="noopener">link-04</a></li></ol>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Hexo 默认使用 &lt;code&gt;hexo-renderer-marked&lt;/code&gt; 引擎渲染网页，语义冲突的符号还包括&lt;code&gt;_&lt;/code&gt;,&lt;code&gt;*&lt;/code&gt;, &lt;code&gt;{&lt;/code&gt;,&lt;code&gt;}&lt;/code&gt;, &lt;code&gt;\\&lt;/code&gt;等。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="其他" scheme="https://www.andyvj.com/categories/%E5%85%B6%E4%BB%96/"/>
-    
-    
-      <category term="hexo" scheme="https://www.andyvj.com/tags/hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>UG NX 『三角形加强筋』</title>
-    <link href="https://www.andyvj.com/2019/02/26/190226-01/"/>
-    <id>https://www.andyvj.com/2019/02/26/190226-01/</id>
-    <published>2019-02-26T01:13:22.000Z</published>
-    <updated>2019-02-26T11:32:29.933Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="https://ws2.sinaimg.cn/large/006mcMYXgy1g0jk992n49j309h09emxc.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 『三角形加强筋』的效果</div><a id="more"></a><p><img src="https://wx2.sinaimg.cn/large/006mcMYXgy1g0jka47x3fj30d309et9t.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 命令位置</div><h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><p><img src="https://ws3.sinaimg.cn/large/006mcMYXgy1g0jkaxrrp6j30940fg0tb.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 注意选面的时候第一次需要<strong>按中键</strong>，形状好像必须有圆弧 R，角度 A 必须大于 0</div><p><img src="https://wx2.sinaimg.cn/large/006mcMYXgy1g0jkdl2kbuj30ev0ef756.jpg" alt="image"><br><img src="https://ws1.sinaimg.cn/large/006mcMYXgy1g0jket13t3j30ew0e2t9n.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 通过『弧长』来确定加强筋的位置</div><p><img src="https://wx4.sinaimg.cn/large/006mcMYXgy1g0jkf5grjyj30c00agmxr.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 创建成功后的加强筋样式</div>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;https://ws2.sinaimg.cn/large/006mcMYXgy1g0jk992n49j309h09emxc.jpg&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
-&lt;div style=&quot;font-size:13px;color:gray;text-align:center&quot;&gt;▲ 『三角形加强筋』的效果&lt;/div&gt;
-    
-    </summary>
-    
-      <category term="机械结构" scheme="https://www.andyvj.com/categories/%E6%9C%BA%E6%A2%B0%E7%BB%93%E6%9E%84/"/>
-    
-    
-      <category term="UG_NX" scheme="https://www.andyvj.com/tags/UG-NX/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>hexo 同时部署 coding 和 github 平台，并国内外域名访问分流</title>
-    <link href="https://www.andyvj.com/2019/02/24/190224-01/"/>
-    <id>https://www.andyvj.com/2019/02/24/190224-01/</id>
-    <published>2019-02-24T13:47:59.000Z</published>
-    <updated>2019-02-26T11:32:29.932Z</updated>
-    
-    <content type="html"><![CDATA[<p>看别人说 github 屏蔽了百度的爬虫，而 coding 平台没有，可以同时部署两个平台，域名国内外分流的方式来解决。我就这样做了，也不知道这样有没有用。</p><a id="more"></a><h2 id="coding-平台注册和静态页面开启"><a href="#coding-平台注册和静态页面开启" class="headerlink" title="coding 平台注册和静态页面开启"></a>coding 平台注册和静态页面开启</h2><p>注册并登录<a href="https://dev.tencent.com/" target="_blank" rel="noopener">腾讯云开发平台</a>。</p><p> <img src="https://ws1.sinaimg.cn/large/006mcMYXgy1g0hv2ve1m3j30ep06odfw.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 1. 新建项目。</div><p><img src="https://ws3.sinaimg.cn/large/006mcMYXgy1g0hv9hqxp9j31fk0g4wfz.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 2. 仓库名必须为xxx.coding.me格式，并开通pages服务。</div><p><img src="https://ws2.sinaimg.cn/large/006mcMYXgy1g0hvbm30g5j304z06it8o.jpg" alt="image"><br><img src="https://wx1.sinaimg.cn/large/006mcMYXgy1g0hvd0h0urj30xo0b73zb.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 3. 添加ssh公钥，方式和github一样，从 <code>C:\Users\Administrator\.ssh</code> 下把 <code>id_rsa.pub</code> 中的内容复制粘贴过来。</div><h2 id="修改-hexo-的-config-yml文件"><a href="#修改-hexo-的-config-yml文件" class="headerlink" title="修改 hexo 的_config.yml文件"></a>修改 hexo 的<code>_config.yml</code>文件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git  </span><br><span class="line">  repo: </span><br><span class="line">    github: git@github.com:AndyVJ/AndyVJ.github.io.git</span><br><span class="line">    coding: https://git.dev.tencent.com/AndyVJ/AndyVJ.coding.me.git </span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure><p>这样就可以了。</p><h2 id="域名解释"><a href="#域名解释" class="headerlink" title="域名解释"></a>域名解释</h2><p><img src="https://ws1.sinaimg.cn/large/006mcMYXgy1g0hvmiky6bj317f08ydgt.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 将 github 的解析改为『境外』</div><p><img src="https://wx4.sinaimg.cn/large/006mcMYXgy1g0hvpd25sej318d0hn0ua.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ Pages -&gt; 服务设置</div><p><span style="color:red"><strong>在申请 <code>SSL</code> 证书的时候需要先将域名解释中指向 github 的『CNAME』暂停掉，申请成功后再开启。</strong></span></p><p>将<code>www.andyvj.com</code>设置成为<code>优先</code>，将<code>andyvj.com</code>设置成<code>跳转至优先</code>，这样域名都是跳转显示为<code>www.andyvj.com</code>。<code>andyvj.com</code>的<code>SSL</code>证书没有申请成功，(还没有找到方法和原因)但不影响使用。</p><p>这样就算成功了。</p><h2 id="搜索引擎-SEO"><a href="#搜索引擎-SEO" class="headerlink" title="搜索引擎 SEO"></a>搜索引擎 SEO</h2><p>搜索引擎的 <code>sitemap</code>。</p><p><img src="https://ws3.sinaimg.cn/large/006mcMYXgy1g0id4y1llvj30py09u0tj.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 360 好像还有用</div>  <p><img src="https://wx4.sinaimg.cn/large/006mcMYXgy1g0id6zosnpj30qs0a00tg.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 百度 一直在等待；不知道是不是『<a href="https://ziyuan.baidu.com/https/index?site=https://www.andyvj.com/" target="_blank" rel="noopener">HTTPS认证</a>』还没通过的原因</div><hr><p><span style="color:gray;font-size:12px"><br>参考：</span></p><ol><li><a href="https://blog.csdn.net/tsvico/article/details/80629452" target="_blank" rel="noopener">link-01</a>  </li><li><a href="https://coding.net/help/faq/pages/coding-pages-faq.html#Hexo" target="_blank" rel="noopener">link-02 官网帮助</a>  </li><li><a href="https://www.cnblogs.com/yulinlewis/p/9595362.html" target="_blank" rel="noopener">link-03</a><br></li></ol>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;看别人说 github 屏蔽了百度的爬虫，而 coding 平台没有，可以同时部署两个平台，域名国内外分流的方式来解决。我就这样做了，也不知道这样有没有用。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="其他" scheme="https://www.andyvj.com/categories/%E5%85%B6%E4%BB%96/"/>
-    
-    
-      <category term="hexo" scheme="https://www.andyvj.com/tags/hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>hexo NexT 主题菜单栏没有图标 logo 的问题</title>
-    <link href="https://www.andyvj.com/2019/02/20/190220-01/"/>
-    <id>https://www.andyvj.com/2019/02/20/190220-01/</id>
-    <published>2019-02-20T03:27:15.000Z</published>
-    <updated>2019-02-20T12:44:00.393Z</updated>
-    
-    <content type="html"><![CDATA[<p>如<a href="https://www.andyvj.com/2019/02/19/190219-03/">上一篇</a>部署后，直接<code>clone</code>到本地后，只需：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure></p><p>就可以用了。前提是，安装了<code>node.js</code>、<code>git</code>和<code>hexo</code>。</p><a id="more"></a><h2 id="自己失误的一个地方"><a href="#自己失误的一个地方" class="headerlink" title="自己失误的一个地方"></a>自己失误的一个地方</h2><p>在之前备份<code>hexo</code>主题的时候少备份了一些文件，导致菜单栏的标志不显示。从<a href="https://github.com/yanchangyou/hexo-theme-next" target="_blank" rel="noopener">这里</a>重新下载，整个文件夹<strong>合并</strong>，<strong>相同文件取消覆盖</strong>，这样只添加了缺失的文件。这样操作后问题就解决了。</p><p>路径<code>XXX\themes\next\source\lib\</code>下原本应该有如下文件：</p><p><img src="https://wx3.sinaimg.cn/large/006mcMYXgy1g0cqlbzob4j306802dq2r.jpg" alt="image"></p><p>而我备份的却有缺失：</p><p><img src="https://ws1.sinaimg.cn/large/006mcMYXgy1g0cqm5oa0tj30ef02p3yd.jpg" alt="image"></p><h2 id="将缺失的文件添加进来"><a href="#将缺失的文件添加进来" class="headerlink" title="将缺失的文件添加进来"></a>将缺失的文件添加进来</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git add -f \themes\next\*</span><br><span class="line">git push</span><br></pre></td></tr></table></figure><p>另一台电脑需要的<a href="https://vimsky.com/article/3679.html" target="_blank" rel="noopener">操作</a>：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git fetch --all  </span><br><span class="line">git reset --hard origin/yigao   // “yigao”替换成自己的分支名字。</span><br><span class="line">git pull</span><br></pre></td></tr></table></figure></p><p>如果<code>git fetch -all</code>有错误提示，<a href="https://blog.csdn.net/lincyang/article/details/21519333" target="_blank" rel="noopener">需先</a>：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash</span><br></pre></td></tr></table></figure></p><h2 id="next-主题添加-logo-的方法"><a href="#next-主题添加-logo-的方法" class="headerlink" title="next 主题添加 logo 的方法"></a>next 主题添加 logo 的方法</h2><p>如：</p><pre><code>menu:  home: / || home  archives: /archives || archive  categories: /categories || th  tags: /tags || tags  about: /about || user</code></pre><p>其中<code>||</code>后面的就是 logo 名字，可以在<a href="https://fontawesome.com/icons?from=io" target="_blank" rel="noopener">这里</a>搜索 logo 的名字进行替换更改。</p><hr><font size="2" color="gray"><br>参考：<br>1. <a href="https://www.cnblogs.com/lilong329329/p/7670271.html" target="_blank" rel="noopener">link-01</a>；<br>2. <a href="https://blog.csdn.net/u012195214/article/details/79204088" target="_blank" rel="noopener">link-02</a>；<br>3. <a href="https://www.jianshu.com/p/3ff20be8574c" target="_blank" rel="noopener">link-03</a>；<br>4. <a href="https://blog.csdn.net/jabony/article/details/72897055" target="_blank" rel="noopener">link-04</a>。<br></font>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;如&lt;a href=&quot;https://www.andyvj.com/2019/02/19/190219-03/&quot;&gt;上一篇&lt;/a&gt;部署后，直接&lt;code&gt;clone&lt;/code&gt;到本地后，只需：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;npm install&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;就可以用了。前提是，安装了&lt;code&gt;node.js&lt;/code&gt;、&lt;code&gt;git&lt;/code&gt;和&lt;code&gt;hexo&lt;/code&gt;。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="其他" scheme="https://www.andyvj.com/categories/%E5%85%B6%E4%BB%96/"/>
-    
-    
-      <category term="hexo" scheme="https://www.andyvj.com/tags/hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>hexo 迁移更换电脑，或多电脑终端更新博客</title>
-    <link href="https://www.andyvj.com/2019/02/19/190219-03/"/>
-    <id>https://www.andyvj.com/2019/02/19/190219-03/</id>
-    <published>2019-02-19T14:25:39.000Z</published>
-    <updated>2019-02-20T12:58:34.518Z</updated>
-    
-    <content type="html"><![CDATA[<p>在已经部署成功过的情况下。</p><p><strong>一、本地 Node.js 和 Git 安装</strong></p><p>官网下载安装：</p><ol><li><a href="https://nodejs.org/en/" target="_blank" rel="noopener">安装 Node.js</a>；</li><li><a href="https://git-scm.com/" target="_blank" rel="noopener">安装 Git</a>。</li></ol><a id="more"></a><p><strong>二、gitHub 新建分支</strong></p><p>在<code>XXX.io</code>仓库下：</p><p><img src="https://ws1.sinaimg.cn/large/006mcMYXgy1g0c0iw689uj30sz08et9n.jpg" alt="image"></p><p><img src="https://ws3.sinaimg.cn/large/006mcMYXgy1g0bubrsj31j30ae05ajrk.jpg" alt="image"></p><p>分支名称任意，例如：<code>hexo</code>。</p><p><strong>三、设置分支为默认仓库</strong></p><p><code>仓库-&gt;Settings-&gt;Branches-&gt;Default branch中将默认分支设为xxx，save保存。</code></p><p><img src="https://ws1.sinaimg.cn/large/006mcMYXgy1g0c0rcctlxj30jg08xabe.jpg" alt="image"></p><p><strong>四、clone 至本地</strong></p><p>本地新建一个文件夹用来管理博客，将分支克隆至本地。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone XXXXX.io</span><br></pre></td></tr></table></figure></p><p><code>cd</code>进入 clone 下来的<code>username.github.io</code>文件夹，在此文件夹目录下<code>git bash</code>执行<code>git branch</code>命令，应该是新建的分支名 <code>xxx</code>。</p><p><strong>五、新电脑生成<code>ssh key</code>并添加至 gitHub</strong></p><p>将新电脑生成的<code>ssh key</code>添加到<code>gitHub</code>账户上（生成并添加<code>ssh key</code>的方法参考<a href="https://www.andyvj.com/2019/01/31/190131-02/">Hexo+github 博客搭建以及 NexT 主题配置</a>）。 </p><p><strong>六、安装 hexo</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure><p><strong>七、将原博客备份文件复制至<code>username.github.io</code>文件夹</strong></p><p><strong><code>_config.yml</code>，<code>theme/</code>，<code>source/</code>，<code>scaffolds/</code>，<code>package.json</code>，<code>.gitignore</code>，6 个文件需要拷贝。</strong></p><p><strong>需要备份的文件如下:</strong></p><ol><li>站点配置<code>_config.yml</code>；</li><li><code>theme</code>文件夹里面的主题；</li><li><code>source</code>文件夹；</li><li><code>scaffolds</code>文件夹（文章的模板）；</li><li><code>package.json</code>（说明使用哪些包）；</li><li><code>.gitignore</code>（限定在提交的时候哪些文件可以忽略）；</li></ol><p>总结：<strong><code>_config.yml</code>，<code>theme/</code>，<code>source/</code>，<code>scaffolds/</code>，<code>package.json</code>，<code>.gitignore</code>，6 个文件需要拷贝。</strong></p><font color="red"><strong>注意：</strong></font><strong>不要<code>hexo init</code>去整体初始化</strong>，因为需要的文件我们已经拷贝过来了。<br><br>其他：<code>.git/</code>，<code>node_modules/</code>，<code>public/</code>，<code>.deploy_git/</code>，<code>db.json</code>文件需要删除。<br><br><em>除了现在的这个方法外，也可以另建一个仓库进行<a href="https://www.andyvj.com/2019/01/31/190131-01/">备份</a>。</em><br><br>利用<code>.gitignore</code>文件忽略备份的文件如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">/.deploy_git/  </span><br><span class="line">/blogSource/  </span><br><span class="line">/node_modules/  </span><br><span class="line">/public/  </span><br><span class="line">*.db  </span><br><span class="line">*.json  </span><br><span class="line">!package.json  </span><br><span class="line">!package-lock.json</span><br></pre></td></tr></table></figure><br><br>忽略掉的文件会在部署过程中自己生成。<br><br><strong>九、提交本地至<code>XXX</code>分支</strong><br><br>进入username.github.io文件目录下，依次执行：<br>1. <code>git add</code>.<br>2. <code>git commit -m ‘新电脑部署’</code>（引号内容可改）<br>3. <code>git push</code><br>这样，<code>master分支</code>用于保存博客静态资源，提供博客页面供人访问；<code>xxx分支</code>用于备份博客部署文件，供自己修改和更新，两者在一个GitHub仓库内互不冲突。<br><br><strong>十、安装 hexo 依赖的包</strong><br><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure><br><br>所依赖的包都在上一步中的<code>package.json</code>备份文件里，所以直接这一个命令就可以了。<br><br><strong>十一、新旧电脑更新博客</strong><br><br>1. <code>git pull</code>；<br>2. <code>hexo n xxx</code>，编辑、撰写文章或其他博客更新改动，就是你要对博客进行的修改，或新增文章；<br>3. <code>hexo clean</code>  // 可选；<br>4. <code>hexo g</code>；<br>5. <code>hexo s</code>；<br>6. <code>hexo d</code>。<br>7. <code>git add .</code>；<br>8. <code>git commit -m ‘在新电脑上提交新文章’</code>（引号内容可改）;<br>9. <code>git push</code>指令，保证xxx分支版本为最新版本。<br><br><hr><br><br><font color="gray"><small><br>参考：<br>1. <a href="https://blog.csdn.net/xr469786706/article/details/79837602" target="_blank" rel="noopener">link-01</a>；<br>2. <a href="https://blog.csdn.net/ShmilyCoder/article/details/79916973" target="_blank" rel="noopener">link-02</a>;<br>3. <a href="https://kursaal.vip/2018/03/28/%E5%A4%9A%E5%8F%B0%E7%94%B5%E8%84%91%E6%93%8D%E4%BD%9Chexo%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/#more" target="_blank" rel="noopener">link-03</a>；<br>4. <a href="https://blog.csdn.net/Zhangxiaorui_9/article/details/79723288" target="_blank" rel="noopener">link-04</a>。<br><small></small></small></font>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;在已经部署成功过的情况下。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;一、本地 Node.js 和 Git 安装&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;官网下载安装：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&quot;https://nodejs.org/en/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;安装 Node.js&lt;/a&gt;；&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://git-scm.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;安装 Git&lt;/a&gt;。&lt;/li&gt;
-&lt;/ol&gt;
-    
-    </summary>
-    
-      <category term="其他" scheme="https://www.andyvj.com/categories/%E5%85%B6%E4%BB%96/"/>
-    
-    
-      <category term="hexo" scheme="https://www.andyvj.com/tags/hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>UG NX 移动对象之『动态』技巧</title>
-    <link href="https://www.andyvj.com/2019/02/19/190219-02/"/>
-    <id>https://www.andyvj.com/2019/02/19/190219-02/</id>
-    <published>2019-02-18T16:00:00.000Z</published>
-    <updated>2019-02-19T12:07:25.076Z</updated>
-    
-    <content type="html"><![CDATA[<p><code>动态</code>绕某一点旋转，而旋转手柄又不在此点上，如何操作？</p><p><img src="https://wx2.sinaimg.cn/large/006mcMYXgy1g0bo8r3k9jj30iz0g7jt8.jpg" alt="image"><br><a id="more"></a></p><ol><li><code>Ctrl + T</code> 移动对象，勾选<code>只移动手柄</code>，将手柄点选移动到需要旋转的点。</li></ol><p><img src="https://ws3.sinaimg.cn/large/006mcMYXgy1g0bob2m123j30940f4jrx.jpg" alt="image"></p><p><img src="https://ws3.sinaimg.cn/large/006mcMYXgy1g0bocqqa0jj30fn0fa3zz.jpg" alt="image"></p><ol start="2"><li>取消勾选<code>只移动手柄</code>，点选手柄<code>节点</code>，输入旋转角度，确定。</li></ol><p><img src="https://wx2.sinaimg.cn/large/006mcMYXgy1g0boffrgskj30kw0cr0u8.jpg" alt="image"></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;code&gt;动态&lt;/code&gt;绕某一点旋转，而旋转手柄又不在此点上，如何操作？&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://wx2.sinaimg.cn/large/006mcMYXgy1g0bo8r3k9jj30iz0g7jt8.jpg&quot; alt=&quot;image&quot;&gt;&lt;br&gt;
     
     </summary>
     

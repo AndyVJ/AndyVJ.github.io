@@ -1,6 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[基本求导法则与导数公式]]></title>
+    <url>%2F2019%2F03%2F08%2F190308-03%2F</url>
+    <content type="text"><![CDATA[1.常数和基本初等函数的求导公式(1) $(C)’＝０$(2) $(x^u)’=ux^{u-1}$(3) $(\sin x)’=\cos x$(4) $(\cos x)’=-\sin x$(5) $(\tan x)’=\sec^2x$(6) $(\cot x)’=-\csc^2x$(7) $(\sec x)’=\sec x\tan x$(8) $(\csc x)’=-\csc x\cot x$(9) $(a^x)’=a^x\ln a$(10) $(e^x)’=e^x$ 未完… 参考：《高等数学》 同济六版 -&gt; P95]]></content>
+      <categories>
+        <category>基础学科</category>
+      </categories>
+      <tags>
+        <tag>数学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[UG NX 同步建模之『重用』]]></title>
+    <url>%2F2019%2F03%2F08%2F190308-02%2F</url>
+    <content type="text"><![CDATA[▲ 『复制面(剪切面)』配合『粘贴面』使用，『镜像面』用于对称，『阵列面』阵列。这些命令都非常的好用。]]></content>
+      <categories>
+        <category>机械结构</category>
+      </categories>
+      <tags>
+        <tag>UG_NX</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Creo 导出 igs 曲线]]></title>
+    <url>%2F2019%2F03%2F08%2F190308-01%2F</url>
+    <content type="text"><![CDATA[▲ Creo 直接打开 dwg，选择“模型”；在“另存为”导出“igs”的时候，需选择『基准曲线和点』选项才能导出曲线，不然导出的是空白。注意过滤器的选择。有时候，UG 导入 dwg 有时候会失败，就用这种 Creo 配合，“曲线救国”的方式导入 igs 曲线。]]></content>
+      <categories>
+        <category>机械结构</category>
+      </categories>
+      <tags>
+        <tag>Creo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[UG NX 『槽』]]></title>
+    <url>%2F2019%2F03%2F07%2F190307-01%2F</url>
+    <content type="text"><![CDATA[▲ 特征 -&gt; 更多 -&gt; 槽 ▲ 三种槽的形状，下面以“矩形”槽为例。这个命令可以快速的创建卡簧槽。 ▲ 看左下角的提示，选择面，选择槽放置的圆柱面或圆锥面；选择完后可以直接按中键确定，可以不填写名称。 ▲ 填写槽特征的参数 ▲ 切换成静态线框显示，定位槽距离边缘的距离。 ▲ 完成后的样子]]></content>
+      <categories>
+        <category>机械结构</category>
+      </categories>
+      <tags>
+        <tag>UG_NX</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[UG NX 标注之『文本在短划线之上』]]></title>
+    <url>%2F2019%2F03%2F06%2F190306-02%2F</url>
+    <content type="text"><![CDATA[▲ 效果 ▲ 单个设置 ▲ 在“制图标准”中设置]]></content>
+      <categories>
+        <category>机械结构</category>
+      </categories>
+      <tags>
+        <tag>UG_NX</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[UG NX 用配置文件进行配置]]></title>
+    <url>%2F2019%2F03%2F06%2F190306-01%2F</url>
+    <content type="text"><![CDATA[工程图、快捷键、界面等配置文件 ▲ 用户默认设置 -&gt; 制图标准 其中，配置文件名为：nx_GB2_Drafting_Standard_User.dpv,为.dpv格式。其路径为： 1C:\Users\Administrator\AppData\Local\Siemens\NX100\nx_GB2_Drafting_Standard_User.dpv 这个可以导入，也可以另存为。 技巧：把这个路径下的全部文件备份：C:\Users\Administrator\AppData\Local\Siemens\。在另一台需要配置的电脑上将全部备份文件直接覆盖掉同样路径文件。里面的配置文件包含——工程图、自定义快捷键、自定义界面对话框等。这样后就统一移植过来了。这里有详细配置属性的说明；还有之前的笔记也可以参考。 建模、工程图图框、表格等模板model-plain-1-mm-template.prt建模模板，路径为： 1C:\Program Files\Siemens\NX 10.0\LOCALIZATION\prc\simpl_chinese\startup 工程图图框模板，路径为： 1C:\Program Files\Siemens\NX 10.0\LOCALIZATION\prc\simpl_chinese\startup 表格模板路径，可以在自定义的表格上右键 -&gt; 保存为模板，其存放的路径： 1C:\Program Files\Siemens\NX 10.0\UGII\table_files 双击tables.pax文件可以加载到 UG NX 导航栏界面来，可以通过拖入的方式直接使用。 总结： 将备份的文件直接覆盖掉相同路径的文件，这样就可以完成配置。关于多个表格和gc_tool 配置可以参考之前的笔记。]]></content>
+      <categories>
+        <category>机械结构</category>
+      </categories>
+      <tags>
+        <tag>UG_NX</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[UG NX 『拉伸』]]></title>
     <url>%2F2019%2F03%2F04%2F190304-02%2F</url>
     <content type="text"><![CDATA[▲ 『拉伸』命令，快捷键X ▲ 『偏置』选项是比较好的，开放曲线可以直接加厚。另外，直接选中实体的边，然后拉伸，通过『偏置』加厚，是一个比较快捷的拉伸方式。]]></content>
@@ -69,7 +135,7 @@
   <entry>
     <title><![CDATA[UG NX 零件明细表及导出excel等格式方法]]></title>
     <url>%2F2019%2F03%2F02%2F190302-01%2F</url>
-    <content type="text"><![CDATA[零件明细表参数基本设置方法 ▲ 选择整列 -&gt; 右键 -&gt; 设置 ▲ 参数修改，以『序号』为例 ▲ 可以尝试下其他控制项 ▲ 零件明细表的级别编辑 允许多个明细表参数控制环境变量文件修改默认情况下一张图纸，只允许一个明细表，当你尝试添加两个时会有提示，需要修改参数。 打开： 1&quot;C:\Program Files\Siemens\NX 10.0\UGII\ugii_env.dat&quot; 添加变量： 1UGII_UPDATE_ALL_ID_SYMBOLS_WITH_PLIST=0 这样设置后，就可以添加多个零件明细表了。 关于ugii_env.dat环境变量文件 详细可以参考文末『参考』。 导出零件明细表的方法零件明细表右键导出选择整个零件明细表，右键导出。 ▲ 导出html文件，文件的存放的路径：C:\Users\Administrator\AppData\Local\Temp。 ▲ 导出 excel 的方法，导出后可以在 excel 中进行筛选删除计算过滤等操作。 另外，导出『文件』(txt格式)，和『信息窗口』(与Ctrl+I类似)可以自行尝试。 直接命令导出 ▲ 点击这个命令时，有错误提示信息，暂时还不清楚怎么用，和问题出在哪里；我想，直接用上面的那一种方法就好。 ▲ 错误信息提示 参考：1.link-01 // 关于环境变量2.link-02 // 关于环境变量3.link-03 // 关于属性工具]]></content>
+    <content type="text"><![CDATA[零件明细表参数基本设置方法 ▲ 选择整列 -&gt; 右键 -&gt; 设置 ▲ 参数修改，以『序号』为例 ▲ 可以尝试下其他控制项 ▲ 零件明细表的级别编辑 允许多个明细表参数控制环境变量文件修改默认情况下一张图纸，只允许一个明细表，当你尝试添加两个时会有提示，需要修改参数。 打开： 1&quot;C:\Program Files\Siemens\NX 10.0\UGII\ugii_env.dat&quot; 添加变量： 1UGII_UPDATE_ALL_ID_SYMBOLS_WITH_PLIST=0 这样设置后，就可以添加多个零件明细表了。 关于ugii_env.dat环境变量文件 详细可以参考文末『参考』。 导出零件明细表的方法零件明细表右键导出选择整个零件明细表，右键导出。 ▲ 导出html文件，文件的存放的路径：C:\Users\Administrator\AppData\Local\Temp。 ▲ 导出 excel 的方法，导出后可以在 excel 中进行筛选删除计算过滤等操作。 另外，导出『文件』(txt格式)，和『信息窗口』(与Ctrl+I类似)可以自行尝试。 直接命令导出 ▲ 点击这个命令时，有错误提示信息，暂时还不清楚怎么用，和问题出在哪里；我想，直接用上面的那一种方法就好。 ▲ 错误信息提示 参考：1.link-01 // 关于环境变量2.link-02 // 关于制作标准图框3.link-03 // 关于属性工具]]></content>
       <categories>
         <category>机械结构</category>
       </categories>
@@ -91,7 +157,7 @@
   <entry>
     <title><![CDATA[UG NX 通过『赋值重量』属性参数自动更新重量]]></title>
     <url>%2F2019%2F03%2F01%2F190301-03%2F</url>
-    <content type="text"><![CDATA[相对于前一篇关联重量的方法，这是一个比较靠谱的方法，也是强烈推荐的一种方法。 前提: 对零部件指定好材料。 官方帮助文档中的发现在GC_Toolkits_UserManual.pdf发现: ▲ 可见需要修改配置文件选项 修改配置文件选项打开gc_tool.cfg文件，修改为: 1赋值重量,WEIGHT,N,Read 找到KEY_WORD REFERENCESET_LAYER_START代码段: 123456789! configuration for Reference Set and Layer mapping settingKEY_WORD REFERENCESET_LAYER_STARTBODY | 1,4MATE | 1,5SIMPLIFIED |DRAWING | 1,4ALTERNATE | 2KEY_WORD REFERENCESET_LAYER_END 可见第一个引用集为BODY，只需要将要自动计算重量的实体收集在BODY引用集中就可以了。 如果，引用集里没有BODY引用集，新建一个即可。 ▲ BODY 引用集，『自动添加组件』可以去掉勾，自己手动添加，这样觉得比较可控。 ▲ 自动重量效果 零件明细表中自动引用重量属性参数 ▲ 显示单个重量的参数选择 如何实现零件自动总重量的显示？ http://www.ugsnx.com/thread-160149-1-8.html 复制单重列的默认文本&lt;W$=@WEIGHT&gt;,将总重列的类别设为数量,默认文本框粘贴单重的默认文本,.这样总重就能正确显示了,至于为啥会这样,我也不知道. ▲ 零件总重量显示 ▲ 小数位控制，注意『类别』为『数值』；可以选择一整列，也可以选择单个单元格。 ▲ 单个单元格小数位控制 至于如何算出顶级装配(整机)的重量，暂时还没有找到直接的方法。我想可以直接导出 excel，在 excel 中计算可行。 装配中也没有找到像 Creo 一样的过滤器，我想同样可以直接导出 excel，在 excel 中筛选操作吧，可筛选删除。]]></content>
+    <content type="text"><![CDATA[相对于前一篇关联重量的方法，这是一个比较靠谱的方法，也是强烈推荐的一种方法。 前提: 对零部件指定好材料。 官方帮助文档中的发现在GC_Toolkits_UserManual.pdf发现: ▲ 可见需要修改配置文件选项 修改配置文件选项打开gc_tool.cfg文件，修改为: 1赋值重量,WEIGHT,N,Read 找到KEY_WORD REFERENCESET_LAYER_START代码段: 123456789! configuration for Reference Set and Layer mapping settingKEY_WORD REFERENCESET_LAYER_STARTBODY | 1,4MATE | 1,5SIMPLIFIED |DRAWING | 1,4ALTERNATE | 2KEY_WORD REFERENCESET_LAYER_END 可见第一个引用集为BODY，只需要将要自动计算重量的实体收集在BODY引用集中就可以了。 如果，引用集里没有BODY引用集，新建一个即可。 ▲ BODY 引用集，『自动添加组件』一般默认勾选比较方便；若去掉勾，自己手动添加，虽然可控，但比较麻烦。 ▲ 自动重量效果 零件明细表中自动引用重量属性参数 ▲ 显示单个重量的参数选择 如何实现零件自动总重量的显示？ http://www.ugsnx.com/thread-160149-1-8.html 复制单重列的默认文本&lt;W$=@WEIGHT&gt;,将总重列的类别设为数量,默认文本框粘贴单重的默认文本,.这样总重就能正确显示了,至于为啥会这样,我也不知道. ▲ 零件总重量显示 ▲ 小数位控制，注意『类别』为『数值』；可以选择一整列，也可以选择单个单元格。 ▲ 单个单元格小数位控制 至于如何算出顶级装配(整机)的重量，暂时还没有找到直接的方法。我想可以直接导出 excel，在 excel 中计算可行。 装配中也没有找到像 Creo 一样的过滤器，我想同样可以直接导出 excel，在 excel 中筛选操作吧，可筛选删除。]]></content>
       <categories>
         <category>机械结构</category>
       </categories>
@@ -201,7 +267,7 @@
   <entry>
     <title><![CDATA[hexo 迁移更换电脑，或多电脑终端更新博客]]></title>
     <url>%2F2019%2F02%2F19%2F190219-03%2F</url>
-    <content type="text"><![CDATA[在已经部署成功过的情况下。 一、本地 Node.js 和 Git 安装 官网下载安装： 安装 Node.js； 安装 Git。 二、gitHub 新建分支 在XXX.io仓库下： 分支名称任意，例如：hexo。 三、设置分支为默认仓库 仓库-&gt;Settings-&gt;Branches-&gt;Default branch中将默认分支设为xxx，save保存。 四、clone 至本地 本地新建一个文件夹用来管理博客，将分支克隆至本地。1git clone XXXXX.io cd进入 clone 下来的username.github.io文件夹，在此文件夹目录下git bash执行git branch命令，应该是新建的分支名 xxx。 五、新电脑生成ssh key并添加至 gitHub 将新电脑生成的ssh key添加到gitHub账户上（生成并添加ssh key的方法参考Hexo+github 博客搭建以及 NexT 主题配置）。 六、安装 hexo 1npm install hexo-cli -g 七、将原博客备份文件复制至username.github.io文件夹 _config.yml，theme/，source/，scaffolds/，package.json，.gitignore，6 个文件需要拷贝。 需要备份的文件如下: 站点配置_config.yml； theme文件夹里面的主题； source文件夹； scaffolds文件夹（文章的模板）； package.json（说明使用哪些包）； .gitignore（限定在提交的时候哪些文件可以忽略）； 总结：_config.yml，theme/，source/，scaffolds/，package.json，.gitignore，6 个文件需要拷贝。 注意：不要hexo init去整体初始化，因为需要的文件我们已经拷贝过来了。其他：.git/，node_modules/，public/，.deploy_git/，db.json文件需要删除。除了现在的这个方法外，也可以另建一个仓库进行备份。利用.gitignore文件忽略备份的文件如下：12345678/.deploy_git/ /blogSource/ /node_modules/ /public/ *.db *.json !package.json !package-lock.json忽略掉的文件会在部署过程中自己生成。九、提交本地至XXX分支进入username.github.io文件目录下，依次执行：1. git add.2. git commit -m ‘新电脑部署’（引号内容可改）3. git push这样，master分支用于保存博客静态资源，提供博客页面供人访问；xxx分支用于备份博客部署文件，供自己修改和更新，两者在一个GitHub仓库内互不冲突。十、安装 hexo 依赖的包1npm install所依赖的包都在上一步中的package.json备份文件里，所以直接这一个命令就可以了。十一、新旧电脑更新博客1. git pull；2. hexo n xxx，编辑、撰写文章或其他博客更新改动，就是你要对博客进行的修改，或新增文章；3. hexo clean // 可选；4. hexo g；5. hexo s；6. hexo d。7. git add .；8. git commit -m ‘在新电脑上提交新文章’（引号内容可改）;9. git push指令，保证xxx分支版本为最新版本。参考：1. link-01；2. link-02;3. link-03；4. link-04。]]></content>
+    <content type="text"><![CDATA[在已经部署成功过的情况下。 一、本地 Node.js 和 Git 安装 官网下载安装： 安装 Node.js； 安装 Git。 二、gitHub 新建分支 在XXX.io仓库下： 分支名称任意，例如：hexo。 三、设置分支为默认仓库 仓库-&gt;Settings-&gt;Branches-&gt;Default branch中将默认分支设为xxx，save保存。 四、clone 至本地 本地新建一个文件夹用来管理博客，将分支克隆至本地。1git clone XXXXX.io cd进入 clone 下来的username.github.io文件夹，在此文件夹目录下git bash执行git branch命令，应该是新建的分支名 xxx。 五、新电脑生成ssh key并添加至 gitHub 将新电脑生成的ssh key添加到gitHub账户上（生成并添加ssh key的方法参考Hexo+github 博客搭建以及 NexT 主题配置）。 六、安装 hexo 1npm install hexo-cli -g 七、将原博客备份文件复制至username.github.io文件夹 _config.yml，theme/，source/，scaffolds/，package.json，.gitignore，6 个文件需要拷贝。 需要备份的文件如下: 站点配置_config.yml； theme文件夹里面的主题； source文件夹； scaffolds文件夹（文章的模板）； package.json（说明使用哪些包）； .gitignore（限定在提交的时候哪些文件可以忽略）； 总结：_config.yml，theme/，source/，scaffolds/，package.json，.gitignore，6 个文件需要拷贝。 注意：不要hexo init去整体初始化，因为需要的文件我们已经拷贝过来了。其他：.git/，node_modules/，public/，.deploy_git/，db.json文件需要删除。除了现在的这个方法外，也可以另建一个仓库进行备份。利用.gitignore文件忽略备份的文件如下：12345678/.deploy_git/ /blogSource/ /node_modules/ /public/ *.db *.json !package.json !package-lock.json忽略掉的文件会在部署过程中自己生成。九、提交本地至XXX分支进入username.github.io文件目录下，依次执行：1. git add.2. git commit -m ‘新电脑部署’（引号内容可改）3. git push这样，master分支用于保存博客静态资源，提供博客页面供人访问；xxx分支用于备份博客部署文件，供自己修改和更新，两者在一个GitHub仓库内互不冲突。十、安装 hexo 依赖的包1npm install所依赖的包都在上一步中的package.json备份文件里，所以直接这一个命令就可以了。十一、新旧电脑更新博客1. git pull；2. hexo n xxx，编辑、撰写文章或其他博客更新改动，就是你要对博客进行的修改，或新增文章；3. hexo clean // 可选；4. hexo g；5. hexo s；6. hexo d。7. git add .；8. git commit -m ‘在新电脑上提交新文章’（引号内容可改）;9. git push指令，保证xxx分支版本为最新版本。从上述第 4 步后可以这样子发布：1hexo g -d &amp;&amp; git add . &amp;&amp; git commit -m &quot;更新&quot; &amp;&amp; git push &amp;&amp; exit把命令&amp;&amp;串起来，如果有一个失败就会停止；成功，最后一条命名就会退出终端。参考：1.link-01；2.link-02;3.link-03；4.link-04。]]></content>
       <categories>
         <category>其他</category>
       </categories>
