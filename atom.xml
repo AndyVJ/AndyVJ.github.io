@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.andyvj.com/"/>
-  <updated>2019-03-09T03:05:38.058Z</updated>
+  <updated>2019-03-09T07:09:59.274Z</updated>
   <id>https://www.andyvj.com/</id>
   
   <author>
@@ -15,6 +15,72 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>基本初等函数的微分公式与微分运算法则</title>
+    <link href="https://www.andyvj.com/2019/03/09/190309-03/"/>
+    <id>https://www.andyvj.com/2019/03/09/190309-03/</id>
+    <published>2019-03-09T07:05:57.000Z</published>
+    <updated>2019-03-09T07:09:59.274Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://ws2.sinaimg.cn/large/006mcMYXgy1g0wk58owkdj30u90ngaem.jpg" alt="image"></p><a id="more"></a><p><img src="https://wx4.sinaimg.cn/large/006mcMYXgy1g0wk675klaj30qs1590z0.jpg" alt="image"><br><img src="https://wx4.sinaimg.cn/large/006mcMYXgy1g0wk72jerxj30r30eu0wd.jpg" alt="image"></p><p><hr><br><span style="color:gray;font-size:12px"><br>参考：<br>《高等数学》同济六版 -&gt; P116<br></span></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://ws2.sinaimg.cn/large/006mcMYXgy1g0wk58owkdj30u90ngaem.jpg&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="基础学科" scheme="https://www.andyvj.com/categories/%E5%9F%BA%E7%A1%80%E5%AD%A6%E7%A7%91/"/>
+    
+    
+      <category term="数学" scheme="https://www.andyvj.com/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>微分的几何意义</title>
+    <link href="https://www.andyvj.com/2019/03/09/190309-02/"/>
+    <id>https://www.andyvj.com/2019/03/09/190309-02/</id>
+    <published>2019-03-09T07:02:49.000Z</published>
+    <updated>2019-03-09T07:05:46.327Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://ws1.sinaimg.cn/large/006mcMYXgy1g0wk1ve1e4j30r606m75q.jpg" alt="image"></p><a id="more"></a><p><img src="https://ws2.sinaimg.cn/large/006mcMYXgy1g0wk2rx8ttj30s00h8wjo.jpg" alt="image"></p><p><hr><br><span style="color:gray;font-size:12px"><br>参考：<br>《高等数学》同济六版 -&gt; P115<br></span></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://ws1.sinaimg.cn/large/006mcMYXgy1g0wk1ve1e4j30r606m75q.jpg&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="基础学科" scheme="https://www.andyvj.com/categories/%E5%9F%BA%E7%A1%80%E5%AD%A6%E7%A7%91/"/>
+    
+    
+      <category term="数学" scheme="https://www.andyvj.com/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>微分的定义</title>
+    <link href="https://www.andyvj.com/2019/03/09/190309-01/"/>
+    <id>https://www.andyvj.com/2019/03/09/190309-01/</id>
+    <published>2019-03-09T06:46:19.000Z</published>
+    <updated>2019-03-09T07:02:36.917Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://wx1.sinaimg.cn/large/006mcMYXgy1g0wjwiugg5j30yb1bmao2.jpg" alt="image"></p><a id="more"></a><p><img src="https://ws1.sinaimg.cn/large/006mcMYXgy1g0wjy6o40hj30r915bqby.jpg" alt="image"></p><p><img src="https://wx3.sinaimg.cn/large/006mcMYXgy1g0wjz872x5j30r00yljz1.jpg" alt="image"></p><p><hr><br><span style="color:gray;font-size:12px"><br>参考：<br>《高等数学》同济六版 -&gt; P113<br></span></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://wx1.sinaimg.cn/large/006mcMYXgy1g0wjwiugg5j30yb1bmao2.jpg&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="基础学科" scheme="https://www.andyvj.com/categories/%E5%9F%BA%E7%A1%80%E5%AD%A6%E7%A7%91/"/>
+    
+    
+      <category term="数学" scheme="https://www.andyvj.com/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+  </entry>
   
   <entry>
     <title>基本求导法则与导数公式</title>
@@ -392,73 +458,6 @@
     <summary type="html">
     
       &lt;p&gt;组件中，零件在『抑制』状态下『导出装配』时&lt;strong&gt;会被忽略，不会导出。&lt;/strong&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="机械结构" scheme="https://www.andyvj.com/categories/%E6%9C%BA%E6%A2%B0%E7%BB%93%E6%9E%84/"/>
-    
-    
-      <category term="UG_NX" scheme="https://www.andyvj.com/tags/UG-NX/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>UG NX 通过『测量体』实现重量与属性参数的关联</title>
-    <link href="https://www.andyvj.com/2019/02/28/190228-01/"/>
-    <id>https://www.andyvj.com/2019/02/28/190228-01/</id>
-    <published>2019-02-28T00:48:40.000Z</published>
-    <updated>2019-03-01T10:49:15.928Z</updated>
-    
-    <content type="html"><![CDATA[<p>工程图中，关联零部件的重量属性参数。<strong>前提是需要对零部件指定好材料</strong>，<code>工具 -&gt; 更多 -&gt; 指派材料</code>。</p><a id="more"></a><p><img src="https://ws3.sinaimg.cn/large/006mcMYXgy1g0lzgh8nvpj308e0dv3zg.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 指派材料</div><p><img src="https://ws1.sinaimg.cn/large/006mcMYXgy1g0lzkxgdxhj304x08wmxd.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 『测量体』</div><p><img src="https://wx2.sinaimg.cn/large/006mcMYXgy1g0lzm2zg3ij30ig0bbaaz.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 通过测量关联的方式实现的重量参数，但『去除参数』后就会没有。</div><p>这样<strong>模型树</strong>中会有一个测量特征。<br><img src="https://wx4.sinaimg.cn/large/006mcMYXgy1g0lzodwb29j303f00kjr5.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 测量特征</div><p><img src="https://ws4.sinaimg.cn/large/006mcMYXgy1g0lzrzhl80j30f609r0tg.jpg" alt="image"><br><img src="https://wx1.sinaimg.cn/large/006mcMYXgy1g0lzsn8kpkj30940dlt8y.jpg" alt="image"><br><img src="https://wx2.sinaimg.cn/large/006mcMYXgy1g0lztqhl4gj30i20eddgi.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 单元格设置，可将数值调为 2 位小数。</div><p>这样重量就关联进来了。</p><p>也可以通过对『属性』参数<code>WEIGHT</code>进行关联。</p><p><img src="https://ws4.sinaimg.cn/large/006mcMYXgy1g0m031irzuj30lb0dz0v1.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 这样『零件明细表』中就能够引用<code>WEIGHT</code>这个参数来实现重量调用了。</div><p><span style="color:red"><strong>这种方式有个缺点，零部件去除参数以后，测量体的参数也会被去掉，这样自动关联就失效了。</strong></span></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;工程图中，关联零部件的重量属性参数。&lt;strong&gt;前提是需要对零部件指定好材料&lt;/strong&gt;，&lt;code&gt;工具 -&amp;gt; 更多 -&amp;gt; 指派材料&lt;/code&gt;。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="机械结构" scheme="https://www.andyvj.com/categories/%E6%9C%BA%E6%A2%B0%E7%BB%93%E6%9E%84/"/>
-    
-    
-      <category term="UG_NX" scheme="https://www.andyvj.com/tags/UG-NX/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Latex 关于集合的表示</title>
-    <link href="https://www.andyvj.com/2019/02/27/190227-01/"/>
-    <id>https://www.andyvj.com/2019/02/27/190227-01/</id>
-    <published>2019-02-27T14:01:22.000Z</published>
-    <updated>2019-02-27T14:54:12.488Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="一些关于集合的-LaTeX"><a href="#一些关于集合的-LaTeX" class="headerlink" title="一些关于集合的 LaTeX"></a>一些关于<strong>集合</strong>的 LaTeX</h2><a id="more"></a><p>大括号 -&gt; $\lbrace …\rbrace$ -&gt; <code>$\lbrace ...\rbrace$</code></p><p>a 属于 B  -&gt; $a \in A$ -&gt; <code>$a \in A$</code></p><p>“|” -&gt; $\mid$ -&gt; <code>$\mid$</code></p><p>不属于 -&gt; $a \not\in B$ -&gt; <code>$a \not\in B$</code></p><p>A 包含于 B -&gt; $A \subset B$ -&gt; <code>$A \subset B$</code></p><p>A 真包含于 B -&gt; $A\subsetneqq B$ -&gt; <code>$A\subsetneqq B$</code></p><p>A 包含 B -&gt; $A\supset B$ -&gt; <code>$A\supset B$</code></p><p>A 不包含 B -&gt; $A\not\supset B$ -&gt; <code>$A\not\supset B$</code></p><p>A 交 B -&gt; $A\cap B$ -&gt; <code>$A\cap B$</code></p><p>A 并 B -&gt; $A\cup B$ -&gt; <code>$A\cup B$</code></p><p>A 的闭包 -&gt; $A\overline{A}$ -&gt; <code>$A\overline{A}$</code></p><p>A 减去 B(差集) -&gt; $A\setminus B$ -&gt; <code>$A\setminus B$</code></p><p>实数集合 -&gt; $\mathbb{R}$ -&gt;<code>$\mathbb{R}$</code></p><p>空集 -&gt; $\emptyset$ -&gt; <code>$\emptyset$</code></p><h2 id="推导，推出符号的-LaTeX"><a href="#推导，推出符号的-LaTeX" class="headerlink" title="推导，推出符号的 LaTeX"></a>推导，推出符号的 LaTeX</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$\Rightarrow$</span><br><span class="line">$\rightarrow$</span><br><span class="line">$\longrightarrow$</span><br><span class="line"></span><br><span class="line">$\Leftarrow$</span><br><span class="line">$\leftarrow$</span><br><span class="line">$\longleftarrow$</span><br><span class="line"></span><br><span class="line">$\Leftrightarrow$</span><br><span class="line">$\leftrightarrow$</span><br><span class="line">$\longleftrightarrow$</span><br></pre></td></tr></table></figure><p>显示：</p><p>$\Rightarrow$<br>$\rightarrow$<br>$\longrightarrow$</p><p>$\Leftarrow$<br>$\leftarrow$<br>$\longleftarrow$</p><p>$\Leftrightarrow$<br>$\leftrightarrow$<br>$\longleftrightarrow$</p><p><hr><br><span style="color:gray;font-size:12px"><br>参考：</span></p><ol><li><a href="https://www.cnblogs.com/linxd/p/4955530.html" target="_blank" rel="noopener">link-01</a></li><li><a href="http://blog.sina.com.cn/s/blog_4b1046f80101nbcn.html" target="_blank" rel="noopener">link-02</a></li><li><a href="https://blog.csdn.net/baidu_38060633/article/details/79183905" target="_blank" rel="noopener">link-03</a><br></li></ol>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;一些关于集合的-LaTeX&quot;&gt;&lt;a href=&quot;#一些关于集合的-LaTeX&quot; class=&quot;headerlink&quot; title=&quot;一些关于集合的 LaTeX&quot;&gt;&lt;/a&gt;一些关于&lt;strong&gt;集合&lt;/strong&gt;的 LaTeX&lt;/h2&gt;
-    
-    </summary>
-    
-      <category term="基础学科" scheme="https://www.andyvj.com/categories/%E5%9F%BA%E7%A1%80%E5%AD%A6%E7%A7%91/"/>
-    
-    
-      <category term="LaTeX" scheme="https://www.andyvj.com/tags/LaTeX/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>UG NX 『筋板』</title>
-    <link href="https://www.andyvj.com/2019/02/26/190226-03/"/>
-    <id>https://www.andyvj.com/2019/02/26/190226-03/</id>
-    <published>2019-02-26T12:54:56.000Z</published>
-    <updated>2019-02-26T13:37:19.417Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="https://wx3.sinaimg.cn/large/006mcMYXgy1g0k4est33aj30c209b3zi.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 『筋板』命令位置</div><a id="more"></a><p><img src="https://wx3.sinaimg.cn/large/006mcMYXgy1g0k4kepo5sj30940dngmm.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 需要操作的命令</div><h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><p><img src="https://ws4.sinaimg.cn/large/006mcMYXgy1g0k4ro3fy9j30j00eb757.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 草绘曲线</div><p><img src="https://ws4.sinaimg.cn/large/006mcMYXgy1g0k4tc16m3j30o20dugo4.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 一些命令选项的填写；会自动延伸到体；图示预览是『垂直于剖切平面』的效果</div><p><img src="https://ws3.sinaimg.cn/large/006mcMYXgy1g0k56wjrfgj30p20glad4.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 『帽形体』选项效果,『偏置』控制筋的高度</div><p><img src="https://ws2.sinaimg.cn/large/006mcMYXgy1g0k59e329rj30fp054weq.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 默认为『从截面』</div><p><img src="https://ws2.sinaimg.cn/large/006mcMYXgy1g0k5c65rkcj30p60dpdi9.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 『平行于剖切平面』的效果，画“加强筋”一般用这个命令，而不是用“三角筋”的命令来画</div>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;https://wx3.sinaimg.cn/large/006mcMYXgy1g0k4est33aj30c209b3zi.jpg&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
-&lt;div style=&quot;font-size:13px;color:gray;text-align:center&quot;&gt;▲ 『筋板』命令位置&lt;/div&gt;
     
     </summary>
     
