@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.andyvj.com/"/>
-  <updated>2019-03-09T07:09:59.274Z</updated>
+  <updated>2019-03-15T15:11:14.071Z</updated>
   <id>https://www.andyvj.com/</id>
   
   <author>
@@ -17,17 +17,42 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>UG NX 工程图标注『对称尺寸』</title>
+    <link href="https://www.andyvj.com/2019/03/15/190315-01/"/>
+    <id>https://www.andyvj.com/2019/03/15/190315-01/</id>
+    <published>2019-03-15T09:26:48.000Z</published>
+    <updated>2019-03-15T15:11:14.071Z</updated>
+    
+    <content type="html"><![CDATA[<p>UG 工程图标注对称尺寸的方法 – 通过『单侧尺寸』的方式实现。</p><a id="more"></a><p><img src="https://wx1.sinaimg.cn/large/006mcMYXgy1g13m4an4hkj30cl07zjrt.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 新建对称中心线</div><p><img src="https://wx2.sinaimg.cn/large/006mcMYXgy1g13m5jxzbpj30e10a7gmf.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 视图边界，隐藏掉一般对称视图</div><p><img src="https://wx1.sinaimg.cn/large/006mcMYXgy1g13m7z1j0lj30ge08g747.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 标注</div><p><img src="https://wx4.sinaimg.cn/large/006mcMYXgy1g13m6wdwk6j30iw0dbt92.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 显示一半的视图</div><p><img src="https://ws4.sinaimg.cn/large/006mcMYXgy1g13m97m4vdj30en0h1dgg.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 显示为单侧尺寸</div><p><img src="https://ws2.sinaimg.cn/large/006mcMYXgy1g13m9tth7aj30dn07zt8l.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 对称尺寸效果</div><p>另外一种方法：</p><p><img src="https://wx1.sinaimg.cn/large/006mcMYXgy1g13masgvt0j309t09wt8y.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲  GC 工具箱，对称尺寸标注</div><p><img src="https://wx4.sinaimg.cn/large/006mcMYXgy1g13mbptonmj30j109gdga.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 莫名的错误，暂时不知道怎么解决，就用上一种的方法吧！</div>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;UG 工程图标注对称尺寸的方法 – 通过『单侧尺寸』的方式实现。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="机械结构" scheme="https://www.andyvj.com/categories/%E6%9C%BA%E6%A2%B0%E7%BB%93%E6%9E%84/"/>
+    
+    
+      <category term="UG_NX" scheme="https://www.andyvj.com/tags/UG-NX/"/>
+    
+  </entry>
+  
+  <entry>
     <title>基本初等函数的微分公式与微分运算法则</title>
     <link href="https://www.andyvj.com/2019/03/09/190309-03/"/>
     <id>https://www.andyvj.com/2019/03/09/190309-03/</id>
     <published>2019-03-09T07:05:57.000Z</published>
-    <updated>2019-03-09T07:09:59.274Z</updated>
+    <updated>2019-03-15T15:12:53.199Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="https://ws2.sinaimg.cn/large/006mcMYXgy1g0wk58owkdj30u90ngaem.jpg" alt="image"></p><a id="more"></a><p><img src="https://wx4.sinaimg.cn/large/006mcMYXgy1g0wk675klaj30qs1590z0.jpg" alt="image"><br><img src="https://wx4.sinaimg.cn/large/006mcMYXgy1g0wk72jerxj30r30eu0wd.jpg" alt="image"></p><p><hr><br><span style="color:gray;font-size:12px"><br>参考：<br>《高等数学》同济六版 -&gt; P116<br></span></p>]]></content>
+    <content type="html"><![CDATA[<p>基本初等函数的微分公式与微分运算法则：</p><!--![image](https://ws2.sinaimg.cn/large/006mcMYXgy1g0wk58owkdj30u90ngaem.jpg)--><a id="more"></a><p><img src="https://wx4.sinaimg.cn/large/006mcMYXgy1g13vu0rbscj30wu3y2hdt.jpg" alt="image"></p><p>&lt;!–<br><img src="https://wx4.sinaimg.cn/large/006mcMYXgy1g0wk675klaj30qs1590z0.jpg" alt="image"><br><img src="https://wx4.sinaimg.cn/large/006mcMYXgy1g0wk72jerxj30r30eu0wd.jpg" alt="image"><br>&lt;!–</p><p><hr><br><span style="color:gray;font-size:12px"><br>参考：<br>《高等数学》同济六版 -&gt; P116<br></span></p>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;https://ws2.sinaimg.cn/large/006mcMYXgy1g0wk58owkdj30u90ngaem.jpg&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
+      &lt;p&gt;基本初等函数的微分公式与微分运算法则：&lt;/p&gt;
+&lt;!--
+![image](https://ws2.sinaimg.cn/large/006mcMYXgy1g0wk58owkdj30u90ngaem.jpg)
+--&gt;
     
     </summary>
     
@@ -65,13 +90,14 @@
     <link href="https://www.andyvj.com/2019/03/09/190309-01/"/>
     <id>https://www.andyvj.com/2019/03/09/190309-01/</id>
     <published>2019-03-09T06:46:19.000Z</published>
-    <updated>2019-03-09T07:02:36.917Z</updated>
+    <updated>2019-03-15T15:11:14.070Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="https://wx1.sinaimg.cn/large/006mcMYXgy1g0wjwiugg5j30yb1bmao2.jpg" alt="image"></p><a id="more"></a><p><img src="https://ws1.sinaimg.cn/large/006mcMYXgy1g0wjy6o40hj30r915bqby.jpg" alt="image"></p><p><img src="https://wx3.sinaimg.cn/large/006mcMYXgy1g0wjz872x5j30r00yljz1.jpg" alt="image"></p><p><hr><br><span style="color:gray;font-size:12px"><br>参考：<br>《高等数学》同济六版 -&gt; P113<br></span></p>]]></content>
+    <content type="html"><![CDATA[<p><strong>定义  设函数$y=f(x)$在某区间内有定义，$x_0$ 及 $x_0+\Delta x$ 在这区间内，如果增量</strong></p><p>$$<br>\Delta y=f(x_0+\Delta x)-f(x_0)<br>$$</p><a id="more"></a><p><strong>可表示为</strong></p><p>$$<br>\Delta y = A\Delta x+\omicron(\Delta x)<br>$$</p><p><strong>其中 $A$ 是不依赖于$\Delta x$的常数，那么称函数 $y=f(x)$ 在点$x_0$是可微的，而$A\Delta x$叫做函数$y=f(x)$ 在点 $x_0$相应于自变量增量$\Delta x$的微分，记做$d_y$，即</strong></p><p>$$<br>d_y=A\Delta x<br>$$</p><p><a href="https://wx1.sinaimg.cn/large/006mcMYXgy1g0wjwiugg5j30yb1bmao2.jpg" target="_blank" rel="noopener">image</a></p><p><a href="https://ws1.sinaimg.cn/large/006mcMYXgy1g0wjy6o40hj30r915bqby.jpg" target="_blank" rel="noopener">image</a></p><p><a href="https://wx3.sinaimg.cn/large/006mcMYXgy1g0wjz872x5j30r00yljz1.jpg" target="_blank" rel="noopener">image</a></p><p><hr><br><span style="color:gray;font-size:12px"><br>参考：<br>《高等数学》同济六版 -&gt; P113<br></span></p>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;https://wx1.sinaimg.cn/large/006mcMYXgy1g0wjwiugg5j30yb1bmao2.jpg&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;strong&gt;定义  设函数$y=f(x)$在某区间内有定义，$x_0$ 及 $x_0+\Delta x$ 在这区间内，如果增量&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;$$&lt;br&gt;\Delta y=f(x_0+\Delta x)-f(x_0)&lt;br&gt;$$&lt;/p&gt;
     
     </summary>
     
@@ -436,28 +462,6 @@
     <summary type="html">
     
       &lt;p&gt;&lt;code&gt;gc_tool.cfg&lt;/code&gt;为 GC 工具箱的配置文件，通过修改定制，可以提高自己的出图效率。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="机械结构" scheme="https://www.andyvj.com/categories/%E6%9C%BA%E6%A2%B0%E7%BB%93%E6%9E%84/"/>
-    
-    
-      <category term="UG_NX" scheme="https://www.andyvj.com/tags/UG-NX/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>UG NX 零件在『抑制』状态下会被导出装配吗</title>
-    <link href="https://www.andyvj.com/2019/03/01/190301-01/"/>
-    <id>https://www.andyvj.com/2019/03/01/190301-01/</id>
-    <published>2019-03-01T04:35:00.000Z</published>
-    <updated>2019-03-01T12:34:17.838Z</updated>
-    
-    <content type="html"><![CDATA[<p>组件中，零件在『抑制』状态下『导出装配』时<strong>会被忽略，不会导出。</strong></p><a id="more"></a><p><img src="https://wx2.sinaimg.cn/mw690/006mcMYXgy1g0n6xuc08gj30bf0lbdh9.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 可见零件在『抑制』状态下导出装配时会被忽略</div><!--<hr/><span style="color:gray;font-size:12px">参考：1. [link-01]()2. [link-01]()3. [link-01]()4. [link-01]()5. [link-01]()</span>-->]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;组件中，零件在『抑制』状态下『导出装配』时&lt;strong&gt;会被忽略，不会导出。&lt;/strong&gt;&lt;/p&gt;
     
     </summary>
     

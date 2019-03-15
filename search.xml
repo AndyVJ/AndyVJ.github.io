@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[UG NX 工程图标注『对称尺寸』]]></title>
+    <url>%2F2019%2F03%2F15%2F190315-01%2F</url>
+    <content type="text"><![CDATA[UG 工程图标注对称尺寸的方法 – 通过『单侧尺寸』的方式实现。 ▲ 新建对称中心线 ▲ 视图边界，隐藏掉一般对称视图 ▲ 标注 ▲ 显示一半的视图 ▲ 显示为单侧尺寸 ▲ 对称尺寸效果 另外一种方法： ▲ GC 工具箱，对称尺寸标注 ▲ 莫名的错误，暂时不知道怎么解决，就用上一种的方法吧！]]></content>
+      <categories>
+        <category>机械结构</category>
+      </categories>
+      <tags>
+        <tag>UG_NX</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[基本初等函数的微分公式与微分运算法则]]></title>
     <url>%2F2019%2F03%2F09%2F190309-03%2F</url>
-    <content type="text"><![CDATA[参考：《高等数学》同济六版 -&gt; P116]]></content>
+    <content type="text"><![CDATA[基本初等函数的微分公式与微分运算法则： &lt;!–&lt;!– 参考：《高等数学》同济六版 -&gt; P116]]></content>
       <categories>
         <category>基础学科</category>
       </categories>
@@ -25,7 +36,7 @@
   <entry>
     <title><![CDATA[微分的定义]]></title>
     <url>%2F2019%2F03%2F09%2F190309-01%2F</url>
-    <content type="text"><![CDATA[参考：《高等数学》同济六版 -&gt; P113]]></content>
+    <content type="text"><![CDATA[定义 设函数$y=f(x)$在某区间内有定义，$x_0$ 及 $x_0+\Delta x$ 在这区间内，如果增量 $$\Delta y=f(x_0+\Delta x)-f(x_0)$$ 可表示为 $$\Delta y = A\Delta x+\omicron(\Delta x)$$ 其中 $A$ 是不依赖于$\Delta x$的常数，那么称函数 $y=f(x)$ 在点$x_0$是可微的，而$A\Delta x$叫做函数$y=f(x)$ 在点 $x_0$相应于自变量增量$\Delta x$的微分，记做$d_y$，即 $$d_y=A\Delta x$$ image image image 参考：《高等数学》同济六版 -&gt; P113]]></content>
       <categories>
         <category>基础学科</category>
       </categories>
