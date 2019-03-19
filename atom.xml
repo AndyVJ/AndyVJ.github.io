@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.andyvj.com/"/>
-  <updated>2019-03-15T15:11:14.071Z</updated>
+  <updated>2019-03-19T13:48:17.502Z</updated>
   <id>https://www.andyvj.com/</id>
   
   <author>
@@ -15,6 +15,50 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>FX2N 系列 PLC 模块的接线</title>
+    <link href="https://www.andyvj.com/2019/03/19/190319-02/"/>
+    <id>https://www.andyvj.com/2019/03/19/190319-02/</id>
+    <published>2019-03-19T08:34:08.000Z</published>
+    <updated>2019-03-19T13:48:17.502Z</updated>
+    
+    <content type="html"><![CDATA[<p>FX2N 系列 PLC 模块的接线。<br><a id="more"></a><br><!--![image](https://ws4.sinaimg.cn/large/006mcMYXgy1g186toc42qj30w619e4kn.jpg)--><br><img src="https://ws1.sinaimg.cn/large/006mcMYXgy1g1871rwwhmj30w619engp.jpg" alt="image"></p><p><img src="https://ws3.sinaimg.cn/large/006mcMYXgy1g18fuy9l37j30ct084wev.jpg" alt="image"></p><p><div style="font-size:13px;color:gray;text-align:center">▲ FX2N 系列 PLC 的输入端的接线示例：可见输入端电源的负极与 COM 公共端短接。</div></p><p><hr><br><span style="color:gray;font-size:12px"><br>参考：P12<br></span></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;FX2N 系列 PLC 模块的接线。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="电子电气" scheme="https://www.andyvj.com/categories/%E7%94%B5%E5%AD%90%E7%94%B5%E6%B0%94/"/>
+    
+    
+      <category term="三菱PLC" scheme="https://www.andyvj.com/tags/%E4%B8%89%E8%8F%B1PLC/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>UG NX 更改资源条路径加载显示常用文件</title>
+    <link href="https://www.andyvj.com/2019/03/19/190319-01/"/>
+    <id>https://www.andyvj.com/2019/03/19/190319-01/</id>
+    <published>2019-03-19T06:09:02.000Z</published>
+    <updated>2019-03-19T12:30:38.363Z</updated>
+    
+    <content type="html"><![CDATA[<p>以常用的螺丝孔为例，加载图片。</p><a id="more"></a><p><code>文件 -&gt; 首选项 -&gt; 用户界面(快捷键：Ctrl + 2)</code>：</p><p><img src="https://wx1.sinaimg.cn/large/006mcMYXgy1g1845j54huj30gc0d5aas.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 修改 web 浏览器路径，指向图片。</div><!--<hr/><span style="color:gray;font-size:12px">参考：1.[link-01]()2.[link-02]()3.[link-03]()4.[link-04]()5.[link-05]()</span>-->]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;以常用的螺丝孔为例，加载图片。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="机械结构" scheme="https://www.andyvj.com/categories/%E6%9C%BA%E6%A2%B0%E7%BB%93%E6%9E%84/"/>
+    
+    
+      <category term="UG_NX" scheme="https://www.andyvj.com/tags/UG-NX/"/>
+    
+  </entry>
   
   <entry>
     <title>UG NX 工程图标注『对称尺寸』</title>
@@ -417,51 +461,6 @@
     
       &lt;p&gt;这样设置后能够方便的自动填充&lt;code&gt;零件明细表&lt;/code&gt;。&lt;/p&gt;
 &lt;h2 id=&quot;在建模模板中添加属性参数&quot;&gt;&lt;a href=&quot;#在建模模板中添加属性参数&quot; class=&quot;headerlink&quot; title=&quot;在建模模板中添加属性参数&quot;&gt;&lt;/a&gt;在建模模板中添加属性参数&lt;/h2&gt;&lt;p&gt;在模板&lt;code&gt;model-plain-1-mm-template.prt&lt;/code&gt;中添加&lt;code&gt;名称&lt;/code&gt;、&lt;code&gt;材料&lt;/code&gt;、&lt;code&gt;数量&lt;/code&gt;参数，路径为：&lt;code&gt;文件 -&amp;gt; 属性&lt;/code&gt;。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="机械结构" scheme="https://www.andyvj.com/categories/%E6%9C%BA%E6%A2%B0%E7%BB%93%E6%9E%84/"/>
-    
-    
-      <category term="UG_NX" scheme="https://www.andyvj.com/tags/UG-NX/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>UG NX 通过『赋值重量』属性参数自动更新重量</title>
-    <link href="https://www.andyvj.com/2019/03/01/190301-03/"/>
-    <id>https://www.andyvj.com/2019/03/01/190301-03/</id>
-    <published>2019-03-01T09:34:19.000Z</published>
-    <updated>2019-03-08T13:37:47.765Z</updated>
-    
-    <content type="html"><![CDATA[<p>相对于<a href="https://www.andyvj.com/2019/02/28/190228-01/">前一篇</a>关联重量的方法，<strong>这是一个比较靠谱的方法，也是强烈推荐的一种方法。</strong></p><p><strong>前提: 对零部件指定好材料。</strong></p><a id="more"></a><h2 id="官方帮助文档中的发现"><a href="#官方帮助文档中的发现" class="headerlink" title="官方帮助文档中的发现"></a>官方帮助文档中的发现</h2><p>在<code>GC_Toolkits_UserManual.pdf</code>发现:</p><p><img src="https://wx1.sinaimg.cn/large/006mcMYXgy1g0nfrquvzwj30xl06f0vb.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 可见需要修改配置文件选项</div><h2 id="修改配置文件选项"><a href="#修改配置文件选项" class="headerlink" title="修改配置文件选项"></a>修改配置文件选项</h2><p>打开<code>gc_tool.cfg</code>文件，修改为:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">赋值重量,WEIGHT,N,Read</span><br></pre></td></tr></table></figure><p>找到<code>KEY_WORD REFERENCESET_LAYER_START</code>代码段:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">! configuration for Reference Set and Layer mapping setting</span><br><span class="line"></span><br><span class="line">KEY_WORD REFERENCESET_LAYER_START</span><br><span class="line">BODY                    | 1,4</span><br><span class="line">MATE                    | 1,5</span><br><span class="line">SIMPLIFIED              |</span><br><span class="line">DRAWING                 | 1,4</span><br><span class="line">ALTERNATE               | 2</span><br><span class="line">KEY_WORD REFERENCESET_LAYER_END</span><br></pre></td></tr></table></figure><p>可见第一个<strong>引用集</strong>为<code>BODY</code>，只需要将要自动计算重量的实体收集在<code>BODY</code>引用集中就可以了。</p><p><strong>如果，引用集里没有<code>BODY</code>引用集，新建一个即可。</strong></p><p><img src="https://wx4.sinaimg.cn/large/006mcMYXgy1g0ng5px1joj30940g3q3q.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ BODY 引用集，『自动添加组件』一般默认勾选比较方便；若去掉勾，自己手动添加，虽然可控，但比较麻烦。</div><p><img src="https://wx4.sinaimg.cn/large/006mcMYXgy1g0ng15mbogj306706t3yk.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 自动重量效果</div><h2 id="零件明细表中自动引用重量属性参数"><a href="#零件明细表中自动引用重量属性参数" class="headerlink" title="零件明细表中自动引用重量属性参数"></a>零件明细表中自动引用重量属性参数</h2><p><img src="https://wx2.sinaimg.cn/large/006mcMYXgy1g0ng733c78j30oq0de0td.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 显示单个重量的参数选择</div><p>如何实现零件自动总重量的显示？</p><blockquote><p><a href="http://www.ugsnx.com/thread-160149-1-8.html" target="_blank" rel="noopener">http://www.ugsnx.com/thread-160149-1-8.html</a></p><p>复制单重列的默认文本<strong>&lt;W$=@WEIGHT&gt;</strong>,将总重列的类别设为数量,默认文本框粘贴单重的默认文本,.这样总重就能正确显示了,至于为啥会这样,我也不知道.</p></blockquote><p><img src="https://ws4.sinaimg.cn/large/006mcMYXgy1g0ng8xgc1uj30pb0dewez.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 零件总重量显示</div><p><img src="https://wx2.sinaimg.cn/large/006mcMYXgy1g0ng9wa1gdj30rm0dejs5.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 小数位控制，注意『类别』为『数值』；可以选择一整列，也可以选择单个单元格。</div><p><img src="https://ws1.sinaimg.cn/large/006mcMYXgy1g0ngay0mxfj30gb0d474s.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 单个单元格小数位控制</div><p><strong>至于如何算出顶级装配(整机)的重量，暂时还没有找到直接的方法。我想可以直接导出 excel，在 excel 中计算可行。</strong></p><p><strong>装配中也没有找到像 Creo 一样的过滤器，我想同样可以直接导出 excel，在 excel 中筛选操作吧，可筛选删除。</strong></p><!--<hr/><span style="color:gray;font-size:12px">参考：1. [link-01]()2. [link-01]()3. [link-01]()4. [link-01]()5. [link-01]()</span>-->]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;相对于&lt;a href=&quot;https://www.andyvj.com/2019/02/28/190228-01/&quot;&gt;前一篇&lt;/a&gt;关联重量的方法，&lt;strong&gt;这是一个比较靠谱的方法，也是强烈推荐的一种方法。&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;前提: 对零部件指定好材料。&lt;/strong&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="机械结构" scheme="https://www.andyvj.com/categories/%E6%9C%BA%E6%A2%B0%E7%BB%93%E6%9E%84/"/>
-    
-    
-      <category term="UG_NX" scheme="https://www.andyvj.com/tags/UG-NX/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>UG NX 『gc_tool.cfg』之『属性工具』</title>
-    <link href="https://www.andyvj.com/2019/03/01/190301-02/"/>
-    <id>https://www.andyvj.com/2019/03/01/190301-02/</id>
-    <published>2019-03-01T05:11:16.000Z</published>
-    <updated>2019-03-01T10:49:15.931Z</updated>
-    
-    <content type="html"><![CDATA[<p><code>gc_tool.cfg</code>为 GC 工具箱的配置文件，通过修改定制，可以提高自己的出图效率。</p><a id="more"></a><p>配置文件的路径：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\Program Files\Siemens\NX 10.0\LOCALIZATION\prc\gc_tools\configuration\gc_tool.cfg</span><br></pre></td></tr></table></figure><h2 id="添加属性参数"><a href="#添加属性参数" class="headerlink" title="添加属性参数"></a>添加属性参数</h2><p><img src="https://ws3.sinaimg.cn/large/006mcMYXgy1g0n8t9l7g0j3082049jrm.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 命令位置</div><p>其中，控制属性的代码如下：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">KEY_WORD PART_ATTRIBUTE_START</span><br><span class="line">名称,DB_PART_NAME,N,Write</span><br><span class="line">图号,DB_PART_NO,N,Write</span><br><span class="line">赋值重量,WEIGHT,N,Write</span><br><span class="line">设计重量,CAL_WEIGHT,N,Write</span><br><span class="line">备注,REMARK,N,Write</span><br><span class="line">设计,DESIGNER,N,Write</span><br><span class="line">校对,CHECKER,N,Write</span><br><span class="line">审核,AUDITOR,N,Write</span><br><span class="line">批准,APPROVER,N,Write</span><br><span class="line">比例,SCALE,Y,Read</span><br><span class="line">共X页,NO_OF_SHEET,N,Write</span><br><span class="line">第X页,SHEET_NUM,N,Write</span><br><span class="line">KEY_WORD PART_ATTRIBUTE_END</span><br></pre></td></tr></table></figure><p>可见，代码的格式有如下规律：</p><p><img src="https://ws1.sinaimg.cn/large/006mcMYXgy1g0n8650revj30gd0a7wfg.jpg" alt="image"></p><p><img src="https://wx2.sinaimg.cn/large/006mcMYXgy1g0n87yej8wj30di0jhmyi.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 配置文件反应到 GUI 的效果</div><p>在关键字标签中间添加自定义的属性——<code>名称</code>，<code>材料</code>，<code>备注</code>：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">KEY_WORD PART_ATTRIBUTE_START</span><br><span class="line">名称,名称,N,Write</span><br><span class="line">材料,材料,Y,Write</span><br><span class="line">备注,备注,Y,Write</span><br><span class="line">名称,DB_PART_NAME,N,Write</span><br><span class="line">图号,DB_PART_NO,N,Write</span><br><span class="line">赋值重量,WEIGHT,N,Write</span><br><span class="line">设计重量,CAL_WEIGHT,N,Write</span><br><span class="line">备注,REMARK,N,Write</span><br><span class="line">设计,DESIGNER,N,Write</span><br><span class="line">校对,CHECKER,N,Write</span><br><span class="line">审核,AUDITOR,N,Write</span><br><span class="line">批准,APPROVER,N,Write</span><br><span class="line">比例,SCALE,Y,Read</span><br><span class="line">共X页,NO_OF_SHEET,N,Write</span><br><span class="line">第X页,SHEET_NUM,N,Write</span><br><span class="line">KEY_WORD PART_ATTRIBUTE_END</span><br></pre></td></tr></table></figure><h2 id="为新增的属性参数添加下拉菜单效果"><a href="#为新增的属性参数添加下拉菜单效果" class="headerlink" title="为新增的属性参数添加下拉菜单效果"></a>为新增的属性参数添加下拉菜单效果</h2><p>通过观察『比例』下拉菜单控制代码的格式：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">KEY_WORD ATTRIBUTE_TOOL_SCALE_START</span><br><span class="line">1:1</span><br><span class="line">1:2</span><br><span class="line">1:3</span><br><span class="line">1:4</span><br><span class="line">1:5</span><br><span class="line">1:6</span><br><span class="line">KEY_WORD ATTRIBUTE_TOOL_SCALE_END</span><br></pre></td></tr></table></figure><p>可知：</p><p><img src="https://ws1.sinaimg.cn/large/006mcMYXgy1g0n8exvcovj30ex05ljrj.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 下拉菜单代码格式</div><p>通过搜索阅读<code>GC_Toolkits_UserManual.pdf</code>官方帮助文档：</p><blockquote><p>用户可以根据自己的选择在配置文件中增加某些属性的下拉选择项。通过 Key<br>Word 的方式，只要用户添加了对应的配置，则显示下拉。下拉的内容对应的 Key<br>Word 采用 KEY_WORD ATTRIBUTE_TOOL_xxxx_START 的方式， 其中的 xxxx 即<br>为定义的属性名称。 现在每个属性的定义有四列。第一列是中文名，第二列是英文名，<br>第三列是确定是否需要查找关键字，找到用户是否下拉菜单的内容，如果是 Y 的话必<br>须加关键字，如果是 N 的话可以不加关键字。 第四列为 READ 或 WRITE。 如果为<br>READ 状态的话，必须要设定关键字，就是第三列内容必须为 Y。而且只可以选择，<br>不可以手动输入；如果为 WRITE 状态的话，可以选择，也可以输入。</p></blockquote><p>可知：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">材料,材料,Y,Write</span><br><span class="line">! 这样的方式，Write 既可以下拉选择又可以手写，而 Read 控制只能下拉选择参数。</span><br></pre></td></tr></table></figure><p>为自定义的属性参数添加下拉菜单代码，如：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">KEY_WORD ATTRIBUTE_TOOL_材料_START</span><br><span class="line">铝</span><br><span class="line">冷轧板</span><br><span class="line">不锈钢</span><br><span class="line">KEY_WORD ATTRIBUTE_TOOL_材料_END</span><br></pre></td></tr></table></figure><p><img src="https://ws3.sinaimg.cn/large/006mcMYXgy1g0n8oaf0f0j307503rjrb.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 『材料』属性参数下拉效果</div><!--<hr/><span style="color:gray;font-size:12px">参考：1. [link-01]()2. [link-01]()3. [link-01]()4. [link-01]()5. [link-01]()</span>-->]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;code&gt;gc_tool.cfg&lt;/code&gt;为 GC 工具箱的配置文件，通过修改定制，可以提高自己的出图效率。&lt;/p&gt;
     
     </summary>
     

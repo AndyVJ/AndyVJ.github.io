@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[FX2N 系列 PLC 模块的接线]]></title>
+    <url>%2F2019%2F03%2F19%2F190319-02%2F</url>
+    <content type="text"><![CDATA[FX2N 系列 PLC 模块的接线。 ▲ FX2N 系列 PLC 的输入端的接线示例：可见输入端电源的负极与 COM 公共端短接。 参考：P12]]></content>
+      <categories>
+        <category>电子电气</category>
+      </categories>
+      <tags>
+        <tag>三菱PLC</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[UG NX 更改资源条路径加载显示常用文件]]></title>
+    <url>%2F2019%2F03%2F19%2F190319-01%2F</url>
+    <content type="text"><![CDATA[以常用的螺丝孔为例，加载图片。 文件 -&gt; 首选项 -&gt; 用户界面(快捷键：Ctrl + 2)： ▲ 修改 web 浏览器路径，指向图片。]]></content>
+      <categories>
+        <category>机械结构</category>
+      </categories>
+      <tags>
+        <tag>UG_NX</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[UG NX 工程图标注『对称尺寸』]]></title>
     <url>%2F2019%2F03%2F15%2F190315-01%2F</url>
     <content type="text"><![CDATA[UG 工程图标注对称尺寸的方法 – 通过『单侧尺寸』的方式实现。 ▲ 新建对称中心线 ▲ 视图边界，隐藏掉一般对称视图 ▲ 标注 ▲ 显示一半的视图 ▲ 显示为单侧尺寸 ▲ 对称尺寸效果 另外一种方法： ▲ GC 工具箱，对称尺寸标注 ▲ 莫名的错误，暂时不知道怎么解决，就用上一种的方法吧！]]></content>
@@ -320,9 +342,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[UG NX 坐标对齐移动——解决实体与原始坐标不对齐的问题]]></title>
-    <url>%2F2019%2F02%2F19%2F190219-01%2F</url>
-    <content type="text"><![CDATA[有时候通过WAVE链接过来的实体会出现实体与原始坐标不对齐的情况，如： 可以用坐标到坐标移动的方式将实体摆正。 新建与实体对齐的坐标系。 Ctrl + T 移动。 这样后，实体就与原始坐标对齐了：]]></content>
+    <title><![CDATA[UG NX 移动对象之『动态』技巧]]></title>
+    <url>%2F2019%2F02%2F19%2F190219-02%2F</url>
+    <content type="text"><![CDATA[动态绕某一点旋转，而旋转手柄又不在此点上，如何操作？ Ctrl + T 移动对象，勾选只移动手柄，将手柄点选移动到需要旋转的点。 取消勾选只移动手柄，点选手柄节点，输入旋转角度，确定。]]></content>
       <categories>
         <category>机械结构</category>
       </categories>
@@ -331,9 +353,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[UG NX 移动对象之『动态』技巧]]></title>
-    <url>%2F2019%2F02%2F19%2F190219-02%2F</url>
-    <content type="text"><![CDATA[动态绕某一点旋转，而旋转手柄又不在此点上，如何操作？ Ctrl + T 移动对象，勾选只移动手柄，将手柄点选移动到需要旋转的点。 取消勾选只移动手柄，点选手柄节点，输入旋转角度，确定。]]></content>
+    <title><![CDATA[UG NX 坐标对齐移动——解决实体与原始坐标不对齐的问题]]></title>
+    <url>%2F2019%2F02%2F19%2F190219-01%2F</url>
+    <content type="text"><![CDATA[有时候通过WAVE链接过来的实体会出现实体与原始坐标不对齐的情况，如： 可以用坐标到坐标移动的方式将实体摆正。 新建与实体对齐的坐标系。 Ctrl + T 移动。 这样后，实体就与原始坐标对齐了：]]></content>
       <categories>
         <category>机械结构</category>
       </categories>
