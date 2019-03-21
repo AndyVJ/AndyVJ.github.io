@@ -1,6 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[FX3U 系列 PLC 模块的接线]]></title>
+    <url>%2F2019%2F03%2F21%2F190321-05%2F</url>
+    <content type="text"><![CDATA[FX3U 系列 PLC 模块的接线： 参考：P17]]></content>
+      <categories>
+        <category>电子电气</category>
+      </categories>
+      <tags>
+        <tag>三菱PLC</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[FX2N PLC 输入输出接线图]]></title>
+    <url>%2F2019%2F03%2F21%2F190321-04%2F</url>
+    <content type="text"><![CDATA[FX2N PLC 输入输出接线图： 参考：P14]]></content>
+      <categories>
+        <category>电子电气</category>
+      </categories>
+      <tags>
+        <tag>三菱PLC</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[三菱 FX2N 通过中间继电器控制的接线方式]]></title>
+    <url>%2F2019%2F03%2F21%2F190321-03%2F</url>
+    <content type="text"><![CDATA[关于接触器，关于接触器和继电器的区别。 参考：P14]]></content>
+      <categories>
+        <category>电子电气</category>
+      </categories>
+      <tags>
+        <tag>三菱PLC</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[三菱 FX2N 输出端直流电磁阀和交流电磁阀接线]]></title>
+    <url>%2F2019%2F03%2F21%2F190321-02%2F</url>
+    <content type="text"><![CDATA[▲ 可见继电器输出型PLC，既可以接交流电源又可以接直流电源，在不经过转换时分在两个输出组中。 参考：1.P14]]></content>
+      <categories>
+        <category>电子电气</category>
+      </categories>
+      <tags>
+        <tag>三菱PLC</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[UG NX10 新建页面中英文模板夹杂问题解决]]></title>
+    <url>%2F2019%2F03%2F21%2F190321-01%2F</url>
+    <content type="text"><![CDATA[▲ 新建页面，中英文模板夹杂 解决方法是： 一、将~\NX 10.0\LOCALIZATION下的：123456ugs_cae_templates_simpl_chinese.pax（仿真）ugs_drawing_templates_simpl_chinese.pax（制图）ugs_inspection_templates_simpl_chinese.pax（检测）ugs_manufacturing_templates_simpl_chinese.pax（加工）ugs_mechatronics_templates_simpl_chinese.pax（机电）ugs_ship_templates_simpl_chinese.pax（船舶） 剪切到~\NX 10.0\LOCALIZATION\prc\simpl_chinese\startup目录下。 二、再将~\NX 10.0\UGII\templates目录下的：1234567ugs_cae_templates.pax（仿真）ugs_drawing_templates.pax（制图）ugs_inspection_templates.pax（检测）ugs_manufacturing_templates.pax（加工）ugs_mechatronics_templates.pax（机电）ugs_ship_templates.pax（船舶）ugs_model_templates.pax（模型） 剪切到~\NX 10.0\LOCALIZATION\prc\english\startup目录下即可。 三、请设置环境变量： 新建系统变量，变量名：1UGII_COUNTRY 变量值：1prc 这个环境变量不设置也可以，软件本身在安装的时候设置了？ “prc”必须为小写。这个环境变量是中国用户使用英文版的UG必不可少的，少了它，专为中国人打造的GC工具箱就用不起了，因为英文版UG默认不是给中国用户使用的。 此目录下的ugs_模板都剪切掉了：1D:\Program Files\Siemens\NX10\UGII\templates\ 两个文件夹下的模板没有覆盖剪切，剩下的改了后缀让它不能识别。反正这样使用没问题。 ▲ 修改后的效果 参考：1.link-01]]></content>
+      <categories>
+        <category>机械结构</category>
+      </categories>
+      <tags>
+        <tag>UG_NX</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[三菱 FX2N PLC 三种输出形式]]></title>
+    <url>%2F2019%2F03%2F20%2F190320-02%2F</url>
+    <content type="text"><![CDATA[三菱 FX2N PLC 三种输出形式： 参考：P13]]></content>
+      <categories>
+        <category>电子电气</category>
+      </categories>
+      <tags>
+        <tag>三菱PLC</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[三菱 FX2N PLC 输入端接近开关接线]]></title>
+    <url>%2F2019%2F03%2F20%2F190320-01%2F</url>
+    <content type="text"><![CDATA[三菱 PLC 输入端接近开关接线： 参考：p13]]></content>
+      <categories>
+        <category>电子电气</category>
+      </categories>
+      <tags>
+        <tag>三菱PLC</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[FX2N 系列 PLC 模块的接线]]></title>
     <url>%2F2019%2F03%2F19%2F190319-02%2F</url>
     <content type="text"><![CDATA[FX2N 系列 PLC 模块的接线。 ▲ FX2N 系列 PLC 的输入端的接线示例：可见输入端电源的负极与 COM 公共端短接。 参考：P12]]></content>

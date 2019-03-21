@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.andyvj.com/"/>
-  <updated>2019-03-19T13:48:17.502Z</updated>
+  <updated>2019-03-21T11:40:00.212Z</updated>
   <id>https://www.andyvj.com/</id>
   
   <author>
@@ -15,6 +15,161 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>FX3U 系列 PLC 模块的接线</title>
+    <link href="https://www.andyvj.com/2019/03/21/190321-05/"/>
+    <id>https://www.andyvj.com/2019/03/21/190321-05/</id>
+    <published>2019-03-21T11:29:00.000Z</published>
+    <updated>2019-03-21T11:40:00.212Z</updated>
+    
+    <content type="html"><![CDATA[<p>FX3U 系列 PLC 模块的接线：</p><a id="more"></a><p><img src="https://wx4.sinaimg.cn/large/006mcMYXgy1g1anfyn71sj31302yle81.jpg" alt="image"></p><p><hr><br><span style="color:gray;font-size:12px"><br>参考：P17<br></span></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;FX3U 系列 PLC 模块的接线：&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="电子电气" scheme="https://www.andyvj.com/categories/%E7%94%B5%E5%AD%90%E7%94%B5%E6%B0%94/"/>
+    
+    
+      <category term="三菱PLC" scheme="https://www.andyvj.com/tags/%E4%B8%89%E8%8F%B1PLC/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>FX2N PLC 输入输出接线图</title>
+    <link href="https://www.andyvj.com/2019/03/21/190321-04/"/>
+    <id>https://www.andyvj.com/2019/03/21/190321-04/</id>
+    <published>2019-03-21T09:27:56.000Z</published>
+    <updated>2019-03-21T11:28:20.681Z</updated>
+    
+    <content type="html"><![CDATA[<p>FX2N PLC 输入输出接线图：</p><a id="more"></a><p><img src="https://wx3.sinaimg.cn/large/006mcMYXgy1g1ajmnsdapj30vx0lw0wd.jpg" alt="image"></p><p><hr><br><span style="color:gray;font-size:12px"><br>参考：P14<br></span></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;FX2N PLC 输入输出接线图：&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="电子电气" scheme="https://www.andyvj.com/categories/%E7%94%B5%E5%AD%90%E7%94%B5%E6%B0%94/"/>
+    
+    
+      <category term="三菱PLC" scheme="https://www.andyvj.com/tags/%E4%B8%89%E8%8F%B1PLC/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>三菱 FX2N 通过中间继电器控制的接线方式</title>
+    <link href="https://www.andyvj.com/2019/03/21/190321-03/"/>
+    <id>https://www.andyvj.com/2019/03/21/190321-03/</id>
+    <published>2019-03-21T09:02:12.000Z</published>
+    <updated>2019-03-21T11:28:20.675Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://wx1.sinaimg.cn/large/006mcMYXgy1g1aizz490gj30vw0hcwiy.jpg" alt="image"><br><a id="more"></a></p><p>关于<a href="https://baike.baidu.com/item/%E6%8E%A5%E8%A7%A6%E5%99%A8/1516538?fr=aladdin" target="_blank" rel="noopener">接触器</a>，关于<a href="https://www.diangon.com/m401431.html" target="_blank" rel="noopener">接触器和继电器</a>的<a href="https://www.sohu.com/a/205186172_648025" target="_blank" rel="noopener">区别</a>。</p><p><hr><br><span style="color:gray;font-size:12px"><br>参考：P14<br></span></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://wx1.sinaimg.cn/large/006mcMYXgy1g1aizz490gj30vw0hcwiy.jpg&quot; alt=&quot;image&quot;&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="电子电气" scheme="https://www.andyvj.com/categories/%E7%94%B5%E5%AD%90%E7%94%B5%E6%B0%94/"/>
+    
+    
+      <category term="三菱PLC" scheme="https://www.andyvj.com/tags/%E4%B8%89%E8%8F%B1PLC/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>三菱 FX2N 输出端直流电磁阀和交流电磁阀接线</title>
+    <link href="https://www.andyvj.com/2019/03/21/190321-02/"/>
+    <id>https://www.andyvj.com/2019/03/21/190321-02/</id>
+    <published>2019-03-21T08:53:43.000Z</published>
+    <updated>2019-03-21T11:28:20.671Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://wx4.sinaimg.cn/large/006mcMYXgy1g1aimj79nuj30wa0fxacs.jpg" alt="image"></p><a id="more"></a><div style="font-size:13px;color:gray;text-align:center">▲ 可见继电器输出型PLC，既可以接交流电源又可以接直流电源，在不经过转换时分在两个输出组中。</div><p><hr><br><span style="color:gray;font-size:12px"><br>参考：<br>1.P14<br></span></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://wx4.sinaimg.cn/large/006mcMYXgy1g1aimj79nuj30wa0fxacs.jpg&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="电子电气" scheme="https://www.andyvj.com/categories/%E7%94%B5%E5%AD%90%E7%94%B5%E6%B0%94/"/>
+    
+    
+      <category term="三菱PLC" scheme="https://www.andyvj.com/tags/%E4%B8%89%E8%8F%B1PLC/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>UG NX10 新建页面中英文模板夹杂问题解决</title>
+    <link href="https://www.andyvj.com/2019/03/21/190321-01/"/>
+    <id>https://www.andyvj.com/2019/03/21/190321-01/</id>
+    <published>2019-03-21T00:29:40.000Z</published>
+    <updated>2019-03-21T11:28:20.658Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://ws4.sinaimg.cn/large/006mcMYXgy1g1a462legmj30gi02675q.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 新建页面，中英文模板夹杂</div><a id="more"></a><p>解决方法是：</p><p>一、将<code>~\NX 10.0\LOCALIZATION</code>下的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ugs_cae_templates_simpl_chinese.pax（仿真）</span><br><span class="line">ugs_drawing_templates_simpl_chinese.pax（制图）</span><br><span class="line">ugs_inspection_templates_simpl_chinese.pax（检测）</span><br><span class="line">ugs_manufacturing_templates_simpl_chinese.pax（加工）</span><br><span class="line">ugs_mechatronics_templates_simpl_chinese.pax（机电）</span><br><span class="line">ugs_ship_templates_simpl_chinese.pax（船舶）</span><br></pre></td></tr></table></figure></p><p>剪切到<code>~\NX 10.0\LOCALIZATION\prc\simpl_chinese\startup</code>目录下。</p><p>二、再将<code>~\NX 10.0\UGII\templates</code>目录下的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ugs_cae_templates.pax（仿真）</span><br><span class="line">ugs_drawing_templates.pax（制图）</span><br><span class="line">ugs_inspection_templates.pax（检测）</span><br><span class="line">ugs_manufacturing_templates.pax（加工）</span><br><span class="line">ugs_mechatronics_templates.pax（机电）</span><br><span class="line">ugs_ship_templates.pax（船舶）</span><br><span class="line">ugs_model_templates.pax（模型）</span><br></pre></td></tr></table></figure></p><p>剪切到<code>~\NX 10.0\LOCALIZATION\prc\english\startup</code>目录下即可。</p><p>三、请设置环境变量：</p><p>新建系统变量，变量名：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">UGII_COUNTRY</span><br></pre></td></tr></table></figure></p><p>变量值：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">prc</span><br></pre></td></tr></table></figure></p><p><em>这个环境变量不设置也可以，软件本身在安装的时候设置了？</em></p><p><strong>“prc”必须为小写</strong>。这个环境变量是中国用户使用英文版的UG必不可少的，少了它，专为中国人打造的GC工具箱就用不起了，因为英文版UG默认不是给中国用户使用的。</p><p>此目录下的ugs_模板都剪切掉了：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">D:\Program Files\Siemens\NX10\UGII\templates\</span><br></pre></td></tr></table></figure></p><p><strong>两个文件夹下的模板没有覆盖剪切，剩下的改了后缀让它不能识别。</strong>反正这样使用没问题。</p><p><img src="https://ws2.sinaimg.cn/large/006mcMYXgy1g1a4h4jbo3j30mp0d9763.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 修改后的效果</div><p><hr><br><span style="color:gray;font-size:12px"><br>参考：<br>1.<a href="http://www.ugsnx.com/thread-38766-1-1.html" target="_blank" rel="noopener">link-01</a><br></span></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://ws4.sinaimg.cn/large/006mcMYXgy1g1a462legmj30gi02675q.jpg&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
+&lt;div style=&quot;font-size:13px;color:gray;text-align:center&quot;&gt;▲ 新建页面，中英文模板夹杂&lt;/div&gt;
+    
+    </summary>
+    
+      <category term="机械结构" scheme="https://www.andyvj.com/categories/%E6%9C%BA%E6%A2%B0%E7%BB%93%E6%9E%84/"/>
+    
+    
+      <category term="UG_NX" scheme="https://www.andyvj.com/tags/UG-NX/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>三菱 FX2N PLC 三种输出形式</title>
+    <link href="https://www.andyvj.com/2019/03/20/190320-02/"/>
+    <id>https://www.andyvj.com/2019/03/20/190320-02/</id>
+    <published>2019-03-20T05:28:11.000Z</published>
+    <updated>2019-03-21T11:28:20.653Z</updated>
+    
+    <content type="html"><![CDATA[<p>三菱 FX2N PLC 三种输出形式：</p><a id="more"></a><p><img src="https://ws4.sinaimg.cn/large/006mcMYXgy1g1972tepa7j30wf0tpwoe.jpg" alt="image"></p><p><hr><br><span style="color:gray;font-size:12px"><br>参考：P13<br></span></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;三菱 FX2N PLC 三种输出形式：&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="电子电气" scheme="https://www.andyvj.com/categories/%E7%94%B5%E5%AD%90%E7%94%B5%E6%B0%94/"/>
+    
+    
+      <category term="三菱PLC" scheme="https://www.andyvj.com/tags/%E4%B8%89%E8%8F%B1PLC/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>三菱 FX2N PLC 输入端接近开关接线</title>
+    <link href="https://www.andyvj.com/2019/03/20/190320-01/"/>
+    <id>https://www.andyvj.com/2019/03/20/190320-01/</id>
+    <published>2019-03-20T04:35:38.000Z</published>
+    <updated>2019-03-21T11:28:20.648Z</updated>
+    
+    <content type="html"><![CDATA[<p>三菱 PLC 输入端接近开关接线：</p><a id="more"></a><p><img src="https://wx2.sinaimg.cn/large/006mcMYXgy1g195q0xmfxj30w90jmgp4.jpg" alt="image"></p><p><hr><br><span style="color:gray;font-size:12px"><br>参考：p13<br></span></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;三菱 PLC 输入端接近开关接线：&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="电子电气" scheme="https://www.andyvj.com/categories/%E7%94%B5%E5%AD%90%E7%94%B5%E6%B0%94/"/>
+    
+    
+      <category term="三菱PLC" scheme="https://www.andyvj.com/tags/%E4%B8%89%E8%8F%B1PLC/"/>
+    
+  </entry>
   
   <entry>
     <title>FX2N 系列 PLC 模块的接线</title>
@@ -300,167 +455,6 @@
     
       &lt;p&gt;&lt;img src=&quot;https://ws1.sinaimg.cn/large/006mcMYXgy1g0r3r4zdzkj308x04k0t2.jpg&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
 &lt;div style=&quot;font-size:13px;color:gray;text-align:center&quot;&gt;▲ 『拉伸』命令，快捷键&lt;code&gt;X&lt;/code&gt;&lt;/div&gt;
-    
-    </summary>
-    
-      <category term="机械结构" scheme="https://www.andyvj.com/categories/%E6%9C%BA%E6%A2%B0%E7%BB%93%E6%9E%84/"/>
-    
-    
-      <category term="UG_NX" scheme="https://www.andyvj.com/tags/UG-NX/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>UG NX 以『按照保存的』的方式打开组件</title>
-    <link href="https://www.andyvj.com/2019/03/04/190304-01/"/>
-    <id>https://www.andyvj.com/2019/03/04/190304-01/</id>
-    <published>2019-03-04T04:33:24.000Z</published>
-    <updated>2019-03-04T13:46:22.341Z</updated>
-    
-    <content type="html"><![CDATA[<p>打开的时候选择「选项」；</p><p><img src="https://wx3.sinaimg.cn/large/006mcMYXgy1g0qnqdalm2j30n00gx40u.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 点击选项</div><a id="more"></a><p>之后，加载的地方选在「按照保存」这样打开就能够找到放置在不同文件夹下面的零(组)件了。</p><p><img src="https://ws3.sinaimg.cn/large/006mcMYXgy1g0qnr9t15aj30940bdmxk.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 『按照保存』方式打开</div><p>通过这样的方式，能够实现<strong>将<code>标准件</code>单独保存在一个文件夹下面，多个组件共用。</strong></p><!--<hr/><span style="color:gray;font-size:12px">参考：1.[link-01]()2.[link-02]()3.[link-03]()4.[link-04]()5.[link-05]()</span>-->]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;打开的时候选择「选项」；&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://wx3.sinaimg.cn/large/006mcMYXgy1g0qnqdalm2j30n00gx40u.jpg&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
-&lt;div style=&quot;font-size:13px;color:gray;text-align:center&quot;&gt;▲ 点击选项&lt;/div&gt;
-    
-    </summary>
-    
-      <category term="机械结构" scheme="https://www.andyvj.com/categories/%E6%9C%BA%E6%A2%B0%E7%BB%93%E6%9E%84/"/>
-    
-    
-      <category term="UG_NX" scheme="https://www.andyvj.com/tags/UG-NX/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>UG NX 『对象信息查询 』</title>
-    <link href="https://www.andyvj.com/2019/03/03/190303-03/"/>
-    <id>https://www.andyvj.com/2019/03/03/190303-03/</id>
-    <published>2019-03-03T05:18:00.000Z</published>
-    <updated>2019-03-03T05:21:04.139Z</updated>
-    
-    <content type="html"><![CDATA[<p>快捷键<code>Ctrl + I</code>，查看详细的对象信息。</p><p><img src="https://ws4.sinaimg.cn/large/006mcMYXgy1g0pjbo95a6j30720a2wgu.jpg" alt="image"></p><a id="more"></a><p>包含<code>图档文件信息</code>、<code>坐标信息</code>、<code>父子项</code>等信息，可以详细的查看。除了一些测量命令外，这是一个很好的<strong>信息</strong>查询命令。<a href="http://www.rjzxw.com/se-20195-153.html" target="_blank" rel="noopener">这里</a>有简单的使用方法。</p><p><img src="https://wx3.sinaimg.cn/large/006mcMYXgy1g0pjckbfiej30iq0lijsx.jpg" alt="image"></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;快捷键&lt;code&gt;Ctrl + I&lt;/code&gt;，查看详细的对象信息。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://ws4.sinaimg.cn/large/006mcMYXgy1g0pjbo95a6j30720a2wgu.jpg&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="机械结构" scheme="https://www.andyvj.com/categories/%E6%9C%BA%E6%A2%B0%E7%BB%93%E6%9E%84/"/>
-    
-    
-      <category term="UG_NX" scheme="https://www.andyvj.com/tags/UG-NX/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>UG NX 的两个属性</title>
-    <link href="https://www.andyvj.com/2019/03/03/190303-02/"/>
-    <id>https://www.andyvj.com/2019/03/03/190303-02/</id>
-    <published>2019-03-03T05:12:16.000Z</published>
-    <updated>2019-03-04T13:46:22.336Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="https://ws1.sinaimg.cn/large/006mcMYXgy1g0pj52gon0j30fd0ikwg3.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 文件 -&gt; 属性</div><a id="more"></a><p><img src="https://wx2.sinaimg.cn/large/006mcMYXgy1g0pj5hkz4kj30e60hhq42.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 显示的是『部件属性』，可用于零件明细表的参数传递。</div><p><img src="https://wx3.sinaimg.cn/large/006mcMYXgy1g0pj6ky141j30ap0dyq44.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 工具 -&gt; 属性，旁边的是『对象信息』。</div><p><img src="https://wx4.sinaimg.cn/large/006mcMYXgy1g0pj6xq8ygj30dn0f9mxr.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 显示的是『特征属性』，暂时还不知道『特征属性』的用处；当“去除参数”后原来设定的特征属性好像又没有了。</div><p><img src="https://ws1.sinaimg.cn/large/006mcMYXgy1g0qpmqx80hj30n30h5mz6.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 也可以新建和添加参数，并且也能够显示。如果执行『去除参数』操作，这些参数也会被去除，也自然不会显示了；感觉在部件内的实体添加这样的属性参数不是很实用。</div>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;https://ws1.sinaimg.cn/large/006mcMYXgy1g0pj52gon0j30fd0ikwg3.jpg&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
-&lt;div style=&quot;font-size:13px;color:gray;text-align:center&quot;&gt;▲ 文件 -&amp;gt; 属性&lt;/div&gt;
-    
-    </summary>
-    
-      <category term="机械结构" scheme="https://www.andyvj.com/categories/%E6%9C%BA%E6%A2%B0%E7%BB%93%E6%9E%84/"/>
-    
-    
-      <category term="UG_NX" scheme="https://www.andyvj.com/tags/UG-NX/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>UG NX 执行完『零组件更名及导出』会后窗口显示的依然是之前的原始部件</title>
-    <link href="https://www.andyvj.com/2019/03/03/190303-01/"/>
-    <id>https://www.andyvj.com/2019/03/03/190303-01/</id>
-    <published>2019-03-03T04:22:59.000Z</published>
-    <updated>2019-03-03T04:59:27.917Z</updated>
-    
-    <content type="html"><![CDATA[<p>执行完『零组件更名及导出』会后窗口显示的依然是之前的原始部件，而非备份的图纸。</p><a id="more"></a><p><img src="https://ws1.sinaimg.cn/large/006mcMYXgy1g0phqtx7kzj307w04y74g.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 导出装配备份</div><p><img src="https://ws1.sinaimg.cn/large/006mcMYXgy1g0phrk49fhj30d00d5gm6.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 从部件属性可见，显示的还是原来的路径。</div><!--<hr/><span style="color:gray;font-size:12px">参考：1.[link-01]()2.[link-02]()3.[link-03]()4.[link-04]()5.[link-05]()</span>-->]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;执行完『零组件更名及导出』会后窗口显示的依然是之前的原始部件，而非备份的图纸。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="机械结构" scheme="https://www.andyvj.com/categories/%E6%9C%BA%E6%A2%B0%E7%BB%93%E6%9E%84/"/>
-    
-    
-      <category term="UG_NX" scheme="https://www.andyvj.com/tags/UG-NX/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>常用数学希腊字母读音</title>
-    <link href="https://www.andyvj.com/2019/03/02/190302-02/"/>
-    <id>https://www.andyvj.com/2019/03/02/190302-02/</id>
-    <published>2019-03-02T08:23:27.000Z</published>
-    <updated>2019-03-02T08:46:19.162Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="https://ws2.sinaimg.cn/large/006mcMYXgy1g0oj626l0qj30zk0i10yp.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 机械设计手册（第五版）第一卷 p 31/1674</div><a id="more"></a><p><img src="https://ws2.sinaimg.cn/large/006mcMYXgy1g0oj70zepoj30hk0y1myu.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ <a href="http://www.fhdq.net/sx/14.html" target="_blank" rel="noopener">常用数学符号读法</a></div><p>还可以参考<a href="https://blog.csdn.net/hanghangaidoudou/article/details/74987856" target="_blank" rel="noopener">这篇文章</a>。</p><p><img src="https://wx4.sinaimg.cn/large/006mcMYXgy1g0oji6ur5fj30ez0qjdmq.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ <a href="https://www.cnblogs.com/linxd/p/4955530.html" target="_blank" rel="noopener">Latex 写法</a></div><!--<hr/><span style="color:gray;font-size:12px">参考：1.[link-01]()2.[link-02]()3.[link-03]()4.[link-04]()5.[link-05]()</span>-->]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;https://ws2.sinaimg.cn/large/006mcMYXgy1g0oj626l0qj30zk0i10yp.jpg&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
-&lt;div style=&quot;font-size:13px;color:gray;text-align:center&quot;&gt;▲ 机械设计手册（第五版）第一卷 p 31/1674&lt;/div&gt;
-    
-    </summary>
-    
-      <category term="基础学科" scheme="https://www.andyvj.com/categories/%E5%9F%BA%E7%A1%80%E5%AD%A6%E7%A7%91/"/>
-    
-    
-      <category term="数学" scheme="https://www.andyvj.com/tags/%E6%95%B0%E5%AD%A6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>UG NX 零件明细表及导出excel等格式方法</title>
-    <link href="https://www.andyvj.com/2019/03/02/190302-01/"/>
-    <id>https://www.andyvj.com/2019/03/02/190302-01/</id>
-    <published>2019-03-02T00:55:51.000Z</published>
-    <updated>2019-03-08T13:37:47.773Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="零件明细表参数基本设置方法"><a href="#零件明细表参数基本设置方法" class="headerlink" title="零件明细表参数基本设置方法"></a>零件明细表参数基本设置方法</h2><p><img src="https://ws4.sinaimg.cn/large/006mcMYXgy1g0o68gwchmj30lj0aqdge.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 选择整列 -&gt; 右键 -&gt; 设置</div><a id="more"></a><p><img src="https://ws1.sinaimg.cn/large/006mcMYXgy1g0o69v0w17j30gb0d4t93.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 参数修改，以『序号』为例</div><p><img src="https://wx1.sinaimg.cn/large/006mcMYXgy1g0o6b7qfmmj30va0hhjso.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 可以尝试下其他控制项</div><p><img src="https://wx3.sinaimg.cn/large/006mcMYXgy1g0o6cvqa96j316l0hitaa.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 零件明细表的级别编辑</div><h2 id="允许多个明细表参数控制"><a href="#允许多个明细表参数控制" class="headerlink" title="允许多个明细表参数控制"></a>允许多个明细表参数控制</h2><h3 id="环境变量文件修改"><a href="#环境变量文件修改" class="headerlink" title="环境变量文件修改"></a>环境变量文件修改</h3><p>默认情况下一张图纸，只允许一个明细表，当你尝试添加两个时会有提示，需要修改参数。</p><p>打开：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;C:\Program Files\Siemens\NX 10.0\UGII\ugii_env.dat&quot;</span><br></pre></td></tr></table></figure><p>添加变量：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">UGII_UPDATE_ALL_ID_SYMBOLS_WITH_PLIST=0</span><br></pre></td></tr></table></figure><p>这样设置后，就可以添加多个零件明细表了。</p><h3 id="关于ugii-env-dat环境变量文件"><a href="#关于ugii-env-dat环境变量文件" class="headerlink" title="关于ugii_env.dat环境变量文件"></a>关于<code>ugii_env.dat</code>环境变量文件</h3><p><img src="https://wx4.sinaimg.cn/large/006mcMYXgy1g0o6k94hi0j30r90gin4t.jpg" alt="image"></p><p>详细可以参考文末『参考』。</p><h2 id="导出零件明细表的方法"><a href="#导出零件明细表的方法" class="headerlink" title="导出零件明细表的方法"></a>导出零件明细表的方法</h2><h3 id="零件明细表右键导出"><a href="#零件明细表右键导出" class="headerlink" title="零件明细表右键导出"></a>零件明细表右键导出</h3><p>选择整个零件明细表，右键导出。</p><p><img src="https://wx3.sinaimg.cn/large/006mcMYXgy1g0o6mbny4yj30gm0asaae.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 导出<code>html</code>文件，文件的存放的路径：<code>C:\Users\Administrator\AppData\Local\Temp</code>。</div><p><img src="https://ws3.sinaimg.cn/large/006mcMYXgy1g0o6nul0ozj309406iwek.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 导出 excel 的方法，导出后可以在 excel 中进行筛选删除计算过滤等操作。</div><p>另外，导出『文件』(txt格式)，和『信息窗口』(与Ctrl+I类似)可以自行尝试。</p><h3 id="直接命令导出"><a href="#直接命令导出" class="headerlink" title="直接命令导出"></a>直接命令导出</h3><p><img src="https://wx2.sinaimg.cn/large/006mcMYXgy1g0o6qdovf8j30dq040dg4.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 点击这个命令时，有错误提示信息，暂时还不清楚怎么用，和问题出在哪里；我想，直接用上面的那一种方法就好。</div><p><img src="https://wx1.sinaimg.cn/large/006mcMYXgy1g0pefytl4ij30a9035mx3.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 错误信息提示</div><p><hr><br><span style="color:gray;font-size:12px"><br>参考：<br>1.<a href="https://wenku.baidu.com/view/f36235c789eb172ded63b74c.html?pn=50" target="_blank" rel="noopener">link-01</a> //  关于环境变量<br>2.<a href="https://wenku.baidu.com/view/7f211e34b90d6c85ec3ac633.html" target="_blank" rel="noopener">link-02</a> //  关于制作标准图框<br>3.<a href="http://www.ugsnx.com/thread-171235-1-4.html" target="_blank" rel="noopener">link-03</a> //  关于属性工具<br></span></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;零件明细表参数基本设置方法&quot;&gt;&lt;a href=&quot;#零件明细表参数基本设置方法&quot; class=&quot;headerlink&quot; title=&quot;零件明细表参数基本设置方法&quot;&gt;&lt;/a&gt;零件明细表参数基本设置方法&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;https://ws4.sinaimg.cn/large/006mcMYXgy1g0o68gwchmj30lj0aqdge.jpg&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
-&lt;div style=&quot;font-size:13px;color:gray;text-align:center&quot;&gt;▲ 选择整列 -&amp;gt; 右键 -&amp;gt; 设置&lt;/div&gt;
-    
-    </summary>
-    
-      <category term="机械结构" scheme="https://www.andyvj.com/categories/%E6%9C%BA%E6%A2%B0%E7%BB%93%E6%9E%84/"/>
-    
-    
-      <category term="UG_NX" scheme="https://www.andyvj.com/tags/UG-NX/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>UG NX 模型树添加属性列和明细表参数设置</title>
-    <link href="https://www.andyvj.com/2019/03/01/190301-04/"/>
-    <id>https://www.andyvj.com/2019/03/01/190301-04/</id>
-    <published>2019-03-01T14:16:19.000Z</published>
-    <updated>2019-03-02T06:55:33.079Z</updated>
-    
-    <content type="html"><![CDATA[<p>这样设置后能够方便的自动填充<code>零件明细表</code>。</p><h2 id="在建模模板中添加属性参数"><a href="#在建模模板中添加属性参数" class="headerlink" title="在建模模板中添加属性参数"></a>在建模模板中添加属性参数</h2><p>在模板<code>model-plain-1-mm-template.prt</code>中添加<code>名称</code>、<code>材料</code>、<code>数量</code>参数，路径为：<code>文件 -&gt; 属性</code>。</p><a id="more"></a><h2 id="模型树添加属性列"><a href="#模型树添加属性列" class="headerlink" title="模型树添加属性列"></a>模型树添加属性列</h2><p><img src="https://wx2.sinaimg.cn/large/006mcMYXgy1g0nntaaqtpj30id0ns76q.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 装配树下：属性列 -&gt; 右键 -&gt; 列 -&gt; 配置</div><p><img src="https://ws3.sinaimg.cn/large/006mcMYXgy1g0no24vacnj30eb061mxl.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 建模树下：同样的方式将『图层』添加至最前，方便信息查看。</div><p><img src="https://wx4.sinaimg.cn/large/006mcMYXgy1g0nnv5sbatj309l0aojrv.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 新建显示属性列参数，并移至到最前面，方便显示查看；同时将需要计算重量的『体』添加到『BODY』引用集下，这样才能引用<code>WEIGHT</code>重量参数。</div><h2 id="填写参数信息"><a href="#填写参数信息" class="headerlink" title="填写参数信息"></a>填写参数信息</h2><p>在<strong>建模</strong>模式下，<code>装配树中，双击激活零部件 -&gt; 『属性工具』(快捷键自定义：Shift + S)</code>。</p><h2 id="添加零件明细表参数"><a href="#添加零件明细表参数" class="headerlink" title="添加零件明细表参数"></a>添加零件明细表参数</h2><p>在<strong>工程图</strong>模式下。</p><!--![image](https://wx1.sinaimg.cn/large/006mcMYXgy1g0no4x9roij30hc04874c.jpg)--><p><img src="https://ws3.sinaimg.cn/large/006mcMYXgy1g0np6veqscj30jg03zmx9.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 零件明细表</div><p><img src="https://ws3.sinaimg.cn/large/006mcMYXgy1g0np3ngmp9j30dc0aqaae.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 序号参数</div><p><img src="https://ws1.sinaimg.cn/large/006mcMYXgy1g0np4zdcpuj30dc0aqweu.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 自定义参数：<code>名称</code>、<code>材料</code>、<code>备注</code>的引用例。</div><p><img src="https://ws3.sinaimg.cn/large/006mcMYXgy1g0np8mk6nwj30dc0aqwer.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 数量参数</div><p><img src="https://wx4.sinaimg.cn/large/006mcMYXgy1g0np9ljxnij30dc0aqdg7.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 重量参数</div><p><img src="https://wx2.sinaimg.cn/large/006mcMYXgy1g0npadnyxjj30dc0aqglw.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 总重量参数</div><!--<hr/><span style="color:gray;font-size:12px">参考：1. [link-01]()2. [link-01]()3. [link-01]()4. [link-01]()5. [link-01]()</span>-->]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;这样设置后能够方便的自动填充&lt;code&gt;零件明细表&lt;/code&gt;。&lt;/p&gt;
-&lt;h2 id=&quot;在建模模板中添加属性参数&quot;&gt;&lt;a href=&quot;#在建模模板中添加属性参数&quot; class=&quot;headerlink&quot; title=&quot;在建模模板中添加属性参数&quot;&gt;&lt;/a&gt;在建模模板中添加属性参数&lt;/h2&gt;&lt;p&gt;在模板&lt;code&gt;model-plain-1-mm-template.prt&lt;/code&gt;中添加&lt;code&gt;名称&lt;/code&gt;、&lt;code&gt;材料&lt;/code&gt;、&lt;code&gt;数量&lt;/code&gt;参数，路径为：&lt;code&gt;文件 -&amp;gt; 属性&lt;/code&gt;。&lt;/p&gt;
     
     </summary>
     
