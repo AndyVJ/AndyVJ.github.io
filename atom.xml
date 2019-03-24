@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.andyvj.com/"/>
-  <updated>2019-03-23T03:49:02.459Z</updated>
+  <updated>2019-03-24T05:59:03.074Z</updated>
   <id>https://www.andyvj.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>FX3U系列接近开关接线</title>
+    <link href="https://www.andyvj.com/2019/03/24/190324-01/"/>
+    <id>https://www.andyvj.com/2019/03/24/190324-01/</id>
+    <published>2019-03-24T05:57:17.000Z</published>
+    <updated>2019-03-24T05:59:03.074Z</updated>
+    
+    <content type="html"><![CDATA[<p>FX3U系列接近开关接线：</p><a id="more"></a><p><img src="https://ws3.sinaimg.cn/large/006mcMYXgy1g1due9fbl5j312n1se1kx.jpg" alt="image"></p><p><hr><br><span style="color:gray;font-size:12px"><br>参考：向晓汉：P20<br></span></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;FX3U系列接近开关接线：&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="电子电气" scheme="https://www.andyvj.com/categories/%E7%94%B5%E5%AD%90%E7%94%B5%E6%B0%94/"/>
+    
+    
+      <category term="三菱PLC" scheme="https://www.andyvj.com/tags/%E4%B8%89%E8%8F%B1PLC/"/>
+    
+  </entry>
   
   <entry>
     <title>英语口语——《就怕乞丐有文化》</title>
@@ -431,29 +453,6 @@
     
       &lt;p&gt;&lt;img src=&quot;https://wx3.sinaimg.cn/large/006mcMYXgy1g0tx7cv08jj30dq09gjsj.jpg&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
 &lt;div style=&quot;font-size:13px;color:gray;text-align:center&quot;&gt;▲ 特征 -&amp;gt; 更多 -&amp;gt; &lt;a href=&quot;https://jingyan.baidu.com/article/e3c78d64a38fca3c4d85f55b.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;槽&lt;/a&gt;&lt;/div&gt;
-    
-    </summary>
-    
-      <category term="机械结构" scheme="https://www.andyvj.com/categories/%E6%9C%BA%E6%A2%B0%E7%BB%93%E6%9E%84/"/>
-    
-    
-      <category term="UG_NX" scheme="https://www.andyvj.com/tags/UG-NX/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>UG NX 标注之『文本在短划线之上』</title>
-    <link href="https://www.andyvj.com/2019/03/06/190306-02/"/>
-    <id>https://www.andyvj.com/2019/03/06/190306-02/</id>
-    <published>2019-03-06T06:16:09.000Z</published>
-    <updated>2019-03-08T13:37:47.782Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="https://ws1.sinaimg.cn/large/006mcMYXgy1g0t1xygtitj30f3066q2y.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 效果</div><a id="more"></a><p><img src="https://ws1.sinaimg.cn/large/006mcMYXgy1g0t1ylji1lj30gb0d4dge.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 单个设置</div><p><img src="https://ws4.sinaimg.cn/large/006mcMYXgy1g0t1z9r955j30ib0fcdgt.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 在“制图标准”中设置</div>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;https://ws1.sinaimg.cn/large/006mcMYXgy1g0t1xygtitj30f3066q2y.jpg&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
-&lt;div style=&quot;font-size:13px;color:gray;text-align:center&quot;&gt;▲ 效果&lt;/div&gt;
     
     </summary>
     
