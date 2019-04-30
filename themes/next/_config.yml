@@ -200,7 +200,7 @@ avatar:
   # in theme directory(source/images): /images/avatar.gif
   # in site  directory(source/uploads): /uploads/avatar.gif
   # You can also use other linking images. 头像图片
-  url: https://wx1.sinaimg.cn/mw690/006mcMYXgy1fznoi9icbij30sg0sg3yz.jpg #/images/avatar.gif
+  url: http://wx1.sinaimg.cn/mw690/006mcMYXgy1fznoi9icbij30sg0sg3yz.jpg #/images/avatar.gif
   # url: https://ws4.sinaimg.cn/large/006mcMYXgy1g0db3db5t0j30p00p0dxf.jpg #/images/avatar.gif
   # If true, the avatar would be dispalyed in circle.
   rounded: true
