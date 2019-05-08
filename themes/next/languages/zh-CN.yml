@@ -5,14 +5,14 @@ title:
   tag: 标签
   schedule: 日程表
 menu:
-  home: 首页
-  archives: 归档
-  categories: 分类
-  tags: 标签
-  about: 关于
-  search: 搜索
-  schedule: 日程表
-  sitemap: 站点地图
+  home: 首页/Home
+  archives: 归档/Archives
+  categories: 分类/Categories
+  tags: 标签/Tages
+  about: 关于/About
+  search: 搜索/Search
+  schedule: 日程表/Schedule
+  sitemap: 站点地图/Sitemap
   commonweal: 公益 404
 sidebar:
   overview: 站点概览
