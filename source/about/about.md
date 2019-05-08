@@ -1,5 +1,5 @@
 ---
-title: 关于我
+title: 关于我/About me
 date: 2019-01-29 14:05:54
 comments: false
 ---
@@ -12,9 +12,9 @@ Email：andy@andyvj.com
 ## 捐助本站
 
 <center>微信：</center>  
-![](https://wx1.sinaimg.cn/mw690/006mcMYXgy1fzoz6prhw8j305k05itag.jpg)
+![](http://image.huvjie.com/weChatPay.jpg)
 
 <center>支付宝：</center>  
-![](https://wx1.sinaimg.cn/mw690/006mcMYXgy1fzoz6ps5pcj305k05kta9.jpg)
+![](http://image.huvjie.com/aliPay.jpg)
 
 
