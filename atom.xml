@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>胡搅蛮缠</title>
   
-  <subtitle>AndyVJ 的个人博客</subtitle>
+  <subtitle>AndyVJ 的个人博客(Personal Blog)</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.andyvj.com/"/>
@@ -117,13 +117,13 @@ height: 100%; left: 0; top: 0;&quot;&gt; &lt;/iframe&gt;&lt;/div&gt;
     <link href="https://www.andyvj.com/2019/03/24/190324-01/"/>
     <id>https://www.andyvj.com/2019/03/24/190324-01/</id>
     <published>2019-03-24T05:57:17.000Z</published>
-    <updated>2019-05-08T12:44:27.614Z</updated>
+    <updated>2019-05-09T11:02:16.960Z</updated>
     
-    <content type="html"><![CDATA[<p>FX3U系列接近开关接线：</p><a id="more"></a><p><img src="http://image.huvjie.com/190324-01_img01.jpg" alt="image"></p><p><hr><br><span style="color:gray;font-size:12px"><br>参考：向晓汉：P20<br></span></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="接近开关接线"><a href="#接近开关接线" class="headerlink" title="接近开关接线"></a>接近开关接线</h1><p>【例2-4】有一台 FX3U-32MR,输入端有一只三线 NPN 接近开关和一只二线 NPN 式接近开关,应如何接线?</p><a id="more"></a><p>【解】对于 FX3U-32MR,公共端是 0V 端子。而对于三线NPN接近开关,只要将其棕线与 24V 端子、蓝线与 0V 端子相连,将信号线与 PLC 的 “X1” 相连即可;而对于二线NPN接近开关,只要将 0V 端子与其蓝色线相连,将信号线(棕色线)与 PLC 的 “X0” 相连即可,如图 2-19 所示。</p><p>FX3U 系列 PLC 的输出形式有三种:继电器输出、晶体管输出和晶闸管输出。继电器型输出用得比较多,输出端可以连接直流或者交流电源,无极性之分,但交流电源不超过 220V,FX3U系列PLC的继电器型输出端接线与 FX2N 系列 PLC 的继电器型输出端的接线类似,如图 2-20 所示。</p><p><img src="http://image.huvjie.com/190324-01_img01.png" alt="image"></p><p>晶体管输出只有NPN输出和PNP输出两种形式,用于输出频率高的场合,通常,相同点数的三菱PLC,三菱FX系列晶体管输出形式的PLC要比继电器输出形式的贵一点。晶体管输出的PLC的输出端只能使用直流电源,对于NPN输出形式,其公共端子和电源的0V接在一起, FX3U系列PLC的晶体管型NPN输出的接线示例如图2-21所示。晶体管型NPN输出是三菱FX系列PLC的主流形式,在FX3U以前的FX系列PLC的晶体管输出形式中,只有NPN输出一种。此外,在FX3U系列PLC中,晶体管输出中增加了PNP型输出,其公共端子是+V,接线如图2-22所示。</p><p><img src="http://image.huvjie.com/190324-01_img02.png" alt="image"></p><p>晶闸管输出的PLC的输出端只能使用交流电源, FX3U系列PLC的晶闸管型输出端的接线与FX2N系列PLC的晶闸管型输出接线图类似,在此不再赘述。</p><h1 id="中间继电器控制电机启停接线"><a href="#中间继电器控制电机启停接线" class="headerlink" title="中间继电器控制电机启停接线"></a>中间继电器控制电机启停接线</h1><p>【例2-5】有一台FX3U-32M,控制两台步进电动机(步进电动机控制端是共阴接法和一台三相异步电动机的启停,三相电动机的启停由一只接触器控制,接触器的线圈电压220VAC,输出端应如何接线(步进电动机部分的接线可以省略) ?</p><p>【解】因为要控制两台步进电动机,所以要选用晶体管输出的PLC,而且必须用YO和Y1作为输出高速脉冲点控制步进电动机,又由于步进电动机控制端是共阴接法,所以PLC的输出端要采用PNP输出型。接触器的线圈电压为220VAC,所以电路要经过转换,增加中间继电器KA,其接线如图2-23所示。</p><p><img src="http://image.huvjie.com/190324-01_img03_.jpg" alt="image"></p><p><hr><br><span style="color:gray;font-size:12px"><br>参考：向晓汉：P20<br></span></p>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;FX3U系列接近开关接线：&lt;/p&gt;
+      &lt;h1 id=&quot;接近开关接线&quot;&gt;&lt;a href=&quot;#接近开关接线&quot; class=&quot;headerlink&quot; title=&quot;接近开关接线&quot;&gt;&lt;/a&gt;接近开关接线&lt;/h1&gt;&lt;p&gt;【例2-4】有一台 FX3U-32MR,输入端有一只三线 NPN 接近开关和一只二线 NPN 式接近开关,应如何接线?&lt;/p&gt;
     
     </summary>
     
@@ -184,9 +184,9 @@ height: 100%; left: 0; top: 0;&quot;&gt; &lt;/iframe&gt;&lt;/div&gt;
     <link href="https://www.andyvj.com/2019/03/21/190321-05/"/>
     <id>https://www.andyvj.com/2019/03/21/190321-05/</id>
     <published>2019-03-21T11:29:00.000Z</published>
-    <updated>2019-03-21T11:40:00.212Z</updated>
+    <updated>2019-05-09T12:44:08.842Z</updated>
     
-    <content type="html"><![CDATA[<p>FX3U 系列 PLC 模块的接线：</p><a id="more"></a><p><img src="https://wx4.sinaimg.cn/large/006mcMYXgy1g1anfyn71sj31302yle81.jpg" alt="image"></p><p><hr><br><span style="color:gray;font-size:12px"><br>参考：P17<br></span></p>]]></content>
+    <content type="html"><![CDATA[<p>FX3U 系列 PLC 模块的接线：</p><a id="more"></a><p><img src="https://wx4.sinaimg.cn/large/006mcMYXgy1g1anfyn71sj31302yle81.jpg" alt="image"></p><p>在讲解EX3U系列PLC基本模块前,先要熟悉基本模块的接线端子。FX系列的接线端子(以FX3U-32MR为例)一般由上下两排交错分布,如图2-13所示,这样排列方便接线,接线时一般先接下面一排(对于输入端,先接X0.X2、X4.X6…接线端子,后接X1.x3.x5.x7…接线端子)。图2-13中, “1”处的三个接线端子是基本模块的交流电源接线端子其中L接交流电源的火线, N接交流电源的零线,〨接交流电源的地线: “2”处的24V是基本模块输出的DC24V电源的+24v,这个电源可供传感器使用,也可供扩展模块使用,但通常不建议使用此电源; “3”处的接线端子是数字量输入接线端子,通常与按钮、开关量的传感器相连:”4”处的圆点表示此处是空白端子,不用;很明显“5”处的粗线是分割线,将第  ,三组输出点和第四组输出点分开; “6”处的Y5是数字量输出端子; “7”处的COM1是第-组输出端的公共接线端子,这个公共接线端子是输出点Y0、Y1.Y2.Y3的公共接线端子。</p><p><img src="http://image.huvjie.com/190321-05_img01.jpg" alt=""></p><p>FX3U系列PLC基本模块的输入端是NPN (漏型,低电平有效)输入和PNP (源型,高电平有效)输入可选,只要改换不同的接线即可选择不同的输入形式。当输入端与数字量传感器相连时,能使用NPN和PNP型传感器, FX3U的输入端在连接按钮时,并不需要外接电源。FX3U系列PLC的输入端的接线示例如图2-14~图2-17所示,不难看出FX3U系列PLC基本模块的输入端接线和FXZN系列PLC基本模块的输入端有所不同。</p><p>如图2-14所示,模块供电电源为交流电,输入端是漏型接法, 24V端子与ss端子短接,OV端子是输入端的公共端子,这种接法是低电平有效,也叫NPN输入。</p><p><img src="http://image.huvjie.com/190321-05_img02.jpg" alt=""></p><p>如图2-15所示,模块供电电源为交流电,输入端是源型接法, ov端子与Ss端子短接,24V端子是输入端的公共端子,这种接法是高电平有效,也叫PNP输入。</p><p>如图2-16所示,模块供电电源为直流电,输入端是漏型接法, SS端子与模块供电电沉的24V短接,模块供电电源0V是输入端的公共端子,这种接法是低电平有效,也叫NPN输入。  </p><p><img src="http://image.huvjie.com/190321-05_img03.jpg" alt=""></p><p>如图2-17所示,模块供电电源为直流电,输入端是源型接法, Ss端子与模块供电电源的0V短接,模块供电电源24V是输入端的公共端子,这种接法是高电平有效,也叫PNP输入。</p><p>FX3U系列中还有AC100V输入型PLC,也就是输入端使用不超过120V的交流电源其接线图如图2-18所示。</p><p><img src="http://image.huvjie.com/190321-05_img04.jpg" alt=""><br><img src="http://image.huvjie.com/190321-05_img05.jpg" alt=""></p><p><strong><em>【关键点】 FX系列PLC的输入端和PLC的供电电源很近,特别是使用交流电源时,要注意不要把交流电误接入到信号端子。</em></strong></p><p><hr><br><span style="color:gray;font-size:12px"><br>参考：P17<br></span></p>]]></content>
     
     <summary type="html">
     
@@ -250,13 +250,13 @@ height: 100%; left: 0; top: 0;&quot;&gt; &lt;/iframe&gt;&lt;/div&gt;
     <link href="https://www.andyvj.com/2019/03/21/190321-02/"/>
     <id>https://www.andyvj.com/2019/03/21/190321-02/</id>
     <published>2019-03-21T08:53:43.000Z</published>
-    <updated>2019-03-21T11:28:20.671Z</updated>
+    <updated>2019-05-09T11:02:16.952Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="https://wx4.sinaimg.cn/large/006mcMYXgy1g1aimj79nuj30wa0fxacs.jpg" alt="image"></p><a id="more"></a><div style="font-size:13px;color:gray;text-align:center">▲ 可见继电器输出型PLC，既可以接交流电源又可以接直流电源，在不经过转换时分在两个输出组中。</div><p><hr><br><span style="color:gray;font-size:12px"><br>参考：<br>1.P14<br></span></p>]]></content>
+    <content type="html"><![CDATA[<p> 【例 2-2】有一台 FX2N-32MR，控制一只线圈电压 24V DC 的电磁阀和一只线圈电压 220V AC 电磁阀，输出端应该如何接线？</p> <a id="more"></a><p>【解】因为两个电磁阀的线圈电压不同，而且有直流和交流两种电压，所以如果不经过转换，只能用继电器输出的 PLC，而且两个电磁阀分别在两个组中。其接线方式如下图：</p><p><img src="http://image.huvjie.com/190321-02_img01.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 可见继电器输出型PLC，既可以接交流电源又可以接直流电源，在不经过转换时分在两个输出组中。</div><p><hr><br><span style="color:gray;font-size:12px"><br>参考：<br>1.<a href="https://book.douban.com/subject/10559211/" target="_blank" rel="noopener">P14</a><br></span></p>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;https://wx4.sinaimg.cn/large/006mcMYXgy1g1aimj79nuj30wa0fxacs.jpg&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
+      &lt;p&gt; 【例 2-2】有一台 FX2N-32MR，控制一只线圈电压 24V DC 的电磁阀和一只线圈电压 220V AC 电磁阀，输出端应该如何接线？&lt;/p&gt;
     
     </summary>
     
@@ -272,13 +272,13 @@ height: 100%; left: 0; top: 0;&quot;&gt; &lt;/iframe&gt;&lt;/div&gt;
     <link href="https://www.andyvj.com/2019/03/21/190321-01/"/>
     <id>https://www.andyvj.com/2019/03/21/190321-01/</id>
     <published>2019-03-21T00:29:40.000Z</published>
-    <updated>2019-03-21T11:28:20.658Z</updated>
+    <updated>2019-05-09T11:02:16.937Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="https://ws4.sinaimg.cn/large/006mcMYXgy1g1a462legmj30gi02675q.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 新建页面，中英文模板夹杂</div><a id="more"></a><p>解决方法是：</p><p>一、将<code>~\NX 10.0\LOCALIZATION</code>下的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ugs_cae_templates_simpl_chinese.pax（仿真）</span><br><span class="line">ugs_drawing_templates_simpl_chinese.pax（制图）</span><br><span class="line">ugs_inspection_templates_simpl_chinese.pax（检测）</span><br><span class="line">ugs_manufacturing_templates_simpl_chinese.pax（加工）</span><br><span class="line">ugs_mechatronics_templates_simpl_chinese.pax（机电）</span><br><span class="line">ugs_ship_templates_simpl_chinese.pax（船舶）</span><br></pre></td></tr></table></figure></p><p>剪切到<code>~\NX 10.0\LOCALIZATION\prc\simpl_chinese\startup</code>目录下。</p><p>二、再将<code>~\NX 10.0\UGII\templates</code>目录下的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ugs_cae_templates.pax（仿真）</span><br><span class="line">ugs_drawing_templates.pax（制图）</span><br><span class="line">ugs_inspection_templates.pax（检测）</span><br><span class="line">ugs_manufacturing_templates.pax（加工）</span><br><span class="line">ugs_mechatronics_templates.pax（机电）</span><br><span class="line">ugs_ship_templates.pax（船舶）</span><br><span class="line">ugs_model_templates.pax（模型）</span><br></pre></td></tr></table></figure></p><p>剪切到<code>~\NX 10.0\LOCALIZATION\prc\english\startup</code>目录下即可。</p><p>三、请设置环境变量：</p><p>新建系统变量，变量名：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">UGII_COUNTRY</span><br></pre></td></tr></table></figure></p><p>变量值：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">prc</span><br></pre></td></tr></table></figure></p><p><em>这个环境变量不设置也可以，软件本身在安装的时候设置了？</em></p><p><strong>“prc”必须为小写</strong>。这个环境变量是中国用户使用英文版的UG必不可少的，少了它，专为中国人打造的GC工具箱就用不起了，因为英文版UG默认不是给中国用户使用的。</p><p>此目录下的ugs_模板都剪切掉了：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">D:\Program Files\Siemens\NX10\UGII\templates\</span><br></pre></td></tr></table></figure></p><p><strong>两个文件夹下的模板没有覆盖剪切，剩下的改了后缀让它不能识别。</strong>反正这样使用没问题。</p><p><img src="https://ws2.sinaimg.cn/large/006mcMYXgy1g1a4h4jbo3j30mp0d9763.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 修改后的效果</div><p><hr><br><span style="color:gray;font-size:12px"><br>参考：<br>1.<a href="http://www.ugsnx.com/thread-38766-1-1.html" target="_blank" rel="noopener">link-01</a><br></span></p>]]></content>
+    <content type="html"><![CDATA[<p><img src="http://image.huvjie.com/190321-01_img01.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 新建页面，中英文模板夹杂</div><a id="more"></a><p>解决方法是：</p><p>一、将<code>~\NX 10.0\LOCALIZATION</code>下的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ugs_cae_templates_simpl_chinese.pax（仿真）</span><br><span class="line">ugs_drawing_templates_simpl_chinese.pax（制图）</span><br><span class="line">ugs_inspection_templates_simpl_chinese.pax（检测）</span><br><span class="line">ugs_manufacturing_templates_simpl_chinese.pax（加工）</span><br><span class="line">ugs_mechatronics_templates_simpl_chinese.pax（机电）</span><br><span class="line">ugs_ship_templates_simpl_chinese.pax（船舶）</span><br></pre></td></tr></table></figure></p><p>剪切到<code>~\NX 10.0\LOCALIZATION\prc\simpl_chinese\startup</code>目录下。</p><p>二、再将<code>~\NX 10.0\UGII\templates</code>目录下的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ugs_cae_templates.pax（仿真）</span><br><span class="line">ugs_drawing_templates.pax（制图）</span><br><span class="line">ugs_inspection_templates.pax（检测）</span><br><span class="line">ugs_manufacturing_templates.pax（加工）</span><br><span class="line">ugs_mechatronics_templates.pax（机电）</span><br><span class="line">ugs_ship_templates.pax（船舶）</span><br><span class="line">ugs_model_templates.pax（模型）</span><br></pre></td></tr></table></figure></p><p>剪切到<code>~\NX 10.0\LOCALIZATION\prc\english\startup</code>目录下即可。</p><p>三、请设置环境变量：</p><p>新建系统变量，变量名：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">UGII_COUNTRY</span><br></pre></td></tr></table></figure></p><p>变量值：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">prc</span><br></pre></td></tr></table></figure></p><p><em>这个环境变量不设置也可以，软件本身在安装的时候设置了？</em></p><p><strong>“prc”必须为小写</strong>。这个环境变量是中国用户使用英文版的UG必不可少的，少了它，专为中国人打造的GC工具箱就用不起了，因为英文版UG默认不是给中国用户使用的。</p><p>此目录下的ugs_模板都剪切掉了：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">D:\Program Files\Siemens\NX10\UGII\templates\</span><br></pre></td></tr></table></figure></p><p><strong>两个文件夹下的模板没有覆盖剪切，剩下的改了后缀让它不能识别。</strong>反正这样使用没问题。</p><p><img src="http://image.huvjie.com/190321-01_img02.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 修改后的效果</div><p><hr><br><span style="color:gray;font-size:12px"><br>参考：<br>1.<a href="http://www.ugsnx.com/thread-38766-1-1.html" target="_blank" rel="noopener">link-01</a><br></span></p>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;https://ws4.sinaimg.cn/large/006mcMYXgy1g1a462legmj30gi02675q.jpg&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;img src=&quot;http://image.huvjie.com/190321-01_img01.jpg&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
 &lt;div style=&quot;font-size:13px;color:gray;text-align:center&quot;&gt;▲ 新建页面，中英文模板夹杂&lt;/div&gt;
     
     </summary>
