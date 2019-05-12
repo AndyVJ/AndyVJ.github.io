@@ -206,13 +206,14 @@ height: 100%; left: 0; top: 0;&quot;&gt; &lt;/iframe&gt;&lt;/div&gt;
     <link href="https://www.andyvj.com/2019/03/21/190321-04/"/>
     <id>https://www.andyvj.com/2019/03/21/190321-04/</id>
     <published>2019-03-21T09:27:56.000Z</published>
-    <updated>2019-03-21T11:28:20.681Z</updated>
+    <updated>2019-05-12T09:00:53.132Z</updated>
     
-    <content type="html"><![CDATA[<p>FX2N PLC 输入输出接线图：</p><a id="more"></a><p><img src="https://wx3.sinaimg.cn/large/006mcMYXgy1g1ajmnsdapj30vx0lw0wd.jpg" alt="image"></p><p><hr><br><span style="color:gray;font-size:12px"><br>参考：P14<br></span></p>]]></content>
+    <content type="html"><![CDATA[<p>FX2N PLC 输入输出接线图：</p><p>在前面分别讲述了FX2N系列PLC的输入端或者输出端的接线图,如图2-10所示,是FX2N-32MT完整的输入输出接线图。</p><a id="more"></a><p><img src="http://image.huvjie.com/190321-04_img01.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 图2-10 FX2N系列PLC的接线</div><p><hr><br><span style="color:gray;font-size:12px"><br>参考：P14<br></span></p>]]></content>
     
     <summary type="html">
     
       &lt;p&gt;FX2N PLC 输入输出接线图：&lt;/p&gt;
+&lt;p&gt;在前面分别讲述了FX2N系列PLC的输入端或者输出端的接线图,如图2-10所示,是FX2N-32MT完整的输入输出接线图。&lt;/p&gt;
     
     </summary>
     
@@ -228,13 +229,13 @@ height: 100%; left: 0; top: 0;&quot;&gt; &lt;/iframe&gt;&lt;/div&gt;
     <link href="https://www.andyvj.com/2019/03/21/190321-03/"/>
     <id>https://www.andyvj.com/2019/03/21/190321-03/</id>
     <published>2019-03-21T09:02:12.000Z</published>
-    <updated>2019-03-21T11:28:20.675Z</updated>
+    <updated>2019-05-12T09:00:53.127Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="https://wx1.sinaimg.cn/large/006mcMYXgy1g1aizz490gj30vw0hcwiy.jpg" alt="image"><br><a id="more"></a></p><p>关于<a href="https://baike.baidu.com/item/%E6%8E%A5%E8%A7%A6%E5%99%A8/1516538?fr=aladdin" target="_blank" rel="noopener">接触器</a>，关于<a href="https://www.diangon.com/m401431.html" target="_blank" rel="noopener">接触器和继电器</a>的<a href="https://www.sohu.com/a/205186172_648025" target="_blank" rel="noopener">区别</a>。</p><p><hr><br><span style="color:gray;font-size:12px"><br>参考：P14<br></span></p>]]></content>
+    <content type="html"><![CDATA[<p>【例2-3】有一台FX2N-32M,控制两台步进电动机和一台三相异步电动机的启停,三相电动机的启停由一只接触器控制,接触器的线圈电压为220V AC,输出端应如何接线(步进电动机部分的接线可以省略) ?</p><a id="more"></a><p>【解】 因为要控制两台步进电动机,所以要选用晶体管输出的PLC,而且必须用Y0和Y1作为输出高速脉冲点控制步进电动机。但接触器的线圈电压为220V AC,所以电路要经过转换,增加中间继电器KA,其接线如图2-9所示。</p><p><img src="http://image.huvjie.com/190321-03_img01.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 图2-9 例2-3接线图</div><p>关于<a href="https://baike.baidu.com/item/%E6%8E%A5%E8%A7%A6%E5%99%A8/1516538?fr=aladdin" target="_blank" rel="noopener">接触器</a>，关于<a href="https://www.diangon.com/m401431.html" target="_blank" rel="noopener">接触器和继电器</a>的<a href="https://www.sohu.com/a/205186172_648025" target="_blank" rel="noopener">区别</a>。</p><p><hr><br><span style="color:gray;font-size:12px"><br>参考：P14<br></span></p>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;https://wx1.sinaimg.cn/large/006mcMYXgy1g1aizz490gj30vw0hcwiy.jpg&quot; alt=&quot;image&quot;&gt;&lt;br&gt;
+      &lt;p&gt;【例2-3】有一台FX2N-32M,控制两台步进电动机和一台三相异步电动机的启停,三相电动机的启停由一只接触器控制,接触器的线圈电压为220V AC,输出端应如何接线(步进电动机部分的接线可以省略) ?&lt;/p&gt;
     
     </summary>
     
@@ -295,13 +296,13 @@ height: 100%; left: 0; top: 0;&quot;&gt; &lt;/iframe&gt;&lt;/div&gt;
     <link href="https://www.andyvj.com/2019/03/20/190320-02/"/>
     <id>https://www.andyvj.com/2019/03/20/190320-02/</id>
     <published>2019-03-20T05:28:11.000Z</published>
-    <updated>2019-03-21T11:28:20.653Z</updated>
+    <updated>2019-05-12T09:00:53.113Z</updated>
     
-    <content type="html"><![CDATA[<p>三菱 FX2N PLC 三种输出形式：</p><a id="more"></a><p><img src="https://ws4.sinaimg.cn/large/006mcMYXgy1g1972tepa7j30wf0tpwoe.jpg" alt="image"></p><p><hr><br><span style="color:gray;font-size:12px"><br>参考：P13<br></span></p>]]></content>
+    <content type="html"><![CDATA[<p>FX2N系列PLC的输出形式有三种:<strong>继电器输出</strong>、<strong>晶体管输出</strong>和<strong>晶闸管输出</strong>。继电器型输出用得比较多,输出端可以连接直流或者交流电源,无极性之分,但交流电源不超过220V，FX2N系列PLC的继电器型输出端的接线示例如图2-5所示。<br><a id="more"></a><br><img src="http://image.huvjie.com/190320-02_img01.jpg" alt=""></p><p>晶体管输出只有NPN输出一种形式,也就是低电平输出(西门子PLC多为PNP型输出),用于输出频率高的场合,通常,相同点数的三菱PLC,晶体管输出形式的要比继电器输出形式的贵一点。<u>晶体管输出的PLC的输出端只能使用直流电源,而且公共端子和电源的0V接在一起,</u> FX2N系列PLC的晶体管型输出端的接线示例如图2-6所示。</p><p><img src="http://image.huvjie.com/190320-02_img02.jpg" alt=""></p><p>晶闸管输出的PLC的输出端只能使用交流电源,FX2N系列PLC的晶闸管型输出端的接线示例如图2-7所示。</p><p><img src="http://image.huvjie.com/190320-02_img03.jpg" alt=""></p><!--![image](https://ws4.sinaimg.cn/large/006mcMYXgy1g1972tepa7j30wf0tpwoe.jpg)--><p><hr><br><span style="color:gray;font-size:12px"><br>参考：P13 向晓汉<br></span></p>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;三菱 FX2N PLC 三种输出形式：&lt;/p&gt;
+      &lt;p&gt;FX2N系列PLC的输出形式有三种:&lt;strong&gt;继电器输出&lt;/strong&gt;、&lt;strong&gt;晶体管输出&lt;/strong&gt;和&lt;strong&gt;晶闸管输出&lt;/strong&gt;。继电器型输出用得比较多,输出端可以连接直流或者交流电源,无极性之分,但交流电源不超过220V，FX2N系列PLC的继电器型输出端的接线示例如图2-5所示。&lt;br&gt;
     
     </summary>
     
@@ -317,13 +318,14 @@ height: 100%; left: 0; top: 0;&quot;&gt; &lt;/iframe&gt;&lt;/div&gt;
     <link href="https://www.andyvj.com/2019/03/20/190320-01/"/>
     <id>https://www.andyvj.com/2019/03/20/190320-01/</id>
     <published>2019-03-20T04:35:38.000Z</published>
-    <updated>2019-03-21T11:28:20.648Z</updated>
+    <updated>2019-05-12T09:00:53.098Z</updated>
     
-    <content type="html"><![CDATA[<p>三菱 PLC 输入端接近开关接线：</p><a id="more"></a><p><img src="https://wx2.sinaimg.cn/large/006mcMYXgy1g195q0xmfxj30w90jmgp4.jpg" alt="image"></p><p><hr><br><span style="color:gray;font-size:12px"><br>参考：p13<br></span></p>]]></content>
+    <content type="html"><![CDATA[<p>三菱 PLC 输入端接近开关接线：</p><p>【例2-1】有一台FX2N-32MR,输入端有一只三线NPN接近开关和一只二线NPN式接近开关,应如何接线?<br><a id="more"></a><br>【解】对于FX2N-32MR,<u>公共端接电源的负极</u>。而对于三线NPN接近开关,只要将其正负极分别与电源的正负极相连,将信号线与PLC的”X1”相连即可;而对于二线NPN接近开关,只要将电源的负极分别与其蓝色线相连,将信号线(棕色线)与PLC的”X0”相连即可(图2-4)。</p><p><img src="http://image.huvjie.com/190320-01_img01.jpg" alt=""></p><div style="font-size:13px;color:gray;text-align:center">▲ 图2-4例2-1输入端子的接线图</div><p><hr><br><span style="color:gray;font-size:12px"><br>参考：p13<br></span></p>]]></content>
     
     <summary type="html">
     
       &lt;p&gt;三菱 PLC 输入端接近开关接线：&lt;/p&gt;
+&lt;p&gt;【例2-1】有一台FX2N-32MR,输入端有一只三线NPN接近开关和一只二线NPN式接近开关,应如何接线?&lt;br&gt;
     
     </summary>
     
@@ -339,9 +341,9 @@ height: 100%; left: 0; top: 0;&quot;&gt; &lt;/iframe&gt;&lt;/div&gt;
     <link href="https://www.andyvj.com/2019/03/19/190319-02/"/>
     <id>https://www.andyvj.com/2019/03/19/190319-02/</id>
     <published>2019-03-19T08:34:08.000Z</published>
-    <updated>2019-03-19T13:48:17.502Z</updated>
+    <updated>2019-05-12T09:34:08.626Z</updated>
     
-    <content type="html"><![CDATA[<p>FX2N 系列 PLC 模块的接线。<br><a id="more"></a><br><!--![image](https://ws4.sinaimg.cn/large/006mcMYXgy1g186toc42qj30w619e4kn.jpg)--><br><img src="https://ws1.sinaimg.cn/large/006mcMYXgy1g1871rwwhmj30w619engp.jpg" alt="image"></p><p><img src="https://ws3.sinaimg.cn/large/006mcMYXgy1g18fuy9l37j30ct084wev.jpg" alt="image"></p><p><div style="font-size:13px;color:gray;text-align:center">▲ FX2N 系列 PLC 的输入端的接线示例：可见输入端电源的负极与 COM 公共端短接。</div></p><p><hr><br><span style="color:gray;font-size:12px"><br>参考：P12<br></span></p>]]></content>
+    <content type="html"><![CDATA[<p>FX2N 系列 PLC 模块的接线。<br><a id="more"></a></p><p>在讲解FX2N系列PLC基本模块前,先要熟悉基本模块的接线端子。FX系列的接线端子(以FX2N-32MT为例)一般由上下两排交错分布,如图2-2所示,这样排列方便接线,接线时一般先接下面一排(对于输入端,先接X0、X2、X4、X6…按线端子,后接X1、X3、X5.X7…接线端子)。图2-2中, “1”处的三个接线端子是基本模块的交流电源接线端子其中L接交流电源的火线, N接交流电源的零线, 〨接交流电源的地线; “2”处的COM是输入端子的公共端,同时当输入端要接传感器时, COM也与传感器供电的直流电的0V相连;”3”处的24+是基本模块输出的DC24V电源的+24V,这个电源可供传感器使用,也可供扩展模块使用,但通常不建议使用此电源; “4”处的接线端子是数字量输入接线端子,通常与按钮、开关量的传感器相连: “5”处的COM1是第一组输出端的公共接线端子,这个公共接线端子是输出点Y0、Y1、Y2、Y3的公共接线端子。”6”处是输出点Y0、Y1.、Y2、Y3。很明显”7”处的粗线将第一组输出点和第二组输出点分开。</p><p><img src="http://image.huvjie.com/190319-02_img01.jpg" alt="image"></p><p>FX2N系列PLC的输入端是NPN输入,也就是低电平有效,当输入端与数字量传感器相连时,只能使用NPN型传感器,而不能使用PNP型传感器, FX2N的输入端在连接按钮时,并不需要外接电源,这些都有别于西门子的PLC. FX2N系列PLC的输入端的接线示例如图2-3所示。</p><p><img src="http://image.huvjie.com/190319-02_img02.jpg" alt="image"></p><p><strong>【关键点】 FX系列PLC的输入端和PLC的供电电源很近,特别是使用交流电源时,要注意不要把交流电误接入到信号端子。</strong></p><p><div style="font-size:13px;color:gray;text-align:center">▲ FX2N 系列 PLC 的输入端的接线示例：可见输入端电源的负极与 COM 公共端短接。</div></p><p><hr><br><span style="color:gray;font-size:12px"><br>参考：P12<br></span></p>]]></content>
     
     <summary type="html">
     
