@@ -407,16 +407,18 @@ height: 100%; left: 0; top: 0;&quot;&gt; &lt;/iframe&gt;&lt;/div&gt;
     <link href="https://www.andyvj.com/2019/03/09/190309-03/"/>
     <id>https://www.andyvj.com/2019/03/09/190309-03/</id>
     <published>2019-03-09T07:05:57.000Z</published>
-    <updated>2019-03-15T15:38:48.313Z</updated>
+    <updated>2019-06-05T11:24:04.400Z</updated>
     
-    <content type="html"><![CDATA[<p>基本初等函数的微分公式与微分运算法则：</p><!--![image](https://ws2.sinaimg.cn/large/006mcMYXgy1g0wk58owkdj30u90ngaem.jpg)--><a id="more"></a><p><img src="https://wx4.sinaimg.cn/large/006mcMYXgy1g13vu0rbscj30wu3y2hdt.jpg" alt="image"></p><!--![image](https://wx4.sinaimg.cn/large/006mcMYXgy1g0wk675klaj30qs1590z0.jpg)![image](https://wx4.sinaimg.cn/large/006mcMYXgy1g0wk72jerxj30r30eu0wd.jpg)--><p><hr><br><span style="color:gray;font-size:12px"><br>参考：<br>《高等数学》同济六版 -&gt; P116<br></span></p>]]></content>
+    <content type="html"><![CDATA[<!--![image](https://ws2.sinaimg.cn/large/006mcMYXgy1g0wk58owkdj30u90ngaem.jpg)--><p>从函数的微分的表达式</p><p>$$\mathrm { d } y = f ^ { \prime } ( x ) \mathrm { d } x$$</p><p>可以看出，要计算函数的微分，只要计算函数的导数，再乘以自变量的微分.因此，可得如下的微分公式和微分运算法则.</p><a id="more"></a><h2 id="1-基本初等函数的微分公式"><a href="#1-基本初等函数的微分公式" class="headerlink" title="1.基本初等函数的微分公式"></a>1.基本初等函数的微分公式</h2><p>由基本初等函数的导数公式，可以直接写出基本初等函数的微分公式.为了便于对照，列表于下：</p><p><img src="http://image.huvjie.com/190309-03_img01.jpg" alt=""></p><h2 id="2-函数和、差、积、商的微分法则"><a href="#2-函数和、差、积、商的微分法则" class="headerlink" title="2.函数和、差、积、商的微分法则"></a>2.函数和、差、积、商的微分法则</h2><p>由函数和、差、积、商的求导法则，可推得相应的微分法则.为了便于对照，列成下表（表中u=u（x），v=v（x）都可导）.</p><p><img src="http://image.huvjie.com/190309-03_img02.jpg" alt=""></p><!--![image](https://wx4.sinaimg.cn/large/006mcMYXgy1g13vu0rbscj30wu3y2hdt.jpg)--><!--![image](https://wx4.sinaimg.cn/large/006mcMYXgy1g0wk675klaj30qs1590z0.jpg)![image](https://wx4.sinaimg.cn/large/006mcMYXgy1g0wk72jerxj30r30eu0wd.jpg)--><p>现在我们以乘积的微分法则为例加以证明.<br>根据函数微分的表达式，有</p><p>$$\mathrm { d } ( u v ) = ( u v ) ^ { \prime } \mathrm { d } x$$</p><p><hr><br><span style="color:gray;font-size:12px"><br>参考：<br>《高等数学》同济六版 -&gt; P116<br></span></p>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;基本初等函数的微分公式与微分运算法则：&lt;/p&gt;
-&lt;!--
+      &lt;!--
 ![image](https://ws2.sinaimg.cn/large/006mcMYXgy1g0wk58owkdj30u90ngaem.jpg)
 --&gt;
+&lt;p&gt;从函数的微分的表达式&lt;/p&gt;
+&lt;p&gt;$$\mathrm { d } y = f ^ { \prime } ( x ) \mathrm { d } x$$&lt;/p&gt;
+&lt;p&gt;可以看出，要计算函数的微分，只要计算函数的导数，再乘以自变量的微分.因此，可得如下的微分公式和微分运算法则.&lt;/p&gt;
     
     </summary>
     
