@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[C# 命名空间]]></title>
+    <url>%2F2019%2F06%2F14%2F190614-01%2F</url>
+    <content type="text"><![CDATA[【例22】创建一个控制台应用程序，建立一个命名空间N1，在命名空间N1中有一个类A，在项目然后遇用非某口器指令引入命名空间N1，然后在命名空间LianXi中即可实例化命名空间N1中的类，此类中的Myls方法，代码如下。 12345678910111213141516171819202122232425262728293031using System;using System.Collections.Generic;using System.Linq;using System.Text;using System.Threading.Tasks;using N1; // 引入命名空间，如果不引入 下面的 A 类会报错报红。namespace CSharp&#123; class LianXi &#123; static void Main(string[] args) &#123; A oa = new A(); oa.Myls(); &#125; &#125;&#125;namespace N1&#123; class A &#123; public void Myls() &#123; Console.WriteLine(&quot;这是命名空间 N1 中的 Myls() 方法。&quot;); &#125; &#125;&#125; 输出：12这是命名空间 N1 中的 Myls() 方法。请按任意键继续. . . 笔记：《C# 入门到精通》 P18。]]></content>
+      <categories>
+        <category>编程爱好</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[英语口语｜不开心的时候就默念]]></title>
     <url>%2F2019%2F04%2F16%2F190416-01%2F</url>
     <content type="text"><![CDATA[So, where’re you from? Who cares? I can’t go back. you’re an outcast(美 /‘aʊtkæst/adj. 被遗弃的；无家可归的；被逐出的). That great. So are we. What’d you do, kid? Something terrible.But I don’t want to talk about it. Good! We don’t want to hear about it. Come on, Timon. Anything we can do? Not unless you can change the past. You know, kid, in times like this, my buddy(美 /‘bʌdi/n. 伙伴，好朋友；)Timon here says, “You got to put your behind in your past.” No, no, no.. I mean… -Amateur(美 /‘æmə.tʃʊr/n. 爱好者adj. 业余的). Lie down before you hurt yourself. It’s “You got to put your past behind you.” Look, kid, bad things happen, and you can’t do anything about it, right? Right. Wrong! When the world turns its back on you, you turn your back on the world. Well, that’s not what I was taught(美 /tɔt/). Then maybe you need a new lesson. Repeat after me. Hakuna matata. What? Hakuna matata It means “No worries”. Hakuna matata What a wonderful phrase(美 /frez/n. 短语). Hakuna matata Ain’t(prep. 不是) no passing craze. It means no worries. For the rest of your days. It’s our problem-free(一切顺利的) philosophy(英 /fɪ’lɒsəfɪ/n. 哲学；哲理；). Hakuna matata Hakuna matata? Yeah, It’s our motto(美 /‘mɑto/n. 座右铭，). 参考：1.原始地址。]]></content>

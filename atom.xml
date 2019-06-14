@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.andyvj.com/"/>
-  <updated>2019-05-08T12:44:27.615Z</updated>
+  <updated>2019-06-14T15:12:16.652Z</updated>
   <id>https://www.andyvj.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>C# 命名空间</title>
+    <link href="https://www.andyvj.com/2019/06/14/190614-01/"/>
+    <id>https://www.andyvj.com/2019/06/14/190614-01/</id>
+    <published>2019-06-14T15:00:56.000Z</published>
+    <updated>2019-06-14T15:12:16.652Z</updated>
+    
+    <content type="html"><![CDATA[<p>【例22】创建一个控制台应用程序，建立一个命名空间N1，在命名空间N1中有一个类A，在项目然后遇用非某口器指令引入命名空间N1，然后在命名空间LianXi中即可实例化命名空间N1中的类，此类中的Myls方法，代码如下。</p><a id="more"></a><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">using System;</span><br><span class="line">using System.Collections.Generic;</span><br><span class="line">using System.Linq;</span><br><span class="line">using System.Text;</span><br><span class="line">using System.Threading.Tasks;</span><br><span class="line"></span><br><span class="line">using N1;  // 引入命名空间，如果不引入 下面的 A 类会报错报红。</span><br><span class="line"></span><br><span class="line">namespace CSharp</span><br><span class="line">&#123;</span><br><span class="line">    class LianXi</span><br><span class="line">    &#123;</span><br><span class="line">        static void Main(string[] args)</span><br><span class="line">        &#123;</span><br><span class="line">            A oa = new A();</span><br><span class="line">            oa.Myls();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">namespace N1</span><br><span class="line">&#123;</span><br><span class="line">    class A</span><br><span class="line">    &#123;</span><br><span class="line">        public void Myls()</span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine(&quot;这是命名空间 N1 中的 Myls() 方法。&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">这是命名空间 N1 中的 Myls() 方法。</span><br><span class="line">请按任意键继续. . .</span><br></pre></td></tr></table></figure></p><p><hr><br><span style="color:gray;font-size:12px"><br>笔记：<br>《C# 入门到精通》 P18。<br><!--1.[link-01]()2.[link-02]()3.[link-03]()4.[link-04]()5.[link-05]()--><br></span></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;【例22】创建一个控制台应用程序，建立一个命名空间N1，在命名空间N1中有一个类A，在项目然后遇用非某口器指令引入命名空间N1，然后在命名空间LianXi中即可实例化命名空间N1中的类，此类中的Myls方法，代码如下。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="编程爱好" scheme="https://www.andyvj.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
+    
+    
+      <category term="C#" scheme="https://www.andyvj.com/tags/C/"/>
+    
+  </entry>
   
   <entry>
     <title>英语口语｜不开心的时候就默念</title>
@@ -441,29 +463,6 @@ height: 100%; left: 0; top: 0;&quot;&gt; &lt;/iframe&gt;&lt;/div&gt;
     <summary type="html">
     
       &lt;p&gt;&lt;img src=&quot;https://ws1.sinaimg.cn/large/006mcMYXgy1g0wk1ve1e4j30r606m75q.jpg&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="基础学科" scheme="https://www.andyvj.com/categories/%E5%9F%BA%E7%A1%80%E5%AD%A6%E7%A7%91/"/>
-    
-    
-      <category term="数学" scheme="https://www.andyvj.com/tags/%E6%95%B0%E5%AD%A6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>微分的定义</title>
-    <link href="https://www.andyvj.com/2019/03/09/190309-01/"/>
-    <id>https://www.andyvj.com/2019/03/09/190309-01/</id>
-    <published>2019-03-09T06:46:19.000Z</published>
-    <updated>2019-03-15T15:11:14.070Z</updated>
-    
-    <content type="html"><![CDATA[<p><strong>定义  设函数$y=f(x)$在某区间内有定义，$x_0$ 及 $x_0+\Delta x$ 在这区间内，如果增量</strong></p><p>$$<br>\Delta y=f(x_0+\Delta x)-f(x_0)<br>$$</p><a id="more"></a><p><strong>可表示为</strong></p><p>$$<br>\Delta y = A\Delta x+\omicron(\Delta x)<br>$$</p><p><strong>其中 $A$ 是不依赖于$\Delta x$的常数，那么称函数 $y=f(x)$ 在点$x_0$是可微的，而$A\Delta x$叫做函数$y=f(x)$ 在点 $x_0$相应于自变量增量$\Delta x$的微分，记做$d_y$，即</strong></p><p>$$<br>d_y=A\Delta x<br>$$</p><p><a href="https://wx1.sinaimg.cn/large/006mcMYXgy1g0wjwiugg5j30yb1bmao2.jpg" target="_blank" rel="noopener">image</a></p><p><a href="https://ws1.sinaimg.cn/large/006mcMYXgy1g0wjy6o40hj30r915bqby.jpg" target="_blank" rel="noopener">image</a></p><p><a href="https://wx3.sinaimg.cn/large/006mcMYXgy1g0wjz872x5j30r00yljz1.jpg" target="_blank" rel="noopener">image</a></p><p><hr><br><span style="color:gray;font-size:12px"><br>参考：<br>《高等数学》同济六版 -&gt; P113<br></span></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;strong&gt;定义  设函数$y=f(x)$在某区间内有定义，$x_0$ 及 $x_0+\Delta x$ 在这区间内，如果增量&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;$$&lt;br&gt;\Delta y=f(x_0+\Delta x)-f(x_0)&lt;br&gt;$$&lt;/p&gt;
     
     </summary>
     
