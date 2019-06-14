@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[C# 命名空间]]></title>
     <url>%2F2019%2F06%2F14%2F190614-01%2F</url>
-    <content type="text"><![CDATA[【例2.2】创建一个控制台应用程序，建立一个命名空间N1，在命名空间N1中有一个类A，在项目然后遇用非某口器指令引入命名空间N1，然后在命名空间LianXi中即可实例化命名空间N1中的类，此类中的Myls方法，代码如下。 12345678910111213141516171819202122232425262728293031using System;using System.Collections.Generic;using System.Linq;using System.Text;using System.Threading.Tasks;using N1; // 引入命名空间，如果不引入 下面的 A 类会报错报红。namespace CSharp&#123; class LianXi &#123; static void Main(string[] args) &#123; A oa = new A(); oa.Myls(); &#125; &#125;&#125;namespace N1&#123; class A &#123; public void Myls() &#123; Console.WriteLine("这是命名空间 N1 中的 Myls() 方法。"); &#125; &#125;&#125; 输出：12这是命名空间 N1 中的 Myls() 方法。请按任意键继续. . . 笔记：《C# 入门到精通》 P18。]]></content>
+    <content type="text"><![CDATA[【例2.2】创建一个控制台应用程序，建立一个命名空间N1，在命名空间N1中有一个类A，在项目然后遇用非某口器指令引入命名空间N1，然后在命名空间LianXi中即可实例化命名空间N1中的类，此类中的Myls方法，代码如下。 12345678910111213141516171819202122232425262728293031using System;using System.Collections.Generic;using System.Linq;using System.Text;using System.Threading.Tasks;using N1; // 引入命名空间，如果不引入 下面的 Mian 函数内的 A 类会报错报红。namespace CSharp&#123; class LianXi &#123; static void Main(string[] args) &#123; A oa = new A(); oa.Myls(); &#125; &#125;&#125;namespace N1&#123; class A &#123; public void Myls() &#123; Console.WriteLine("这是命名空间 N1 中的 Myls() 方法。"); &#125; &#125;&#125; 输出：12这是命名空间 N1 中的 Myls() 方法。请按任意键继续. . . 笔记：《C# 入门到精通》 P18。]]></content>
       <categories>
         <category>编程爱好</category>
       </categories>
