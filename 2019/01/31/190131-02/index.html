@@ -120,12 +120,12 @@
 <meta property="og:site_name" content="胡搅蛮缠">
 <meta property="og:description" content="主要参考的博客：《github+hexo 搭建个人博客(超详细)》，《GitHub平台上Hexo博客系统的搭建》。过程简略的记录一下，把遇到麻烦的地方写详细点。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://wx2.sinaimg.cn/mw690/006mcMYXgy1fzqok77jz2j30y0062jrv.jpg">
-<meta property="og:updated_time" content="2019-02-19T12:07:25.038Z">
+<meta property="og:image" content="http://image.huvjie.com/190131-02_img01.jpg">
+<meta property="og:updated_time" content="2019-06-22T14:24:59.369Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo+github 博客搭建以及 NexT 主题配置">
 <meta name="twitter:description" content="主要参考的博客：《github+hexo 搭建个人博客(超详细)》，《GitHub平台上Hexo博客系统的搭建》。过程简略的记录一下，把遇到麻烦的地方写详细点。">
-<meta name="twitter:image" content="http://wx2.sinaimg.cn/mw690/006mcMYXgy1fzqok77jz2j30y0062jrv.jpg">
+<meta name="twitter:image" content="http://image.huvjie.com/190131-02_img01.jpg">
 
 
 
@@ -423,7 +423,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-02-19 20:07:25" itemprop="dateModified" datetime="2019-02-19T20:07:25+08:00">2019-02-19</time>
+                <time title="修改时间：2019-06-22 22:24:59" itemprop="dateModified" datetime="2019-06-22T22:24:59+08:00">2019-06-22</time>
               
             
           </span>
@@ -631,7 +631,7 @@
 <p>主题配置<code>:_config.yml</code>中搜索<code>avatar:</code>项目：将其下<code>url:</code>项换成自己的头像链接。</p>
 <h2 id="绑定域名"><a href="#绑定域名" class="headerlink" title="绑定域名"></a>绑定域名</h2><p>申请域名有很多途径，阿里云，腾讯与等都可以，自己注册申请。</p>
 <p>配置有问题是，会收到警告邮件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">The page build completed successfully, but returned the following warning for the `master` branch:</span><br><span class="line"></span><br><span class="line">Your site&apos;s DNS settings are using a custom subdomain, www.andyvj.com, that&apos;s set up as an A record. We recommend you change this to a CNAME record pointing at AndyVJ.github.io. For more information, see https://help.github.com/articles/using-a-custom-domain-with-github-pages/.</span><br><span class="line"></span><br><span class="line">For information on troubleshooting Jekyll see:</span><br><span class="line"></span><br><span class="line">  https://help.github.com/articles/troubleshooting-jekyll-builds</span><br><span class="line"></span><br><span class="line">If you have any questions you can contact us by replying to this email.</span><br></pre></td></tr></table></figure></p>
-<p>相应的主页的<code>设置</code>下的<code>GitHub Pages</code>处也会有警告显示，原因是域名解析没设置对。把<code>CNAME</code>主机记录改成<code>www</code>，具体如下：<br><img src="http://wx2.sinaimg.cn/mw690/006mcMYXgy1fzqok77jz2j30y0062jrv.jpg" alt="域名解析"></p>
+<p>相应的主页的<code>设置</code>下的<code>GitHub Pages</code>处也会有警告显示，原因是域名解析没设置对。把<code>CNAME</code>主机记录改成<code>www</code>，具体如下：<br><img src="http://image.huvjie.com/190131-02_img01.jpg" alt="域名解析"></p>
 <p><a href="https://help.github.com/articles/setting-up-an-apex-domain/#configuring-a-records-with-your-dns-provider" target="_blank" rel="noopener">官方 help 页</a>，<a href="https://help.github.com/articles/troubleshooting-custom-domains/" target="_blank" rel="noopener">官方 help 页1</a>，<a href="https://segmentfault.com/q/1010000011240038" target="_blank" rel="noopener">网友提问</a>，<a href="https://help.github.com/articles/custom-domain-redirects-for-github-pages-sites/" target="_blank" rel="noopener">github help</a>，<a href="https://help.github.com/articles/using-a-custom-domain-with-github-pages/" target="_blank" rel="noopener">github help2</a>。</p>
 <h3 id="生成站点地图收录至搜索引擎"><a href="#生成站点地图收录至搜索引擎" class="headerlink" title="生成站点地图收录至搜索引擎"></a>生成站点地图收录至搜索引擎</h3><p>安装好这两个插件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-sitemap --save    # 用于生成搜索引擎网站地图</span><br><span class="line">npm install hexo-generator-baidu-sitemap --save    # 用于生成百度搜索引擎网站地图</span><br></pre></td></tr></table></figure></p>
 <p>可以参考：（<a href="https://www.jianshu.com/p/9c2d6db2f855" target="_blank" rel="noopener">点击1</a>），（<a href="https://www.jianshu.com/p/f2b648afba2f" target="_blank" rel="noopener">点击2</a>），<a href="https://jingyan.baidu.com/article/a3761b2bf716631576f9aa3a.html" target="_blank" rel="noopener">百度经验</a>。</p>
