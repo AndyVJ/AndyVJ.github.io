@@ -1,3 +1,3 @@
 #! /bin/sh
 
-(hexo g -d && git add . && git commit -m "update" && git push && exit)
+( hexo g -d && git add . && git commit -m "update" && git push && exit )
