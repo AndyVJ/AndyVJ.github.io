@@ -317,8 +317,10 @@ codeblock:
 
 # Reward
 reward_comment: 感谢支持！
-wechatpay: /images/WeChatPay.jpg
-alipay: /images/Alipay.jpg
+#wechatpay: /images/WeChatPay.jpg
+wechatpay: http://image.huvjie.com/weChatPay.jpg
+#alipay: /images/Alipay.jpg
+alipay: http://image.huvjie.com/aliPay.jpg
 #bitcoin: /images/bitcoin.png
 
 # Related popular posts
