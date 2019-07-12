@@ -1,6 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[C# 数组的声明和初始化]]></title>
+    <url>%2F2019%2F07%2F12%2F190712N03%2F</url>
+    <content type="text"><![CDATA[一维数组一12345678910static void Main(string[] args)&#123; int[] arr1 = new int[5]; // 默认初始化为 0 for (int i = 0; i &lt; arr1.Length; i++) &#123; arr1[i] = i; &#125; foreach (int a in arr1) &#123; Console.WriteLine(a); &#125;&#125; 输出： 12345601234请按任意键继续. . . int[]这样一起可以看成是一个类型。 二1234567 static void Main(string[] args)&#123; int[] arr1 = new int[5] &#123; 1, 2, 3, 4, 5 &#125;; foreach (int a in arr1) &#123; Console.WriteLine(a); &#125;&#125; 输出：12345612345请按任意键继续. . . 数组声明定义时，也可以写两行。 12int[] arr1;arr1 = new int[5] &#123; 1, 2, 3, 4, 5 &#125;; 说明：数组大小必须与大括号中的元素个数相匹配，否则会产生编辑错误。 三不使用new运算符，直接初始化。 1234567static void Main(string[] args)&#123; int[] arr1 = &#123; 1, 2, 3, 4, 5 &#125;; // 直接初始化。能自己推断出数组长度。 foreach (int a in arr1) &#123; Console.WriteLine(a); &#125;&#125; 二维数组类似一维数组。 12// 声明一个二行二列的数组int[.] arr=new int[2,2]; 12// 使用 new 运算符对其进行初始化int[,]arr=new int[2,2]&#123; &#123; 1, 2 &#125;, &#123; 3, 4 &#125; &#125;; 12// 不指定行数和列数，用new运算符直接初始化int[,]arr=new int[,]&#123; &#123; 1, 2 &#125;, &#123; 3, 4 &#125; &#125;; 12// 不使用 new 直接初始化int[,] arr = &#123; &#123; 1, 2 &#125;, &#123; 3, 4 &#125; &#125;; 上面如果不指定维度，要用{}分组；上面的如果写成int[,] arr = { 1, 2 , 3, 4 };会报错。C# 二维(多维)数组需要用{}进行分组，不然语法错误。 二维数组下标访问的形式是： 1arr[i, j]; // 下表访问形式]]></content>
+      <categories>
+        <category>编程爱好</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[C# 关于继承和多态]]></title>
+    <url>%2F2019%2F07%2F12%2F190712N02%2F</url>
+    <content type="text"><![CDATA[继承继承一个类时，类成员的可访问性是一个重要的问题。子类（派生类）不能访问基类的私有成员，但是可以访问其公共成员。这就是说，只要使用public声明类成员，就可以让一个类成员被基类和子类（派生类）同时访问，同时也可以被外部的代码访问。 为了解决基类成员访问问题，C# 还提供了另外一种可访问性：protected，只有子类（派生类）才能访问protected成员，基类和外部代码都不能访问protected成员。 除了成员的保护级别外，还可以为成员定义其继承行为。基类的成员可以是虚拟的，成员可以由继承它的类重写。子类（派生类）可以提供成员的其他执行代码，这种执行代码不会删除原来的代码，仍可以在类中访问原来的代码，但外部代码不能访问它们。如果没有提供其他执行方式，外部代码就直接访问基类中成员的执行代码。 另外，基类还可以定义为抽象类。抽象类不能直接实例化，要使用抽象类就必须继承这个类，然后再实例化。 说明：继承类时，需要使用冒号加类名。当对一个类应用sealed修饰符时，该修饰符会阻止其他类从该类继承。 多态当然如果它们都继承自某个类，可以把这些子类（派生类）都放到一个数组中。如果这些对象都有同名方法，就可以调用每个对象的同名方法。 C# 中，类的多态性是通过在子类（派生类）中重载基类的虚方法或函数成员来实现的。 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152using System;using System.Collections.Generic;using System.Linq;using System.Text;using System.Threading.Tasks;namespace 多态小练习&#123; public class MyClass1 &#123; private int x = 0; private int y = 0; public int X &#123; set; get; &#125; public int Y &#123; set; get; &#125; public virtual int Add() &#123; return X + Y; &#125; &#125; public class MyClass2: MyClass1 &#123; public override int Add() &#123; X = 10; Y = 20; return X + Y; &#125; &#125; class Program &#123; static void Main(string[] args) &#123; MyClass2 mc2 = new MyClass2(); Console.WriteLine(mc2.Add()); MyClass1 mc1 = mc2; // 基类可以直接用派生类赋值 mc1.X = 1; mc1.Y = 2; // 上面着两行赋值没有，基类Add()函数已经不复存在了，被重写掉了？？？ Console.WriteLine(mc1.Add()); &#125; &#125;&#125; 输出： 1233030请按任意键继续. . . 说明：当子类（派生类）从基类继承时，它会获得基类的所有方法、字段、属性和事件。若要更改基类的数据和行为，有两种选择：可以使用新的派生成员替换基成员，或者可以重写虚拟的基成员。上面的实例重写了基类中的虚方法，另外，开发人员还可以使用新的派生成员替换基类的成员，这时需要使用new关键字。如果基类定义了一个方法、字段或属性，则new关键字用于在子类（派生类）中创建该方法、字段或属性的新定义。new关键字放置在要替换的类成员的返回类型之前，例如，上面实例中重写基类中虚方法的代码也可以替换为下面的形式。12345678910public class MyClass2: MyClass1&#123; public new int Add() // 这里改成 new &#123; X = 10; Y = 20; return X + Y; &#125;&#125; new 基类中不需要 virtual 来表示，override 只能重写 virtual 标识的虚方法。 1234输出：303 // 不一样了，new 的两个没关系了？？请按任意键继续. . . 注意：① virtual修饰符不能与private、static、abstract或者override修饰符同时使用。② override修饰符不能与new、static或者virtual修饰符同时使用，并且重写方法只能用于重写基类中的虚方法。③ C# 中，继承、虚方法和重写方法组合在一起才能实现多态性。 参考：入门到精通 -&gt; P144]]></content>
+      <categories>
+        <category>编程爱好</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[英语口语｜怎样找一份有意义的工作]]></title>
+    <url>%2F2019%2F07%2F12%2F190712N01%2F</url>
+    <content type="text"><![CDATA[字幕： 参考：1.link-01 // B 站连接]]></content>
+      <categories>
+        <category>基础学科</category>
+      </categories>
+      <tags>
+        <tag>英语</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[C# switch 语句]]></title>
+    <url>%2F2019%2F07%2F10%2F190710N02%2F</url>
+    <content type="text"><![CDATA[1234567891011121314switch([表达式]) &#123; case[常量表达式]: [语句块] break; case[常量表达式]: [语句块] break; ...... case[常量表达式]: [语句块] default: [语句块] break;&#125; 【表达式】：的类型必须是sbyte、byte、short、ushort、int、uint、long、ulong、char、string和枚举类型中的一种。string类型也是可以的。 【说明】：switch语句可以包括任意数目的case实例，但是任何两个case语句都不能具有相同的值。 12345678910111213141516171819202122232425262728293031323334353637383940414243444546using System;using System.Collections.Generic;using System.Linq;using System.Text;namespace Test04&#123; class Program &#123; static void Main(string[] args) &#123; Console.WriteLine("请您输入一个月份："); //输出提示信息 int MyMouth = int.Parse(Console.ReadLine());//声明一个int类型变量用于获取用户输入的数据 string MySeason; //声明一个字符串变量 switch (MyMouth) //调用switch语句 &#123; case 12: case 1: case 2: MySeason = "您输入的月份属于冬季！"; //如果输入的数据是1、2或者12则执行此分支 break; //跳出switch语句 case 3: case 4: case 5: MySeason = "您输入的月份属于春季！"; //如果输入的数据是3、4或5则执行此分支 break; //跳出switch语句 case 6: case 7: case 8: MySeason = "您输入的月份属于夏季！"; //如果输入的数据是6、7或8则执行此分支 break; //跳出switch语句 case 9: case 10: case 11: MySeason = "您输入的月份属于秋季！"; //如果输入的数据是9、10或11则执行此分支 break; //跳出switch语句 //如果输入的数据不满足以上4个分支的内容则执行default语句 default: MySeason = "月份输入错误！"; break; //跳出switch语句 &#125; Console.WriteLine(MySeason); //输出字符串MySeason Console.ReadLine(); &#125; &#125;&#125; 来自： 《入门到精通》 -&gt; P86]]></content>
+      <tags>
+        <tag>C#</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[C# 枚举类型]]></title>
+    <url>%2F2019%2F07%2F10%2F190710N01%2F</url>
+    <content type="text"><![CDATA[枚举类型是一种独特的值类型，它用于声明一组具有相同性质的常量。 说明：在定义枚举类型时，如果不对其进行赋值，默认情况下，第一个枚举数的值为0，后面每个枚举数的值依次递增1。 12345678enum 枚举名 &#123; list1=value1, list2=value2, list3=value3, // ... listN=valueN,&#125; 测试： 123456789101112131415161718192021222324252627282930313233343536373839404142434445using System;namespace CSharp枚举类型&#123; class Program &#123; enum Mydate &#123; Sun,// 这里逗号 Mon, Tu, Wen, Thi, Fri, Sat &#125; // 这里没有分号 static void Main(string[] args) &#123; int d = (int)DateTime.Now.DayOfWeek; switch(d) &#123; case (int)Mydate.Sun: Console.WriteLine("今天是星期天"); break; case (int)Mydate.Mon: Console.WriteLine("今天是星期一"); break; case (int)Mydate.Tu: Console.WriteLine("今天是星期二"); break; case (int)Mydate.Wen: Console.WriteLine("今天是星期三"); break; case (int)Mydate.Thi: Console.WriteLine("今天是星期四"); break; case (int)Mydate.Fri: Console.WriteLine("今天是星期五"); break; case (int)Mydate.Sat: Console.WriteLine("今天是星期六"); break; &#125; &#125; &#125;&#125; 或者： 123456789101112131415161718192021222324252627282930313233343536373839404142434445using System;namespace CSharp枚举类型&#123; class Program &#123; enum Mydate &#123; Sun,// 这里逗号 Mon, Tu, Wen, Thi, Fri, Sat &#125; // 这里没有分号 static void Main(string[] args) &#123; Mydate d = (Mydate)DateTime.Now.DayOfWeek; switch (d) &#123; case Mydate.Sun: Console.WriteLine("今天是星期天"); break; case Mydate.Mon: Console.WriteLine("今天是星期一"); break; case Mydate.Tu: Console.WriteLine("今天是星期二"); break; case Mydate.Wen: Console.WriteLine("今天是星期三"); break; case Mydate.Thi: Console.WriteLine("今天是星期四"); break; case Mydate.Fri: Console.WriteLine("今天是星期五"); break; case Mydate.Sat: Console.WriteLine("今天是星期六"); break; &#125; &#125; &#125;&#125; 参考：《入门到精通》 -&gt; P38]]></content>
+      <categories>
+        <category>编程爱好</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[C# base 和 this 在构造函数中的运用]]></title>
+    <url>%2F2019%2F07%2F09%2F190709N03%2F</url>
+    <content type="text"><![CDATA[public DerivedClass(): this (100){} // 像这样的构造函数。 123456789101112131415161718192021222324252627282930313233343536373839404142434445using System;using System.Collections.Generic;using System.Linq;using System.Text;using System.Threading.Tasks;namespace Base用法&#123; public class BaseClass &#123; public BaseClass () &#123; Console.WriteLine("基类，无参构造函数。"); &#125; public BaseClass(int pars) &#123; Console.WriteLine($"基类，带参数&#123;pars&#125;的构造函数"); &#125; &#125; class DerivedClass : BaseClass &#123; public DerivedClass(int a): base(a) &#123; Console.WriteLine("派生类，带有一个参数的构造函数"); &#125; public DerivedClass(): this (100) // 实际上调用的是上面那个构造函数。没有上面的构造函数，这里的this(100)会出错。 &#123; Console.WriteLine("派生类，没有参数的构造函数，但带this的构造函数。"); &#125; public DerivedClass(int a, int b):base(b) &#123; Console.WriteLine("派生类，带有&#123;0&#125;的参数的构造函数。", a); &#125; static void Main() &#123; DerivedClass test = new DerivedClass(); // 派生类，无参。带this。 Console.WriteLine("========================"); DerivedClass test1 = new DerivedClass(66, 88);// 派生类，常规参数。 &#125; &#125;&#125; 输出： 1234567基类，带参数100的构造函数派生类，带有一个参数的构造函数派生类，没有参数的构造函数，但带this的构造函数。========================基类，带参数88的构造函数派生类，带有66的参数的构造函数。请按任意键继续. . . 通过输出结果，可以很清楚的看到程序构造函数的执行前后顺序。 还有：1.link-012.link-02]]></content>
+      <categories>
+        <category>编程爱好</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[C# base 调用基类方法]]></title>
+    <url>%2F2019%2F07%2F09%2F190709N02%2F</url>
+    <content type="text"><![CDATA[base.TestInfo(); // 调用基类的方法。像这样调用基类的方法。 123456789101112131415161718192021222324252627282930using System;using System.Collections.Generic;using System.Linq;using System.Text;using System.Threading.Tasks;namespace Base用法&#123; public class BaseClass &#123; public virtual void TestInfo() &#123; Console.WriteLine("基类，虚函数…"); &#125; &#125; class DerivedClass : BaseClass &#123; public override void TestInfo() &#123; base.TestInfo(); // 调用基类的方法。 Console.WriteLine("派生类，重写…"); &#125; static void Main(string[] args) &#123; DerivedClass a = new DerivedClass(); a.TestInfo(); &#125; &#125;&#125; 输出： 123基类，虚函数…派生类，重写…请按任意键继续. . . 还有：1.上一篇：base 访问构造函数]]></content>
+      <categories>
+        <category>编程爱好</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[C# base 调用基类构造函数]]></title>
+    <url>%2F2019%2F07%2F09%2F190709N01%2F</url>
+    <content type="text"><![CDATA[1）在实例方法中，通过base关键字可以显示的访问子类对象中的非私有的父类成员。2）调用父类的构造函数。在子类的构造函数的后面的base代表调用父类的构造函数。https://www.cnblogs.com/chenweifeng/p/4753421.html 12345678910111213141516171819202122232425262728293031323334353637using System;using System.Collections.Generic;using System.Linq;using System.Text;using System.Threading.Tasks;namespace Base用法&#123; public class BaseClass &#123; public BaseClass() &#123; Console.WriteLine("基类，无参数构造函数…"); &#125; public BaseClass(string msg) &#123; Console.WriteLine($"基类，有参数&#123;msg&#125;构造函数…"); &#125; &#125; class DerivedClass: BaseClass &#123; public DerivedClass() &#123; Console.WriteLine("派生类，无参数构造函数…"); &#125; public DerivedClass(string msg, string msg1):base (msg) &#123; Console.WriteLine($"派生类，有参数&#123;msg1&#125;构造函数…"); &#125; static void Main(string[] args) &#123; DerivedClass a = new DerivedClass(); Consoles.WriteLine("============"); DerivedClass b = new DerivedClass("Andy", "Hu"); &#125; &#125;&#125; 输出： 123456基类，无参数构造函数…派生类，无参数构造函数…======================基类，有参数Andy构造函数…派生类，有参数Hu构造函数…请按任意键继续. . . 可见，先调用基类的构造函数，后调用继承类的构造函数。 参考：1.C# base和this的用法]]></content>
+      <categories>
+        <category>编程爱好</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[C# 属性]]></title>
     <url>%2F2019%2F07%2F06%2F190706N01%2F</url>
     <content type="text"><![CDATA[123456789访问修饰符 数据类型 属性名&#123; get &#123; return 变量名; &#125; set &#123; 变量名 = value; &#125;&#125; 访问修饰符用来确定属性的可用范围，下面介绍常用的几个访问修饰符。 public：不限制对该属性的访问。protected：只能从其所在类和所在类的子类（派生类）进行访问。internal：只有其所在类才能访问。private：私有访问修饰符，只能在其声明类中使用。 换一种说法： public：对任何类和成员都公开，无限制访问；protected：仅仅对该类以及该类的派生类公开：private：仅仅对该类公开；internal：只能值包含该类的程序集中访问该类； // 同一命名空间 protected internal：只能在本类，派生类或者包含该类的程序集中访问 测试： 123456789101112131415161718192021222324class PTest&#123; static void Main(string[] args) &#123; Program test = new Program(); test.Day = 5; Console.WriteLine(test.Day); &#125;&#125;public class Program&#123; private int day; public int Day &#123; get &#123; return day; &#125; set &#123; // 只能传 0~8 的值 if(value &gt; 0 &amp;&amp; value &lt; 8) &#123; day = value; &#125; &#125; &#125;&#125; 输出：1235如果超出范围，其输出的是默认值 0。 另外：1.关于访问修饰符2.关于属性]]></content>
@@ -518,9 +603,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[UG NX 坐标对齐移动——解决实体与原始坐标不对齐的问题]]></title>
-    <url>%2F2019%2F02%2F19%2F190219-01%2F</url>
-    <content type="text"><![CDATA[有时候通过WAVE链接过来的实体会出现实体与原始坐标不对齐的情况，如： 可以用坐标到坐标移动的方式将实体摆正。 新建与实体对齐的坐标系。 Ctrl + T 移动。 这样后，实体就与原始坐标对齐了：]]></content>
+    <title><![CDATA[UG NX 移动对象之『动态』技巧]]></title>
+    <url>%2F2019%2F02%2F19%2F190219-02%2F</url>
+    <content type="text"><![CDATA[动态绕某一点旋转，而旋转手柄又不在此点上，如何操作？ Ctrl + T 移动对象，勾选只移动手柄，将手柄点选移动到需要旋转的点。 取消勾选只移动手柄，点选手柄节点，输入旋转角度，确定。]]></content>
       <categories>
         <category>机械结构</category>
       </categories>
@@ -529,9 +614,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[UG NX 移动对象之『动态』技巧]]></title>
-    <url>%2F2019%2F02%2F19%2F190219-02%2F</url>
-    <content type="text"><![CDATA[动态绕某一点旋转，而旋转手柄又不在此点上，如何操作？ Ctrl + T 移动对象，勾选只移动手柄，将手柄点选移动到需要旋转的点。 取消勾选只移动手柄，点选手柄节点，输入旋转角度，确定。]]></content>
+    <title><![CDATA[UG NX 坐标对齐移动——解决实体与原始坐标不对齐的问题]]></title>
+    <url>%2F2019%2F02%2F19%2F190219-01%2F</url>
+    <content type="text"><![CDATA[有时候通过WAVE链接过来的实体会出现实体与原始坐标不对齐的情况，如： 可以用坐标到坐标移动的方式将实体摆正。 新建与实体对齐的坐标系。 Ctrl + T 移动。 这样后，实体就与原始坐标对齐了：]]></content>
       <categories>
         <category>机械结构</category>
       </categories>
@@ -576,7 +661,7 @@
   <entry>
     <title><![CDATA[BaiduPCS-Go出现403 Forbidden错误不能下载问题]]></title>
     <url>%2F2019%2F02%2F12%2F190212-01%2F</url>
-    <content type="text"><![CDATA[当使用 BaiduPCS-go 下载时出现下载文件错误, 403 Forbidden错误时，如何解决这个问题？ 一般性配置用登陆过网页版百度网盘并保存过密码的浏览器登录这个网址，会出现如下信息： 1&#123;&quot;error_code&quot;:31064,&quot;error_msg&quot;:&quot;file is not authorized&quot;,&quot;request_id&quot;:xxxxxxxxxxxxxxxxxxxx&#125; 去百度网盘查看：我的应用数据 -&gt; baidu_shurufa。将需要下载的文件移动到这个baidu_shurufa文件夹下，应用下面命令进行配置： 12cd /apps/baidu_shurufa // 进入文件夹config set -appid=265486 // 原理是为了保证输入法的用户体验，输入法的 AppID 不会限速? 配置完成后就可以下载。 还有个问题进行了上面的配置以后，发现一个问题，终端不能进行常规操作了；例如，不能cd切换目录，不能ls查看文件等，出现如下错误：12获取文件/目录的元信息: 遇到错误, 远端服务器返回错误, 代码: 31301, 消息: not stream file 我的解决办法： config set -appid 266719，将 AppID 切换回去。这样后就能进行常规操作了； cd /apps/baidu_shurufa -&gt; config set -appid=265486，再进行一次这样的配置，就可以下载。 这样有点繁琐，还没找到其他更好的办法，也至少能用了。 两个命令 使用百度 BDUSS 来登录百度帐号: login -bduss=&lt;BDUSS&gt;。 // 去浏览器中找到百度的 cookie，BDUSS。 h，查看帮助。 参考：1. link-012. BaiduPCS-go github 地址 README // 有详细使用方法]]></content>
+    <content type="text"><![CDATA[当使用 BaiduPCS-go 下载时出现下载文件错误, 403 Forbidden错误时，如何解决这个问题？ 一般性配置用登陆过网页版百度网盘并保存过密码的浏览器登录这个网址，会出现如下信息： 1&#123;&quot;error_code&quot;:31064,&quot;error_msg&quot;:&quot;file is not authorized&quot;,&quot;request_id&quot;:xxxxxxxxxxxxxxxxxxxx&#125; 去百度网盘查看：我的应用数据 -&gt; baidu_shurufa。将需要下载的文件移动到这个baidu_shurufa文件夹下，应用下面命令进行配置： 123cd /apps/baidu_shurufa // 进入文件夹config set -appid=265486 // 原理是为了保证输入法的用户体验，输入法的 AppID 不会限速?config set -max_parallel=300 // 非必须。最大并发量 = 300，提高下载速度。 配置完成后就可以下载。 还有个问题进行了上面的配置以后，发现一个问题，终端不能进行常规操作了；例如，不能cd切换目录，不能ls查看文件等，出现如下错误：12获取文件/目录的元信息: 遇到错误, 远端服务器返回错误, 代码: 31301, 消息: not stream file 我的解决办法： config set -appid 266719，将 AppID 切换回去。这样后就能进行常规操作了； cd /apps/baidu_shurufa -&gt; config set -appid=265486，再进行一次这样的配置，就可以下载。 这样有点繁琐，还没找到其他更好的办法，也至少能用了。 两个命令 使用百度 BDUSS 来登录百度帐号: login -bduss=&lt;BDUSS&gt;。 // 去浏览器中找到百度的 cookie，BDUSS。 h，查看帮助。 参考：1. link-012. BaiduPCS-go github 地址 README // 有详细使用方法]]></content>
       <categories>
         <category>其他</category>
       </categories>
