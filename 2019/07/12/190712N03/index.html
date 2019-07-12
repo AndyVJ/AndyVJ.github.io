@@ -120,7 +120,7 @@
 <meta property="og:site_name" content="胡搅蛮缠">
 <meta property="og:description" content="一维数组一12345678910static void Main(string[] args)&amp;#123;    int[] arr1 = new int[5]; // 默认初始化为 0    for (int i = 0; i &amp;lt; arr1.Length; i++) &amp;#123;        arr1[i] = i;    &amp;#125;    foreach (int a in arr1">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-12T11:52:17.247Z">
+<meta property="og:updated_time" content="2019-07-12T11:59:34.898Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C# 数组的声明和初始化">
 <meta name="twitter:description" content="一维数组一12345678910static void Main(string[] args)&amp;#123;    int[] arr1 = new int[5]; // 默认初始化为 0    for (int i = 0; i &amp;lt; arr1.Length; i++) &amp;#123;        arr1[i] = i;    &amp;#125;    foreach (int a in arr1">
@@ -404,7 +404,7 @@
                 
               
 
-              <time title="创建时间：2019-07-12 18:43:29 / 修改时间：19:52:17" itemprop="dateCreated datePublished" datetime="2019-07-12T18:43:29+08:00">2019-07-12</time>
+              <time title="创建时间：2019-07-12 18:43:29 / 修改时间：19:59:34" itemprop="dateCreated datePublished" datetime="2019-07-12T18:43:29+08:00">2019-07-12</time>
             
 
             
@@ -494,7 +494,7 @@
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 使用 new 运算符对其进行初始化</span></span><br><span class="line"><span class="keyword">int</span>[,]arr=<span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">2</span>,<span class="number">2</span>]&#123; &#123; <span class="number">1</span>, <span class="number">2</span> &#125;, &#123; <span class="number">3</span>, <span class="number">4</span> &#125; &#125;;</span><br></pre></td></tr></table></figure>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 不指定行数和列数，用new运算符直接初始化</span></span><br><span class="line"><span class="keyword">int</span>[,]arr=<span class="keyword">new</span> <span class="keyword">int</span>[,]&#123; &#123; <span class="number">1</span>, <span class="number">2</span> &#125;, &#123; <span class="number">3</span>, <span class="number">4</span> &#125; &#125;;</span><br></pre></td></tr></table></figure>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 不使用 new 直接初始化</span></span><br><span class="line"><span class="keyword">int</span>[,] arr =  &#123; &#123; <span class="number">1</span>, <span class="number">2</span> &#125;, &#123; <span class="number">3</span>, <span class="number">4</span> &#125; &#125;;</span><br></pre></td></tr></table></figure>
-<p>上面如果不指定维度，要用<code>{}</code>分组；上面的如果写成<code>int[,] arr =  { 1, 2 , 3, 4 };</code>会报错。<span style="color:red">C# 二维(多维)数组需要用<code>{}</code>进行分组，不然语法错误。</span></p>
+<p>上面如果不指定维度，要用<code>{}</code>分组；上面的如果写成<code>{ 1, 2 , 3, 4 };</code>会报错。<span style="color:red">C# 二维(多维)数组内需要用<code>{}</code>进行分组，不然语法错误。</span></p>
 <p>二维数组下标访问的形式是：</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arr[i, j];  <span class="comment">// 下表访问形式</span></span><br></pre></td></tr></table></figure>
 <!--
