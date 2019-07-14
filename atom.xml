@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.andyvj.com/"/>
-  <updated>2019-07-12T11:59:34.898Z</updated>
+  <updated>2019-07-14T13:03:01.202Z</updated>
   <id>https://www.andyvj.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>C# 结构</title>
+    <link href="https://www.andyvj.com/2019/07/14/190714N01/"/>
+    <id>https://www.andyvj.com/2019/07/14/190714N01/</id>
+    <published>2019-07-14T12:56:33.000Z</published>
+    <updated>2019-07-14T13:03:01.202Z</updated>
+    
+    <content type="html"><![CDATA[<p>结构就是几个数据组成的数据结构，<strong>它与类共享几乎所有相同的语法</strong>，但结构比类受<strong>到的限制更多</strong>。</p><a id="more"></a><p>结构是一种<strong>值的类型</strong>，通常用来封装一组相关的变量，结构中可以包括构造函数、常量、字段、方法、属性、运算符、事件和嵌套类型等。但如果要同时包括上述几种成员，则应该考虑使用类。结构实际是将多个相关的变量包装成为一个整体使用。在结构体中的变量，可以是相同、部分相同，或完全不同的数据类型。例如，把公司里的职员看作一个结构体，可以将个人信息放入结构体中，主要包含姓名、年龄、出生年月、性别、籍贯、婚否、职务。</p><p>在 C# 中的结构与传统的 C 或 C++ 中的结构不同。结构具有以下特点：</p><ul><li>结构是<strong>值</strong>的类型。</li><li>向方法传递结构时，结构是通过传值方式传递的，而不是作为引用传递的。</li><li>结构的实例化可以不使用new运算符。结构可以<strong>声明构造函数，但它们必须带参数。</strong>当您使用 New 操作符创建一个结构对象时，会调用适当的构造函数来创建结构。</li><li>如果不使用 New 操作符，只有在所有的字段都被初始化之后，字段才被赋值，对象才被使用。</li><li>一个结构<span style="color:red">不能</span>从另一个结构或类继承。所有结构都直接继承自<code>System.ValueType</code>，后者继承自<code>System.Object</code>。</li><li>结构可以实现接口。接口可实现一个或多个接口。</li><li>在结构中初始化实例字段是错误的。<span style="color:blue">// 不能在结构中初始化字段。</span></li><li>结构成员不能指定为 <code>abstract</code>、<code>virtual</code> 或<code>protected</code>。</li></ul><p>说明:</p><p>在结构声明中，除非字段被声明为<code>const或static</code>，否则无法初始化。</p><p>实例：</p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title">Program</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">struct</span> Rect<span class="comment">//定义一个矩形结构</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">double</span> width;<span class="comment">//矩形的宽</span></span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">double</span> height;<span class="comment">//矩形的高</span></span><br><span class="line">        </span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Rect</span>(<span class="params"><span class="keyword">double</span> x, <span class="keyword">double</span> y</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            width = x;</span><br><span class="line">            height = y;</span><br><span class="line">        &#125;</span><br><span class="line">       </span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">Area</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            <span class="keyword">return</span> width * height;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="keyword">string</span>[] args</span>)</span></span><br><span class="line"><span class="function"></span>    &#123;</span><br><span class="line">        Rect rect1;<span class="comment">//创建矩形结构</span></span><br><span class="line">        rect1.width = <span class="number">5</span>;<span class="comment">//为矩形宽赋值</span></span><br><span class="line">        rect1.height = <span class="number">3</span>;<span class="comment">//为矩形高赋值</span></span><br><span class="line">        Console.WriteLine(<span class="string">"矩形面积为："</span> + rect1.Area());</span><br><span class="line">        Rect rect2 = <span class="keyword">new</span> Rect(<span class="number">6</span>, <span class="number">4</span>);<span class="comment">//使用构造函数实例化矩形结构</span></span><br><span class="line">        Console.WriteLine(<span class="string">"矩形面积为："</span> + rect2.Area());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>输出：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">矩形面积为：15</span><br><span class="line">矩形面积为：24</span><br><span class="line">请按任意键继续. . .</span><br></pre></td></tr></table></figure><p><strong>类</strong>和<strong>结构</strong>有以下几个基本的不同点：</p><ul><li>类是引用类型，结构是值类型。</li><li>结构不支持继承。</li><li>结构不能声明默认的构造函数。</li></ul><p><hr><br><span style="color:gray;font-size:12px"><br>参考：<br>1.<a href="https://www.runoob.com/csharp/csharp-struct.html" target="_blank" rel="noopener">link-01</a>  // 菜鸟教程<br>《入门到精通》 -&gt; P142<br></span></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;结构就是几个数据组成的数据结构，&lt;strong&gt;它与类共享几乎所有相同的语法&lt;/strong&gt;，但结构比类受&lt;strong&gt;到的限制更多&lt;/strong&gt;。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="编程爱好" scheme="https://www.andyvj.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
+    
+    
+      <category term="C#" scheme="https://www.andyvj.com/tags/C/"/>
+    
+  </entry>
   
   <entry>
     <title>C# 数组的声明和初始化</title>
@@ -436,28 +458,6 @@ height: 100%; left: 0; top: 0;&quot;&gt; &lt;/iframe&gt;&lt;/div&gt;
     
       &lt;p&gt;FX2N PLC 输入输出接线图：&lt;/p&gt;
 &lt;p&gt;在前面分别讲述了FX2N系列PLC的输入端或者输出端的接线图,如图2-10所示,是FX2N-32MT完整的输入输出接线图。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="电子电气" scheme="https://www.andyvj.com/categories/%E7%94%B5%E5%AD%90%E7%94%B5%E6%B0%94/"/>
-    
-    
-      <category term="三菱PLC" scheme="https://www.andyvj.com/tags/%E4%B8%89%E8%8F%B1PLC/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>三菱 FX2N 通过中间继电器控制的接线方式</title>
-    <link href="https://www.andyvj.com/2019/03/21/190321-03/"/>
-    <id>https://www.andyvj.com/2019/03/21/190321-03/</id>
-    <published>2019-03-21T09:02:12.000Z</published>
-    <updated>2019-05-12T09:00:53.127Z</updated>
-    
-    <content type="html"><![CDATA[<p>【例2-3】有一台FX2N-32M,控制两台步进电动机和一台三相异步电动机的启停,三相电动机的启停由一只接触器控制,接触器的线圈电压为220V AC,输出端应如何接线(步进电动机部分的接线可以省略) ?</p><a id="more"></a><p>【解】 因为要控制两台步进电动机,所以要选用晶体管输出的PLC,而且必须用Y0和Y1作为输出高速脉冲点控制步进电动机。但接触器的线圈电压为220V AC,所以电路要经过转换,增加中间继电器KA,其接线如图2-9所示。</p><p><img src="http://image.huvjie.com/190321-03_img01.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 图2-9 例2-3接线图</div><p>关于<a href="https://baike.baidu.com/item/%E6%8E%A5%E8%A7%A6%E5%99%A8/1516538?fr=aladdin" target="_blank" rel="noopener">接触器</a>，关于<a href="https://www.diangon.com/m401431.html" target="_blank" rel="noopener">接触器和继电器</a>的<a href="https://www.sohu.com/a/205186172_648025" target="_blank" rel="noopener">区别</a>。</p><p><hr><br><span style="color:gray;font-size:12px"><br>参考：P14<br></span></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;【例2-3】有一台FX2N-32M,控制两台步进电动机和一台三相异步电动机的启停,三相电动机的启停由一只接触器控制,接触器的线圈电压为220V AC,输出端应如何接线(步进电动机部分的接线可以省略) ?&lt;/p&gt;
     
     </summary>
     
