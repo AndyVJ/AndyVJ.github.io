@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.andyvj.com/"/>
-  <updated>2019-07-14T13:03:01.202Z</updated>
+  <updated>2019-07-19T11:30:40.140Z</updated>
   <id>https://www.andyvj.com/</id>
   
   <author>
@@ -15,6 +15,52 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>路漫漫</title>
+    <link href="https://www.andyvj.com/2019/07/19/190719N/"/>
+    <id>https://www.andyvj.com/2019/07/19/190719N/</id>
+    <published>2019-07-19T05:28:37.000Z</published>
+    <updated>2019-07-19T11:30:40.140Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://image.huvjie.com/190719N_img01.jpg" alt=""></p><a id="more"></a><p>路漫漫…</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://image.huvjie.com/190719N_img01.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="其他" scheme="https://www.andyvj.com/categories/%E5%85%B6%E4%BB%96/"/>
+    
+    
+      <category term="点滴" scheme="https://www.andyvj.com/tags/%E7%82%B9%E6%BB%B4/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>C# 匿名方法 和 lambda 表达式</title>
+    <link href="https://www.andyvj.com/2019/07/16/190716N01/"/>
+    <id>https://www.andyvj.com/2019/07/16/190716N01/</id>
+    <published>2019-07-16T04:46:01.000Z</published>
+    <updated>2019-07-19T11:30:40.135Z</updated>
+    
+    <content type="html"><![CDATA[<p>匿名只是用一次。以后用的都是 lambda 表达式，一般很少会用匿名方法。</p><p>给委托赋值的时候才会用到它。有<span style="color:blue">委托变量</span>时才会用。</p><p><span style="color:red">匿名方法不能直接在类中定义</span>，而是在给委托变量赋值的时候，需要赋值一个方法，此时可以“现做现卖”，定义一个匿名方法传递给该委托。</p><a id="more"></a><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ProcessWordDelegate p = <span class="keyword">delegate</span>(<span class="keyword">string</span> s)</span><br><span class="line">    Console. WriteLine(s);</span><br><span class="line">&#125;; <span class="comment">// 注意这里有分号</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">delegate</span> <span class="keyword">void</span> <span class="title">ProcessWordDelegate</span>(<span class="params"><span class="keyword">string</span> s</span>)</span>;</span><br></pre></td></tr></table></figure><h2 id="无参数无返回值"><a href="#无参数无返回值" class="headerlink" title="无参数无返回值"></a>无参数无返回值</h2><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="keyword">string</span>[] args</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Action Test = <span class="keyword">delegate</span> () &#123;</span><br><span class="line">        Console.WriteLine(<span class="string">"匿名方法:无参数无返回值。"</span>);</span><br><span class="line">    &#125;;</span><br><span class="line">    Test();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>改成 lambda 表达式：</p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="keyword">string</span>[] args</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Action Test =  () =&gt; &#123;</span><br><span class="line">        Console.WriteLine(<span class="string">"匿名方法:无参数无返回值。"</span>);</span><br><span class="line">    &#125;;</span><br><span class="line">    Test();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">匿名方法:无参数无返回值。</span><br><span class="line">请按任意键继续. . .</span><br></pre></td></tr></table></figure></p><h2 id="有参数无返回值"><a href="#有参数无返回值" class="headerlink" title="有参数无返回值"></a>有参数无返回值</h2><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="keyword">string</span>[] args</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Action&lt;<span class="keyword">string</span>&gt; Test = <span class="keyword">delegate</span> (<span class="keyword">string</span> msg) &#123;</span><br><span class="line">        Console.WriteLine(<span class="string">"匿名方法:"</span> + msg);</span><br><span class="line">    &#125;;</span><br><span class="line">    Test(<span class="string">"有参数无返回值"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>改成 lambda 表达式：</p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="keyword">string</span>[] args</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Action&lt;<span class="keyword">string</span>&gt; Test =  (<span class="keyword">string</span> msg) =&gt; &#123;</span><br><span class="line">        Console.WriteLine(<span class="string">"匿名方法:"</span> + msg);</span><br><span class="line">    &#125;;</span><br><span class="line">    Test(<span class="string">"有参数无返回值"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>输出：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">匿名方法:有参数无返回值</span><br><span class="line">请按任意键继续. . .</span><br></pre></td></tr></table></figure><h2 id="带参数带返回值"><a href="#带参数带返回值" class="headerlink" title="带参数带返回值"></a>带参数带返回值</h2><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="keyword">string</span>[] args</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Func&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; Test = <span class="keyword">delegate</span> (<span class="keyword">int</span> a) &#123; <span class="keyword">return</span> a; &#125;;</span><br><span class="line">    Console.WriteLine(Test(<span class="number">100</span>));</span><br><span class="line"></span><br><span class="line">    Func&lt;<span class="keyword">int</span>&gt; Test1 = <span class="keyword">delegate</span> &#123; <span class="keyword">return</span> <span class="number">200</span>; &#125;;</span><br><span class="line">    Console.WriteLine(Test1());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>改成 lambda 表达式：</p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="keyword">string</span>[] args</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Func&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; Test =  (<span class="keyword">int</span> a) =&gt; &#123; <span class="keyword">return</span> a; &#125;;</span><br><span class="line">    Console.WriteLine(Test(<span class="number">100</span>));</span><br><span class="line"></span><br><span class="line">    Func&lt;<span class="keyword">int</span>&gt; Test1 = ()=&gt; &#123; <span class="keyword">return</span> <span class="number">200</span>; &#125;;</span><br><span class="line">    Console.WriteLine(Test1());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>输出：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">100</span><br><span class="line">200</span><br><span class="line">请按任意键继续. . .</span><br></pre></td></tr></table></figure><p><hr><br><span style="color:gray;font-size:12px"><br>参考：<br>1.<a href="https://www.bilibili.com/video/av24227074?p=2" target="_blank" rel="noopener">link-01</a> // B 站传智播客<br></span></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;匿名只是用一次。以后用的都是 lambda 表达式，一般很少会用匿名方法。&lt;/p&gt;
+&lt;p&gt;给委托赋值的时候才会用到它。有&lt;span style=&quot;color:blue&quot;&gt;委托变量&lt;/span&gt;时才会用。&lt;/p&gt;
+&lt;p&gt;&lt;span style=&quot;color:red&quot;&gt;匿名方法不能直接在类中定义&lt;/span&gt;，而是在给委托变量赋值的时候，需要赋值一个方法，此时可以“现做现卖”，定义一个匿名方法传递给该委托。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="编程爱好" scheme="https://www.andyvj.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
+    
+    
+      <category term="C#" scheme="https://www.andyvj.com/tags/C/"/>
+    
+  </entry>
   
   <entry>
     <title>C# 结构</title>
@@ -420,51 +466,6 @@ height: 100%; left: 0; top: 0;&quot;&gt; &lt;/iframe&gt;&lt;/div&gt;
     
     
       <category term="材料" scheme="https://www.andyvj.com/tags/%E6%9D%90%E6%96%99/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>FX3U 系列 PLC 模块的接线</title>
-    <link href="https://www.andyvj.com/2019/03/21/190321-05/"/>
-    <id>https://www.andyvj.com/2019/03/21/190321-05/</id>
-    <published>2019-03-21T11:29:00.000Z</published>
-    <updated>2019-05-09T13:30:41.521Z</updated>
-    
-    <content type="html"><![CDATA[<p>在讲解FX3U系列PLC基本模块前,先要熟悉基本模块的接线端子。FX系列的接线端子(以FX3U-32MR为例)一般由上下两排交错分布,如图2-13所示,这样排列方便接线,接线时一般先接下面一排(对于输入端,先接X0.X2、X4.X6…接线端子,后接X1.X3.X5.X7…接线端子)。图2-13中, “1”处的三个接线端子是基本模块的交流电源接线端子其中L接交流电源的火线, N接交流电源的零线,〨接交流电源的地线: “2”处的24V是基本模块输出的DC24V电源的+24v,这个电源可供传感器使用,也可供扩展模块使用,但通常不建议使用此电源; “3”处的接线端子是数字量输入接线端子,通常与按钮、开关量的传感器相连:”4”处的圆点表示此处是空白端子,不用;很明显“5”处的粗线是分割线,将第  ,三组输出点和第四组输出点分开; “6”处的Y5是数字量输出端子; “7”处的COM1是第-组输出端的公共接线端子,这个公共接线端子是输出点Y0、Y1、Y2、Y3的公共接线端子。</p><a id="more"></a><p><img src="http://image.huvjie.com/190321-05_img01.jpg" alt=""></p><p>FX3U系列PLC基本模块的输入端是NPN (漏型,低电平有效)输入和PNP (源型,高电平有效)输入可选,只要改换不同的接线即可选择不同的输入形式。当输入端与数字量传感器相连时,能使用NPN和PNP型传感器, FX3U的输入端在连接按钮时,并不需要外接电源。FX3U系列PLC的输入端的接线示例如图2-14~图2-17所示,不难看出FX3U系列PLC基本模块的输入端接线和FX2N系列PLC基本模块的输入端有所不同。</p><p>如图2-14所示,模块供电电源为交流电,输入端是漏型接法, 24V端子与SS端子短接,0V端子是输入端的公共端子,这种接法是低电平有效,也叫NPN输入。</p><p><img src="http://image.huvjie.com/190321-05_img02.jpg" alt=""></p><p>如图2-15所示,模块供电电源为交流电,输入端是源型接法, 0v端子与SS端子短接,24V端子是输入端的公共端子,这种接法是高电平有效,也叫PNP输入。</p><p>如图2-16所示,模块供电电源为直流电,输入端是漏型接法, SS端子与模块供电电沉的24V短接,模块供电电源0V是输入端的公共端子,这种接法是低电平有效,也叫NPN输入。  </p><p><img src="http://image.huvjie.com/190321-05_img03.jpg" alt=""></p><p>如图2-17所示,模块供电电源为直流电,输入端是源型接法, SS端子与模块供电电源的0V短接,模块供电电源24V是输入端的公共端子,这种接法是高电平有效,也叫PNP输入。</p><p>FX3U系列中还有AC100V输入型PLC,也就是输入端使用不超过120V的交流电源其接线图如图2-18所示。</p><p><img src="http://image.huvjie.com/190321-05_img04.jpg" alt=""><br><img src="http://image.huvjie.com/190321-05_img05.jpg" alt=""></p><p><strong><em>【关键点】 FX系列PLC的输入端和PLC的供电电源很近,特别是使用交流电源时,要注意不要把交流电误接入到信号端子。</em></strong></p><p><hr><br><span style="color:gray;font-size:12px"><br>参考：P17<br></span></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;在讲解FX3U系列PLC基本模块前,先要熟悉基本模块的接线端子。FX系列的接线端子(以FX3U-32MR为例)一般由上下两排交错分布,如图2-13所示,这样排列方便接线,接线时一般先接下面一排(对于输入端,先接X0.X2、X4.X6…接线端子,后接X1.X3.X5.X7…接线端子)。图2-13中, “1”处的三个接线端子是基本模块的交流电源接线端子其中L接交流电源的火线, N接交流电源的零线,〨接交流电源的地线: “2”处的24V是基本模块输出的DC24V电源的+24v,这个电源可供传感器使用,也可供扩展模块使用,但通常不建议使用此电源; “3”处的接线端子是数字量输入接线端子,通常与按钮、开关量的传感器相连:”4”处的圆点表示此处是空白端子,不用;很明显“5”处的粗线是分割线,将第  ,三组输出点和第四组输出点分开; “6”处的Y5是数字量输出端子; “7”处的COM1是第-组输出端的公共接线端子,这个公共接线端子是输出点Y0、Y1、Y2、Y3的公共接线端子。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="电子电气" scheme="https://www.andyvj.com/categories/%E7%94%B5%E5%AD%90%E7%94%B5%E6%B0%94/"/>
-    
-    
-      <category term="三菱PLC" scheme="https://www.andyvj.com/tags/%E4%B8%89%E8%8F%B1PLC/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>FX2N PLC 输入输出接线图</title>
-    <link href="https://www.andyvj.com/2019/03/21/190321-04/"/>
-    <id>https://www.andyvj.com/2019/03/21/190321-04/</id>
-    <published>2019-03-21T09:27:56.000Z</published>
-    <updated>2019-05-12T09:00:53.132Z</updated>
-    
-    <content type="html"><![CDATA[<p>FX2N PLC 输入输出接线图：</p><p>在前面分别讲述了FX2N系列PLC的输入端或者输出端的接线图,如图2-10所示,是FX2N-32MT完整的输入输出接线图。</p><a id="more"></a><p><img src="http://image.huvjie.com/190321-04_img01.jpg" alt="image"></p><div style="font-size:13px;color:gray;text-align:center">▲ 图2-10 FX2N系列PLC的接线</div><p><hr><br><span style="color:gray;font-size:12px"><br>参考：P14<br></span></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;FX2N PLC 输入输出接线图：&lt;/p&gt;
-&lt;p&gt;在前面分别讲述了FX2N系列PLC的输入端或者输出端的接线图,如图2-10所示,是FX2N-32MT完整的输入输出接线图。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="电子电气" scheme="https://www.andyvj.com/categories/%E7%94%B5%E5%AD%90%E7%94%B5%E6%B0%94/"/>
-    
-    
-      <category term="三菱PLC" scheme="https://www.andyvj.com/tags/%E4%B8%89%E8%8F%B1PLC/"/>
     
   </entry>
   

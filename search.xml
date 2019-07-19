@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[路漫漫]]></title>
+    <url>%2F2019%2F07%2F19%2F190719N%2F</url>
+    <content type="text"><![CDATA[路漫漫…]]></content>
+      <categories>
+        <category>其他</category>
+      </categories>
+      <tags>
+        <tag>点滴</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[C# 匿名方法 和 lambda 表达式]]></title>
+    <url>%2F2019%2F07%2F16%2F190716N01%2F</url>
+    <content type="text"><![CDATA[匿名只是用一次。以后用的都是 lambda 表达式，一般很少会用匿名方法。 给委托赋值的时候才会用到它。有委托变量时才会用。 匿名方法不能直接在类中定义，而是在给委托变量赋值的时候，需要赋值一个方法，此时可以“现做现卖”，定义一个匿名方法传递给该委托。 12345ProcessWordDelegate p = delegate(string s) Console. WriteLine(s);&#125;; // 注意这里有分号public delegate void ProcessWordDelegate(string s); 无参数无返回值1234567static void Main(string[] args)&#123; Action Test = delegate () &#123; Console.WriteLine("匿名方法:无参数无返回值。"); &#125;; Test();&#125; 改成 lambda 表达式： 1234567static void Main(string[] args)&#123; Action Test = () =&gt; &#123; Console.WriteLine("匿名方法:无参数无返回值。"); &#125;; Test();&#125; 输出：12匿名方法:无参数无返回值。请按任意键继续. . . 有参数无返回值1234567static void Main(string[] args)&#123; Action&lt;string&gt; Test = delegate (string msg) &#123; Console.WriteLine("匿名方法:" + msg); &#125;; Test("有参数无返回值");&#125; 改成 lambda 表达式： 1234567static void Main(string[] args)&#123; Action&lt;string&gt; Test = (string msg) =&gt; &#123; Console.WriteLine("匿名方法:" + msg); &#125;; Test("有参数无返回值");&#125; 输出： 12匿名方法:有参数无返回值请按任意键继续. . . 带参数带返回值12345678static void Main(string[] args)&#123; Func&lt;int, int&gt; Test = delegate (int a) &#123; return a; &#125;; Console.WriteLine(Test(100)); Func&lt;int&gt; Test1 = delegate &#123; return 200; &#125;; Console.WriteLine(Test1());&#125; 改成 lambda 表达式： 12345678static void Main(string[] args)&#123; Func&lt;int, int&gt; Test = (int a) =&gt; &#123; return a; &#125;; Console.WriteLine(Test(100)); Func&lt;int&gt; Test1 = ()=&gt; &#123; return 200; &#125;; Console.WriteLine(Test1());&#125; 输出： 123100200请按任意键继续. . . 参考：1.link-01 // B 站传智播客]]></content>
+      <categories>
+        <category>编程爱好</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[C# 结构]]></title>
     <url>%2F2019%2F07%2F14%2F190714N01%2F</url>
     <content type="text"><![CDATA[结构就是几个数据组成的数据结构，它与类共享几乎所有相同的语法，但结构比类受到的限制更多。 结构是一种值的类型，通常用来封装一组相关的变量，结构中可以包括构造函数、常量、字段、方法、属性、运算符、事件和嵌套类型等。但如果要同时包括上述几种成员，则应该考虑使用类。结构实际是将多个相关的变量包装成为一个整体使用。在结构体中的变量，可以是相同、部分相同，或完全不同的数据类型。例如，把公司里的职员看作一个结构体，可以将个人信息放入结构体中，主要包含姓名、年龄、出生年月、性别、籍贯、婚否、职务。 在 C# 中的结构与传统的 C 或 C++ 中的结构不同。结构具有以下特点： 结构是值的类型。 向方法传递结构时，结构是通过传值方式传递的，而不是作为引用传递的。 结构的实例化可以不使用new运算符。结构可以声明构造函数，但它们必须带参数。当您使用 New 操作符创建一个结构对象时，会调用适当的构造函数来创建结构。 如果不使用 New 操作符，只有在所有的字段都被初始化之后，字段才被赋值，对象才被使用。 一个结构不能从另一个结构或类继承。所有结构都直接继承自System.ValueType，后者继承自System.Object。 结构可以实现接口。接口可实现一个或多个接口。 在结构中初始化实例字段是错误的。// 不能在结构中初始化字段。 结构成员不能指定为 abstract、virtual 或protected。 说明: 在结构声明中，除非字段被声明为const或static，否则无法初始化。 实例： 1234567891011121314151617181920212223242526272829class Program&#123; public struct Rect//定义一个矩形结构 &#123; public double width;//矩形的宽 public double height;//矩形的高 public Rect(double x, double y) &#123; width = x; height = y; &#125; public double Area() &#123; return width * height; &#125; &#125; static void Main(string[] args) &#123; Rect rect1;//创建矩形结构 rect1.width = 5;//为矩形宽赋值 rect1.height = 3;//为矩形高赋值 Console.WriteLine("矩形面积为：" + rect1.Area()); Rect rect2 = new Rect(6, 4);//使用构造函数实例化矩形结构 Console.WriteLine("矩形面积为：" + rect2.Area()); &#125;&#125; 输出： 123矩形面积为：15矩形面积为：24请按任意键继续. . . 类和结构有以下几个基本的不同点： 类是引用类型，结构是值类型。 结构不支持继承。 结构不能声明默认的构造函数。 参考：1.link-01 // 菜鸟教程《入门到精通》 -&gt; P142]]></content>
