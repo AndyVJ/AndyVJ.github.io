@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.andyvj.com/"/>
-  <updated>2019-07-19T15:19:27.934Z</updated>
+  <updated>2019-07-24T13:03:58.912Z</updated>
   <id>https://www.andyvj.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>C# StopWatch</title>
+    <link href="https://www.andyvj.com/2019/07/24/190724N01/"/>
+    <id>https://www.andyvj.com/2019/07/24/190724N01/</id>
+    <published>2019-07-24T12:54:07.000Z</published>
+    <updated>2019-07-24T13:03:58.912Z</updated>
+    
+    <content type="html"><![CDATA[<p><code>StopWatch</code> 在 <code>using System.Diagnostics</code> 命名空间，需先引用。</p><a id="more"></a><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Diagnostics;</span><br><span class="line"></span><br><span class="line">namespace StopWatch计时</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">class</span> <span class="title">Program</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            <span class="comment">//▼ 创建一个Stopwatch实例</span></span><br><span class="line">            Stopwatch stopWatch = <span class="keyword">new</span> Stopwatch();</span><br><span class="line">            stopWatch.Start(); <span class="comment">//开始计时</span></span><br><span class="line"></span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">200</span>; i++) &#123;</span><br><span class="line">                Console.Write(i + <span class="string">" "</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            Console.WriteLine();</span><br><span class="line"></span><br><span class="line">            stopWatch.Stop();  <span class="comment">//停止计时</span></span><br><span class="line"></span><br><span class="line">            Console.WriteLine(<span class="string">"耗时："</span> + stopWatch.ElapsedMilliseconds + <span class="string">" ms  "</span>);</span><br><span class="line">            stopWatch.Reset();   <span class="comment">//重置StopWatch</span></span><br><span class="line">            Console.WriteLine(<span class="string">"耗时："</span> + stopWatch.ElapsedMilliseconds + <span class="string">" ms  "</span>);</span><br><span class="line">            stopWatch.Restart();  <span class="comment">//重新启动被停止的StopWatch</span></span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">100</span>; i++) &#123;</span><br><span class="line">                Console.Write(i + <span class="string">" "</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            Console.WriteLine();</span><br><span class="line">            stopWatch.Stop();</span><br><span class="line">            <span class="comment">// ▼ 获取stopWatch从开始到现在的时间差，单位是毫秒 -&gt; stopWatch.ElapsedMilliseconds</span></span><br><span class="line">            Console.WriteLine(<span class="string">"耗时："</span> + stopWatch.ElapsedMilliseconds + <span class="string">" ms  "</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>输出：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29</span><br><span class="line">30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56</span><br><span class="line"> 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 8</span><br><span class="line">3 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 10</span><br><span class="line">7 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 12</span><br><span class="line">7 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143 144 145 146 14</span><br><span class="line">7 148 149 150 151 152 153 154 155 156 157 158 159 160 161 162 163 164 165 166 16</span><br><span class="line">7 168 169 170 171 172 173 174 175 176 177 178 179 180 181 182 183 184 185 186 18</span><br><span class="line">7 188 189 190 191 192 193 194 195 196 197 198 199</span><br><span class="line">耗时：11 ms</span><br><span class="line">耗时：0 ms</span><br><span class="line">0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29</span><br><span class="line">30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56</span><br><span class="line"> 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 8</span><br><span class="line">3 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99</span><br><span class="line">耗时：3 ms</span><br><span class="line">请按任意键继续. . .</span><br></pre></td></tr></table></figure><p><hr><br><span style="color:gray;font-size:12px"><br>参考：<br>1.<a href="https://www.cnblogs.com/yunfeifei/p/3993401.html" target="_blank" rel="noopener">link-01</a>  // 博客园：5天玩转C#并行和多线程编程 —— 第一天 认识Parallel<br></span></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;code&gt;StopWatch&lt;/code&gt; 在 &lt;code&gt;using System.Diagnostics&lt;/code&gt; 命名空间，需先引用。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="编程爱好" scheme="https://www.andyvj.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
+    
+    
+      <category term="C#" scheme="https://www.andyvj.com/tags/C/"/>
+    
+  </entry>
   
   <entry>
     <title>C#读写配置文件</title>
@@ -443,28 +465,6 @@ height: 100%; left: 0; top: 0;&quot;&gt; &lt;/iframe&gt;&lt;/div&gt;
     
     
       <category term="三菱PLC" scheme="https://www.andyvj.com/tags/%E4%B8%89%E8%8F%B1PLC/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>英语口语｜《就怕乞丐有文化》</title>
-    <link href="https://www.andyvj.com/2019/03/23/190323-01/"/>
-    <id>https://www.andyvj.com/2019/03/23/190323-01/</id>
-    <published>2019-03-23T03:37:12.000Z</published>
-    <updated>2019-06-20T11:28:36.258Z</updated>
-    
-    <content type="html"><![CDATA[<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;"><iframe src="//player.bilibili.com/player.html?aid=6069364&cid=9853098&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;"> </iframe></div><a id="more"></a><ul><li><p>Hi Yo，Come back here, come on.</p></li><li><p>What the fuck is this? （pu..）</p></li><li><p>You despise me? You think I am failure? You give me this?</p></li><li><p>You are young. You are successful. So you give me this?</p></li><li><p>This is not even above a national emblem. You give me this?</p></li><li><p>What’s wrong with you guys who wearing suits. Hiding in tall buildings like you. You are a selfish little shit. What you think you are?</p></li><li><p>You are future of this country? You are hero?</p></li><li><p>No you are nothing. You are poor generation. You are lost generation. You are selfish generation.</p></li><li><p>All of you. Get fuck out of my face.</p></li><li><p>What a great country! Five thousand years history.</p></li><li><p>People jump off a building to suicide.</p></li><li><p>You are murder. You are monster You are chicken burger.</p></li><li><p>What a terrible world. (枪炮声)</p></li><li><p>I am on fire, I am on fire. Please help my baby, save my baby.</p></li><li><p>You are not alone, I am here with you.（唱歌）</p></li><li><p>I am a gay.</p></li><li><p>吹奏音乐</p></li><li><p>We are not talking about rights, we are not talking about power, We are not talking about money, We are talking about love.</p></li><li><p>Love people, Love… Please to love people like you in this country to survival. Thank you guys.</p></li><li><p>Where did you come from son?</p></li><li><p>I come from TianJinWei.</p></li><li><p>What’s your name?</p></li><li><p>Peter..</p></li><li><p>The man named Peter from GouBuLi, Show me your love,Love.(亲了一个，摔倒). Love, Love.(一巴掌). Love, Love.(掏钱). Yeah love, Yeah more love, more. More, thank you. Yeah thank you. thank you Oh yeah.</p></li><li><p>大哥，你赚了多少钱啊？</p></li><li><p>今天这个人还是有点少啊，明天咱们时间得调整一下，再多找几个人。（掏钱出两百块）。</p></li><li><p>好，好，好</p></li><li><p>回来（一巴掌）。Get out of here.</p></li></ul><p><hr><br><span style="color:gray;font-size:12px"><br>参考：见视频地址，来自2017-07-17。<br></span></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;div style=&quot;position: relative; width: 100%; height: 0; padding-bottom: 75%;&quot;&gt;&lt;iframe src=&quot;//player.bilibili.com/player.html?aid=6069364&amp;cid=9853098&amp;page=1&quot; scrolling=&quot;no&quot; border=&quot;0&quot; frameborder=&quot;no&quot; framespacing=&quot;0&quot; allowfullscreen=&quot;true&quot; style=&quot;position: absolute; width: 100%; height: 100%; left: 0; top: 0;&quot;&gt; &lt;/iframe&gt;&lt;/div&gt;
-    
-    </summary>
-    
-      <category term="基础学科" scheme="https://www.andyvj.com/categories/%E5%9F%BA%E7%A1%80%E5%AD%A6%E7%A7%91/"/>
-    
-    
-      <category term="英语" scheme="https://www.andyvj.com/tags/%E8%8B%B1%E8%AF%AD/"/>
     
   </entry>
   
