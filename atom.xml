@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.andyvj.com/"/>
-  <updated>2019-07-24T13:03:58.912Z</updated>
+  <updated>2019-07-26T12:25:42.198Z</updated>
   <id>https://www.andyvj.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>英语：你能明白我的意思吗</title>
+    <link href="https://www.andyvj.com/2019/07/26/190726N01/"/>
+    <id>https://www.andyvj.com/2019/07/26/190726N01/</id>
+    <published>2019-07-26T11:56:07.000Z</published>
+    <updated>2019-07-26T12:25:42.198Z</updated>
+    
+    <content type="html"><![CDATA[<embed height="50" width="100%" src="//image.huvjie.com/190726N01_img01.mp3"><p>你能明白我的意思吗？千万不要说，<code>Can you understand me?</code>，这句话一般用于比自己地位低的人，否则不太礼貌，虽然语法没有错误。有一点，表达别人的理解能力有点问题的意思。</p><p>也不要说，<code>Do you know my meaning?</code> 中式英语。</p><p>应该说：</p><ul><li>Do you get what I’m saying?</li><li>Are you with me?</li><li>Got it?</li><li>Do you get/see/know what I mean?</li></ul><h2 id="网页插入音频"><a href="#网页插入音频" class="headerlink" title="网页插入音频"></a>网页插入音频</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">embed</span> <span class="attr">height</span>=<span class="string">"50"</span> <span class="attr">width</span>=<span class="string">100%</span> <span class="attr">src</span>=<span class="string">"horse.mp3"</span>&gt;</span></span><br></pre></td></tr></table></figure><p>把 <code>src</code>地址换掉。<a href="https://www.runoob.com/html/html-sounds.html" target="_blank" rel="noopener">参考</a>。</p><p><hr><br><span style="color:gray;font-size:12px"><br>参考： 抖音 -&gt; @英国小克里<br></span></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;embed height=&quot;50&quot; width=&quot;100%&quot; src=&quot;//image.huvjie.com/190726N01_img01.mp3&quot;&gt;
+
+&lt;p&gt;你能明白我的意思吗？千万不要说，&lt;code&gt;Can you understand me?&lt;/code&gt;，这句话一般用
+      
+    
+    </summary>
+    
+      <category term="基础学科" scheme="https://www.andyvj.com/categories/%E5%9F%BA%E7%A1%80%E5%AD%A6%E7%A7%91/"/>
+    
+    
+      <category term="英语" scheme="https://www.andyvj.com/tags/%E8%8B%B1%E8%AF%AD/"/>
+    
+  </entry>
   
   <entry>
     <title>C# StopWatch</title>
@@ -443,28 +470,6 @@ height: 100%; left: 0; top: 0;&quot;&gt; &lt;/iframe&gt;&lt;/div&gt;
     
     
       <category term="材料" scheme="https://www.andyvj.com/tags/%E6%9D%90%E6%96%99/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>FX3U系列接近开关接线+中间继电器控制电机启停接线</title>
-    <link href="https://www.andyvj.com/2019/03/24/190324-01/"/>
-    <id>https://www.andyvj.com/2019/03/24/190324-01/</id>
-    <published>2019-03-24T05:57:17.000Z</published>
-    <updated>2019-05-09T11:02:16.960Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="接近开关接线"><a href="#接近开关接线" class="headerlink" title="接近开关接线"></a>接近开关接线</h1><p>【例2-4】有一台 FX3U-32MR,输入端有一只三线 NPN 接近开关和一只二线 NPN 式接近开关,应如何接线?</p><a id="more"></a><p>【解】对于 FX3U-32MR,公共端是 0V 端子。而对于三线NPN接近开关,只要将其棕线与 24V 端子、蓝线与 0V 端子相连,将信号线与 PLC 的 “X1” 相连即可;而对于二线NPN接近开关,只要将 0V 端子与其蓝色线相连,将信号线(棕色线)与 PLC 的 “X0” 相连即可,如图 2-19 所示。</p><p>FX3U 系列 PLC 的输出形式有三种:继电器输出、晶体管输出和晶闸管输出。继电器型输出用得比较多,输出端可以连接直流或者交流电源,无极性之分,但交流电源不超过 220V,FX3U系列PLC的继电器型输出端接线与 FX2N 系列 PLC 的继电器型输出端的接线类似,如图 2-20 所示。</p><p><img src="http://image.huvjie.com/190324-01_img01.png" alt="image"></p><p>晶体管输出只有NPN输出和PNP输出两种形式,用于输出频率高的场合,通常,相同点数的三菱PLC,三菱FX系列晶体管输出形式的PLC要比继电器输出形式的贵一点。晶体管输出的PLC的输出端只能使用直流电源,对于NPN输出形式,其公共端子和电源的0V接在一起, FX3U系列PLC的晶体管型NPN输出的接线示例如图2-21所示。晶体管型NPN输出是三菱FX系列PLC的主流形式,在FX3U以前的FX系列PLC的晶体管输出形式中,只有NPN输出一种。此外,在FX3U系列PLC中,晶体管输出中增加了PNP型输出,其公共端子是+V,接线如图2-22所示。</p><p><img src="http://image.huvjie.com/190324-01_img02.png" alt="image"></p><p>晶闸管输出的PLC的输出端只能使用交流电源, FX3U系列PLC的晶闸管型输出端的接线与FX2N系列PLC的晶闸管型输出接线图类似,在此不再赘述。</p><h1 id="中间继电器控制电机启停接线"><a href="#中间继电器控制电机启停接线" class="headerlink" title="中间继电器控制电机启停接线"></a>中间继电器控制电机启停接线</h1><p>【例2-5】有一台FX3U-32M,控制两台步进电动机(步进电动机控制端是共阴接法和一台三相异步电动机的启停,三相电动机的启停由一只接触器控制,接触器的线圈电压220VAC,输出端应如何接线(步进电动机部分的接线可以省略) ?</p><p>【解】因为要控制两台步进电动机,所以要选用晶体管输出的PLC,而且必须用YO和Y1作为输出高速脉冲点控制步进电动机,又由于步进电动机控制端是共阴接法,所以PLC的输出端要采用PNP输出型。接触器的线圈电压为220VAC,所以电路要经过转换,增加中间继电器KA,其接线如图2-23所示。</p><p><img src="http://image.huvjie.com/190324-01_img03_.jpg" alt="image"></p><p><hr><br><span style="color:gray;font-size:12px"><br>参考：向晓汉：P20<br></span></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;接近开关接线&quot;&gt;&lt;a href=&quot;#接近开关接线&quot; class=&quot;headerlink&quot; title=&quot;接近开关接线&quot;&gt;&lt;/a&gt;接近开关接线&lt;/h1&gt;&lt;p&gt;【例2-4】有一台 FX3U-32MR,输入端有一只三线 NPN 接近开关和一只二线 NPN 式接近开关,应如何接线?&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="电子电气" scheme="https://www.andyvj.com/categories/%E7%94%B5%E5%AD%90%E7%94%B5%E6%B0%94/"/>
-    
-    
-      <category term="三菱PLC" scheme="https://www.andyvj.com/tags/%E4%B8%89%E8%8F%B1PLC/"/>
     
   </entry>
   
