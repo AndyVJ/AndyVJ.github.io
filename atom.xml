@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.andyvj.com/"/>
-  <updated>2019-07-27T06:53:04.428Z</updated>
+  <updated>2019-07-27T07:03:05.781Z</updated>
   <id>https://www.andyvj.com/</id>
   
   <author>
@@ -21,18 +21,13 @@
     <link href="https://www.andyvj.com/2019/07/27/190727N01/"/>
     <id>https://www.andyvj.com/2019/07/27/190727N01/</id>
     <published>2019-07-27T06:37:22.000Z</published>
-    <updated>2019-07-27T06:53:04.428Z</updated>
+    <updated>2019-07-27T07:03:05.781Z</updated>
     
-    <content type="html"><![CDATA[<embed height="50" width="100%" autostart="false" loop="false" src="http://image.huvjie.com/190727N01_img01.mp3"><p><a href="http://image.huvjie.com/190727N01_img01.mp3" target="_blank" rel="noopener">音频。</a></p><ul><li>It’s my thing.   // 是我擅长的。</li></ul><a id="more"></a><ul><li>I know a thing or two. //  略知一二。</li><li>I have a thing for you. //  我喜欢你</li><li>Sure thing!  //  没问题</li></ul><p><hr><br><span style="color:gray;font-size:12px"><br>参考： 抖音 -&gt; @斑马英语ZebraEnglish<br></span></p>]]></content>
+    <content type="html"><![CDATA[<p><a href="http://image.huvjie.com/190727N01_img01.mp3" target="_blank" rel="noopener">音频。</a></p><a id="more"></a><embed height="50" width="100%" autostart="false" loop="false" src="http://image.huvjie.com/190727N01_img01.mp3"><ul><li>It’s my thing.   // 是我擅长的。</li></ul><ul><li>I know a thing or two. //  略知一二。</li><li>I have a thing for you. //  我喜欢你</li><li>Sure thing!  //  没问题</li></ul><p><hr><br><span style="color:gray;font-size:12px"><br>参考： 抖音 -&gt; @斑马英语ZebraEnglish<br></span></p>]]></content>
     
     <summary type="html">
     
-      &lt;embed height=&quot;50&quot; width=&quot;100%&quot; autostart=&quot;false&quot; loop=&quot;false&quot; src=&quot;http://image.huvjie.com/190727N01_img01.mp3&quot;&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://image.huvjie.com/190727N01_img01.mp3&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;音频。&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;It’s my thing.   // 是我擅长的。&lt;/li&gt;
-&lt;/ul&gt;
+      &lt;p&gt;&lt;a href=&quot;http://image.huvjie.com/190727N01_img01.mp3&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;音频。&lt;/a&gt;&lt;/p&gt;
     
     </summary>
     
@@ -48,16 +43,13 @@
     <link href="https://www.andyvj.com/2019/07/26/190726N01/"/>
     <id>https://www.andyvj.com/2019/07/26/190726N01/</id>
     <published>2019-07-26T11:56:07.000Z</published>
-    <updated>2019-07-26T13:24:49.737Z</updated>
+    <updated>2019-07-27T07:04:15.874Z</updated>
     
-    <content type="html"><![CDATA[<embed height="50" width="100%" autostart="false" loop="false" src="http://image.huvjie.com/190726N01_img01.mp3"><p><a href="http://image.huvjie.com/190726N01_img01.mp3" target="_blank" rel="noopener">音频</a>。</p><p>你能明白我的意思吗？千万不要说，<code>Can you understand me?</code>，这句话一般用于比自己地位低的人，否则不太礼貌，虽然语法没有错误。有一点，表达别人的理解能力有点问题的意思。</p><a id="more"></a><p>也不要说，<code>Do you know my meaning?</code> 中式英语。</p><p>应该说：</p><ul><li>Do you get what I’m saying?</li><li>Are you with me?</li><li>Got it?</li><li>Do you get/see/know what I mean?</li></ul><h2 id="网页插入音频"><a href="#网页插入音频" class="headerlink" title="网页插入音频"></a>网页插入音频</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">embed</span> <span class="attr">height</span>=<span class="string">"50"</span> <span class="attr">width</span>=<span class="string">100%</span> <span class="attr">autostart</span>=<span class="string">"false"</span> <span class="attr">loop</span>=<span class="string">"false"</span> <span class="attr">src</span>=<span class="string">"x.mp3"</span>&gt;</span></span><br></pre></td></tr></table></figure><p>把 <code>src</code>地址换掉。<a href="https://www.runoob.com/html/html-sounds.html" target="_blank" rel="noopener">参考</a>。</p><p><hr><br><span style="color:gray;font-size:12px"><br>参考： 抖音 -&gt; @英国小克里<br></span></p>]]></content>
+    <content type="html"><![CDATA[<p><a href="http://image.huvjie.com/190726N01_img01.mp3" target="_blank" rel="noopener">音频</a>。</p><a id="more"></a><embed height="50" width="100%" autostart="false" loop="false" src="http://image.huvjie.com/190726N01_img01.mp3"><p>你能明白我的意思吗？千万不要说，<code>Can you understand me?</code>，这句话一般用于比自己地位低的人，否则不太礼貌，虽然语法没有错误。有一点，表达别人的理解能力有点问题的意思。</p><p>也不要说，<code>Do you know my meaning?</code> 中式英语。</p><p>应该说：</p><ul><li>Do you get what I’m saying?</li><li>Are you with me?</li><li>Got it?</li><li>Do you get/see/know what I mean?</li></ul><h2 id="网页插入音频"><a href="#网页插入音频" class="headerlink" title="网页插入音频"></a>网页插入音频</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">embed</span> <span class="attr">height</span>=<span class="string">"50"</span> <span class="attr">width</span>=<span class="string">100%</span> <span class="attr">autostart</span>=<span class="string">"false"</span> <span class="attr">loop</span>=<span class="string">"false"</span> <span class="attr">src</span>=<span class="string">"x.mp3"</span>&gt;</span></span><br></pre></td></tr></table></figure><p>把 <code>src</code>地址换掉。<a href="https://www.runoob.com/html/html-sounds.html" target="_blank" rel="noopener">参考</a>。</p><p><hr><br><span style="color:gray;font-size:12px"><br>参考： 抖音 -&gt; @英国小克里<br></span></p>]]></content>
     
     <summary type="html">
     
-      &lt;embed height=&quot;50&quot; width=&quot;100%&quot; autostart=&quot;false&quot; loop=&quot;false&quot; src=&quot;http://image.huvjie.com/190726N01_img01.mp3&quot;&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://image.huvjie.com/190726N01_img01.mp3&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;音频&lt;/a&gt;。&lt;/p&gt;
-&lt;p&gt;你能明白我的意思吗？千万不要说，&lt;code&gt;Can you understand me?&lt;/code&gt;，这句话一般用于比自己地位低的人，否则不太礼貌，虽然语法没有错误。有一点，表达别人的理解能力有点问题的意思。&lt;/p&gt;
+      &lt;p&gt;&lt;a href=&quot;http://image.huvjie.com/190726N01_img01.mp3&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;音频&lt;/a&gt;。&lt;/p&gt;
     
     </summary>
     
