@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[C#.Net基础加强十一天-委托]]></title>
+    <url>%2F2019%2F07%2F27%2F190727N03%2F</url>
+    <content type="text"><![CDATA[委托复习 委托是一种数据类型，像类一样的一种数据类型。一般都是直接在命名空间中定义。 定义委托时，需要指明返回值类型、委托名与参数列表，这样就能确定该类型的委托能存储什么样的方法。 使用委托： 声明委托变量。 委托是一个引用类型，就像类一样，所以当声明委托变量后，如果不赋值则该委托变量为 null。所以在使用委托变量前最好做非空校验 weituo！=null。 委托类型的变量只能赋值一个委托类型的对象。 委托，像 C++ 的函数指针。 12345678910111213141516static void Main()&#123; MyDelegate md = new MyDelegate(M1); md(); MyDelegate md1 = M1; // 这种定义的方法是 // 和上面是一样的，省略了 new。 md1.Invoke(); // 这种调用的方法是上面写法的完整版。 // Invoke(/*有参数的话可以在括号中传递。*/)&#125;static void M1()&#123; Console.WriteLine("M1 函数。");&#125;public delegate void MyDelegate(); 输出：123我是 M1 函数我是 M1 函数请按任意键继续. 委托在什么情况下用12345678910111213public class MyClass&#123; public void Say() &#123; /* ...... 这里是要执行的代码，而这段代码的不确定性很大。根据调用者的不同可能执行的 代码不一样。这时候就可以把这段代码封装起来，封装成一个委托类型。通过委托 变量来代替，将来你传递一个什么委托变量，这个地方就执行什么方法。 这样的意思，代码提前写好了，在这个地方先占一个位，这里执行的代码是活的。 是由传递过来的方法确定的。 ......*/ &#125;&#125; 委托就是事先占了一个位置，执行的方法待定，由传递过来的方法决定，较的灵活。 实例练习1234练习3： // 把邮箱名替换成※号 zxh@itcast.cn → ***@itcast.cn steve_zhao@163.com → **********@163.com sk@codeedu.com → **@codeedu.com 1234567891011121314151617181920212223static void Main()&#123; while(true) &#123; Console.WriteLine("请输入一个邮箱地址："); string email = Console.ReadLine(); email = Regex.Replace(email, @"(\w+)(@\w+\.\w)", ReplaceMethod, RegexOptions.ECMAScript); // ▲ 第三个参数直接传递一个返回值为 string 类型的方法， // 这里就用的委托，不是定死的，是活的。 Console.WriteLine(email); &#125;&#125;static string ReplaceMethod(Match match)&#123; string uid = match.Groups[1].Value; string others = match.Groups[2].Value; StringBuilder sb = new StringBuilder(); for (int i = 0; i &lt; uid.Length; i++) &#123; sb.Append("*"); &#125; return sb.ToString() + others;&#125; 委托的使用 声明委托的方式: delegate 返回值类型 委托类型名(参数) 比如 delegate void StringProcess(string s); 注意这里的除了前面的 delegate,剩下部分和声明一个函数一样,但是StringProcess不是函数名,而是委托类型名。 存储什么样的方法就声明什么类型(方法参数与返回值)的委托。 声明的委托是一种类型,就像int、Person一样,如果要用的话还要声明委托类型的变量,声明委托类型变量的方式:StringProcess f1; 将委托类型变量指向函数 StringProcess sp = new StringProcess(SayHello),这样就可以像调用普通函蒙一样把sp当成函教用了.委托可以看做是函数的指针.整数可以用整数变量指向它,对象可以用对象变量指向它,函数也可以用委托变量指向它.和直接调用函数的区别:用委托就可以指向任意的函数,哪怕是之前没定义的都可以,而不使用受限于那几种。 将委托类型变量指向函数还可以简化成StringProcess sp = SayHelo,编译器帮我们进行了new.但是不能sp = Printit(),因为这样就成了函数调用。 参考：1.link-01 // C#.Net基础加强十一天-委托 事件 反射]]></content>
+      <categories>
+        <category>编程爱好</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[英语：关于thing的表达]]></title>
     <url>%2F2019%2F07%2F27%2F190727N01%2F</url>
     <content type="text"><![CDATA[音频。 It’s my thing. // 是我擅长的。 I know a thing or two. // 略知一二。 I have a thing for you. // 我喜欢你 Sure thing! // 没问题 参考： 抖音 -&gt; @斑马英语ZebraEnglish]]></content>
@@ -691,9 +702,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[UG NX 坐标对齐移动——解决实体与原始坐标不对齐的问题]]></title>
-    <url>%2F2019%2F02%2F19%2F190219-01%2F</url>
-    <content type="text"><![CDATA[有时候通过WAVE链接过来的实体会出现实体与原始坐标不对齐的情况，如： 可以用坐标到坐标移动的方式将实体摆正。 新建与实体对齐的坐标系。 Ctrl + T 移动。 这样后，实体就与原始坐标对齐了：]]></content>
+    <title><![CDATA[UG NX 移动对象之『动态』技巧]]></title>
+    <url>%2F2019%2F02%2F19%2F190219-02%2F</url>
+    <content type="text"><![CDATA[动态绕某一点旋转，而旋转手柄又不在此点上，如何操作？ Ctrl + T 移动对象，勾选只移动手柄，将手柄点选移动到需要旋转的点。 取消勾选只移动手柄，点选手柄节点，输入旋转角度，确定。]]></content>
       <categories>
         <category>机械结构</category>
       </categories>
@@ -702,9 +713,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[UG NX 移动对象之『动态』技巧]]></title>
-    <url>%2F2019%2F02%2F19%2F190219-02%2F</url>
-    <content type="text"><![CDATA[动态绕某一点旋转，而旋转手柄又不在此点上，如何操作？ Ctrl + T 移动对象，勾选只移动手柄，将手柄点选移动到需要旋转的点。 取消勾选只移动手柄，点选手柄节点，输入旋转角度，确定。]]></content>
+    <title><![CDATA[UG NX 坐标对齐移动——解决实体与原始坐标不对齐的问题]]></title>
+    <url>%2F2019%2F02%2F19%2F190219-01%2F</url>
+    <content type="text"><![CDATA[有时候通过WAVE链接过来的实体会出现实体与原始坐标不对齐的情况，如： 可以用坐标到坐标移动的方式将实体摆正。 新建与实体对齐的坐标系。 Ctrl + T 移动。 这样后，实体就与原始坐标对齐了：]]></content>
       <categories>
         <category>机械结构</category>
       </categories>
