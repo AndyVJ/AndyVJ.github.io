@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.andyvj.com/"/>
-  <updated>2019-07-29T15:23:39.459Z</updated>
+  <updated>2019-08-09T13:13:12.125Z</updated>
   <id>https://www.andyvj.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>英语：play</title>
+    <link href="https://www.andyvj.com/2019/08/09/190809N/"/>
+    <id>https://www.andyvj.com/2019/08/09/190809N/</id>
+    <published>2019-08-09T12:59:47.000Z</published>
+    <updated>2019-08-09T13:13:12.125Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="http://image.huvjie.com/190809N_img01.mp3" target="_blank" rel="noopener">音频</a></p><a id="more"></a><embed height="50" width="100%" autostart="false" autoplay="false" loop="false" src="http://image.huvjie.com/190809N_img01.mp3"><p><code>play</code>一般用在——游戏、乐器、运动、小孩的玩耍；其他情况一般很少用<code>play</code>。</p><p><hr><br><span style="color:gray;font-size:12px"><br>参考：  抖音 -&gt; @英国小克里<br></span></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;http://image.huvjie.com/190809N_img01.mp3&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;音频&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="基础学科" scheme="https://www.andyvj.com/categories/%E5%9F%BA%E7%A1%80%E5%AD%A6%E7%A7%91/"/>
+    
+    
+      <category term="英语" scheme="https://www.andyvj.com/tags/%E8%8B%B1%E8%AF%AD/"/>
+    
+  </entry>
   
   <entry>
     <title>C#.Net基础加强十三天-XML介绍</title>
@@ -448,28 +470,6 @@ height: 100%; left: 0; top: 0;&quot;&gt; &lt;/iframe&gt;&lt;/div&gt;
     <summary type="html">
     
       &lt;p&gt;&lt;code&gt;public DerivedClass(): this (100){}&lt;/code&gt;  // 像这样的构造函数。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="编程爱好" scheme="https://www.andyvj.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
-    
-    
-      <category term="C#" scheme="https://www.andyvj.com/tags/C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>C# base 调用基类方法</title>
-    <link href="https://www.andyvj.com/2019/07/09/190709N02/"/>
-    <id>https://www.andyvj.com/2019/07/09/190709N02/</id>
-    <published>2019-07-09T05:53:23.000Z</published>
-    <updated>2019-07-09T11:59:10.842Z</updated>
-    
-    <content type="html"><![CDATA[<p><code>base.TestInfo(); // 调用基类的方法。</code>像这样调用基类的方法。</p><a id="more"></a><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> System.Linq;</span><br><span class="line"><span class="keyword">using</span> System.Text;</span><br><span class="line"><span class="keyword">using</span> System.Threading.Tasks;</span><br><span class="line"></span><br><span class="line">namespace Base用法</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">class</span> <span class="title">BaseClass</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">TestInfo</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            Console.WriteLine(<span class="string">"基类，虚函数…"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">class</span> <span class="title">DerivedClass</span> : <span class="title">BaseClass</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">override</span> <span class="keyword">void</span> <span class="title">TestInfo</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            <span class="keyword">base</span>.TestInfo(); <span class="comment">// 调用基类的方法。</span></span><br><span class="line">            Console.WriteLine(<span class="string">"派生类，重写…"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="keyword">string</span>[] args</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            DerivedClass a = <span class="keyword">new</span> DerivedClass();</span><br><span class="line">            a.TestInfo();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>输出：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">基类，虚函数…</span><br><span class="line">派生类，重写…</span><br><span class="line">请按任意键继续. . .</span><br></pre></td></tr></table></figure><p><hr><br><span style="color:gray;font-size:12px"><br>还有：<br>1.<a href="https://www.andyvj.com/2019/07/09/190709N01/">上一篇：base 访问构造函数</a><br></span></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;code&gt;base.TestInfo(); // 调用基类的方法。&lt;/code&gt;像这样调用基类的方法。&lt;/p&gt;
     
     </summary>
     
