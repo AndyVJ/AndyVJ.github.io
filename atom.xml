@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.andyvj.com/"/>
-  <updated>2020-02-29T02:18:31.242Z</updated>
+  <updated>2020-02-29T02:45:23.827Z</updated>
   <id>https://www.andyvj.com/</id>
   
   <author>
@@ -21,25 +21,13 @@
     <link href="https://www.andyvj.com/2020/02/29/200229N02/"/>
     <id>https://www.andyvj.com/2020/02/29/200229N02/</id>
     <published>2020-02-29T02:16:50.000Z</published>
-    <updated>2020-02-29T02:18:31.242Z</updated>
+    <updated>2020-02-29T02:45:23.827Z</updated>
     
-    <content type="html"><![CDATA[<p>太差火。</p><!--<hr/><span style="color:gray;font-size:12px">参考： 1.[link-01]()2.[link-02]()3.[link-03]()</span>-->]]></content>
+    <content type="html"><![CDATA[<p>太差火。</p><a id="more"></a><!--<hr/><span style="color:gray;font-size:12px">参考： 1.[link-01]()2.[link-02]()3.[link-03]()</span>-->]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;p&gt;太差火。&lt;/p&gt;
-&lt;!--
-&lt;hr/&gt;
-&lt;span style=&quot;color:gray;font-size:12px&quot;&gt;
-参考： 
-1.[link-01]()
-2.[link-02]()
-3.[link-03]()
-&lt;/span&gt;
---&gt;
-      
+      &lt;p&gt;太差火。&lt;/p&gt;
     
     </summary>
     
