@@ -88,5 +88,5 @@ deploy:
   type: git  
   repo: 
     github: git@github.com:AndyVJ/AndyVJ.github.io.git
-    coding: https://git.dev.tencent.com/AndyVJ/AndyVJ.coding.me.git 
+#    coding: https://git.dev.tencent.com/AndyVJ/AndyVJ.coding.me.git 
   branch: master  
