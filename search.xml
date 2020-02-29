@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[C# 交换两个变量值]]></title>
+    <url>%2F2020%2F02%2F29%2F200229N01%2F</url>
+    <content type="text"><![CDATA[声明两个变量：int n1 = 10, n2 = 20;要求将两个变量交换，最后输出n1为20,n2为10。扩展（*）：不使用第三个变量如何交换？ 1234567int n1 = 10;int n2 = 20;int temp;temp = n1;n1 = n2;n2 = temp; ▲ 借用中间量 1234567int n1 = 10;int n2 = 20;n1 = n1 + n2;n2 = n1 - n2;n1 = n1 - n2; ▲ 不用中间量 用方法来实现：将上题封装一个方法来做，方法有两个参数分别为num1,num2,将num1与num2交换。提示：方法有两个参数n1,n2,在方法中将n1与n2进行交换，使用ref。（*） 12345678910111213141516171819202122static void Main(string[] args)&#123; int n1 = 10; int n2 = 20; Console.WriteLine("交换前：n1 = &#123;0&#125;, n2 = &#123;1&#125;", n1, n2); SwapNum&lt;int&gt;(ref n1, ref n2); Console.WriteLine("交换前：n1 = &#123;0&#125;, n2 = &#123;1&#125;", n1, n2); Console.ReadKey();&#125;static void SwapNum&lt;T&gt; (ref T a, ref T b)&#123; T temp; temp = a; a = b; b = temp;&#125; 运行结果：12交换前：n1 = 10, n2 = 20交换前：n1 = 20, n2 = 10 参考：1.link-01]]></content>
+      <categories>
+        <category>编程爱好</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[英语：play]]></title>
     <url>%2F2019%2F08%2F09%2F190809N%2F</url>
     <content type="text"><![CDATA[音频 play一般用在——游戏、乐器、运动、小孩的玩耍；其他情况一般很少用play。 I like to use Douyin. 我喜欢玩抖音。// 不能用 play I like to go on Douyin. I want to play with you. // 男女朋友之间比较暧昧的一种说法：我想跟你玩。 I want to hang out with you. 我想跟你一起玩。// 一般性的说法。 I want to go abroad on a vacation. 我想出国玩。 参考： 抖音 -&gt; @英国小克里]]></content>
