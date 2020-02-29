@@ -121,7 +121,7 @@
 <meta property="og:description" content="XML（可扩展标记语言） XML:eXtensible Markup Language 什么是标记语言？什么是标记？ 标记（markup）：文档中任何不想被打印输出的部分（不是真正的文档的内容，联想读书时做的“读书笔记”，在旁边写的注解等。）注解是注解，实际内容是实际内容。 标记的作用：传递了关于文档本身以外的额外信息。比如：标记文档的某部分该如何显示，某部分是什么意思等。重在数据，标记只是为了说">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://image.huvjie.com/190729N01_img01.jpg">
-<meta property="og:updated_time" content="2019-07-29T15:23:39.459Z">
+<meta property="og:updated_time" content="2020-02-29T10:55:45.557Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C#.Net基础加强十三天-XML介绍">
 <meta name="twitter:description" content="XML（可扩展标记语言） XML:eXtensible Markup Language 什么是标记语言？什么是标记？ 标记（markup）：文档中任何不想被打印输出的部分（不是真正的文档的内容，联想读书时做的“读书笔记”，在旁边写的注解等。）注解是注解，实际内容是实际内容。 标记的作用：传递了关于文档本身以外的额外信息。比如：标记文档的某部分该如何显示，某部分是什么意思等。重在数据，标记只是为了说">
@@ -406,12 +406,24 @@
                 
               
 
-              <time title="创建时间：2019-07-29 20:21:16 / 修改时间：23:23:39" itemprop="dateCreated datePublished" datetime="2019-07-29T20:21:16+08:00">2019-07-29</time>
+              <time title="创建时间：2019-07-29 20:21:16" itemprop="dateCreated datePublished" datetime="2019-07-29T20:21:16+08:00">2019-07-29</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2020-02-29 18:55:45" itemprop="dateModified" datetime="2020-02-29T18:55:45+08:00">2020-02-29</time>
               
             
           </span>
@@ -512,7 +524,7 @@
 <h2 id="Linq-To-XML：写"><a href="#Linq-To-XML：写" class="headerlink" title="Linq To XML：写"></a>Linq To XML：写</h2><ul>
 <li>读写XML有很多技术:<ol>
 <li><code>Dom [XmlDocument、XDocument]</code>（文档对象模型，将整个<code>xml</code>加载到内存中，然后操作）;</li>
-<li><code>Sax</code>（事件驱动，<code>.net</code>中使用<code>XmlReader（XmlTextReader）</code>、<code>XmlWrter（XmlTextWriter）</code><br>来替代）等，还有高级的读写技术;</li>
+<li><code>Sax</code>（事件驱动，<code>.net</code>中使用<code>XmlReader（XmlTextReader）</code>、<code>XmlWriter（XmlTextWriter）</code><br>来替代）等，还有高级的读写技术;</li>
 <li><code>XmlSerializer</code>（<code>xml</code>序列化，需要先定义类）;</li>
 <li><code>Linq To XML（SystemXml.Linq）</code>，用到的就是<code>Xdocument</code>，<code>Xelement</code>等等，<code>XmlSerializer</code>要求对每种不同的文件都定义一套类，很麻烦，而<code>Linq To XML</code>则不需要单独创建类，当然更底层一些，代码比<code>XmlSerializer</code>多，灵活性更高。<code>SystemXml</code>下的类是2.0及之前操作<code>xml</code>推荐的，现在很多入也仍然在用这个<code>namespace</code>下的类，这个<code>namespace</code>下的类和<code>Linq To XML</code>非常相似，因此不用单独学核心类<code>XElement</code>，一个<code>XElement</code>表示一个元素，<code>new XEiement（&quot;order&quot;）</code>，创建一个名学为<code>Order</code>的标签，调用<code>Add</code>增加子元素，也是<code>XElement</code>对象，和<code>TreeView</code>一样。</li>
 </ol>
@@ -712,7 +724,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">113</span>
+                    <span class="site-state-item-count">114</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
