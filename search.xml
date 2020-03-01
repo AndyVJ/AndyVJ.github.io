@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[C# 去掉多余空格]]></title>
+    <url>%2F2020%2F03%2F01%2F200301N02%2F</url>
+    <content type="text"><![CDATA[将字符串” hello world,你 好 世界 ! “两端空格去掉，并且将其中的所有其他空格都替换成一个空格，输出结果为：”hello world,你 好 世界 !”。 用Split方法，有很多的重载。 string msgTrim = msg.Trim(); // 去掉两端的空格，返回副本。 12345678string msg = " hello world,你 好 世界 ! ";string[] words = msg.Split(new char[] &#123; ' ' &#125;, StringSplitOptions.RemoveEmptyEntries);msg = String.Join(" ", words);Console.WriteLine("===" + msg + "==");Console.ReadKey(); 输出： 1===hello world,你 好 世界 !== 参考：1.link-01]]></content>
+      <categories>
+        <category>编程爱好</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[C# 统计字符出现次数]]></title>
     <url>%2F2020%2F03%2F01%2F200301N01%2F</url>
     <content type="text"><![CDATA[有如下字符串：【”患者：“大夫，我咳嗽得很重。” 大夫：“你多大年记？” 患者：“七十五岁。” 大夫：“二十岁咳嗽吗”患者：“不咳嗽。” 大夫：“四十岁时咳嗽吗？” 患者：“也不咳嗽。” 大夫：“那现在不咳嗽，还要等到什么时咳嗽？””】。需求：①请统计出该字符中“咳嗽”二字的出现次数，以及每次“咳嗽”出现的索引位置。②扩展（*）：统计出每个字符的出现次数。 用IndexOf方法， // 搜索如果不存在，返回 -1。注意看提示重载。用它的重载方法(见下面代码)，返回索引位置。 mLastIndexOf // 最后出现的索引位置。 判断，当 IndexOF 和 LastIndexOf 相等的时候，可以确定这个字符串只出现了一次。 用Dictionary&lt;char， int&gt;统计字符出现次数。 ①12345678910string msg = "患者：“大夫，我咳嗽得很重。” 大夫：“你多大年记？” 患者：“七十五岁。” 大夫：“二十岁咳嗽吗”患者：“不咳嗽。” 大夫：“四十岁时咳嗽吗？” 患者：“也不咳嗽。” 大夫：“那现在不咳嗽，还要等到什么时咳嗽？”";int count = 0;int index = 0;while ((index = msg.IndexOf("咳嗽", index)) != -1) &#123; count++; Console.WriteLine("\"咳嗽\"在&#123;0&#125;索引中出现第&#123;1&#125;次。", index, count); index = index + "咳嗽".Length;&#125;Console.ReadKey(); 输出：1234567&quot;咳嗽&quot;在8索引中出现第1次。&quot;咳嗽&quot;在58索引中出现第2次。&quot;咳嗽&quot;在67索引中出现第3次。&quot;咳嗽&quot;在84索引中出现第4次。&quot;咳嗽&quot;在100索引中出现第5次。&quot;咳嗽&quot;在117索引中出现第6次。&quot;咳嗽&quot;在127索引中出现第7次。 ②12345678910111213141516string msg = "患者：“大夫，我咳嗽得很重。” 大夫：“你多大年记？” 患者：“七十五岁。” 大夫：“二十岁咳嗽吗”患者：“不咳嗽。” 大夫：“四十岁时咳嗽吗？” 患者：“也不咳嗽。” 大夫：“那现在不咳嗽，还要等到什么时咳嗽？”";Dictionary&lt;char, int&gt; dict = new Dictionary&lt;char, int&gt;();for (int i = 0; i &lt; msg.Length; i++) &#123; if(!dict.ContainsKey(msg[i])) &#123; dict.Add(msg[i], 1); &#125; else &#123; dict[msg[i]]++; &#125;&#125;foreach(KeyValuePair&lt;char, int&gt; item in dict) &#123; Console.WriteLine("字符\"&#123;0&#125;\"出现了&#123;1&#125;次。", item.Key, item.Value);&#125;Console.ReadKey(); 输出： 12345678910111213141516171819202122232425262728293031323334353637383940字符&quot;患&quot;出现了4次。字符&quot;者&quot;出现了4次。字符&quot;：&quot;出现了8次。字符&quot;“&quot;出现了8次。字符&quot;大&quot;出现了6次。字符&quot;夫&quot;出现了5次。字符&quot;，&quot;出现了2次。字符&quot;我&quot;出现了1次。字符&quot;咳&quot;出现了7次。字符&quot;嗽&quot;出现了7次。字符&quot;得&quot;出现了1次。字符&quot;很&quot;出现了1次。字符&quot;重&quot;出现了1次。字符&quot;。&quot;出现了4次。字符&quot;”&quot;出现了8次。字符&quot; &quot;出现了30次。字符&quot;你&quot;出现了1次。字符&quot;多&quot;出现了1次。字符&quot;年&quot;出现了1次。字符&quot;记&quot;出现了1次。字符&quot;？&quot;出现了3次。字符&quot;七&quot;出现了1次。字符&quot;十&quot;出现了3次。字符&quot;五&quot;出现了1次。字符&quot;岁&quot;出现了3次。字符&quot;二&quot;出现了1次。字符&quot;吗&quot;出现了2次。字符&quot;不&quot;出现了3次。字符&quot;四&quot;出现了1次。字符&quot;时&quot;出现了2次。字符&quot;也&quot;出现了1次。字符&quot;那&quot;出现了1次。字符&quot;现&quot;出现了1次。字符&quot;在&quot;出现了1次。字符&quot;还&quot;出现了1次。字符&quot;要&quot;出现了1次。字符&quot;等&quot;出现了1次。字符&quot;到&quot;出现了1次。字符&quot;什&quot;出现了1次。字符&quot;么&quot;出现了1次。 参考：1.link-01]]></content>
