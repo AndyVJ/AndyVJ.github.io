@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[C# 练习：数字转化]]></title>
+    <url>%2F2020%2F03%2F01%2F200301N04%2F</url>
+    <content type="text"><![CDATA[用到switch方法，char[] num = msg.ToCharArray();字符串转字符数组，return new string(num);数组字符转字符串。 1234567891011121314151617181920212223242526272829303132333435363738394041424344static string ConvertNum(string msg)&#123; char[] num = msg.ToCharArray(); // ▲ 把字符串转化为 char 数组 for (int i = 0; i &lt; num.Length; i++) &#123; switch (num[i]) &#123; // 用 switch case '0': num[i] = '零'; break; case '1': num[i] = '一'; break; case '2': num[i] = '二'; break; case '3': num[i] = '三'; break; case '4': num[i] = '四'; break; case '5': num[i] = '五'; break; case '6': num[i] = '六'; break; case '7': num[i] = '七'; break; case '8': num[i] = '八'; break; case '9': num[i] = '九'; break; default: break; &#125; &#125; return new string(num); // ▲ 把字符数组转化为字符串&#125; 参考：1.link-01]]></content>
+      <categories>
+        <category>编程爱好</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[C# 字符串输入名字并统计练习]]></title>
     <url>%2F2020%2F03%2F01%2F200301N03%2F</url>
     <content type="text"><![CDATA[用到List&lt;&gt;泛型集合，string.Empty空字符串，ToLower小写转换，Add添加集合元素，IndexOf集合元素中包含元素的索引位置。 12345678910111213141516171819202122232425262728293031323334List&lt;string&gt; names = new List&lt;string&gt;();List&lt;string&gt; wangNames = new List&lt;string&gt;();string str = string.Empty ;int count = 0;Console.WriteLine("请输入姓名：");str = Console.ReadLine();while (str.ToLower() != "quit") &#123; count++; names.Add(str); Console.WriteLine("请输入姓名："); str = Console.ReadLine();&#125;Console.WriteLine("你一共录入了：&#123;0&#125;个学生，姓名分别为:", count);int countSpecify = 0;foreach (var item in names) &#123; Console.WriteLine(item); if (item.IndexOf('王') == 0) &#123; countSpecify++; wangNames.Add(item); &#125;&#125;Console.WriteLine("其中姓王的同学有&#123;0&#125;个:", countSpecify);foreach (var item in wangNames) &#123; Console.WriteLine(item);&#125;Console.ReadKey(); 输出：123456789101112131415161718192021222324请输入姓名：你好请输入姓名：我是请输入姓名：周杰伦请输入姓名：王五请输入姓名：麻子请输入姓名：王八蛋请输入姓名：quit你一共录入了：6个学生，姓名分别为:你好我是周杰伦王五麻子王八蛋其中姓王的同学有2个:王五王八蛋 参考：1.link-01]]></content>
@@ -834,9 +845,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[UG NX 移动对象之『动态』技巧]]></title>
-    <url>%2F2019%2F02%2F19%2F190219-02%2F</url>
-    <content type="text"><![CDATA[动态绕某一点旋转，而旋转手柄又不在此点上，如何操作？ Ctrl + T 移动对象，勾选只移动手柄，将手柄点选移动到需要旋转的点。 取消勾选只移动手柄，点选手柄节点，输入旋转角度，确定。]]></content>
+    <title><![CDATA[UG NX 坐标对齐移动——解决实体与原始坐标不对齐的问题]]></title>
+    <url>%2F2019%2F02%2F19%2F190219-01%2F</url>
+    <content type="text"><![CDATA[有时候通过WAVE链接过来的实体会出现实体与原始坐标不对齐的情况，如： 可以用坐标到坐标移动的方式将实体摆正。 新建与实体对齐的坐标系。 Ctrl + T 移动。 这样后，实体就与原始坐标对齐了：]]></content>
       <categories>
         <category>机械结构</category>
       </categories>
@@ -845,9 +856,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[UG NX 坐标对齐移动——解决实体与原始坐标不对齐的问题]]></title>
-    <url>%2F2019%2F02%2F19%2F190219-01%2F</url>
-    <content type="text"><![CDATA[有时候通过WAVE链接过来的实体会出现实体与原始坐标不对齐的情况，如： 可以用坐标到坐标移动的方式将实体摆正。 新建与实体对齐的坐标系。 Ctrl + T 移动。 这样后，实体就与原始坐标对齐了：]]></content>
+    <title><![CDATA[UG NX 移动对象之『动态』技巧]]></title>
+    <url>%2F2019%2F02%2F19%2F190219-02%2F</url>
+    <content type="text"><![CDATA[动态绕某一点旋转，而旋转手柄又不在此点上，如何操作？ Ctrl + T 移动对象，勾选只移动手柄，将手柄点选移动到需要旋转的点。 取消勾选只移动手柄，点选手柄节点，输入旋转角度，确定。]]></content>
       <categories>
         <category>机械结构</category>
       </categories>
