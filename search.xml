@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[C# 字符串输入名字并统计练习]]></title>
+    <url>%2F2020%2F03%2F01%2F200301N03%2F</url>
+    <content type="text"><![CDATA[用到List&lt;&gt;泛型集合，string.Empty空字符串，ToLower小写转换，Add添加集合元素，IndexOf集合元素中包含元素的索引位置。 12345678910111213141516171819202122232425262728293031323334List&lt;string&gt; names = new List&lt;string&gt;();List&lt;string&gt; wangNames = new List&lt;string&gt;();string str = string.Empty ;int count = 0;Console.WriteLine("请输入姓名：");str = Console.ReadLine();while (str.ToLower() != "quit") &#123; count++; names.Add(str); Console.WriteLine("请输入姓名："); str = Console.ReadLine();&#125;Console.WriteLine("你一共录入了：&#123;0&#125;个学生，姓名分别为:", count);int countSpecify = 0;foreach (var item in names) &#123; Console.WriteLine(item); if (item.IndexOf('王') == 0) &#123; countSpecify++; wangNames.Add(item); &#125;&#125;Console.WriteLine("其中姓王的同学有&#123;0&#125;个:", countSpecify);foreach (var item in wangNames) &#123; Console.WriteLine(item);&#125;Console.ReadKey(); 输出：123456789101112131415161718192021222324请输入姓名：你好请输入姓名：我是请输入姓名：周杰伦请输入姓名：王五请输入姓名：麻子请输入姓名：王八蛋请输入姓名：quit你一共录入了：6个学生，姓名分别为:你好我是周杰伦王五麻子王八蛋其中姓王的同学有2个:王五王八蛋 参考：1.link-01]]></content>
+      <categories>
+        <category>编程爱好</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[C# 去掉多余空格]]></title>
     <url>%2F2020%2F03%2F01%2F200301N02%2F</url>
-    <content type="text"><![CDATA[将字符串” hello world,你 好 世界 ! “两端空格去掉，并且将其中的所有其他空格都替换成一个空格，输出结果为：”hello world,你 好 世界 !”。 用Split方法，有很多的重载。 string msgTrim = msg.Trim(); // 去掉两端的空格，返回副本。 12345678string msg = " hello world,你 好 世界 ! ";string[] words = msg.Split(new char[] &#123; ' ' &#125;, StringSplitOptions.RemoveEmptyEntries);msg = String.Join(" ", words);Console.WriteLine("===" + msg + "==");Console.ReadKey(); 输出： 1===hello world,你 好 世界 !== 参考：1.link-01]]></content>
+    <content type="text"><![CDATA[将字符串” hello world,你 好 世界 ! “两端空格去掉，并且将其中的所有其他空格都替换成一个空格，输出结果为：”hello world,你 好 世界 !”。 用Split方法，有很多的重载；然后用Join方法进行连接成新字符串。 string msgTrim = msg.Trim(); // 去掉两端的空格，返回副本。 12345678string msg = " hello world,你 好 世界 ! ";string[] words = msg.Split(new char[] &#123; ' ' &#125;, StringSplitOptions.RemoveEmptyEntries);msg = String.Join(" ", words);Console.WriteLine("===" + msg + "==");Console.ReadKey(); 输出： 1===hello world,你 好 世界 !== 参考：1.link-01]]></content>
       <categories>
         <category>编程爱好</category>
       </categories>
@@ -823,9 +834,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[UG NX 坐标对齐移动——解决实体与原始坐标不对齐的问题]]></title>
-    <url>%2F2019%2F02%2F19%2F190219-01%2F</url>
-    <content type="text"><![CDATA[有时候通过WAVE链接过来的实体会出现实体与原始坐标不对齐的情况，如： 可以用坐标到坐标移动的方式将实体摆正。 新建与实体对齐的坐标系。 Ctrl + T 移动。 这样后，实体就与原始坐标对齐了：]]></content>
+    <title><![CDATA[UG NX 移动对象之『动态』技巧]]></title>
+    <url>%2F2019%2F02%2F19%2F190219-02%2F</url>
+    <content type="text"><![CDATA[动态绕某一点旋转，而旋转手柄又不在此点上，如何操作？ Ctrl + T 移动对象，勾选只移动手柄，将手柄点选移动到需要旋转的点。 取消勾选只移动手柄，点选手柄节点，输入旋转角度，确定。]]></content>
       <categories>
         <category>机械结构</category>
       </categories>
@@ -834,9 +845,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[UG NX 移动对象之『动态』技巧]]></title>
-    <url>%2F2019%2F02%2F19%2F190219-02%2F</url>
-    <content type="text"><![CDATA[动态绕某一点旋转，而旋转手柄又不在此点上，如何操作？ Ctrl + T 移动对象，勾选只移动手柄，将手柄点选移动到需要旋转的点。 取消勾选只移动手柄，点选手柄节点，输入旋转角度，确定。]]></content>
+    <title><![CDATA[UG NX 坐标对齐移动——解决实体与原始坐标不对齐的问题]]></title>
+    <url>%2F2019%2F02%2F19%2F190219-01%2F</url>
+    <content type="text"><![CDATA[有时候通过WAVE链接过来的实体会出现实体与原始坐标不对齐的情况，如： 可以用坐标到坐标移动的方式将实体摆正。 新建与实体对齐的坐标系。 Ctrl + T 移动。 这样后，实体就与原始坐标对齐了：]]></content>
       <categories>
         <category>机械结构</category>
       </categories>
