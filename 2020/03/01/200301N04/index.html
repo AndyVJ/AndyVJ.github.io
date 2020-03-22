@@ -112,18 +112,18 @@
 
 
 
-  <meta name="description" content="用到switch方法，char[] num = msg.ToCharArray();字符串转字符数组，return new string(num);数组字符转字符串。">
+  <meta name="description" content="将普通日期格式：“2011年6月4日” 转换成汉字日期格式：“二零一一年六月四日”。暂时不考虑10日、13日、23日等“带十”的问题。">
 <meta name="keywords" content="C#">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C# 练习：数字转化">
 <meta property="og:url" content="https://www.andyvj.com/2020/03/01/200301N04/index.html">
 <meta property="og:site_name" content="胡搅蛮缠">
-<meta property="og:description" content="用到switch方法，char[] num = msg.ToCharArray();字符串转字符数组，return new string(num);数组字符转字符串。">
+<meta property="og:description" content="将普通日期格式：“2011年6月4日” 转换成汉字日期格式：“二零一一年六月四日”。暂时不考虑10日、13日、23日等“带十”的问题。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-03-01T14:13:29.450Z">
+<meta property="og:updated_time" content="2020-03-01T14:18:45.113Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C# 练习：数字转化">
-<meta name="twitter:description" content="用到switch方法，char[] num = msg.ToCharArray();字符串转字符数组，return new string(num);数组字符转字符串。">
+<meta name="twitter:description" content="将普通日期格式：“2011年6月4日” 转换成汉字日期格式：“二零一一年六月四日”。暂时不考虑10日、13日、23日等“带十”的问题。">
 
 
 
@@ -404,7 +404,7 @@
                 
               
 
-              <time title="创建时间：2020-03-01 22:08:38 / 修改时间：22:13:29" itemprop="dateCreated datePublished" datetime="2020-03-01T22:08:38+08:00">2020-03-01</time>
+              <time title="创建时间：2020-03-01 22:08:38 / 修改时间：22:18:45" itemprop="dateCreated datePublished" datetime="2020-03-01T22:08:38+08:00">2020-03-01</time>
             
 
             
@@ -477,8 +477,11 @@
       
 
       
-        <p>用到<code>switch</code>方法，<code>char[] num = msg.ToCharArray();</code>字符串转字符数组，<code>return new string(num);</code>数组字符转字符串。</p>
+        <blockquote>
+<p>将普通日期格式：“2011年6月4日” 转换成汉字日期格式：“二零一一年六月四日”。暂时不考虑10日、13日、23日等“带十”的问题。</p>
+</blockquote>
 <a id="more"></a>
+<p>用到<code>switch</code>方法，<code>char[] num = msg.ToCharArray();</code>字符串转字符数组，<code>return new string(num);</code>数组字符转字符串。</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">string</span> <span class="title">ConvertNum</span>(<span class="params"><span class="keyword">string</span> msg</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">char</span>[] num = msg.ToCharArray();</span><br><span class="line">    <span class="comment">// ▲ 把字符串转化为 char 数组</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; num.Length; i++) &#123;</span><br><span class="line">        <span class="keyword">switch</span> (num[i]) &#123; <span class="comment">// 用 switch</span></span><br><span class="line">            <span class="keyword">case</span> <span class="string">'0'</span>:</span><br><span class="line">                num[i] = <span class="string">'零'</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">'1'</span>:</span><br><span class="line">                num[i] = <span class="string">'一'</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">'2'</span>:</span><br><span class="line">                num[i] = <span class="string">'二'</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">'3'</span>:</span><br><span class="line">                num[i] = <span class="string">'三'</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">'4'</span>:</span><br><span class="line">                num[i] = <span class="string">'四'</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">'5'</span>:</span><br><span class="line">                num[i] = <span class="string">'五'</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">'6'</span>:</span><br><span class="line">                num[i] = <span class="string">'六'</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">'7'</span>:</span><br><span class="line">                num[i] = <span class="string">'七'</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">'8'</span>:</span><br><span class="line">                num[i] = <span class="string">'八'</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">'9'</span>:</span><br><span class="line">                num[i] = <span class="string">'九'</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">default</span>:</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">string</span>(num);  </span><br><span class="line">    <span class="comment">// ▲ 把字符数组转化为字符串</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><hr><br><span style="color:gray;font-size:12px"><br>参考：<br>1.<a href="https://www.bilibili.com/video/av10357226?p=3" target="_blank" rel="noopener">link-01</a><br></span></p>
 
@@ -567,6 +570,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2020/03/22/200322N01/" rel="prev" title="艰难时刻">
+                艰难时刻 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -631,7 +638,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">118</span>
+                    <span class="site-state-item-count">119</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.andyvj.com/"/>
-  <updated>2020-03-01T14:13:29.450Z</updated>
+  <updated>2020-03-22T06:40:05.430Z</updated>
   <id>https://www.andyvj.com/</id>
   
   <author>
@@ -17,17 +17,41 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>艰难时刻</title>
+    <link href="https://www.andyvj.com/2020/03/22/200322N01/"/>
+    <id>https://www.andyvj.com/2020/03/22/200322N01/</id>
+    <published>2020-03-22T06:31:33.000Z</published>
+    <updated>2020-03-22T06:40:05.430Z</updated>
+    
+    <content type="html"><![CDATA[<p>一定要坚定信念。<br><a id="more"></a></p><!--<hr/><span style="color:gray;font-size:12px">参考： 1.[link-01]()2.[link-02]()3.[link-03]()</span>-->]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;一定要坚定信念。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="其他" scheme="https://www.andyvj.com/categories/%E5%85%B6%E4%BB%96/"/>
+    
+    
+      <category term="点滴" scheme="https://www.andyvj.com/tags/%E7%82%B9%E6%BB%B4/"/>
+    
+  </entry>
+  
+  <entry>
     <title>C# 练习：数字转化</title>
     <link href="https://www.andyvj.com/2020/03/01/200301N04/"/>
     <id>https://www.andyvj.com/2020/03/01/200301N04/</id>
     <published>2020-03-01T14:08:38.000Z</published>
-    <updated>2020-03-01T14:13:29.450Z</updated>
+    <updated>2020-03-01T14:18:45.113Z</updated>
     
-    <content type="html"><![CDATA[<p>用到<code>switch</code>方法，<code>char[] num = msg.ToCharArray();</code>字符串转字符数组，<code>return new string(num);</code>数组字符转字符串。</p><a id="more"></a><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">string</span> <span class="title">ConvertNum</span>(<span class="params"><span class="keyword">string</span> msg</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">char</span>[] num = msg.ToCharArray();</span><br><span class="line">    <span class="comment">// ▲ 把字符串转化为 char 数组</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; num.Length; i++) &#123;</span><br><span class="line">        <span class="keyword">switch</span> (num[i]) &#123; <span class="comment">// 用 switch</span></span><br><span class="line">            <span class="keyword">case</span> <span class="string">'0'</span>:</span><br><span class="line">                num[i] = <span class="string">'零'</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">'1'</span>:</span><br><span class="line">                num[i] = <span class="string">'一'</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">'2'</span>:</span><br><span class="line">                num[i] = <span class="string">'二'</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">'3'</span>:</span><br><span class="line">                num[i] = <span class="string">'三'</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">'4'</span>:</span><br><span class="line">                num[i] = <span class="string">'四'</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">'5'</span>:</span><br><span class="line">                num[i] = <span class="string">'五'</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">'6'</span>:</span><br><span class="line">                num[i] = <span class="string">'六'</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">'7'</span>:</span><br><span class="line">                num[i] = <span class="string">'七'</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">'8'</span>:</span><br><span class="line">                num[i] = <span class="string">'八'</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">'9'</span>:</span><br><span class="line">                num[i] = <span class="string">'九'</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">default</span>:</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">string</span>(num);  </span><br><span class="line">    <span class="comment">// ▲ 把字符数组转化为字符串</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><hr><br><span style="color:gray;font-size:12px"><br>参考：<br>1.<a href="https://www.bilibili.com/video/av10357226?p=3" target="_blank" rel="noopener">link-01</a><br></span></p>]]></content>
+    <content type="html"><![CDATA[<blockquote><p>将普通日期格式：“2011年6月4日” 转换成汉字日期格式：“二零一一年六月四日”。暂时不考虑10日、13日、23日等“带十”的问题。</p></blockquote><a id="more"></a><p>用到<code>switch</code>方法，<code>char[] num = msg.ToCharArray();</code>字符串转字符数组，<code>return new string(num);</code>数组字符转字符串。</p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">string</span> <span class="title">ConvertNum</span>(<span class="params"><span class="keyword">string</span> msg</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">char</span>[] num = msg.ToCharArray();</span><br><span class="line">    <span class="comment">// ▲ 把字符串转化为 char 数组</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; num.Length; i++) &#123;</span><br><span class="line">        <span class="keyword">switch</span> (num[i]) &#123; <span class="comment">// 用 switch</span></span><br><span class="line">            <span class="keyword">case</span> <span class="string">'0'</span>:</span><br><span class="line">                num[i] = <span class="string">'零'</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">'1'</span>:</span><br><span class="line">                num[i] = <span class="string">'一'</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">'2'</span>:</span><br><span class="line">                num[i] = <span class="string">'二'</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">'3'</span>:</span><br><span class="line">                num[i] = <span class="string">'三'</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">'4'</span>:</span><br><span class="line">                num[i] = <span class="string">'四'</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">'5'</span>:</span><br><span class="line">                num[i] = <span class="string">'五'</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">'6'</span>:</span><br><span class="line">                num[i] = <span class="string">'六'</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">'7'</span>:</span><br><span class="line">                num[i] = <span class="string">'七'</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">'8'</span>:</span><br><span class="line">                num[i] = <span class="string">'八'</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">'9'</span>:</span><br><span class="line">                num[i] = <span class="string">'九'</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">default</span>:</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">string</span>(num);  </span><br><span class="line">    <span class="comment">// ▲ 把字符数组转化为字符串</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><hr><br><span style="color:gray;font-size:12px"><br>参考：<br>1.<a href="https://www.bilibili.com/video/av10357226?p=3" target="_blank" rel="noopener">link-01</a><br></span></p>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;用到&lt;code&gt;switch&lt;/code&gt;方法，&lt;code&gt;char[] num = msg.ToCharArray();&lt;/code&gt;字符串转字符数组，&lt;code&gt;return new string(num);&lt;/code&gt;数组字符转字符串。&lt;/p&gt;
+      &lt;blockquote&gt;
+&lt;p&gt;将普通日期格式：“2011年6月4日” 转换成汉字日期格式：“二零一一年六月四日”。暂时不考虑10日、13日、23日等“带十”的问题。&lt;/p&gt;
+&lt;/blockquote&gt;
     
     </summary>
     
@@ -468,28 +492,6 @@
     
     
       <category term="C#" scheme="https://www.andyvj.com/tags/C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>路漫漫</title>
-    <link href="https://www.andyvj.com/2019/07/19/190719N/"/>
-    <id>https://www.andyvj.com/2019/07/19/190719N/</id>
-    <published>2019-07-19T05:28:37.000Z</published>
-    <updated>2019-07-29T15:22:25.318Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://image.huvjie.com/190719N_img01.jpg" alt=""></p><a id="more"></a><p>路漫漫…</p><p>相爱容易，相处难。<br>路漫漫…<br>——2019-07-29  </p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://image.huvjie.com/190719N_img01.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="其他" scheme="https://www.andyvj.com/categories/%E5%85%B6%E4%BB%96/"/>
-    
-    
-      <category term="点滴" scheme="https://www.andyvj.com/tags/%E7%82%B9%E6%BB%B4/"/>
     
   </entry>
   

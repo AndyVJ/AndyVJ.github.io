@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[艰难时刻]]></title>
+    <url>%2F2020%2F03%2F22%2F200322N01%2F</url>
+    <content type="text"><![CDATA[一定要坚定信念。]]></content>
+      <categories>
+        <category>其他</category>
+      </categories>
+      <tags>
+        <tag>点滴</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[C# 练习：数字转化]]></title>
     <url>%2F2020%2F03%2F01%2F200301N04%2F</url>
-    <content type="text"><![CDATA[用到switch方法，char[] num = msg.ToCharArray();字符串转字符数组，return new string(num);数组字符转字符串。 1234567891011121314151617181920212223242526272829303132333435363738394041424344static string ConvertNum(string msg)&#123; char[] num = msg.ToCharArray(); // ▲ 把字符串转化为 char 数组 for (int i = 0; i &lt; num.Length; i++) &#123; switch (num[i]) &#123; // 用 switch case '0': num[i] = '零'; break; case '1': num[i] = '一'; break; case '2': num[i] = '二'; break; case '3': num[i] = '三'; break; case '4': num[i] = '四'; break; case '5': num[i] = '五'; break; case '6': num[i] = '六'; break; case '7': num[i] = '七'; break; case '8': num[i] = '八'; break; case '9': num[i] = '九'; break; default: break; &#125; &#125; return new string(num); // ▲ 把字符数组转化为字符串&#125; 参考：1.link-01]]></content>
+    <content type="text"><![CDATA[将普通日期格式：“2011年6月4日” 转换成汉字日期格式：“二零一一年六月四日”。暂时不考虑10日、13日、23日等“带十”的问题。 用到switch方法，char[] num = msg.ToCharArray();字符串转字符数组，return new string(num);数组字符转字符串。 1234567891011121314151617181920212223242526272829303132333435363738394041424344static string ConvertNum(string msg)&#123; char[] num = msg.ToCharArray(); // ▲ 把字符串转化为 char 数组 for (int i = 0; i &lt; num.Length; i++) &#123; switch (num[i]) &#123; // 用 switch case '0': num[i] = '零'; break; case '1': num[i] = '一'; break; case '2': num[i] = '二'; break; case '3': num[i] = '三'; break; case '4': num[i] = '四'; break; case '5': num[i] = '五'; break; case '6': num[i] = '六'; break; case '7': num[i] = '七'; break; case '8': num[i] = '八'; break; case '9': num[i] = '九'; break; default: break; &#125; &#125; return new string(num); // ▲ 把字符数组转化为字符串&#125; 参考：1.link-01]]></content>
       <categories>
         <category>编程爱好</category>
       </categories>
