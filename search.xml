@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[三菱PLC流水灯]]></title>
+    <url>%2F2020%2F05%2F01%2F200501N01%2F</url>
+    <content type="text"><![CDATA[![流水灯(http://image.huvjie.com/200501N01_img01.gif) ▲ 流水灯效果 ST 代码：123456789101112131415161718192021222324252627282930313233343536M0:=X0 AND (NOT X1) OR M0;(*X0启动，X1关闭,X0和X1互锁*)RST(X1 AND (NOT X0),M0);OUT_T(M0 AND (NOT TC0),TC0,10);OUT_C(TS0,CC10,8);(*计数8次*)RST(CS10,CN10);(*计时器自我复位*)CASE CN10 OF 0: IF M0 THEN (*确保上电的时候所有灯是灭的，因为计数器默认状态为0*) Y0:=TRUE; Y7:=FALSE; END_IF; 1: Y1:=TRUE; Y0:=FALSE; 2: Y2:=TRUE; Y1:=FALSE; 3: Y3:=TRUE; Y2:=FALSE; 4: Y4:=TRUE; Y3:=FALSE; 5: Y5:=TRUE; Y4:=FALSE; 6: Y6:=TRUE; Y5:=FALSE; 7: Y7:=TRUE; Y6:=FALSE; END_CASE;IF NOT M0 THEN RST(NOT M0,CN10);(*确保每次都是从Y0开始*) Y0:=FALSE; Y1:=FALSE; Y2:=FALSE; Y3:=FALSE; Y4:=FALSE; Y5:=FALSE; Y6:=FALSE; Y7:=FALSE;END_IF;]]></content>
+      <categories>
+        <category>电子电气</category>
+      </categories>
+      <tags>
+        <tag>三菱PLC</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[杂记]]></title>
     <url>%2F2020%2F04%2F05%2F200405N01%2F</url>
     <content type="text"><![CDATA[这几天的都是下雨天，也降了温，清明时节雨纷纷。这段时间也偶尔几次梦见过爷爷奶奶。 创业真的好艰难，一个人的力量确实也太小了，效率也不搞。时刻要告诫自己，慢可以，不要出错，不要返工。 这段时间要自己做一台雕刻机才好，直接买太贵，也只能这样了。 ▲ 今天一天就做了一个 JK 的键合工装，加工编程也弄错了，其他也出错了几次，还是需要自己更熟练才可以。 现在也没有什么时间学软件，学习一下上位机的开发，以后还是智能化信息化的未来吧。这个是必须要学习的，还是要挤出时间才行，这个是重要的事情。 当务之急的技术提高更在于电气自动化这块，这个是急的事情。 ▲ 努力，奋斗。——周星驰]]></content>
@@ -867,9 +878,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[UG NX 坐标对齐移动——解决实体与原始坐标不对齐的问题]]></title>
-    <url>%2F2019%2F02%2F19%2F190219-01%2F</url>
-    <content type="text"><![CDATA[有时候通过WAVE链接过来的实体会出现实体与原始坐标不对齐的情况，如： 可以用坐标到坐标移动的方式将实体摆正。 新建与实体对齐的坐标系。 Ctrl + T 移动。 这样后，实体就与原始坐标对齐了：]]></content>
+    <title><![CDATA[UG NX 移动对象之『动态』技巧]]></title>
+    <url>%2F2019%2F02%2F19%2F190219-02%2F</url>
+    <content type="text"><![CDATA[动态绕某一点旋转，而旋转手柄又不在此点上，如何操作？ Ctrl + T 移动对象，勾选只移动手柄，将手柄点选移动到需要旋转的点。 取消勾选只移动手柄，点选手柄节点，输入旋转角度，确定。]]></content>
       <categories>
         <category>机械结构</category>
       </categories>
@@ -878,9 +889,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[UG NX 移动对象之『动态』技巧]]></title>
-    <url>%2F2019%2F02%2F19%2F190219-02%2F</url>
-    <content type="text"><![CDATA[动态绕某一点旋转，而旋转手柄又不在此点上，如何操作？ Ctrl + T 移动对象，勾选只移动手柄，将手柄点选移动到需要旋转的点。 取消勾选只移动手柄，点选手柄节点，输入旋转角度，确定。]]></content>
+    <title><![CDATA[UG NX 坐标对齐移动——解决实体与原始坐标不对齐的问题]]></title>
+    <url>%2F2019%2F02%2F19%2F190219-01%2F</url>
+    <content type="text"><![CDATA[有时候通过WAVE链接过来的实体会出现实体与原始坐标不对齐的情况，如： 可以用坐标到坐标移动的方式将实体摆正。 新建与实体对齐的坐标系。 Ctrl + T 移动。 这样后，实体就与原始坐标对齐了：]]></content>
       <categories>
         <category>机械结构</category>
       </categories>
