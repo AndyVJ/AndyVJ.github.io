@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.andyvj.com/"/>
-  <updated>2020-05-01T14:45:22.831Z</updated>
+  <updated>2020-05-13T07:40:23.846Z</updated>
   <id>https://www.andyvj.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>我们终究要走向何方</title>
+    <link href="https://www.andyvj.com/2020/05/13/200513N01/"/>
+    <id>https://www.andyvj.com/2020/05/13/200513N01/</id>
+    <published>2020-05-13T06:53:42.000Z</published>
+    <updated>2020-05-13T07:40:23.846Z</updated>
+    
+    <content type="html"><![CDATA[<p>在这期间，老婆和我都没有工作，都没有收入，焦虑和不安总是萦绕而挥之不去。投出去的简历大都石沉大海，杳无音讯；房租房贷那可是虎视眈眈毫无仁慈可言。人生的每一步，我们终究要走向何方？</p><a id="more"></a><p>三十而立，谈何容易。自己所在的机械行业，像死胡同一样，凝望深渊，让人望而却步。要说发展前途，没有；要说钱，没有。是继续向前，坐而等死；还是破釜沉舟，拼死一搏。我是不是要去改个行？对未来做一个长期的规划。</p><p>也许，我们所有的理想最终还是要归到柴米油盐，终结到生活，这也就是普通人。理想是好，一味地追求，那是对身边人的不负责任。我们不该只为自己活着。</p><p>我去改行做一个互联网的产品经理如何，这条路可行吗，我有机会吗？</p><!--<hr/><span style="color:gray;font-size:12px">参考： 1.[link-01]()2.[link-02]()3.[link-03]()</span>-->]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在这期间，老婆和我都没有工作，都没有收入，焦虑和不安总是萦绕而挥之不去。投出去的简历大都石沉大海，杳无音讯；房租房贷那可是虎视眈眈毫无仁慈可言。人生的每一步，我们终究要走向何方？&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="其他" scheme="https://www.andyvj.com/categories/%E5%85%B6%E4%BB%96/"/>
+    
+    
+      <category term="点滴" scheme="https://www.andyvj.com/tags/%E7%82%B9%E6%BB%B4/"/>
+    
+  </entry>
   
   <entry>
     <title>三菱PLC流水灯</title>
@@ -471,28 +493,6 @@
     
     
       <category term="C#" scheme="https://www.andyvj.com/tags/C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>英语：你能明白我的意思吗</title>
-    <link href="https://www.andyvj.com/2019/07/26/190726N01/"/>
-    <id>https://www.andyvj.com/2019/07/26/190726N01/</id>
-    <published>2019-07-26T11:56:07.000Z</published>
-    <updated>2019-07-31T12:55:51.942Z</updated>
-    
-    <content type="html"><![CDATA[<p><a href="http://image.huvjie.com/190726N01_img01.mp3" target="_blank" rel="noopener">音频</a>。</p><a id="more"></a><embed height="50" width="100%" autostart="false" autoplay="false" loop="false" src="http://image.huvjie.com/190726N01_img01.mp3"><p>你能明白我的意思吗？千万不要说，<code>Can you understand me?</code>，这句话一般用于比自己地位低的人，否则不太礼貌，虽然语法没有错误。有一点，表达别人的理解能力有点问题的意思。</p><p>也不要说，<code>Do you know my meaning?</code> 中式英语。</p><p>应该说：</p><ul><li>Do you get what I’m saying?</li><li>Are you with me?</li><li>Got it?</li><li>Do you get/see/know what I mean?</li></ul><h2 id="网页插入音频"><a href="#网页插入音频" class="headerlink" title="网页插入音频"></a>网页插入音频</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">embed</span> <span class="attr">height</span>=<span class="string">"50"</span> <span class="attr">width</span>=<span class="string">100%</span> <span class="attr">autostart</span>=<span class="string">"false"</span> <span class="attr">autoplay</span>=<span class="string">"false"</span> <span class="attr">loop</span>=<span class="string">"false"</span> <span class="attr">src</span>=<span class="string">"x.mp3"</span>&gt;</span></span><br></pre></td></tr></table></figure><p>把 <code>src</code>地址换掉。<a href="https://www.runoob.com/html/html-sounds.html" target="_blank" rel="noopener">参考</a>。</p><p><hr><br><span style="color:gray;font-size:12px"><br>参考： 抖音 -&gt; @英国小克里<br></span></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;a href=&quot;http://image.huvjie.com/190726N01_img01.mp3&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;音频&lt;/a&gt;。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="基础学科" scheme="https://www.andyvj.com/categories/%E5%9F%BA%E7%A1%80%E5%AD%A6%E7%A7%91/"/>
-    
-    
-      <category term="英语" scheme="https://www.andyvj.com/tags/%E8%8B%B1%E8%AF%AD/"/>
     
   </entry>
   
