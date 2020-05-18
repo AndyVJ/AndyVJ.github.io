@@ -112,18 +112,20 @@
 
 
 
-  <meta name="description" content="声明两个变量：int n1 = 10, n2 = 20;要求将两个变量交换，最后输出n1为20,n2为10。扩展（*）：不使用第三个变量如何交换？   1234567int n1 = 10;int n2 = 20;int temp;temp = n1;n1 = n2;n2 = temp; ▲ 借用中间量  1234567int n1 = 10;int n2 = 20;n1 = n1 + n2;">
-<meta name="keywords" content="C#">
+  <meta name="description" content="有一个光电传感器检测工件，每检测到1只工件，计数一次，当计数到3只时，发出一个装箱信号。">
+<meta name="keywords" content="三菱PLC">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C# 交换两个变量值">
-<meta property="og:url" content="https://www.andyvj.com/2020/02/29/200229N01/index.html">
+<meta property="og:title" content="三菱ST：计数装箱">
+<meta property="og:url" content="https://www.andyvj.com/2020/05/19/200519N02/index.html">
 <meta property="og:site_name" content="胡搅蛮缠">
-<meta property="og:description" content="声明两个变量：int n1 = 10, n2 = 20;要求将两个变量交换，最后输出n1为20,n2为10。扩展（*）：不使用第三个变量如何交换？   1234567int n1 = 10;int n2 = 20;int temp;temp = n1;n1 = n2;n2 = temp; ▲ 借用中间量  1234567int n1 = 10;int n2 = 20;n1 = n1 + n2;">
+<meta property="og:description" content="有一个光电传感器检测工件，每检测到1只工件，计数一次，当计数到3只时，发出一个装箱信号。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-02-29T01:50:24.935Z">
+<meta property="og:image" content="http://image.huvjie.com/200519N02_img01.jpg">
+<meta property="og:updated_time" content="2020-05-18T16:13:52.540Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="C# 交换两个变量值">
-<meta name="twitter:description" content="声明两个变量：int n1 = 10, n2 = 20;要求将两个变量交换，最后输出n1为20,n2为10。扩展（*）：不使用第三个变量如何交换？   1234567int n1 = 10;int n2 = 20;int temp;temp = n1;n1 = n2;n2 = temp; ▲ 借用中间量  1234567int n1 = 10;int n2 = 20;n1 = n1 + n2;">
+<meta name="twitter:title" content="三菱ST：计数装箱">
+<meta name="twitter:description" content="有一个光电传感器检测工件，每检测到1只工件，计数一次，当计数到3只时，发出一个装箱信号。">
+<meta name="twitter:image" content="http://image.huvjie.com/200519N02_img01.jpg">
 
 
 
@@ -132,7 +134,7 @@
 
 
 
-  <link rel="canonical" href="https://www.andyvj.com/2020/02/29/200229N01/">
+  <link rel="canonical" href="https://www.andyvj.com/2020/05/19/200519N02/">
 
 
 
@@ -142,7 +144,7 @@
   };
 </script>
 
-  <title>C# 交换两个变量值 | 胡搅蛮缠</title>
+  <title>三菱ST：计数装箱 | 胡搅蛮缠</title>
   
 
 
@@ -362,7 +364,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.andyvj.com/2020/02/29/200229N01/">
+    <link itemprop="mainEntityOfPage" href="https://www.andyvj.com/2020/05/19/200519N02/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="AndyVJ">
@@ -379,7 +381,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">C# 交换两个变量值
+          <h2 class="post-title" itemprop="name headline">三菱ST：计数装箱
               
             
           </h2>
@@ -404,7 +406,7 @@
                 
               
 
-              <time title="创建时间：2020-02-29 09:17:58 / 修改时间：09:50:24" itemprop="dateCreated datePublished" datetime="2020-02-29T09:17:58+08:00">2020-02-29</time>
+              <time title="创建时间：2020-05-19 00:08:30 / 修改时间：00:13:52" itemprop="dateCreated datePublished" datetime="2020-05-19T00:08:30+08:00">2020-05-19</time>
             
 
             
@@ -426,7 +428,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/编程爱好/" itemprop="url" rel="index"><span itemprop="name">编程爱好</span></a></span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/电子电气/" itemprop="url" rel="index"><span itemprop="name">电子电气</span></a></span>
 
                 
                 
@@ -441,8 +443,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2020/02/29/200229N01/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2020/02/29/200229N01/" itemprop="commentCount"></span>
+                <a href="/2020/05/19/200519N02/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2020/05/19/200519N02/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -478,25 +480,15 @@
 
       
         <blockquote>
-<ol>
-<li>声明两个变量：int n1 = 10, n2 = 20;要求将两个变量交换，最后输出n1为20,n2为10。扩展（*）：不使用第三个变量如何交换？</li>
-</ol>
+<p>有一个光电传感器检测工件，每检测到1只工件，计数一次，当计数到3只时，发出一个装箱信号。</p>
 </blockquote>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> n1 = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> n2 = <span class="number">20</span>;</span><br><span class="line"><span class="keyword">int</span> temp;</span><br><span class="line"></span><br><span class="line">temp = n1;</span><br><span class="line">n1 = n2;</span><br><span class="line">n2 = temp;</span><br></pre></td></tr></table></figure>
-<div style="font-size:13px;color:gray;text-align:center">▲ 借用中间量</div>
+<a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">OUT_C(LDP(TRUE, X0), CC0, 3); (*C0计数器计数三次, X0 上升沿触发LDP*)</span><br><span class="line">OUT(CS0, Y0);(*C0三次计数满后触发Y0*)</span><br><span class="line">OUT_T(CS0, TC0, 20);(*C0 计数满后，触发倒计时 2 秒*)</span><br><span class="line">RST(TS0, CN0);(*T0 定时到后，复位计数器C0*)</span><br></pre></td></tr></table></figure>
+<div style="font-size:13px;color:gray;text-align:center">▲ ST 代码</div>
 
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> n1 = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> n2 = <span class="number">20</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">n1 = n1 + n2;</span><br><span class="line">n2 = n1 - n2;</span><br><span class="line">n1 = n1 - n2;</span><br></pre></td></tr></table></figure>
-<div style="font-size:13px;color:gray;text-align:center">▲ 不用中间量</div>
-
-
-<blockquote>
-<ol start="2">
-<li>用方法来实现：将上题封装一个方法来做，方法有两个参数分别为num1,num2,将num1与num2交换。提示：方法有两个参数n1,n2,在方法中将n1与n2进行交换，使用ref。（*）</li>
-</ol>
-</blockquote>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="keyword">string</span>[] args</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n1 = <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">int</span> n2 = <span class="number">20</span>;</span><br><span class="line"></span><br><span class="line">    Console.WriteLine(<span class="string">"交换前：n1 = &#123;0&#125;, n2 = &#123;1&#125;"</span>, n1, n2);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    SwapNum&lt;<span class="keyword">int</span>&gt;(<span class="keyword">ref</span> n1, <span class="keyword">ref</span> n2);</span><br><span class="line"></span><br><span class="line">    Console.WriteLine(<span class="string">"交换前：n1 = &#123;0&#125;, n2 = &#123;1&#125;"</span>, n1, n2);</span><br><span class="line">    Console.ReadKey();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">void</span> SwapNum&lt;T&gt; (<span class="keyword">ref</span> T a, <span class="keyword">ref</span> T b)</span><br><span class="line">&#123;</span><br><span class="line">    T temp;</span><br><span class="line">    </span><br><span class="line">    temp = a;</span><br><span class="line">    a = b;</span><br><span class="line">    b = temp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>运行结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">交换前：n1 = 10, n2 = 20</span><br><span class="line">交换前：n1 = 20, n2 = 10</span><br></pre></td></tr></table></figure></p>
-<p><hr><br><span style="color:gray;font-size:12px"><br>参考：<br>1.<a href="https://www.bilibili.com/video/av10357226?t=888" target="_blank" rel="noopener">link-01</a><br></span></p>
+<p><img src="http://image.huvjie.com/200519N02_img01.jpg" alt="梯形图"></p>
+<p><div style="font-size:13px;color:gray;text-align:center">▲ T 形图</div></p>
+<p><hr><br><span style="color:gray;font-size:12px"><br>参考：<br>1.<a href="">link-01</a><br>2.<a href="">link-02</a><br>3.<a href="">link-03</a><br></span></p>
 
       
     </div>
@@ -547,7 +539,7 @@
     <strong>本文作者： </strong>AndyVJ</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://www.andyvj.com/2020/02/29/200229N01/" title="C# 交换两个变量值">https://www.andyvj.com/2020/02/29/200229N01/</a>
+    <a href="https://www.andyvj.com/2020/05/19/200519N02/" title="三菱ST：计数装箱">https://www.andyvj.com/2020/05/19/200519N02/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
@@ -560,7 +552,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/C/" rel="tag"># C#</a>
+            <a href="/tags/三菱PLC/" rel="tag"># 三菱PLC</a>
           
         </div>
       
@@ -573,8 +565,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/08/09/190809N/" rel="next" title="英语：play">
-                <i class="fa fa-chevron-left"></i> 英语：play
+              <a href="/2020/05/18/200518N01/" rel="next" title="有时候是真的失望">
+                <i class="fa fa-chevron-left"></i> 有时候是真的失望
               </a>
             
           </div>
@@ -582,10 +574,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/02/29/200229N02/" rel="prev" title="无中生有">
-                无中生有 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>

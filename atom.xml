@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.andyvj.com/"/>
-  <updated>2020-05-18T15:38:48.576Z</updated>
+  <updated>2020-05-18T16:13:52.540Z</updated>
   <id>https://www.andyvj.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>三菱ST：计数装箱</title>
+    <link href="https://www.andyvj.com/2020/05/19/200519N02/"/>
+    <id>https://www.andyvj.com/2020/05/19/200519N02/</id>
+    <published>2020-05-18T16:08:30.000Z</published>
+    <updated>2020-05-18T16:13:52.540Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>有一个光电传感器检测工件，每检测到1只工件，计数一次，当计数到3只时，发出一个装箱信号。</p></blockquote><a id="more"></a><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">OUT_C(LDP(TRUE, X0), CC0, 3); (*C0计数器计数三次, X0 上升沿触发LDP*)</span><br><span class="line">OUT(CS0, Y0);(*C0三次计数满后触发Y0*)</span><br><span class="line">OUT_T(CS0, TC0, 20);(*C0 计数满后，触发倒计时 2 秒*)</span><br><span class="line">RST(TS0, CN0);(*T0 定时到后，复位计数器C0*)</span><br></pre></td></tr></table></figure><div style="font-size:13px;color:gray;text-align:center">▲ ST 代码</div><p><img src="http://image.huvjie.com/200519N02_img01.jpg" alt="梯形图"></p><p><div style="font-size:13px;color:gray;text-align:center">▲ T 形图</div></p><p><hr><br><span style="color:gray;font-size:12px"><br>参考：<br>1.<a href="">link-01</a><br>2.<a href="">link-02</a><br>3.<a href="">link-03</a><br></span></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;有一个光电传感器检测工件，每检测到1只工件，计数一次，当计数到3只时，发出一个装箱信号。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="电子电气" scheme="https://www.andyvj.com/categories/%E7%94%B5%E5%AD%90%E7%94%B5%E6%B0%94/"/>
+    
+    
+      <category term="三菱PLC" scheme="https://www.andyvj.com/tags/%E4%B8%89%E8%8F%B1PLC/"/>
+    
+  </entry>
   
   <entry>
     <title>有时候是真的失望</title>
@@ -460,32 +484,6 @@ height: 100%; left: 0; top: 0;&quot;&gt; &lt;/iframe&gt;&lt;/div&gt;
 &lt;li&gt;接口之间可以实现多继承&lt;/li&gt;
 &lt;li&gt;先从语法角度看一下接口，与抽象类类似。&lt;/li&gt;
 &lt;/ul&gt;
-    
-    </summary>
-    
-      <category term="编程爱好" scheme="https://www.andyvj.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
-    
-    
-      <category term="C#" scheme="https://www.andyvj.com/tags/C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>C#.Net基础加强十一天-委托</title>
-    <link href="https://www.andyvj.com/2019/07/27/190727N03/"/>
-    <id>https://www.andyvj.com/2019/07/27/190727N03/</id>
-    <published>2019-07-27T08:35:56.000Z</published>
-    <updated>2019-07-27T08:51:29.612Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="委托复习"><a href="#委托复习" class="headerlink" title="委托复习"></a>委托复习</h2><ol><li>委托是一种数据类型，像类一样的一种数据类型。<span style="color:red">一般都是直接在命名空间中定义</span>。</li><li>定义委托时，需要指明<strong>返回值类型、委托名与参数列表</strong>，这样就能确定该类型的委托能存储什么样的方法。</li><li>使用委托：<ol><li>声明委托变量。</li><li>委托是一个引用类型，就像类一样，所以当声明委托变量后，如果不赋值则该委托变量为                <code>null</code>。所以在使用委托变量前最好做非空校验 <code>weituo！=null</code>。</li><li>委托类型的变量只能赋值一个委托类型的对象。</li></ol></li></ol><p><strong>委托，像 C++ 的函数指针。</strong></p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    MyDelegate md = <span class="keyword">new</span> MyDelegate(M1);</span><br><span class="line">    md();</span><br><span class="line">    MyDelegate md1 = M1; <span class="comment">// 这种定义的方法是</span></span><br><span class="line">    <span class="comment">// 和上面是一样的，省略了 new。</span></span><br><span class="line">    md1.Invoke(); <span class="comment">// 这种调用的方法是上面写法的完整版。</span></span><br><span class="line">    <span class="comment">// Invoke(/*有参数的话可以在括号中传递。*/)</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">M1</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Console.WriteLine(<span class="string">"M1 函数。"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">delegate</span> <span class="keyword">void</span> <span class="title">MyDelegate</span>(<span class="params"></span>)</span>;</span><br></pre></td></tr></table></figure><p>输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">我是 M1 函数</span><br><span class="line">我是 M1 函数</span><br><span class="line">请按任意键继续.</span><br></pre></td></tr></table></figure></p><h2 id="委托在什么情况下用"><a href="#委托在什么情况下用" class="headerlink" title="委托在什么情况下用"></a>委托在什么情况下用</h2><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">MyClass</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Say</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>    &#123;</span><br><span class="line">    <span class="comment">/* ......</span></span><br><span class="line"><span class="comment">    这里是要执行的代码，而这段代码的不确定性很大。根据调用者的不同可能执行的</span></span><br><span class="line"><span class="comment">    代码不一样。这时候就可以把这段代码封装起来，封装成一个委托类型。通过委托</span></span><br><span class="line"><span class="comment">    变量来代替，将来你传递一个什么委托变量，这个地方就执行什么方法。</span></span><br><span class="line"><span class="comment">    这样的意思，代码提前写好了，在这个地方先占一个位，这里执行的代码是活的。</span></span><br><span class="line"><span class="comment">    是由传递过来的方法确定的。</span></span><br><span class="line"><span class="comment">   ......*/</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>委托就是事先占了一个位置，执行的方法待定，由传递过来的方法决定，较的灵活。</p><h2 id="实例练习"><a href="#实例练习" class="headerlink" title="实例练习"></a>实例练习</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">练习3： // 把邮箱名替换成※号  </span><br><span class="line">zxh@itcast.cn   →  ***@itcast.cn  </span><br><span class="line">steve_zhao@163.com  →  **********@163.com  </span><br><span class="line">sk@codeedu.com  →  **@codeedu.com</span><br></pre></td></tr></table></figure><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(<span class="literal">true</span>) &#123;</span><br><span class="line">        Console.WriteLine(<span class="string">"请输入一个邮箱地址："</span>);</span><br><span class="line">        <span class="keyword">string</span> email = Console.ReadLine();</span><br><span class="line">        email = Regex.Replace(email, <span class="string">@"(\w+)(@\w+\.\w)"</span>, ReplaceMethod, RegexOptions.ECMAScript);</span><br><span class="line">        <span class="comment">// ▲ 第三个参数直接传递一个返回值为 string 类型的方法，</span></span><br><span class="line">        <span class="comment">// 这里就用的委托，不是定死的，是活的。</span></span><br><span class="line"></span><br><span class="line">       Console.WriteLine(email);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">string</span> <span class="title">ReplaceMethod</span>(<span class="params">Match match</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">string</span> uid = match.Groups[<span class="number">1</span>].Value;</span><br><span class="line">    <span class="keyword">string</span> others = match.Groups[<span class="number">2</span>].Value;</span><br><span class="line">    StringBuilder sb = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; uid.Length; i++) &#123;</span><br><span class="line">        sb.Append(<span class="string">"*"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> sb.ToString() + others;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="委托的使用"><a href="#委托的使用" class="headerlink" title="委托的使用"></a>委托的使用</h2><ul><li>声明委托的方式: <code>delegate</code> 返回值类型 委托类型名(参数)   比如 <code>delegate void StringProcess(string s);</code> 注意这里的除了前面的 <code>delegate</code>,剩下部分和声明一个函数一样,但是<code>StringProcess</code>不是函数名,而是委托类型名。</li><li>存储什么样的方法就声明什么类型(方法参数与返回值)的委托。</li><li>声明的委托是一种类型,就像<code>int</code>、<code>Person</code>一样,如果要用的话还要声明委托类型的变量,声明委托类型变量的方式:<code>StringProcess f1;</code></li><li>将委托类型变量指向函数 <code>StringProcess sp = new StringProcess(SayHello)</code>,这样就可以像调用普通函蒙一样把<code>sp</code>当成函教用了.委托可以看做是函数的指针.整数可以用整数变量指向它,对象可以用对象变量指向它,函数也可以用委托变量指向它.和直接调用函数的区别:用委托就可以指向任意的函数,哪怕是之前没定义的都可以,而不使用受限于那几种。</li><li>将委托类型变量指向函数还可以简化成<code>StringProcess sp = SayHelo</code>,编译器帮我们进行了<code>new</code>.但是不能<code>sp = Printit()</code>,因为这样就成了函数调用。</li></ul><p><hr><br><span style="color:gray;font-size:12px"><br>参考：<br>1.<a href="https://www.bilibili.com/video/av24227074" target="_blank" rel="noopener">link-01</a> // C#.Net基础加强十一天-委托 事件 反射<br></span></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;委托复习&quot;&gt;&lt;a href=&quot;#委托复习&quot; class=&quot;headerlink&quot; title=&quot;委托复习&quot;&gt;&lt;/a&gt;委托复习&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;委托是一种数据类型，像类一样的一种数据类型。&lt;span style=&quot;color:red&quot;&gt;一般都是直接在命名空
-      
     
     </summary>
     
