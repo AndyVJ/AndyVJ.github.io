@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[三菱ST：星-三角启动]]></title>
+    <url>%2F2020%2F05%2F19%2F200519N01%2F</url>
+    <content type="text"><![CDATA[三相异步电动机的Y-△（星-三角）启动控制程序。 ▲ 星-三角电机端子的接法 器件选型三相异步电机、接触器、继电器、FX2N-32MR等。 接线图设计 I/O分配 ▲ I/O 分配表 程序编写12345678Y0 := (Y0 AND X1) OR X0;(*X1为急停开关，常闭*)IF Y0 THEN OUT_T(TRUE, TC0, 50); Y1 := NOT TS0 AND NOT Y2; OUT_T(TS0, TC1, 10); Y2 := TS1 AND NOT Y1;END_IF; ▲ ST 代码 参考： 向晓汉 -&gt; P84]]></content>
+      <categories>
+        <category>电子电气</category>
+      </categories>
+      <tags>
+        <tag>三菱PLC</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[三菱ST：计数装箱]]></title>
     <url>%2F2020%2F05%2F19%2F200519N02%2F</url>
     <content type="text"><![CDATA[有一个光电传感器检测工件，每检测到1只工件，计数一次，当计数到3只时，发出一个装箱信号。 1234OUT_C(LDP(TRUE, X0), CC0, 3); (*C0计数器计数三次, X0 上升沿触发LDP*)OUT(CS0, Y0);(*C0三次计数满后触发Y0*)OUT_T(CS0, TC0, 20);(*C0 计数满后，触发倒计时 2 秒*)RST(TS0, CN0);(*T0 定时到后，复位计数器C0*) ▲ ST 代码 ▲ T 形图 参考：1.link-012.link-023.link-03]]></content>
@@ -922,9 +933,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[UG NX 坐标对齐移动——解决实体与原始坐标不对齐的问题]]></title>
-    <url>%2F2019%2F02%2F19%2F190219-01%2F</url>
-    <content type="text"><![CDATA[有时候通过WAVE链接过来的实体会出现实体与原始坐标不对齐的情况，如： 可以用坐标到坐标移动的方式将实体摆正。 新建与实体对齐的坐标系。 Ctrl + T 移动。 这样后，实体就与原始坐标对齐了：]]></content>
+    <title><![CDATA[UG NX 移动对象之『动态』技巧]]></title>
+    <url>%2F2019%2F02%2F19%2F190219-02%2F</url>
+    <content type="text"><![CDATA[动态绕某一点旋转，而旋转手柄又不在此点上，如何操作？ Ctrl + T 移动对象，勾选只移动手柄，将手柄点选移动到需要旋转的点。 取消勾选只移动手柄，点选手柄节点，输入旋转角度，确定。]]></content>
       <categories>
         <category>机械结构</category>
       </categories>
@@ -933,9 +944,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[UG NX 移动对象之『动态』技巧]]></title>
-    <url>%2F2019%2F02%2F19%2F190219-02%2F</url>
-    <content type="text"><![CDATA[动态绕某一点旋转，而旋转手柄又不在此点上，如何操作？ Ctrl + T 移动对象，勾选只移动手柄，将手柄点选移动到需要旋转的点。 取消勾选只移动手柄，点选手柄节点，输入旋转角度，确定。]]></content>
+    <title><![CDATA[UG NX 坐标对齐移动——解决实体与原始坐标不对齐的问题]]></title>
+    <url>%2F2019%2F02%2F19%2F190219-01%2F</url>
+    <content type="text"><![CDATA[有时候通过WAVE链接过来的实体会出现实体与原始坐标不对齐的情况，如： 可以用坐标到坐标移动的方式将实体摆正。 新建与实体对齐的坐标系。 Ctrl + T 移动。 这样后，实体就与原始坐标对齐了：]]></content>
       <categories>
         <category>机械结构</category>
       </categories>
