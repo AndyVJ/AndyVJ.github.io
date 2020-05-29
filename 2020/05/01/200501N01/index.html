@@ -121,7 +121,7 @@
 <meta property="og:description" content="▲ 流水灯效果">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://image.huvjie.com/200501N01_img01.gif">
-<meta property="og:updated_time" content="2020-05-01T14:45:22.831Z">
+<meta property="og:updated_time" content="2020-05-29T09:45:18.164Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="三菱PLC流水灯">
 <meta name="twitter:description" content="▲ 流水灯效果">
@@ -406,12 +406,24 @@
                 
               
 
-              <time title="创建时间：2020-05-01 22:27:25 / 修改时间：22:45:22" itemprop="dateCreated datePublished" datetime="2020-05-01T22:27:25+08:00">2020-05-01</time>
+              <time title="创建时间：2020-05-01 22:27:25" itemprop="dateCreated datePublished" datetime="2020-05-01T22:27:25+08:00">2020-05-01</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2020-05-29 17:45:18" itemprop="dateModified" datetime="2020-05-29T17:45:18+08:00">2020-05-29</time>
               
             
           </span>
@@ -483,6 +495,12 @@
 <div style="font-size:13px;color:gray;text-align:center">▲ 流水灯效果</div>
 
 <a id="more"></a>
+<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;"><iframe src="//player.bilibili.com/player.html?aid=710607054&bvid=BV1RQ4y1N7ca&cid=185745456&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; 
+height: 100%; left: 0; top: 0;"> </iframe></div>
+
+
+<div style="font-size:13px;color:gray;text-align:center">▲ 我录制的视频</div>
+
 <p>ST 代码：<br><figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">M0:=X0 AND (NOT X1) OR M0;(*X0启动，X1关闭,X0和X1互锁*)</span><br><span class="line">RST(X1 AND (NOT X0),M0);</span><br><span class="line">OUT_T(M0 AND (NOT TC0),TC0,<span class="number">10</span>);</span><br><span class="line">OUT_C(TS0,CC10,<span class="number">8</span>);(*计数<span class="number">8</span>次*)</span><br><span class="line">RST(CS10,CN10);(*计时器自我复位*)</span><br><span class="line"><span class="keyword">CASE</span> CN10 OF</span><br><span class="line">	<span class="number">0</span>: <span class="keyword">IF</span> M0 <span class="keyword">THEN</span> (*确保上电的时候所有灯是灭的，因为计数器默认状态为<span class="number">0</span>*)</span><br><span class="line">		  Y0:=TRUE;</span><br><span class="line">		  Y7:=FALSE;</span><br><span class="line">	   END_IF;</span><br><span class="line">	<span class="number">1</span>: Y1:=TRUE;</span><br><span class="line">	   Y0:=FALSE;</span><br><span class="line">	<span class="number">2</span>: Y2:=TRUE;</span><br><span class="line">	   Y1:=FALSE;</span><br><span class="line">    <span class="number">3</span>: Y3:=TRUE;</span><br><span class="line">       Y2:=FALSE;</span><br><span class="line">    <span class="number">4</span>: Y4:=TRUE;</span><br><span class="line">       Y3:=FALSE;</span><br><span class="line">    <span class="number">5</span>: Y5:=TRUE;</span><br><span class="line">       Y4:=FALSE;</span><br><span class="line">    <span class="number">6</span>: Y6:=TRUE;</span><br><span class="line">       Y5:=FALSE;</span><br><span class="line">    <span class="number">7</span>: Y7:=TRUE;</span><br><span class="line">       Y6:=FALSE;       </span><br><span class="line">END_CASE;</span><br><span class="line"><span class="keyword">IF</span> NOT M0 <span class="keyword">THEN</span></span><br><span class="line">	RST(NOT M0,CN10);(*确保每次都是从Y0开始*)</span><br><span class="line">	Y0:=FALSE;</span><br><span class="line">	Y1:=FALSE;</span><br><span class="line">	Y2:=FALSE;  </span><br><span class="line">	Y3:=FALSE;</span><br><span class="line">	Y4:=FALSE;</span><br><span class="line">	Y5:=FALSE;</span><br><span class="line">	Y6:=FALSE;  </span><br><span class="line">	Y7:=FALSE;</span><br><span class="line">END_IF;</span><br></pre></td></tr></table></figure></p>
 <!--
 <hr/>
@@ -647,7 +665,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">126</span>
+                    <span class="site-state-item-count">127</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>

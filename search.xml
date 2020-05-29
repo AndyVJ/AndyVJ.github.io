@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[我们如何做成功一件事情]]></title>
+    <url>%2F2020%2F05%2F29%2F200529N01%2F</url>
+    <content type="text"><![CDATA[成功是每个人都渴望的，我们决定去做一件事情，怎样才能做成功呢？可能我们每个人都会有自己的想法，因为每个人踩过的坑都不一样；也许失败真乃是成功之母；还得要我们去总结思考。都说年轻失败不可怕，但摔跤真的会痛啊，伙计们。 年轻的时候我们去做一件事情，可能仅仅因为我们想做这件事情，凭兴趣也好其他原因也罢，就是单纯想做。这个时候失败的可能性比较大，但因为年轻无所畏惧。人终究还是要走向成熟。 决定一件事的成功与否，肯定有很多因素决定。事情是客观存在的，不会因为你的某一项凸出能力就会给你带来成功，她由多方面因素决定。 当你决定去做一件事情，这个决定本身够不够成熟，是否是拍脑袋决定的还是经过你深思熟虑的。你的优势在哪里，劣势在哪里？你有哪些资源？你将要付出什么样的代价？是否有吃苦的决心坚强的意志力？可能会遇到的困难和情况有哪些？你是否能抵抗的住？是否有各种预案？…… 做一件事情还是需要一个团队去做，深知一个人的精力时间能力是远远不够分的；要分工合作。团队成员一定要选好，一定要选好，一定要选好，这个可能是最重要的一环，决定着这件事情能否成功。并不一定要能力最强，但要最合适的。至于怎样去选，怎样才算合适，我也不知道…可能最重要的一点，沟通要顺畅，交流要正常，大家的思想和想法要能在同一水平，目标一致。 一个团队的产生，自然需要一个主导，主导者还是需要一定的领导力，管理能力，激励团员能力，自我驱动能力吧。最开始这也许不是最重要的？五五分的合伙生意不要做。 团队分工合作，等级分明，沟通顺畅，目标一致，团结；每人都有某一方面独到的能力；五五开合伙生意不要做； 意志坚定； 钱； 运气； 做自己擅长和感兴趣的事。]]></content>
+      <categories>
+        <category>其他</category>
+      </categories>
+      <tags>
+        <tag>点滴</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[三菱ST：星-三角启动]]></title>
     <url>%2F2020%2F05%2F19%2F200519N01%2F</url>
     <content type="text"><![CDATA[三相异步电动机的Y-△（星-三角）启动控制程序。 ▲ 星-三角电机端子的接法 器件选型三相异步电机、接触器、继电器、FX2N-32MR等。 接线图设计 I/O分配 ▲ I/O 分配表 程序编写12345678Y0 := (Y0 AND X1) OR X0;(*X1为急停开关，常闭*)IF Y0 THEN OUT_T(TRUE, TC0, 50); Y1 := NOT TS0 AND NOT Y2; OUT_T(TS0, TC1, 10); Y2 := TS1 AND NOT Y1;END_IF; ▲ ST 代码 参考： 向晓汉 -&gt; P84]]></content>
@@ -58,7 +69,7 @@
   <entry>
     <title><![CDATA[三菱PLC流水灯]]></title>
     <url>%2F2020%2F05%2F01%2F200501N01%2F</url>
-    <content type="text"><![CDATA[▲ 流水灯效果 ST 代码：123456789101112131415161718192021222324252627282930313233343536M0:=X0 AND (NOT X1) OR M0;(*X0启动，X1关闭,X0和X1互锁*)RST(X1 AND (NOT X0),M0);OUT_T(M0 AND (NOT TC0),TC0,10);OUT_C(TS0,CC10,8);(*计数8次*)RST(CS10,CN10);(*计时器自我复位*)CASE CN10 OF 0: IF M0 THEN (*确保上电的时候所有灯是灭的，因为计数器默认状态为0*) Y0:=TRUE; Y7:=FALSE; END_IF; 1: Y1:=TRUE; Y0:=FALSE; 2: Y2:=TRUE; Y1:=FALSE; 3: Y3:=TRUE; Y2:=FALSE; 4: Y4:=TRUE; Y3:=FALSE; 5: Y5:=TRUE; Y4:=FALSE; 6: Y6:=TRUE; Y5:=FALSE; 7: Y7:=TRUE; Y6:=FALSE; END_CASE;IF NOT M0 THEN RST(NOT M0,CN10);(*确保每次都是从Y0开始*) Y0:=FALSE; Y1:=FALSE; Y2:=FALSE; Y3:=FALSE; Y4:=FALSE; Y5:=FALSE; Y6:=FALSE; Y7:=FALSE;END_IF;]]></content>
+    <content type="text"><![CDATA[▲ 流水灯效果 ▲ 我录制的视频 ST 代码：123456789101112131415161718192021222324252627282930313233343536M0:=X0 AND (NOT X1) OR M0;(*X0启动，X1关闭,X0和X1互锁*)RST(X1 AND (NOT X0),M0);OUT_T(M0 AND (NOT TC0),TC0,10);OUT_C(TS0,CC10,8);(*计数8次*)RST(CS10,CN10);(*计时器自我复位*)CASE CN10 OF 0: IF M0 THEN (*确保上电的时候所有灯是灭的，因为计数器默认状态为0*) Y0:=TRUE; Y7:=FALSE; END_IF; 1: Y1:=TRUE; Y0:=FALSE; 2: Y2:=TRUE; Y1:=FALSE; 3: Y3:=TRUE; Y2:=FALSE; 4: Y4:=TRUE; Y3:=FALSE; 5: Y5:=TRUE; Y4:=FALSE; 6: Y6:=TRUE; Y5:=FALSE; 7: Y7:=TRUE; Y6:=FALSE; END_CASE;IF NOT M0 THEN RST(NOT M0,CN10);(*确保每次都是从Y0开始*) Y0:=FALSE; Y1:=FALSE; Y2:=FALSE; Y3:=FALSE; Y4:=FALSE; Y5:=FALSE; Y6:=FALSE; Y7:=FALSE;END_IF;]]></content>
       <categories>
         <category>电子电气</category>
       </categories>
@@ -289,7 +300,7 @@
   <entry>
     <title><![CDATA[C#读写配置文件]]></title>
     <url>%2F2019%2F07%2F19%2F190719N01%2F</url>
-    <content type="text"><![CDATA[利用 Windows API 读写配置文件。 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556using System;using System.Runtime.InteropServices;using System.Text;using System.Windows.Forms;using System.IO;namespace CS读写配置文件&#123; public partial class Form1 : Form &#123; public Form1() &#123; InitializeComponent(); &#125; [DllImport("kernel32")]//读配置文件方法的6个参数：所在的分区（section）、 键值、 初始缺省值、 StringBuilder、 参数长度上限 、配置文件路径 public static extern long GetPrivateProfileString(string section, string key, string defaultValue, StringBuilder retVal, int size, string filePath); [DllImport("kernel32")]//配置文件方法的4个参数： 所在的分区（section）、 键值、 参数值、 配置文件路径 private static extern long WritePrivateProfileString(string section, string key, string value, string filePath); /*读配置文件*/ public static string GetValue(string section, string key) &#123; // ▼ 获取当前程序启动目录 string strPath = Application.StartupPath + @"/config.ini"; if (File.Exists(strPath)) &#123; StringBuilder sb = new StringBuilder(255); GetPrivateProfileString(section, key, "配置文件不存在，读取未成功!", sb, 255, strPath); return sb.ToString(); &#125; else &#123; return string.Empty; &#125; &#125; /*写配置文件*/ public static void SetValue(string section, string key, string value) &#123; // ▼ 获取当前程序启动目录 string strPath = Application.StartupPath + @"/config.ini"; WritePrivateProfileString(section, key, value, strPath); &#125; private void Form1_Load(object sender, EventArgs e) &#123; SetValue("参数", "波特率", "9600"); // 都是字符串类型 SetValue("参数", "率特波", "110"); // 都是字符串类型 &#125; private void button1_Click(object sender, EventArgs e) &#123; richTextBox1.Text += GetValue("参数", "波特率"); richTextBox1.Text += "\n"; richTextBox1.Text += GetValue("参数", "率特波"); &#125; &#125;&#125; 界面： 运行，点击 button： config,ini配置文件内容如下： 参考：1.link-01 // Windows API 读写配置文件2.link-02 // 在C#中读写INI配置文件]]></content>
+    <content type="text"><![CDATA[利用 Windows API 读写配置文件。 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556using System;using System.Runtime.InteropServices;using System.Text;using System.Windows.Forms;using System.IO;namespace CS读写配置文件&#123; public partial class Form1 : Form &#123; public Form1() &#123; InitializeComponent(); &#125; [DllImport("kernel32")]//读配置文件方法的6个参数：所在的分区（section）、 键值、 初始缺省值、 StringBuilder、 参数长度上限 、配置文件路径 public static extern long GetPrivateProfileString(string section, string key, string defaultValue, StringBuilder retVal, int size, string filePath); [DllImport("kernel32")]//配置文件方法的4个参数： 所在的分区（section）、 键值、 参数值、 配置文件路径 private static extern long WritePrivateProfileString(string section, string key, string value, string filePath); /*读配置文件*/ public static string GetValue(string section, string key) &#123; // ▼ 获取当前程序启动目录 string strPath = Application.StartupPath + @"/config.ini"; if (File.Exists(strPath)) &#123; StringBuilder sb = new StringBuilder(255); GetPrivateProfileString(section, key, "配置文件不存在，读取未成功!", sb, 255, strPath); return sb.ToString(); &#125; else &#123; return string.Empty; &#125; &#125; /*写配置文件*/ public static void SetValue(string section, string key, string value) &#123; // ▼ 获取当前程序启动目录 string strPath = Application.StartupPath + @"/config.ini"; WritePrivateProfileString(section, key, value, strPath); &#125; private void Form1_Load(object sender, EventArgs e) &#123; SetValue("参数", "波特率", "9600"); // 都是字符串类型 SetValue("参数", "率特波", "110"); // 都是字符串类型 &#125; private void button1_Click(object sender, EventArgs e) &#123; richTextBox1.Text += GetValue("参数", "波特率"); richTextBox1.Text += "\n"; richTextBox1.Text += GetValue("参数", "率特波"); &#125; &#125;&#125; 界面： 运行，点击 button： config.ini配置文件内容如下： 参考：1.link-01 // Windows API 读写配置文件2.link-02 // 在C#中读写INI配置文件]]></content>
       <categories>
         <category>编程爱好</category>
       </categories>
