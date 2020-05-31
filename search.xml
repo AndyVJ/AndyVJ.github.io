@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[引用类型作为值参数和引用参数]]></title>
+    <url>%2F2020%2F06%2F01%2F200601N01%2F</url>
+    <content type="text"><![CDATA[引用类型作为值类型传递，形参和实参其实是两个指针，只不过指向的是同意块内存。新new一个对象是，它们两的联系就被切断了，指向了不同的内存块。 引用类型作为引用参数，此时的形参其实是实参的一个别名，它们两个其实是一个指针，新new一个对象是，指向的还是同一内存块，因为它们本身就是同一个指针。 两种情况的最后指向是不一样的。 引用类型作为值参数12345678910111213141516171819202122232425262728293031using System;namespace RefParameter&#123; class MyClass &#123; public int test = 20; &#125; class Program &#123; static private void RefparameterTest( MyClass mc) &#123; mc.test = 50; Console.WriteLine("修改值之后：&#123;0&#125;", mc.test); mc = new MyClass(); Console.WriteLine("新创建之后：&#123;0&#125;", mc.test); &#125; static void Main(string[] args) &#123; MyClass mc = new MyClass(); Console.WriteLine("原始值：&#123;0&#125;\n=======", mc.test); RefparameterTest( mc); Console.WriteLine("=======\n最后值：&#123;0&#125;", mc.test); Console.ReadKey(); &#125; &#125;&#125; 输出：123456原始值：20=======修改值之后：50新创建之后：20=======最后值：50 // 被修改 引用类型作为引用参数123456789101112131415161718192021222324252627282930using System;namespace RefParameter&#123; class MyClass &#123; public int test = 20; &#125; class Program &#123; static private void RefparameterTest(ref MyClass mc) &#123; mc.test = 50; Console.WriteLine("修改值之后：&#123;0&#125;", mc.test); mc = new MyClass(); Console.WriteLine("新创建之后：&#123;0&#125;", mc.test); &#125; static void Main(string[] args) &#123; MyClass mc = new MyClass(); Console.WriteLine("原始值：&#123;0&#125;\n=======", mc.test); RefparameterTest(ref mc); Console.WriteLine("=======\n最后值：&#123;0&#125;", mc.test); Console.ReadKey(); &#125; &#125;&#125; 输出： 123456原始值：20=======修改值之后：50新创建之后：20=======最后值：20 // 还是原来 参考： 《C#图解教程》 -&gt; P66]]></content>
+      <categories>
+        <category>编程爱好</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[我们如何做成功一件事情]]></title>
     <url>%2F2020%2F05%2F29%2F200529N01%2F</url>
     <content type="text"><![CDATA[成功是每个人都渴望的，我们决定去做一件事情，怎样才能做成功呢？可能我们每个人都会有自己的想法，因为每个人踩过的坑都不一样；也许失败真乃是成功之母；还得要我们去总结思考。都说年轻失败不可怕，但摔跤真的会痛啊，伙计们。 年轻的时候我们去做一件事情，可能仅仅因为我们想做这件事情，凭兴趣也好其他原因也罢，就是单纯想做。这个时候失败的可能性比较大，但因为年轻无所畏惧。人终究还是要走向成熟。 决定一件事的成功与否，肯定有很多因素决定。事情是客观存在的，不会因为你的某一项凸出能力就会给你带来成功，她由多方面因素决定。 当你决定去做一件事情，这个决定本身够不够成熟，是否是拍脑袋决定的还是经过你深思熟虑的。你的优势在哪里，劣势在哪里？你有哪些资源？你将要付出什么样的代价？是否有吃苦的决心坚强的意志力？可能会遇到的困难和情况有哪些？你是否能抵抗的住？是否有各种预案？…… 做一件事情还是需要一个团队去做，深知一个人的精力时间能力是远远不够分的；要分工合作。团队成员一定要选好，一定要选好，一定要选好，这个可能是最重要的一环，决定着这件事情能否成功。并不一定要能力最强，但要最合适的。至于怎样去选，怎样才算合适，我也不知道…可能最重要的一点，沟通要顺畅，交流要正常，大家的思想和想法要能在同一水平，目标一致。 一个团队的产生，自然需要一个主导，主导者还是需要一定的领导力，管理能力，激励团员能力，自我驱动能力吧。最开始这也许不是最重要的？五五分的合伙生意不要做。 团队分工合作，等级分明，沟通顺畅，目标一致，团结；每人都有某一方面独到的能力；五五开合伙生意不要做； 意志坚定； 钱； 运气； 做自己擅长和感兴趣的事。]]></content>
@@ -944,9 +955,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[UG NX 移动对象之『动态』技巧]]></title>
-    <url>%2F2019%2F02%2F19%2F190219-02%2F</url>
-    <content type="text"><![CDATA[动态绕某一点旋转，而旋转手柄又不在此点上，如何操作？ Ctrl + T 移动对象，勾选只移动手柄，将手柄点选移动到需要旋转的点。 取消勾选只移动手柄，点选手柄节点，输入旋转角度，确定。]]></content>
+    <title><![CDATA[UG NX 坐标对齐移动——解决实体与原始坐标不对齐的问题]]></title>
+    <url>%2F2019%2F02%2F19%2F190219-01%2F</url>
+    <content type="text"><![CDATA[有时候通过WAVE链接过来的实体会出现实体与原始坐标不对齐的情况，如： 可以用坐标到坐标移动的方式将实体摆正。 新建与实体对齐的坐标系。 Ctrl + T 移动。 这样后，实体就与原始坐标对齐了：]]></content>
       <categories>
         <category>机械结构</category>
       </categories>
@@ -955,9 +966,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[UG NX 坐标对齐移动——解决实体与原始坐标不对齐的问题]]></title>
-    <url>%2F2019%2F02%2F19%2F190219-01%2F</url>
-    <content type="text"><![CDATA[有时候通过WAVE链接过来的实体会出现实体与原始坐标不对齐的情况，如： 可以用坐标到坐标移动的方式将实体摆正。 新建与实体对齐的坐标系。 Ctrl + T 移动。 这样后，实体就与原始坐标对齐了：]]></content>
+    <title><![CDATA[UG NX 移动对象之『动态』技巧]]></title>
+    <url>%2F2019%2F02%2F19%2F190219-02%2F</url>
+    <content type="text"><![CDATA[动态绕某一点旋转，而旋转手柄又不在此点上，如何操作？ Ctrl + T 移动对象，勾选只移动手柄，将手柄点选移动到需要旋转的点。 取消勾选只移动手柄，点选手柄节点，输入旋转角度，确定。]]></content>
       <categories>
         <category>机械结构</category>
       </categories>
