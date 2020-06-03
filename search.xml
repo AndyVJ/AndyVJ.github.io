@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[C#通过委托快窗体传值]]></title>
+    <url>%2F2020%2F06%2F03%2F200603N01%2F</url>
+    <content type="text"><![CDATA[参考：1.link-012.link-023.link-03]]></content>
+      <categories>
+        <category>编程爱好</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[C#模块封装的形式做一个加法计算器]]></title>
     <url>%2F2020%2F06%2F02%2F200602N02%2F</url>
-    <content type="text"><![CDATA[模块封装dll然后通过引用的方式来实现这个简易计算器练习。 界面 ▲ 界面 添加类库右键 -&gt; 解决方案 -&gt; 添加 -&gt; 新建项目 -&gt; 类库 -&gt; CalDLL -&gt; …… 编号代码以后 -&gt; 生成解决方案 -&gt; 对应文件夹下面生成一个 CalDll.dll 文件。 引用 ▲ 右键 -&gt; 引用 -&gt; 添加引用 ▲ 项目 -&gt; 解决方案 -&gt; 添加 或者： ▲ 通过浏览，直接路径去找生成的 dll 文件 这样以后，我们就能够在引用下面看到我们添加进来的dll文件。 ▲ 添加进来的引用， dll 文件。 使用把命名空间添加进来，using Call;，之后该怎么用就怎么用。实际开发中应该会给一个文档。 ▲ 计算一个试下^_^。复杂的项目，实际开发应该是这样的一个过程。]]></content>
+    <content type="text"><![CDATA[模块封装dll然后通过引用的方式来实现这个简易计算器练习。 界面 ▲ 界面 添加类库右键 -&gt; 解决方案(注意是解决方案) -&gt; 添加 -&gt; 新建项目 -&gt; 类库 -&gt; CalDLL -&gt; …… 编好代码以后 -&gt; 生成解决方案 -&gt; 对应文件夹下面生成一个 CalDll.dll 文件。 引用 ▲ 右键 -&gt; 引用 -&gt; 添加引用 ▲ 项目 -&gt; 解决方案 -&gt; 添加 或者： ▲ 通过浏览，直接路径去找生成的 dll 文件 这样以后，我们就能够在引用下面看到我们添加进来的dll文件。 ▲ 添加进来的引用， dll 文件。 使用把命名空间添加进来，using Call;，之后该怎么用就怎么用。实际开发中应该会给一个文档。 ▲ 计算一个试下^_^。复杂的项目，实际开发应该是这样的一个过程。]]></content>
       <categories>
         <category>编程爱好</category>
       </categories>
