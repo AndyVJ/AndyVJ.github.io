@@ -112,18 +112,18 @@
 
 
 
-  <meta name="description" content="参考：1.link-012.link-023.link-03">
+  <meta name="description" content="不同窗体处于不同线程，相互之间需要通信时，需要用到委托。">
 <meta name="keywords" content="C#">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C#通过委托快窗体传值">
 <meta property="og:url" content="https://www.andyvj.com/2020/06/03/200603N01/index.html">
 <meta property="og:site_name" content="胡搅蛮缠">
-<meta property="og:description" content="参考：1.link-012.link-023.link-03">
+<meta property="og:description" content="不同窗体处于不同线程，相互之间需要通信时，需要用到委托。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-06-03T15:45:55.911Z">
+<meta property="og:updated_time" content="2020-06-03T15:57:06.407Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C#通过委托快窗体传值">
-<meta name="twitter:description" content="参考：1.link-012.link-023.link-03">
+<meta name="twitter:description" content="不同窗体处于不同线程，相互之间需要通信时，需要用到委托。">
 
 
 
@@ -404,7 +404,7 @@
                 
               
 
-              <time title="创建时间：2020-06-03 23:32:49 / 修改时间：23:45:55" itemprop="dateCreated datePublished" datetime="2020-06-03T23:32:49+08:00">2020-06-03</time>
+              <time title="创建时间：2020-06-03 23:32:49 / 修改时间：23:57:06" itemprop="dateCreated datePublished" datetime="2020-06-03T23:32:49+08:00">2020-06-03</time>
             
 
             
@@ -477,8 +477,21 @@
       
 
       
-        <p><hr><br><span style="color:gray;font-size:12px"><br>参考：<br>1.<a href="">link-01</a><br>2.<a href="">link-02</a><br>3.<a href="">link-03</a><br></span></p>
-
+        <p>不同窗体处于不同线程，相互之间需要通信时，需要用到<code>委托</code>。</p>
+<a id="more"></a>
+<p><code>Form1.cs</code>:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">using System.Windows.Forms;</span><br><span class="line"></span><br><span class="line">namespace SelfLianXiDelegate</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">    public partial class Form1 : Form</span><br><span class="line">    &#123;</span><br><span class="line">        public Form1()</span><br><span class="line">        &#123;</span><br><span class="line">            InitializeComponent();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        public void ChangeLblText(string str)</span><br><span class="line">        &#123;</span><br><span class="line">            this.lblCounter.Text = str;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><code>Form2.cs</code>:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">using System;</span><br><span class="line">using System.Windows.Forms;</span><br><span class="line"></span><br><span class="line">namespace SelfLianXiDelegate</span><br><span class="line">&#123;</span><br><span class="line">    //public delegate void AddCounter(string str);</span><br><span class="line"></span><br><span class="line">    public partial class Form2 : Form</span><br><span class="line">    &#123;</span><br><span class="line"></span><br><span class="line">        //public AddCounter addCounter;</span><br><span class="line">        Action&lt;string&gt; addCounter;</span><br><span class="line">        public Form2()</span><br><span class="line">        &#123;</span><br><span class="line">            InitializeComponent();</span><br><span class="line">            Form1 form1 = new Form1();</span><br><span class="line">            addCounter = form1.ChangeLblText;</span><br><span class="line">            form1.Show();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        int count = 0;</span><br><span class="line">        private void btnCounter_Click(object sender, EventArgs e)</span><br><span class="line">        &#123;</span><br><span class="line">            count++;</span><br><span class="line">            if (addCounter != null) &#123;</span><br><span class="line">                addCounter(count.ToString());</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><code>Program.cs</code>:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">using System.Windows.Forms;</span><br><span class="line"></span><br><span class="line">namespace SelfLianXiDelegate</span><br><span class="line">&#123;</span><br><span class="line">    class Program</span><br><span class="line">    &#123;</span><br><span class="line">        static void Main(string[] args)</span><br><span class="line">        &#123;</span><br><span class="line">            Application.EnableVisualStyles();</span><br><span class="line">            Application.SetCompatibleTextRenderingDefault(false);</span><br><span class="line">            Application.Run(new Form2());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>输出：</p>
+<!--
+<hr/>
+<span style="color:gray;font-size:12px">
+参考： 
+1.[link-01]()
+2.[link-02]()
+3.[link-03]()
+</span>
+-->
       
     </div>
 
