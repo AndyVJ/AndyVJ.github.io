@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.andyvj.com/"/>
-  <updated>2020-06-11T03:25:40.533Z</updated>
+  <updated>2020-06-14T12:04:22.896Z</updated>
   <id>https://www.andyvj.com/</id>
   
   <author>
@@ -21,15 +21,15 @@
     <link href="https://www.andyvj.com/2020/06/11/200611N01/"/>
     <id>https://www.andyvj.com/2020/06/11/200611N01/</id>
     <published>2020-06-11T02:00:28.000Z</published>
-    <updated>2020-06-11T03:25:40.533Z</updated>
+    <updated>2020-06-14T12:04:22.896Z</updated>
     
-    <content type="html"><![CDATA[<p>信息管理系统可能是每个人学习途中必练的项目，出了基本的 Winform 界面的练习外，最主要的还是<strong>数据库的增、删、改、查</strong>。</p><p>基于这个项目练习，最主要的领悟是：<span style="color:red">1)要有面向对象的思维，对数据的处理要有封装意识；2)前后台要分离，前台界面和后天程序要分离开来；“高内聚，低耦合”。</span>这些都需要不断的去实践去练习去总结，才能获得经验。</p><p>下面是我练习的一个信息管理系统，下面是一些主要用到的一些知识点。</p><h1 id="登录窗"><a href="#登录窗" class="headerlink" title="登录窗"></a>登录窗</h1><p><img src="http://image.huvjie.com/200611N01_img01.jpg" alt="登录"></p><div style="font-size:13px;color:gray;text-align:center">▲ 登录窗</div><p>将用户在登录界面输入的账号密码在数据库中查询，能查询匹配到结果，即登录成功。账户和密码输入框中的内容需要进行规则验证，如账号必须是 5 位整数，这些输入验证方面需要用的<strong>正则表达式</strong>。</p><h1 id="主窗功能"><a href="#主窗功能" class="headerlink" title="主窗功能"></a>主窗功能</h1><p><img src="http://image.huvjie.com/200611N01_img01.gif" alt="登录主窗体"></p><div style="font-size:13px;color:gray;text-align:center">▲ 登录主窗体。</div><p>登录主窗体后，主要的功能都是围绕着<strong>增删改查</strong>来进行展开的，并把数据展示出来。Excel 的数据交换，导入与导出。</p><p><img src="http://image.huvjie.com/200611N01_img02.gif" alt="主窗功能"></p><div style="font-size:13px;color:gray;text-align:center">▲ 主窗体的一些功能展示</div><!--<hr/><span style="color:gray;font-size:12px">参考： 1.[link-01]()2.[link-02]()3.[link-03]()</span>-->]]></content>
+    <content type="html"><![CDATA[<p>信息管理系统可能是每个人学习途中必练的项目，除了基本的 Winform 界面的练习外，最主要的还是<strong>数据库的增、删、改、查</strong>。</p><p>基于这个项目练习，最主要的领悟是：<span style="color:red">1)要有面向对象的思维，对数据的处理要有封装意识；2)前后台要分离，前台界面和后天程序要分离开来；“高内聚，低耦合”。</span>这些都需要不断的去实践去练习去总结，才能获得经验。</p><p>下面是我练习的一个信息管理系统，下面是一些主要用到的一些知识点。</p><h1 id="登录窗"><a href="#登录窗" class="headerlink" title="登录窗"></a>登录窗</h1><p><img src="http://image.huvjie.com/200611N01_img01.jpg" alt="登录"></p><div style="font-size:13px;color:gray;text-align:center">▲ 登录窗</div><p>将用户在登录界面输入的账号密码在数据库中查询，能查询匹配到结果，即登录成功。账户和密码输入框中的内容需要进行规则验证，如账号必须是 5 位整数，这些输入验证方面需要用的<strong>正则表达式</strong>。</p><h1 id="主窗功能"><a href="#主窗功能" class="headerlink" title="主窗功能"></a>主窗功能</h1><p><img src="http://image.huvjie.com/200611N01_img01.gif" alt="登录主窗体"></p><div style="font-size:13px;color:gray;text-align:center">▲ 登录主窗体。</div><p>登录主窗体后，主要的功能都是围绕着<strong>增删改查</strong>来进行展开的，并把数据展示出来。Excel 的数据交换，导入与导出。</p><p><img src="http://image.huvjie.com/200611N01_img02.gif" alt="主窗功能"></p><div style="font-size:13px;color:gray;text-align:center">▲ 主窗体的一些功能展示</div><!--<hr/><span style="color:gray;font-size:12px">参考： 1.[link-01]()2.[link-02]()3.[link-03]()</span>-->]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;信息管理系统可能是每个人学习途中必练的项目，出了基本的 Winform 界面的练习外，最主要的还是&lt;strong&gt;数据库的增、删、改、查&lt;/strong&gt;。&lt;/p&gt;
+        &lt;p&gt;信息管理系统可能是每个人学习途中必练的项目，除了基本的 Winform 界面的练习外，最主要的还是&lt;strong&gt;数据库的增、删、改、查&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;基于这个项目练习，最主要的领悟是：&lt;span style=&quot;color:red&quot;&gt;1)要有面向对象的思
       
     
