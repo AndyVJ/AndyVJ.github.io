@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[C#扩展方法]]></title>
+    <url>%2F2020%2F06%2F15%2F200615N01%2F</url>
+    <content type="text"><![CDATA[扩展方法的 3 个要求： 声明扩展方法的类必须声明为 static； 扩展方法本身必须声明为static； 扩展方法第一个参数类型前一定要包含关键字 this。 123456789101112131415161718192021222324252627282930313233343536373839404142using System;namespace ExtensionMethods&#123; sealed public class MyMethod &#123; private double d1, d2, d3; public MyMethod(double i,double j, double k) &#123; d1 = i; d2 = j; d3 = k; &#125; public double SumMethod() &#123; return d1 + d2 + d3; &#125; &#125; static public class ExtensionMythod // [1]、静态类 &#123; static public double DivdMethos(this MyMethod md) // [2]、静态方法； [3]、第一个参数 this 关键字 &#123; return md.SumMethod() / 3; &#125; &#125; public class Program &#123; static void Main(string[] str) &#123; MyMethod md = new MyMethod(3, 4, 5); double reslut = md.DivdMethos(); // 方法一调用 Console.WriteLine("&#123;0:f2&#125;" , reslut); reslut = ExtensionMythod.DivdMethos(md); // 方法二调用 Console.WriteLine("&#123;0:f2&#125;", reslut); Console.ReadKey(); &#125; &#125;&#125; 输出： 124.004.00 MyMethod类 和 ExtensionMythod 类的访问等级要一样，都为 public 或者 都为 internal。 扩展方法也可以跟泛型结合起来使用。 参考：《图解教程》 -&gt; P145, P322]]></content>
+      <categories>
+        <category>编程爱好</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[【练习项目】：学员信息管理系统]]></title>
     <url>%2F2020%2F06%2F11%2F200611N01%2F</url>
     <content type="text"><![CDATA[信息管理系统可能是每个人学习途中必练的项目，除了基本的 Winform 界面的练习外，最主要的还是数据库的增、删、改、查。 基于这个项目练习，最主要的领悟是：1)要有面向对象的思维，对数据的处理要有封装意识；2)前后台要分离，前台界面和后天程序要分离开来；“高内聚，低耦合”。这些都需要不断的去实践去练习去总结，才能获得经验。 下面是我练习的一个信息管理系统，下面是一些主要用到的一些知识点。 登录窗 ▲ 登录窗 将用户在登录界面输入的账号密码在数据库中查询，能查询匹配到结果，即登录成功。账户和密码输入框中的内容需要进行规则验证，如账号必须是 5 位整数，这些输入验证方面需要用的正则表达式。 主窗功能 ▲ 登录主窗体。 登录主窗体后，主要的功能都是围绕着增删改查来进行展开的，并把数据展示出来。Excel 的数据交换，导入与导出。 ▲ 主窗体的一些功能展示]]></content>
