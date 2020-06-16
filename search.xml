@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[C#异步基础]]></title>
+    <url>%2F2020%2F06%2F16%2F200616N01%2F</url>
+    <content type="text"><![CDATA[一般顺序： 定义一个委托。 根据委托实现方法。 异步调用。 12345678910111213141516171819202122232425262728293031323334353637using System;using System.Threading;namespace AsyncBasic&#123; class Program &#123; [STAThread] static void Main(string[] args) &#123; new Program().ExcuteCal(); Console.ReadKey(); &#125; public void ExcuteCal() &#123; Func&lt;int, int&gt; Cal = ExcuteTask1; // [1] 声明委托变量。 // [3] 异步调用 IAsyncResult result = Cal.BeginInvoke(100, null, null); Console.WriteLine("正在计算…"); Console.WriteLine(ExcuteTask2(20)); int s = Cal.EndInvoke(result); Console.WriteLine(s); &#125; private int ExcuteTask1(int num) // [2] 根据委托实现方法。 &#123; Thread.Sleep(2000); return num * num; &#125; private int ExcuteTask2(int num) &#123; return num * num; &#125; &#125;&#125; 输出： 123正在计算…40010000 可见，异步调用的时候可以做其他的事情。]]></content>
+      <categories>
+        <category>编程爱好</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[C#扩展方法]]></title>
     <url>%2F2020%2F06%2F15%2F200615N01%2F</url>
     <content type="text"><![CDATA[扩展方法的 3 个要求： 声明扩展方法的类必须声明为 static； 扩展方法本身必须声明为static； 扩展方法第一个参数类型前一定要包含关键字 this。 123456789101112131415161718192021222324252627282930313233343536373839404142using System;namespace ExtensionMethods&#123; sealed public class MyMethod &#123; private double d1, d2, d3; public MyMethod(double i,double j, double k) &#123; d1 = i; d2 = j; d3 = k; &#125; public double SumMethod() &#123; return d1 + d2 + d3; &#125; &#125; static public class ExtensionMythod // [1]、静态类 &#123; static public double DivdMethos(this MyMethod md) // [2]、静态方法； [3]、第一个参数 this 关键字 &#123; return md.SumMethod() / 3; &#125; &#125; public class Program &#123; static void Main(string[] str) &#123; MyMethod md = new MyMethod(3, 4, 5); double reslut = md.DivdMethos(); // 方法一调用 Console.WriteLine("&#123;0:f2&#125;" , reslut); reslut = ExtensionMythod.DivdMethos(md); // 方法二调用 Console.WriteLine("&#123;0:f2&#125;", reslut); Console.ReadKey(); &#125; &#125;&#125; 输出： 124.004.00 MyMethod类 和 ExtensionMythod 类的访问等级要一样，都为 public 或者 都为 internal。 扩展方法也可以跟泛型结合起来使用。 参考：《图解教程》 -&gt; P145, P322]]></content>
