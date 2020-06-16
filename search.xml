@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[C#跨线程访问数据库]]></title>
+    <url>%2F2020%2F06%2F16%2F200616N04%2F</url>
+    <content type="text"><![CDATA[跨线程的小运用。DataSet 和 DataGradeView DataTable 的数据填充。 ▲ 实现效果，同时还可以拖动窗口。 Note：一些和数据库的交互操作都封装在 SQLHelper 类中，练习时候自行添加。]]></content>
+      <categories>
+        <category>编程爱好</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[C#跨线程访问控件]]></title>
     <url>%2F2020%2F06%2F16%2F200616N03%2F</url>
     <content type="text"><![CDATA[跨线程访问控件，主要用到控件的属性判断InvokeRequired是否为true，为true则为其他线程创建。 123456789101112131415161718192021222324252627282930313233343536373839404142434445using System;using System.Windows.Forms;using System.Threading;namespace 跨线程控件访问&#123; public partial class Form1 : Form &#123; public Form1() &#123; InitializeComponent(); StartPosition = FormStartPosition.CenterParent; &#125; private void button1_Click(object sender, EventArgs e) &#123; Thread thread1 = new Thread(() =&gt; &#123; if (lbl1.InvokeRequired) &#123; //判断是否调动Invoke方法, 如果为 true 则是其他方法创建。 for (int i = 0; i &lt;= 50; i++) &#123; //Invoke（）方法的第一个参数是返回值为void的委托,第二个是给委托对应方法传递的参数 lbl1.Invoke(new Action&lt;string&gt;(s =&gt; lbl1.Text = i.ToString()), i.ToString()); Thread.Sleep(50); &#125; &#125; &#125;); thread1.IsBackground = true; thread1.Start(); &#125; private void button2_Click(object sender, EventArgs e) &#123; Thread thread2 = new Thread(() =&gt; &#123; if (lbl2.InvokeRequired) &#123; //判断是否调动Invoke方法, 如果为 true 则是其他方法创建。 for (int i = 0; i &lt;= 50; i++) &#123; //Invoke（）方法的第一个参数是返回值为void的委托,第二个是给委托对应方法传递的参数 lbl1.Invoke(new Action&lt;string&gt;(s =&gt; lbl2.Text = i.ToString()), i.ToString()); Thread.Sleep(50); &#125; &#125; &#125;); thread2.IsBackground = true; thread2.Start(); &#125; &#125;&#125; 输出：]]></content>

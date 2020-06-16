@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.andyvj.com/"/>
-  <updated>2020-06-16T06:16:54.635Z</updated>
+  <updated>2020-06-16T08:20:27.052Z</updated>
   <id>https://www.andyvj.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>C#跨线程访问数据库</title>
+    <link href="https://www.andyvj.com/2020/06/16/200616N04/"/>
+    <id>https://www.andyvj.com/2020/06/16/200616N04/</id>
+    <published>2020-06-16T08:12:40.000Z</published>
+    <updated>2020-06-16T08:20:27.052Z</updated>
+    
+    <content type="html"><![CDATA[<p>跨线程的小运用。<code>DataSet</code> 和 <code>DataGradeView</code> <code>DataTable</code> 的数据填充。</p><p><img src="http://image.huvjie.com/200616N04_img01.gif" alt="效果"></p><div style="font-size:13px;color:gray;text-align:center">▲ 实现效果，同时还可以拖动窗口。</div><a id="more"></a><p><hr><br><span style="color:gray;font-size:12px"><br>Note：<br>一些和数据库的交互操作都封装在 SQLHelper 类中，练习时候自行添加。<br></span></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;跨线程的小运用。&lt;code&gt;DataSet&lt;/code&gt; 和 &lt;code&gt;DataGradeView&lt;/code&gt; &lt;code&gt;DataTable&lt;/code&gt; 的数据填充。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://image.huvjie.com/200616N04_img01.gif&quot; alt=&quot;效果&quot;&gt;&lt;/p&gt;
+&lt;div style=&quot;font-size:13px;color:gray;text-align:center&quot;&gt;▲ 实现效果，同时还可以拖动窗口。&lt;/div&gt;
+    
+    </summary>
+    
+      <category term="编程爱好" scheme="https://www.andyvj.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
+    
+    
+      <category term="C#" scheme="https://www.andyvj.com/tags/C/"/>
+    
+  </entry>
   
   <entry>
     <title>C#跨线程访问控件</title>
@@ -459,28 +483,6 @@ height: 100%; left: 0; top: 0;&quot;&gt; &lt;/iframe&gt;&lt;/div&gt;
       &lt;blockquote&gt;
 &lt;p&gt;将普通日期格式：“2011年6月4日” 转换成汉字日期格式：“二零一一年六月四日”。暂时不考虑10日、13日、23日等“带十”的问题。&lt;/p&gt;
 &lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="编程爱好" scheme="https://www.andyvj.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
-    
-    
-      <category term="C#" scheme="https://www.andyvj.com/tags/C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>C# 字符串输入名字并统计练习</title>
-    <link href="https://www.andyvj.com/2020/03/01/200301N03/"/>
-    <id>https://www.andyvj.com/2020/03/01/200301N03/</id>
-    <published>2020-03-01T13:35:25.000Z</published>
-    <updated>2020-03-01T13:45:33.015Z</updated>
-    
-    <content type="html"><![CDATA[<p>用到<code>List&lt;&gt;</code>泛型集合，<code>string.Empty</code>空字符串，<code>ToLower</code>小写转换，<code>Add</code>添加集合元素，<code>IndexOf</code>集合元素中包含元素的索引位置。</p><a id="more"></a><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">List&lt;<span class="keyword">string</span>&gt; names = <span class="keyword">new</span> List&lt;<span class="keyword">string</span>&gt;();</span><br><span class="line">List&lt;<span class="keyword">string</span>&gt; wangNames = <span class="keyword">new</span> List&lt;<span class="keyword">string</span>&gt;();</span><br><span class="line"><span class="keyword">string</span> str = <span class="keyword">string</span>.Empty ;</span><br><span class="line"><span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">Console.WriteLine(<span class="string">"请输入姓名："</span>);</span><br><span class="line">str = Console.ReadLine();</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> (str.ToLower() != <span class="string">"quit"</span>) &#123;</span><br><span class="line"></span><br><span class="line">    count++;</span><br><span class="line">    names.Add(str);</span><br><span class="line">    Console.WriteLine(<span class="string">"请输入姓名："</span>);</span><br><span class="line">    str = Console.ReadLine();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Console.WriteLine(<span class="string">"你一共录入了：&#123;0&#125;个学生，姓名分别为:"</span>, count);</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> countSpecify = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">foreach</span> (<span class="keyword">var</span> item <span class="keyword">in</span> names) &#123;</span><br><span class="line">    Console.WriteLine(item);</span><br><span class="line">    <span class="keyword">if</span> (item.IndexOf(<span class="string">'王'</span>) == <span class="number">0</span>) &#123;</span><br><span class="line">        countSpecify++;</span><br><span class="line">        wangNames.Add(item);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Console.WriteLine(<span class="string">"其中姓王的同学有&#123;0&#125;个:"</span>, countSpecify);</span><br><span class="line"><span class="keyword">foreach</span> (<span class="keyword">var</span> item <span class="keyword">in</span> wangNames) &#123;</span><br><span class="line">    Console.WriteLine(item);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Console.ReadKey();</span><br></pre></td></tr></table></figure><p>输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">请输入姓名：</span><br><span class="line">你好</span><br><span class="line">请输入姓名：</span><br><span class="line">我是</span><br><span class="line">请输入姓名：</span><br><span class="line">周杰伦</span><br><span class="line">请输入姓名：</span><br><span class="line">王五</span><br><span class="line">请输入姓名：</span><br><span class="line">麻子</span><br><span class="line">请输入姓名：</span><br><span class="line">王八蛋</span><br><span class="line">请输入姓名：</span><br><span class="line">quit</span><br><span class="line">你一共录入了：6个学生，姓名分别为:</span><br><span class="line">你好</span><br><span class="line">我是</span><br><span class="line">周杰伦</span><br><span class="line">王五</span><br><span class="line">麻子</span><br><span class="line">王八蛋</span><br><span class="line">其中姓王的同学有2个:</span><br><span class="line">王五</span><br><span class="line">王八蛋</span><br></pre></td></tr></table></figure></p><hr><p><span style="color:gray;font-size:12px"><br>参考：<br>1.<a href="https://www.bilibili.com/video/av10357226?p=3" target="_blank" rel="noopener">link-01</a><br></span></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;用到&lt;code&gt;List&amp;lt;&amp;gt;&lt;/code&gt;泛型集合，&lt;code&gt;string.Empty&lt;/code&gt;空字符串，&lt;code&gt;ToLower&lt;/code&gt;小写转换，&lt;code&gt;Add&lt;/code&gt;添加集合元素，&lt;code&gt;IndexOf&lt;/code&gt;集合元素中包含元素的索引位置。&lt;/p&gt;
     
     </summary>
     
