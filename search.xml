@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[C#跨线程访问控件]]></title>
+    <url>%2F2020%2F06%2F16%2F200616N03%2F</url>
+    <content type="text"><![CDATA[跨线程访问控件，主要用到控件的属性判断InvokeRequired是否为true，为true则为其他线程创建。 123456789101112131415161718192021222324252627282930313233343536373839404142434445using System;using System.Windows.Forms;using System.Threading;namespace 跨线程控件访问&#123; public partial class Form1 : Form &#123; public Form1() &#123; InitializeComponent(); StartPosition = FormStartPosition.CenterParent; &#125; private void button1_Click(object sender, EventArgs e) &#123; Thread thread1 = new Thread(() =&gt; &#123; if (lbl1.InvokeRequired) &#123; //判断是否调动Invoke方法, 如果为 true 则是其他方法创建。 for (int i = 0; i &lt;= 50; i++) &#123; //Invoke（）方法的第一个参数是返回值为void的委托,第二个是给委托对应方法传递的参数 lbl1.Invoke(new Action&lt;string&gt;(s =&gt; lbl1.Text = i.ToString()), i.ToString()); Thread.Sleep(50); &#125; &#125; &#125;); thread1.IsBackground = true; thread1.Start(); &#125; private void button2_Click(object sender, EventArgs e) &#123; Thread thread2 = new Thread(() =&gt; &#123; if (lbl2.InvokeRequired) &#123; //判断是否调动Invoke方法, 如果为 true 则是其他方法创建。 for (int i = 0; i &lt;= 50; i++) &#123; //Invoke（）方法的第一个参数是返回值为void的委托,第二个是给委托对应方法传递的参数 lbl1.Invoke(new Action&lt;string&gt;(s =&gt; lbl2.Text = i.ToString()), i.ToString()); Thread.Sleep(50); &#125; &#125; &#125;); thread2.IsBackground = true; thread2.Start(); &#125; &#125;&#125; 输出：]]></content>
+      <categories>
+        <category>编程爱好</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[C#异步回调函数基础]]></title>
     <url>%2F2020%2F06%2F16%2F200616N02%2F</url>
-    <content type="text"><![CDATA[12345678910111213141516171819202122232425262728293031323334353637383940414243using System;using System.Threading;namespace AsyncBasic&#123; class Program &#123; [STAThread] static void Main(string[] args) &#123; new Program().ExcuteCal(); Console.ReadKey(); &#125; private Func&lt;int, int, int&gt; Cal = null; // [1] 声明委托变量。 都要用声明为成员变量 public Program() &#123; Cal = new Func&lt;int, int, int&gt;(ExcuteTask1); // 初始化委托。 &#125; // [4] 同时执行多个任务 public void ExcuteCal() &#123; for (int i = 1; i &lt;= 10; i++) &#123; Cal.BeginInvoke(i * 10, i * 100, MyCallBack, i); //最后一个参数 i 给回调函数的字段AsyncState赋值，如果数据很多可以定义成类或结构 &#125; &#125; private int ExcuteTask1(int num, int ms) // [2] 根据委托实现方法。 &#123; Thread.Sleep(ms); return num * num; &#125; //[5] 回调函数 private void MyCallBack(IAsyncResult result) &#123; int res = Cal.EndInvoke(result); Console.WriteLine("第&#123;0&#125;个计算结果是&#123;1&#125;", result.AsyncState.ToString(), res); &#125; &#125;&#125; 程序有些地方可以用 lamdba 表达式简化下。 输出： 12345678910第1个计算结果是100第2个计算结果是400第3个计算结果是900第4个计算结果是1600第5个计算结果是2500第6个计算结果是3600第7个计算结果是4900第8个计算结果是6400第9个计算结果是8100第10个计算结果是10000]]></content>
+    <content type="text"><![CDATA[回调函数的基本用法。 12345678910111213141516171819202122232425262728293031323334353637383940414243using System;using System.Threading;namespace AsyncBasic&#123; class Program &#123; [STAThread] static void Main(string[] args) &#123; new Program().ExcuteCal(); Console.ReadKey(); &#125; private Func&lt;int, int, int&gt; Cal = null; // [1] 声明委托变量。 都要用声明为成员变量 public Program() &#123; Cal = new Func&lt;int, int, int&gt;(ExcuteTask1); // 初始化委托。 &#125; // [4] 同时执行多个任务 public void ExcuteCal() &#123; for (int i = 1; i &lt;= 10; i++) &#123; Cal.BeginInvoke(i * 10, i * 100, MyCallBack, i); //最后一个参数 i 给回调函数的字段AsyncState赋值，如果数据很多可以定义成类或结构 &#125; &#125; private int ExcuteTask1(int num, int ms) // [2] 根据委托实现方法。 &#123; Thread.Sleep(ms); return num * num; &#125; //[5] 回调函数 private void MyCallBack(IAsyncResult result) &#123; int res = Cal.EndInvoke(result); Console.WriteLine("第&#123;0&#125;个计算结果是&#123;1&#125;", result.AsyncState.ToString(), res); &#125; &#125;&#125; 程序有些地方可以用 lamdba 表达式简化下。 输出： 12345678910第1个计算结果是100第2个计算结果是400第3个计算结果是900第4个计算结果是1600第5个计算结果是2500第6个计算结果是3600第7个计算结果是4900第8个计算结果是6400第9个计算结果是8100第10个计算结果是10000]]></content>
       <categories>
         <category>编程爱好</category>
       </categories>
