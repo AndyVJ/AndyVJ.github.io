@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[C#进程读取方法]]></title>
+    <url>%2F2020%2F06%2F16%2F200616N05%2F</url>
+    <content type="text"><![CDATA[首相要加入using System.Diagnostics;命名空间。 GetProcesses()、Modules属性。一些进程的属性信息： Id // 进程唯一标识符 (Id) Handle //关联进程的本机句柄 (Handle) HandleCount //打开句柄数 (HandleCount) BasePriority //关联进程的基本优先级 StartTime //进程启动时间 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596using System;using System.Collections.Generic;using System.ComponentModel;using System.Data;using System.Drawing;using System.Linq;using System.Text;using System.Threading.Tasks;using System.Windows.Forms;using System.Diagnostics;//包含进程相关namespace ProccessEx&#123; public partial class Form1 : Form &#123; public Form1() &#123; InitializeComponent(); &#125; Process[] processes = null; private void btnGetProcessess_Click(object sender, EventArgs e) &#123; processes = Process.GetProcesses();// 获取本地计算机上的进程 this.lbProcess.Items.Clear(); foreach (Process item in processes) &#123; this.lbProcess.Items.Add(item.ProcessName); &#125; &#125; private void lbProcess_Click(object sender, EventArgs e) &#123; if (lbProcess.Items.Count == 0) return; else &#123; lbModels.Items.Clear(); &#125; Process currentProcess = processes[lbProcess.SelectedIndex]; // SelectedIndex 属性 try &#123; ProcessModuleCollection modules = currentProcess.Modules; // Mpdules 属性 foreach (ProcessModule item in modules) &#123; // 注意是 ProcessModule 类型 lbModels.Items.Add(item.FileName); &#125; // 显示当前进程的基本信息 string info = "进程唯一标识符 (Id):" + currentProcess.Id + "\r\n\r\n"; info += "关联进程的本机句柄 (Handle):" + currentProcess.Handle + "\r\n\r\n"; info += "打开句柄数 (HandleCount):" + currentProcess.HandleCount + "\r\n\r\n"; info += "关联进程的基本优先级:" + currentProcess.BasePriority + "\r\n\r\n"; info += "进程启动时间：" + currentProcess.StartTime + "\r\n\r\n"; txtProcessInfo.Text = info; &#125; catch (Exception ex) &#123; MessageBox.Show(ex.Message); &#125; &#125; private void btnKill_Click(object sender, EventArgs e) &#123; if (lbProcess.Items.Count == 0 || lbProcess.SelectedIndex == -1) return; Process currentProccess = processes[lbProcess.SelectedIndex];// 获取当前鼠标选择的进程 currentProccess.Kill();// 杀掉进程 currentProccess.Close();// 释放进程资源 lbProcess.Items.RemoveAt(lbProcess.SelectedIndex); lbModels.Items.Clear(); txtProcessInfo.Clear(); &#125; /// &lt;summary&gt; /// 用360浏览器打开我的博客 /// &lt;/summary&gt; /// &lt;param name="sender"&gt;&lt;/param&gt; /// &lt;param name="e"&gt;&lt;/param&gt; private void btnOpenIE_Click(object sender, EventArgs e) &#123; // 没注册就使用绝对路径 // 打开我的博客 Process.Start(@"C:\Users\Administrator\AppData\Roaming\360se6\Application\360se.exe", "blog.huvjie.com"); &#125; /// &lt;summary&gt; /// 打开新进程，如：notepad /// &lt;/summary&gt; /// &lt;param name="sender"&gt;&lt;/param&gt; /// &lt;param name="e"&gt;&lt;/param&gt; private void btnStartnew_Click(object sender, EventArgs e) &#123; Process.Start(txtProcessFileName.Text.Trim()); &#125; &#125;&#125; 输出效果：]]></content>
+      <categories>
+        <category>编程爱好者</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[C#跨线程访问数据库]]></title>
     <url>%2F2020%2F06%2F16%2F200616N04%2F</url>
     <content type="text"><![CDATA[跨线程的小运用。DataSet 和 DataGradeView DataTable 的数据填充。 ▲ 实现效果，同时还可以拖动窗口。 Note：一些和数据库的交互操作都封装在 SQLHelper 类中，练习时候自行添加。]]></content>
@@ -1054,9 +1065,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[UG NX 坐标对齐移动——解决实体与原始坐标不对齐的问题]]></title>
-    <url>%2F2019%2F02%2F19%2F190219-01%2F</url>
-    <content type="text"><![CDATA[有时候通过WAVE链接过来的实体会出现实体与原始坐标不对齐的情况，如： 可以用坐标到坐标移动的方式将实体摆正。 新建与实体对齐的坐标系。 Ctrl + T 移动。 这样后，实体就与原始坐标对齐了：]]></content>
+    <title><![CDATA[UG NX 移动对象之『动态』技巧]]></title>
+    <url>%2F2019%2F02%2F19%2F190219-02%2F</url>
+    <content type="text"><![CDATA[动态绕某一点旋转，而旋转手柄又不在此点上，如何操作？ Ctrl + T 移动对象，勾选只移动手柄，将手柄点选移动到需要旋转的点。 取消勾选只移动手柄，点选手柄节点，输入旋转角度，确定。]]></content>
       <categories>
         <category>机械结构</category>
       </categories>
@@ -1065,9 +1076,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[UG NX 移动对象之『动态』技巧]]></title>
-    <url>%2F2019%2F02%2F19%2F190219-02%2F</url>
-    <content type="text"><![CDATA[动态绕某一点旋转，而旋转手柄又不在此点上，如何操作？ Ctrl + T 移动对象，勾选只移动手柄，将手柄点选移动到需要旋转的点。 取消勾选只移动手柄，点选手柄节点，输入旋转角度，确定。]]></content>
+    <title><![CDATA[UG NX 坐标对齐移动——解决实体与原始坐标不对齐的问题]]></title>
+    <url>%2F2019%2F02%2F19%2F190219-01%2F</url>
+    <content type="text"><![CDATA[有时候通过WAVE链接过来的实体会出现实体与原始坐标不对齐的情况，如： 可以用坐标到坐标移动的方式将实体摆正。 新建与实体对齐的坐标系。 Ctrl + T 移动。 这样后，实体就与原始坐标对齐了：]]></content>
       <categories>
         <category>机械结构</category>
       </categories>
