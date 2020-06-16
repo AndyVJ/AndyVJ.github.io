@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[C#异步回调函数基础]]></title>
+    <url>%2F2020%2F06%2F16%2F200616N02%2F</url>
+    <content type="text"><![CDATA[12345678910111213141516171819202122232425262728293031323334353637383940414243using System;using System.Threading;namespace AsyncBasic&#123; class Program &#123; [STAThread] static void Main(string[] args) &#123; new Program().ExcuteCal(); Console.ReadKey(); &#125; private Func&lt;int, int, int&gt; Cal = null; // [1] 声明委托变量。 都要用声明为成员变量 public Program() &#123; Cal = new Func&lt;int, int, int&gt;(ExcuteTask1); // 初始化委托。 &#125; // [4] 同时执行多个任务 public void ExcuteCal() &#123; for (int i = 1; i &lt;= 10; i++) &#123; Cal.BeginInvoke(i * 10, i * 100, MyCallBack, i); //最后一个参数 i 给回调函数的字段AsyncState赋值，如果数据很多可以定义成类或结构 &#125; &#125; private int ExcuteTask1(int num, int ms) // [2] 根据委托实现方法。 &#123; Thread.Sleep(ms); return num * num; &#125; //[5] 回调函数 private void MyCallBack(IAsyncResult result) &#123; int res = Cal.EndInvoke(result); Console.WriteLine("第&#123;0&#125;个计算结果是&#123;1&#125;", result.AsyncState.ToString(), res); &#125; &#125;&#125; 程序有些地方可以用 lamdba 表达式简化下。 输出： 12345678910第1个计算结果是100第2个计算结果是400第3个计算结果是900第4个计算结果是1600第5个计算结果是2500第6个计算结果是3600第7个计算结果是4900第8个计算结果是6400第9个计算结果是8100第10个计算结果是10000]]></content>
+      <categories>
+        <category>编程爱好</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[C#异步基础]]></title>
     <url>%2F2020%2F06%2F16%2F200616N01%2F</url>
-    <content type="text"><![CDATA[一般顺序： 定义一个委托。 根据委托实现方法。 异步调用。 12345678910111213141516171819202122232425262728293031323334353637using System;using System.Threading;namespace AsyncBasic&#123; class Program &#123; [STAThread] static void Main(string[] args) &#123; new Program().ExcuteCal(); Console.ReadKey(); &#125; public void ExcuteCal() &#123; Func&lt;int, int&gt; Cal = ExcuteTask1; // [1] 声明委托变量。 // [3] 异步调用 IAsyncResult result = Cal.BeginInvoke(100, null, null); Console.WriteLine("正在计算…"); Console.WriteLine(ExcuteTask2(20)); int s = Cal.EndInvoke(result); Console.WriteLine(s); &#125; private int ExcuteTask1(int num) // [2] 根据委托实现方法。 &#123; Thread.Sleep(2000); return num * num; &#125; private int ExcuteTask2(int num) &#123; return num * num; &#125; &#125;&#125; 输出： 123正在计算…40010000 可见，异步调用的时候可以做其他的事情。]]></content>
+    <content type="text"><![CDATA[一般顺序： 定义一个委托。 根据委托实现方法。 异步调用。 123456789101112131415161718192021222324252627282930313233343536373839using System;using System.Threading;namespace AsyncBasic&#123; class Program &#123; [STAThread] static void Main(string[] args) &#123; new Program().ExcuteCal(); Console.ReadKey(); &#125; public void ExcuteCal() &#123; Func&lt;int, int&gt; Cal = ExcuteTask1; // [1] 声明委托变量。 // [3] 异步调用 IAsyncResult result = Cal.BeginInvoke(100, null, null); Console.WriteLine("正在计算…"); Console.WriteLine(ExcuteTask2(20)); int s = Cal.EndInvoke(result); //委托类型的EndInvoke（）方法：借助于IAsyncResult接口对象，不断查询异步调用是否结束。 //该方法知道被异步调用的方法所有参数，所有，异步调用完毕后，取出异步调用结果作为返回值。 Console.WriteLine(s); &#125; private int ExcuteTask1(int num) // [2] 根据委托实现方法。 &#123; Thread.Sleep(2000); return num * num; &#125; private int ExcuteTask2(int num) &#123; return num * num; &#125; &#125;&#125; 输出： 123正在计算…40010000 可见，异步调用的时候可以做其他的事情。 委托类型的Begininvoke（&lt;输入和输出变量&gt;,AsyncCallbac callback,object asyncState）方法：异步调用的核心第一个参数，表示委托对应的方法实参。第二个参数callback，回调函数，表示异步调用结束时自动调用的函数。第三个参数asyncState，用于向回调函数提供相关参数信息返回值：IAsyncResult –&gt;异步操作状态接口，封装了异步执行的中的参数]]></content>
       <categories>
         <category>编程爱好</category>
       </categories>
