@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[SoftIntV-F001]]></title>
+    <url>%2F2020%2F06%2F17%2F200617N01%2F</url>
+    <content type="text"><![CDATA[上周六面试了蜀丰科技一个助理软件工程师的职位，没有项目经验，又是转行的的，真不好搞啊。 临走的时候，面试官赵工说，“下周一或周二和老板说一下再给你打电话”，估计是场面话。 周一我电话追问了下他们人事，说帮我问下后给我电话。见周二没回复，我就微信上再次问了下。然后，这人事把我微信给删了。真他妈脑瓜子嗡嗡的啊~~~]]></content>
+      <categories>
+        <category>其他</category>
+      </categories>
+      <tags>
+        <tag>点滴</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[C#线程安全]]></title>
     <url>%2F2020%2F06%2F16%2F200616N06%2F</url>
     <content type="text"><![CDATA[多个线程对同一资源的争夺，有可能出现线程不安全的现象。用lock这种最简单的方式实现下。 一直观的看下这种情况： 1234567891011121314151617181920212223242526272829303132333435363738using System;using System.Collections.Generic;using System.Linq;using System.Threading.Tasks;using System.Windows.Forms;using System.Threading;namespace ThreadSafetyDemo&#123; class Program &#123; [STAThread] static void Main() &#123; Thread.CurrentThread.Name = "====主线程===="; Program prg = new Program(); Thread newThread = new Thread(new ThreadStart(prg.DoSomeWork)); newThread.Name = "**新线程:"; newThread.IsBackground = true; newThread.Start(); // 开始新线程 prg.DoSomeWork(); // 开始主线程 Console.ReadKey(); &#125; // 放在外面作为成员变量，这样连个线程操纵的时候才能看出不一样。 private int counter = 0; private void DoSomeWork() &#123; for (int i = 1; i &lt; 11; i++) &#123; counter += i; Console.WriteLine("&#123;0&#125;&#123;1&#125;", Thread.CurrentThread.Name, counter); &#125; &#125; &#125;&#125; 输出： 1234567891011121314151617181920====主线程====1====主线程====4====主线程====7====主线程====11====主线程====16====主线程====22====主线程====29**新线程:2**新线程:39**新线程:42**新线程:46**新线程:51**新线程:57**新线程:64**新线程:72**新线程:81**新线程:91====主线程====37====主线程====100====主线程====110 每次的结果其实都不一样，这就是线程的不安全，多个线程操纵了同意资源。 二保证线程安全，加一个lock块。 123456789private void DoSomeWork()&#123; lock (this) &#123; for (int i = 1; i &lt; 11; i++) &#123; counter += i; Console.WriteLine("&#123;0&#125;&#123;1&#125;", Thread.CurrentThread.Name, counter); &#125; &#125;&#125; 这样就没问题，保证只有一个线程调用。 三更优雅的方式写法： 增加命名空间using System.Runtime.CompilerServices;。然后在函数前增加一个这样的标签就可以——[MethodImpl(MethodImplOptions.Synchronized)]。 123456789[MethodImpl(MethodImplOptions.Synchronized)]private void DoSomeWork()&#123; for (int i = 1; i &lt; 11; i++) &#123; counter += i; Console.WriteLine("&#123;0&#125;&#123;1&#125;", Thread.CurrentThread.Name, counter); &#125;&#125; 这样子也可以，也是同样的效果。]]></content>
@@ -1076,9 +1087,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[UG NX 移动对象之『动态』技巧]]></title>
-    <url>%2F2019%2F02%2F19%2F190219-02%2F</url>
-    <content type="text"><![CDATA[动态绕某一点旋转，而旋转手柄又不在此点上，如何操作？ Ctrl + T 移动对象，勾选只移动手柄，将手柄点选移动到需要旋转的点。 取消勾选只移动手柄，点选手柄节点，输入旋转角度，确定。]]></content>
+    <title><![CDATA[UG NX 坐标对齐移动——解决实体与原始坐标不对齐的问题]]></title>
+    <url>%2F2019%2F02%2F19%2F190219-01%2F</url>
+    <content type="text"><![CDATA[有时候通过WAVE链接过来的实体会出现实体与原始坐标不对齐的情况，如： 可以用坐标到坐标移动的方式将实体摆正。 新建与实体对齐的坐标系。 Ctrl + T 移动。 这样后，实体就与原始坐标对齐了：]]></content>
       <categories>
         <category>机械结构</category>
       </categories>
@@ -1087,9 +1098,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[UG NX 坐标对齐移动——解决实体与原始坐标不对齐的问题]]></title>
-    <url>%2F2019%2F02%2F19%2F190219-01%2F</url>
-    <content type="text"><![CDATA[有时候通过WAVE链接过来的实体会出现实体与原始坐标不对齐的情况，如： 可以用坐标到坐标移动的方式将实体摆正。 新建与实体对齐的坐标系。 Ctrl + T 移动。 这样后，实体就与原始坐标对齐了：]]></content>
+    <title><![CDATA[UG NX 移动对象之『动态』技巧]]></title>
+    <url>%2F2019%2F02%2F19%2F190219-02%2F</url>
+    <content type="text"><![CDATA[动态绕某一点旋转，而旋转手柄又不在此点上，如何操作？ Ctrl + T 移动对象，勾选只移动手柄，将手柄点选移动到需要旋转的点。 取消勾选只移动手柄，点选手柄节点，输入旋转角度，确定。]]></content>
       <categories>
         <category>机械结构</category>
       </categories>

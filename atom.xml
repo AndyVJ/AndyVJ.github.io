@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.andyvj.com/"/>
-  <updated>2020-06-16T13:14:55.402Z</updated>
+  <updated>2020-06-17T01:41:29.822Z</updated>
   <id>https://www.andyvj.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>SoftIntV-F001</title>
+    <link href="https://www.andyvj.com/2020/06/17/200617N01/"/>
+    <id>https://www.andyvj.com/2020/06/17/200617N01/</id>
+    <published>2020-06-17T01:33:07.000Z</published>
+    <updated>2020-06-17T01:41:29.822Z</updated>
+    
+    <content type="html"><![CDATA[<p>上周六面试了蜀丰科技一个助理软件工程师的职位，没有项目经验，又是转行的的，真不好搞啊。</p><p>临走的时候，面试官赵工说，“下周一或周二和老板说一下再给你打电话”，估计是场面话。</p><p>周一我电话追问了下他们人事，说帮我问下后给我电话。见周二没回复，我就微信上再次问了下。然后，这人事把我微信给删了。真他妈脑瓜子嗡嗡的啊~~~</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;上周六面试了蜀丰科技一个助理软件工程师的职位，没有项目经验，又是转行的的，真不好搞啊。&lt;/p&gt;
+&lt;p&gt;临走的时候，面试官赵工说，“下周一或周二和老板说一下再给你打电话”，估计是场面话。&lt;/p&gt;
+&lt;p&gt;周一我电话追问了下他们人事，说帮我问下后给我电话。见周二没回复，我就微信上
+      
+    
+    </summary>
+    
+      <category term="其他" scheme="https://www.andyvj.com/categories/%E5%85%B6%E4%BB%96/"/>
+    
+    
+      <category term="点滴" scheme="https://www.andyvj.com/tags/%E7%82%B9%E6%BB%B4/"/>
+    
+  </entry>
   
   <entry>
     <title>C#线程安全</title>
@@ -474,28 +501,6 @@ height: 100%; left: 0; top: 0;&quot;&gt; &lt;/iframe&gt;&lt;/div&gt;
     
     
       <category term="三菱PLC" scheme="https://www.andyvj.com/tags/%E4%B8%89%E8%8F%B1PLC/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>杂记</title>
-    <link href="https://www.andyvj.com/2020/04/05/200405N01/"/>
-    <id>https://www.andyvj.com/2020/04/05/200405N01/</id>
-    <published>2020-04-05T13:21:17.000Z</published>
-    <updated>2020-04-05T14:06:43.159Z</updated>
-    
-    <content type="html"><![CDATA[<p>这几天的都是下雨天，也降了温，清明时节雨纷纷。这段时间也偶尔几次梦见过爷爷奶奶。</p><a id="more"></a><p>创业真的好艰难，一个人的力量确实也太小了，效率也不搞。时刻要告诫自己，慢可以，不要出错，不要返工。</p><p>这段时间要自己做一台雕刻机才好，直接买太贵，也只能这样了。</p><p><img src="http://image.huvjie.com/200405N01_img01.jpg" alt="键合工装"></p><div style="font-size:13px;color:gray;text-align:center">▲ 今天一天就做了一个 JK 的键合工装，加工编程也弄错了，其他也出错了几次，还是需要自己更熟练才可以。</div><p>现在也没有什么时间学软件，学习一下上位机的开发，以后还是智能化信息化的未来吧。这个是必须要学习的，还是要挤出时间才行，这个是重要的事情。</p><p>当务之急的技术提高更在于电气自动化这块，这个是急的事情。<br><img src="http://image.huvjie.com/200405N01_img02.jpg" alt="努力，奋斗"></p><div style="font-size:13px;color:gray;text-align:center">▲ 努力，奋斗。——周星驰</div><!--<hr/><span style="color:gray;font-size:12px">参考： 1.[link-01]()2.[link-02]()3.[link-03]()</span>-->]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;这几天的都是下雨天，也降了温，清明时节雨纷纷。这段时间也偶尔几次梦见过爷爷奶奶。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="其他" scheme="https://www.andyvj.com/categories/%E5%85%B6%E4%BB%96/"/>
-    
-    
-      <category term="点滴" scheme="https://www.andyvj.com/tags/%E7%82%B9%E6%BB%B4/"/>
     
   </entry>
   
