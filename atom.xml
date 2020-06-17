@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.andyvj.com/"/>
-  <updated>2020-06-17T08:04:14.828Z</updated>
+  <updated>2020-06-17T10:05:26.363Z</updated>
   <id>https://www.andyvj.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>C#使用文本保存对象信息</title>
+    <link href="https://www.andyvj.com/2020/06/17/200617N04/"/>
+    <id>https://www.andyvj.com/2020/06/17/200617N04/</id>
+    <published>2020-06-17T08:31:54.000Z</published>
+    <updated>2020-06-17T10:05:26.363Z</updated>
+    
+    <content type="html"><![CDATA[<p>可以对象的信息保存到文本中，一行一行的保存，然后读取的时候一行一行的读取。缺点：如果行数错乱了，那读出来也是错乱的。这里只是一种思路。</p><a id="more"></a><p>只做练习，很多异常情况没有处理。</p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> System.ComponentModel;</span><br><span class="line"><span class="keyword">using</span> System.Data;</span><br><span class="line"><span class="keyword">using</span> System.Drawing;</span><br><span class="line"><span class="keyword">using</span> System.Linq;</span><br><span class="line"><span class="keyword">using</span> System.Text;</span><br><span class="line"><span class="keyword">using</span> System.Threading.Tasks;</span><br><span class="line"><span class="keyword">using</span> System.Windows.Forms;</span><br><span class="line"><span class="keyword">using</span> System.IO;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">SaveClassInfoToFile</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">partial</span> <span class="keyword">class</span> <span class="title">Form1</span> : <span class="title">Form</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Form1</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            InitializeComponent();</span><br><span class="line">            <span class="keyword">this</span>.StartPosition = FormStartPosition.CenterScreen;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 保存至文本</span></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">button1_Click</span>(<span class="params"><span class="keyword">object</span> sender, EventArgs e</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            FileStream fs = <span class="keyword">new</span> FileStream(<span class="string">@"./student.info"</span>, FileMode.Create);</span><br><span class="line">            StreamWriter sw = <span class="keyword">new</span> StreamWriter(fs);</span><br><span class="line"></span><br><span class="line">            Student stu = <span class="keyword">new</span> Student() &#123;</span><br><span class="line">                name = <span class="keyword">this</span>.txtName.Text.Trim(),</span><br><span class="line">                age = <span class="keyword">int</span>.Parse(<span class="keyword">this</span>.txtAge.Text.Trim()),</span><br><span class="line">                gender = <span class="keyword">this</span>.txtGender.Text.Trim(),</span><br><span class="line">                brithday = <span class="keyword">this</span>.txtBrith.Text.Trim()</span><br><span class="line">            &#125;;</span><br><span class="line"></span><br><span class="line">          </span><br><span class="line">            <span class="comment">// 一行一行的写</span></span><br><span class="line">            sw.WriteLine(stu.name);</span><br><span class="line">            sw.WriteLine(stu.age);</span><br><span class="line">            sw.WriteLine(stu.gender);</span><br><span class="line">            sw.WriteLine(stu.brithday);</span><br><span class="line"></span><br><span class="line">            sw.Close();</span><br><span class="line">            fs.Close();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">            <span class="comment">//System.Diagnostics.Process.Start("notepad", "./student.info");</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">button2_Click</span>(<span class="params"><span class="keyword">object</span> sender, EventArgs e</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            FileStream fs = <span class="keyword">new</span> FileStream(<span class="string">@"./student.info"</span>, FileMode.Open);</span><br><span class="line">            StreamReader sr = <span class="keyword">new</span> StreamReader(fs);</span><br><span class="line">            Student stu = <span class="keyword">new</span> Student() &#123;</span><br><span class="line">                name = sr.ReadLine().Trim().ToString(),</span><br><span class="line">                age = <span class="keyword">int</span>.Parse(sr.ReadLine().Trim()),</span><br><span class="line">                gender = sr.ReadLine().Trim().ToString(),</span><br><span class="line">                brithday = sr.ReadLine().Trim().ToString()</span><br><span class="line">            &#125;;</span><br><span class="line"></span><br><span class="line">            sr.Close();</span><br><span class="line">            fs.Close();</span><br><span class="line">            <span class="comment">// 一行一行的读</span></span><br><span class="line">            <span class="keyword">this</span>.txtAge.Text = stu.age.ToString();</span><br><span class="line">            <span class="keyword">this</span>.txtGender.Text = stu.gender;</span><br><span class="line">            <span class="keyword">this</span>.txtName.Text = stu.name;</span><br><span class="line">            <span class="keyword">this</span>.txtBrith.Text = stu.brithday;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><code>Student.cs</code>：</p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> System.Linq;</span><br><span class="line"><span class="keyword">using</span> System.Text;</span><br><span class="line"><span class="keyword">using</span> System.Threading.Tasks;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">SaveClassInfoToFile</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">class</span> <span class="title">Student</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">string</span> name;</span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">int</span> age;</span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">string</span> gender;</span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">string</span> brithday;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>运行效果：</p><p><img src="http://image.huvjie.com/200617N04_img01.gif" alt="保存至对象"></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;可以对象的信息保存到文本中，一行一行的保存，然后读取的时候一行一行的读取。缺点：如果行数错乱了，那读出来也是错乱的。这里只是一种思路。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="编程爱好" scheme="https://www.andyvj.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
+    
+    
+      <category term="C#" scheme="https://www.andyvj.com/tags/C/"/>
+    
+  </entry>
   
   <entry>
     <title>C#文件和文件夹的基本操作</title>
@@ -476,30 +498,6 @@ height: 100%; left: 0; top: 0;&quot;&gt; &lt;/iframe&gt;&lt;/div&gt;
     
     
       <category term="点滴" scheme="https://www.andyvj.com/tags/%E7%82%B9%E6%BB%B4/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>《最天使》</title>
-    <link href="https://www.andyvj.com/2020/05/14/200514N01/"/>
-    <id>https://www.andyvj.com/2020/05/14/200514N01/</id>
-    <published>2020-05-14T03:04:52.000Z</published>
-    <updated>2020-05-14T03:14:29.183Z</updated>
-    
-    <content type="html"><![CDATA[<p>翻唱一段《最天使》。</p><div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;"><iframe src="//player.bilibili.com/player.html?aid=370642051&bvid=BV1DZ4y1s7yp&cid=190646274&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;"> </iframe></div><a id="more"></a><!--<hr/><span style="color:gray;font-size:12px">参考： 1.[link-01]()2.[link-02]()3.[link-03]()</span>-->]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;翻唱一段《最天使》。&lt;/p&gt;
-&lt;div style=&quot;position: relative; width: 100%; height: 0; padding-bottom: 75%;&quot;&gt;&lt;iframe src=&quot;//player.bilibili.com/player.html?aid=370642051&amp;bvid=BV1DZ4y1s7yp&amp;cid=190646274&amp;page=1&quot; scrolling=&quot;no&quot; border=&quot;0&quot; frameborder=&quot;no&quot; framespacing=&quot;0&quot; allowfullscreen=&quot;true&quot; style=&quot;position: absolute; width: 100%; 
-height: 100%; left: 0; top: 0;&quot;&gt; &lt;/iframe&gt;&lt;/div&gt;
-    
-    </summary>
-    
-      <category term="其他" scheme="https://www.andyvj.com/categories/%E5%85%B6%E4%BB%96/"/>
-    
-    
-      <category term="音乐" scheme="https://www.andyvj.com/tags/%E9%9F%B3%E4%B9%90/"/>
     
   </entry>
   
