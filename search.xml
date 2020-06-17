@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[C#序列化和返序列化保存和读取对象信息]]></title>
+    <url>%2F2020%2F06%2F17%2F200617N05%2F</url>
+    <content type="text"><![CDATA[直接用明文文本的方式保存对象信息不是非常科学，现在用二进制序列化的方式来保存。 这里要先增加命名空间：using System.Runtime.Serialization.Formatters.Binary;，还要给实体类增加序列化标识特性。 通过分层设计来实现： 实体类Student.cs： 1234567891011121314151617using System;using System.Collections.Generic;using System.Linq;using System.Text;using System.Threading.Tasks;namespace SaveClassInfoToFile&#123; [Serializable] // 增加序列化特性 class Student &#123; public string Name &#123; get; set; &#125; public int Age &#123; get; set; &#125; public string Gender &#123; get; set; &#125; public string Brithday &#123; get; set; &#125; &#125;&#125; ServiceStudentService.cs: 123456789101112131415161718192021222324252627282930313233343536373839using System;using System.Collections.Generic;using System.Linq;using System.Text;using System.Threading.Tasks;using System.Runtime.Serialization.Formatters.Binary;using System.IO;namespace SaveClassInfoToFile&#123; class StudentService &#123; public Student stu; // 序列化 public void SerializeObj() &#123; // [1]创建文件流 FileStream fs = new FileStream(@"stuInfo.stu", FileMode.Create); // [2]创建二进制格式 BinaryFormatter binaryFormatter = new BinaryFormatter(); // [3]调用序列化方法 binaryFormatter.Serialize(fs, stu); // [4]关闭文件流 fs.Close(); &#125; // 返序列化 public Student DeserializeObj() &#123; // 和序列化的步骤类似 FileStream fs = new FileStream(@"stuInfo.stu", FileMode.Open); BinaryFormatter formatter = new BinaryFormatter(); Student student = formatter.Deserialize(fs) as Student; fs.Close(); return student; &#125; &#125;&#125; 界面Form.cs： 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647using System;using System.Collections.Generic;using System.ComponentModel;using System.Data;using System.Drawing;using System.Linq;using System.Text;using System.Threading.Tasks;using System.Windows.Forms;namespace SaveClassInfoToFile&#123; public partial class Form1 : Form &#123; public Form1() &#123; InitializeComponent(); this.StartPosition = FormStartPosition.CenterScreen; &#125; // 序列化保存对象信息 private void button4_Click(object sender, EventArgs e) &#123; Student stu = new Student() &#123; Name = this.txtName.Text.Trim(), Age = int.Parse(this.txtAge.Text.Trim()), Gender = this.txtGender.Text.Trim(), Brithday = this.txtBrith.Text.Trim() &#125;; StudentService stuService = new StudentService() &#123; stu = stu&#125;; stuService.SerializeObj(); // 调用序列化方法 &#125; // 返序列化还原对象信息 private void button3_Click(object sender, EventArgs e) &#123; StudentService studentService = new StudentService(); Student stu = studentService.DeserializeObj(); // 把数据读出来 this.txtAge.Text = stu.Age.ToString(); this.txtGender.Text = stu.Gender; this.txtName.Text = stu.Name; this.txtBrith.Text = stu.Brithday; &#125; &#125;&#125; 运行效果]]></content>
+      <categories>
+        <category>编程爱好</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[C#使用文本保存对象信息]]></title>
     <url>%2F2020%2F06%2F17%2F200617N04%2F</url>
-    <content type="text"><![CDATA[可以对象的信息保存到文本中，一行一行的保存，然后读取的时候一行一行的读取。缺点：如果行数错乱了，那读出来也是错乱的。这里只是一种思路。 只做练习，很多异常情况没有处理。 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869using System;using System.Collections.Generic;using System.ComponentModel;using System.Data;using System.Drawing;using System.Linq;using System.Text;using System.Threading.Tasks;using System.Windows.Forms;using System.IO;namespace SaveClassInfoToFile&#123; public partial class Form1 : Form &#123; public Form1() &#123; InitializeComponent(); this.StartPosition = FormStartPosition.CenterScreen; &#125; // 保存至文本 private void button1_Click(object sender, EventArgs e) &#123; FileStream fs = new FileStream(@"./student.info", FileMode.Create); StreamWriter sw = new StreamWriter(fs); Student stu = new Student() &#123; name = this.txtName.Text.Trim(), age = int.Parse(this.txtAge.Text.Trim()), gender = this.txtGender.Text.Trim(), brithday = this.txtBrith.Text.Trim() &#125;; // 一行一行的写 sw.WriteLine(stu.name); sw.WriteLine(stu.age); sw.WriteLine(stu.gender); sw.WriteLine(stu.brithday); sw.Close(); fs.Close(); //System.Diagnostics.Process.Start("notepad", "./student.info"); &#125; private void button2_Click(object sender, EventArgs e) &#123; FileStream fs = new FileStream(@"./student.info", FileMode.Open); StreamReader sr = new StreamReader(fs); Student stu = new Student() &#123; name = sr.ReadLine().Trim().ToString(), age = int.Parse(sr.ReadLine().Trim()), gender = sr.ReadLine().Trim().ToString(), brithday = sr.ReadLine().Trim().ToString() &#125;; sr.Close(); fs.Close(); // 一行一行的读 this.txtAge.Text = stu.age.ToString(); this.txtGender.Text = stu.gender; this.txtName.Text = stu.name; this.txtBrith.Text = stu.brithday; &#125; &#125;&#125; Student.cs： 12345678910111213141516using System;using System.Collections.Generic;using System.Linq;using System.Text;using System.Threading.Tasks;namespace SaveClassInfoToFile&#123; class Student &#123; public string name; public int age; public string gender; public string brithday; &#125;&#125; 运行效果：]]></content>
+    <content type="text"><![CDATA[可以对象的信息保存到文本中，一行一行的保存，然后读取的时候一行一行的读取。缺点：如果行数错乱了，那读出来也是错乱的。这里只是一种思路。 只做练习，很多异常情况没有处理。 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869using System;using System.Collections.Generic;using System.ComponentModel;using System.Data;using System.Drawing;using System.Linq;using System.Text;using System.Threading.Tasks;using System.Windows.Forms;using System.IO;namespace SaveClassInfoToFile&#123; public partial class Form1 : Form &#123; public Form1() &#123; InitializeComponent(); this.StartPosition = FormStartPosition.CenterScreen; &#125; // 保存至文本 private void button1_Click(object sender, EventArgs e) &#123; FileStream fs = new FileStream(@"./student.info", FileMode.Create); StreamWriter sw = new StreamWriter(fs); Student stu = new Student() &#123; name = this.txtName.Text.Trim(), age = int.Parse(this.txtAge.Text.Trim()), gender = this.txtGender.Text.Trim(), brithday = this.txtBrith.Text.Trim() &#125;; // 一行一行的写 sw.WriteLine(stu.name); sw.WriteLine(stu.age); sw.WriteLine(stu.gender); sw.WriteLine(stu.brithday); sw.Close(); fs.Close(); //System.Diagnostics.Process.Start("notepad", "./student.info"); &#125; private void button2_Click(object sender, EventArgs e) &#123; FileStream fs = new FileStream(@"./student.info", FileMode.Open); StreamReader sr = new StreamReader(fs); Student stu = new Student() &#123; name = sr.ReadLine().Trim().ToString(), age = int.Parse(sr.ReadLine().Trim()), gender = sr.ReadLine().Trim().ToString(), brithday = sr.ReadLine().Trim().ToString() &#125;; sr.Close(); fs.Close(); // 一行一行的读 this.txtAge.Text = stu.age.ToString(); this.txtGender.Text = stu.gender; this.txtName.Text = stu.name; this.txtBrith.Text = stu.brithday; &#125; &#125;&#125; Student.cs： 12345678910111213141516using System;using System.Collections.Generic;using System.Linq;using System.Text;using System.Threading.Tasks;namespace SaveClassInfoToFile&#123; class Student &#123; public string name; public int age; public string gender; public string brithday; &#125;&#125; ▲ 这里改成属性会比较好。 运行效果：]]></content>
       <categories>
         <category>编程爱好</category>
       </categories>
@@ -1120,9 +1131,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[UG NX 移动对象之『动态』技巧]]></title>
-    <url>%2F2019%2F02%2F19%2F190219-02%2F</url>
-    <content type="text"><![CDATA[动态绕某一点旋转，而旋转手柄又不在此点上，如何操作？ Ctrl + T 移动对象，勾选只移动手柄，将手柄点选移动到需要旋转的点。 取消勾选只移动手柄，点选手柄节点，输入旋转角度，确定。]]></content>
+    <title><![CDATA[UG NX 坐标对齐移动——解决实体与原始坐标不对齐的问题]]></title>
+    <url>%2F2019%2F02%2F19%2F190219-01%2F</url>
+    <content type="text"><![CDATA[有时候通过WAVE链接过来的实体会出现实体与原始坐标不对齐的情况，如： 可以用坐标到坐标移动的方式将实体摆正。 新建与实体对齐的坐标系。 Ctrl + T 移动。 这样后，实体就与原始坐标对齐了：]]></content>
       <categories>
         <category>机械结构</category>
       </categories>
@@ -1131,9 +1142,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[UG NX 坐标对齐移动——解决实体与原始坐标不对齐的问题]]></title>
-    <url>%2F2019%2F02%2F19%2F190219-01%2F</url>
-    <content type="text"><![CDATA[有时候通过WAVE链接过来的实体会出现实体与原始坐标不对齐的情况，如： 可以用坐标到坐标移动的方式将实体摆正。 新建与实体对齐的坐标系。 Ctrl + T 移动。 这样后，实体就与原始坐标对齐了：]]></content>
+    <title><![CDATA[UG NX 移动对象之『动态』技巧]]></title>
+    <url>%2F2019%2F02%2F19%2F190219-02%2F</url>
+    <content type="text"><![CDATA[动态绕某一点旋转，而旋转手柄又不在此点上，如何操作？ Ctrl + T 移动对象，勾选只移动手柄，将手柄点选移动到需要旋转的点。 取消勾选只移动手柄，点选手柄节点，输入旋转角度，确定。]]></content>
       <categories>
         <category>机械结构</category>
       </categories>
