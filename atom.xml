@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.andyvj.com/"/>
-  <updated>2020-08-05T14:36:58.347Z</updated>
+  <updated>2020-08-12T12:03:14.681Z</updated>
   <id>https://www.andyvj.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>C#.Net判断窗体是否创建并激活</title>
+    <link href="https://www.andyvj.com/2020/08/12/200812N01/"/>
+    <id>https://www.andyvj.com/2020/08/12/200812N01/</id>
+    <published>2020-08-12T12:00:04.000Z</published>
+    <updated>2020-08-12T12:03:14.681Z</updated>
+    
+    <content type="html"><![CDATA[<p>C#.Net 判断窗体是否创建，如果已创建，激活窗体。</p><a id="more"></a><h1 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h1><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> Form2 frm2;</span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">button1_Click</span>(<span class="params"><span class="keyword">object</span> sender, EventArgs e</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (frm2 == <span class="literal">null</span>) &#123;</span><br><span class="line">        frm2 = <span class="keyword">new</span> Form2();</span><br><span class="line">        frm2.StartPosition = FormStartPosition.CenterScreen;</span><br><span class="line">        frm2.Show();</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (frm2.IsDisposed) &#123; <span class="comment">// 判断窗体是否关闭 关键代码</span></span><br><span class="line">            frm2 = <span class="keyword">new</span> Form2();</span><br><span class="line">            frm2.StartPosition = FormStartPosition.CenterScreen;</span><br><span class="line">            frm2.Show();</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            frm2.WindowState = FormWindowState.Normal; <span class="comment">// 窗体默认大小</span></span><br><span class="line">            frm2.Activate();  <span class="comment">// 激活窗体</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h1><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">bool</span> isFormOpen = <span class="literal">false</span>;</span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">button2_Click</span>(<span class="params"><span class="keyword">object</span> sender, EventArgs e</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">foreach</span>( Form frm <span class="keyword">in</span> Application.OpenForms) &#123; <span class="comment">// 关键代码</span></span><br><span class="line">        <span class="keyword">if</span> (frm <span class="keyword">is</span> Form2) &#123;</span><br><span class="line">            <span class="comment">// 如果此窗口已打开，则激活；</span></span><br><span class="line">            frm.Activate();</span><br><span class="line">            frm.WindowState = FormWindowState.Normal;</span><br><span class="line">            isFormOpen = <span class="literal">true</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (!isFormOpen) &#123;</span><br><span class="line">        Form2 frm2 = <span class="keyword">new</span> Form2();</span><br><span class="line">        frm2.Show();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><hr><br><span style="color:gray;font-size:12px"><br>参考：<br>1.<a href="https://www.cnblogs.com/zhzhx/p/3392762.html" target="_blank" rel="noopener">link-01</a>。<br></span></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;C#.Net 判断窗体是否创建，如果已创建，激活窗体。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="编程爱好" scheme="https://www.andyvj.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
+    
+    
+      <category term="C#" scheme="https://www.andyvj.com/tags/C/"/>
+    
+  </entry>
   
   <entry>
     <title>C语言简单练习题｜循环穷举</title>
@@ -473,28 +495,6 @@
     
     
       <category term="C#" scheme="https://www.andyvj.com/tags/C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>我们如何做成功一件事情</title>
-    <link href="https://www.andyvj.com/2020/05/29/200529N01/"/>
-    <id>https://www.andyvj.com/2020/05/29/200529N01/</id>
-    <published>2020-05-29T09:56:53.000Z</published>
-    <updated>2020-06-03T16:02:15.721Z</updated>
-    
-    <content type="html"><![CDATA[<p>成功是每个人都渴望的，我们决定去做一件事情，怎样才能做成功呢？可能我们每个人都会有自己的想法，因为每个人踩过的坑都不一样；也许失败真乃是成功之母；还得要我们去总结思考。都说年轻失败不可怕，但摔跤真的会痛啊，伙计们。</p><a id="more"></a><p>年轻的时候我们去做一件事情，可能仅仅因为我们想做这件事情，凭兴趣也好其他原因也罢，就是单纯想做。这个时候失败的可能性比较大，但因为年轻无所畏惧。人终究还是要走向成熟。</p><p>决定一件事的成功与否，肯定有很多因素决定。事情是客观存在的，不会因为你的某一项凸出能力就会给你带来成功，她由多方面因素决定。</p><p>当你决定去做一件事情，这个决定本身够不够成熟，是否是拍脑袋决定的还是经过你深思熟虑的。你的优势在哪里，劣势在哪里？你有哪些资源？你将要付出什么样的代价？是否有吃苦的决心坚强的意志力？可能会遇到的困难和情况有哪些？你是否能抵抗的住？是否有各种预案？……</p><p>做一件事情还是需要一个团队去做，深知一个人的精力时间能力是远远不够分的；要分工合作。团队成员一定要选好，一定要选好，一定要选好，这个可能是最重要的一环，决定着这件事情能否成功。并不一定要能力最强，但要最合适的。至于怎样去选，怎样才算合适，我也不知道…可能最重要的一点，沟通要顺畅，交流要正常，大家的思想和想法要能在同一水平，目标一致。</p><p>一个团队的产生，自然需要一个主导，主导者还是需要一定的领导力，管理能力，激励团员能力，自我驱动能力吧。最开始这也许不是最重要的？五五分的合伙生意不要做。</p><hr><p><span style="color:red"></span></p><ol><li>团队分工合作，等级分明，沟通顺畅，目标一致，团结；每人都有某一方面独到的能力；五五开合伙生意不要做；</li><li>意志坚定；</li><li>钱；</li><li>运气；</li><li>做自己擅长和感兴趣的事；</li><li>多见见世面，这样更有自信，眼界更广，考虑问题更全面。</li></ol><p></p><!--<hr/><span style="color:gray;font-size:12px">参考： 1.[link-01]()2.[link-02]()3.[link-03]()</span>-->]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;成功是每个人都渴望的，我们决定去做一件事情，怎样才能做成功呢？可能我们每个人都会有自己的想法，因为每个人踩过的坑都不一样；也许失败真乃是成功之母；还得要我们去总结思考。都说年轻失败不可怕，但摔跤真的会痛啊，伙计们。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="其他" scheme="https://www.andyvj.com/categories/%E5%85%B6%E4%BB%96/"/>
-    
-    
-      <category term="点滴" scheme="https://www.andyvj.com/tags/%E7%82%B9%E6%BB%B4/"/>
     
   </entry>
   
