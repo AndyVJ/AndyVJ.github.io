@@ -112,22 +112,20 @@
 
 
 
-  <meta name="description" content="win 系统中文下输出会出现乱码的情况，需要将编码改成GBK编码；在命令行中增加一个参数(-fexec-charset=GBK)：">
-<meta name="keywords" content="C&#x2F;C++">
+  <meta name="description" content="尝试用 C# 和 C/C++ 混合编程玩下，主要看看如何传参。 传基本的数据类型像int，double这类的基本类型直接传参好像问题不大。 C++：1234extern &quot;C&quot; __declspec(dllexport)  double cppFun(int a, double b)&amp;#123;    return a + b;&amp;#125; C#：1234567891011121314151617">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vscode 下 MinGW 编译 C&#x2F;C++ 中文输出乱码问题解决">
-<meta property="og:url" content="https://www.andyvj.com/2019/02/11/190211-01/index.html">
+<meta property="og:title" content="胡搅蛮缠">
+<meta property="og:url" content="https://www.andyvj.com/2020/08/14/200814N01/index.html">
 <meta property="og:site_name" content="胡搅蛮缠">
-<meta property="og:description" content="win 系统中文下输出会出现乱码的情况，需要将编码改成GBK编码；在命令行中增加一个参数(-fexec-charset=GBK)：">
+<meta property="og:description" content="尝试用 C# 和 C/C++ 混合编程玩下，主要看看如何传参。 传基本的数据类型像int，double这类的基本类型直接传参好像问题不大。 C++：1234extern &quot;C&quot; __declspec(dllexport)  double cppFun(int a, double b)&amp;#123;    return a + b;&amp;#125; C#：1234567891011121314151617">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://image.huvjie.com/190211-01_img01.jpg">
-<meta property="og:image" content="http://image.huvjie.com/190211-01_img02.jpg">
-<meta property="og:image" content="http://image.huvjie.com/190211-01_img03.jpg">
-<meta property="og:updated_time" content="2019-06-21T14:00:01.177Z">
+<meta property="og:image" content="http://image.huvjie.com/200814N01_img01.jpg">
+<meta property="og:image" content="http://image.huvjie.com/200814N01_img02.jpg">
+<meta property="og:updated_time" content="2020-08-14T12:41:16.769Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vscode 下 MinGW 编译 C&#x2F;C++ 中文输出乱码问题解决">
-<meta name="twitter:description" content="win 系统中文下输出会出现乱码的情况，需要将编码改成GBK编码；在命令行中增加一个参数(-fexec-charset=GBK)：">
-<meta name="twitter:image" content="http://image.huvjie.com/190211-01_img01.jpg">
+<meta name="twitter:title" content="胡搅蛮缠">
+<meta name="twitter:description" content="尝试用 C# 和 C/C++ 混合编程玩下，主要看看如何传参。 传基本的数据类型像int，double这类的基本类型直接传参好像问题不大。 C++：1234extern &quot;C&quot; __declspec(dllexport)  double cppFun(int a, double b)&amp;#123;    return a + b;&amp;#125; C#：1234567891011121314151617">
+<meta name="twitter:image" content="http://image.huvjie.com/200814N01_img01.jpg">
 
 
 
@@ -136,7 +134,7 @@
 
 
 
-  <link rel="canonical" href="https://www.andyvj.com/2019/02/11/190211-01/">
+  <link rel="canonical" href="https://www.andyvj.com/2020/08/14/200814N01/">
 
 
 
@@ -146,7 +144,7 @@
   };
 </script>
 
-  <title>vscode 下 MinGW 编译 C/C++ 中文输出乱码问题解决 | 胡搅蛮缠</title>
+  <title> | 胡搅蛮缠</title>
   
 
 
@@ -366,7 +364,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.andyvj.com/2019/02/11/190211-01/">
+    <link itemprop="mainEntityOfPage" href="https://www.andyvj.com/2020/08/14/200814N01/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="AndyVJ">
@@ -383,7 +381,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">vscode 下 MinGW 编译 C/C++ 中文输出乱码问题解决
+          <h2 class="post-title" itemprop="name headline">
               
             
           </h2>
@@ -408,46 +406,12 @@
                 
               
 
-              <time title="创建时间：2019-02-11 14:00:27" itemprop="dateCreated datePublished" datetime="2019-02-11T14:00:27+08:00">2019-02-11</time>
+              <time title="创建时间：2020-08-14 20:41:16" itemprop="dateCreated datePublished" datetime="2020-08-14T20:41:16+08:00">2020-08-14</time>
             
 
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-06-21 22:00:01" itemprop="dateModified" datetime="2019-06-21T22:00:01+08:00">2019-06-21</time>
-              
             
           </span>
 
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/编程爱好/" itemprop="url" rel="index"><span itemprop="name">编程爱好</span></a></span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -457,8 +421,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/02/11/190211-01/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/02/11/190211-01/" itemprop="commentCount"></span>
+                <a href="/2020/08/14/200814N01/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2020/08/14/200814N01/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -493,16 +457,33 @@
       
 
       
-        <p>win 系统中文下输出会出现乱码的情况，需要将编码改成<code>GBK</code>编码；在命令行中增加一个参数(<code>-fexec-charset=GBK</code>)：<br><a id="more"></a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">g++ -fexec-charset=GBK test.cpp -o test</span><br></pre></td></tr></table></figure>
-<p>vscode 中用 MinGW 编译，修改<code>Code Runner</code>对编译的设置。</p>
-<ol>
-<li>在设置中搜索<code>code-runner.executorMap</code>。<br><img src="http://image.huvjie.com/190211-01_img01.jpg" alt="image"></li>
-<li>点击<code>在setting.json中编辑</code>。</li>
-<li>点击选项前面的齿轮 -&gt; 复制为 JSON 文本 -&gt; 粘贴到第 2 步中 -&gt; 将参数添加到命令行中 -&gt; 保存。<br><img src="http://image.huvjie.com/190211-01_img02.jpg" alt="image"><br><img src="http://image.huvjie.com/190211-01_img03.jpg" alt="image"></li>
-</ol>
-<hr>
-<font size="2" color="gray"><br>参考：<br>1. <a href="https://blog.csdn.net/qq_31359295/article/details/75113078" target="_blank" rel="noopener">link-01</a><br>2. <a href="https://blog.csdn.net/timekeeperl/article/details/68266218" target="_blank" rel="noopener">link-02</a><br>3. <a href="https://www.douban.com/note/658146000/?from=author" target="_blank" rel="noopener">link-03</a><br></font>
+        <p>尝试用 C# 和 C/C++ 混合编程玩下，主要看看如何传参。</p>
+<h1 id="传基本的数据类型"><a href="#传基本的数据类型" class="headerlink" title="传基本的数据类型"></a>传基本的数据类型</h1><p>像<code>int</code>，<code>double</code>这类的基本类型直接传参好像问题不大。</p>
+<p>C++：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">extern</span> <span class="string">"C"</span> __declspec(dllexport)  <span class="function"><span class="keyword">double</span> <span class="title">cppFun</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">double</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>C#：<br><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title">CppFunction</span></span><br><span class="line">&#123;</span><br><span class="line">    [<span class="meta">DllImport(@<span class="meta-string">"E:\CPP\lian_xi\CS\61_CsCpp混合编程\Cpp代码\CppCode\Debug\CppCode.dll"</span>,</span></span><br><span class="line"><span class="meta">        CharSet = CharSet.Unicode,</span></span><br><span class="line"><span class="meta">        CallingConvention = CallingConvention.Cdecl)</span>]</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">extern</span> <span class="keyword">static</span> <span class="keyword">double</span> <span class="title">cppFun</span>(<span class="params"><span class="keyword">int</span> a, <span class="keyword">double</span> b</span>)</span>;<span class="comment">//好像必须要静态 static</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title">Program</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="keyword">string</span>[] args</span>)</span></span><br><span class="line"><span class="function"></span>    &#123;</span><br><span class="line">        <span class="keyword">double</span> result = CppFunction.cppFun(<span class="number">10</span>, <span class="number">0.15</span>);</span><br><span class="line">        Console.WriteLine(result);</span><br><span class="line"></span><br><span class="line">        Console.ReadKey();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>输出：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">10.15  // 输出基本问题</span><br></pre></td></tr></table></figure>
+<h1 id="传带指针的数据类型"><a href="#传带指针的数据类型" class="headerlink" title="传带指针的数据类型"></a>传带指针的数据类型</h1><p><img src="http://image.huvjie.com/200814N01_img01.jpg" alt="▲ 先打开不安全代码权限"></p>
+<div style="font-size:13px;color:gray;text-align:center">▲ 先打开不安全代码权限 </div>
+
+<h2 id="交换两个数值"><a href="#交换两个数值" class="headerlink" title="交换两个数值"></a>交换两个数值</h2><p>C++：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">extern</span> <span class="string">"C"</span> __declspec(dllexport)  <span class="function"><span class="keyword">void</span>  <span class="title">cppFun</span><span class="params">(<span class="keyword">int</span> *p1, <span class="keyword">int</span>  *p2)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> temp;</span><br><span class="line">    temp = *p1;</span><br><span class="line">    *p1 = *p2;</span><br><span class="line">    *p2 = temp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>C#：<br><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title">CppFunction</span></span><br><span class="line">&#123;</span><br><span class="line">    [<span class="meta">DllImport(@<span class="meta-string">"E:\CPP\lian_xi\CS\61_CsCpp混合编程\Cpp代码\CppCode\Debug\CppCode.dll"</span>,</span></span><br><span class="line"><span class="meta">        CharSet = CharSet.Unicode,</span></span><br><span class="line"><span class="meta">        CallingConvention = CallingConvention.Cdecl)</span>]</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">unsafe</span> <span class="keyword">static</span> <span class="keyword">extern</span> <span class="keyword">void</span> <span class="title">cppFun</span>(<span class="params"><span class="keyword">int</span>* a, <span class="keyword">int</span>* b</span>)</span>;<span class="comment">//好像必须要静态 static</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title">Program</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="keyword">string</span>[] args</span>)</span></span><br><span class="line"><span class="function"></span>    &#123;</span><br><span class="line">        <span class="keyword">int</span> a = <span class="number">10</span>, b = <span class="number">20</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">unsafe</span> &#123; CppFunction.cppFun(&amp;a, &amp;b); &#125;</span><br><span class="line"></span><br><span class="line">        Console.WriteLine(<span class="string">"&#123;0&#125; &#123;1&#125;"</span>, a, b);</span><br><span class="line"></span><br><span class="line">        Console.ReadKey();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>输出：<br><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">20</span> <span class="number">10</span>  <span class="comment">//可见交换是成功的</span></span><br></pre></td></tr></table></figure></p>
+<p>可以在不打开<code>不安全代码</code>是用 <code>ref</code> 参数来实现：</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">extern</span> <span class="keyword">void</span> <span class="title">cppFun</span>(<span class="params"><span class="keyword">ref</span> <span class="keyword">int</span> a, <span class="keyword">ref</span> <span class="keyword">int</span> b</span>)</span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CppFunction.cppFun(<span class="keyword">ref</span> a, <span class="keyword">ref</span> b);</span><br></pre></td></tr></table></figure>
+<p>这样也是能够实现。</p>
+<h2 id="传递字符串参数"><a href="#传递字符串参数" class="headerlink" title="传递字符串参数"></a>传递字符串参数</h2><p>传个<code>char *</code>试一下：</p>
+<p>C++：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">extern</span> <span class="string">"C"</span> __declspec(dllexport)  <span class="function"><span class="keyword">void</span>  <span class="title">cppFun</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> *s)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; s &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>C#：<br><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title">CppFunction</span></span><br><span class="line">   &#123;   <span class="comment">// CharSet = CharSet.Ansi  字符编码要用 ASCII</span></span><br><span class="line">       [<span class="meta">DllImport(@<span class="meta-string">"E:\CPP\lian_xi\CS\61_CsCpp混合编程\Cpp代码\CppCode\Debug\CppCode.dll"</span>,</span></span><br><span class="line"><span class="meta">           CharSet = CharSet.Ansi,</span></span><br><span class="line"><span class="meta">           CallingConvention = CallingConvention.Cdecl)</span>]</span><br><span class="line">       <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">extern</span> <span class="keyword">void</span> <span class="title">cppFun</span>(<span class="params"><span class="keyword">string</span> s</span>)</span>;<span class="comment">//好像必须要静态 static</span></span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">class</span> <span class="title">Program</span></span><br><span class="line">   &#123;</span><br><span class="line">       <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="keyword">string</span>[] args</span>)</span></span><br><span class="line"><span class="function"></span>       &#123;</span><br><span class="line">           <span class="keyword">string</span> s = <span class="string">"哎哟，不错哦!"</span>;</span><br><span class="line">           CppFunction.cppFun(s);</span><br><span class="line"></span><br><span class="line">           Console.ReadKey();</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure></p>
+<p>注意字符编码<code>CharSet = CharSet.Ansi</code>，要<code>用 ANSI 修饰</code>。</p>
+<p>输出：<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">哎哟，不错哦!  <span class="comment">// 输出正确</span></span><br></pre></td></tr></table></figure></p>
+<p>各种数据类型是如何<a href="https://docs.microsoft.com/en-us/dotnet/framework/interop/marshaling-data-with-platform-invoke" target="_blank" rel="noopener">对应</a>的：</p>
+<p><img src="http://image.huvjie.com/200814N01_img02.jpg" alt="▲ MSDN上对应的数据类型表"></p>
+<div style="font-size:13px;color:gray;text-align:center">▲ MSDN上对应的数据类型表</div>
+
+<p><a href="https://docs.microsoft.com/en-us/dotnet/framework/interop/marshaling-data-with-platform-invoke" title="MSDN" target="_blank" rel="noopener">MSDN</a> 数据类型对应。 </p>
+
       
     </div>
 
@@ -552,7 +533,7 @@
     <strong>本文作者： </strong>AndyVJ</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://www.andyvj.com/2019/02/11/190211-01/" title="vscode 下 MinGW 编译 C/C++ 中文输出乱码问题解决">https://www.andyvj.com/2019/02/11/190211-01/</a>
+    <a href="https://www.andyvj.com/2020/08/14/200814N01/" title="">https://www.andyvj.com/2020/08/14/200814N01/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
@@ -563,12 +544,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/C-C/" rel="tag"># C/C++</a>
-          
-        </div>
-      
 
       
       
@@ -578,8 +553,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/02/10/190210-02/" rel="next" title="三条路">
-                <i class="fa fa-chevron-left"></i> 三条路
+              <a href="/2020/08/12/200812N01/" rel="next" title="C#.Net判断窗体是否创建并激活">
+                <i class="fa fa-chevron-left"></i> C#.Net判断窗体是否创建并激活
               </a>
             
           </div>
@@ -587,10 +562,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/02/12/190212-01/" rel="prev" title="BaiduPCS-Go出现403 Forbidden错误不能下载问题">
-                BaiduPCS-Go出现403 Forbidden错误不能下载问题 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -638,8 +609,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -781,6 +761,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#传基本的数据类型"><span class="nav-number">1.</span> <span class="nav-text">传基本的数据类型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#传带指针的数据类型"><span class="nav-number">2.</span> <span class="nav-text">传带指针的数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#交换两个数值"><span class="nav-number">2.1.</span> <span class="nav-text">交换两个数值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#传递字符串参数"><span class="nav-number">2.2.</span> <span class="nav-text">传递字符串参数</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
