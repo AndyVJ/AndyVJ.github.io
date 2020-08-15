@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[C语言指针常见的错误]]></title>
+    <url>%2F2020%2F08%2F15%2F200815N02%2F</url>
+    <content type="text"><![CDATA[C语言指针常见错误，主要有两种情况： 1).指针未初始化;2).避免使用scanf给指针赋值;3).赋值指针为NULL。 指针未初始化这种情况：1234int i = 10, *p;*p = i;printf("*i=%d\n", *p); 指针变量p是没有初始化的，就是你还没有给他里面赋值地址进去。这种为初始化的情况在高版本的 VS 中是直接编译不过去的;会报错：C4700 使用了未初始化的局部变量“p”。 避免 scanf赋值指针123int i = 10, *p;p = &amp;i; // 初始化 p，指向 iscanf("%d", p); 这种情况会很容易把原来的i值，或者指向其他内存位置的值改掉导致软件崩溃，需要谨慎。 赋值指针为NULL123int i = 10, *p = NULL;*p = i;printf("%d", *p); 这种情况能编译通过，运行时会报段错误：引发了异常: 写入访问权限冲突。 p 是 nullptr。需要特别注意。]]></content>
+      <categories>
+        <category>编程爱好</category>
+      </categories>
+      <tags>
+        <tag>C/C++</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[C#调用C/C++非托管程序]]></title>
     <url>%2F2020%2F08%2F14%2F200814N01%2F</url>
     <content type="text"><![CDATA[尝试用 C# 和 C/C++ 混合编程玩下，主要看看如何传参。 传基本的数据类型像int，double这类的基本类型直接传参好像问题不大。 C++：1234extern "C" __declspec(dllexport) double cppFun(int a, double b)&#123; return a + b;&#125; C#：1234567891011121314151617class CppFunction&#123; [DllImport(@"E:\CPP\lian_xi\CS\61_CsCpp混合编程\Cpp代码\CppCode\Debug\CppCode.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.Cdecl)] public extern static double cppFun(int a, double b);//好像必须要静态 static&#125;class Program&#123; static void Main(string[] args) &#123; double result = CppFunction.cppFun(10, 0.15); Console.WriteLine(result); Console.ReadKey(); &#125;&#125; 输出： 110.15 // 输出基本问题 传带指针的数据类型 ▲ 先打开不安全代码权限 交换两个数值C++：1234567extern "C" __declspec(dllexport) void cppFun(int *p1, int *p2)&#123; int temp; temp = *p1; *p1 = *p2; *p2 = temp;&#125; C#：1234567891011121314151617181920class CppFunction&#123; [DllImport(@"E:\CPP\lian_xi\CS\61_CsCpp混合编程\Cpp代码\CppCode\Debug\CppCode.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.Cdecl)] public unsafe static extern void cppFun(int* a, int* b);//好像必须要静态 static&#125;class Program&#123; static void Main(string[] args) &#123; int a = 10, b = 20; unsafe &#123; CppFunction.cppFun(&amp;a, &amp;b); &#125; Console.WriteLine("&#123;0&#125; &#123;1&#125;", a, b); Console.ReadKey(); &#125;&#125; 输出：120 10 //可见交换是成功的 可以在不打开不安全代码是用 ref 参数来实现： 1public static extern void cppFun(ref int a, ref int b); 1CppFunction.cppFun(ref a, ref b); 这样也是能够实现。 传递字符串参数传个char *试一下： C++：1234extern "C" __declspec(dllexport) void cppFun(const char *s)&#123; cout &lt;&lt; s &lt;&lt; endl;&#125; C#：1234567891011121314151617class CppFunction &#123; // CharSet = CharSet.Ansi 字符编码要用 ASCII [DllImport(@"E:\CPP\lian_xi\CS\61_CsCpp混合编程\Cpp代码\CppCode\Debug\CppCode.dll", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)] public static extern void cppFun(string s);//好像必须要静态 static &#125; class Program &#123; static void Main(string[] args) &#123; string s = "哎哟，不错哦!"; CppFunction.cppFun(s); Console.ReadKey(); &#125; &#125; 注意字符编码CharSet = CharSet.Ansi，要用 ANSI 修饰。 输出：1哎哟，不错哦! // 输出正确 各种数据类型是如何对应的： ▲ MSDN上对应的数据类型表 MSDN 数据类型对应。]]></content>
