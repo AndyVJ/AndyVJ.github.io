@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Json.NET 简单的序列化和反序列化]]></title>
+    <url>%2F2020%2F08%2F17%2F200817N01%2F</url>
+    <content type="text"><![CDATA[先弄个实体类：123456class Student&#123; public string Name &#123; get; set; &#125; public string Gender &#123; get; set; &#125; public int Age &#123; get; set; &#125;&#125; 序列化用JsonConvert.SerializeObject来进行序列化。 12345678Student stu = new Student &#123; Name = "Andy", Gender = "Three", Age = 50&#125;;// 序列化string jsonStr = JsonConvert.SerializeObject(stu, Formatting.Indented);Console.WriteLine(jsonStr); 输出： 12345&#123; "Name": "Andy", "Gender": "Three", "Age": 50&#125; 可以把序列化的字符串保存到json文件中： 123456// 写入文件FileStream fs = new FileStream(@"./stu.json", FileMode.Create);StreamWriter sw = new StreamWriter(fs);sw.Write(jsonStr);sw.Close();fs.Close(); 反序列化反序列化用JsonConvert.DeserializeObject&lt;Student&gt;。 1234Student stu1 = JsonConvert.DeserializeObject&lt;Student&gt;(jsonStr);Console.WriteLine(stu1.Name);Console.WriteLine(stu1.Gender);Console.WriteLine(stu1.Age); 输出： 123AndyThree50 更详细的运用可以看看这篇文章。 天上的白云漂浮，时而聚，时而散，多么自由。我要是有这样的状态就好了；这是不是文艺范挂在嘴边的“闲看云卷云舒”？ 每个人都在给你提要求，而鲜有人给你帮助。生活太累，太难，太无望。那些文艺范挂在嘴边的“未来可期”，到我这也成“未来不可期”了。 “天下熙熙皆为利来，天下攘攘皆为利往”，人在世就图碎银几两，此说真没错也。这个世界不计其数的矛盾围绕着“钱”,“利”而生，谁能逃脱，谁能潇洒独善其身？“人活着开心最重要啦”，港剧中反复出现的台词；如果吃碗面就能开心，我愿意每天都吃面。 愿你我都能做感兴趣的事，都能让开心占大部分生活就好。 参考： Json.NET常用方法汇总:https://www.lagou.com/lgeduarticle/54110.html]]></content>
+      <categories>
+        <category>编程爱好</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[C语言指针常见的错误]]></title>
     <url>%2F2020%2F08%2F15%2F200815N02%2F</url>
     <content type="text"><![CDATA[C语言指针常见错误，主要有两种情况： 1).指针未初始化;2).避免使用scanf给指针赋值;3).赋值指针为NULL。 指针未初始化这种情况：1234int i = 10, *p;*p = i;printf("*i=%d\n", *p); 指针变量p是没有初始化的，就是你还没有给他里面赋值地址进去。这种为初始化的情况在高版本的 VS 中是直接编译不过去的;会报错：C4700 使用了未初始化的局部变量“p”。 避免 scanf赋值指针123int i = 10, *p;p = &amp;i; // 初始化 p，指向 iscanf("%d", p); 这种情况会很容易把原来的i值，或者指向其他内存位置的值改掉导致软件崩溃，需要谨慎。 赋值指针为NULL123int i = 10, *p = NULL;*p = i;printf("%d", *p); 这种情况能编译通过，运行时会报段错误：引发了异常: 写入访问权限冲突。 p 是 nullptr。需要特别注意。]]></content>
