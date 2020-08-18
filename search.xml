@@ -45,6 +45,17 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[博客头]]></title>
+    <url>%2F2020%2F08%2F12%2F200818N01%2F</url>
+    <content type="text"><![CDATA[索引器和属性差不多，属性是一对一，而索引器是一对多而已。 12345678910111213141516171819202122232425262728293031323334class Program&#123; static void Main(string[] args) &#123; MyClass mc = new MyClass(); mc[0] = "胡文杰"; mc[1] = "杨佳"; Console.WriteLine(mc[0]); Console.WriteLine(mc[1]); Console.Read(); &#125;&#125;class MyClass&#123; private string[] name = new string[2]; // 关键：用 this 代替，类型也可以用 string public string this[int index] &#123; get &#123; if (index &gt;= 0 &amp;&amp; index &lt; name.Length) &#123; return name[index]; &#125; else &#123; return name[0]; &#125; &#125; set &#123; if (index &gt;=0 &amp;&amp; index &lt; name.Length) &#123; name[index] = value; &#125; &#125; &#125;&#125; 输出： 12胡文杰杨佳]]></content>
+      <categories>
+        <category>编程爱好</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[C语言简单练习题｜循环穷举]]></title>
     <url>%2F2020%2F08%2F05%2F200805N01%2F</url>
     <content type="text"><![CDATA[做几道简单的C语言题。 (1) 求出 1! + 2! + 3! +…+n!; 123456789101112131415161718192021222324252627282930313233 #include &lt;stdio.h&gt;int nF (int n);int plus_nF(int n);int main(void)&#123; printf("%d\n", plus_nF(10)); return 0;&#125;/*把N个n的阶乘加起来*/int plus_nF(int n)&#123; int result = 0; for (int i = 1; i &lt;= n; i++ ) &#123; result = result + nF(i); &#125; return result;&#125;/*求N阶乘函数*/int nF (int n)&#123; int r = 1; for (int i = 1; i &lt;= n; i++) &#123; r = r * i; &#125; return r;&#125; 输出： 14037913 (2) 求出用 50 元，20 元， 10 元换算成 100 元的有几种方式？ 用 for循环穷举法： 123456789for (int i = 0; i &lt;= 100 / 50; i++) &#123; for (int j = 0; j &lt;= 100 / 20; j++) &#123; for (int k = 0; k &lt;= 100 / 10; k++) &#123; if ( i * 50 + j * 20 + k * 10 == 100 ) &#123; printf ("%d张50元｜%d张20元｜%d张10元。\n", i, j, k); &#125; &#125; &#125; &#125; 输出： 123456789100张50元｜0张20元｜10张10元。0张50元｜1张20元｜8张10元。0张50元｜2张20元｜6张10元。0张50元｜3张20元｜4张10元。0张50元｜4张20元｜2张10元。0张50元｜5张20元｜0张10元。1张50元｜0张20元｜5张10元。1张50元｜1张20元｜3张10元。1张50元｜2张20元｜1张10元。2张50元｜0张20元｜0张10元。 (3) 百钱买百鸡，公鸡 5 元一只，母鸡 3 元一只，小鸡 1 元 3 只。百钱买百鸡的有哪些情况？ 依然穷举法。 123456for (int i = 0; i &lt; 100 / 5; i++) &#123; for (int j = 0; j &lt; (int) ( 100 / 3); j ++) &#123; if ( (100 - i - j) % 3 == 0 &amp;&amp; i * 5 + j * 3 + (100 - i - j) / 3 == 100 ) printf("公鸡%d只｜母鸡%d只｜小鸡%d只\n", i, j, 100 - i - j); &#125; &#125; 输出： 1234公鸡0只｜母鸡25只｜小鸡75只公鸡4只｜母鸡18只｜小鸡78只公鸡8只｜母鸡11只｜小鸡81只公鸡12只｜母鸡4只｜小鸡84只 (4) 求出 1，2，3，4四个数能组成哪些互不相同的三位数？ 依然穷举法。 123456789101112131415161718int a = 1, b = 2, c = 3, d = 4;int arr[4] = &#123;a, b, c, d&#125;;int count = 0;for (int i = 0; i &lt; 4; i++)&#123; for (int j = 0; j &lt; 4; j++) &#123; for (int k = 0; k &lt; 4; k++) &#123; if (i != j &amp;&amp; i != k &amp;&amp; j != k) &#123; printf("%d%d%d\t", arr[i], arr[j], arr[k]); count++; if (count % 5 == 0) &#123; printf("\n"); &#125; &#125; &#125; &#125;&#125; 输出： 12345123 124 132 134 142143 213 214 231 234241 243 312 314 321324 341 342 412 413421 423 431 432 题目来自《手把手教你学C语言》。 参考：1.《手把手教你学C语言》]]></content>
