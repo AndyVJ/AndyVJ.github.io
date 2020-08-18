@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.andyvj.com/"/>
-  <updated>2020-08-17T13:09:27.089Z</updated>
+  <updated>2020-08-18T13:03:14.448Z</updated>
   <id>https://www.andyvj.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>C# .NET 索引器的基本使用</title>
+    <link href="https://www.andyvj.com/2020/08/18/200818N01/"/>
+    <id>https://www.andyvj.com/2020/08/18/200818N01/</id>
+    <published>2020-08-18T13:03:00.000Z</published>
+    <updated>2020-08-18T13:03:14.448Z</updated>
+    
+    <content type="html"><![CDATA[<p>索引器和属性差不多，属性是一对一，而索引器是一对多而已。<br><a id="more"></a></p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title">Program</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="keyword">string</span>[] args</span>)</span></span><br><span class="line"><span class="function"></span>    &#123;</span><br><span class="line">        MyClass mc = <span class="keyword">new</span> MyClass();</span><br><span class="line">        mc[<span class="number">0</span>] = <span class="string">"胡文杰"</span>;</span><br><span class="line">        mc[<span class="number">1</span>] = <span class="string">"杨佳"</span>;</span><br><span class="line">        Console.WriteLine(mc[<span class="number">0</span>]);</span><br><span class="line">        Console.WriteLine(mc[<span class="number">1</span>]);</span><br><span class="line"></span><br><span class="line">        Console.Read();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title">MyClass</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">string</span>[] name = <span class="keyword">new</span> <span class="keyword">string</span>[<span class="number">2</span>];</span><br><span class="line">    <span class="comment">// 关键：用 this 代替，类型也可以用 string</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">string</span> <span class="keyword">this</span>[<span class="keyword">int</span> index] &#123;</span><br><span class="line">        <span class="keyword">get</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (index &gt;= <span class="number">0</span> &amp;&amp; index &lt; name.Length) &#123;</span><br><span class="line">                <span class="keyword">return</span> name[index];</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">return</span> name[<span class="number">0</span>];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">set</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (index &gt;=<span class="number">0</span> &amp;&amp; index &lt; name.Length) &#123;</span><br><span class="line">                name[index] = <span class="keyword">value</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>输出：</p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">胡文杰</span><br><span class="line">杨佳</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;索引器和属性差不多，属性是一对一，而索引器是一对多而已。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="编程爱好" scheme="https://www.andyvj.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
+    
+    
+      <category term="C#" scheme="https://www.andyvj.com/tags/C/"/>
+    
+  </entry>
   
   <entry>
     <title>Json.NET 简单的序列化和反序列化</title>
@@ -98,28 +120,6 @@
     <summary type="html">
     
       &lt;p&gt;C#.Net 判断窗体是否创建，如果已创建，激活窗体。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="编程爱好" scheme="https://www.andyvj.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
-    
-    
-      <category term="C#" scheme="https://www.andyvj.com/tags/C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>博客头</title>
-    <link href="https://www.andyvj.com/2020/08/12/200818N01/"/>
-    <id>https://www.andyvj.com/2020/08/12/200818N01/</id>
-    <published>2020-08-12T12:00:04.000Z</published>
-    <updated>2020-08-18T13:00:03.519Z</updated>
-    
-    <content type="html"><![CDATA[<p>索引器和属性差不多，属性是一对一，而索引器是一对多而已。<br><a id="more"></a></p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title">Program</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="keyword">string</span>[] args</span>)</span></span><br><span class="line"><span class="function"></span>    &#123;</span><br><span class="line">        MyClass mc = <span class="keyword">new</span> MyClass();</span><br><span class="line">        mc[<span class="number">0</span>] = <span class="string">"胡文杰"</span>;</span><br><span class="line">        mc[<span class="number">1</span>] = <span class="string">"杨佳"</span>;</span><br><span class="line">        Console.WriteLine(mc[<span class="number">0</span>]);</span><br><span class="line">        Console.WriteLine(mc[<span class="number">1</span>]);</span><br><span class="line"></span><br><span class="line">        Console.Read();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title">MyClass</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">string</span>[] name = <span class="keyword">new</span> <span class="keyword">string</span>[<span class="number">2</span>];</span><br><span class="line">    <span class="comment">// 关键：用 this 代替，类型也可以用 string</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">string</span> <span class="keyword">this</span>[<span class="keyword">int</span> index] &#123;</span><br><span class="line">        <span class="keyword">get</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (index &gt;= <span class="number">0</span> &amp;&amp; index &lt; name.Length) &#123;</span><br><span class="line">                <span class="keyword">return</span> name[index];</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">return</span> name[<span class="number">0</span>];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">set</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (index &gt;=<span class="number">0</span> &amp;&amp; index &lt; name.Length) &#123;</span><br><span class="line">                name[index] = <span class="keyword">value</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>输出：</p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">胡文杰</span><br><span class="line">杨佳</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;索引器和属性差不多，属性是一对一，而索引器是一对多而已。&lt;br&gt;
     
     </summary>
     

@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[C# .NET 索引器的基本使用]]></title>
+    <url>%2F2020%2F08%2F18%2F200818N01%2F</url>
+    <content type="text"><![CDATA[索引器和属性差不多，属性是一对一，而索引器是一对多而已。 12345678910111213141516171819202122232425262728293031323334class Program&#123; static void Main(string[] args) &#123; MyClass mc = new MyClass(); mc[0] = "胡文杰"; mc[1] = "杨佳"; Console.WriteLine(mc[0]); Console.WriteLine(mc[1]); Console.Read(); &#125;&#125;class MyClass&#123; private string[] name = new string[2]; // 关键：用 this 代替，类型也可以用 string public string this[int index] &#123; get &#123; if (index &gt;= 0 &amp;&amp; index &lt; name.Length) &#123; return name[index]; &#125; else &#123; return name[0]; &#125; &#125; set &#123; if (index &gt;=0 &amp;&amp; index &lt; name.Length) &#123; name[index] = value; &#125; &#125; &#125;&#125; 输出： 12胡文杰杨佳]]></content>
+      <categories>
+        <category>编程爱好</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Json.NET 简单的序列化和反序列化]]></title>
     <url>%2F2020%2F08%2F17%2F200817N01%2F</url>
     <content type="text"><![CDATA[先弄个实体类：123456class Student&#123; public string Name &#123; get; set; &#125; public string Gender &#123; get; set; &#125; public int Age &#123; get; set; &#125;&#125; 序列化用JsonConvert.SerializeObject来进行序列化。 12345678Student stu = new Student &#123; Name = "Andy", Gender = "Three", Age = 50&#125;;// 序列化string jsonStr = JsonConvert.SerializeObject(stu, Formatting.Indented);Console.WriteLine(jsonStr); 输出： 12345&#123; "Name": "Andy", "Gender": "Three", "Age": 50&#125; 可以把序列化的字符串保存到json文件中： 123456// 写入文件FileStream fs = new FileStream(@"./stu.json", FileMode.Create);StreamWriter sw = new StreamWriter(fs);sw.Write(jsonStr);sw.Close();fs.Close(); 反序列化反序列化用JsonConvert.DeserializeObject&lt;Student&gt;。 1234Student stu1 = JsonConvert.DeserializeObject&lt;Student&gt;(jsonStr);Console.WriteLine(stu1.Name);Console.WriteLine(stu1.Gender);Console.WriteLine(stu1.Age); 输出： 123AndyThree50 更详细的运用可以看看这篇文章。 天上的白云漂浮，时而聚，时而散，多么自由。我要是有这样的状态就好了；这是不是文艺范挂在嘴边的“闲看云卷云舒”？ 每个人都在给你提要求，而鲜有人给你帮助。生活太累，太难，太无望。那些文艺范挂在嘴边的“未来可期”，到我这也成“未来不可期”了。 “天下熙熙皆为利来，天下攘攘皆为利往”，人在世就图碎银几两，此说真没错也。这个世界不计其数的矛盾围绕着“钱”,“利”而生，谁能逃脱，谁能潇洒独善其身？“人活着开心最重要啦”，港剧中反复出现的台词；如果吃碗面就能开心，我愿意每天都吃面。 愿你我都能做感兴趣的事，都能让开心占大部分生活就好。 参考： Json.NET常用方法汇总:https://www.lagou.com/lgeduarticle/54110.html]]></content>
@@ -37,17 +48,6 @@
     <title><![CDATA[C#.Net判断窗体是否创建并激活]]></title>
     <url>%2F2020%2F08%2F12%2F200812N01%2F</url>
     <content type="text"><![CDATA[C#.Net 判断窗体是否创建，如果已创建，激活窗体。 方法一123456789101112131415161718private Form2 frm2;private void button1_Click(object sender, EventArgs e)&#123; if (frm2 == null) &#123; frm2 = new Form2(); frm2.StartPosition = FormStartPosition.CenterScreen; frm2.Show(); &#125; else &#123; if (frm2.IsDisposed) &#123; // 判断窗体是否关闭 关键代码 frm2 = new Form2(); frm2.StartPosition = FormStartPosition.CenterScreen; frm2.Show(); &#125; else &#123; frm2.WindowState = FormWindowState.Normal; // 窗体默认大小 frm2.Activate(); // 激活窗体 &#125; &#125;&#125; 方法二1234567891011121314151617bool isFormOpen = false;private void button2_Click(object sender, EventArgs e)&#123; foreach( Form frm in Application.OpenForms) &#123; // 关键代码 if (frm is Form2) &#123; // 如果此窗口已打开，则激活； frm.Activate(); frm.WindowState = FormWindowState.Normal; isFormOpen = true; break; &#125; &#125; if (!isFormOpen) &#123; Form2 frm2 = new Form2(); frm2.Show(); &#125;&#125; 参考：1.link-01。]]></content>
-      <categories>
-        <category>编程爱好</category>
-      </categories>
-      <tags>
-        <tag>C#</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[博客头]]></title>
-    <url>%2F2020%2F08%2F12%2F200818N01%2F</url>
-    <content type="text"><![CDATA[索引器和属性差不多，属性是一对一，而索引器是一对多而已。 12345678910111213141516171819202122232425262728293031323334class Program&#123; static void Main(string[] args) &#123; MyClass mc = new MyClass(); mc[0] = "胡文杰"; mc[1] = "杨佳"; Console.WriteLine(mc[0]); Console.WriteLine(mc[1]); Console.Read(); &#125;&#125;class MyClass&#123; private string[] name = new string[2]; // 关键：用 this 代替，类型也可以用 string public string this[int index] &#123; get &#123; if (index &gt;= 0 &amp;&amp; index &lt; name.Length) &#123; return name[index]; &#125; else &#123; return name[0]; &#125; &#125; set &#123; if (index &gt;=0 &amp;&amp; index &lt; name.Length) &#123; name[index] = value; &#125; &#125; &#125;&#125; 输出： 12胡文杰杨佳]]></content>
       <categories>
         <category>编程爱好</category>
       </categories>
