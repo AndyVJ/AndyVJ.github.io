@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[C# enum ö���������]]></title>
+    <url>%2F2020%2F08%2F22%2F200822N02%2F</url>
+    <content type="text"><![CDATA[C# enum ö��������⡣ 1234567891011121314151617enum TrafficLight&#123; Green = 10, Yellow = 15, Red = 15,&#125;class Program&#123; static void Main(string[] args) &#123; TrafficLight t1 = TrafficLight.Red; Console.WriteLine((TrafficLight)15); // ������ǵ�һ����ƥ���ֵ Console.WriteLine(t1); // ������ǵ�һ����ƥ���ֵ������ǰ�渳ֵ���� Red��������Ļ��� Yellow�� Console.Read(); &#125;&#125; ����� 12YellowYellow �ɼ���ö������Ȼ�������ظ������ƣ����������ظ���ֵ�������и�ֵ������15���� ����Ĳ��Կ�֪��������ǵ�һ����ƥ���ֵ������ǰ�渳ֵ����Red��������Ļ��� Yellow��]]></content>
+      <categories>
+        <category>��̰���</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[C#.Net 的扩展类的基本使用]]></title>
     <url>%2F2020%2F08%2F22%2F200822N01%2F</url>
     <content type="text"><![CDATA[C#.Net 的扩展类的基本使用。可以用来扩展密封类或者外部导入的dll。 12345678910111213141516171819202122232425262728293031323334353637class Program&#123; static void Main(string[] args) &#123; MyData md = new MyData(1, 2); Console.WriteLine("总合：&#123;0&#125;", md.Sum()); Console.WriteLine("平均值:&#123;0&#125;", md.Average()); //直接像实例一样的调用 Console.Read(); &#125;&#125;// 【1】.必须是一个静态类static class ExtendMyData&#123; // [2] 必须是一个共有的静态方法 public static double Average(this MyData md) // [3] this 关键字 和 类型 &#123; return md.Sum() / 2.0; &#125;&#125;sealed class MyData&#123; private int a; private int b; public MyData(int a, int b) &#123; this.a = a; this.b = b; &#125; public int Sum() &#123; return a + b; &#125;&#125; 输出： 12总合：3平均值:1.5 扩展类的使用主要有 3 个步骤，见代码内的注释说明。 可见，扩展的是基类，使用的时候也是实例化基类，然后进行直接的实例化形式的调用。]]></content>

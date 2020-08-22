@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.andyvj.com/"/>
-  <updated>2020-08-22T00:38:28.521Z</updated>
+  <updated>2020-08-22T00:44:36.181Z</updated>
   <id>https://www.andyvj.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>C# enum ö���������</title>
+    <link href="https://www.andyvj.com/2020/08/22/200822N02/"/>
+    <id>https://www.andyvj.com/2020/08/22/200822N02/</id>
+    <published>2020-08-22T12:00:01.000Z</published>
+    <updated>2020-08-22T00:44:36.181Z</updated>
+    
+    <content type="html"><![CDATA[<p>C# enum ö��������⡣<br><a id="more"></a></p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">enum</span> TrafficLight</span><br><span class="line">&#123;</span><br><span class="line">    Green = <span class="number">10</span>,</span><br><span class="line">    Yellow = <span class="number">15</span>,</span><br><span class="line">    Red = <span class="number">15</span>,</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title">Program</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="keyword">string</span>[] args</span>)</span></span><br><span class="line"><span class="function"></span>    &#123;</span><br><span class="line">        TrafficLight t1 = TrafficLight.Red;</span><br><span class="line">        Console.WriteLine((TrafficLight)<span class="number">15</span>); <span class="comment">// ������ǵ�һ����ƥ���ֵ</span></span><br><span class="line">        Console.WriteLine(t1);  <span class="comment">// ������ǵ�һ����ƥ���ֵ������ǰ�渳ֵ���� Red��������Ļ��� Yellow��</span></span><br><span class="line">        Console.Read();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>�����</p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Yellow</span><br><span class="line">Yellow</span><br></pre></td></tr></table></figure><p>�ɼ���ö������Ȼ�������ظ������ƣ����������ظ���ֵ�������и�ֵ������15����</p><p>����Ĳ��Կ�֪��<strong>������ǵ�һ����ƥ���ֵ������ǰ�渳ֵ����<code>Red</code>��������Ļ��� <code>Yellow</code>��</strong></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;C# enum ö��������⡣&lt;br&gt;
+    
+    </summary>
+    
+      <category term="��̰���" scheme="https://www.andyvj.com/categories/%EF%BF%BD%EF%BF%BD%CC%B0%EF%BF%BD%EF%BF%BD%EF%BF%BD/"/>
+    
+    
+      <category term="C#" scheme="https://www.andyvj.com/tags/C/"/>
+    
+  </entry>
   
   <entry>
     <title>C#.Net 的扩展类的基本使用</title>
@@ -455,33 +477,6 @@
 &lt;li&gt;定义一个委托。&lt;/li&gt;
 &lt;li&gt;根据委托实现方法。&lt;/li&gt;
 &lt;li&gt;异步调用。&lt;/li&gt;
-&lt;/ol&gt;
-    
-    </summary>
-    
-      <category term="编程爱好" scheme="https://www.andyvj.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
-    
-    
-      <category term="C#" scheme="https://www.andyvj.com/tags/C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>C#扩展方法</title>
-    <link href="https://www.andyvj.com/2020/06/15/200615N01/"/>
-    <id>https://www.andyvj.com/2020/06/15/200615N01/</id>
-    <published>2020-06-15T01:25:03.000Z</published>
-    <updated>2020-06-15T03:08:13.033Z</updated>
-    
-    <content type="html"><![CDATA[<p>扩展方法的 3 个要求：</p><ol><li>声明扩展方法的类必须声明为 <code>static</code>；</li><li>扩展方法本身必须声明为<code>static</code>；</li><li>扩展方法第一个参数类型前一定要包含关键字 <code>this</code>。</li></ol><a id="more"></a><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">ExtensionMethods</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">sealed</span> <span class="keyword">public</span> <span class="keyword">class</span> <span class="title">MyMethod</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">double</span> d1, d2, d3;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">MyMethod</span>(<span class="params"><span class="keyword">double</span> i,<span class="keyword">double</span> j, <span class="keyword">double</span> k</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            d1 = i;</span><br><span class="line">            d2 = j;</span><br><span class="line">            d3 = k;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">SumMethod</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            <span class="keyword">return</span> d1 + d2 + d3;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">public</span>  <span class="keyword">class</span> <span class="title">ExtensionMythod</span> <span class="comment">// [1]、静态类</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function"><span class="keyword">static</span> <span class="keyword">public</span> <span class="keyword">double</span> <span class="title">DivdMethos</span>(<span class="params"><span class="keyword">this</span> MyMethod md</span>) <span class="comment">// [2]、静态方法； [3]、第一个参数 this 关键字</span></span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            <span class="keyword">return</span> md.SumMethod() / <span class="number">3</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">class</span>   <span class="title">Program</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="keyword">string</span>[] str</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            MyMethod md = <span class="keyword">new</span> MyMethod(<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>);</span><br><span class="line">            <span class="keyword">double</span> reslut = md.DivdMethos();   <span class="comment">// 方法一调用</span></span><br><span class="line">            Console.WriteLine(<span class="string">"&#123;0:f2&#125;"</span> ,   reslut);</span><br><span class="line"></span><br><span class="line">            reslut = ExtensionMythod.DivdMethos(md);  <span class="comment">//  方法二调用</span></span><br><span class="line">            Console.WriteLine(<span class="string">"&#123;0:f2&#125;"</span>, reslut);</span><br><span class="line"></span><br><span class="line">            Console.ReadKey();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>输出：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">4.00</span><br><span class="line">4.00</span><br></pre></td></tr></table></figure><p><code>MyMethod</code>类 和 <code>ExtensionMythod</code> 类的访问等级要一样，都为 <code>public</code> 或者 都为 <code>internal</code>。</p><p>扩展方法也可以跟泛型结合起来使用。</p><p><hr><br><span style="color:gray;font-size:12px"><br>参考：<br>《图解教程》 -&gt; P145, P322<br></span></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;扩展方法的 3 个要求：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;声明扩展方法的类必须声明为 &lt;code&gt;static&lt;/code&gt;；&lt;/li&gt;
-&lt;li&gt;扩展方法本身必须声明为&lt;code&gt;static&lt;/code&gt;；&lt;/li&gt;
-&lt;li&gt;扩展方法第一个参数类型前一定要包含关键字 &lt;code&gt;this&lt;/code&gt;。&lt;/li&gt;
 &lt;/ol&gt;
     
     </summary>
