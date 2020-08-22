@@ -112,18 +112,18 @@
 
 
 
-  <meta name="description" content="继承继承一个类时，类成员的可访问性是一个重要的问题。子类（派生类）不能访问基类的私有成员，但是可以访问其公共成员。这就是说，只要使用public声明类成员，就可以让一个类成员被基类和子类（派生类）同时访问，同时也可以被外部的代码访问。">
+  <meta name="description" content="C#.Net 的扩展类的基本使用。可以用来扩展密封类或者外部导入的dll。">
 <meta name="keywords" content="C#">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C# 关于继承和多态">
-<meta property="og:url" content="https://www.andyvj.com/2019/07/12/190712N02/index.html">
+<meta property="og:title" content="C#.Net 的扩展类的基本使用">
+<meta property="og:url" content="https://www.andyvj.com/2020/08/22/200822N01/index.html">
 <meta property="og:site_name" content="胡搅蛮缠">
-<meta property="og:description" content="继承继承一个类时，类成员的可访问性是一个重要的问题。子类（派生类）不能访问基类的私有成员，但是可以访问其公共成员。这就是说，只要使用public声明类成员，就可以让一个类成员被基类和子类（派生类）同时访问，同时也可以被外部的代码访问。">
+<meta property="og:description" content="C#.Net 的扩展类的基本使用。可以用来扩展密封类或者外部导入的dll。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-07-18T14:42:46.139Z">
+<meta property="og:updated_time" content="2020-08-22T00:38:28.521Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="C# 关于继承和多态">
-<meta name="twitter:description" content="继承继承一个类时，类成员的可访问性是一个重要的问题。子类（派生类）不能访问基类的私有成员，但是可以访问其公共成员。这就是说，只要使用public声明类成员，就可以让一个类成员被基类和子类（派生类）同时访问，同时也可以被外部的代码访问。">
+<meta name="twitter:title" content="C#.Net 的扩展类的基本使用">
+<meta name="twitter:description" content="C#.Net 的扩展类的基本使用。可以用来扩展密封类或者外部导入的dll。">
 
 
 
@@ -132,7 +132,7 @@
 
 
 
-  <link rel="canonical" href="https://www.andyvj.com/2019/07/12/190712N02/">
+  <link rel="canonical" href="https://www.andyvj.com/2020/08/22/200822N01/">
 
 
 
@@ -142,7 +142,7 @@
   };
 </script>
 
-  <title>C# 关于继承和多态 | 胡搅蛮缠</title>
+  <title>C#.Net 的扩展类的基本使用 | 胡搅蛮缠</title>
   
 
 
@@ -362,7 +362,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.andyvj.com/2019/07/12/190712N02/">
+    <link itemprop="mainEntityOfPage" href="https://www.andyvj.com/2020/08/22/200822N01/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="AndyVJ">
@@ -379,7 +379,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">C# 关于继承和多态
+          <h2 class="post-title" itemprop="name headline">C#.Net 的扩展类的基本使用
               
             
           </h2>
@@ -404,24 +404,12 @@
                 
               
 
-              <time title="创建时间：2019-07-12 13:32:32" itemprop="dateCreated datePublished" datetime="2019-07-12T13:32:32+08:00">2019-07-12</time>
+              <time title="创建时间：2020-08-22 20:00:00 / 修改时间：08:38:28" itemprop="dateCreated datePublished" datetime="2020-08-22T20:00:00+08:00">2020-08-22</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2020-07-18 22:42:46" itemprop="dateModified" datetime="2020-07-18T22:42:46+08:00">2020-07-18</time>
               
             
           </span>
@@ -453,8 +441,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/07/12/190712N02/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/07/12/190712N02/" itemprop="commentCount"></span>
+                <a href="/2020/08/22/200822N01/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2020/08/22/200822N01/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -489,22 +477,13 @@
       
 
       
-        <h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><p>继承一个类时，类成员的可访问性是一个重要的问题。子类（派生类）不能访问基类的私有成员，但是可以访问其公共成员。这就是说，只要使用public声明类成员，就可以让一个类成员被基类和子类（派生类）同时访问，同时也可以被外部的代码访问。</p>
+        <p>C#.Net 的扩展类的基本使用。可以用来扩展<code>密封类</code>或者外部导入的<code>dll</code>。</p>
 <a id="more"></a>
-<p>为了解决基类成员访问问题，C# 还提供了另外一种可访问性：<code>protected</code>，只有子类（派生类）才能访问<code>protected</code>成员，<span style="color:red">基类和外部代码</span>都不能访问<code>protected</code>成员。</p>
-<p>除了成员的保护级别外，还可以为成员定义其继承行为。基类的成员可以是<strong>虚拟</strong>的，成员可以由继承它的类<strong>重写</strong>。子类（派生类）可以提供成员的其他执行代码，这种执行代码<strong>不会删除原来的代码，仍可以在类中访问原来的代码</strong>，但<span style="color:red">外部代码不能访问它们</span>。如果没有提供其他执行方式，外部代码就直接访问基类中成员的执行代码。</p>
-<p>另外，基类还可以定义为<strong>抽象类</strong>。<u>抽象类不能直接实例化，要使用抽象类就必须继承这个类，然后再实例化。</u></p>
-<p><strong>说明：</strong><br>继承类时，需要使用冒号加类名。当对一个类应用<code>sealed</code>修饰符时，该修饰符会阻止其他类从该类继承。</p>
-<h2 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h2><p>当然如果它们都继承自某个类，可以把这些子类（派生类）<strong>都放到一个数组中</strong>。如果这些对象都有同名方法，就可以<span style="color:red">调用每个对象的同名方法</span>。</p>
-<p>C# 中，类的<strong>多态性</strong>是通过在子类（派生类）中<strong>重载基类的虚方法或函数成员</strong>来实现的。</p>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> System.Linq;</span><br><span class="line"><span class="keyword">using</span> System.Text;</span><br><span class="line"><span class="keyword">using</span> System.Threading.Tasks;</span><br><span class="line"></span><br><span class="line">namespace 多态小练习</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">class</span> <span class="title">MyClass1</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">int</span> x = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">int</span> y = <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">int</span> X &#123;</span><br><span class="line">            <span class="keyword">set</span> &#123;</span><br><span class="line">                x = <span class="keyword">value</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">get</span> &#123;</span><br><span class="line">                <span class="keyword">return</span> x;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">int</span> Y &#123;</span><br><span class="line">            <span class="keyword">set</span> &#123;</span><br><span class="line">                y = <span class="keyword">value</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">get</span> &#123;</span><br><span class="line">                <span class="keyword">return</span> y;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keyword">int</span> <span class="title">Add</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            <span class="keyword">return</span> X + Y;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">class</span> <span class="title">MyClass2</span> : <span class="title">MyClass1</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">override</span> <span class="keyword">int</span> <span class="title">Add</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            X = <span class="number">10</span>;</span><br><span class="line">            Y = <span class="number">20</span>;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">return</span> X + Y;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">class</span> <span class="title">Program</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="keyword">string</span>[] args</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            MyClass2 mc2 = <span class="keyword">new</span> MyClass2();</span><br><span class="line">            Console.WriteLine(mc2.Add());</span><br><span class="line"></span><br><span class="line">            MyClass1 mc1 = mc2;  <span class="comment">// 基类可以直接用派生类赋值</span></span><br><span class="line">            mc1.X = <span class="number">1</span>;</span><br><span class="line">            mc1.Y = <span class="number">2</span>;</span><br><span class="line">            <span class="comment">// 上面着两行赋值没有，基类Add()函数已经不复存在了，被重写掉了？？？</span></span><br><span class="line">            <span class="comment">// 答：因为你在 Add() 函数内部重新给 X 和 Y 赋值了，你上面两行改的没用。</span></span><br><span class="line">            <span class="comment">//     把它们提到外面去，放构造函数里面去就可以了</span></span><br><span class="line">            Console.WriteLine(mc1.Add());</span><br><span class="line"></span><br><span class="line">            MyClass1 mc1_1 = <span class="keyword">new</span> MyClass1();</span><br><span class="line">            Console.WriteLine(mc1_1.Add());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title">Program</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="keyword">string</span>[] args</span>)</span></span><br><span class="line"><span class="function"></span>    &#123;</span><br><span class="line">        MyData md = <span class="keyword">new</span> MyData(<span class="number">1</span>, <span class="number">2</span>);</span><br><span class="line">        Console.WriteLine(<span class="string">"总合：&#123;0&#125;"</span>, md.Sum());</span><br><span class="line">        Console.WriteLine(<span class="string">"平均值:&#123;0&#125;"</span>, md.Average());  <span class="comment">//直接像实例一样的调用</span></span><br><span class="line"></span><br><span class="line">        Console.Read();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 【1】.必须是一个静态类</span></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">class</span> <span class="title">ExtendMyData</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// [2] 必须是一个共有的静态方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">double</span> <span class="title">Average</span>(<span class="params"><span class="keyword">this</span> MyData md</span>) <span class="comment">// [3] this 关键字 和 类型</span></span></span><br><span class="line"><span class="function"></span>    &#123;</span><br><span class="line">        <span class="keyword">return</span> md.Sum() / <span class="number">2.0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">sealed</span> <span class="keyword">class</span> <span class="title">MyData</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> a;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> b;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MyData</span>(<span class="params"><span class="keyword">int</span> a, <span class="keyword">int</span> b</span>)</span></span><br><span class="line"><span class="function"></span>    &#123;</span><br><span class="line">        <span class="keyword">this</span>.a = a;</span><br><span class="line">        <span class="keyword">this</span>.b = b;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">Sum</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>    &#123;</span><br><span class="line">        <span class="keyword">return</span> a + b;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>输出：</p>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">30</span></span><br><span class="line"><span class="number">30</span></span><br><span class="line"><span class="number">3</span></span><br><span class="line">请按任意键继续. . .</span><br></pre></td></tr></table></figure>
-<p><strong>说明：</strong><br>当子类（派生类）从基类继承时，它会获得基类的所有方法、字段、属性和事件。若要<strong>更改基类的数据和行为，有两种选择</strong>：可以使用新的派生成员替换基成员，或者可以重写虚拟的基成员。上面的实例重写了基类中的虚方法，另外，开发人员还可以使用新的派生成员替换基类的成员，这时需要使用<code>new</code>关键字。如果基类定义了一个方法、字段或属性，则<code>new</code>关键字用于在子类（派生类）中创建该方法、字段或属性的新定义。<code>new</code>关键字放置在要替换的类成员的返回类型之前，例如，上面实例中重写基类中虚方法的代码也可以替换为下面的形式。<br><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">MyClass2</span>: <span class="title">MyClass1</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> new <span class="keyword">int</span> <span class="title">Add</span>(<span class="params"></span>)  <span class="comment">// 这里改成 new</span></span></span><br><span class="line"><span class="function"></span>    &#123;</span><br><span class="line">        X = <span class="number">10</span>;</span><br><span class="line">        Y = <span class="number">20</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> X + Y;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><code>new</code> 基类中不需要 <code>virtual</code> 来表示，<code>override</code> 只能重写 <code>virtual</code> 标识的虚方法。</p>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">输出：</span><br><span class="line"><span class="number">30</span></span><br><span class="line"><span class="number">3</span>    <span class="comment">// 这是 MyClass1 付的初始值相加得到</span></span><br><span class="line">请按任意键继续. . .</span><br></pre></td></tr></table></figure>
-<p>注意：<br>① <code>virtual</code>修饰符不能与<code>private、static、abstract</code>或者<code>override</code>修饰符同时使用。<br>② <code>override</code>修饰符不能与<code>new、static</code>或者<code>virtual</code>修饰符同时使用，并且重写方法只能用于重写基类中的虚方法。<br>③ C# 中，继承、虚方法和重写方法组合在一起才能实现多态性。  </p>
-<p><hr><br><span style="color:gray;font-size:12px"><br>参考：入门到精通 -&gt; P144<br></span></p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">总合：<span class="number">3</span></span><br><span class="line">平均值:<span class="number">1.5</span></span><br></pre></td></tr></table></figure>
+<p>扩展类的使用主要有 3 个步骤，见代码内的注释说明。</p>
+<p>可见，扩展的是基类，使用的时候也是实例化基类，然后进行直接的实例化形式的调用。</p>
 
       
     </div>
@@ -555,7 +534,7 @@
     <strong>本文作者： </strong>AndyVJ</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://www.andyvj.com/2019/07/12/190712N02/" title="C# 关于继承和多态">https://www.andyvj.com/2019/07/12/190712N02/</a>
+    <a href="https://www.andyvj.com/2020/08/22/200822N01/" title="C#.Net 的扩展类的基本使用">https://www.andyvj.com/2020/08/22/200822N01/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
@@ -581,8 +560,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/12/190712N01/" rel="next" title="英语口语｜怎样找一份有意义的工作">
-                <i class="fa fa-chevron-left"></i> 英语口语｜怎样找一份有意义的工作
+              <a href="/2020/08/18/200818N01/" rel="next" title="C# .NET 索引器的基本使用">
+                <i class="fa fa-chevron-left"></i> C# .NET 索引器的基本使用
               </a>
             
           </div>
@@ -590,10 +569,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/07/12/190712N03/" rel="prev" title="C# 数组的声明和初始化">
-                C# 数组的声明和初始化 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -641,17 +616,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -793,22 +759,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#继承"><span class="nav-number">1.</span> <span class="nav-text">继承</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多态"><span class="nav-number">2.</span> <span class="nav-text">多态</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       

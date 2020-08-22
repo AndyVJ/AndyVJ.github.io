@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[C#.Net 的扩展类的基本使用]]></title>
+    <url>%2F2020%2F08%2F22%2F200822N01%2F</url>
+    <content type="text"><![CDATA[C#.Net 的扩展类的基本使用。可以用来扩展密封类或者外部导入的dll。 12345678910111213141516171819202122232425262728293031323334353637class Program&#123; static void Main(string[] args) &#123; MyData md = new MyData(1, 2); Console.WriteLine("总合：&#123;0&#125;", md.Sum()); Console.WriteLine("平均值:&#123;0&#125;", md.Average()); //直接像实例一样的调用 Console.Read(); &#125;&#125;// 【1】.必须是一个静态类static class ExtendMyData&#123; // [2] 必须是一个共有的静态方法 public static double Average(this MyData md) // [3] this 关键字 和 类型 &#123; return md.Sum() / 2.0; &#125;&#125;sealed class MyData&#123; private int a; private int b; public MyData(int a, int b) &#123; this.a = a; this.b = b; &#125; public int Sum() &#123; return a + b; &#125;&#125; 输出： 12总合：3平均值:1.5 扩展类的使用主要有 3 个步骤，见代码内的注释说明。 可见，扩展的是基类，使用的时候也是实例化基类，然后进行直接的实例化形式的调用。]]></content>
+      <categories>
+        <category>编程爱好</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[C# .NET 索引器的基本使用]]></title>
     <url>%2F2020%2F08%2F18%2F200818N01%2F</url>
     <content type="text"><![CDATA[索引器和属性差不多，属性是一对一，而索引器是一对多而已。 12345678910111213141516171819202122232425262728293031323334class Program&#123; static void Main(string[] args) &#123; MyClass mc = new MyClass(); mc[0] = "胡文杰"; mc[1] = "杨佳"; Console.WriteLine(mc[0]); Console.WriteLine(mc[1]); Console.Read(); &#125;&#125;class MyClass&#123; private string[] name = new string[2]; // 关键：用 this 代替，类型也可以用 string public string this[int index] &#123; get &#123; if (index &gt;= 0 &amp;&amp; index &lt; name.Length) &#123; return name[index]; &#125; else &#123; return name[0]; &#125; &#125; set &#123; if (index &gt;=0 &amp;&amp; index &lt; name.Length) &#123; name[index] = value; &#125; &#125; &#125;&#125; 输出： 12胡文杰杨佳]]></content>
