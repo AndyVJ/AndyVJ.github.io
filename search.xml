@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[C# enum ö���������]]></title>
+    <title><![CDATA[C# enum 枚举类的问题]]></title>
     <url>%2F2020%2F08%2F22%2F200822N02%2F</url>
-    <content type="text"><![CDATA[C# enum ö��������⡣ 1234567891011121314151617enum TrafficLight&#123; Green = 10, Yellow = 15, Red = 15,&#125;class Program&#123; static void Main(string[] args) &#123; TrafficLight t1 = TrafficLight.Red; Console.WriteLine((TrafficLight)15); // ������ǵ�һ����ƥ���ֵ Console.WriteLine(t1); // ������ǵ�һ����ƥ���ֵ������ǰ�渳ֵ���� Red��������Ļ��� Yellow�� Console.Read(); &#125;&#125; ����� 12YellowYellow �ɼ���ö������Ȼ�������ظ������ƣ����������ظ���ֵ�������и�ֵ������15���� ����Ĳ��Կ�֪��������ǵ�һ����ƥ���ֵ������ǰ�渳ֵ����Red��������Ļ��� Yellow��]]></content>
+    <content type="text"><![CDATA[C# enum 枚举类的问题。 1234567891011121314151617enum TrafficLight&#123; Green = 10, Yellow = 15, Red = 15,&#125;class Program&#123; static void Main(string[] args) &#123; TrafficLight t1 = TrafficLight.Red; Console.WriteLine((TrafficLight)15); // 输出的是第一个能匹配的值 Console.WriteLine(t1); // 输出的是第一个能匹配的值，尽管前面赋值的是 Red，但输出的还是 Yellow。 Console.Read(); &#125;&#125; 输出： 12YellowYellow 可见，枚举类虽然不能有重复的名称，但可以有重复的值（上例中赋值了两个15）。 上面的测试可知：输出的是第一个能匹配的值，尽管前面赋值的是Red，但输出的还是 Yellow。]]></content>
       <categories>
-        <category>��̰���</category>
+        <category>编程爱好</category>
       </categories>
       <tags>
         <tag>C#</tag>
