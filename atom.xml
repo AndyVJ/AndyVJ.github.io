@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.andyvj.com/"/>
-  <updated>2020-08-26T12:41:04.375Z</updated>
+  <updated>2020-08-26T12:48:44.682Z</updated>
   <id>https://www.andyvj.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://www.andyvj.com/2020/08/22/200822N02/"/>
     <id>https://www.andyvj.com/2020/08/22/200822N02/</id>
     <published>2020-08-22T12:00:01.000Z</published>
-    <updated>2020-08-26T12:41:04.375Z</updated>
+    <updated>2020-08-26T12:48:44.682Z</updated>
     
     <content type="html"><![CDATA[<p>C# enum 枚举类的问题。<br><a id="more"></a></p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">enum</span> TrafficLight</span><br><span class="line">&#123;</span><br><span class="line">    Green = <span class="number">10</span>,</span><br><span class="line">    Yellow = <span class="number">15</span>,</span><br><span class="line">    Red = <span class="number">15</span>,</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title">Program</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="keyword">string</span>[] args</span>)</span></span><br><span class="line"><span class="function"></span>    &#123;</span><br><span class="line">        TrafficLight t1 = TrafficLight.Red;</span><br><span class="line">        Console.WriteLine((TrafficLight)<span class="number">15</span>); <span class="comment">// 输出的是第一个能匹配的值</span></span><br><span class="line">        Console.WriteLine(t1);  <span class="comment">// 输出的是第一个能匹配的值，尽管前面赋值的是 Red，但输出的还是 Yellow。</span></span><br><span class="line">        Console.Read();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>输出：</p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Yellow</span><br><span class="line">Yellow</span><br></pre></td></tr></table></figure><p>可见，枚举类虽然不能有重复的名称，但可以有重复的值（上例中赋值了两个15）。</p><p>上面的测试可知：<strong>输出的是第一个能匹配的值，尽管前面赋值的是<code>Red</code>，但输出的还是 <code>Yellow</code>。</strong></p>]]></content>
     
