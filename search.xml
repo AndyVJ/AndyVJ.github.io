@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[C 语言用数字替代true和false]]></title>
+    <url>%2F2020%2F08%2F26%2F200826N01%2F</url>
+    <content type="text"><![CDATA[C 语言用数字替代true和false。12345678910111213141516171819202122232425262728#define _CRT_SECURE_NO_WARNINGS // VS 中, C 语言警告#include &lt;stdio.h&gt;int main(void)&#123; int a[] = &#123; -10, -2, 0, 1, 6, 5, 7, 10, 100, 102 &#125;; int *p = a; int max; // 用来存最大偶数 int flag = 1; // 标志位 for (; p &lt; a + sizeof(a) / sizeof(*a); p++) &#123; if (flag &amp;&amp; *p % 2 == 0) &#123; max = *p; // 取到第一个偶数，这个判断语句就不再执行 flag = 0; // 标志位置 false &#125; if (!flag) &#123; if (*p % 2 == 0 &amp;&amp; *p &gt; max) &#123; max = *p; &#125; &#125; &#125; printf("最大的偶数是：%d\n", max); return 0;&#125; 输出：1最大的偶数是：102 这个标志位是一段经典代码，它只执行一次，找到第一个偶数的时候，flag 置 0 (false)： 1234if (flag &amp;&amp; *p % 2 == 0) &#123; max = *p; // 取到第一个偶数，这个判断语句就不再执行 flag = 0; // 标志位置 false&#125; 加强点 C 语言以后，准备看数据结构。今天周末，去哪里逛逛呢？ ——2020.08.22]]></content>
+      <categories>
+        <category>编程爱好</category>
+      </categories>
+      <tags>
+        <tag>C/C++</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[C# enum 枚举类的问题]]></title>
     <url>%2F2020%2F08%2F22%2F200822N02%2F</url>
     <content type="text"><![CDATA[C# enum 枚举类的问题。 1234567891011121314151617enum TrafficLight&#123; Green = 10, Yellow = 15, Red = 15,&#125;class Program&#123; static void Main(string[] args) &#123; TrafficLight t1 = TrafficLight.Red; Console.WriteLine((TrafficLight)15); // 输出的是第一个能匹配的值 Console.WriteLine(t1); // 输出的是第一个能匹配的值，尽管前面赋值的是 Red，但输出的还是 Yellow。 Console.Read(); &#125;&#125; 输出： 12YellowYellow 可见，枚举类虽然不能有重复的名称，但可以有重复的值（上例中赋值了两个15）。 上面的测试可知：输出的是第一个能匹配的值，尽管前面赋值的是Red，但输出的还是 Yellow。]]></content>

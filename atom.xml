@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.andyvj.com/"/>
-  <updated>2020-08-26T12:50:34.392Z</updated>
+  <updated>2020-08-26T13:16:01.106Z</updated>
   <id>https://www.andyvj.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>C 语言用数字替代true和false</title>
+    <link href="https://www.andyvj.com/2020/08/26/200826N01/"/>
+    <id>https://www.andyvj.com/2020/08/26/200826N01/</id>
+    <published>2020-08-26T13:10:08.000Z</published>
+    <updated>2020-08-26T13:16:01.106Z</updated>
+    
+    <content type="html"><![CDATA[<p>C 语言用数字替代true和false。<br><a id="more"></a><br><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> _CRT_SECURE_NO_WARNINGS  // VS 中, C 语言警告</span></span><br><span class="line"><span class="meta">#include &lt;stdio.h&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span>(<span class="params"><span class="keyword">void</span></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a[] = &#123; <span class="number">-10</span>, <span class="number">-2</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">6</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">10</span>, <span class="number">100</span>, <span class="number">102</span> &#125;;</span><br><span class="line">    <span class="keyword">int</span> *p = a;</span><br><span class="line">    <span class="keyword">int</span> max; <span class="comment">// 用来存最大偶数</span></span><br><span class="line">    <span class="keyword">int</span> flag = <span class="number">1</span>; <span class="comment">// 标志位      </span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (; p &lt; a + <span class="keyword">sizeof</span>(a) / <span class="keyword">sizeof</span>(*a); p++) &#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (flag &amp;&amp; *p % <span class="number">2</span> == <span class="number">0</span>) &#123;</span><br><span class="line">            max = *p; <span class="comment">// 取到第一个偶数，这个判断语句就不再执行</span></span><br><span class="line">            flag = <span class="number">0</span>; <span class="comment">// 标志位置 false</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (!flag) &#123;</span><br><span class="line">            <span class="keyword">if</span> (*p % <span class="number">2</span> == <span class="number">0</span> &amp;&amp; *p &gt; max) &#123;</span><br><span class="line">                max = *p;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    printf(<span class="string">"最大的偶数是：%d\n"</span>, max);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>输出：<br><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">最大的偶数是：<span class="number">102</span></span><br></pre></td></tr></table></figure></p><p>这个标志位是一段经典代码，它只执行一次，找到第一个偶数的时候，<code>flag</code> 置 <code>0 (false)</code>：</p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (flag &amp;&amp; *p % <span class="number">2</span> == <span class="number">0</span>) &#123;</span><br><span class="line">    max = *p; <span class="comment">// 取到第一个偶数，这个判断语句就不再执行</span></span><br><span class="line">    flag = <span class="number">0</span>; <span class="comment">// 标志位置 false</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><hr><p>加强点 C 语言以后，准备看数据结构。今天周末，去哪里逛逛呢？</p><p>——2020.08.22</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;C 语言用数字替代true和false。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="编程爱好" scheme="https://www.andyvj.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
+    
+    
+      <category term="C/C++" scheme="https://www.andyvj.com/tags/C-C/"/>
+    
+  </entry>
   
   <entry>
     <title>C# enum 枚举类的问题</title>
@@ -451,33 +473,6 @@
     <summary type="html">
     
       &lt;p&gt;回调函数的基本用法。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="编程爱好" scheme="https://www.andyvj.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
-    
-    
-      <category term="C#" scheme="https://www.andyvj.com/tags/C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>C#异步基础</title>
-    <link href="https://www.andyvj.com/2020/06/16/200616N01/"/>
-    <id>https://www.andyvj.com/2020/06/16/200616N01/</id>
-    <published>2020-06-16T01:57:33.000Z</published>
-    <updated>2020-06-16T04:32:23.176Z</updated>
-    
-    <content type="html"><![CDATA[<p>一般顺序：</p><ol><li>定义一个委托。</li><li>根据委托实现方法。</li><li>异步调用。</li></ol><a id="more"></a><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Threading;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">AsyncBasic</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">class</span> <span class="title">Program</span></span><br><span class="line">    &#123;</span><br><span class="line">        [<span class="meta">STAThread</span>]</span><br><span class="line">        <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="keyword">string</span>[] args</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            <span class="keyword">new</span> Program().ExcuteCal();</span><br><span class="line">            Console.ReadKey();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">ExcuteCal</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            Func&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; Cal = ExcuteTask1;  <span class="comment">// [1] 声明委托变量。</span></span><br><span class="line"></span><br><span class="line">            <span class="comment">// [3] 异步调用</span></span><br><span class="line">            IAsyncResult result = Cal.BeginInvoke(<span class="number">100</span>, <span class="literal">null</span>, <span class="literal">null</span>);</span><br><span class="line">            Console.WriteLine(<span class="string">"正在计算…"</span>); </span><br><span class="line">            Console.WriteLine(ExcuteTask2(<span class="number">20</span>));</span><br><span class="line">            <span class="keyword">int</span> s = Cal.EndInvoke(result);   </span><br><span class="line">            <span class="comment">//委托类型的EndInvoke（）方法：借助于IAsyncResult接口对象，不断查询异步调用是否结束。</span></span><br><span class="line">            <span class="comment">//该方法知道被异步调用的方法所有参数，所有，异步调用完毕后，取出异步调用结果作为返回值。</span></span><br><span class="line">            Console.WriteLine(s);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">ExcuteTask1</span>(<span class="params"><span class="keyword">int</span> num</span>) <span class="comment">// [2] 根据委托实现方法。</span></span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            Thread.Sleep(<span class="number">2000</span>);</span><br><span class="line">            <span class="keyword">return</span> num * num;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">ExcuteTask2</span>(<span class="params"><span class="keyword">int</span> num</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            <span class="keyword">return</span> num * num;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>输出：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">正在计算…</span><br><span class="line">400</span><br><span class="line">10000</span><br></pre></td></tr></table></figure><p>可见，异步调用的时候可以做其他的事情。</p><p>委托类型的<code>Begininvoke（&lt;输入和输出变量&gt;,AsyncCallbac callback,object asyncState）</code>方法：异步调用的核心<br>第一个参数，表示委托对应的方法实参。<br>第二个参数<code>callback</code>，回调函数，表示异步调用结束时自动调用的函数。<br>第三个参数<code>asyncState</code>，用于向回调函数提供相关参数信息<br>返回值：<code>IAsyncResult</code> –&gt;异步操作状态接口，封装了异步执行的中的参数  </p><!--<hr/><span style="color:gray;font-size:12px">参考： 1.[link-01]()2.[link-02]()3.[link-03]()</span>-->]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;一般顺序：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;定义一个委托。&lt;/li&gt;
-&lt;li&gt;根据委托实现方法。&lt;/li&gt;
-&lt;li&gt;异步调用。&lt;/li&gt;
-&lt;/ol&gt;
     
     </summary>
     
