@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[C#.NET不同类实现一个接口的事例]]></title>
+    <url>%2F2020%2F08%2F26%2F200826N02%2F</url>
+    <content type="text"><![CDATA[不同类实现一个接口的事例。 1234567891011121314151617181920212223242526272829303132333435363738394041424344interface ILiveBird&#123; string BabyCalled();&#125;class Animal &#123; &#125;class Cat: Animal, ILiveBird&#123; string ILiveBird.BabyCalled() &#123; return "Kitten"; &#125;&#125;class Dog:Animal, ILiveBird&#123; string ILiveBird.BabyCalled() &#123; return "Puppy"; &#125;&#125;class Bird: Animal&#123;&#125;class Program&#123; static void Main() &#123; Animal[] animalArray = new Animal[3]; animalArray[0] = new Cat(); animalArray[1] = new Dog(); animalArray[2] = new Bird(); foreach (Animal a in animalArray) &#123; ILiveBird b = a as ILiveBird; // 关键代码 if (b != null) &#123; Console.WriteLine("昵称是：&#123;0&#125;", b.BabyCalled()); &#125; &#125; Console.Read(); &#125;&#125; 输出： 12昵称是：Kitten昵称是：Puppy ILiveBird b = a as ILiveBird; // 关键代码，as转换，失败不会报异常，而是返回null。]]></content>
+      <categories>
+        <category>编程爱好</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[C 语言用数字替代true和false]]></title>
     <url>%2F2020%2F08%2F26%2F200826N01%2F</url>
     <content type="text"><![CDATA[C 语言用数字替代true和false。12345678910111213141516171819202122232425262728#define _CRT_SECURE_NO_WARNINGS // VS 中, C 语言警告#include &lt;stdio.h&gt;int main(void)&#123; int a[] = &#123; -10, -2, 0, 1, 6, 5, 7, 10, 100, 102 &#125;; int *p = a; int max; // 用来存最大偶数 int flag = 1; // 标志位 for (; p &lt; a + sizeof(a) / sizeof(*a); p++) &#123; if (flag &amp;&amp; *p % 2 == 0) &#123; max = *p; // 取到第一个偶数，这个判断语句就不再执行 flag = 0; // 标志位置 false &#125; if (!flag) &#123; if (*p % 2 == 0 &amp;&amp; *p &gt; max) &#123; max = *p; &#125; &#125; &#125; printf("最大的偶数是：%d\n", max); return 0;&#125; 输出：1最大的偶数是：102 这个标志位是一段经典代码，它只执行一次，找到第一个偶数的时候，flag 置 0 (false)： 1234if (flag &amp;&amp; *p % 2 == 0) &#123; max = *p; // 取到第一个偶数，这个判断语句就不再执行 flag = 0; // 标志位置 false&#125; 加强点 C 语言以后，准备看数据结构。今天周末，去哪里逛逛呢？ ——2020.08.22]]></content>
@@ -1241,9 +1252,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[UG NX 坐标对齐移动——解决实体与原始坐标不对齐的问题]]></title>
-    <url>%2F2019%2F02%2F19%2F190219-01%2F</url>
-    <content type="text"><![CDATA[有时候通过WAVE链接过来的实体会出现实体与原始坐标不对齐的情况，如： 可以用坐标到坐标移动的方式将实体摆正。 新建与实体对齐的坐标系。 Ctrl + T 移动。 这样后，实体就与原始坐标对齐了：]]></content>
+    <title><![CDATA[UG NX 移动对象之『动态』技巧]]></title>
+    <url>%2F2019%2F02%2F19%2F190219-02%2F</url>
+    <content type="text"><![CDATA[动态绕某一点旋转，而旋转手柄又不在此点上，如何操作？ Ctrl + T 移动对象，勾选只移动手柄，将手柄点选移动到需要旋转的点。 取消勾选只移动手柄，点选手柄节点，输入旋转角度，确定。]]></content>
       <categories>
         <category>机械结构</category>
       </categories>
@@ -1252,9 +1263,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[UG NX 移动对象之『动态』技巧]]></title>
-    <url>%2F2019%2F02%2F19%2F190219-02%2F</url>
-    <content type="text"><![CDATA[动态绕某一点旋转，而旋转手柄又不在此点上，如何操作？ Ctrl + T 移动对象，勾选只移动手柄，将手柄点选移动到需要旋转的点。 取消勾选只移动手柄，点选手柄节点，输入旋转角度，确定。]]></content>
+    <title><![CDATA[UG NX 坐标对齐移动——解决实体与原始坐标不对齐的问题]]></title>
+    <url>%2F2019%2F02%2F19%2F190219-01%2F</url>
+    <content type="text"><![CDATA[有时候通过WAVE链接过来的实体会出现实体与原始坐标不对齐的情况，如： 可以用坐标到坐标移动的方式将实体摆正。 新建与实体对齐的坐标系。 Ctrl + T 移动。 这样后，实体就与原始坐标对齐了：]]></content>
       <categories>
         <category>机械结构</category>
       </categories>
