@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[C# Winform 跨多级窗体/控件传值]]></title>
+    <url>%2F2020%2F10%2F02%2F201002N02%2F</url>
+    <content type="text"><![CDATA[我们知道 C# winform 跨窗体传值，子父窗体交互一般用委托来实现。之前都是子窗体和父窗体两级交互，如果子窗体再生一个子子窗体，然后子子窗体调用父窗体函数，这样该如何操作？我想到的实现方式还是用委托变量一级一级的往下传。下面是实现的效果： ▲ Form1 加载 Uc1，在 Uc1 下加载 Uc2，Uc2 下返回 Uc1 Form1.cs1234567891011121314151617181920212223242526272829303132333435using System; using System.Collections.Generic; using System.ComponentModel; using System.Data; using System.Drawing; using System.Linq; using System.Text; using System.Threading.Tasks; using System.Windows.Forms; namespace WindowsFormsApp1 &#123; public partial class Form1 : Form &#123; public Form1() &#123; InitializeComponent(); this.userControl1.LoadUserF2 = this.LoadFrm; this.userControl1.action = () =&gt; this.button1_Click(null, null); &#125; private UserControl1 userControl1 = new UserControl1() &#123; Dock = DockStyle.Fill&#125;; private void button1_Click(object sender, EventArgs e) &#123; this.LoadFrm(this.userControl1); &#125; private void LoadFrm(Control control) &#123; this.panel1.Controls.Clear(); this.panel1.Controls.Add(control); &#125; &#125; &#125; UserControl1.cs1234567891011121314151617181920212223242526272829303132333435using System; using System.Collections.Generic; using System.ComponentModel; using System.Drawing; using System.Data; using System.Linq; using System.Text; using System.Threading.Tasks; using System.Windows.Forms; namespace WindowsFormsApp1 &#123; public partial class UserControl1 : UserControl &#123; public UserControl1() &#123; InitializeComponent(); // this.userControl2.backUc1 = this.action; // 放这里，结果都是 null // 这个绑定不能放构造函数。因为构造函数执行的时候 action = null。 // 主窗体先构造好子窗体，然后再给子窗体 action 赋值。 // 所以，绑定要放在子窗体构造完毕之后。 &#125; private UserControl2 userControl2 = new UserControl2() &#123; Dock = DockStyle.Fill &#125;; public Action&lt;Control&gt; LoadUserF2; public Action action; private void button1_Click(object sender, EventArgs e) &#123; this.LoadUserF2?.Invoke(this.userControl2); this.userControl2.backUc1 = this.action; // 在这绑定 &#125; &#125; &#125; UserControl2.cs123456789101112131415161718192021222324252627using System; using System.Collections.Generic; using System.ComponentModel; using System.Drawing; using System.Data; using System.Linq; using System.Text; using System.Threading.Tasks; using System.Windows.Forms; namespace WindowsFormsApp1 &#123; public partial class UserControl2 : UserControl &#123; public UserControl2() &#123; InitializeComponent(); &#125; public Action backUc1; private void button1_Click(object sender, EventArgs e) &#123; backUc1?.Invoke(); &#125; &#125; &#125; 要注意的地方： 在 UserControl1.cs 中的注释中说明。这里的委托绑定不能放在构造函数下，因为构造函数执行的时候 action = null。主窗体先构造好子窗体，然后再给子窗体 action 赋值。所以，这里的绑定要放在子窗体构造完毕之后。]]></content>
+      <categories>
+        <category>编程爱好</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[C# == 和 Equals 的比较]]></title>
     <url>%2F2020%2F10%2F02%2F201002N01%2F</url>
     <content type="text"><![CDATA[C# == 和 Equals的比较。==比较的是引用，Equals比较的是内容。所以对值类型两者是一样的，对于引用类型就不一样了。但对于string类型的比较，内部重写了==操作符，内部调用的还是Equals。Equals是Object中的一个虚方法，必要的时候可以进行重写。 参考：1.link-01]]></content>
@@ -1263,9 +1274,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[UG NX 移动对象之『动态』技巧]]></title>
-    <url>%2F2019%2F02%2F19%2F190219-02%2F</url>
-    <content type="text"><![CDATA[动态绕某一点旋转，而旋转手柄又不在此点上，如何操作？ Ctrl + T 移动对象，勾选只移动手柄，将手柄点选移动到需要旋转的点。 取消勾选只移动手柄，点选手柄节点，输入旋转角度，确定。]]></content>
+    <title><![CDATA[UG NX 坐标对齐移动——解决实体与原始坐标不对齐的问题]]></title>
+    <url>%2F2019%2F02%2F19%2F190219-01%2F</url>
+    <content type="text"><![CDATA[有时候通过WAVE链接过来的实体会出现实体与原始坐标不对齐的情况，如： 可以用坐标到坐标移动的方式将实体摆正。 新建与实体对齐的坐标系。 Ctrl + T 移动。 这样后，实体就与原始坐标对齐了：]]></content>
       <categories>
         <category>机械结构</category>
       </categories>
@@ -1274,9 +1285,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[UG NX 坐标对齐移动——解决实体与原始坐标不对齐的问题]]></title>
-    <url>%2F2019%2F02%2F19%2F190219-01%2F</url>
-    <content type="text"><![CDATA[有时候通过WAVE链接过来的实体会出现实体与原始坐标不对齐的情况，如： 可以用坐标到坐标移动的方式将实体摆正。 新建与实体对齐的坐标系。 Ctrl + T 移动。 这样后，实体就与原始坐标对齐了：]]></content>
+    <title><![CDATA[UG NX 移动对象之『动态』技巧]]></title>
+    <url>%2F2019%2F02%2F19%2F190219-02%2F</url>
+    <content type="text"><![CDATA[动态绕某一点旋转，而旋转手柄又不在此点上，如何操作？ Ctrl + T 移动对象，勾选只移动手柄，将手柄点选移动到需要旋转的点。 取消勾选只移动手柄，点选手柄节点，输入旋转角度，确定。]]></content>
       <categories>
         <category>机械结构</category>
       </categories>
