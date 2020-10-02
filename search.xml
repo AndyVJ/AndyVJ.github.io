@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[C# == 和 Equals 的比较]]></title>
+    <url>%2F2020%2F10%2F02%2F201002N01%2F</url>
+    <content type="text"><![CDATA[C# == 和 Equals的比较。==比较的是引用，Equals比较的是内容。所以对值类型两者是一样的，对于引用类型就不一样了。但对于string类型的比较，内部重写了==操作符，内部调用的还是Equals。Equals是Object中的一个虚方法，必要的时候可以进行重写。 参考：1.link-01]]></content>
+      <categories>
+        <category>编程爱好</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[C#.NET不同类实现一个接口的事例]]></title>
     <url>%2F2020%2F08%2F26%2F200826N02%2F</url>
     <content type="text"><![CDATA[不同类实现一个接口的事例。 1234567891011121314151617181920212223242526272829303132333435363738394041424344interface ILiveBird&#123; string BabyCalled();&#125;class Animal &#123; &#125;class Cat: Animal, ILiveBird&#123; string ILiveBird.BabyCalled() &#123; return "Kitten"; &#125;&#125;class Dog:Animal, ILiveBird&#123; string ILiveBird.BabyCalled() &#123; return "Puppy"; &#125;&#125;class Bird: Animal&#123;&#125;class Program&#123; static void Main() &#123; Animal[] animalArray = new Animal[3]; animalArray[0] = new Cat(); animalArray[1] = new Dog(); animalArray[2] = new Bird(); foreach (Animal a in animalArray) &#123; ILiveBird b = a as ILiveBird; // 关键代码 if (b != null) &#123; Console.WriteLine("昵称是：&#123;0&#125;", b.BabyCalled()); &#125; &#125; Console.Read(); &#125;&#125; 输出： 12昵称是：Kitten昵称是：Puppy ILiveBird b = a as ILiveBird; // 关键代码，as转换，失败不会报异常，而是返回null。]]></content>

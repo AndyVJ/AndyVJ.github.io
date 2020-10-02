@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.andyvj.com/"/>
-  <updated>2020-09-15T14:27:25.475Z</updated>
+  <updated>2020-10-02T01:59:10.957Z</updated>
   <id>https://www.andyvj.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>C# == 和 Equals 的比较</title>
+    <link href="https://www.andyvj.com/2020/10/02/201002N01/"/>
+    <id>https://www.andyvj.com/2020/10/02/201002N01/</id>
+    <published>2020-10-02T01:55:53.000Z</published>
+    <updated>2020-10-02T01:59:10.957Z</updated>
+    
+    <content type="html"><![CDATA[<p>C# <code>==</code> 和 <code>Equals</code>的比较。<code>==</code>比较的是引用，<code>Equals</code>比较的是内容。所以对<code>值类型</code>两者是一样的，对于引用类型就不一样了。但对于<code>string</code>类型的比较，内部重写了<code>==</code>操作符，内部调用的还是<code>Equals</code>。<code>Equals</code>是<code>Object</code>中的一个虚方法，必要的时候可以进行重写。</p><a id="more"></a><p><hr><br><span style="color:gray;font-size:12px"><br>参考：<br>1.<a href="https://www.cnblogs.com/changbaishan/p/10579021.html" target="_blank" rel="noopener">link-01</a><br></span></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;C# &lt;code&gt;==&lt;/code&gt; 和 &lt;code&gt;Equals&lt;/code&gt;的比较。&lt;code&gt;==&lt;/code&gt;比较的是引用，&lt;code&gt;Equals&lt;/code&gt;比较的是内容。所以对&lt;code&gt;值类型&lt;/code&gt;两者是一样的，对于引用类型就不一样了。但对于&lt;code&gt;string&lt;/code&gt;类型的比较，内部重写了&lt;code&gt;==&lt;/code&gt;操作符，内部调用的还是&lt;code&gt;Equals&lt;/code&gt;。&lt;code&gt;Equals&lt;/code&gt;是&lt;code&gt;Object&lt;/code&gt;中的一个虚方法，必要的时候可以进行重写。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="编程爱好" scheme="https://www.andyvj.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
+    
+    
+      <category term="C#" scheme="https://www.andyvj.com/tags/C/"/>
+    
+  </entry>
   
   <entry>
     <title>C#.NET不同类实现一个接口的事例</title>
@@ -451,28 +473,6 @@
       &lt;p&gt;跨线程的小运用。&lt;code&gt;DataSet&lt;/code&gt; 和 &lt;code&gt;DataGradeView&lt;/code&gt; &lt;code&gt;DataTable&lt;/code&gt; 的数据填充。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;http://image.huvjie.com/200616N04_img01.gif&quot; alt=&quot;效果&quot;&gt;&lt;/p&gt;
 &lt;div style=&quot;font-size:13px;color:gray;text-align:center&quot;&gt;▲ 实现效果，同时还可以拖动窗口。&lt;/div&gt;
-    
-    </summary>
-    
-      <category term="编程爱好" scheme="https://www.andyvj.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
-    
-    
-      <category term="C#" scheme="https://www.andyvj.com/tags/C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>C#跨线程访问控件</title>
-    <link href="https://www.andyvj.com/2020/06/16/200616N03/"/>
-    <id>https://www.andyvj.com/2020/06/16/200616N03/</id>
-    <published>2020-06-16T06:13:00.000Z</published>
-    <updated>2020-06-16T06:16:54.635Z</updated>
-    
-    <content type="html"><![CDATA[<p>跨线程访问控件，主要用到控件的属性判断<code>InvokeRequired</code>是否为<code>true</code>，为<code>true</code>则为其他线程创建。</p><a id="more"></a><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Windows.Forms;</span><br><span class="line"><span class="keyword">using</span> System.Threading;</span><br><span class="line"></span><br><span class="line">namespace 跨线程控件访问</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">partial</span> <span class="keyword">class</span> <span class="title">Form1</span> : <span class="title">Form</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Form1</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            InitializeComponent();</span><br><span class="line">            StartPosition = FormStartPosition.CenterParent;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">button1_Click</span>(<span class="params"><span class="keyword">object</span> sender, EventArgs e</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            Thread thread1 = <span class="keyword">new</span> Thread(() =&gt; &#123;</span><br><span class="line">                <span class="keyword">if</span> (lbl1.InvokeRequired) &#123; <span class="comment">//判断是否调动Invoke方法, 如果为 true 则是其他方法创建。</span></span><br><span class="line">                    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= <span class="number">50</span>; i++) &#123;</span><br><span class="line">                        <span class="comment">//Invoke（）方法的第一个参数是返回值为void的委托,第二个是给委托对应方法传递的参数</span></span><br><span class="line">                        lbl1.Invoke(<span class="keyword">new</span> Action&lt;<span class="keyword">string</span>&gt;(s =&gt; lbl1.Text = i.ToString()), i.ToString());</span><br><span class="line">                        Thread.Sleep(<span class="number">50</span>);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;);</span><br><span class="line">            thread1.IsBackground = <span class="literal">true</span>;</span><br><span class="line">            thread1.Start();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">button2_Click</span>(<span class="params"><span class="keyword">object</span> sender, EventArgs e</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            Thread thread2 = <span class="keyword">new</span> Thread(() =&gt; &#123;</span><br><span class="line">                <span class="keyword">if</span> (lbl2.InvokeRequired) &#123; <span class="comment">//判断是否调动Invoke方法, 如果为 true 则是其他方法创建。</span></span><br><span class="line">                    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= <span class="number">50</span>; i++) &#123;</span><br><span class="line">                        <span class="comment">//Invoke（）方法的第一个参数是返回值为void的委托,第二个是给委托对应方法传递的参数</span></span><br><span class="line">                        lbl1.Invoke(<span class="keyword">new</span> Action&lt;<span class="keyword">string</span>&gt;(s =&gt; lbl2.Text = i.ToString()), i.ToString());</span><br><span class="line">                        Thread.Sleep(<span class="number">50</span>);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;);</span><br><span class="line">            thread2.IsBackground = <span class="literal">true</span>;</span><br><span class="line">            thread2.Start();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>输出：</p><p><img src="http://image.huvjie.com/200616N03_img01.gif" alt="运行效果"></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;跨线程访问控件，主要用到控件的属性判断&lt;code&gt;InvokeRequired&lt;/code&gt;是否为&lt;code&gt;true&lt;/code&gt;，为&lt;code&gt;true&lt;/code&gt;则为其他线程创建。&lt;/p&gt;
     
     </summary>
     
