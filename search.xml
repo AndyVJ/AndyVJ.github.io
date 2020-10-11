@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Halcon数组创建及基本运算]]></title>
+    <url>%2F2020%2F10%2F11%2F201011N01%2F</url>
+    <content type="text"><![CDATA[数组定义12345A:=[] *空数组A:=[1] *[1]A:=[A,1] *[1,1]A:=[A,[1,2,3]] *[1,1,1,2,3]B:= A + 1 *[2,2,2,3,4] // 每一个数加 1 Halcon 中的变量是不需要声明的，直接用。 数组相加数组相加(前提是两个数组元素个数要一样)。下面代码的数组 B 是继承上面的：B：=[2,2,2,3,4] 12C:=[1,2,3,4,5]D:=B+C 数组 D 的结果是：[3, 4, 5, 7, 9]。可见结果是每个对应的元素进行相加。 求数组的长度1l := |D| 或者：1tuple_length (D,len) 上面的结果是：l=5,len=5。 通过下标获取元素值1value := D[2] 上面的结果是：value=5。可见，下标是从0开始的。 其他数学运算其他的数学运算可以查看tuple_开头的算子。 ▲ 提供了很多的数学计算函数 数组在图像处理中应该是很重要的，像素不就是数组吗？]]></content>
+      <categories>
+        <category>编程爱好</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[如何交换两个变量的值而不借助于临时变量]]></title>
     <url>%2F2020%2F10%2F10%2F201010N01%2F</url>
     <content type="text"><![CDATA[如何交换两个变量的值？一般我们是这样做的： 123456int a = 10; int b = 20; int temp = a; a = b; b = temp; 这样借助于第三个临时变量，清晰易懂。如何不借助于第三个临时变量来实现两个数值的交换？ 12345678910111213141516#include &lt;stdio.h&gt; int main() &#123; int a = 10; int b = 20; printf(&quot;交换前：a = %d, b = %d\n&quot;, a, b); // 关键代码 a = a + b; b = a - b; a = a - b; printf(&quot;交换后：a = %d, b = %d\n&quot;, a, b); return 0; &#125; 输出： 12交换前：a = 10, b = 20 交换后：a = 20, b = 10 关键代码： 123a = a + b; b = a - b; a = a - b;]]></content>

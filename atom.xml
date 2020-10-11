@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.andyvj.com/"/>
-  <updated>2020-10-10T12:28:25.775Z</updated>
+  <updated>2020-10-11T14:46:13.962Z</updated>
   <id>https://www.andyvj.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Halcon数组创建及基本运算</title>
+    <link href="https://www.andyvj.com/2020/10/11/201011N01/"/>
+    <id>https://www.andyvj.com/2020/10/11/201011N01/</id>
+    <published>2020-10-11T02:22:00.000Z</published>
+    <updated>2020-10-11T14:46:13.962Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="数组定义"><a href="#数组定义" class="headerlink" title="数组定义"></a>数组定义</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">A:=[]            *空数组</span><br><span class="line">A:=[1]           *[1]</span><br><span class="line">A:=[A,1]         *[1,1]</span><br><span class="line">A:=[A,[1,2,3]]   *[1,1,1,2,3]</span><br><span class="line">B:= A + 1        *[2,2,2,3,4] // 每一个数加 1</span><br></pre></td></tr></table></figure><p><span style="color:blue">Halcon 中的变量是不需要声明的，直接用。</span></p><h2 id="数组相加"><a href="#数组相加" class="headerlink" title="数组相加"></a>数组相加</h2><p>数组相加(<span style="color:red">前提是两个数组元素个数要一样</span>)。下面代码的数组 B 是继承上面的：<code>B：=[2,2,2,3,4]</code></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">C:=[1,2,3,4,5]</span><br><span class="line">D:=B+C</span><br></pre></td></tr></table></figure><p>数组 D 的结果是：<code>[3, 4, 5, 7, 9]</code>。可见结果是每个对应的元素进行相加。</p><h2 id="求数组的长度"><a href="#求数组的长度" class="headerlink" title="求数组的长度"></a>求数组的长度</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">l := |D|</span><br></pre></td></tr></table></figure><p>或者：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tuple_length (D,len)</span><br></pre></td></tr></table></figure></p><p>上面的结果是：<code>l=5</code>,<code>len=5</code>。</p><h2 id="通过下标获取元素值"><a href="#通过下标获取元素值" class="headerlink" title="通过下标获取元素值"></a>通过下标获取元素值</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">value := D[2]</span><br></pre></td></tr></table></figure><p>上面的结果是：<code>value=5</code>。<span style="color:red">可见，下标是从<code>0</code>开始的。</span></p><h2 id="其他数学运算"><a href="#其他数学运算" class="headerlink" title="其他数学运算"></a>其他数学运算</h2><p>其他的数学运算可以查看<code>tuple_</code>开头的算子。</p><p><img src="http://image.huvjie.com/201011N01_img01.jpg" alt="▲提供了很多的数学计算函数"></p><div style="font-size:13px;color:gray;text-align:center">▲ 提供了很多的数学计算函数</div><p>数组在图像处理中应该是很重要的，像素不就是数组吗？</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;数组定义&quot;&gt;&lt;a href=&quot;#数组定义&quot; class=&quot;headerlink&quot; title=&quot;数组定义&quot;&gt;&lt;/a&gt;数组定义&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pr
+      
+    
+    </summary>
+    
+      <category term="编程爱好" scheme="https://www.andyvj.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
+    
+    
+      <category term="C#" scheme="https://www.andyvj.com/tags/C/"/>
+    
+  </entry>
   
   <entry>
     <title>如何交换两个变量的值而不借助于临时变量</title>
@@ -448,28 +473,6 @@
     
     
       <category term="点滴" scheme="https://www.andyvj.com/tags/%E7%82%B9%E6%BB%B4/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>C#线程安全</title>
-    <link href="https://www.andyvj.com/2020/06/16/200616N06/"/>
-    <id>https://www.andyvj.com/2020/06/16/200616N06/</id>
-    <published>2020-06-16T12:27:32.000Z</published>
-    <updated>2020-06-16T13:14:55.402Z</updated>
-    
-    <content type="html"><![CDATA[<p>多个线程对同一资源的争夺，有可能出现线程不安全的现象。用<code>lock</code>这种最简单的方式实现下。</p><a id="more"></a><h1 id="一"><a href="#一" class="headerlink" title="一"></a>一</h1><p>直观的看下这种情况：</p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> System.Linq;</span><br><span class="line"><span class="keyword">using</span> System.Threading.Tasks;</span><br><span class="line"><span class="keyword">using</span> System.Windows.Forms;</span><br><span class="line"><span class="keyword">using</span> System.Threading;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">ThreadSafetyDemo</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">class</span> <span class="title">Program</span></span><br><span class="line">    &#123;</span><br><span class="line">        [<span class="meta">STAThread</span>]</span><br><span class="line">        <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            Thread.CurrentThread.Name = <span class="string">"====主线程===="</span>;</span><br><span class="line">            Program prg = <span class="keyword">new</span> Program();</span><br><span class="line"></span><br><span class="line">            Thread newThread = <span class="keyword">new</span> Thread(<span class="keyword">new</span> ThreadStart(prg.DoSomeWork));</span><br><span class="line">            newThread.Name = <span class="string">"**新线程:"</span>;</span><br><span class="line">            newThread.IsBackground = <span class="literal">true</span>;</span><br><span class="line">            newThread.Start(); <span class="comment">// 开始新线程</span></span><br><span class="line"></span><br><span class="line">            prg.DoSomeWork();  <span class="comment">// 开始主线程</span></span><br><span class="line"></span><br><span class="line">            Console.ReadKey();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 放在外面作为成员变量，这样连个线程操纵的时候才能看出不一样。</span></span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">int</span> counter = <span class="number">0</span>;  </span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">DoSomeWork</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; <span class="number">11</span>; i++) &#123;</span><br><span class="line">                counter += i;</span><br><span class="line">                Console.WriteLine(<span class="string">"&#123;0&#125;&#123;1&#125;"</span>, Thread.CurrentThread.Name, counter);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>输出：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">====主线程====1</span><br><span class="line">====主线程====4</span><br><span class="line">====主线程====7</span><br><span class="line">====主线程====11</span><br><span class="line">====主线程====16</span><br><span class="line">====主线程====22</span><br><span class="line">====主线程====29</span><br><span class="line">**新线程:2</span><br><span class="line">**新线程:39</span><br><span class="line">**新线程:42</span><br><span class="line">**新线程:46</span><br><span class="line">**新线程:51</span><br><span class="line">**新线程:57</span><br><span class="line">**新线程:64</span><br><span class="line">**新线程:72</span><br><span class="line">**新线程:81</span><br><span class="line">**新线程:91</span><br><span class="line">====主线程====37</span><br><span class="line">====主线程====100</span><br><span class="line">====主线程====110</span><br></pre></td></tr></table></figure><p>每次的结果其实都不一样，这就是线程的不安全，多个线程操纵了同意资源。</p><h1 id="二"><a href="#二" class="headerlink" title="二"></a>二</h1><p>保证线程安全，加一个<code>lock</code>块。</p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">DoSomeWork</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">lock</span> (<span class="keyword">this</span>) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; <span class="number">11</span>; i++) &#123;</span><br><span class="line">            counter += i;</span><br><span class="line">            Console.WriteLine(<span class="string">"&#123;0&#125;&#123;1&#125;"</span>, Thread.CurrentThread.Name, counter);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>这样就没问题，保证只有一个线程调用。</p><h1 id="三"><a href="#三" class="headerlink" title="三"></a>三</h1><p>更优雅的方式写法：</p><p>增加命名空间<code>using System.Runtime.CompilerServices;</code>。然后在函数前增加一个这样的标签就可以——<code>[MethodImpl(MethodImplOptions.Synchronized)]</code>。</p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">[<span class="meta">MethodImpl(MethodImplOptions.Synchronized)</span>]</span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">DoSomeWork</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; <span class="number">11</span>; i++) &#123;</span><br><span class="line">        counter += i;</span><br><span class="line">        Console.WriteLine(<span class="string">"&#123;0&#125;&#123;1&#125;"</span>, Thread.CurrentThread.Name, counter);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>这样子也可以，也是同样的效果。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;多个线程对同一资源的争夺，有可能出现线程不安全的现象。用&lt;code&gt;lock&lt;/code&gt;这种最简单的方式实现下。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="编程爱好" scheme="https://www.andyvj.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
-    
-    
-      <category term="C#" scheme="https://www.andyvj.com/tags/C/"/>
     
   </entry>
   
