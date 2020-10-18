@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.andyvj.com/"/>
-  <updated>2020-10-11T14:46:13.962Z</updated>
+  <updated>2020-10-18T08:50:39.554Z</updated>
   <id>https://www.andyvj.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>C# 引用类型赋值指向的是同一块内存</title>
+    <link href="https://www.andyvj.com/2020/10/18/201018N01/"/>
+    <id>https://www.andyvj.com/2020/10/18/201018N01/</id>
+    <published>2020-10-18T02:22:00.000Z</published>
+    <updated>2020-10-18T08:50:39.554Z</updated>
+    
+    <content type="html"><![CDATA[<p>首先，<code>属性</code>是引用类型。引用类型之间赋值传递后，他们访问的应该是同一块内存区。</p><p>来测试一下：</p><a id="more"></a><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;  </span><br><span class="line">  </span><br><span class="line"><span class="keyword">namespace</span> <span class="title">ConsoleApp1</span>  </span><br><span class="line">&#123;  </span><br><span class="line">    <span class="keyword">class</span> <span class="title">Program</span>  </span><br><span class="line">    &#123;  </span><br><span class="line">        <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"></span>)  </span></span><br><span class="line"><span class="function"></span>        &#123;  </span><br><span class="line">            A aa = <span class="keyword">new</span> A();  </span><br><span class="line">  </span><br><span class="line">            aa.aaa();  </span><br><span class="line">  </span><br><span class="line">            Console.ReadKey();  </span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    <span class="keyword">class</span> <span class="title">Test</span>  </span><br><span class="line">    &#123;  </span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">int</span> a = <span class="number">100</span>;  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    <span class="keyword">class</span> <span class="title">A</span>  </span><br><span class="line">    &#123;  </span><br><span class="line">        <span class="keyword">private</span> Test TestA &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125; = <span class="keyword">new</span> Test();  </span><br><span class="line">        <span class="keyword">private</span> B b = <span class="keyword">new</span> B();  </span><br><span class="line">  </span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">aaa</span>(<span class="params"></span>)  </span></span><br><span class="line"><span class="function"></span>        &#123;  </span><br><span class="line">            Console.WriteLine( <span class="string">"之前:"</span> + TestA.a);  </span><br><span class="line">            <span class="keyword">this</span>.b.TestB = <span class="keyword">this</span>.TestA;  </span><br><span class="line">            <span class="keyword">this</span>.b.TestB.a = <span class="number">200</span>;  <span class="comment">// 通过对象b来更改。  </span></span><br><span class="line">            Console.WriteLine(<span class="string">"之后:"</span> + TestA.a);  </span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    <span class="keyword">class</span> <span class="title">B</span>  </span><br><span class="line">    &#123;  </span><br><span class="line">        <span class="keyword">public</span> Test TestB &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>输出：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">之前:100  </span><br><span class="line">之后:200</span><br></pre></td></tr></table></figure><p>可见，对象<code>b</code>能够访问<code>TestA</code>属性指向的内存<code>Test</code>对象。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;首先，&lt;code&gt;属性&lt;/code&gt;是引用类型。引用类型之间赋值传递后，他们访问的应该是同一块内存区。&lt;/p&gt;
+&lt;p&gt;来测试一下：&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="编程爱好" scheme="https://www.andyvj.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
+    
+    
+      <category term="C#" scheme="https://www.andyvj.com/tags/C/"/>
+    
+  </entry>
   
   <entry>
     <title>Halcon数组创建及基本运算</title>
@@ -446,33 +469,6 @@
     
     
       <category term="C#" scheme="https://www.andyvj.com/tags/C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SoftIntV-F001</title>
-    <link href="https://www.andyvj.com/2020/06/17/200617N01/"/>
-    <id>https://www.andyvj.com/2020/06/17/200617N01/</id>
-    <published>2020-06-17T01:33:07.000Z</published>
-    <updated>2020-06-17T01:41:29.822Z</updated>
-    
-    <content type="html"><![CDATA[<p>上周六面试了蜀丰科技一个助理软件工程师的职位，没有项目经验，又是转行的的，真不好搞啊。</p><p>临走的时候，面试官赵工说，“下周一或周二和老板说一下再给你打电话”，估计是场面话。</p><p>周一我电话追问了下他们人事，说帮我问下后给我电话。见周二没回复，我就微信上再次问了下。然后，这人事把我微信给删了。真他妈脑瓜子嗡嗡的啊~~~</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;上周六面试了蜀丰科技一个助理软件工程师的职位，没有项目经验，又是转行的的，真不好搞啊。&lt;/p&gt;
-&lt;p&gt;临走的时候，面试官赵工说，“下周一或周二和老板说一下再给你打电话”，估计是场面话。&lt;/p&gt;
-&lt;p&gt;周一我电话追问了下他们人事，说帮我问下后给我电话。见周二没回复，我就微信上
-      
-    
-    </summary>
-    
-      <category term="其他" scheme="https://www.andyvj.com/categories/%E5%85%B6%E4%BB%96/"/>
-    
-    
-      <category term="点滴" scheme="https://www.andyvj.com/tags/%E7%82%B9%E6%BB%B4/"/>
     
   </entry>
   
