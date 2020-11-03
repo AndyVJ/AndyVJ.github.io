@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[C# 读取环境变量，和字符串大小写转换]]></title>
+    <url>%2F2020%2F11%2F03%2F201103N01%2F</url>
+    <content type="text"><![CDATA[string.ToLower() 更改大小写返回的是副本，原来的字符串还是原来的。ToUper()应该也是一样的吧； ToLower()只改变字母大小写，其他的字符不改变； 读取(系统)环境变量时，自己新建的环境变量后，需要重启电脑，才能读取到。 1234567891011121314151617181920212223using System;namespace ConsoleApp1&#123; class Program &#123; static void Main(string[] args) &#123; string a = "abkj_KKOIHI_1234-_!你好！！！"; Console.WriteLine(a); string b = a.ToLower(); Console.WriteLine(b); Console.WriteLine(a); string str = Environment.GetEnvironmentVariable("RebSoft");// 系统环境变量 string s = Environment.GetEnvironmentVariable("RebSoft", EnvironmentVariableTarget.User); // 当前用户环境变量 Console.WriteLine(str); Console.WriteLine(s); Console.ReadKey(); &#125; &#125;&#125; 输出： 这里有一篇读取环境变量的博文，很全：https://www.cnblogs.com/tianma3798/p/5500279.html。]]></content>
+      <categories>
+        <category>编程爱好</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[C#跨线程访问控件需要注意的问题]]></title>
     <url>%2F2020%2F10%2F25%2F201025N01%2F</url>
     <content type="text"><![CDATA[C#跨线程访问控件，我们一般 new 一个线程，多线程来操作。今天本以为是这样操作的，可还是卡死程序了。记录一下碰到的这些疑难杂症。 一、怀疑多界面问题其实，与嵌套多少个控件没关系。 怀疑是在主窗体嵌入的两个menu，在menu里面这样操作不行。后面这种情况被我排除了。因为，我把代码复制到主页面，相同功能还是卡死。所以，还是代码有问题。 ▲ 我是在一个主窗体放了一个panel，然后，在panel里面加载menu1，menu1通过按钮加载menu2；再在么menu2里面new一个线程，跨线程访问textbox。可这样还是被卡死了。 二、聚焦代码问题问题其实是，this.textBox1.Invoke(/*调用代码*/)的调用代码不能太耗时，与控件本身操作无关的代码。不然就卡死。 开始我是这样写的： 123456789101112131415int a = 0;thread = new Thread(() =&gt;&#123; if (this.textBox1.InvokeRequired) &#123; this.textBox1.Invoke(new Action(() =&gt; &#123; while (true) &#123; this.textBox1.Text = a++.ToString(); Thread.Sleep(1000); &#125; &#125;)); &#125;&#125;);thread.IsBackground = true;thread.Start(); 把循环放到控件Invoke外面去123456789101112131415int a = 0;thread = new Thread(() =&gt;&#123; if (this.textBox1.InvokeRequired) &#123; while (true) &#123; this.textBox1.Invoke(new Action(() =&gt; &#123; this.textBox1.Text = a++.ToString(); Thread.Sleep(1000); &#125;)); &#125; &#125;&#125;);thread.IsBackground = true;thread.Start(); 上面这样还是不行的，Thread.Sleep(1000);耗时，且与跨线程访问的控件无关。经测试即使换成耗时的循环for(int i = 0; i &lt; 1000; i++) for(int j = 0; j &lt; 100000; j++);，这样照样会卡死。 把Thread.Sleep(1000);放Invoke外面去这样能够工作的，不卡。 123456789101112131415int a = 0;thread = new Thread(() =&gt;&#123; if (this.textBox1.InvokeRequired) &#123; while (true) &#123; this.textBox1.Invoke(new Action(() =&gt; &#123; this.textBox1.Text = a++.ToString(); &#125;)); Thread.Sleep(1000); &#125; &#125;&#125;);thread.IsBackground = true;thread.Start(); 效果如下： ▲ 主页面的textbox计时显示和两层加载的menu中的textbox的计时显示也是没问题的，窗体不冻结卡死。 其实本质上为什么会这样，我是没有明确搞明白的，都是自己去理解，不确定是不是自己理解的这样。也不想花太多的时间去深究了，能实现效果就好。如何学会把时间花在最关键的地方？这是一门学问，越早明白越受益。]]></content>
@@ -1318,9 +1329,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[UG NX 移动对象之『动态』技巧]]></title>
-    <url>%2F2019%2F02%2F19%2F190219-02%2F</url>
-    <content type="text"><![CDATA[动态绕某一点旋转，而旋转手柄又不在此点上，如何操作？ Ctrl + T 移动对象，勾选只移动手柄，将手柄点选移动到需要旋转的点。 取消勾选只移动手柄，点选手柄节点，输入旋转角度，确定。]]></content>
+    <title><![CDATA[UG NX 坐标对齐移动——解决实体与原始坐标不对齐的问题]]></title>
+    <url>%2F2019%2F02%2F19%2F190219-01%2F</url>
+    <content type="text"><![CDATA[有时候通过WAVE链接过来的实体会出现实体与原始坐标不对齐的情况，如： 可以用坐标到坐标移动的方式将实体摆正。 新建与实体对齐的坐标系。 Ctrl + T 移动。 这样后，实体就与原始坐标对齐了：]]></content>
       <categories>
         <category>机械结构</category>
       </categories>
@@ -1329,9 +1340,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[UG NX 坐标对齐移动——解决实体与原始坐标不对齐的问题]]></title>
-    <url>%2F2019%2F02%2F19%2F190219-01%2F</url>
-    <content type="text"><![CDATA[有时候通过WAVE链接过来的实体会出现实体与原始坐标不对齐的情况，如： 可以用坐标到坐标移动的方式将实体摆正。 新建与实体对齐的坐标系。 Ctrl + T 移动。 这样后，实体就与原始坐标对齐了：]]></content>
+    <title><![CDATA[UG NX 移动对象之『动态』技巧]]></title>
+    <url>%2F2019%2F02%2F19%2F190219-02%2F</url>
+    <content type="text"><![CDATA[动态绕某一点旋转，而旋转手柄又不在此点上，如何操作？ Ctrl + T 移动对象，勾选只移动手柄，将手柄点选移动到需要旋转的点。 取消勾选只移动手柄，点选手柄节点，输入旋转角度，确定。]]></content>
       <categories>
         <category>机械结构</category>
       </categories>
