@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title></title>
+    <title><![CDATA[配置 OpenCV 开发环境]]></title>
     <url>%2F2020%2F11%2F07%2F201107N01%2F</url>
-    <content type="text"><![CDATA[OpenCV3 + Visual studio 2017 社区版，以及 OpenCV3 + Qt Creator。Windows 7，64bit。 OpenCV &amp;&amp; VS什么下载安装就不说了。主要配置四个地方： OpenCV 的path环境变量： 。。。\opencv\build\x64\vc15\bin; 视图=》其他窗口=》属性管理器,右键需要配置的配置方案。VC++目录 -&gt; 包含目录，将： 。。。\opencv\build\include； 。。。\opencv\build\include\opencv； 。。。\opencv\build\include\opencv2。 三个目录添加进去； 继续上面：VC++目录 -&gt; 包含目录，将：。。。\opencv\build\x64\vc15\lib目录添加进去； 继续上面：连接器 -&gt; 输入 -&gt; 附加依赖项将库文件添加进去(带上后缀)： opencv_world3412.lib // release版 opencv_world3412d.lib // debug版 上面基本上就可以了，弄段代码测试一下： 123456789101112131415#include &lt;opencv2/opencv.hpp&gt;#include &lt;iostream&gt;using namespace std;using namespace cv;int main()&#123; Mat image = imread("0.jpg");// 一定要放到 cpp 同级目录，F5 调试运行才能加载。 // 如果手动直接运行 Debug 下生成的 exe，图片需要拷贝到 exe 的同级目录。 imshow("测试配置", image); waitKey(0); return 0;&#125; 注意上面的图片相对位置的注释说明。不然绝对路径太长了，练习的时候有点麻烦。如果上面只配置了 x64，编译的是有一点要选好 x64，不要用 x86 编译运行。 OpenCV &amp;&amp; Qt Creator首先，根据 Qt Creator 配置的编译器，选择好对应编译好的 OpenCV 版本，注意是MinGW还是MSVC。 这里以MinGW版本为例，三大步： 添加 Qt 的path环境变量： 。。。\Qt\Qt5.7.0\5.7\mingw530_32\bin 。。。\Qt\Qt5.7.0\Tools\mingw530_32\bin 添加 OpenCV 的path的环境变量： \OpenCV\OpenCV328x64\x64\mingw\bin 在 Qt 项目pro文件中添加包含目录和库目录： 12345INCLUDEPATH += D:/DiyProgram/OpenCV/OpenCV328x64/include \ D:/DiyProgram/OpenCV/OpenCV328x64/include/opencv \ D:/DiyProgram/OpenCV/OpenCV328x64/include/opencv2LIBS += D:/DiyProgram/OpenCV/OpenCV328x64/x64/mingw/lib/libopencv_* 上面的就算配置完成，可以用测试代码测试一下。]]></content>
+    <content type="text"><![CDATA[OpenCV3 + Visual studio 2017 社区版，以及 OpenCV3 + Qt Creator。Windows 7，64bit。 OpenCV &amp;&amp; VS什么下载安装就不说了。主要配置四个地方： OpenCV 的path环境变量： 。。。\opencv\build\x64\vc15\bin; 视图=》其他窗口=》属性管理器,右键需要配置的配置方案。VC++目录 -&gt; 包含目录，将： 。。。\opencv\build\include； 。。。\opencv\build\include\opencv； 。。。\opencv\build\include\opencv2。 三个目录添加进去； 继续上面：VC++目录 -&gt; 包含目录，将：。。。\opencv\build\x64\vc15\lib目录添加进去； 继续上面：连接器 -&gt; 输入 -&gt; 附加依赖项将库文件添加进去(带上后缀)： opencv_world3412.lib // release版 opencv_world3412d.lib // debug版 上面基本上就可以了，弄段代码测试一下： 123456789101112131415#include &lt;opencv2/opencv.hpp&gt;#include &lt;iostream&gt;using namespace std;using namespace cv;int main()&#123; Mat image = imread("0.jpg");// 一定要放到 cpp 同级目录，F5 调试运行才能加载。 // 如果手动直接运行 Debug 下生成的 exe，图片需要拷贝到 exe 的同级目录。 imshow("测试配置", image); waitKey(0); return 0;&#125; 注意上面的图片相对位置的注释说明。不然绝对路径太长了，练习的时候有点麻烦。如果上面只配置了 x64，编译运行时一定要选好 x64，不要用 x86 编译运行。 OpenCV &amp;&amp; Qt Creator首先，根据 Qt Creator 配置的编译器，选择好对应编译好的 OpenCV 版本，注意是MinGW还是MSVC。 这里以MinGW版本为例，三大步： 添加 Qt 的path环境变量： 。。。\Qt\Qt5.7.0\5.7\mingw530_32\bin 。。。\Qt\Qt5.7.0\Tools\mingw530_32\bin 添加 OpenCV 的path的环境变量： \OpenCV\OpenCV328x64\x64\mingw\bin 在 Qt 项目pro文件中添加包含目录和库目录： 12345INCLUDEPATH += D:/DiyProgram/OpenCV/OpenCV328x64/include \ D:/DiyProgram/OpenCV/OpenCV328x64/include/opencv \ D:/DiyProgram/OpenCV/OpenCV328x64/include/opencv2LIBS += D:/DiyProgram/OpenCV/OpenCV328x64/x64/mingw/lib/libopencv_* 上面的就算配置完成，可以用测试代码测试一下。]]></content>
+      <categories>
+        <category>编程爱好</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[C# Linq Xml 简单测试]]></title>

@@ -113,15 +113,16 @@
 
 
   <meta name="description" content="OpenCV3 + Visual studio 2017 社区版，以及 OpenCV3 + Qt Creator。Windows 7，64bit。">
+<meta name="keywords" content="C#">
 <meta property="og:type" content="article">
-<meta property="og:title" content="胡搅蛮缠">
+<meta property="og:title" content="配置 OpenCV 开发环境">
 <meta property="og:url" content="https://www.andyvj.com/2020/11/07/201107N01/index.html">
 <meta property="og:site_name" content="胡搅蛮缠">
 <meta property="og:description" content="OpenCV3 + Visual studio 2017 社区版，以及 OpenCV3 + Qt Creator。Windows 7，64bit。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-11-07T14:14:39.550Z">
+<meta property="og:updated_time" content="2020-11-07T14:25:14.292Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="胡搅蛮缠">
+<meta name="twitter:title" content="配置 OpenCV 开发环境">
 <meta name="twitter:description" content="OpenCV3 + Visual studio 2017 社区版，以及 OpenCV3 + Qt Creator。Windows 7，64bit。">
 
 
@@ -141,7 +142,7 @@
   };
 </script>
 
-  <title> | 胡搅蛮缠</title>
+  <title>配置 OpenCV 开发环境 | 胡搅蛮缠</title>
   
 
 
@@ -378,7 +379,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">
+          <h2 class="post-title" itemprop="name headline">配置 OpenCV 开发环境
               
             
           </h2>
@@ -403,12 +404,34 @@
                 
               
 
-              <time title="创建时间：2020-11-07 22:14:39" itemprop="dateCreated datePublished" datetime="2020-11-07T22:14:39+08:00">2020-11-07</time>
+              <time title="创建时间：2020-11-07 10:22:00 / 修改时间：22:25:14" itemprop="dateCreated datePublished" datetime="2020-11-07T10:22:00+08:00">2020-11-07</time>
             
 
+            
+              
+
+              
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/编程爱好/" itemprop="url" rel="index"><span itemprop="name">编程爱好</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -481,8 +504,8 @@
 </li>
 </ol>
 <p>上面基本上就可以了，弄段代码测试一下：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;opencv2/opencv.hpp&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> cv;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  Mat image = imread(<span class="string">"0.jpg"</span>);<span class="comment">// 一定要放到 cpp 同级目录，F5 调试运行才能加载。</span></span><br><span class="line">                            <span class="comment">// 如果手动直接运行 Debug 下生成的 exe，图片需要拷贝到 exe 的同级目录。</span></span><br><span class="line">  imshow(<span class="string">"测试配置"</span>, image);</span><br><span class="line">  waitKey(<span class="number">0</span>);</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>注意上面的图片相对位置的注释说明。不然绝对路径太长了，练习的时候有点麻烦。<strong>如果上面只配置了 x64，编译的是有一点要选好 x64，不要用 x86 编译运行。</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;opencv2/opencv.hpp&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> cv;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  Mat image = imread(<span class="string">"0.jpg"</span>);<span class="comment">// 一定要放到 cpp 同级目录，F5 调试运行才能加载。</span></span><br><span class="line">                              <span class="comment">// 如果手动直接运行 Debug 下生成的 exe，图片需要拷贝到 exe 的同级目录。</span></span><br><span class="line">  imshow(<span class="string">"测试配置"</span>, image);</span><br><span class="line">  waitKey(<span class="number">0</span>);</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>注意上面的图片相对位置的注释说明。不然绝对路径太长了，练习的时候有点麻烦。<strong>如果上面只配置了 x64，编译运行时一定要选好 x64，不要用 x86 编译运行。</strong></p>
 <h1 id="OpenCV-amp-amp-Qt-Creator"><a href="#OpenCV-amp-amp-Qt-Creator" class="headerlink" title="OpenCV &amp;&amp; Qt Creator"></a>OpenCV &amp;&amp; Qt Creator</h1><p>首先，根据 Qt Creator 配置的编译器，选择好对应编译好的 OpenCV 版本，注意是<code>MinGW</code>还是<code>MSVC</code>。</p>
 <p>这里以<code>MinGW</code>版本为例，三大步：</p>
 <ol>
@@ -549,7 +572,7 @@
     <strong>本文作者： </strong>AndyVJ</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://www.andyvj.com/2020/11/07/201107N01/" title="">https://www.andyvj.com/2020/11/07/201107N01/</a>
+    <a href="https://www.andyvj.com/2020/11/07/201107N01/" title="配置 OpenCV 开发环境">https://www.andyvj.com/2020/11/07/201107N01/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
@@ -559,6 +582,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/C/" rel="tag"># C#</a>
+          
+        </div>
       
 
       
