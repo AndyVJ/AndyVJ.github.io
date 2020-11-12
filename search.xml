@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[C# 自定义鼠标样式]]></title>
+    <url>%2F2020%2F11%2F12%2F201112N01%2F</url>
+    <content type="text"><![CDATA[这里掉用系统 API 的方式。 ▲ 样式效果 先准备好鼠标样式cur文件。 ▲ 鼠标样式文件 1234567891011121314151617181920212223242526272829303132333435363738394041424344using System;using System.Collections.Generic;using System.ComponentModel;using System.Data;using System.Drawing;using System.Text;using System.Windows.Forms;namespace MouseSt&#123; using System.Runtime.InteropServices; using System.Reflection; public partial class Form1 : Form &#123; public Form1() &#123; InitializeComponent(); &#125; private void Form1_Load(object sender, EventArgs e) &#123; Cursor myCursor = new Cursor(Cursor.Current.Handle); IntPtr colrCursorHandle = MouseStye.LoadCursorFromFile("hand.cur"); myCursor.GetType().InvokeMember("handle", BindingFlags.Public|BindingFlags.NonPublic|BindingFlags.Instance|BindingFlags.SetField, null, myCursor, new object[] &#123; colrCursorHandle &#125;); this.pictureBox1.Cursor = myCursor; // pictureBox区域 Cursor myCursor1 = new Cursor(Cursor.Current.Handle); IntPtr colrCursorHandle1 = MouseStye.LoadCursorFromFile("pen.cur"); myCursor.GetType().InvokeMember("handle", BindingFlags.Public|BindingFlags.NonPublic|BindingFlags.Instance|BindingFlags.SetField, null, myCursor1, new object[] &#123; colrCursorHandle1 &#125;); this.pictureBox2.Cursor = myCursor1; &#125; &#125; class MouseStye &#123; [DllImport("user32.dll")] public static extern IntPtr LoadCursorFromFile(string fileName); [DllImport("user32.dll")] public static extern IntPtr SetCursor(IntPtr cursorHandle); [DllImport("user32.dll")] public static extern uint DestroyCursor(IntPtr cursorHandle); &#125;&#125; InvokeMember 第二个选项参数具体还没有深究，先照着写吧。 参考：C# winForm 自定义鼠标样式的两种方法：https://www.cnblogs.com/tianguook/archive/2010/08/03/1791572.html]]></content>
+      <categories>
+        <category>编程爱好</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[C# 委托和事件的区别]]></title>
     <url>%2F2020%2F11%2F08%2F201108N02%2F</url>
     <content type="text"><![CDATA[委托：委托是一种各类型，像类和结构一样。一般放在namespace里，当然也可以放在类里面，就像类里面也可以放类一样。 事件事件是类或结构的成员，像属性和方法一样。事件更像是委托变量。 有两点注意： 事件不能放在可执行代码段里面声明。也就是，只能做字段，不能做本地变量； 必须声明在类或结构中，做类或结构的成员；]]></content>
@@ -1373,9 +1384,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[UG NX 坐标对齐移动——解决实体与原始坐标不对齐的问题]]></title>
-    <url>%2F2019%2F02%2F19%2F190219-01%2F</url>
-    <content type="text"><![CDATA[有时候通过WAVE链接过来的实体会出现实体与原始坐标不对齐的情况，如： 可以用坐标到坐标移动的方式将实体摆正。 新建与实体对齐的坐标系。 Ctrl + T 移动。 这样后，实体就与原始坐标对齐了：]]></content>
+    <title><![CDATA[UG NX 移动对象之『动态』技巧]]></title>
+    <url>%2F2019%2F02%2F19%2F190219-02%2F</url>
+    <content type="text"><![CDATA[动态绕某一点旋转，而旋转手柄又不在此点上，如何操作？ Ctrl + T 移动对象，勾选只移动手柄，将手柄点选移动到需要旋转的点。 取消勾选只移动手柄，点选手柄节点，输入旋转角度，确定。]]></content>
       <categories>
         <category>机械结构</category>
       </categories>
@@ -1384,9 +1395,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[UG NX 移动对象之『动态』技巧]]></title>
-    <url>%2F2019%2F02%2F19%2F190219-02%2F</url>
-    <content type="text"><![CDATA[动态绕某一点旋转，而旋转手柄又不在此点上，如何操作？ Ctrl + T 移动对象，勾选只移动手柄，将手柄点选移动到需要旋转的点。 取消勾选只移动手柄，点选手柄节点，输入旋转角度，确定。]]></content>
+    <title><![CDATA[UG NX 坐标对齐移动——解决实体与原始坐标不对齐的问题]]></title>
+    <url>%2F2019%2F02%2F19%2F190219-01%2F</url>
+    <content type="text"><![CDATA[有时候通过WAVE链接过来的实体会出现实体与原始坐标不对齐的情况，如： 可以用坐标到坐标移动的方式将实体摆正。 新建与实体对齐的坐标系。 Ctrl + T 移动。 这样后，实体就与原始坐标对齐了：]]></content>
       <categories>
         <category>机械结构</category>
       </categories>
