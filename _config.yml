@@ -3,10 +3,10 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 胡搅蛮缠
-subtitle: 胡文杰的个人博客
-description: 不要怕/Don't Panic
-author: AndyVJ
+title: 胡文杰
+subtitle: 专业道路的自我修养
+description: 定一个目标并为之努力
+author: 胡文杰
 language: zh-CN
 timezone:
 
@@ -18,7 +18,8 @@ sitemap:
 baidusitemap:
   path: baidusitemap.xml
 
-url: https://www.andyvj.com
+url: https://blog.huvjie.com
+#url: https://www.andyvj.com
 #url: https://andyvj.coding.me
 root: /
 permalink: :year/:month/:day/:title/
