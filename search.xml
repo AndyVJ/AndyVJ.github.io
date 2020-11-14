@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[变与不变]]></title>
+    <url>%2F2020%2F11%2F14%2F201114N01%2F</url>
+    <content type="text"><![CDATA[一件事物有”活”的方面，有”死”的方面，我们应该将主要精力集中在”活”的方面。而这个”活”和”死”是会随着事物的发展而会产生相应的变化。这需要我们动态的去看问题。 总之，要识别出事情最重要的核心在哪里，然后调整和分配时间和精力和资源。看一件事物要抓住他的核心，也就是万变不离其宗的东西。]]></content>
+      <categories>
+        <category>其他</category>
+      </categories>
+      <tags>
+        <tag>点滴</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[C# 自定义鼠标样式]]></title>
     <url>%2F2020%2F11%2F12%2F201112N02%2F</url>
     <content type="text"><![CDATA[接上一篇，不调用 API 的方式。 ▲ 样式效果 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647using System;using System.Collections.Generic;using System.ComponentModel;using System.Data;using System.Drawing;using System.Text;using System.Windows.Forms;namespace MouseSt&#123; using System.Runtime.InteropServices; using System.Reflection; public partial class Form1 : Form &#123; public Form1() &#123; InitializeComponent(); &#125; private void Form1_Load(object sender, EventArgs e) &#123; Bitmap a = (Bitmap)Bitmap.FromFile("1.gif"); SetCursor(a, new Point(0, 0)); &#125; public void SetCursor(Bitmap cursor, Point hotPoint) &#123; int hotX = hotPoint.X; int hotY = hotPoint.Y; // 这里为什么要 * 2 Bitmap myNewCursor = new Bitmap(cursor.Width * 2 - hotX, cursor.Height * 2 - hotY); Graphics graphics = Graphics.FromImage(myNewCursor); graphics.Clear(Color.FromArgb(0, 0, 0, 0)); graphics.DrawImage(cursor, cursor.Width - hotX, cursor.Height - hotY, cursor.Width, cursor.Height); this.Cursor = new Cursor(myNewCursor.GetHicon()); graphics.Dispose(); myNewCursor.Dispose(); &#125; private void button1_Click(object sender, EventArgs e) &#123; MessageBox.Show("被点击!"); &#125; &#125;&#125; Bitmap myNewCursor 为什么要 *2？ 没看明白。 因为 Cursor 属性计算定位的是样式图片的中心点位置？ 参考：C# winForm 自定义鼠标样式的两种方法：https://www.cnblogs.com/tianguook/archive/2010/08/03/1791572.html]]></content>
@@ -56,9 +67,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[C# 读取环境变量，和字符串大小写转换]]></title>
-    <url>%2F2020%2F11%2F03%2F201103N01%2F</url>
-    <content type="text"><![CDATA[string.ToLower() 更改大小写返回的是副本，原来的字符串还是原来的。ToUper()应该也是一样的吧； ToLower()只改变字母大小写，其他的字符不改变； 读取(系统)环境变量时，自己新建的环境变量后，需要重启电脑，才能读取到。 1234567891011121314151617181920212223using System;namespace ConsoleApp1&#123; class Program &#123; static void Main(string[] args) &#123; string a = "abkj_KKOIHI_1234-_!你好！！！"; Console.WriteLine(a); string b = a.ToLower(); Console.WriteLine(b); Console.WriteLine(a); string str = Environment.GetEnvironmentVariable("RebSoft");// 系统环境变量 string s = Environment.GetEnvironmentVariable("RebSoft", EnvironmentVariableTarget.User); // 当前用户环境变量 Console.WriteLine(str); Console.WriteLine(s); Console.ReadKey(); &#125; &#125;&#125; 输出： 这里有一篇读取环境变量的博文，很全：https://www.cnblogs.com/tianma3798/p/5500279.html。]]></content>
+    <title><![CDATA[C# Linq Xml 简单测试]]></title>
+    <url>%2F2020%2F11%2F03%2F201103N02%2F</url>
+    <content type="text"><![CDATA[C# Linq 真的很强大啊!简单的测试下。 创建1234567891011121314XDocument xDoc = new XDocument( new XDeclaration("1.0", "utf-8", null), new XElement("test", new XElement("person", new XElement("name", "小明"), new XElement("age", "8")), new XElement("person", new XElement("name", "小华"), new XElement("age", "9")), new XElement("sum", "2") ) ); xDoc.Save("Test.xml"); 通过参数数组，类似结构的缩进，直接创建了xml文档。 xml: 123456789101112&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;test&gt; &lt;person&gt; &lt;name&gt;小明&lt;/name&gt; &lt;age&gt;8&lt;/age&gt; &lt;/person&gt; &lt;person&gt; &lt;name&gt;小华&lt;/name&gt; &lt;age&gt;9&lt;/age&gt; &lt;/person&gt; &lt;sum&gt;2&lt;/sum&gt;&lt;/test&gt; 读取123XElement file = XElement.Load("Test.xml");XElement xiaoming = file.Descendants("person") .Where(x =&gt; x.Element("name").Value == "小明").SingleOrDefault(); xiaoming.ToString()直接读出：1234&lt;person&gt; &lt;name&gt;小明&lt;/name&gt; &lt;age&gt;8&lt;/age&gt;&lt;/person&gt; 如果直接读取xioaming的value值会输出多少？ 它会把它下面节点的value值全部读出来： 1小明8 我猜它应该是个结果集序列。 First,FirstOrDefault,Single,SingleOrDefault 有什么不一样？ SingleOrDefault 含有多个元素的时候会抛异常。 下面两片博文可以参考： c#操作符 ??和First,FirstOrDefault,Single,SingleOrDefault。 c# XElement XML操作总结。]]></content>
       <categories>
         <category>编程爱好</category>
       </categories>
@@ -67,9 +78,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[C# Linq Xml 简单测试]]></title>
-    <url>%2F2020%2F11%2F03%2F201103N02%2F</url>
-    <content type="text"><![CDATA[C# Linq 真的很强大啊!简单的测试下。 创建1234567891011121314XDocument xDoc = new XDocument( new XDeclaration("1.0", "utf-8", null), new XElement("test", new XElement("person", new XElement("name", "小明"), new XElement("age", "8")), new XElement("person", new XElement("name", "小华"), new XElement("age", "9")), new XElement("sum", "2") ) ); xDoc.Save("Test.xml"); 通过参数数组，类似结构的缩进，直接创建了xml文档。 xml: 123456789101112&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;test&gt; &lt;person&gt; &lt;name&gt;小明&lt;/name&gt; &lt;age&gt;8&lt;/age&gt; &lt;/person&gt; &lt;person&gt; &lt;name&gt;小华&lt;/name&gt; &lt;age&gt;9&lt;/age&gt; &lt;/person&gt; &lt;sum&gt;2&lt;/sum&gt;&lt;/test&gt; 读取123XElement file = XElement.Load("Test.xml");XElement xiaoming = file.Descendants("person") .Where(x =&gt; x.Element("name").Value == "小明").SingleOrDefault(); xiaoming.ToString()直接读出：1234&lt;person&gt; &lt;name&gt;小明&lt;/name&gt; &lt;age&gt;8&lt;/age&gt;&lt;/person&gt; 如果直接读取xioaming的value值会输出多少？ 它会把它下面节点的value值全部读出来： 1小明8 我猜它应该是个结果集序列。 First,FirstOrDefault,Single,SingleOrDefault 有什么不一样？ SingleOrDefault 含有多个元素的时候会抛异常。 下面两片博文可以参考： c#操作符 ??和First,FirstOrDefault,Single,SingleOrDefault。 c# XElement XML操作总结。]]></content>
+    <title><![CDATA[C# 读取环境变量，和字符串大小写转换]]></title>
+    <url>%2F2020%2F11%2F03%2F201103N01%2F</url>
+    <content type="text"><![CDATA[string.ToLower() 更改大小写返回的是副本，原来的字符串还是原来的。ToUper()应该也是一样的吧； ToLower()只改变字母大小写，其他的字符不改变； 读取(系统)环境变量时，自己新建的环境变量后，需要重启电脑，才能读取到。 1234567891011121314151617181920212223using System;namespace ConsoleApp1&#123; class Program &#123; static void Main(string[] args) &#123; string a = "abkj_KKOIHI_1234-_!你好！！！"; Console.WriteLine(a); string b = a.ToLower(); Console.WriteLine(b); Console.WriteLine(a); string str = Environment.GetEnvironmentVariable("RebSoft");// 系统环境变量 string s = Environment.GetEnvironmentVariable("RebSoft", EnvironmentVariableTarget.User); // 当前用户环境变量 Console.WriteLine(str); Console.WriteLine(s); Console.ReadKey(); &#125; &#125;&#125; 输出： 这里有一篇读取环境变量的博文，很全：https://www.cnblogs.com/tianma3798/p/5500279.html。]]></content>
       <categories>
         <category>编程爱好</category>
       </categories>

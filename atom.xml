@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.andyvj.com/"/>
-  <updated>2020-11-12T13:08:27.873Z</updated>
+  <updated>2020-11-14T01:31:03.271Z</updated>
   <id>https://www.andyvj.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>变与不变</title>
+    <link href="https://www.andyvj.com/2020/11/14/201114N01/"/>
+    <id>https://www.andyvj.com/2020/11/14/201114N01/</id>
+    <published>2020-11-14T01:20:29.000Z</published>
+    <updated>2020-11-14T01:31:03.271Z</updated>
+    
+    <content type="html"><![CDATA[<p>一件事物有”活”的方面，有”死”的方面，我们应该将主要精力集中在”活”的方面。而这个”活”和”死”是会随着事物的发展而会产生相应的变化。这需要我们动态的去看问题。</p><a id="more"></a><p>总之，要识别出事情最重要的核心在哪里，然后调整和分配时间和精力和资源。看一件事物要抓住他的核心，也就是万变不离其宗的东西。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;一件事物有”活”的方面，有”死”的方面，我们应该将主要精力集中在”活”的方面。而这个”活”和”死”是会随着事物的发展而会产生相应的变化。这需要我们动态的去看问题。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="其他" scheme="https://www.andyvj.com/categories/%E5%85%B6%E4%BB%96/"/>
+    
+    
+      <category term="点滴" scheme="https://www.andyvj.com/tags/%E7%82%B9%E6%BB%B4/"/>
+    
+  </entry>
   
   <entry>
     <title>C# 自定义鼠标样式</title>
@@ -132,6 +154,28 @@
   </entry>
   
   <entry>
+    <title>C# Linq Xml 简单测试</title>
+    <link href="https://www.andyvj.com/2020/11/03/201103N02/"/>
+    <id>https://www.andyvj.com/2020/11/03/201103N02/</id>
+    <published>2020-11-03T02:22:00.000Z</published>
+    <updated>2020-11-03T15:07:27.224Z</updated>
+    
+    <content type="html"><![CDATA[<p>C# Linq 真的很强大啊!简单的测试下。</p><a id="more"></a><h1 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h1><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">XDocument xDoc = <span class="keyword">new</span> XDocument(</span><br><span class="line">     <span class="keyword">new</span> XDeclaration(<span class="string">"1.0"</span>, <span class="string">"utf-8"</span>, <span class="literal">null</span>),</span><br><span class="line">     <span class="keyword">new</span> XElement(<span class="string">"test"</span>,</span><br><span class="line">         <span class="keyword">new</span> XElement(<span class="string">"person"</span>,</span><br><span class="line">             <span class="keyword">new</span> XElement(<span class="string">"name"</span>, <span class="string">"小明"</span>),</span><br><span class="line">             <span class="keyword">new</span> XElement(<span class="string">"age"</span>, <span class="string">"8"</span>)),</span><br><span class="line">         <span class="keyword">new</span> XElement(<span class="string">"person"</span>,</span><br><span class="line">             <span class="keyword">new</span> XElement(<span class="string">"name"</span>, <span class="string">"小华"</span>),</span><br><span class="line">             <span class="keyword">new</span> XElement(<span class="string">"age"</span>, <span class="string">"9"</span>)),</span><br><span class="line">         <span class="keyword">new</span> XElement(<span class="string">"sum"</span>, <span class="string">"2"</span>)</span><br><span class="line">     )</span><br><span class="line"> );</span><br><span class="line"></span><br><span class="line">  xDoc.Save(<span class="string">"Test.xml"</span>);</span><br></pre></td></tr></table></figure><p>通过参数数组，类似结构的缩进，直接创建了xml文档。</p><p>xml:</p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">test</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">person</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>小明<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">age</span>&gt;</span>8<span class="tag">&lt;/<span class="name">age</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">person</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">person</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>小华<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">age</span>&gt;</span>9<span class="tag">&lt;/<span class="name">age</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">person</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">sum</span>&gt;</span>2<span class="tag">&lt;/<span class="name">sum</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">test</span>&gt;</span></span><br></pre></td></tr></table></figure><h1 id="读取"><a href="#读取" class="headerlink" title="读取"></a>读取</h1><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">XElement file = XElement.Load(<span class="string">"Test.xml"</span>);</span><br><span class="line">XElement xiaoming = file.Descendants(<span class="string">"person"</span>)</span><br><span class="line">    .Where(x =&gt; x.Element(<span class="string">"name"</span>).Value == <span class="string">"小明"</span>).SingleOrDefault();</span><br></pre></td></tr></table></figure><p><code>xiaoming.ToString()</code>直接读出：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">person</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">name</span>&gt;</span>小明<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">age</span>&gt;</span>8<span class="tag">&lt;/<span class="name">age</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">person</span>&gt;</span></span><br></pre></td></tr></table></figure></p><p><strong>如果直接读取<code>xioaming</code>的<code>value</code>值会输出多少？</strong></p><p>它会把它下面节点的<code>value</code>值全部读出来：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">小明8</span><br></pre></td></tr></table></figure><p>我猜它应该是个结果集序列。</p><h2 id="First-FirstOrDefault-Single-SingleOrDefault-有什么不一样？"><a href="#First-FirstOrDefault-Single-SingleOrDefault-有什么不一样？" class="headerlink" title="First,FirstOrDefault,Single,SingleOrDefault 有什么不一样？"></a>First,FirstOrDefault,Single,SingleOrDefault 有什么不一样？</h2><p><img src="http://image.huvjie.com/201103N02_img01.png" alt=""></p><p><code>SingleOrDefault</code> 含有多个元素的时候会抛异常。</p><hr><p>下面两片博文可以参考：</p><p><a href="https://www.cnblogs.com/lelehellow/p/6549404.html" target="_blank" rel="noopener">c#操作符 ??和First,FirstOrDefault,Single,SingleOrDefault。</a></p><p><a href="https://www.cnblogs.com/s7ven/articles/3575478.html" target="_blank" rel="noopener">c# XElement XML操作总结。</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;C# Linq 真的很强大啊!简单的测试下。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="编程爱好" scheme="https://www.andyvj.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
+    
+    
+      <category term="C#" scheme="https://www.andyvj.com/tags/C/"/>
+    
+  </entry>
+  
+  <entry>
     <title>C# 读取环境变量，和字符串大小写转换</title>
     <link href="https://www.andyvj.com/2020/11/03/201103N01/"/>
     <id>https://www.andyvj.com/2020/11/03/201103N01/</id>
@@ -147,28 +191,6 @@
 &lt;li&gt;&lt;code&gt;ToLower()&lt;/code&gt;只改变字母大小写，其他的字符不改变；&lt;/li&gt;
 &lt;li&gt;读取(系统)环境变量时，自己新建的环境变量后，需要重启电脑，才能读取到。&lt;/li&gt;
 &lt;/ol&gt;
-    
-    </summary>
-    
-      <category term="编程爱好" scheme="https://www.andyvj.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
-    
-    
-      <category term="C#" scheme="https://www.andyvj.com/tags/C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>C# Linq Xml 简单测试</title>
-    <link href="https://www.andyvj.com/2020/11/03/201103N02/"/>
-    <id>https://www.andyvj.com/2020/11/03/201103N02/</id>
-    <published>2020-11-03T02:22:00.000Z</published>
-    <updated>2020-11-03T15:07:27.224Z</updated>
-    
-    <content type="html"><![CDATA[<p>C# Linq 真的很强大啊!简单的测试下。</p><a id="more"></a><h1 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h1><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">XDocument xDoc = <span class="keyword">new</span> XDocument(</span><br><span class="line">     <span class="keyword">new</span> XDeclaration(<span class="string">"1.0"</span>, <span class="string">"utf-8"</span>, <span class="literal">null</span>),</span><br><span class="line">     <span class="keyword">new</span> XElement(<span class="string">"test"</span>,</span><br><span class="line">         <span class="keyword">new</span> XElement(<span class="string">"person"</span>,</span><br><span class="line">             <span class="keyword">new</span> XElement(<span class="string">"name"</span>, <span class="string">"小明"</span>),</span><br><span class="line">             <span class="keyword">new</span> XElement(<span class="string">"age"</span>, <span class="string">"8"</span>)),</span><br><span class="line">         <span class="keyword">new</span> XElement(<span class="string">"person"</span>,</span><br><span class="line">             <span class="keyword">new</span> XElement(<span class="string">"name"</span>, <span class="string">"小华"</span>),</span><br><span class="line">             <span class="keyword">new</span> XElement(<span class="string">"age"</span>, <span class="string">"9"</span>)),</span><br><span class="line">         <span class="keyword">new</span> XElement(<span class="string">"sum"</span>, <span class="string">"2"</span>)</span><br><span class="line">     )</span><br><span class="line"> );</span><br><span class="line"></span><br><span class="line">  xDoc.Save(<span class="string">"Test.xml"</span>);</span><br></pre></td></tr></table></figure><p>通过参数数组，类似结构的缩进，直接创建了xml文档。</p><p>xml:</p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">test</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">person</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>小明<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">age</span>&gt;</span>8<span class="tag">&lt;/<span class="name">age</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">person</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">person</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>小华<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">age</span>&gt;</span>9<span class="tag">&lt;/<span class="name">age</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">person</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">sum</span>&gt;</span>2<span class="tag">&lt;/<span class="name">sum</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">test</span>&gt;</span></span><br></pre></td></tr></table></figure><h1 id="读取"><a href="#读取" class="headerlink" title="读取"></a>读取</h1><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">XElement file = XElement.Load(<span class="string">"Test.xml"</span>);</span><br><span class="line">XElement xiaoming = file.Descendants(<span class="string">"person"</span>)</span><br><span class="line">    .Where(x =&gt; x.Element(<span class="string">"name"</span>).Value == <span class="string">"小明"</span>).SingleOrDefault();</span><br></pre></td></tr></table></figure><p><code>xiaoming.ToString()</code>直接读出：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">person</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">name</span>&gt;</span>小明<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">age</span>&gt;</span>8<span class="tag">&lt;/<span class="name">age</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">person</span>&gt;</span></span><br></pre></td></tr></table></figure></p><p><strong>如果直接读取<code>xioaming</code>的<code>value</code>值会输出多少？</strong></p><p>它会把它下面节点的<code>value</code>值全部读出来：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">小明8</span><br></pre></td></tr></table></figure><p>我猜它应该是个结果集序列。</p><h2 id="First-FirstOrDefault-Single-SingleOrDefault-有什么不一样？"><a href="#First-FirstOrDefault-Single-SingleOrDefault-有什么不一样？" class="headerlink" title="First,FirstOrDefault,Single,SingleOrDefault 有什么不一样？"></a>First,FirstOrDefault,Single,SingleOrDefault 有什么不一样？</h2><p><img src="http://image.huvjie.com/201103N02_img01.png" alt=""></p><p><code>SingleOrDefault</code> 含有多个元素的时候会抛异常。</p><hr><p>下面两片博文可以参考：</p><p><a href="https://www.cnblogs.com/lelehellow/p/6549404.html" target="_blank" rel="noopener">c#操作符 ??和First,FirstOrDefault,Single,SingleOrDefault。</a></p><p><a href="https://www.cnblogs.com/s7ven/articles/3575478.html" target="_blank" rel="noopener">c# XElement XML操作总结。</a></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;C# Linq 真的很强大啊!简单的测试下。&lt;/p&gt;
     
     </summary>
     
@@ -447,29 +469,6 @@
     
     
       <category term="C#" scheme="https://www.andyvj.com/tags/C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>C语言指针常见的错误</title>
-    <link href="https://www.andyvj.com/2020/08/15/200815N02/"/>
-    <id>https://www.andyvj.com/2020/08/15/200815N02/</id>
-    <published>2020-08-15T12:22:44.000Z</published>
-    <updated>2020-08-15T12:24:00.534Z</updated>
-    
-    <content type="html"><![CDATA[<p>C语言指针常见错误，主要有两种情况：  </p><p>1).指针未初始化;<br>2).避免使用<code>scanf</code>给指针赋值;<br>3).赋值指针为<code>NULL</code>。</p><a id="more"></a><h1 id="指针未初始化"><a href="#指针未初始化" class="headerlink" title="指针未初始化"></a>指针未初始化</h1><p>这种情况：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> i = <span class="number">10</span>, *p;</span><br><span class="line"></span><br><span class="line">*p = i;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"*i=%d\n"</span>, *p);</span><br></pre></td></tr></table></figure></p><p>指针变量<code>p</code>是没有初始化的，就是你还没有给他里面赋值地址进去。这种为初始化的情况在高版本的 VS 中是直接编译不过去的;会报错：<code>C4700    使用了未初始化的局部变量“p”</code>。</p><h1 id="避免-scanf赋值指针"><a href="#避免-scanf赋值指针" class="headerlink" title="避免 scanf赋值指针"></a>避免 <code>scanf</code>赋值指针</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> i = <span class="number">10</span>, *p;</span><br><span class="line">p = &amp;i;  <span class="comment">// 初始化 p，指向 i</span></span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">"%d"</span>, p);</span><br></pre></td></tr></table></figure><p>这种情况会很容易把原来的<code>i</code>值，或者指向其他内存位置的值改掉导致软件崩溃，需要谨慎。</p><h1 id="赋值指针为NULL"><a href="#赋值指针为NULL" class="headerlink" title="赋值指针为NULL"></a>赋值指针为<code>NULL</code></h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> i = <span class="number">10</span>, *p = <span class="literal">NULL</span>;</span><br><span class="line">*p = i;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%d"</span>, *p);</span><br></pre></td></tr></table></figure><p>这种情况能编译通过，运行时会报<strong>段错误</strong>：<code>引发了异常: 写入访问权限冲突。p 是 nullptr</code>。需要特别注意。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;C语言指针常见错误，主要有两种情况：  &lt;/p&gt;
-&lt;p&gt;1).指针未初始化;&lt;br&gt;2).避免使用&lt;code&gt;scanf&lt;/code&gt;给指针赋值;&lt;br&gt;3).赋值指针为&lt;code&gt;NULL&lt;/code&gt;。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="编程爱好" scheme="https://www.andyvj.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
-    
-    
-      <category term="C/C++" scheme="https://www.andyvj.com/tags/C-C/"/>
     
   </entry>
   
