@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>胡搅蛮缠</title>
+  <title>胡文杰</title>
   
-  <subtitle>胡文杰的个人博客</subtitle>
+  <subtitle>专业道路的自我修养</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://www.andyvj.com/"/>
+  <link href="https://blog.huvjie.com/"/>
   <updated>2020-11-14T01:31:03.271Z</updated>
-  <id>https://www.andyvj.com/</id>
+  <id>https://blog.huvjie.com/</id>
   
   <author>
-    <name>AndyVJ</name>
+    <name>胡文杰</name>
     
   </author>
   
@@ -18,8 +18,8 @@
   
   <entry>
     <title>变与不变</title>
-    <link href="https://www.andyvj.com/2020/11/14/201114N01/"/>
-    <id>https://www.andyvj.com/2020/11/14/201114N01/</id>
+    <link href="https://blog.huvjie.com/2020/11/14/201114N01/"/>
+    <id>https://blog.huvjie.com/2020/11/14/201114N01/</id>
     <published>2020-11-14T01:20:29.000Z</published>
     <updated>2020-11-14T01:31:03.271Z</updated>
     
@@ -31,17 +31,17 @@
     
     </summary>
     
-      <category term="其他" scheme="https://www.andyvj.com/categories/%E5%85%B6%E4%BB%96/"/>
+      <category term="其他" scheme="https://blog.huvjie.com/categories/%E5%85%B6%E4%BB%96/"/>
     
     
-      <category term="点滴" scheme="https://www.andyvj.com/tags/%E7%82%B9%E6%BB%B4/"/>
+      <category term="点滴" scheme="https://blog.huvjie.com/tags/%E7%82%B9%E6%BB%B4/"/>
     
   </entry>
   
   <entry>
     <title>C# 自定义鼠标样式</title>
-    <link href="https://www.andyvj.com/2020/11/12/201112N02/"/>
-    <id>https://www.andyvj.com/2020/11/12/201112N02/</id>
+    <link href="https://blog.huvjie.com/2020/11/12/201112N02/"/>
+    <id>https://blog.huvjie.com/2020/11/12/201112N02/</id>
     <published>2020-11-12T02:22:00.000Z</published>
     <updated>2020-11-12T13:08:27.873Z</updated>
     
@@ -55,41 +55,41 @@
     
     </summary>
     
-      <category term="编程爱好" scheme="https://www.andyvj.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
+      <category term="编程爱好" scheme="https://blog.huvjie.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
     
     
-      <category term="C#" scheme="https://www.andyvj.com/tags/C/"/>
+      <category term="C#" scheme="https://blog.huvjie.com/tags/C/"/>
     
   </entry>
   
   <entry>
     <title>C# 自定义鼠标样式</title>
-    <link href="https://www.andyvj.com/2020/11/12/201112N01/"/>
-    <id>https://www.andyvj.com/2020/11/12/201112N01/</id>
+    <link href="https://blog.huvjie.com/2020/11/12/201112N01/"/>
+    <id>https://blog.huvjie.com/2020/11/12/201112N01/</id>
     <published>2020-11-12T02:22:00.000Z</published>
-    <updated>2020-11-12T12:12:11.740Z</updated>
+    <updated>2020-11-14T01:34:24.702Z</updated>
     
-    <content type="html"><![CDATA[<p>这里掉用系统 API 的方式。</p><p><img src="http://image.huvjie.com/201112N01_img01.gif" alt=""></p><div style="font-size:13px;color:gray;text-align:center">▲ 样式效果</div><a id="more"></a><p>先准备好鼠标样式<code>cur</code>文件。</p><p><img src="http://image.huvjie.com/201112N01_img01.jpg" alt=""></p><div style="font-size:13px;color:gray;text-align:center">▲ 鼠标样式文件</div><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> System.ComponentModel;</span><br><span class="line"><span class="keyword">using</span> System.Data;</span><br><span class="line"><span class="keyword">using</span> System.Drawing;</span><br><span class="line"><span class="keyword">using</span> System.Text;</span><br><span class="line"><span class="keyword">using</span> System.Windows.Forms;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">MouseSt</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">using</span> System.Runtime.InteropServices;</span><br><span class="line">    <span class="keyword">using</span> System.Reflection;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">partial</span> <span class="keyword">class</span> <span class="title">Form1</span> : <span class="title">Form</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Form1</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            InitializeComponent();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">Form1_Load</span>(<span class="params"><span class="keyword">object</span> sender, EventArgs e</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            Cursor myCursor = <span class="keyword">new</span> Cursor(Cursor.Current.Handle);</span><br><span class="line">            IntPtr colrCursorHandle = MouseStye.LoadCursorFromFile(<span class="string">"hand.cur"</span>);</span><br><span class="line">            myCursor.GetType().InvokeMember(<span class="string">"handle"</span>, BindingFlags.Public|BindingFlags.NonPublic|BindingFlags.Instance|BindingFlags.SetField, <span class="literal">null</span>, myCursor, <span class="keyword">new</span> <span class="keyword">object</span>[] &#123; colrCursorHandle &#125;);</span><br><span class="line">            <span class="keyword">this</span>.pictureBox1.Cursor = myCursor; <span class="comment">// pictureBox区域</span></span><br><span class="line"></span><br><span class="line">            Cursor myCursor1 = <span class="keyword">new</span> Cursor(Cursor.Current.Handle);</span><br><span class="line">            IntPtr colrCursorHandle1 = MouseStye.LoadCursorFromFile(<span class="string">"pen.cur"</span>);</span><br><span class="line">            myCursor.GetType().InvokeMember(<span class="string">"handle"</span>, BindingFlags.Public|BindingFlags.NonPublic|BindingFlags.Instance|BindingFlags.SetField, <span class="literal">null</span>, myCursor1, <span class="keyword">new</span> <span class="keyword">object</span>[] &#123; colrCursorHandle1 &#125;);</span><br><span class="line">            <span class="keyword">this</span>.pictureBox2.Cursor = myCursor1;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">class</span> <span class="title">MouseStye</span></span><br><span class="line">    &#123;</span><br><span class="line">        [<span class="meta">DllImport(<span class="meta-string">"user32.dll"</span>)</span>]</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">extern</span> IntPtr <span class="title">LoadCursorFromFile</span>(<span class="params"><span class="keyword">string</span> fileName</span>)</span>;</span><br><span class="line">        [<span class="meta">DllImport(<span class="meta-string">"user32.dll"</span>)</span>]</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">extern</span> IntPtr <span class="title">SetCursor</span>(<span class="params">IntPtr cursorHandle</span>)</span>;</span><br><span class="line">        [<span class="meta">DllImport(<span class="meta-string">"user32.dll"</span>)</span>]</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">extern</span> <span class="keyword">uint</span> <span class="title">DestroyCursor</span>(<span class="params">IntPtr cursorHandle</span>)</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><code>InvokeMember</code> 第二个选项参数具体还没有深究，先照着写吧。</p><hr><div style="font-size:12px"><br>参考：<br>C# winForm 自定义鼠标样式的两种方法：<br><a href="https://www.cnblogs.com/tianguook/archive/2010/08/03/1791572.html" target="_blank" rel="noopener">https://www.cnblogs.com/tianguook/archive/2010/08/03/1791572.html</a><br></div>]]></content>
+    <content type="html"><![CDATA[<p>这里调用系统 API 的方式。</p><p><img src="http://image.huvjie.com/201112N01_img01.gif" alt=""></p><div style="font-size:13px;color:gray;text-align:center">▲ 样式效果</div><a id="more"></a><p>先准备好鼠标样式<code>cur</code>文件。</p><p><img src="http://image.huvjie.com/201112N01_img01.jpg" alt=""></p><div style="font-size:13px;color:gray;text-align:center">▲ 鼠标样式文件</div><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> System.ComponentModel;</span><br><span class="line"><span class="keyword">using</span> System.Data;</span><br><span class="line"><span class="keyword">using</span> System.Drawing;</span><br><span class="line"><span class="keyword">using</span> System.Text;</span><br><span class="line"><span class="keyword">using</span> System.Windows.Forms;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">MouseSt</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">using</span> System.Runtime.InteropServices;</span><br><span class="line">    <span class="keyword">using</span> System.Reflection;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">partial</span> <span class="keyword">class</span> <span class="title">Form1</span> : <span class="title">Form</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Form1</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            InitializeComponent();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">Form1_Load</span>(<span class="params"><span class="keyword">object</span> sender, EventArgs e</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            Cursor myCursor = <span class="keyword">new</span> Cursor(Cursor.Current.Handle);</span><br><span class="line">            IntPtr colrCursorHandle = MouseStye.LoadCursorFromFile(<span class="string">"hand.cur"</span>);</span><br><span class="line">            myCursor.GetType().InvokeMember(<span class="string">"handle"</span>, BindingFlags.Public|BindingFlags.NonPublic|BindingFlags.Instance|BindingFlags.SetField, <span class="literal">null</span>, myCursor, <span class="keyword">new</span> <span class="keyword">object</span>[] &#123; colrCursorHandle &#125;);</span><br><span class="line">            <span class="keyword">this</span>.pictureBox1.Cursor = myCursor; <span class="comment">// pictureBox区域</span></span><br><span class="line"></span><br><span class="line">            Cursor myCursor1 = <span class="keyword">new</span> Cursor(Cursor.Current.Handle);</span><br><span class="line">            IntPtr colrCursorHandle1 = MouseStye.LoadCursorFromFile(<span class="string">"pen.cur"</span>);</span><br><span class="line">            myCursor.GetType().InvokeMember(<span class="string">"handle"</span>, BindingFlags.Public|BindingFlags.NonPublic|BindingFlags.Instance|BindingFlags.SetField, <span class="literal">null</span>, myCursor1, <span class="keyword">new</span> <span class="keyword">object</span>[] &#123; colrCursorHandle1 &#125;);</span><br><span class="line">            <span class="keyword">this</span>.pictureBox2.Cursor = myCursor1;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">class</span> <span class="title">MouseStye</span></span><br><span class="line">    &#123;</span><br><span class="line">        [<span class="meta">DllImport(<span class="meta-string">"user32.dll"</span>)</span>]</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">extern</span> IntPtr <span class="title">LoadCursorFromFile</span>(<span class="params"><span class="keyword">string</span> fileName</span>)</span>;</span><br><span class="line">        [<span class="meta">DllImport(<span class="meta-string">"user32.dll"</span>)</span>]</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">extern</span> IntPtr <span class="title">SetCursor</span>(<span class="params">IntPtr cursorHandle</span>)</span>;</span><br><span class="line">        [<span class="meta">DllImport(<span class="meta-string">"user32.dll"</span>)</span>]</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">extern</span> <span class="keyword">uint</span> <span class="title">DestroyCursor</span>(<span class="params">IntPtr cursorHandle</span>)</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><code>InvokeMember</code> 第二个选项参数具体还没有深究，先照着写吧。</p><hr><div style="font-size:12px"><br>参考：<br>C# winForm 自定义鼠标样式的两种方法：<br><a href="https://www.cnblogs.com/tianguook/archive/2010/08/03/1791572.html" target="_blank" rel="noopener">https://www.cnblogs.com/tianguook/archive/2010/08/03/1791572.html</a><br></div>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;这里掉用系统 API 的方式。&lt;/p&gt;
+      &lt;p&gt;这里调用系统 API 的方式。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;http://image.huvjie.com/201112N01_img01.gif&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;div style=&quot;font-size:13px;color:gray;text-align:center&quot;&gt;▲ 样式效果&lt;/div&gt;
     
     </summary>
     
-      <category term="编程爱好" scheme="https://www.andyvj.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
+      <category term="编程爱好" scheme="https://blog.huvjie.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
     
     
-      <category term="C#" scheme="https://www.andyvj.com/tags/C/"/>
+      <category term="C#" scheme="https://blog.huvjie.com/tags/C/"/>
     
   </entry>
   
   <entry>
     <title>简单测试下 goto 语句</title>
-    <link href="https://www.andyvj.com/2020/11/08/201108N01/"/>
-    <id>https://www.andyvj.com/2020/11/08/201108N01/</id>
+    <link href="https://blog.huvjie.com/2020/11/08/201108N01/"/>
+    <id>https://blog.huvjie.com/2020/11/08/201108N01/</id>
     <published>2020-11-08T02:22:00.000Z</published>
     <updated>2020-11-08T01:47:19.412Z</updated>
     
@@ -102,17 +102,17 @@
     
     </summary>
     
-      <category term="编程爱好" scheme="https://www.andyvj.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
+      <category term="编程爱好" scheme="https://blog.huvjie.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
     
     
-      <category term="C#" scheme="https://www.andyvj.com/tags/C/"/>
+      <category term="C#" scheme="https://blog.huvjie.com/tags/C/"/>
     
   </entry>
   
   <entry>
     <title>C# 委托和事件的区别</title>
-    <link href="https://www.andyvj.com/2020/11/08/201108N02/"/>
-    <id>https://www.andyvj.com/2020/11/08/201108N02/</id>
+    <link href="https://blog.huvjie.com/2020/11/08/201108N02/"/>
+    <id>https://blog.huvjie.com/2020/11/08/201108N02/</id>
     <published>2020-11-08T02:22:00.000Z</published>
     <updated>2020-11-08T02:07:27.615Z</updated>
     
@@ -124,17 +124,17 @@
     
     </summary>
     
-      <category term="编程爱好" scheme="https://www.andyvj.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
+      <category term="编程爱好" scheme="https://blog.huvjie.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
     
     
-      <category term="C#" scheme="https://www.andyvj.com/tags/C/"/>
+      <category term="C#" scheme="https://blog.huvjie.com/tags/C/"/>
     
   </entry>
   
   <entry>
     <title>配置 OpenCV 开发环境</title>
-    <link href="https://www.andyvj.com/2020/11/07/201107N01/"/>
-    <id>https://www.andyvj.com/2020/11/07/201107N01/</id>
+    <link href="https://blog.huvjie.com/2020/11/07/201107N01/"/>
+    <id>https://blog.huvjie.com/2020/11/07/201107N01/</id>
     <published>2020-11-07T02:22:00.000Z</published>
     <updated>2020-11-10T15:42:18.971Z</updated>
     
@@ -146,17 +146,17 @@
     
     </summary>
     
-      <category term="编程爱好" scheme="https://www.andyvj.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
+      <category term="编程爱好" scheme="https://blog.huvjie.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
     
     
-      <category term="C#" scheme="https://www.andyvj.com/tags/C/"/>
+      <category term="C#" scheme="https://blog.huvjie.com/tags/C/"/>
     
   </entry>
   
   <entry>
     <title>C# Linq Xml 简单测试</title>
-    <link href="https://www.andyvj.com/2020/11/03/201103N02/"/>
-    <id>https://www.andyvj.com/2020/11/03/201103N02/</id>
+    <link href="https://blog.huvjie.com/2020/11/03/201103N02/"/>
+    <id>https://blog.huvjie.com/2020/11/03/201103N02/</id>
     <published>2020-11-03T02:22:00.000Z</published>
     <updated>2020-11-03T15:07:27.224Z</updated>
     
@@ -168,17 +168,17 @@
     
     </summary>
     
-      <category term="编程爱好" scheme="https://www.andyvj.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
+      <category term="编程爱好" scheme="https://blog.huvjie.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
     
     
-      <category term="C#" scheme="https://www.andyvj.com/tags/C/"/>
+      <category term="C#" scheme="https://blog.huvjie.com/tags/C/"/>
     
   </entry>
   
   <entry>
     <title>C# 读取环境变量，和字符串大小写转换</title>
-    <link href="https://www.andyvj.com/2020/11/03/201103N01/"/>
-    <id>https://www.andyvj.com/2020/11/03/201103N01/</id>
+    <link href="https://blog.huvjie.com/2020/11/03/201103N01/"/>
+    <id>https://blog.huvjie.com/2020/11/03/201103N01/</id>
     <published>2020-11-03T02:22:00.000Z</published>
     <updated>2020-11-03T14:59:30.188Z</updated>
     
@@ -194,17 +194,17 @@
     
     </summary>
     
-      <category term="编程爱好" scheme="https://www.andyvj.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
+      <category term="编程爱好" scheme="https://blog.huvjie.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
     
     
-      <category term="C#" scheme="https://www.andyvj.com/tags/C/"/>
+      <category term="C#" scheme="https://blog.huvjie.com/tags/C/"/>
     
   </entry>
   
   <entry>
     <title>C#跨线程访问控件需要注意的问题</title>
-    <link href="https://www.andyvj.com/2020/10/25/201025N01/"/>
-    <id>https://www.andyvj.com/2020/10/25/201025N01/</id>
+    <link href="https://blog.huvjie.com/2020/10/25/201025N01/"/>
+    <id>https://blog.huvjie.com/2020/10/25/201025N01/</id>
     <published>2020-10-25T02:22:00.000Z</published>
     <updated>2020-10-25T02:16:47.637Z</updated>
     
@@ -216,17 +216,17 @@
     
     </summary>
     
-      <category term="编程爱好" scheme="https://www.andyvj.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
+      <category term="编程爱好" scheme="https://blog.huvjie.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
     
     
-      <category term="C#" scheme="https://www.andyvj.com/tags/C/"/>
+      <category term="C#" scheme="https://blog.huvjie.com/tags/C/"/>
     
   </entry>
   
   <entry>
     <title>C# 引用类型赋值指向的是同一块内存</title>
-    <link href="https://www.andyvj.com/2020/10/18/201018N01/"/>
-    <id>https://www.andyvj.com/2020/10/18/201018N01/</id>
+    <link href="https://blog.huvjie.com/2020/10/18/201018N01/"/>
+    <id>https://blog.huvjie.com/2020/10/18/201018N01/</id>
     <published>2020-10-18T02:22:00.000Z</published>
     <updated>2020-10-18T08:50:39.554Z</updated>
     
@@ -239,17 +239,17 @@
     
     </summary>
     
-      <category term="编程爱好" scheme="https://www.andyvj.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
+      <category term="编程爱好" scheme="https://blog.huvjie.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
     
     
-      <category term="C#" scheme="https://www.andyvj.com/tags/C/"/>
+      <category term="C#" scheme="https://blog.huvjie.com/tags/C/"/>
     
   </entry>
   
   <entry>
     <title>Halcon数组创建及基本运算</title>
-    <link href="https://www.andyvj.com/2020/10/11/201011N01/"/>
-    <id>https://www.andyvj.com/2020/10/11/201011N01/</id>
+    <link href="https://blog.huvjie.com/2020/10/11/201011N01/"/>
+    <id>https://blog.huvjie.com/2020/10/11/201011N01/</id>
     <published>2020-10-11T02:22:00.000Z</published>
     <updated>2020-10-11T14:46:13.962Z</updated>
     
@@ -264,17 +264,17 @@
     
     </summary>
     
-      <category term="编程爱好" scheme="https://www.andyvj.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
+      <category term="编程爱好" scheme="https://blog.huvjie.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
     
     
-      <category term="C#" scheme="https://www.andyvj.com/tags/C/"/>
+      <category term="C#" scheme="https://blog.huvjie.com/tags/C/"/>
     
   </entry>
   
   <entry>
     <title>如何交换两个变量的值而不借助于临时变量</title>
-    <link href="https://www.andyvj.com/2020/10/10/201010N01/"/>
-    <id>https://www.andyvj.com/2020/10/10/201010N01/</id>
+    <link href="https://blog.huvjie.com/2020/10/10/201010N01/"/>
+    <id>https://blog.huvjie.com/2020/10/10/201010N01/</id>
     <published>2020-10-10T12:00:00.000Z</published>
     <updated>2020-10-10T12:28:25.775Z</updated>
     
@@ -286,17 +286,17 @@
     
     </summary>
     
-      <category term="编程爱好" scheme="https://www.andyvj.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
+      <category term="编程爱好" scheme="https://blog.huvjie.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
     
     
-      <category term="C#" scheme="https://www.andyvj.com/tags/C/"/>
+      <category term="C#" scheme="https://blog.huvjie.com/tags/C/"/>
     
   </entry>
   
   <entry>
     <title>C# Winform 跨多级窗体/控件传值</title>
-    <link href="https://www.andyvj.com/2020/10/02/201002N02/"/>
-    <id>https://www.andyvj.com/2020/10/02/201002N02/</id>
+    <link href="https://blog.huvjie.com/2020/10/02/201002N02/"/>
+    <id>https://blog.huvjie.com/2020/10/02/201002N02/</id>
     <published>2020-10-02T02:06:14.000Z</published>
     <updated>2020-10-02T02:11:42.846Z</updated>
     
@@ -308,17 +308,17 @@
     
     </summary>
     
-      <category term="编程爱好" scheme="https://www.andyvj.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
+      <category term="编程爱好" scheme="https://blog.huvjie.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
     
     
-      <category term="C#" scheme="https://www.andyvj.com/tags/C/"/>
+      <category term="C#" scheme="https://blog.huvjie.com/tags/C/"/>
     
   </entry>
   
   <entry>
     <title>C# == 和 Equals 的比较</title>
-    <link href="https://www.andyvj.com/2020/10/02/201002N01/"/>
-    <id>https://www.andyvj.com/2020/10/02/201002N01/</id>
+    <link href="https://blog.huvjie.com/2020/10/02/201002N01/"/>
+    <id>https://blog.huvjie.com/2020/10/02/201002N01/</id>
     <published>2020-10-02T01:55:53.000Z</published>
     <updated>2020-10-02T01:59:10.957Z</updated>
     
@@ -330,17 +330,17 @@
     
     </summary>
     
-      <category term="编程爱好" scheme="https://www.andyvj.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
+      <category term="编程爱好" scheme="https://blog.huvjie.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
     
     
-      <category term="C#" scheme="https://www.andyvj.com/tags/C/"/>
+      <category term="C#" scheme="https://blog.huvjie.com/tags/C/"/>
     
   </entry>
   
   <entry>
     <title>C#.NET不同类实现一个接口的事例</title>
-    <link href="https://www.andyvj.com/2020/08/26/200826N02/"/>
-    <id>https://www.andyvj.com/2020/08/26/200826N02/</id>
+    <link href="https://blog.huvjie.com/2020/08/26/200826N02/"/>
+    <id>https://blog.huvjie.com/2020/08/26/200826N02/</id>
     <published>2020-08-26T13:13:47.000Z</published>
     <updated>2020-09-15T14:27:25.475Z</updated>
     
@@ -352,17 +352,17 @@
     
     </summary>
     
-      <category term="编程爱好" scheme="https://www.andyvj.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
+      <category term="编程爱好" scheme="https://blog.huvjie.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
     
     
-      <category term="C#" scheme="https://www.andyvj.com/tags/C/"/>
+      <category term="C#" scheme="https://blog.huvjie.com/tags/C/"/>
     
   </entry>
   
   <entry>
     <title>C 语言用数字替代true和false</title>
-    <link href="https://www.andyvj.com/2020/08/26/200826N01/"/>
-    <id>https://www.andyvj.com/2020/08/26/200826N01/</id>
+    <link href="https://blog.huvjie.com/2020/08/26/200826N01/"/>
+    <id>https://blog.huvjie.com/2020/08/26/200826N01/</id>
     <published>2020-08-26T13:10:08.000Z</published>
     <updated>2020-08-26T13:16:01.106Z</updated>
     
@@ -374,17 +374,17 @@
     
     </summary>
     
-      <category term="编程爱好" scheme="https://www.andyvj.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
+      <category term="编程爱好" scheme="https://blog.huvjie.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
     
     
-      <category term="C/C++" scheme="https://www.andyvj.com/tags/C-C/"/>
+      <category term="C/C++" scheme="https://blog.huvjie.com/tags/C-C/"/>
     
   </entry>
   
   <entry>
     <title>C# enum 枚举类的问题</title>
-    <link href="https://www.andyvj.com/2020/08/22/200822N02/"/>
-    <id>https://www.andyvj.com/2020/08/22/200822N02/</id>
+    <link href="https://blog.huvjie.com/2020/08/22/200822N02/"/>
+    <id>https://blog.huvjie.com/2020/08/22/200822N02/</id>
     <published>2020-08-22T12:00:01.000Z</published>
     <updated>2020-08-26T12:50:34.392Z</updated>
     
@@ -396,17 +396,17 @@
     
     </summary>
     
-      <category term="编程爱好" scheme="https://www.andyvj.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
+      <category term="编程爱好" scheme="https://blog.huvjie.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
     
     
-      <category term="C#" scheme="https://www.andyvj.com/tags/C/"/>
+      <category term="C#" scheme="https://blog.huvjie.com/tags/C/"/>
     
   </entry>
   
   <entry>
     <title>C#.Net 的扩展类的基本使用</title>
-    <link href="https://www.andyvj.com/2020/08/22/200822N01/"/>
-    <id>https://www.andyvj.com/2020/08/22/200822N01/</id>
+    <link href="https://blog.huvjie.com/2020/08/22/200822N01/"/>
+    <id>https://blog.huvjie.com/2020/08/22/200822N01/</id>
     <published>2020-08-22T12:00:00.000Z</published>
     <updated>2020-08-22T00:38:28.521Z</updated>
     
@@ -418,17 +418,17 @@
     
     </summary>
     
-      <category term="编程爱好" scheme="https://www.andyvj.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
+      <category term="编程爱好" scheme="https://blog.huvjie.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
     
     
-      <category term="C#" scheme="https://www.andyvj.com/tags/C/"/>
+      <category term="C#" scheme="https://blog.huvjie.com/tags/C/"/>
     
   </entry>
   
   <entry>
     <title>C# .NET 索引器的基本使用</title>
-    <link href="https://www.andyvj.com/2020/08/18/200818N01/"/>
-    <id>https://www.andyvj.com/2020/08/18/200818N01/</id>
+    <link href="https://blog.huvjie.com/2020/08/18/200818N01/"/>
+    <id>https://blog.huvjie.com/2020/08/18/200818N01/</id>
     <published>2020-08-18T13:03:00.000Z</published>
     <updated>2020-08-18T13:03:14.448Z</updated>
     
@@ -440,17 +440,17 @@
     
     </summary>
     
-      <category term="编程爱好" scheme="https://www.andyvj.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
+      <category term="编程爱好" scheme="https://blog.huvjie.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
     
     
-      <category term="C#" scheme="https://www.andyvj.com/tags/C/"/>
+      <category term="C#" scheme="https://blog.huvjie.com/tags/C/"/>
     
   </entry>
   
   <entry>
     <title>Json.NET 简单的序列化和反序列化</title>
-    <link href="https://www.andyvj.com/2020/08/17/200817N01/"/>
-    <id>https://www.andyvj.com/2020/08/17/200817N01/</id>
+    <link href="https://blog.huvjie.com/2020/08/17/200817N01/"/>
+    <id>https://blog.huvjie.com/2020/08/17/200817N01/</id>
     <published>2020-08-17T09:14:00.000Z</published>
     <updated>2020-08-17T13:09:27.089Z</updated>
     
@@ -465,10 +465,10 @@
     
     </summary>
     
-      <category term="编程爱好" scheme="https://www.andyvj.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
+      <category term="编程爱好" scheme="https://blog.huvjie.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
     
     
-      <category term="C#" scheme="https://www.andyvj.com/tags/C/"/>
+      <category term="C#" scheme="https://blog.huvjie.com/tags/C/"/>
     
   </entry>
   
