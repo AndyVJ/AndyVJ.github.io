@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.huvjie.com/"/>
-  <updated>2020-11-14T03:05:56.989Z</updated>
+  <updated>2020-11-14T03:42:45.617Z</updated>
   <id>https://blog.huvjie.com/</id>
   
   <author>
@@ -17,13 +17,38 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>C# 小数位控制</title>
+    <link href="https://blog.huvjie.com/2020/11/14/201114N02/"/>
+    <id>https://blog.huvjie.com/2020/11/14/201114N02/</id>
+    <published>2020-11-14T03:30:45.000Z</published>
+    <updated>2020-11-14T03:42:45.617Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="控制台输出"><a href="#控制台输出" class="headerlink" title="控制台输出"></a>控制台输出</h2><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Console.WriteLine(<span class="string">"&#123;0:F2&#125;"</span>, <span class="number">10.2658749</span>);</span><br></pre></td></tr></table></figure><p>输出：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">10.26  // 可见其是直接将后面的小数位舍弃了。</span><br></pre></td></tr></table></figure><p>《C# 图解教程》 P19 页对格式化输出有详细的介绍。</p><h2 id="Math-Round函数进行四舍五入"><a href="#Math-Round函数进行四舍五入" class="headerlink" title="Math.Round函数进行四舍五入"></a><code>Math.Round</code>函数进行四舍五入</h2><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">double</span> a = <span class="number">1.223467</span>;</span><br><span class="line">a = Math.Round(a, <span class="number">4</span>);</span><br><span class="line">Console.WriteLine(a);</span><br></pre></td></tr></table></figure><p>输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1.2235</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;控制台输出&quot;&gt;&lt;a href=&quot;#控制台输出&quot; class=&quot;headerlink&quot; title=&quot;控制台输出&quot;&gt;&lt;/a&gt;控制台输出&lt;/h2&gt;&lt;figure class=&quot;highlight csharp&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter
+      
+    
+    </summary>
+    
+      <category term="编程爱好" scheme="https://blog.huvjie.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
+    
+    
+      <category term="C#" scheme="https://blog.huvjie.com/tags/C/"/>
+    
+  </entry>
+  
+  <entry>
     <title>变与不变</title>
     <link href="https://blog.huvjie.com/2020/11/14/201114N01/"/>
     <id>https://blog.huvjie.com/2020/11/14/201114N01/</id>
     <published>2020-11-14T01:20:29.000Z</published>
-    <updated>2020-11-14T03:05:56.989Z</updated>
+    <updated>2020-11-14T03:24:58.450Z</updated>
     
-    <content type="html"><![CDATA[<p>一件事物有”活”的方面，有”死”的方面，我们应该将主要精力集中在”活”的方面。而这个”活”和”死”是会随着事物的发展而会产生相应的变化。这需要我们动态的去看问题。</p><a id="more"></a><p>总之，要识别出事情最重要的核心在哪里，然后调整和分配时间和精力和资源。看一件事物要抓住它的核心，也就是万变不离其宗的东西。而在动态的过程中，要时刻定位核心之所在，有时候是需要动态调整的。</p>]]></content>
+    <content type="html"><![CDATA[<p>一件事物有”活”的方面，有”死”的方面，我们应该将主要精力集中在”活”的方面。而这个”活”和”死”是会随着事物的发展而会产生相应的变化。这需要我们动态的去看问题。</p><a id="more"></a><p>总之，要识别出事情最重要的核心在哪里，然后调整和分配时间和精力和资源。看一件事物要抓住它的核心，也就是万变不离其宗的东西。而在动态的过程中，要时刻定位核心之所在，动态调整。</p>]]></content>
     
     <summary type="html">
     
@@ -35,6 +60,30 @@
     
     
       <category term="点滴" scheme="https://blog.huvjie.com/tags/%E7%82%B9%E6%BB%B4/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>C# 自定义鼠标样式</title>
+    <link href="https://blog.huvjie.com/2020/11/12/201112N01/"/>
+    <id>https://blog.huvjie.com/2020/11/12/201112N01/</id>
+    <published>2020-11-12T02:22:00.000Z</published>
+    <updated>2020-11-14T01:34:24.702Z</updated>
+    
+    <content type="html"><![CDATA[<p>这里调用系统 API 的方式。</p><p><img src="http://image.huvjie.com/201112N01_img01.gif" alt=""></p><div style="font-size:13px;color:gray;text-align:center">▲ 样式效果</div><a id="more"></a><p>先准备好鼠标样式<code>cur</code>文件。</p><p><img src="http://image.huvjie.com/201112N01_img01.jpg" alt=""></p><div style="font-size:13px;color:gray;text-align:center">▲ 鼠标样式文件</div><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> System.ComponentModel;</span><br><span class="line"><span class="keyword">using</span> System.Data;</span><br><span class="line"><span class="keyword">using</span> System.Drawing;</span><br><span class="line"><span class="keyword">using</span> System.Text;</span><br><span class="line"><span class="keyword">using</span> System.Windows.Forms;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">MouseSt</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">using</span> System.Runtime.InteropServices;</span><br><span class="line">    <span class="keyword">using</span> System.Reflection;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">partial</span> <span class="keyword">class</span> <span class="title">Form1</span> : <span class="title">Form</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Form1</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            InitializeComponent();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">Form1_Load</span>(<span class="params"><span class="keyword">object</span> sender, EventArgs e</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            Cursor myCursor = <span class="keyword">new</span> Cursor(Cursor.Current.Handle);</span><br><span class="line">            IntPtr colrCursorHandle = MouseStye.LoadCursorFromFile(<span class="string">"hand.cur"</span>);</span><br><span class="line">            myCursor.GetType().InvokeMember(<span class="string">"handle"</span>, BindingFlags.Public|BindingFlags.NonPublic|BindingFlags.Instance|BindingFlags.SetField, <span class="literal">null</span>, myCursor, <span class="keyword">new</span> <span class="keyword">object</span>[] &#123; colrCursorHandle &#125;);</span><br><span class="line">            <span class="keyword">this</span>.pictureBox1.Cursor = myCursor; <span class="comment">// pictureBox区域</span></span><br><span class="line"></span><br><span class="line">            Cursor myCursor1 = <span class="keyword">new</span> Cursor(Cursor.Current.Handle);</span><br><span class="line">            IntPtr colrCursorHandle1 = MouseStye.LoadCursorFromFile(<span class="string">"pen.cur"</span>);</span><br><span class="line">            myCursor.GetType().InvokeMember(<span class="string">"handle"</span>, BindingFlags.Public|BindingFlags.NonPublic|BindingFlags.Instance|BindingFlags.SetField, <span class="literal">null</span>, myCursor1, <span class="keyword">new</span> <span class="keyword">object</span>[] &#123; colrCursorHandle1 &#125;);</span><br><span class="line">            <span class="keyword">this</span>.pictureBox2.Cursor = myCursor1;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">class</span> <span class="title">MouseStye</span></span><br><span class="line">    &#123;</span><br><span class="line">        [<span class="meta">DllImport(<span class="meta-string">"user32.dll"</span>)</span>]</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">extern</span> IntPtr <span class="title">LoadCursorFromFile</span>(<span class="params"><span class="keyword">string</span> fileName</span>)</span>;</span><br><span class="line">        [<span class="meta">DllImport(<span class="meta-string">"user32.dll"</span>)</span>]</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">extern</span> IntPtr <span class="title">SetCursor</span>(<span class="params">IntPtr cursorHandle</span>)</span>;</span><br><span class="line">        [<span class="meta">DllImport(<span class="meta-string">"user32.dll"</span>)</span>]</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">extern</span> <span class="keyword">uint</span> <span class="title">DestroyCursor</span>(<span class="params">IntPtr cursorHandle</span>)</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><code>InvokeMember</code> 第二个选项参数具体还没有深究，先照着写吧。</p><hr><div style="font-size:12px"><br>参考：<br>C# winForm 自定义鼠标样式的两种方法：<br><a href="https://www.cnblogs.com/tianguook/archive/2010/08/03/1791572.html" target="_blank" rel="noopener">https://www.cnblogs.com/tianguook/archive/2010/08/03/1791572.html</a><br></div>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;这里调用系统 API 的方式。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://image.huvjie.com/201112N01_img01.gif&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;div style=&quot;font-size:13px;color:gray;text-align:center&quot;&gt;▲ 样式效果&lt;/div&gt;
+    
+    </summary>
+    
+      <category term="编程爱好" scheme="https://blog.huvjie.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
+    
+    
+      <category term="C#" scheme="https://blog.huvjie.com/tags/C/"/>
     
   </entry>
   
@@ -63,19 +112,17 @@
   </entry>
   
   <entry>
-    <title>C# 自定义鼠标样式</title>
-    <link href="https://blog.huvjie.com/2020/11/12/201112N01/"/>
-    <id>https://blog.huvjie.com/2020/11/12/201112N01/</id>
-    <published>2020-11-12T02:22:00.000Z</published>
-    <updated>2020-11-14T01:34:24.702Z</updated>
+    <title>C# 委托和事件的区别</title>
+    <link href="https://blog.huvjie.com/2020/11/08/201108N02/"/>
+    <id>https://blog.huvjie.com/2020/11/08/201108N02/</id>
+    <published>2020-11-08T02:22:00.000Z</published>
+    <updated>2020-11-08T02:07:27.615Z</updated>
     
-    <content type="html"><![CDATA[<p>这里调用系统 API 的方式。</p><p><img src="http://image.huvjie.com/201112N01_img01.gif" alt=""></p><div style="font-size:13px;color:gray;text-align:center">▲ 样式效果</div><a id="more"></a><p>先准备好鼠标样式<code>cur</code>文件。</p><p><img src="http://image.huvjie.com/201112N01_img01.jpg" alt=""></p><div style="font-size:13px;color:gray;text-align:center">▲ 鼠标样式文件</div><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> System.ComponentModel;</span><br><span class="line"><span class="keyword">using</span> System.Data;</span><br><span class="line"><span class="keyword">using</span> System.Drawing;</span><br><span class="line"><span class="keyword">using</span> System.Text;</span><br><span class="line"><span class="keyword">using</span> System.Windows.Forms;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">MouseSt</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">using</span> System.Runtime.InteropServices;</span><br><span class="line">    <span class="keyword">using</span> System.Reflection;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">partial</span> <span class="keyword">class</span> <span class="title">Form1</span> : <span class="title">Form</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Form1</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            InitializeComponent();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">Form1_Load</span>(<span class="params"><span class="keyword">object</span> sender, EventArgs e</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            Cursor myCursor = <span class="keyword">new</span> Cursor(Cursor.Current.Handle);</span><br><span class="line">            IntPtr colrCursorHandle = MouseStye.LoadCursorFromFile(<span class="string">"hand.cur"</span>);</span><br><span class="line">            myCursor.GetType().InvokeMember(<span class="string">"handle"</span>, BindingFlags.Public|BindingFlags.NonPublic|BindingFlags.Instance|BindingFlags.SetField, <span class="literal">null</span>, myCursor, <span class="keyword">new</span> <span class="keyword">object</span>[] &#123; colrCursorHandle &#125;);</span><br><span class="line">            <span class="keyword">this</span>.pictureBox1.Cursor = myCursor; <span class="comment">// pictureBox区域</span></span><br><span class="line"></span><br><span class="line">            Cursor myCursor1 = <span class="keyword">new</span> Cursor(Cursor.Current.Handle);</span><br><span class="line">            IntPtr colrCursorHandle1 = MouseStye.LoadCursorFromFile(<span class="string">"pen.cur"</span>);</span><br><span class="line">            myCursor.GetType().InvokeMember(<span class="string">"handle"</span>, BindingFlags.Public|BindingFlags.NonPublic|BindingFlags.Instance|BindingFlags.SetField, <span class="literal">null</span>, myCursor1, <span class="keyword">new</span> <span class="keyword">object</span>[] &#123; colrCursorHandle1 &#125;);</span><br><span class="line">            <span class="keyword">this</span>.pictureBox2.Cursor = myCursor1;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">class</span> <span class="title">MouseStye</span></span><br><span class="line">    &#123;</span><br><span class="line">        [<span class="meta">DllImport(<span class="meta-string">"user32.dll"</span>)</span>]</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">extern</span> IntPtr <span class="title">LoadCursorFromFile</span>(<span class="params"><span class="keyword">string</span> fileName</span>)</span>;</span><br><span class="line">        [<span class="meta">DllImport(<span class="meta-string">"user32.dll"</span>)</span>]</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">extern</span> IntPtr <span class="title">SetCursor</span>(<span class="params">IntPtr cursorHandle</span>)</span>;</span><br><span class="line">        [<span class="meta">DllImport(<span class="meta-string">"user32.dll"</span>)</span>]</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">extern</span> <span class="keyword">uint</span> <span class="title">DestroyCursor</span>(<span class="params">IntPtr cursorHandle</span>)</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><code>InvokeMember</code> 第二个选项参数具体还没有深究，先照着写吧。</p><hr><div style="font-size:12px"><br>参考：<br>C# winForm 自定义鼠标样式的两种方法：<br><a href="https://www.cnblogs.com/tianguook/archive/2010/08/03/1791572.html" target="_blank" rel="noopener">https://www.cnblogs.com/tianguook/archive/2010/08/03/1791572.html</a><br></div>]]></content>
+    <content type="html"><![CDATA[<h2 id="委托："><a href="#委托：" class="headerlink" title="委托："></a>委托：</h2><p><strong>委托</strong>是一种各<strong>类型</strong>，像类和结构一样。一般放在<code>namespace</code>里，当然也可以放在类里面，就像类里面也可以放类一样。</p><a id="more"></a><h2 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h2><p><strong>事件</strong>是<em>类或结构</em>的成员，像<code>属性</code>和<code>方法</code>一样。事件更像是委托变量。</p><p>有两点注意：</p><ul><li>事件不能放在可执行代码段里面声明。也就是，只能做字段，不能做本地变量；</li><li>必须声明在类或结构中，做类或结构的成员；</li></ul>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;这里调用系统 API 的方式。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://image.huvjie.com/201112N01_img01.gif&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;div style=&quot;font-size:13px;color:gray;text-align:center&quot;&gt;▲ 样式效果&lt;/div&gt;
+      &lt;h2 id=&quot;委托：&quot;&gt;&lt;a href=&quot;#委托：&quot; class=&quot;headerlink&quot; title=&quot;委托：&quot;&gt;&lt;/a&gt;委托：&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;委托&lt;/strong&gt;是一种各&lt;strong&gt;类型&lt;/strong&gt;，像类和结构一样。一般放在&lt;code&gt;namespace&lt;/code&gt;里，当然也可以放在类里面，就像类里面也可以放类一样。&lt;/p&gt;
     
     </summary>
     
@@ -110,28 +157,6 @@
   </entry>
   
   <entry>
-    <title>C# 委托和事件的区别</title>
-    <link href="https://blog.huvjie.com/2020/11/08/201108N02/"/>
-    <id>https://blog.huvjie.com/2020/11/08/201108N02/</id>
-    <published>2020-11-08T02:22:00.000Z</published>
-    <updated>2020-11-08T02:07:27.615Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="委托："><a href="#委托：" class="headerlink" title="委托："></a>委托：</h2><p><strong>委托</strong>是一种各<strong>类型</strong>，像类和结构一样。一般放在<code>namespace</code>里，当然也可以放在类里面，就像类里面也可以放类一样。</p><a id="more"></a><h2 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h2><p><strong>事件</strong>是<em>类或结构</em>的成员，像<code>属性</code>和<code>方法</code>一样。事件更像是委托变量。</p><p>有两点注意：</p><ul><li>事件不能放在可执行代码段里面声明。也就是，只能做字段，不能做本地变量；</li><li>必须声明在类或结构中，做类或结构的成员；</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;委托：&quot;&gt;&lt;a href=&quot;#委托：&quot; class=&quot;headerlink&quot; title=&quot;委托：&quot;&gt;&lt;/a&gt;委托：&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;委托&lt;/strong&gt;是一种各&lt;strong&gt;类型&lt;/strong&gt;，像类和结构一样。一般放在&lt;code&gt;namespace&lt;/code&gt;里，当然也可以放在类里面，就像类里面也可以放类一样。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="编程爱好" scheme="https://blog.huvjie.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
-    
-    
-      <category term="C#" scheme="https://blog.huvjie.com/tags/C/"/>
-    
-  </entry>
-  
-  <entry>
     <title>配置 OpenCV 开发环境</title>
     <link href="https://blog.huvjie.com/2020/11/07/201107N01/"/>
     <id>https://blog.huvjie.com/2020/11/07/201107N01/</id>
@@ -143,28 +168,6 @@
     <summary type="html">
     
       &lt;p&gt;OpenCV3 + Visual studio 2017 社区版，以及 OpenCV3 + Qt Creator。Windows 7，64bit。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="编程爱好" scheme="https://blog.huvjie.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
-    
-    
-      <category term="C#" scheme="https://blog.huvjie.com/tags/C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>C# Linq Xml 简单测试</title>
-    <link href="https://blog.huvjie.com/2020/11/03/201103N02/"/>
-    <id>https://blog.huvjie.com/2020/11/03/201103N02/</id>
-    <published>2020-11-03T02:22:00.000Z</published>
-    <updated>2020-11-03T15:07:27.224Z</updated>
-    
-    <content type="html"><![CDATA[<p>C# Linq 真的很强大啊!简单的测试下。</p><a id="more"></a><h1 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h1><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">XDocument xDoc = <span class="keyword">new</span> XDocument(</span><br><span class="line">     <span class="keyword">new</span> XDeclaration(<span class="string">"1.0"</span>, <span class="string">"utf-8"</span>, <span class="literal">null</span>),</span><br><span class="line">     <span class="keyword">new</span> XElement(<span class="string">"test"</span>,</span><br><span class="line">         <span class="keyword">new</span> XElement(<span class="string">"person"</span>,</span><br><span class="line">             <span class="keyword">new</span> XElement(<span class="string">"name"</span>, <span class="string">"小明"</span>),</span><br><span class="line">             <span class="keyword">new</span> XElement(<span class="string">"age"</span>, <span class="string">"8"</span>)),</span><br><span class="line">         <span class="keyword">new</span> XElement(<span class="string">"person"</span>,</span><br><span class="line">             <span class="keyword">new</span> XElement(<span class="string">"name"</span>, <span class="string">"小华"</span>),</span><br><span class="line">             <span class="keyword">new</span> XElement(<span class="string">"age"</span>, <span class="string">"9"</span>)),</span><br><span class="line">         <span class="keyword">new</span> XElement(<span class="string">"sum"</span>, <span class="string">"2"</span>)</span><br><span class="line">     )</span><br><span class="line"> );</span><br><span class="line"></span><br><span class="line">  xDoc.Save(<span class="string">"Test.xml"</span>);</span><br></pre></td></tr></table></figure><p>通过参数数组，类似结构的缩进，直接创建了xml文档。</p><p>xml:</p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">test</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">person</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>小明<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">age</span>&gt;</span>8<span class="tag">&lt;/<span class="name">age</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">person</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">person</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>小华<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">age</span>&gt;</span>9<span class="tag">&lt;/<span class="name">age</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">person</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">sum</span>&gt;</span>2<span class="tag">&lt;/<span class="name">sum</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">test</span>&gt;</span></span><br></pre></td></tr></table></figure><h1 id="读取"><a href="#读取" class="headerlink" title="读取"></a>读取</h1><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">XElement file = XElement.Load(<span class="string">"Test.xml"</span>);</span><br><span class="line">XElement xiaoming = file.Descendants(<span class="string">"person"</span>)</span><br><span class="line">    .Where(x =&gt; x.Element(<span class="string">"name"</span>).Value == <span class="string">"小明"</span>).SingleOrDefault();</span><br></pre></td></tr></table></figure><p><code>xiaoming.ToString()</code>直接读出：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">person</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">name</span>&gt;</span>小明<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">age</span>&gt;</span>8<span class="tag">&lt;/<span class="name">age</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">person</span>&gt;</span></span><br></pre></td></tr></table></figure></p><p><strong>如果直接读取<code>xioaming</code>的<code>value</code>值会输出多少？</strong></p><p>它会把它下面节点的<code>value</code>值全部读出来：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">小明8</span><br></pre></td></tr></table></figure><p>我猜它应该是个结果集序列。</p><h2 id="First-FirstOrDefault-Single-SingleOrDefault-有什么不一样？"><a href="#First-FirstOrDefault-Single-SingleOrDefault-有什么不一样？" class="headerlink" title="First,FirstOrDefault,Single,SingleOrDefault 有什么不一样？"></a>First,FirstOrDefault,Single,SingleOrDefault 有什么不一样？</h2><p><img src="http://image.huvjie.com/201103N02_img01.png" alt=""></p><p><code>SingleOrDefault</code> 含有多个元素的时候会抛异常。</p><hr><p>下面两片博文可以参考：</p><p><a href="https://www.cnblogs.com/lelehellow/p/6549404.html" target="_blank" rel="noopener">c#操作符 ??和First,FirstOrDefault,Single,SingleOrDefault。</a></p><p><a href="https://www.cnblogs.com/s7ven/articles/3575478.html" target="_blank" rel="noopener">c# XElement XML操作总结。</a></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;C# Linq 真的很强大啊!简单的测试下。&lt;/p&gt;
     
     </summary>
     
@@ -191,6 +194,28 @@
 &lt;li&gt;&lt;code&gt;ToLower()&lt;/code&gt;只改变字母大小写，其他的字符不改变；&lt;/li&gt;
 &lt;li&gt;读取(系统)环境变量时，自己新建的环境变量后，需要重启电脑，才能读取到。&lt;/li&gt;
 &lt;/ol&gt;
+    
+    </summary>
+    
+      <category term="编程爱好" scheme="https://blog.huvjie.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
+    
+    
+      <category term="C#" scheme="https://blog.huvjie.com/tags/C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>C# Linq Xml 简单测试</title>
+    <link href="https://blog.huvjie.com/2020/11/03/201103N02/"/>
+    <id>https://blog.huvjie.com/2020/11/03/201103N02/</id>
+    <published>2020-11-03T02:22:00.000Z</published>
+    <updated>2020-11-03T15:07:27.224Z</updated>
+    
+    <content type="html"><![CDATA[<p>C# Linq 真的很强大啊!简单的测试下。</p><a id="more"></a><h1 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h1><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">XDocument xDoc = <span class="keyword">new</span> XDocument(</span><br><span class="line">     <span class="keyword">new</span> XDeclaration(<span class="string">"1.0"</span>, <span class="string">"utf-8"</span>, <span class="literal">null</span>),</span><br><span class="line">     <span class="keyword">new</span> XElement(<span class="string">"test"</span>,</span><br><span class="line">         <span class="keyword">new</span> XElement(<span class="string">"person"</span>,</span><br><span class="line">             <span class="keyword">new</span> XElement(<span class="string">"name"</span>, <span class="string">"小明"</span>),</span><br><span class="line">             <span class="keyword">new</span> XElement(<span class="string">"age"</span>, <span class="string">"8"</span>)),</span><br><span class="line">         <span class="keyword">new</span> XElement(<span class="string">"person"</span>,</span><br><span class="line">             <span class="keyword">new</span> XElement(<span class="string">"name"</span>, <span class="string">"小华"</span>),</span><br><span class="line">             <span class="keyword">new</span> XElement(<span class="string">"age"</span>, <span class="string">"9"</span>)),</span><br><span class="line">         <span class="keyword">new</span> XElement(<span class="string">"sum"</span>, <span class="string">"2"</span>)</span><br><span class="line">     )</span><br><span class="line"> );</span><br><span class="line"></span><br><span class="line">  xDoc.Save(<span class="string">"Test.xml"</span>);</span><br></pre></td></tr></table></figure><p>通过参数数组，类似结构的缩进，直接创建了xml文档。</p><p>xml:</p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">test</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">person</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>小明<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">age</span>&gt;</span>8<span class="tag">&lt;/<span class="name">age</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">person</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">person</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>小华<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">age</span>&gt;</span>9<span class="tag">&lt;/<span class="name">age</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">person</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">sum</span>&gt;</span>2<span class="tag">&lt;/<span class="name">sum</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">test</span>&gt;</span></span><br></pre></td></tr></table></figure><h1 id="读取"><a href="#读取" class="headerlink" title="读取"></a>读取</h1><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">XElement file = XElement.Load(<span class="string">"Test.xml"</span>);</span><br><span class="line">XElement xiaoming = file.Descendants(<span class="string">"person"</span>)</span><br><span class="line">    .Where(x =&gt; x.Element(<span class="string">"name"</span>).Value == <span class="string">"小明"</span>).SingleOrDefault();</span><br></pre></td></tr></table></figure><p><code>xiaoming.ToString()</code>直接读出：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">person</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">name</span>&gt;</span>小明<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">age</span>&gt;</span>8<span class="tag">&lt;/<span class="name">age</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">person</span>&gt;</span></span><br></pre></td></tr></table></figure></p><p><strong>如果直接读取<code>xioaming</code>的<code>value</code>值会输出多少？</strong></p><p>它会把它下面节点的<code>value</code>值全部读出来：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">小明8</span><br></pre></td></tr></table></figure><p>我猜它应该是个结果集序列。</p><h2 id="First-FirstOrDefault-Single-SingleOrDefault-有什么不一样？"><a href="#First-FirstOrDefault-Single-SingleOrDefault-有什么不一样？" class="headerlink" title="First,FirstOrDefault,Single,SingleOrDefault 有什么不一样？"></a>First,FirstOrDefault,Single,SingleOrDefault 有什么不一样？</h2><p><img src="http://image.huvjie.com/201103N02_img01.png" alt=""></p><p><code>SingleOrDefault</code> 含有多个元素的时候会抛异常。</p><hr><p>下面两片博文可以参考：</p><p><a href="https://www.cnblogs.com/lelehellow/p/6549404.html" target="_blank" rel="noopener">c#操作符 ??和First,FirstOrDefault,Single,SingleOrDefault。</a></p><p><a href="https://www.cnblogs.com/s7ven/articles/3575478.html" target="_blank" rel="noopener">c# XElement XML操作总结。</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;C# Linq 真的很强大啊!简单的测试下。&lt;/p&gt;
     
     </summary>
     
@@ -437,31 +462,6 @@
     <summary type="html">
     
       &lt;p&gt;索引器和属性差不多，属性是一对一，而索引器是一对多而已。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="编程爱好" scheme="https://blog.huvjie.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
-    
-    
-      <category term="C#" scheme="https://blog.huvjie.com/tags/C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Json.NET 简单的序列化和反序列化</title>
-    <link href="https://blog.huvjie.com/2020/08/17/200817N01/"/>
-    <id>https://blog.huvjie.com/2020/08/17/200817N01/</id>
-    <published>2020-08-17T09:14:00.000Z</published>
-    <updated>2020-08-17T13:09:27.089Z</updated>
-    
-    <content type="html"><![CDATA[<p>先弄个实体类：<br><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title">Student</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">string</span> Name &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">string</span> Gender &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> Age &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><h2 id="序列化"><a href="#序列化" class="headerlink" title="序列化"></a>序列化</h2><p>用<code>JsonConvert.SerializeObject</code>来进行序列化。</p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Student stu = <span class="keyword">new</span> Student &#123;</span><br><span class="line">    Name = <span class="string">"Andy"</span>,</span><br><span class="line">    Gender = <span class="string">"Three"</span>,</span><br><span class="line">    Age = <span class="number">50</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// 序列化</span></span><br><span class="line"><span class="keyword">string</span> jsonStr = JsonConvert.SerializeObject(stu, Formatting.Indented);</span><br><span class="line">Console.WriteLine(jsonStr);</span><br></pre></td></tr></table></figure><p>输出：</p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">"Name"</span>: <span class="string">"Andy"</span>,</span><br><span class="line">  <span class="string">"Gender"</span>: <span class="string">"Three"</span>,</span><br><span class="line">  <span class="string">"Age"</span>: <span class="number">50</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>可以把序列化的字符串保存到<code>json</code>文件中：</p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 写入文件</span></span><br><span class="line">FileStream fs = <span class="keyword">new</span> FileStream(<span class="string">@"./stu.json"</span>, FileMode.Create);</span><br><span class="line">StreamWriter sw = <span class="keyword">new</span> StreamWriter(fs);</span><br><span class="line">sw.Write(jsonStr);</span><br><span class="line">sw.Close();</span><br><span class="line">fs.Close();</span><br></pre></td></tr></table></figure><p><img src="http://image.huvjie.com/200817N01_img01.jpg" alt="▲保存到json文件"></p><h2 id="反序列化"><a href="#反序列化" class="headerlink" title="反序列化"></a>反序列化</h2><p>反序列化用<code>JsonConvert.DeserializeObject&lt;Student&gt;</code>。</p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Student stu1 = JsonConvert.DeserializeObject&lt;Student&gt;(jsonStr);</span><br><span class="line">Console.WriteLine(stu1.Name);</span><br><span class="line">Console.WriteLine(stu1.Gender);</span><br><span class="line">Console.WriteLine(stu1.Age);</span><br></pre></td></tr></table></figure><p>输出：</p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Andy</span><br><span class="line">Three</span><br><span class="line"><span class="number">50</span></span><br></pre></td></tr></table></figure><p>更详细的运用可以看看这篇<a href="https://www.lagou.com/lgeduarticle/54110.html" target="_blank" rel="noopener">文章</a>。</p><hr><p>天上的白云漂浮，时而聚，时而散，多么自由。我要是有这样的状态就好了；这是不是文艺范挂在嘴边的“闲看云卷云舒”？</p><p>每个人都在给你提要求，而鲜有人给你帮助。生活太累，太难，太无望。那些文艺范挂在嘴边的“未来可期”，到我这也成“未来不可期”了。</p><p>“天下熙熙皆为利来，天下攘攘皆为利往”，人在世就图碎银几两，此说真没错也。这个世界不计其数的矛盾围绕着“钱”,“利”而生，谁能逃脱，谁能潇洒独善其身？“人活着开心最重要啦”，港剧中反复出现的台词；如果吃碗面就能开心，我愿意每天都吃面。</p><p>愿你我都能做感兴趣的事，都能让开心占大部分生活就好。</p><hr><p><strong>参考：</strong></p><div style="font-size:12px">Json.NET常用方法汇总:<a href="https://www.lagou.com/lgeduarticle/54110.html" target="_blank" rel="noopener">https://www.lagou.com/lgeduarticle/54110.html</a><br></div>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;先弄个实体类：&lt;br&gt;&lt;figure class=&quot;highlight csharp&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;
-      
     
     </summary>
     
