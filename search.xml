@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[还是要学下 WPF]]></title>
+    <url>%2F2020%2F11%2F16%2F201116N01%2F</url>
+    <content type="text"><![CDATA[其实行业内大部分人都在用 winform，还是想学习一下 WPF。主要考虑一下几点： 技术更先进。 还是要向前一步。能够很好的实现前后台代码的分离。 后面想弄下安卓 Xamarin。 /**/ 学 WPF 不着急，慢慢学。]]></content>
+      <categories>
+        <category>编程爱好</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[C# 接口类型]]></title>
     <url>%2F2020%2F11%2F15%2F201115N01%2F</url>
-    <content type="text"><![CDATA[什么是接口个人理解，接口有点像 C 语言的前置申明。I开头命名，默认为 public, 分号结束，没有实现体。继承它的类必须全部实现接口成员。 1234public interface IComparable&#123; int CompareT0(object obj);&#125; 实现接口接口放在基类后面，类可以继承多个接口，用,号分开。 1234567class Cat : Animal, ILiveBird&#123; string ILiveBird.BabyCalled() &#123; return "Kitten"; &#125;&#125; 接口是引用类型接口是引用类型。 接口类型转换建议用as运算符as运算符的强制转换时，失败返回null，不会引发异常。 实现具有重复成员的接口类内可以实现单个成员即可满足所有重复成员的接口。 派生类可以作为接口的实现重基类派生过来的成员可以作为接口的实现成员。 显式接口成员显式接口成员只能通过转化成接口引用类型才能实现访问，类实例不能够访问。 可以看之前的这篇笔记：https://blog.huvjie.com/2020/08/26/200826N02/。 实现的显式接口成员前面不能加public等访问修饰符，因为类外根本不能够直接访问。但没有public也是可以被继承的。 1234567891011121314151617181920212223242526272829303132333435using System;namespace ConsoleApp1&#123; class Program &#123; static void Main() &#123; Test test = new Test(); ILiveBird liveBird = test as ILiveBird; // 需要强制转化 if (liveBird != null) Console.WriteLine(liveBird.BabyCalled()); else Console.WriteLine(liveBird.BabyCalled()); &#125; &#125; interface ILiveBird &#123; string BabyCalled(); &#125; class Animal &#123; &#125; class Cat : Animal, ILiveBird &#123; string ILiveBird.BabyCalled() &#123; return "Kitten"; &#125; &#125; class Test:Cat &#123; &#125;&#125; 输出： 1Kitten // 需要强制转化成接口类型 ▲ 不能加public等访问修饰符 接口可以继承接口当然在类内都要被实现。 不同类实现一个接口可以看之前的这篇笔记：https://blog.huvjie.com/2020/08/26/200826N02/。 参考： 详细的内容可以看下《C# 图解教程》 P275 页。]]></content>
+    <content type="text"><![CDATA[什么是接口个人理解，接口有点像 C 语言的前置申明。I开头命名，默认为 public, 分号结束，没有实现体。继承它的类必须全部实现接口成员。 1234public interface IComparable&#123; int CompareT0(object obj);&#125; 实现接口接口放在基类后面，类可以继承多个接口，用,号分开。 1234567class Cat : Animal, ILiveBird&#123; string ILiveBird.BabyCalled() &#123; return "Kitten"; &#125;&#125; 接口是引用类型接口是引用类型。 接口类型转换建议用as运算符as运算符的强制转换时，失败返回null，不会引发异常。 实现具有重复成员的接口类内可以实现单个成员即可满足所有重复成员的接口。 派生类可以作为接口的实现从基类派生过来的成员可以作为接口的实现成员。 显式接口成员显式接口成员只能通过转化成接口引用类型才能实现访问，类实例不能够访问。 可以看之前的这篇笔记：https://blog.huvjie.com/2020/08/26/200826N02/。 实现的显式接口成员前面不能加public等访问修饰符，因为类外根本不能够直接访问。但没有public也是可以被继承的。 1234567891011121314151617181920212223242526272829303132333435using System;namespace ConsoleApp1&#123; class Program &#123; static void Main() &#123; Test test = new Test(); ILiveBird liveBird = test as ILiveBird; // 需要强制转化 if (liveBird != null) Console.WriteLine(liveBird.BabyCalled()); else Console.WriteLine("null"); &#125; &#125; interface ILiveBird &#123; string BabyCalled(); &#125; class Animal &#123; &#125; class Cat : Animal, ILiveBird &#123; string ILiveBird.BabyCalled() &#123; return "Kitten"; &#125; &#125; class Test:Cat &#123; &#125;&#125; 输出： 1Kitten // 需要强制转化成接口类型 ▲ 不能加public等访问修饰符 接口可以继承接口当然在类内都要被实现。 不同类实现一个接口可以看之前的这篇笔记：https://blog.huvjie.com/2020/08/26/200826N02/。 参考： 详细的内容可以看下《C# 图解教程》 P275 页。]]></content>
       <categories>
         <category>编程爱好</category>
       </categories>
@@ -56,9 +67,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[C# 委托和事件的区别]]></title>
-    <url>%2F2020%2F11%2F08%2F201108N02%2F</url>
-    <content type="text"><![CDATA[委托：委托是一种各类型，像类和结构一样。一般放在namespace里，当然也可以放在类里面，就像类里面也可以放类一样。 事件事件是类或结构的成员，像属性和方法一样。事件更像是委托变量。 有两点注意： 事件不能放在可执行代码段里面声明。也就是，只能做字段，不能做本地变量； 必须声明在类或结构中，做类或结构的成员；]]></content>
+    <title><![CDATA[简单测试下 goto 语句]]></title>
+    <url>%2F2020%2F11%2F08%2F201108N01%2F</url>
+    <content type="text"><![CDATA[大家都建议不要用goto语句。我测试下goto语句怎么用。 goto语句执行是，跳转到标签位置后，又开始从标签位置往下执行。 12345678910111213141516171819202122232425class Program&#123; static void Main(string[] args) &#123; int i = 0; aMark: int a = 10; Console.WriteLine(a); int b = 20; Console.WriteLine(b); int c = a + b; Console.WriteLine(c + "\n"); i++; if (i &gt; 2) goto bMark; goto aMark; bMark: Console.WriteLine("程序结束!!"); Console.ReadKey();&#125; 输出：12345678910111213102030102030102030程序结束!!]]></content>
       <categories>
         <category>编程爱好</category>
       </categories>
@@ -67,9 +78,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[简单测试下 goto 语句]]></title>
-    <url>%2F2020%2F11%2F08%2F201108N01%2F</url>
-    <content type="text"><![CDATA[大家都建议不要用goto语句。我测试下goto语句怎么用。 goto语句执行是，跳转到标签位置后，又开始从标签位置往下执行。 12345678910111213141516171819202122232425class Program&#123; static void Main(string[] args) &#123; int i = 0; aMark: int a = 10; Console.WriteLine(a); int b = 20; Console.WriteLine(b); int c = a + b; Console.WriteLine(c + "\n"); i++; if (i &gt; 2) goto bMark; goto aMark; bMark: Console.WriteLine("程序结束!!"); Console.ReadKey();&#125; 输出：12345678910111213102030102030102030程序结束!!]]></content>
+    <title><![CDATA[C# 委托和事件的区别]]></title>
+    <url>%2F2020%2F11%2F08%2F201108N02%2F</url>
+    <content type="text"><![CDATA[委托：委托是一种各类型，像类和结构一样。一般放在namespace里，当然也可以放在类里面，就像类里面也可以放类一样。 事件事件是类或结构的成员，像属性和方法一样。事件更像是委托变量。 有两点注意： 事件不能放在可执行代码段里面声明。也就是，只能做字段，不能做本地变量； 必须声明在类或结构中，做类或结构的成员；]]></content>
       <categories>
         <category>编程爱好</category>
       </categories>
