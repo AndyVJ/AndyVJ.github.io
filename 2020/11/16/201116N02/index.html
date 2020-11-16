@@ -112,18 +112,18 @@
 
 
 
-  <meta name="description" content="类内的只读属性不能更改的是他的指向，例如，容器类List，如果是只内部可写，外部可读，只有类内部可以更改 List 字段的指向赋值，外部不能。而类外get到它的指向值后，是可以对它进行Add等操作的，因为没有更改它的指向。 有点绕，估计没讲请我想要说什么。~O(∩_∩)O~">
+  <meta name="description" content="类内的只读属性不能更改的是他的指向，例如，容器类List，如果是只内部可写，外部可读，只有类内部可以更改 List 字段的指向赋值，外部不能。而类外get到它的指向值后，是可以对它进行Add等操作的，因为没有更改它的指向。 有点绕，估计没讲清我想要说什么。~O(∩_∩)O~">
 <meta name="keywords" content="C#">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C# 关于引用类型的类外只读属性">
 <meta property="og:url" content="https://blog.huvjie.com/2020/11/16/201116N02/index.html">
 <meta property="og:site_name" content="胡文杰">
-<meta property="og:description" content="类内的只读属性不能更改的是他的指向，例如，容器类List，如果是只内部可写，外部可读，只有类内部可以更改 List 字段的指向赋值，外部不能。而类外get到它的指向值后，是可以对它进行Add等操作的，因为没有更改它的指向。 有点绕，估计没讲请我想要说什么。~O(∩_∩)O~">
+<meta property="og:description" content="类内的只读属性不能更改的是他的指向，例如，容器类List，如果是只内部可写，外部可读，只有类内部可以更改 List 字段的指向赋值，外部不能。而类外get到它的指向值后，是可以对它进行Add等操作的，因为没有更改它的指向。 有点绕，估计没讲清我想要说什么。~O(∩_∩)O~">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-11-16T12:38:00.275Z">
+<meta property="og:updated_time" content="2020-11-16T13:57:00.178Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C# 关于引用类型的类外只读属性">
-<meta name="twitter:description" content="类内的只读属性不能更改的是他的指向，例如，容器类List，如果是只内部可写，外部可读，只有类内部可以更改 List 字段的指向赋值，外部不能。而类外get到它的指向值后，是可以对它进行Add等操作的，因为没有更改它的指向。 有点绕，估计没讲请我想要说什么。~O(∩_∩)O~">
+<meta name="twitter:description" content="类内的只读属性不能更改的是他的指向，例如，容器类List，如果是只内部可写，外部可读，只有类内部可以更改 List 字段的指向赋值，外部不能。而类外get到它的指向值后，是可以对它进行Add等操作的，因为没有更改它的指向。 有点绕，估计没讲清我想要说什么。~O(∩_∩)O~">
 
 
 
@@ -404,7 +404,7 @@
                 
               
 
-              <time title="创建时间：2020-11-16 10:22:00 / 修改时间：20:38:00" itemprop="dateCreated datePublished" datetime="2020-11-16T10:22:00+08:00">2020-11-16</time>
+              <time title="创建时间：2020-11-16 10:22:00 / 修改时间：21:57:00" itemprop="dateCreated datePublished" datetime="2020-11-16T10:22:00+08:00">2020-11-16</time>
             
 
             
@@ -478,7 +478,7 @@
 
       
         <p>类内的只读属性不能更改的是他的<code>指向</code>，例如，容器类<code>List</code>，如果是只内部可写，外部可读，只有类内部可以更改 <code>List</code> 字段的指向赋值，外部不能。<strong>而类外<code>get</code>到它的指向值后，是可以对它进行<code>Add</code>等操作的，因为没有更改它的指向。</strong></p>
-<p>有点绕，估计没讲请我想要说什么。~O(∩_∩)O~</p>
+<p>有点绕，估计没讲清我想要说什么。~O(∩_∩)O~</p>
 <a id="more"></a>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">ConsoleApp1</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">class</span> <span class="title">Program</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="keyword">string</span>[] args</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            Test test = <span class="keyword">new</span> Test();</span><br><span class="line">            List&lt;<span class="keyword">string</span>&gt; tlist = test.TList;</span><br><span class="line">            tlist.Add(<span class="string">"Lily"</span>); <span class="comment">// 增加两个</span></span><br><span class="line">            tlist.Add(<span class="string">"Lucy"</span>);</span><br><span class="line">            <span class="keyword">foreach</span> (<span class="keyword">var</span> item <span class="keyword">in</span> tlist)</span><br><span class="line">            &#123;</span><br><span class="line">                Console.WriteLine(item);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            List&lt;<span class="keyword">string</span>&gt; nlist = <span class="keyword">new</span> List&lt;<span class="keyword">string</span>&gt;();  <span class="comment">// 新实例</span></span><br><span class="line">            <span class="comment">// test.TList = nlist;  // 不能从新指向</span></span><br><span class="line">            tlist = nlist;  <span class="comment">// 这个和test实例不相干，当然可以改指向</span></span><br><span class="line"></span><br><span class="line">            Console.Read();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">class</span> <span class="title">Test</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">public</span> List&lt;<span class="keyword">string</span>&gt; TList &#123; <span class="keyword">get</span>; <span class="keyword">private</span> <span class="keyword">set</span>; &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Test</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            <span class="keyword">this</span>.TList = <span class="keyword">new</span> List&lt;<span class="keyword">string</span>&gt;();</span><br><span class="line">            <span class="keyword">this</span>.TList.Add(<span class="string">"Tom"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>输出：</p>

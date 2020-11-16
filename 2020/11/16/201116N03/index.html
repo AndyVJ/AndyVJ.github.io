@@ -112,19 +112,19 @@
 
 
 
-  <meta name="description" content="先看看一般类的实例化构建顺序无继承的情况 静态字段 静态构造方法 实例字段 实例构造方法  有继承的情况 子类(派生类)的静态字段 子类(派生类)的静态构造方法 子类(派生类)的实例字段 父类(基类)的静态字段 父类(基类)的静态构造方法 父类(基类)的实例字段 父类(基类)的实例构造方法 子类(派生类)的实例构造方法  这两种情况还是很好理解的。总体来说字段是先于构造函数执行的，不然构造函数那什">
+  <meta name="description" content="先看看一般类的实例化构建顺序无继承的情况 静态字段 静态构造方法 实例字段 实例构造方法  有继承的情况 子类(派生类)的静态字段 子类(派生类)的静态构造方法 子类(派生类)的实例字段 父类(基类)的静态字段 父类(基类)的静态构造方法 父类(基类)的实例字段 父类(基类)的实例构造方法 子类(派生类)的实例构造方法  这两种情况还是很好理解的。总体来说字段是先于构造函数执行的，不然构造函数拿什">
 <meta name="keywords" content="C#">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C# 实例构建的执行顺序">
 <meta property="og:url" content="https://blog.huvjie.com/2020/11/16/201116N03/index.html">
 <meta property="og:site_name" content="胡文杰">
-<meta property="og:description" content="先看看一般类的实例化构建顺序无继承的情况 静态字段 静态构造方法 实例字段 实例构造方法  有继承的情况 子类(派生类)的静态字段 子类(派生类)的静态构造方法 子类(派生类)的实例字段 父类(基类)的静态字段 父类(基类)的静态构造方法 父类(基类)的实例字段 父类(基类)的实例构造方法 子类(派生类)的实例构造方法  这两种情况还是很好理解的。总体来说字段是先于构造函数执行的，不然构造函数那什">
+<meta property="og:description" content="先看看一般类的实例化构建顺序无继承的情况 静态字段 静态构造方法 实例字段 实例构造方法  有继承的情况 子类(派生类)的静态字段 子类(派生类)的静态构造方法 子类(派生类)的实例字段 父类(基类)的静态字段 父类(基类)的静态构造方法 父类(基类)的实例字段 父类(基类)的实例构造方法 子类(派生类)的实例构造方法  这两种情况还是很好理解的。总体来说字段是先于构造函数执行的，不然构造函数拿什">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://image.huvjie.com/201116N03_img01.jpg">
-<meta property="og:updated_time" content="2020-11-16T12:41:14.448Z">
+<meta property="og:updated_time" content="2020-11-16T13:56:34.493Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C# 实例构建的执行顺序">
-<meta name="twitter:description" content="先看看一般类的实例化构建顺序无继承的情况 静态字段 静态构造方法 实例字段 实例构造方法  有继承的情况 子类(派生类)的静态字段 子类(派生类)的静态构造方法 子类(派生类)的实例字段 父类(基类)的静态字段 父类(基类)的静态构造方法 父类(基类)的实例字段 父类(基类)的实例构造方法 子类(派生类)的实例构造方法  这两种情况还是很好理解的。总体来说字段是先于构造函数执行的，不然构造函数那什">
+<meta name="twitter:description" content="先看看一般类的实例化构建顺序无继承的情况 静态字段 静态构造方法 实例字段 实例构造方法  有继承的情况 子类(派生类)的静态字段 子类(派生类)的静态构造方法 子类(派生类)的实例字段 父类(基类)的静态字段 父类(基类)的静态构造方法 父类(基类)的实例字段 父类(基类)的实例构造方法 子类(派生类)的实例构造方法  这两种情况还是很好理解的。总体来说字段是先于构造函数执行的，不然构造函数拿什">
 <meta name="twitter:image" content="http://image.huvjie.com/201116N03_img01.jpg">
 
 
@@ -406,7 +406,7 @@
                 
               
 
-              <time title="创建时间：2020-11-16 10:22:00 / 修改时间：20:41:14" itemprop="dateCreated datePublished" datetime="2020-11-16T10:22:00+08:00">2020-11-16</time>
+              <time title="创建时间：2020-11-16 10:22:00 / 修改时间：21:56:34" itemprop="dateCreated datePublished" datetime="2020-11-16T10:22:00+08:00">2020-11-16</time>
             
 
             
@@ -495,7 +495,7 @@
 <li><span style="color:red">父类(基类)</span>的实例构造方法</li>
 <li>子类(派生类)的实例构造方法</li>
 </ol>
-<p>这两种情况还是很好理解的。总体来说<strong>字段是先于构造函数执行的</strong>，不然构造函数那什么去执行。<strong>派生类的字段，和基类的实例先执行，然后再执行派生类的构造函数。</strong>这里是，<span style="color:red">基类的构造函数先执行，然后再执行派生类的构造函数</span>。下面验证下：</p>
+<p>这两种情况还是很好理解的。总体来说<strong>字段是先于构造函数执行的</strong>，不然构造函数拿什么去执行。<strong>派生类的字段，和基类的实例先执行，然后再执行派生类的构造函数。</strong>这里是，<span style="color:red">基类的构造函数先执行，然后再执行派生类的构造函数</span>。下面验证下：</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">ConsoleApp1</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">class</span> <span class="title">Program</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="keyword">string</span>[] args</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            A a = <span class="keyword">new</span> A();</span><br><span class="line"></span><br><span class="line">            Console.ReadKey();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">class</span> <span class="title">A</span>: <span class="title">B</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">A</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            Console.WriteLine(<span class="string">"A"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">class</span> <span class="title">B</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">B</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            Console.WriteLine(<span class="string">"B"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>输出：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">B</span><br><span class="line">A</span><br></pre></td></tr></table></figure>
