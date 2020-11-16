@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.huvjie.com/"/>
-  <updated>2020-11-16T12:28:10.344Z</updated>
+  <updated>2020-11-16T12:38:00.275Z</updated>
   <id>https://blog.huvjie.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>C# 关于引用类型的类外只读属性</title>
+    <link href="https://blog.huvjie.com/2020/11/16/201116N02/"/>
+    <id>https://blog.huvjie.com/2020/11/16/201116N02/</id>
+    <published>2020-11-16T02:22:00.000Z</published>
+    <updated>2020-11-16T12:38:00.275Z</updated>
+    
+    <content type="html"><![CDATA[<p>类内的只读属性不能更改的是他的<code>指向</code>，例如，容器类<code>List</code>，如果是只内部可写，外部可读，只有类内部可以更改 <code>List</code> 字段的指向赋值，外部不能。<strong>而类外<code>get</code>到它的指向值后，是可以对它进行<code>Add</code>等操作的，因为没有更改它的指向。</strong></p><p>有点绕，估计没讲请我想要说什么。~O(∩_∩)O~</p><a id="more"></a><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">ConsoleApp1</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">class</span> <span class="title">Program</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="keyword">string</span>[] args</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            Test test = <span class="keyword">new</span> Test();</span><br><span class="line">            List&lt;<span class="keyword">string</span>&gt; tlist = test.TList;</span><br><span class="line">            tlist.Add(<span class="string">"Lily"</span>); <span class="comment">// 增加两个</span></span><br><span class="line">            tlist.Add(<span class="string">"Lucy"</span>);</span><br><span class="line">            <span class="keyword">foreach</span> (<span class="keyword">var</span> item <span class="keyword">in</span> tlist)</span><br><span class="line">            &#123;</span><br><span class="line">                Console.WriteLine(item);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            List&lt;<span class="keyword">string</span>&gt; nlist = <span class="keyword">new</span> List&lt;<span class="keyword">string</span>&gt;();  <span class="comment">// 新实例</span></span><br><span class="line">            <span class="comment">// test.TList = nlist;  // 不能从新指向</span></span><br><span class="line">            tlist = nlist;  <span class="comment">// 这个和test实例不相干，当然可以改指向</span></span><br><span class="line"></span><br><span class="line">            Console.Read();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">class</span> <span class="title">Test</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">public</span> List&lt;<span class="keyword">string</span>&gt; TList &#123; <span class="keyword">get</span>; <span class="keyword">private</span> <span class="keyword">set</span>; &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Test</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            <span class="keyword">this</span>.TList = <span class="keyword">new</span> List&lt;<span class="keyword">string</span>&gt;();</span><br><span class="line">            <span class="keyword">this</span>.TList.Add(<span class="string">"Tom"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>输出：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Tom</span><br><span class="line">Lily  // 后面这两个是可以增加的。</span><br><span class="line">Lucy</span><br></pre></td></tr></table></figure><p>下面这样重新指向一个新实例是不行的。</p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">List&lt;<span class="keyword">string</span>&gt; nlist = <span class="keyword">new</span> List&lt;<span class="keyword">string</span>&gt;();  <span class="comment">// 新实例</span></span><br><span class="line">test.TList = nlist;  <span class="comment">// 不能从新指向</span></span><br></pre></td></tr></table></figure><p><code>test.TList = nlist;  // 不能从新指向</code>，外部只读不能更改指向。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;类内的只读属性不能更改的是他的&lt;code&gt;指向&lt;/code&gt;，例如，容器类&lt;code&gt;List&lt;/code&gt;，如果是只内部可写，外部可读，只有类内部可以更改 &lt;code&gt;List&lt;/code&gt; 字段的指向赋值，外部不能。&lt;strong&gt;而类外&lt;code&gt;get&lt;/code&gt;到它的指向值后，是可以对它进行&lt;code&gt;Add&lt;/code&gt;等操作的，因为没有更改它的指向。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;有点绕，估计没讲请我想要说什么。~O(∩_∩)O~&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="编程爱好" scheme="https://blog.huvjie.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
+    
+    
+      <category term="C#" scheme="https://blog.huvjie.com/tags/C/"/>
+    
+  </entry>
   
   <entry>
     <title>还是要学下 WPF</title>
@@ -156,6 +179,28 @@
   </entry>
   
   <entry>
+    <title>C# 委托和事件的区别</title>
+    <link href="https://blog.huvjie.com/2020/11/08/201108N02/"/>
+    <id>https://blog.huvjie.com/2020/11/08/201108N02/</id>
+    <published>2020-11-08T02:22:00.000Z</published>
+    <updated>2020-11-08T02:07:27.615Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="委托："><a href="#委托：" class="headerlink" title="委托："></a>委托：</h2><p><strong>委托</strong>是一种各<strong>类型</strong>，像类和结构一样。一般放在<code>namespace</code>里，当然也可以放在类里面，就像类里面也可以放类一样。</p><a id="more"></a><h2 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h2><p><strong>事件</strong>是<em>类或结构</em>的成员，像<code>属性</code>和<code>方法</code>一样。事件更像是委托变量。</p><p>有两点注意：</p><ul><li>事件不能放在可执行代码段里面声明。也就是，只能做字段，不能做本地变量；</li><li>必须声明在类或结构中，做类或结构的成员；</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;委托：&quot;&gt;&lt;a href=&quot;#委托：&quot; class=&quot;headerlink&quot; title=&quot;委托：&quot;&gt;&lt;/a&gt;委托：&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;委托&lt;/strong&gt;是一种各&lt;strong&gt;类型&lt;/strong&gt;，像类和结构一样。一般放在&lt;code&gt;namespace&lt;/code&gt;里，当然也可以放在类里面，就像类里面也可以放类一样。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="编程爱好" scheme="https://blog.huvjie.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
+    
+    
+      <category term="C#" scheme="https://blog.huvjie.com/tags/C/"/>
+    
+  </entry>
+  
+  <entry>
     <title>简单测试下 goto 语句</title>
     <link href="https://blog.huvjie.com/2020/11/08/201108N01/"/>
     <id>https://blog.huvjie.com/2020/11/08/201108N01/</id>
@@ -168,28 +213,6 @@
     
       &lt;p&gt;大家都建议不要用&lt;code&gt;goto&lt;/code&gt;语句。我测试下&lt;code&gt;goto&lt;/code&gt;语句怎么用。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;&lt;code&gt;goto&lt;/code&gt;语句执行是，跳转到标签位置后，又开始从标签位置往下执行。&lt;/strong&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="编程爱好" scheme="https://blog.huvjie.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
-    
-    
-      <category term="C#" scheme="https://blog.huvjie.com/tags/C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>C# 委托和事件的区别</title>
-    <link href="https://blog.huvjie.com/2020/11/08/201108N02/"/>
-    <id>https://blog.huvjie.com/2020/11/08/201108N02/</id>
-    <published>2020-11-08T02:22:00.000Z</published>
-    <updated>2020-11-08T02:07:27.615Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="委托："><a href="#委托：" class="headerlink" title="委托："></a>委托：</h2><p><strong>委托</strong>是一种各<strong>类型</strong>，像类和结构一样。一般放在<code>namespace</code>里，当然也可以放在类里面，就像类里面也可以放类一样。</p><a id="more"></a><h2 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h2><p><strong>事件</strong>是<em>类或结构</em>的成员，像<code>属性</code>和<code>方法</code>一样。事件更像是委托变量。</p><p>有两点注意：</p><ul><li>事件不能放在可执行代码段里面声明。也就是，只能做字段，不能做本地变量；</li><li>必须声明在类或结构中，做类或结构的成员；</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;委托：&quot;&gt;&lt;a href=&quot;#委托：&quot; class=&quot;headerlink&quot; title=&quot;委托：&quot;&gt;&lt;/a&gt;委托：&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;委托&lt;/strong&gt;是一种各&lt;strong&gt;类型&lt;/strong&gt;，像类和结构一样。一般放在&lt;code&gt;namespace&lt;/code&gt;里，当然也可以放在类里面，就像类里面也可以放类一样。&lt;/p&gt;
     
     </summary>
     
@@ -223,6 +246,28 @@
   </entry>
   
   <entry>
+    <title>C# Linq Xml 简单测试</title>
+    <link href="https://blog.huvjie.com/2020/11/03/201103N02/"/>
+    <id>https://blog.huvjie.com/2020/11/03/201103N02/</id>
+    <published>2020-11-03T02:22:00.000Z</published>
+    <updated>2020-11-03T15:07:27.224Z</updated>
+    
+    <content type="html"><![CDATA[<p>C# Linq 真的很强大啊!简单的测试下。</p><a id="more"></a><h1 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h1><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">XDocument xDoc = <span class="keyword">new</span> XDocument(</span><br><span class="line">     <span class="keyword">new</span> XDeclaration(<span class="string">"1.0"</span>, <span class="string">"utf-8"</span>, <span class="literal">null</span>),</span><br><span class="line">     <span class="keyword">new</span> XElement(<span class="string">"test"</span>,</span><br><span class="line">         <span class="keyword">new</span> XElement(<span class="string">"person"</span>,</span><br><span class="line">             <span class="keyword">new</span> XElement(<span class="string">"name"</span>, <span class="string">"小明"</span>),</span><br><span class="line">             <span class="keyword">new</span> XElement(<span class="string">"age"</span>, <span class="string">"8"</span>)),</span><br><span class="line">         <span class="keyword">new</span> XElement(<span class="string">"person"</span>,</span><br><span class="line">             <span class="keyword">new</span> XElement(<span class="string">"name"</span>, <span class="string">"小华"</span>),</span><br><span class="line">             <span class="keyword">new</span> XElement(<span class="string">"age"</span>, <span class="string">"9"</span>)),</span><br><span class="line">         <span class="keyword">new</span> XElement(<span class="string">"sum"</span>, <span class="string">"2"</span>)</span><br><span class="line">     )</span><br><span class="line"> );</span><br><span class="line"></span><br><span class="line">  xDoc.Save(<span class="string">"Test.xml"</span>);</span><br></pre></td></tr></table></figure><p>通过参数数组，类似结构的缩进，直接创建了xml文档。</p><p>xml:</p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">test</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">person</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>小明<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">age</span>&gt;</span>8<span class="tag">&lt;/<span class="name">age</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">person</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">person</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>小华<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">age</span>&gt;</span>9<span class="tag">&lt;/<span class="name">age</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">person</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">sum</span>&gt;</span>2<span class="tag">&lt;/<span class="name">sum</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">test</span>&gt;</span></span><br></pre></td></tr></table></figure><h1 id="读取"><a href="#读取" class="headerlink" title="读取"></a>读取</h1><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">XElement file = XElement.Load(<span class="string">"Test.xml"</span>);</span><br><span class="line">XElement xiaoming = file.Descendants(<span class="string">"person"</span>)</span><br><span class="line">    .Where(x =&gt; x.Element(<span class="string">"name"</span>).Value == <span class="string">"小明"</span>).SingleOrDefault();</span><br></pre></td></tr></table></figure><p><code>xiaoming.ToString()</code>直接读出：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">person</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">name</span>&gt;</span>小明<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">age</span>&gt;</span>8<span class="tag">&lt;/<span class="name">age</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">person</span>&gt;</span></span><br></pre></td></tr></table></figure></p><p><strong>如果直接读取<code>xioaming</code>的<code>value</code>值会输出多少？</strong></p><p>它会把它下面节点的<code>value</code>值全部读出来：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">小明8</span><br></pre></td></tr></table></figure><p>我猜它应该是个结果集序列。</p><h2 id="First-FirstOrDefault-Single-SingleOrDefault-有什么不一样？"><a href="#First-FirstOrDefault-Single-SingleOrDefault-有什么不一样？" class="headerlink" title="First,FirstOrDefault,Single,SingleOrDefault 有什么不一样？"></a>First,FirstOrDefault,Single,SingleOrDefault 有什么不一样？</h2><p><img src="http://image.huvjie.com/201103N02_img01.png" alt=""></p><p><code>SingleOrDefault</code> 含有多个元素的时候会抛异常。</p><hr><p>下面两片博文可以参考：</p><p><a href="https://www.cnblogs.com/lelehellow/p/6549404.html" target="_blank" rel="noopener">c#操作符 ??和First,FirstOrDefault,Single,SingleOrDefault。</a></p><p><a href="https://www.cnblogs.com/s7ven/articles/3575478.html" target="_blank" rel="noopener">c# XElement XML操作总结。</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;C# Linq 真的很强大啊!简单的测试下。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="编程爱好" scheme="https://blog.huvjie.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
+    
+    
+      <category term="C#" scheme="https://blog.huvjie.com/tags/C/"/>
+    
+  </entry>
+  
+  <entry>
     <title>C# 读取环境变量，和字符串大小写转换</title>
     <link href="https://blog.huvjie.com/2020/11/03/201103N01/"/>
     <id>https://blog.huvjie.com/2020/11/03/201103N01/</id>
@@ -238,28 +283,6 @@
 &lt;li&gt;&lt;code&gt;ToLower()&lt;/code&gt;只改变字母大小写，其他的字符不改变；&lt;/li&gt;
 &lt;li&gt;读取(系统)环境变量时，自己新建的环境变量后，需要重启电脑，才能读取到。&lt;/li&gt;
 &lt;/ol&gt;
-    
-    </summary>
-    
-      <category term="编程爱好" scheme="https://blog.huvjie.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
-    
-    
-      <category term="C#" scheme="https://blog.huvjie.com/tags/C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>C# Linq Xml 简单测试</title>
-    <link href="https://blog.huvjie.com/2020/11/03/201103N02/"/>
-    <id>https://blog.huvjie.com/2020/11/03/201103N02/</id>
-    <published>2020-11-03T02:22:00.000Z</published>
-    <updated>2020-11-03T15:07:27.224Z</updated>
-    
-    <content type="html"><![CDATA[<p>C# Linq 真的很强大啊!简单的测试下。</p><a id="more"></a><h1 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h1><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">XDocument xDoc = <span class="keyword">new</span> XDocument(</span><br><span class="line">     <span class="keyword">new</span> XDeclaration(<span class="string">"1.0"</span>, <span class="string">"utf-8"</span>, <span class="literal">null</span>),</span><br><span class="line">     <span class="keyword">new</span> XElement(<span class="string">"test"</span>,</span><br><span class="line">         <span class="keyword">new</span> XElement(<span class="string">"person"</span>,</span><br><span class="line">             <span class="keyword">new</span> XElement(<span class="string">"name"</span>, <span class="string">"小明"</span>),</span><br><span class="line">             <span class="keyword">new</span> XElement(<span class="string">"age"</span>, <span class="string">"8"</span>)),</span><br><span class="line">         <span class="keyword">new</span> XElement(<span class="string">"person"</span>,</span><br><span class="line">             <span class="keyword">new</span> XElement(<span class="string">"name"</span>, <span class="string">"小华"</span>),</span><br><span class="line">             <span class="keyword">new</span> XElement(<span class="string">"age"</span>, <span class="string">"9"</span>)),</span><br><span class="line">         <span class="keyword">new</span> XElement(<span class="string">"sum"</span>, <span class="string">"2"</span>)</span><br><span class="line">     )</span><br><span class="line"> );</span><br><span class="line"></span><br><span class="line">  xDoc.Save(<span class="string">"Test.xml"</span>);</span><br></pre></td></tr></table></figure><p>通过参数数组，类似结构的缩进，直接创建了xml文档。</p><p>xml:</p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">test</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">person</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>小明<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">age</span>&gt;</span>8<span class="tag">&lt;/<span class="name">age</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">person</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">person</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>小华<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">age</span>&gt;</span>9<span class="tag">&lt;/<span class="name">age</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">person</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">sum</span>&gt;</span>2<span class="tag">&lt;/<span class="name">sum</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">test</span>&gt;</span></span><br></pre></td></tr></table></figure><h1 id="读取"><a href="#读取" class="headerlink" title="读取"></a>读取</h1><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">XElement file = XElement.Load(<span class="string">"Test.xml"</span>);</span><br><span class="line">XElement xiaoming = file.Descendants(<span class="string">"person"</span>)</span><br><span class="line">    .Where(x =&gt; x.Element(<span class="string">"name"</span>).Value == <span class="string">"小明"</span>).SingleOrDefault();</span><br></pre></td></tr></table></figure><p><code>xiaoming.ToString()</code>直接读出：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">person</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">name</span>&gt;</span>小明<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">age</span>&gt;</span>8<span class="tag">&lt;/<span class="name">age</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">person</span>&gt;</span></span><br></pre></td></tr></table></figure></p><p><strong>如果直接读取<code>xioaming</code>的<code>value</code>值会输出多少？</strong></p><p>它会把它下面节点的<code>value</code>值全部读出来：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">小明8</span><br></pre></td></tr></table></figure><p>我猜它应该是个结果集序列。</p><h2 id="First-FirstOrDefault-Single-SingleOrDefault-有什么不一样？"><a href="#First-FirstOrDefault-Single-SingleOrDefault-有什么不一样？" class="headerlink" title="First,FirstOrDefault,Single,SingleOrDefault 有什么不一样？"></a>First,FirstOrDefault,Single,SingleOrDefault 有什么不一样？</h2><p><img src="http://image.huvjie.com/201103N02_img01.png" alt=""></p><p><code>SingleOrDefault</code> 含有多个元素的时候会抛异常。</p><hr><p>下面两片博文可以参考：</p><p><a href="https://www.cnblogs.com/lelehellow/p/6549404.html" target="_blank" rel="noopener">c#操作符 ??和First,FirstOrDefault,Single,SingleOrDefault。</a></p><p><a href="https://www.cnblogs.com/s7ven/articles/3575478.html" target="_blank" rel="noopener">c# XElement XML操作总结。</a></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;C# Linq 真的很强大啊!简单的测试下。&lt;/p&gt;
     
     </summary>
     
@@ -447,28 +470,6 @@
     
     
       <category term="C/C++" scheme="https://blog.huvjie.com/tags/C-C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>C# enum 枚举类的问题</title>
-    <link href="https://blog.huvjie.com/2020/08/22/200822N02/"/>
-    <id>https://blog.huvjie.com/2020/08/22/200822N02/</id>
-    <published>2020-08-22T12:00:01.000Z</published>
-    <updated>2020-08-26T12:50:34.392Z</updated>
-    
-    <content type="html"><![CDATA[<p>C# enum 枚举类的问题。<br><a id="more"></a></p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">enum</span> TrafficLight</span><br><span class="line">&#123;</span><br><span class="line">    Green = <span class="number">10</span>,</span><br><span class="line">    Yellow = <span class="number">15</span>,</span><br><span class="line">    Red = <span class="number">15</span>,</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title">Program</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="keyword">string</span>[] args</span>)</span></span><br><span class="line"><span class="function"></span>    &#123;</span><br><span class="line">        TrafficLight t1 = TrafficLight.Red;</span><br><span class="line">        Console.WriteLine((TrafficLight)<span class="number">15</span>); <span class="comment">// 输出的是第一个能匹配的值</span></span><br><span class="line">        Console.WriteLine(t1);  <span class="comment">// 输出的是第一个能匹配的值，尽管前面赋值的是 Red，但输出的还是 Yellow。</span></span><br><span class="line">        Console.Read();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>输出：</p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Yellow</span><br><span class="line">Yellow</span><br></pre></td></tr></table></figure><p>可见，枚举类虽然不能有重复的名称，但可以有重复的值（上例中赋值了两个15）。</p><p>上面的测试可知：<strong>输出的是第一个能匹配的值，尽管前面赋值的是<code>Red</code>，但输出的还是 <code>Yellow</code>。</strong></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;C# enum 枚举类的问题。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="编程爱好" scheme="https://blog.huvjie.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
-    
-    
-      <category term="C#" scheme="https://blog.huvjie.com/tags/C/"/>
     
   </entry>
   
