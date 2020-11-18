@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.huvjie.com/"/>
-  <updated>2020-11-16T13:56:34.493Z</updated>
+  <updated>2020-11-18T14:26:42.905Z</updated>
   <id>https://blog.huvjie.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>C# 无法修改返回值，应为它不是变量</title>
+    <link href="https://blog.huvjie.com/2020/11/18/201118N01/"/>
+    <id>https://blog.huvjie.com/2020/11/18/201118N01/</id>
+    <published>2020-11-18T02:22:00.000Z</published>
+    <updated>2020-11-18T14:26:42.905Z</updated>
+    
+    <content type="html"><![CDATA[<p>结构体通过属性访问修改的时候会出现以下编译错误：</p><p><img src="http://image.huvjie.com/201118N01_img01.jpg" alt="▲ 错误提示"></p><div style="font-size:13px;color:gray;text-align:center">▲ 错误提示</div><a id="more"></a><p>结构体不能像类一样去操作，问题肯定是因为：<strong>结构体是值类型</strong>的原因。</p><p><strong>结构体肯定只能整体给他赋值</strong>，像<code>int</code>类型一样。</p><p><img src="http://image.huvjie.com/201118N01_img02.jpg" alt="▲ 结构体整体赋值，不会编译错误。"></p><div style="font-size:13px;color:gray;text-align:center">▲ 结构体整体赋值，不会编译错误。</div>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;结构体通过属性访问修改的时候会出现以下编译错误：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://image.huvjie.com/201118N01_img01.jpg&quot; alt=&quot;▲ 错误提示&quot;&gt;&lt;/p&gt;
+&lt;div style=&quot;font-size:13px;color:gray;text-align:center&quot;&gt;▲ 错误提示&lt;/div&gt;
+    
+    </summary>
+    
+      <category term="编程爱好" scheme="https://blog.huvjie.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
+    
+    
+      <category term="C#" scheme="https://blog.huvjie.com/tags/C/"/>
+    
+  </entry>
   
   <entry>
     <title>C# 实例构建的执行顺序</title>
@@ -42,6 +66,28 @@
   </entry>
   
   <entry>
+    <title>还是要学下 WPF</title>
+    <link href="https://blog.huvjie.com/2020/11/16/201116N01/"/>
+    <id>https://blog.huvjie.com/2020/11/16/201116N01/</id>
+    <published>2020-11-16T02:22:00.000Z</published>
+    <updated>2020-11-16T12:28:10.344Z</updated>
+    
+    <content type="html"><![CDATA[<p>其实行业内大部分人都在用 winform，还是想学习一下 WPF。主要考虑一下几点：</p><a id="more"></a><ol><li><p>技术更先进。</p><p> 还是要向前一步。能够很好的实现前后台代码的分离。</p></li><li><p>后面想弄下安卓 <code>Xamarin</code>。</p></li></ol><p>/<strong><strong><strong><strong><strong><strong><strong><em>**</em></strong></strong></strong></strong></strong></strong></strong>/</p><p>学 WPF 不着急，慢慢学。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;其实行业内大部分人都在用 winform，还是想学习一下 WPF。主要考虑一下几点：&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="编程爱好" scheme="https://blog.huvjie.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
+    
+    
+      <category term="C#" scheme="https://blog.huvjie.com/tags/C/"/>
+    
+  </entry>
+  
+  <entry>
     <title>C# 关于引用类型的类外只读属性</title>
     <link href="https://blog.huvjie.com/2020/11/16/201116N02/"/>
     <id>https://blog.huvjie.com/2020/11/16/201116N02/</id>
@@ -54,28 +100,6 @@
     
       &lt;p&gt;类内的只读属性不能更改的是他的&lt;code&gt;指向&lt;/code&gt;，例如，容器类&lt;code&gt;List&lt;/code&gt;，如果是只内部可写，外部可读，只有类内部可以更改 &lt;code&gt;List&lt;/code&gt; 字段的指向赋值，外部不能。&lt;strong&gt;而类外&lt;code&gt;get&lt;/code&gt;到它的指向值后，是可以对它进行&lt;code&gt;Add&lt;/code&gt;等操作的，因为没有更改它的指向。&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;有点绕，估计没讲清我想要说什么。~O(∩_∩)O~&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="编程爱好" scheme="https://blog.huvjie.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
-    
-    
-      <category term="C#" scheme="https://blog.huvjie.com/tags/C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>还是要学下 WPF</title>
-    <link href="https://blog.huvjie.com/2020/11/16/201116N01/"/>
-    <id>https://blog.huvjie.com/2020/11/16/201116N01/</id>
-    <published>2020-11-16T02:22:00.000Z</published>
-    <updated>2020-11-16T12:28:10.344Z</updated>
-    
-    <content type="html"><![CDATA[<p>其实行业内大部分人都在用 winform，还是想学习一下 WPF。主要考虑一下几点：</p><a id="more"></a><ol><li><p>技术更先进。</p><p> 还是要向前一步。能够很好的实现前后台代码的分离。</p></li><li><p>后面想弄下安卓 <code>Xamarin</code>。</p></li></ol><p>/<strong><strong><strong><strong><strong><strong><strong><em>**</em></strong></strong></strong></strong></strong></strong></strong>/</p><p>学 WPF 不着急，慢慢学。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;其实行业内大部分人都在用 winform，还是想学习一下 WPF。主要考虑一下几点：&lt;/p&gt;
     
     </summary>
     
@@ -444,28 +468,6 @@
     <summary type="html">
     
       &lt;p&gt;C# &lt;code&gt;==&lt;/code&gt; 和 &lt;code&gt;Equals&lt;/code&gt;的比较。&lt;code&gt;==&lt;/code&gt;比较的是引用，&lt;code&gt;Equals&lt;/code&gt;比较的是内容。所以对&lt;code&gt;值类型&lt;/code&gt;两者是一样的，对于引用类型就不一样了。但对于&lt;code&gt;string&lt;/code&gt;类型的比较，内部重写了&lt;code&gt;==&lt;/code&gt;操作符，内部调用的还是&lt;code&gt;Equals&lt;/code&gt;。&lt;code&gt;Equals&lt;/code&gt;是&lt;code&gt;Object&lt;/code&gt;中的一个虚方法，必要的时候可以进行重写。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="编程爱好" scheme="https://blog.huvjie.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
-    
-    
-      <category term="C#" scheme="https://blog.huvjie.com/tags/C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>C#.NET不同类实现一个接口的事例</title>
-    <link href="https://blog.huvjie.com/2020/08/26/200826N02/"/>
-    <id>https://blog.huvjie.com/2020/08/26/200826N02/</id>
-    <published>2020-08-26T13:13:47.000Z</published>
-    <updated>2020-11-15T00:09:10.670Z</updated>
-    
-    <content type="html"><![CDATA[<p>不同类实现一个接口的事例。</p><a id="more"></a><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">interface</span> <span class="title">ILiveBird</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">string</span> <span class="title">BabyCalled</span>(<span class="params"></span>)</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title">Animal</span> &#123; &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title">Cat</span>: <span class="title">Animal</span>, <span class="title">ILiveBird</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">string</span> ILiveBird.BabyCalled()</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"Kitten"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title">Dog</span>:<span class="title">Animal</span>, <span class="title">ILiveBird</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">string</span> ILiveBird.BabyCalled()</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"Puppy"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title">Bird</span>: <span class="title">Animal</span></span><br><span class="line">&#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title">Program</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>    &#123;</span><br><span class="line">        Animal[] animalArray = <span class="keyword">new</span> Animal[<span class="number">3</span>];</span><br><span class="line">        animalArray[<span class="number">0</span>] = <span class="keyword">new</span> Cat();</span><br><span class="line">        animalArray[<span class="number">1</span>] = <span class="keyword">new</span> Dog();</span><br><span class="line">        animalArray[<span class="number">2</span>] = <span class="keyword">new</span> Bird();        </span><br><span class="line"></span><br><span class="line">        <span class="keyword">foreach</span> (Animal a <span class="keyword">in</span> animalArray) &#123;</span><br><span class="line">            ILiveBird b = a <span class="keyword">as</span> ILiveBird; <span class="comment">// 关键代码</span></span><br><span class="line">            <span class="keyword">if</span> (b != <span class="literal">null</span>) &#123;</span><br><span class="line">                Console.WriteLine(<span class="string">"昵称是：&#123;0&#125;"</span>, b.BabyCalled());</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        Console.Read();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>输出：</p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">昵称是：Kitten</span><br><span class="line">昵称是：Puppy</span><br></pre></td></tr></table></figure><p><code>ILiveBird b = a as ILiveBird; // 关键代码</code>，<code>as</code>转换，失败不会报异常，而是返回<code>null</code>。</p><p><span style="color:red">注意：</span>每个接口的实现都采用的是显式实现，所以，只有<code>ILiveBird b = a as ILiveBird;</code>强制转化成接口引用才能够访问实现成员；通过继承接口的类实例不能够直接访问接口的实现成员。例如，上面以<code>animalArray[0].BayCalled()</code>这样的形式是不能够直接访问的，必须先强制转化成接口引用类型，通过接口去访问<code>BabyCalled()</code>。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;不同类实现一个接口的事例。&lt;/p&gt;
     
     </summary>
     
