@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title><![CDATA[理一下后面的思路]]></title>
-    <url>%2F2021%2F02%2F06%2F201121N01%2F</url>
+    <url>%2F2021%2F12%2F31%2F201121N01%2F</url>
     <content type="text"><![CDATA[理一下接下来的思路。首先，最重要和迫切的是加强提高业务层面“体力活”部分的熟练、效率。后面的整体方向： 以 C# 技术栈为中心； 以工业视觉为技术核心； 加强英语和数学。 以 C# 技术栈为中心C# 是工控行业的主力语言，桌面程序为主，Windows 平台，开发容易且效率高。我们的主要精力点不应该局限于语言，而是以语言为工具载体展开的知识体系。行业内的另一大开发语言是 C++，之前用 MFC，现在应该是 Qt。自己不要花精力刻意去学习Qt，不要把时间和精力分散了，集中精力把 C# 技术栈深入一下。业务方面的体力活部分要做到很熟练，这样效率才能高；现在用的是 Winform 开发界面，其实可以学习一下 WPF，也可以了解下 Web 方面的知识。软件的架构设计，开发模式，面向对象的设计和分析(UML)等，也要有一定的能力。数据库方面的使用。 以工业视觉为技术核心我觉得工控控制的核心技术应该在工业视觉这里，这里的算法部分逃不过C/C++了，这里的C/C++语言部分应该是一个被动技能，不要刻意的深入到语言里面去，那是个复杂的无底洞，应该在学习过程中需要什么再去学习什么。这里我给自己定了两个方向。 Halcon；// 行业能用的最多的算法包 OpenCV；// 开源，图像处理算法肯定要学的。 MIL； // 公司用这个，但互联网上找不到太多资料，在工作中学习吧，不做主要。 另外，有时间学下 Python。至于，什么深度学习，人工智能啥的，太高端，后面再说。 加强英语和数学英语和数学，这一点不用多说。]]></content>
       <categories>
         <category>编程爱好</category>
@@ -13,7 +13,7 @@
   </entry>
   <entry>
     <title><![CDATA[WPF 事件｜硬编码的方式 winform 的方式使用]]></title>
-    <url>%2F2021%2F02%2F06%2F201121N02%2F</url>
+    <url>%2F2020%2F11%2F21%2F201121N02%2F</url>
     <content type="text"><![CDATA[像winform一样，事件，赋值，硬编码的方式实现。 // 传说，WPF 有五种绑定方式。 ▲ 效果 12345678910111213&lt;Window x:Class="WpfApp1.MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:WpfApp1" mc:Ignorable="d" Title="MainWindow" Height="250" Width="300"&gt; &lt;Grid&gt; &lt;Button x:Name="btnTest" Click="BtnTest_Click" Content="点击测试" Width="100" Height="30"/&gt; &lt;Label x:Name="label" Content="Label" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="2.845,4.051" Margin="128,41,0,0"/&gt; &lt;/Grid&gt;&lt;/Window&gt; 12345678910111213141516171819202122using System.Windows;namespace WpfApp1&#123; /// &lt;summary&gt; /// MainWindow.xaml 的交互逻辑 /// &lt;/summary&gt; public partial class MainWindow : Window &#123; public MainWindow() &#123; InitializeComponent(); this.WindowStartupLocation = WindowStartupLocation.CenterScreen; &#125; private void BtnTest_Click(object sender, RoutedEventArgs e) &#123; MessageBox.Show("Hello!"); this.label.Content = "World!"; &#125; &#125;&#125;]]></content>
       <categories>
         <category>编程爱好</category>

@@ -112,16 +112,20 @@
 
 
 
-  <meta name="description" content="定一个目标并为之努力吧">
-<meta property="og:type" content="website">
-<meta property="og:title" content="胡文杰">
-<meta property="og:url" content="https://blog.huvjie.com/archives/2021/02/index.html">
+  <meta name="description" content="像winform一样，事件，赋值，硬编码的方式实现。   // 传说，WPF 有五种绑定方式。  ▲ 效果">
+<meta name="keywords" content="C#">
+<meta property="og:type" content="article">
+<meta property="og:title" content="WPF 事件｜硬编码的方式 winform 的方式使用">
+<meta property="og:url" content="https://blog.huvjie.com/2020/11/21/201121N02/index.html">
 <meta property="og:site_name" content="胡文杰">
-<meta property="og:description" content="定一个目标并为之努力吧">
+<meta property="og:description" content="像winform一样，事件，赋值，硬编码的方式实现。   // 传说，WPF 有五种绑定方式。  ▲ 效果">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://image.huvjie.com/201121N02_img01.gif">
+<meta property="og:updated_time" content="2020-11-21T14:03:45.472Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="胡文杰">
-<meta name="twitter:description" content="定一个目标并为之努力吧">
+<meta name="twitter:title" content="WPF 事件｜硬编码的方式 winform 的方式使用">
+<meta name="twitter:description" content="像winform一样，事件，赋值，硬编码的方式实现。   // 传说，WPF 有五种绑定方式。  ▲ 效果">
+<meta name="twitter:image" content="http://image.huvjie.com/201121N02_img01.gif">
 
 
 
@@ -130,7 +134,7 @@
 
 
 
-  <link rel="canonical" href="https://blog.huvjie.com/archives/2021/02/">
+  <link rel="canonical" href="https://blog.huvjie.com/2020/11/21/201121N02/">
 
 
 
@@ -140,7 +144,7 @@
   };
 </script>
 
-  <title>归档 | 胡文杰</title>
+  <title>WPF 事件｜硬编码的方式 winform 的方式使用 | 胡文杰</title>
   
 
 
@@ -197,7 +201,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -270,7 +274,7 @@
         
         
           
-          <li class="menu-item menu-item-archives menu-item-active">
+          <li class="menu-item menu-item-archives">
     <a href="/archives/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
   </li>
@@ -340,141 +344,264 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
 
-      
-      <span class="archive-page-counter">
-        
-        
-         
-          
-        非常好! 目前共计 178 篇日志。 继续努力。
-      </span>
-      
-
-      
-
-        
-        
-        
-
-        
-          
-          <div class="collection-title">
-            <h2 class="archive-year" id="archive-year-2021">2021</h2>
-          </div>
-        
-        
-
-        
+  
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.huvjie.com/2020/11/21/201121N02/">
 
-      <h3 class="post-title">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="huvjie">
+      <meta itemprop="description" content="定一个目标并为之努力吧">
+      <meta itemprop="image" content="http://image.huvjie.com/blog_logo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="胡文杰">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2021/02/06/201121N01/" itemprop="url">
-              
-                <span itemprop="name">理一下后面的思路</span>
-              
-            </a>
         
-      </h3>
+          <h2 class="post-title" itemprop="name headline">WPF 事件｜硬编码的方式 winform 的方式使用
+              
+            
+          </h2>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2021-02-06T10:22:00+08:00" content="2021-02-06">
-          02-06
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
 
-    </header>
-  </article>
+            
+            
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
 
+              
+                
+              
+
+              <time title="创建时间：2020-11-21 10:22:00 / 修改时间：22:03:45" itemprop="dateCreated datePublished" datetime="2020-11-21T10:22:00+08:00">2020-11-21</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/编程爱好/" itemprop="url" rel="index"><span itemprop="name">编程爱好</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/11/21/201121N02/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2020/11/21/201121N02/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2021/02/06/201121N02/" itemprop="url">
-              
-                <span itemprop="name">WPF 事件｜硬编码的方式 winform 的方式使用</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2021-02-06T10:22:00+08:00" content="2021-02-06">
-          02-06
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
+      
+        <p>像winform一样，事件，赋值，硬编码的方式实现。   <strong>// 传说，WPF 有五种绑定方式。</strong></p>
+<p><img src="http://image.huvjie.com/201121N02_img01.gif" alt="▲ 效果"></p>
+<div style="font-size:13px;color:gray;text-align:center">▲ 效果</div>
+
+<a id="more"></a>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Window</span> <span class="attr">x:Class</span>=<span class="string">"WpfApp1.MainWindow"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">xmlns</span>=<span class="string">"http://schemas.microsoft.com/winfx/2006/xaml/presentation"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">xmlns:x</span>=<span class="string">"http://schemas.microsoft.com/winfx/2006/xaml"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">xmlns:d</span>=<span class="string">"http://schemas.microsoft.com/expression/blend/2008"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">xmlns:mc</span>=<span class="string">"http://schemas.openxmlformats.org/markup-compatibility/2006"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">xmlns:local</span>=<span class="string">"clr-namespace:WpfApp1"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">mc:Ignorable</span>=<span class="string">"d"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">Title</span>=<span class="string">"MainWindow"</span> <span class="attr">Height</span>=<span class="string">"250"</span> <span class="attr">Width</span>=<span class="string">"300"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Grid</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">Button</span> <span class="attr">x:Name</span>=<span class="string">"btnTest"</span> <span class="attr">Click</span>=<span class="string">"BtnTest_Click"</span> <span class="attr">Content</span>=<span class="string">"点击测试"</span> <span class="attr">Width</span>=<span class="string">"100"</span> <span class="attr">Height</span>=<span class="string">"30"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">Label</span> <span class="attr">x:Name</span>=<span class="string">"label"</span> <span class="attr">Content</span>=<span class="string">"Label"</span> <span class="attr">HorizontalAlignment</span>=<span class="string">"Left"</span> <span class="attr">VerticalAlignment</span>=<span class="string">"Top"</span> <span class="attr">RenderTransformOrigin</span>=<span class="string">"2.845,4.051"</span> <span class="attr">Margin</span>=<span class="string">"128,41,0,0"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">Grid</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">Window</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System.Windows;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">WpfApp1</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> MainWindow.xaml 的交互逻辑</span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">partial</span> <span class="keyword">class</span> <span class="title">MainWindow</span> : <span class="title">Window</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">MainWindow</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            InitializeComponent();</span><br><span class="line">            <span class="keyword">this</span>.WindowStartupLocation = WindowStartupLocation.CenterScreen;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">BtnTest_Click</span>(<span class="params"><span class="keyword">object</span> sender, RoutedEventArgs e</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            MessageBox.Show(<span class="string">"Hello!"</span>);</span><br><span class="line">            <span class="keyword">this</span>.label.Content = <span class="string">"World!"</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
     </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>感谢支持！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/WeChatPay_.jpg" alt="huvjie 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/Alipay_.jpg" alt="huvjie 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>huvjie</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://blog.huvjie.com/2020/11/21/201121N02/" title="WPF 事件｜硬编码的方式 winform 的方式使用">https://blog.huvjie.com/2020/11/21/201121N02/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/C/" rel="tag"># C#</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/11/20/201120N01/" rel="next" title="WPF｜元素查找的方式Bonding">
+                <i class="fa fa-chevron-left"></i> WPF｜元素查找的方式Bonding
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2021/12/31/201121N01/" rel="prev" title="理一下后面的思路">
+                理一下后面的思路 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+  </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -797,6 +924,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.2"></script>
+
+
 
   
 
