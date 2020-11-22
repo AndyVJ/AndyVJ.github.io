@@ -44,6 +44,56 @@
   </entry>
   
   <entry>
+    <title>面向对象的思考</title>
+    <link href="https://blog.huvjie.com/2020/11/22/201122N04/"/>
+    <id>https://blog.huvjie.com/2020/11/22/201122N04/</id>
+    <published>2020-11-22T02:22:00.000Z</published>
+    <updated>2020-11-22T13:30:46.431Z</updated>
+    
+    <content type="html"><![CDATA[<p>面向对象，数据的传输尽量以<code>对象</code>的形式封装起来传传递会比较好。<code>实体类</code>是不是就是干这个事情的？!</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;面向对象，数据的传输尽量以&lt;code&gt;对象&lt;/code&gt;的形式封装起来传传递会比较好。&lt;code&gt;实体类&lt;/code&gt;是不是就是干这个事情的？!&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+      <category term="编程爱好" scheme="https://blog.huvjie.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
+    
+    
+      <category term="C#" scheme="https://blog.huvjie.com/tags/C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Winform ｜制作圆形label标签双色球</title>
+    <link href="https://blog.huvjie.com/2020/11/22/201122N03/"/>
+    <id>https://blog.huvjie.com/2020/11/22/201122N03/</id>
+    <published>2020-11-22T02:22:00.000Z</published>
+    <updated>2020-11-22T13:27:45.118Z</updated>
+    
+    <content type="html"><![CDATA[<p>制作圆形的显示 label 当做双色球，效果如下：</p><p><img src="http://image.huvjie.com/201122N03_img01.jpg" alt="▲ 圆形双色球效果"></p><div style="font-size:13px;color:gray;text-align:center">▲ 圆形双色球效果</div><a id="more"></a><h2 id="一、找两个圆形底色为白色的图片"><a href="#一、找两个圆形底色为白色的图片" class="headerlink" title="一、找两个圆形底色为白色的图片"></a>一、找两个圆形底色为白色的图片</h2><p><img src="http://image.huvjie.com/201122N03_img01.png" alt=""></p><p><img src="http://image.huvjie.com/201122N03_img02.png" alt=""></p><div style="font-size:13px;color:gray;text-align:center">▲ 底图</div><h2 id="二、label-标签设置"><a href="#二、label-标签设置" class="headerlink" title="二、label 标签设置"></a>二、label 标签设置</h2><ol><li>拖入<code>label</code>标签；</li><li><code>AutoSize</code>属性置为<code>false</code>；</li><li><code>Width</code>和<code>Height</code>属性设置相等且适当尺寸；</li><li><code>Image</code>属性导入底图；</li><li><code>Text</code>属性先默认设置成<code>00</code>，字体大小调至适当;</li><li><code>TextAlign</code>属性设置成<code>居中</code>。</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;制作圆形的显示 label 当做双色球，效果如下：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://image.huvjie.com/201122N03_img01.jpg&quot; alt=&quot;▲ 圆形双色球效果&quot;&gt;&lt;/p&gt;
+&lt;div style=&quot;font-size:13px;color:gray;text-align:center&quot;&gt;▲ 圆形双色球效果&lt;/div&gt;
+    
+    </summary>
+    
+      <category term="编程爱好" scheme="https://blog.huvjie.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
+    
+    
+      <category term="C#" scheme="https://blog.huvjie.com/tags/C/"/>
+    
+  </entry>
+  
+  <entry>
     <title>C#｜对象初始化器的精简</title>
     <link href="https://blog.huvjie.com/2020/11/22/201122N01/"/>
     <id>https://blog.huvjie.com/2020/11/22/201122N01/</id>
@@ -161,28 +211,6 @@
   </entry>
   
   <entry>
-    <title>还是要学下 WPF</title>
-    <link href="https://blog.huvjie.com/2020/11/16/201116N01/"/>
-    <id>https://blog.huvjie.com/2020/11/16/201116N01/</id>
-    <published>2020-11-16T02:22:00.000Z</published>
-    <updated>2020-11-16T12:28:10.344Z</updated>
-    
-    <content type="html"><![CDATA[<p>其实行业内大部分人都在用 winform，还是想学习一下 WPF。主要考虑一下几点：</p><a id="more"></a><ol><li><p>技术更先进。</p><p> 还是要向前一步。能够很好的实现前后台代码的分离。</p></li><li><p>后面想弄下安卓 <code>Xamarin</code>。</p></li></ol><p>/<strong><strong><strong><strong><strong><strong><strong><em>**</em></strong></strong></strong></strong></strong></strong></strong>/</p><p>学 WPF 不着急，慢慢学。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;其实行业内大部分人都在用 winform，还是想学习一下 WPF。主要考虑一下几点：&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="编程爱好" scheme="https://blog.huvjie.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
-    
-    
-      <category term="C#" scheme="https://blog.huvjie.com/tags/C/"/>
-    
-  </entry>
-  
-  <entry>
     <title>C# 实例构建的执行顺序</title>
     <link href="https://blog.huvjie.com/2020/11/16/201116N03/"/>
     <id>https://blog.huvjie.com/2020/11/16/201116N03/</id>
@@ -197,6 +225,28 @@
       
         &lt;h1 id=&quot;先看看一般类的实例化构建顺序&quot;&gt;&lt;a href=&quot;#先看看一般类的实例化构建顺序&quot; class=&quot;headerlink&quot; title=&quot;先看看一般类的实例化构建顺序&quot;&gt;&lt;/a&gt;先看看一般类的实例化构建顺序&lt;/h1&gt;&lt;h2 id=&quot;无继承的情况&quot;&gt;&lt;a href=&quot;
       
+    
+    </summary>
+    
+      <category term="编程爱好" scheme="https://blog.huvjie.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
+    
+    
+      <category term="C#" scheme="https://blog.huvjie.com/tags/C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>还是要学下 WPF</title>
+    <link href="https://blog.huvjie.com/2020/11/16/201116N01/"/>
+    <id>https://blog.huvjie.com/2020/11/16/201116N01/</id>
+    <published>2020-11-16T02:22:00.000Z</published>
+    <updated>2020-11-16T12:28:10.344Z</updated>
+    
+    <content type="html"><![CDATA[<p>其实行业内大部分人都在用 winform，还是想学习一下 WPF。主要考虑一下几点：</p><a id="more"></a><ol><li><p>技术更先进。</p><p> 还是要向前一步。能够很好的实现前后台代码的分离。</p></li><li><p>后面想弄下安卓 <code>Xamarin</code>。</p></li></ol><p>/<strong><strong><strong><strong><strong><strong><strong><em>**</em></strong></strong></strong></strong></strong></strong></strong>/</p><p>学 WPF 不着急，慢慢学。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;其实行业内大部分人都在用 winform，还是想学习一下 WPF。主要考虑一下几点：&lt;/p&gt;
     
     </summary>
     
@@ -348,28 +398,6 @@
   </entry>
   
   <entry>
-    <title>C# 委托和事件的区别</title>
-    <link href="https://blog.huvjie.com/2020/11/08/201108N02/"/>
-    <id>https://blog.huvjie.com/2020/11/08/201108N02/</id>
-    <published>2020-11-08T02:22:00.000Z</published>
-    <updated>2020-11-08T02:07:27.615Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="委托："><a href="#委托：" class="headerlink" title="委托："></a>委托：</h2><p><strong>委托</strong>是一种各<strong>类型</strong>，像类和结构一样。一般放在<code>namespace</code>里，当然也可以放在类里面，就像类里面也可以放类一样。</p><a id="more"></a><h2 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h2><p><strong>事件</strong>是<em>类或结构</em>的成员，像<code>属性</code>和<code>方法</code>一样。事件更像是委托变量。</p><p>有两点注意：</p><ul><li>事件不能放在可执行代码段里面声明。也就是，只能做字段，不能做本地变量；</li><li>必须声明在类或结构中，做类或结构的成员；</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;委托：&quot;&gt;&lt;a href=&quot;#委托：&quot; class=&quot;headerlink&quot; title=&quot;委托：&quot;&gt;&lt;/a&gt;委托：&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;委托&lt;/strong&gt;是一种各&lt;strong&gt;类型&lt;/strong&gt;，像类和结构一样。一般放在&lt;code&gt;namespace&lt;/code&gt;里，当然也可以放在类里面，就像类里面也可以放类一样。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="编程爱好" scheme="https://blog.huvjie.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
-    
-    
-      <category term="C#" scheme="https://blog.huvjie.com/tags/C/"/>
-    
-  </entry>
-  
-  <entry>
     <title>简单测试下 goto 语句</title>
     <link href="https://blog.huvjie.com/2020/11/08/201108N01/"/>
     <id>https://blog.huvjie.com/2020/11/08/201108N01/</id>
@@ -382,6 +410,28 @@
     
       &lt;p&gt;大家都建议不要用&lt;code&gt;goto&lt;/code&gt;语句。我测试下&lt;code&gt;goto&lt;/code&gt;语句怎么用。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;&lt;code&gt;goto&lt;/code&gt;语句执行是，跳转到标签位置后，又开始从标签位置往下执行。&lt;/strong&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="编程爱好" scheme="https://blog.huvjie.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
+    
+    
+      <category term="C#" scheme="https://blog.huvjie.com/tags/C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>C# 委托和事件的区别</title>
+    <link href="https://blog.huvjie.com/2020/11/08/201108N02/"/>
+    <id>https://blog.huvjie.com/2020/11/08/201108N02/</id>
+    <published>2020-11-08T02:22:00.000Z</published>
+    <updated>2020-11-08T02:07:27.615Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="委托："><a href="#委托：" class="headerlink" title="委托："></a>委托：</h2><p><strong>委托</strong>是一种各<strong>类型</strong>，像类和结构一样。一般放在<code>namespace</code>里，当然也可以放在类里面，就像类里面也可以放类一样。</p><a id="more"></a><h2 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h2><p><strong>事件</strong>是<em>类或结构</em>的成员，像<code>属性</code>和<code>方法</code>一样。事件更像是委托变量。</p><p>有两点注意：</p><ul><li>事件不能放在可执行代码段里面声明。也就是，只能做字段，不能做本地变量；</li><li>必须声明在类或结构中，做类或结构的成员；</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;委托：&quot;&gt;&lt;a href=&quot;#委托：&quot; class=&quot;headerlink&quot; title=&quot;委托：&quot;&gt;&lt;/a&gt;委托：&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;委托&lt;/strong&gt;是一种各&lt;strong&gt;类型&lt;/strong&gt;，像类和结构一样。一般放在&lt;code&gt;namespace&lt;/code&gt;里，当然也可以放在类里面，就像类里面也可以放类一样。&lt;/p&gt;
     
     </summary>
     
@@ -415,32 +465,6 @@
   </entry>
   
   <entry>
-    <title>C# 读取环境变量，和字符串大小写转换</title>
-    <link href="https://blog.huvjie.com/2020/11/03/201103N01/"/>
-    <id>https://blog.huvjie.com/2020/11/03/201103N01/</id>
-    <published>2020-11-03T02:22:00.000Z</published>
-    <updated>2020-11-03T14:59:30.188Z</updated>
-    
-    <content type="html"><![CDATA[<ol><li><code>string.ToLower()</code> 更改大小写返回的是副本，原来的字符串还是原来的。<code>ToUper()</code>应该也是一样的吧；</li><li><code>ToLower()</code>只改变字母大小写，其他的字符不改变；</li><li>读取(系统)环境变量时，自己新建的环境变量后，需要重启电脑，才能读取到。</li></ol><a id="more"></a><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">ConsoleApp1</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">class</span> <span class="title">Program</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="keyword">string</span>[] args</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            <span class="keyword">string</span> a = <span class="string">"abkj_KKOIHI_1234-_!你好！！！"</span>;</span><br><span class="line">            Console.WriteLine(a);</span><br><span class="line">            <span class="keyword">string</span> b = a.ToLower();</span><br><span class="line">            Console.WriteLine(b);</span><br><span class="line">            Console.WriteLine(a);</span><br><span class="line"></span><br><span class="line">            <span class="keyword">string</span> str = Environment.GetEnvironmentVariable(<span class="string">"RebSoft"</span>);<span class="comment">// 系统环境变量</span></span><br><span class="line">            <span class="keyword">string</span> s = Environment.GetEnvironmentVariable(<span class="string">"RebSoft"</span>, EnvironmentVariableTarget.User); <span class="comment">// 当前用户环境变量</span></span><br><span class="line">            Console.WriteLine(str);</span><br><span class="line">            Console.WriteLine(s);</span><br><span class="line"></span><br><span class="line">            Console.ReadKey();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>输出：</p><p><img src="http://image.huvjie.com/201103N01_img01.jpg" alt=""></p><p>这里有一篇读取环境变量的<a href="https://www.cnblogs.com/tianma3798/p/5500279.html" target="_blank" rel="noopener">博文</a>，很全：<code>https://www.cnblogs.com/tianma3798/p/5500279.html</code>。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;ol&gt;
-&lt;li&gt;&lt;code&gt;string.ToLower()&lt;/code&gt; 更改大小写返回的是副本，原来的字符串还是原来的。&lt;code&gt;ToUper()&lt;/code&gt;应该也是一样的吧；&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;ToLower()&lt;/code&gt;只改变字母大小写，其他的字符不改变；&lt;/li&gt;
-&lt;li&gt;读取(系统)环境变量时，自己新建的环境变量后，需要重启电脑，才能读取到。&lt;/li&gt;
-&lt;/ol&gt;
-    
-    </summary>
-    
-      <category term="编程爱好" scheme="https://blog.huvjie.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
-    
-    
-      <category term="C#" scheme="https://blog.huvjie.com/tags/C/"/>
-    
-  </entry>
-  
-  <entry>
     <title>C# Linq Xml 简单测试</title>
     <link href="https://blog.huvjie.com/2020/11/03/201103N02/"/>
     <id>https://blog.huvjie.com/2020/11/03/201103N02/</id>
@@ -452,28 +476,6 @@
     <summary type="html">
     
       &lt;p&gt;C# Linq 真的很强大啊!简单的测试下。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="编程爱好" scheme="https://blog.huvjie.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
-    
-    
-      <category term="C#" scheme="https://blog.huvjie.com/tags/C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>C#跨线程访问控件需要注意的问题</title>
-    <link href="https://blog.huvjie.com/2020/10/25/201025N01/"/>
-    <id>https://blog.huvjie.com/2020/10/25/201025N01/</id>
-    <published>2020-10-25T02:22:00.000Z</published>
-    <updated>2020-10-25T02:16:47.637Z</updated>
-    
-    <content type="html"><![CDATA[<p>C#跨线程访问控件，我们一般 <code>new</code> 一个线程，多线程来操作。今天本以为是这样操作的，可还是卡死程序了。记录一下碰到的这些疑难杂症。</p><a id="more"></a><h2 id="一、怀疑多界面问题"><a href="#一、怀疑多界面问题" class="headerlink" title="一、怀疑多界面问题"></a>一、怀疑多界面问题</h2><p><strong>其实，与嵌套多少个控件没关系。</strong></p><p><img src="http://image.huvjie.com/201025N01_img01.gif" alt=""></p><p>怀疑是在主窗体嵌入的两个<code>menu</code>，在<code>menu</code>里面这样操作不行。后面这种情况被我排除了。<strong>因为，我把代码复制到主页面，相同功能还是卡死。所以，还是代码有问题。</strong></p><div style="font-size:13px;color:gray;text-align:center">▲ 我是在一个主窗体放了一个panel，然后，在panel里面加载menu1，menu1通过按钮加载menu2；再在么menu2里面new一个线程，跨线程访问textbox。可这样还是被卡死了。</div><h2 id="二、聚焦代码问题"><a href="#二、聚焦代码问题" class="headerlink" title="二、聚焦代码问题"></a>二、聚焦代码问题</h2><p>问题其实是，<code>this.textBox1.Invoke(/*调用代码*/)</code>的<code>调用代码</code><strong>不能太耗时，与控件本身操作无关的代码</strong>。不然就<strong>卡死</strong>。</p><p>开始我是这样写的：</p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">0</span>;</span><br><span class="line">thread = <span class="keyword">new</span> Thread(() =&gt;</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.textBox1.InvokeRequired) &#123;</span><br><span class="line">        <span class="keyword">this</span>.textBox1.Invoke(<span class="keyword">new</span> Action(() =&gt; &#123;</span><br><span class="line">            <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">                <span class="keyword">this</span>.textBox1.Text = a++.ToString(); </span><br><span class="line">                Thread.Sleep(<span class="number">1000</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">thread.IsBackground = <span class="literal">true</span>;</span><br><span class="line">thread.Start();</span><br></pre></td></tr></table></figure><h3 id="把循环放到控件Invoke外面去"><a href="#把循环放到控件Invoke外面去" class="headerlink" title="把循环放到控件Invoke外面去"></a>把循环放到控件<code>Invoke</code>外面去</h3><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">0</span>;</span><br><span class="line">thread = <span class="keyword">new</span> Thread(() =&gt;</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.textBox1.InvokeRequired) &#123;</span><br><span class="line">        <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">            <span class="keyword">this</span>.textBox1.Invoke(<span class="keyword">new</span> Action(() =&gt; &#123;</span><br><span class="line">                <span class="keyword">this</span>.textBox1.Text = a++.ToString();  </span><br><span class="line">                Thread.Sleep(<span class="number">1000</span>);</span><br><span class="line">            &#125;));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">thread.IsBackground = <span class="literal">true</span>;</span><br><span class="line">thread.Start();</span><br></pre></td></tr></table></figure><p>上面这样还是不行的，<code>Thread.Sleep(1000);</code>耗时，且与跨线程访问的控件无关。经测试即使换成耗时的循环<code>for(int i = 0; i &lt; 1000; i++) for(int j = 0; j &lt; 100000; j++);</code>，这样照样会卡死。</p><h3 id="把Thread-Sleep-1000-放Invoke外面去"><a href="#把Thread-Sleep-1000-放Invoke外面去" class="headerlink" title="把Thread.Sleep(1000);放Invoke外面去"></a>把<code>Thread.Sleep(1000);</code>放<code>Invoke</code>外面去</h3><p>这样能够工作的，不卡。</p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">0</span>;</span><br><span class="line">thread = <span class="keyword">new</span> Thread(() =&gt;</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.textBox1.InvokeRequired) &#123;</span><br><span class="line">        <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">            <span class="keyword">this</span>.textBox1.Invoke(<span class="keyword">new</span> Action(() =&gt; &#123;</span><br><span class="line">                <span class="keyword">this</span>.textBox1.Text = a++.ToString();</span><br><span class="line">            &#125;));</span><br><span class="line">            Thread.Sleep(<span class="number">1000</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">thread.IsBackground = <span class="literal">true</span>;</span><br><span class="line">thread.Start();</span><br></pre></td></tr></table></figure><p>效果如下：</p><p><img src="http://image.huvjie.com/201025N01_img02.gif" alt=""></p><div style="font-size:13px;color:gray;text-align:center">▲ 主页面的textbox计时显示和两层加载的menu中的textbox的计时显示也是没问题的，窗体不冻结卡死。</div><p>其实本质上为什么会这样，我是没有明确搞明白的，都是自己去理解，不确定是不是自己理解的这样。也不想花太多的时间去深究了，能实现效果就好。<strong>如何学会把时间花在最关键的地方？这是一门学问，越早明白越受益。</strong></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;C#跨线程访问控件，我们一般 &lt;code&gt;new&lt;/code&gt; 一个线程，多线程来操作。今天本以为是这样操作的，可还是卡死程序了。记录一下碰到的这些疑难杂症。&lt;/p&gt;
     
     </summary>
     

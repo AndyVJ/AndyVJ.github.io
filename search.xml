@@ -12,6 +12,28 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[面向对象的思考]]></title>
+    <url>%2F2020%2F11%2F22%2F201122N04%2F</url>
+    <content type="text"><![CDATA[面向对象，数据的传输尽量以对象的形式封装起来传传递会比较好。实体类是不是就是干这个事情的？!]]></content>
+      <categories>
+        <category>编程爱好</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Winform ｜制作圆形label标签双色球]]></title>
+    <url>%2F2020%2F11%2F22%2F201122N03%2F</url>
+    <content type="text"><![CDATA[制作圆形的显示 label 当做双色球，效果如下： ▲ 圆形双色球效果 一、找两个圆形底色为白色的图片 ▲ 底图 二、label 标签设置 拖入label标签； AutoSize属性置为false； Width和Height属性设置相等且适当尺寸； Image属性导入底图； Text属性先默认设置成00，字体大小调至适当; TextAlign属性设置成居中。]]></content>
+      <categories>
+        <category>编程爱好</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[C#｜对象初始化器的精简]]></title>
     <url>%2F2020%2F11%2F22%2F201122N01%2F</url>
     <content type="text"><![CDATA[C# 版本一直在更新，之前看到一个这样的精简。 ▲ 精简语法 VS 提示 123456789101112class B&#123; private A aa = new A() &#123; Name = "Good" &#125;; // 精简语法 private A a = new A &#123; Name = "Nice" &#125;;&#125;class A&#123; public string Name &#123; get; set; &#125;&#125;]]></content>
@@ -67,9 +89,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[还是要学下 WPF]]></title>
-    <url>%2F2020%2F11%2F16%2F201116N01%2F</url>
-    <content type="text"><![CDATA[其实行业内大部分人都在用 winform，还是想学习一下 WPF。主要考虑一下几点： 技术更先进。 还是要向前一步。能够很好的实现前后台代码的分离。 后面想弄下安卓 Xamarin。 /**/ 学 WPF 不着急，慢慢学。]]></content>
+    <title><![CDATA[C# 实例构建的执行顺序]]></title>
+    <url>%2F2020%2F11%2F16%2F201116N03%2F</url>
+    <content type="text"><![CDATA[先看看一般类的实例化构建顺序无继承的情况 静态字段 静态构造方法 实例字段 实例构造方法 有继承的情况 子类(派生类)的静态字段 子类(派生类)的静态构造方法 子类(派生类)的实例字段 父类(基类)的静态字段 父类(基类)的静态构造方法 父类(基类)的实例字段 父类(基类)的实例构造方法 子类(派生类)的实例构造方法 这两种情况还是很好理解的。总体来说字段是先于构造函数执行的，不然构造函数拿什么去执行。派生类的字段，和基类的实例先执行，然后再执行派生类的构造函数。这里是，基类的构造函数先执行，然后再执行派生类的构造函数。下面验证下： 1234567891011121314151617181920212223242526272829using System;namespace ConsoleApp1&#123; class Program &#123; static void Main(string[] args) &#123; A a = new A(); Console.ReadKey(); &#125; &#125; class A: B &#123; public A() &#123; Console.WriteLine("A"); &#125; &#125; class B &#123; public B() &#123; Console.WriteLine("B"); &#125; &#125;&#125; 输出： 12BA 基类的构造函数先执行，然后再执行派生类的构造函数。这里是对的。 C++ 的构造函数和析构函数执行顺序先调用父类(基类)的构造函数，再调用派生类的构造函数； 变量销毁时：先调用派生类的析构函数，再调用父类(基类)的析构函数。 123456789101112131415161718192021222324252627282930313233343536#include &lt;iostream&gt;using namespace std;class A&#123; public: A() &#123; cout&lt;&lt; "基类：AAAAAAAAAAAA" &lt;&lt;endl; &#125; ~A() &#123; cout &lt;&lt; "基类：~AAAAAAAAAAAA" &lt;&lt; endl; &#125; &#125;;class B:public A&#123; public: B() &#123; cout&lt;&lt; "派生类：BBBBBBBBB" &lt;&lt;endl; &#125; ~B() &#123; cout &lt;&lt; "派生类：~BBBBBBBBB" &lt;&lt; endl; &#125;&#125;;void solution() //当函数开始时，调用构造函数，当函数结束时，变量对象被销毁&#123; B b1;&#125;int main()&#123; solution(); return 0;&#125; 输出： 1234基类：AAAAAAAAAAAA派生类：BBBBBBBBB派生类：~BBBBBBBBB基类：~AAAAAAAAAAAA 看下对象初始化器和构造函数谁先执行结论：构造函数先于对象初始化器执行，然后，窗体程序的话，对象初始化器先于Load事件执行。 Form1.cs: 12345678910111213141516171819202122using System;using System.Windows.Forms;namespace WindowsFormsApp1&#123; public partial class Form1 : Form &#123; public Form1() &#123; InitializeComponent(); Console.WriteLine("Fomr1 构造函数!!"); &#125; private void button1_Click(object sender, EventArgs e) &#123; Form2 form2 = new Form2() &#123; Msg = "对象初始化器中赋值!!" &#125;; form2.Show(); &#125; &#125;&#125; Form2.cs： 12345678910111213141516171819202122232425262728using System;using System.Windows.Forms;namespace WindowsFormsApp1&#123; public partial class Form2 : Form &#123; public string Msg &#123; get; set; &#125; public Form2() &#123; InitializeComponent(); Console.WriteLine("Form2 构造函数!!"); this.StartPosition = FormStartPosition.CenterScreen; this.Msg = "构造函数后执行于对象初始化器!!"; &#125; private void Form2_Load(object sender, EventArgs e) &#123; if (this.Msg == null) Console.WriteLine("Load 事件先执行!!"); else Console.WriteLine(this.Msg); &#125; &#125;&#125; &gt; 参考：&gt; 1. https://www.cnblogs.com/nzbbody/archive/2011/12/29/2306403.html&gt; 2. https://www.cnblogs.com/qkqBeer/articles/10726173.html]]></content>
       <categories>
         <category>编程爱好</category>
       </categories>
@@ -78,9 +100,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[C# 实例构建的执行顺序]]></title>
-    <url>%2F2020%2F11%2F16%2F201116N03%2F</url>
-    <content type="text"><![CDATA[先看看一般类的实例化构建顺序无继承的情况 静态字段 静态构造方法 实例字段 实例构造方法 有继承的情况 子类(派生类)的静态字段 子类(派生类)的静态构造方法 子类(派生类)的实例字段 父类(基类)的静态字段 父类(基类)的静态构造方法 父类(基类)的实例字段 父类(基类)的实例构造方法 子类(派生类)的实例构造方法 这两种情况还是很好理解的。总体来说字段是先于构造函数执行的，不然构造函数拿什么去执行。派生类的字段，和基类的实例先执行，然后再执行派生类的构造函数。这里是，基类的构造函数先执行，然后再执行派生类的构造函数。下面验证下： 1234567891011121314151617181920212223242526272829using System;namespace ConsoleApp1&#123; class Program &#123; static void Main(string[] args) &#123; A a = new A(); Console.ReadKey(); &#125; &#125; class A: B &#123; public A() &#123; Console.WriteLine("A"); &#125; &#125; class B &#123; public B() &#123; Console.WriteLine("B"); &#125; &#125;&#125; 输出： 12BA 基类的构造函数先执行，然后再执行派生类的构造函数。这里是对的。 C++ 的构造函数和析构函数执行顺序先调用父类(基类)的构造函数，再调用派生类的构造函数； 变量销毁时：先调用派生类的析构函数，再调用父类(基类)的析构函数。 123456789101112131415161718192021222324252627282930313233343536#include &lt;iostream&gt;using namespace std;class A&#123; public: A() &#123; cout&lt;&lt; "基类：AAAAAAAAAAAA" &lt;&lt;endl; &#125; ~A() &#123; cout &lt;&lt; "基类：~AAAAAAAAAAAA" &lt;&lt; endl; &#125; &#125;;class B:public A&#123; public: B() &#123; cout&lt;&lt; "派生类：BBBBBBBBB" &lt;&lt;endl; &#125; ~B() &#123; cout &lt;&lt; "派生类：~BBBBBBBBB" &lt;&lt; endl; &#125;&#125;;void solution() //当函数开始时，调用构造函数，当函数结束时，变量对象被销毁&#123; B b1;&#125;int main()&#123; solution(); return 0;&#125; 输出： 1234基类：AAAAAAAAAAAA派生类：BBBBBBBBB派生类：~BBBBBBBBB基类：~AAAAAAAAAAAA 看下对象初始化器和构造函数谁先执行结论：构造函数先于对象初始化器执行，然后，窗体程序的话，对象初始化器先于Load事件执行。 Form1.cs: 12345678910111213141516171819202122using System;using System.Windows.Forms;namespace WindowsFormsApp1&#123; public partial class Form1 : Form &#123; public Form1() &#123; InitializeComponent(); Console.WriteLine("Fomr1 构造函数!!"); &#125; private void button1_Click(object sender, EventArgs e) &#123; Form2 form2 = new Form2() &#123; Msg = "对象初始化器中赋值!!" &#125;; form2.Show(); &#125; &#125;&#125; Form2.cs： 12345678910111213141516171819202122232425262728using System;using System.Windows.Forms;namespace WindowsFormsApp1&#123; public partial class Form2 : Form &#123; public string Msg &#123; get; set; &#125; public Form2() &#123; InitializeComponent(); Console.WriteLine("Form2 构造函数!!"); this.StartPosition = FormStartPosition.CenterScreen; this.Msg = "构造函数后执行于对象初始化器!!"; &#125; private void Form2_Load(object sender, EventArgs e) &#123; if (this.Msg == null) Console.WriteLine("Load 事件先执行!!"); else Console.WriteLine(this.Msg); &#125; &#125;&#125; &gt; 参考：&gt; 1. https://www.cnblogs.com/nzbbody/archive/2011/12/29/2306403.html&gt; 2. https://www.cnblogs.com/qkqBeer/articles/10726173.html]]></content>
+    <title><![CDATA[还是要学下 WPF]]></title>
+    <url>%2F2020%2F11%2F16%2F201116N01%2F</url>
+    <content type="text"><![CDATA[其实行业内大部分人都在用 winform，还是想学习一下 WPF。主要考虑一下几点： 技术更先进。 还是要向前一步。能够很好的实现前后台代码的分离。 后面想弄下安卓 Xamarin。 /**/ 学 WPF 不着急，慢慢学。]]></content>
       <categories>
         <category>编程爱好</category>
       </categories>
@@ -155,9 +177,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[C# 委托和事件的区别]]></title>
-    <url>%2F2020%2F11%2F08%2F201108N02%2F</url>
-    <content type="text"><![CDATA[委托：委托是一种各类型，像类和结构一样。一般放在namespace里，当然也可以放在类里面，就像类里面也可以放类一样。 事件事件是类或结构的成员，像属性和方法一样。事件更像是委托变量。 有两点注意： 事件不能放在可执行代码段里面声明。也就是，只能做字段，不能做本地变量； 必须声明在类或结构中，做类或结构的成员；]]></content>
+    <title><![CDATA[简单测试下 goto 语句]]></title>
+    <url>%2F2020%2F11%2F08%2F201108N01%2F</url>
+    <content type="text"><![CDATA[大家都建议不要用goto语句。我测试下goto语句怎么用。 goto语句执行是，跳转到标签位置后，又开始从标签位置往下执行。 12345678910111213141516171819202122232425class Program&#123; static void Main(string[] args) &#123; int i = 0; aMark: int a = 10; Console.WriteLine(a); int b = 20; Console.WriteLine(b); int c = a + b; Console.WriteLine(c + "\n"); i++; if (i &gt; 2) goto bMark; goto aMark; bMark: Console.WriteLine("程序结束!!"); Console.ReadKey();&#125; 输出：12345678910111213102030102030102030程序结束!!]]></content>
       <categories>
         <category>编程爱好</category>
       </categories>
@@ -166,9 +188,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[简单测试下 goto 语句]]></title>
-    <url>%2F2020%2F11%2F08%2F201108N01%2F</url>
-    <content type="text"><![CDATA[大家都建议不要用goto语句。我测试下goto语句怎么用。 goto语句执行是，跳转到标签位置后，又开始从标签位置往下执行。 12345678910111213141516171819202122232425class Program&#123; static void Main(string[] args) &#123; int i = 0; aMark: int a = 10; Console.WriteLine(a); int b = 20; Console.WriteLine(b); int c = a + b; Console.WriteLine(c + "\n"); i++; if (i &gt; 2) goto bMark; goto aMark; bMark: Console.WriteLine("程序结束!!"); Console.ReadKey();&#125; 输出：12345678910111213102030102030102030程序结束!!]]></content>
+    <title><![CDATA[C# 委托和事件的区别]]></title>
+    <url>%2F2020%2F11%2F08%2F201108N02%2F</url>
+    <content type="text"><![CDATA[委托：委托是一种各类型，像类和结构一样。一般放在namespace里，当然也可以放在类里面，就像类里面也可以放类一样。 事件事件是类或结构的成员，像属性和方法一样。事件更像是委托变量。 有两点注意： 事件不能放在可执行代码段里面声明。也就是，只能做字段，不能做本地变量； 必须声明在类或结构中，做类或结构的成员；]]></content>
       <categories>
         <category>编程爱好</category>
       </categories>
@@ -188,9 +210,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[C# 读取环境变量，和字符串大小写转换]]></title>
-    <url>%2F2020%2F11%2F03%2F201103N01%2F</url>
-    <content type="text"><![CDATA[string.ToLower() 更改大小写返回的是副本，原来的字符串还是原来的。ToUper()应该也是一样的吧； ToLower()只改变字母大小写，其他的字符不改变； 读取(系统)环境变量时，自己新建的环境变量后，需要重启电脑，才能读取到。 1234567891011121314151617181920212223using System;namespace ConsoleApp1&#123; class Program &#123; static void Main(string[] args) &#123; string a = "abkj_KKOIHI_1234-_!你好！！！"; Console.WriteLine(a); string b = a.ToLower(); Console.WriteLine(b); Console.WriteLine(a); string str = Environment.GetEnvironmentVariable("RebSoft");// 系统环境变量 string s = Environment.GetEnvironmentVariable("RebSoft", EnvironmentVariableTarget.User); // 当前用户环境变量 Console.WriteLine(str); Console.WriteLine(s); Console.ReadKey(); &#125; &#125;&#125; 输出： 这里有一篇读取环境变量的博文，很全：https://www.cnblogs.com/tianma3798/p/5500279.html。]]></content>
+    <title><![CDATA[C# Linq Xml 简单测试]]></title>
+    <url>%2F2020%2F11%2F03%2F201103N02%2F</url>
+    <content type="text"><![CDATA[C# Linq 真的很强大啊!简单的测试下。 创建1234567891011121314XDocument xDoc = new XDocument( new XDeclaration("1.0", "utf-8", null), new XElement("test", new XElement("person", new XElement("name", "小明"), new XElement("age", "8")), new XElement("person", new XElement("name", "小华"), new XElement("age", "9")), new XElement("sum", "2") ) ); xDoc.Save("Test.xml"); 通过参数数组，类似结构的缩进，直接创建了xml文档。 xml: 123456789101112&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;test&gt; &lt;person&gt; &lt;name&gt;小明&lt;/name&gt; &lt;age&gt;8&lt;/age&gt; &lt;/person&gt; &lt;person&gt; &lt;name&gt;小华&lt;/name&gt; &lt;age&gt;9&lt;/age&gt; &lt;/person&gt; &lt;sum&gt;2&lt;/sum&gt;&lt;/test&gt; 读取123XElement file = XElement.Load("Test.xml");XElement xiaoming = file.Descendants("person") .Where(x =&gt; x.Element("name").Value == "小明").SingleOrDefault(); xiaoming.ToString()直接读出：1234&lt;person&gt; &lt;name&gt;小明&lt;/name&gt; &lt;age&gt;8&lt;/age&gt;&lt;/person&gt; 如果直接读取xioaming的value值会输出多少？ 它会把它下面节点的value值全部读出来： 1小明8 我猜它应该是个结果集序列。 First,FirstOrDefault,Single,SingleOrDefault 有什么不一样？ SingleOrDefault 含有多个元素的时候会抛异常。 下面两片博文可以参考： c#操作符 ??和First,FirstOrDefault,Single,SingleOrDefault。 c# XElement XML操作总结。]]></content>
       <categories>
         <category>编程爱好</category>
       </categories>
@@ -199,9 +221,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[C# Linq Xml 简单测试]]></title>
-    <url>%2F2020%2F11%2F03%2F201103N02%2F</url>
-    <content type="text"><![CDATA[C# Linq 真的很强大啊!简单的测试下。 创建1234567891011121314XDocument xDoc = new XDocument( new XDeclaration("1.0", "utf-8", null), new XElement("test", new XElement("person", new XElement("name", "小明"), new XElement("age", "8")), new XElement("person", new XElement("name", "小华"), new XElement("age", "9")), new XElement("sum", "2") ) ); xDoc.Save("Test.xml"); 通过参数数组，类似结构的缩进，直接创建了xml文档。 xml: 123456789101112&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;test&gt; &lt;person&gt; &lt;name&gt;小明&lt;/name&gt; &lt;age&gt;8&lt;/age&gt; &lt;/person&gt; &lt;person&gt; &lt;name&gt;小华&lt;/name&gt; &lt;age&gt;9&lt;/age&gt; &lt;/person&gt; &lt;sum&gt;2&lt;/sum&gt;&lt;/test&gt; 读取123XElement file = XElement.Load("Test.xml");XElement xiaoming = file.Descendants("person") .Where(x =&gt; x.Element("name").Value == "小明").SingleOrDefault(); xiaoming.ToString()直接读出：1234&lt;person&gt; &lt;name&gt;小明&lt;/name&gt; &lt;age&gt;8&lt;/age&gt;&lt;/person&gt; 如果直接读取xioaming的value值会输出多少？ 它会把它下面节点的value值全部读出来： 1小明8 我猜它应该是个结果集序列。 First,FirstOrDefault,Single,SingleOrDefault 有什么不一样？ SingleOrDefault 含有多个元素的时候会抛异常。 下面两片博文可以参考： c#操作符 ??和First,FirstOrDefault,Single,SingleOrDefault。 c# XElement XML操作总结。]]></content>
+    <title><![CDATA[C# 读取环境变量，和字符串大小写转换]]></title>
+    <url>%2F2020%2F11%2F03%2F201103N01%2F</url>
+    <content type="text"><![CDATA[string.ToLower() 更改大小写返回的是副本，原来的字符串还是原来的。ToUper()应该也是一样的吧； ToLower()只改变字母大小写，其他的字符不改变； 读取(系统)环境变量时，自己新建的环境变量后，需要重启电脑，才能读取到。 1234567891011121314151617181920212223using System;namespace ConsoleApp1&#123; class Program &#123; static void Main(string[] args) &#123; string a = "abkj_KKOIHI_1234-_!你好！！！"; Console.WriteLine(a); string b = a.ToLower(); Console.WriteLine(b); Console.WriteLine(a); string str = Environment.GetEnvironmentVariable("RebSoft");// 系统环境变量 string s = Environment.GetEnvironmentVariable("RebSoft", EnvironmentVariableTarget.User); // 当前用户环境变量 Console.WriteLine(str); Console.WriteLine(s); Console.ReadKey(); &#125; &#125;&#125; 输出： 这里有一篇读取环境变量的博文，很全：https://www.cnblogs.com/tianma3798/p/5500279.html。]]></content>
       <categories>
         <category>编程爱好</category>
       </categories>
@@ -1527,9 +1549,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[UG NX 移动对象之『动态』技巧]]></title>
-    <url>%2F2019%2F02%2F19%2F190219-02%2F</url>
-    <content type="text"><![CDATA[动态绕某一点旋转，而旋转手柄又不在此点上，如何操作？ Ctrl + T 移动对象，勾选只移动手柄，将手柄点选移动到需要旋转的点。 取消勾选只移动手柄，点选手柄节点，输入旋转角度，确定。]]></content>
+    <title><![CDATA[UG NX 坐标对齐移动——解决实体与原始坐标不对齐的问题]]></title>
+    <url>%2F2019%2F02%2F19%2F190219-01%2F</url>
+    <content type="text"><![CDATA[有时候通过WAVE链接过来的实体会出现实体与原始坐标不对齐的情况，如： 可以用坐标到坐标移动的方式将实体摆正。 新建与实体对齐的坐标系。 Ctrl + T 移动。 这样后，实体就与原始坐标对齐了：]]></content>
       <categories>
         <category>机械结构</category>
       </categories>
@@ -1538,9 +1560,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[UG NX 坐标对齐移动——解决实体与原始坐标不对齐的问题]]></title>
-    <url>%2F2019%2F02%2F19%2F190219-01%2F</url>
-    <content type="text"><![CDATA[有时候通过WAVE链接过来的实体会出现实体与原始坐标不对齐的情况，如： 可以用坐标到坐标移动的方式将实体摆正。 新建与实体对齐的坐标系。 Ctrl + T 移动。 这样后，实体就与原始坐标对齐了：]]></content>
+    <title><![CDATA[UG NX 移动对象之『动态』技巧]]></title>
+    <url>%2F2019%2F02%2F19%2F190219-02%2F</url>
+    <content type="text"><![CDATA[动态绕某一点旋转，而旋转手柄又不在此点上，如何操作？ Ctrl + T 移动对象，勾选只移动手柄，将手柄点选移动到需要旋转的点。 取消勾选只移动手柄，点选手柄节点，输入旋转角度，确定。]]></content>
       <categories>
         <category>机械结构</category>
       </categories>
