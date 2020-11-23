@@ -44,19 +44,65 @@
   </entry>
   
   <entry>
+    <title>C#|::运算符和全局命名空间</title>
+    <link href="https://blog.huvjie.com/2020/11/23/201123N02/"/>
+    <id>https://blog.huvjie.com/2020/11/23/201123N02/</id>
+    <published>2020-11-23T02:22:00.000Z</published>
+    <updated>2020-11-23T12:08:22.860Z</updated>
+    
+    <content type="html"><![CDATA[<p>发现 C# 还要和 C++ 一样的<code>::</code>运算符，来测试一下。</p><p><strong>命名空间被赋值别名以后，可以隐藏掉原有的命名空间。想要访问需要完整路径。如果不用，可以用<code>::</code>运算法，它的优先级被高。</strong></p><p>看下下面的例子：</p><a id="more"></a><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">ConsoleApp1</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 同名的别名空间</span></span><br><span class="line">    <span class="keyword">using</span> MyNamespaceAlias = MyRootNamespace.MyNestedNamespace;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">namespace</span> <span class="title">MyRootNamespace</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">namespace</span> <span class="title">MyNamespaceAlias</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">public</span> <span class="keyword">class</span> <span class="title">MyClass</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Print</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>                &#123;</span><br><span class="line">                    Console.WriteLine(<span class="string">"MyRootNamespace.MyNamespaceAlias.MyClass.Print()"</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">namespace</span> <span class="title">MyNestedNamespace</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">public</span> <span class="keyword">class</span> <span class="title">MyClass</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Print</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>                &#123;</span><br><span class="line">                    Console.WriteLine(<span class="string">"MyRootNamespace.MyNestedNamespace.MyClass.Print()"</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="keyword">class</span> <span class="title">Program</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="keyword">string</span>[] args</span>)</span></span><br><span class="line"><span class="function"></span>            &#123;</span><br><span class="line">                MyRootNamespace.MyNestedNamespace.MyClass.Print(); <span class="comment">// 可简化名称如下</span></span><br><span class="line"></span><br><span class="line">                MyRootNamespace.MyNamespaceAlias.MyClass.Print(); <span class="comment">// 原有的 MyNamespaceAlias 命名空间屏蔽了别名空间。</span></span><br><span class="line"></span><br><span class="line">                <span class="comment">// 使用::运算符，迫使编译器使用别名</span></span><br><span class="line">                MyNamespaceAlias::MyClass.Print();</span><br><span class="line">   <span class="comment">// MyRootNamespace. MyNamespaceAlias::MyClass.Print(); // 这样会报错不行，原因是显然的，::指向别名。</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">                Console.ReadKey();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>对照输出顺序就，结合代码注释，可以看出区别：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">MyRootNamespace.MyNestedNamespace.MyClass.Print()</span><br><span class="line">MyRootNamespace.MyNamespaceAlias.MyClass.Print()</span><br><span class="line">MyRootNamespace.MyNestedNamespace.MyClass.Print()</span><br></pre></td></tr></table></figure><p>这种方式在大项目出现别名和<code>.NET</code>命名空间重名的时候有用，一般用不上吧？!</p><p><code>global</code>是顶级根命名空间的别名，如果出现上面所说的那种情况，可以这样：</p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">global::System.Collections.Generic.List&lt;int&gt;   // 一个示例</span><br></pre></td></tr></table></figure><div style="font-size:12px">参考：<br>《C#入门经典第三版》P305<br></div>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;发现 C# 还要和 C++ 一样的&lt;code&gt;::&lt;/code&gt;运算符，来测试一下。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;命名空间被赋值别名以后，可以隐藏掉原有的命名空间。想要访问需要完整路径。如果不用，可以用&lt;code&gt;::&lt;/code&gt;运算法，它的优先级被高。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;看下下面的例子：&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="编程爱好" scheme="https://blog.huvjie.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
+    
+    
+      <category term="C#" scheme="https://blog.huvjie.com/tags/C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>C# try catch块内为空程序不会崩溃</title>
+    <link href="https://blog.huvjie.com/2020/11/23/201123N03/"/>
+    <id>https://blog.huvjie.com/2020/11/23/201123N03/</id>
+    <published>2020-11-23T02:22:00.000Z</published>
+    <updated>2020-11-23T12:10:21.079Z</updated>
+    
+    <content type="html"><![CDATA[<p>catch块内为空程序不会崩溃, 只是代表它没有进行任何的处理而已。</p><a id="more"></a><p><img src="http://image.huvjie.com/201123N03_img01.jpg" alt=""></p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Windows.Forms;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">ConsoleApp2</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">partial</span> <span class="keyword">class</span> <span class="title">Form1</span> : <span class="title">Form</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Form1</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            InitializeComponent();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">button1_Click</span>(<span class="params"><span class="keyword">object</span> sender, EventArgs e</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            <span class="keyword">try</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">int</span> a = <span class="number">0</span>;</span><br><span class="line">                <span class="keyword">int</span> b = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">                <span class="keyword">int</span> c = b / a;</span><br><span class="line">            &#125;</span><br><span class="line"><span class="keyword">catch</span> </span><br><span class="line">&#123;</span><br><span class="line">&#125;</span><br><span class="line">           </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>上面这样程序不会蹦掉，只是没有处理异常而已。</p><p>很多时候，我们将错误信息<code>Show</code>出来。如下：</p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">catch</span>(Exception ex)</span><br><span class="line">&#123;</span><br><span class="line">    MessageBox.Show(ex.Message);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>当然，也可以进行其他的处理。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;catch块内为空程序不会崩溃, 只是代表它没有进行任何的处理而已。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="编程爱好" scheme="https://blog.huvjie.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
+    
+    
+      <category term="C#" scheme="https://blog.huvjie.com/tags/C/"/>
+    
+  </entry>
+  
+  <entry>
     <title>面向对象的思考</title>
     <link href="https://blog.huvjie.com/2020/11/22/201122N04/"/>
     <id>https://blog.huvjie.com/2020/11/22/201122N04/</id>
     <published>2020-11-22T02:22:00.000Z</published>
-    <updated>2020-11-22T13:30:46.431Z</updated>
+    <updated>2020-11-22T13:39:48.962Z</updated>
     
-    <content type="html"><![CDATA[<p>面向对象，数据的传输尽量以<code>对象</code>的形式封装起来传传递会比较好。<code>实体类</code>是不是就是干这个事情的？!</p>]]></content>
+    <content type="html"><![CDATA[<p>面向对象，数据的传输尽量以<code>对象</code>的形式封装起来传递会比较好。<code>实体类</code>是不是就是干这个事情的？!</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;面向对象，数据的传输尽量以&lt;code&gt;对象&lt;/code&gt;的形式封装起来传传递会比较好。&lt;code&gt;实体类&lt;/code&gt;是不是就是干这个事情的？!&lt;/p&gt;
+        &lt;p&gt;面向对象，数据的传输尽量以&lt;code&gt;对象&lt;/code&gt;的形式封装起来传递会比较好。&lt;code&gt;实体类&lt;/code&gt;是不是就是干这个事情的？!&lt;/p&gt;
 
       
     
@@ -236,28 +282,6 @@
   </entry>
   
   <entry>
-    <title>还是要学下 WPF</title>
-    <link href="https://blog.huvjie.com/2020/11/16/201116N01/"/>
-    <id>https://blog.huvjie.com/2020/11/16/201116N01/</id>
-    <published>2020-11-16T02:22:00.000Z</published>
-    <updated>2020-11-16T12:28:10.344Z</updated>
-    
-    <content type="html"><![CDATA[<p>其实行业内大部分人都在用 winform，还是想学习一下 WPF。主要考虑一下几点：</p><a id="more"></a><ol><li><p>技术更先进。</p><p> 还是要向前一步。能够很好的实现前后台代码的分离。</p></li><li><p>后面想弄下安卓 <code>Xamarin</code>。</p></li></ol><p>/<strong><strong><strong><strong><strong><strong><strong><em>**</em></strong></strong></strong></strong></strong></strong></strong>/</p><p>学 WPF 不着急，慢慢学。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;其实行业内大部分人都在用 winform，还是想学习一下 WPF。主要考虑一下几点：&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="编程爱好" scheme="https://blog.huvjie.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
-    
-    
-      <category term="C#" scheme="https://blog.huvjie.com/tags/C/"/>
-    
-  </entry>
-  
-  <entry>
     <title>C# 关于引用类型的类外只读属性</title>
     <link href="https://blog.huvjie.com/2020/11/16/201116N02/"/>
     <id>https://blog.huvjie.com/2020/11/16/201116N02/</id>
@@ -270,6 +294,28 @@
     
       &lt;p&gt;类内的只读属性不能更改的是他的&lt;code&gt;指向&lt;/code&gt;，例如，容器类&lt;code&gt;List&lt;/code&gt;，如果是只内部可写，外部可读，只有类内部可以更改 &lt;code&gt;List&lt;/code&gt; 字段的指向赋值，外部不能。&lt;strong&gt;而类外&lt;code&gt;get&lt;/code&gt;到它的指向值后，是可以对它进行&lt;code&gt;Add&lt;/code&gt;等操作的，因为没有更改它的指向。&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;有点绕，估计没讲清我想要说什么。~O(∩_∩)O~&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="编程爱好" scheme="https://blog.huvjie.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
+    
+    
+      <category term="C#" scheme="https://blog.huvjie.com/tags/C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>还是要学下 WPF</title>
+    <link href="https://blog.huvjie.com/2020/11/16/201116N01/"/>
+    <id>https://blog.huvjie.com/2020/11/16/201116N01/</id>
+    <published>2020-11-16T02:22:00.000Z</published>
+    <updated>2020-11-16T12:28:10.344Z</updated>
+    
+    <content type="html"><![CDATA[<p>其实行业内大部分人都在用 winform，还是想学习一下 WPF。主要考虑一下几点：</p><a id="more"></a><ol><li><p>技术更先进。</p><p> 还是要向前一步。能够很好的实现前后台代码的分离。</p></li><li><p>后面想弄下安卓 <code>Xamarin</code>。</p></li></ol><p>/<strong><strong><strong><strong><strong><strong><strong><em>**</em></strong></strong></strong></strong></strong></strong></strong>/</p><p>学 WPF 不着急，慢慢学。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;其实行业内大部分人都在用 winform，还是想学习一下 WPF。主要考虑一下几点：&lt;/p&gt;
     
     </summary>
     
@@ -432,50 +478,6 @@
     <summary type="html">
     
       &lt;h2 id=&quot;委托：&quot;&gt;&lt;a href=&quot;#委托：&quot; class=&quot;headerlink&quot; title=&quot;委托：&quot;&gt;&lt;/a&gt;委托：&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;委托&lt;/strong&gt;是一种各&lt;strong&gt;类型&lt;/strong&gt;，像类和结构一样。一般放在&lt;code&gt;namespace&lt;/code&gt;里，当然也可以放在类里面，就像类里面也可以放类一样。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="编程爱好" scheme="https://blog.huvjie.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
-    
-    
-      <category term="C#" scheme="https://blog.huvjie.com/tags/C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>配置 OpenCV 开发环境</title>
-    <link href="https://blog.huvjie.com/2020/11/07/201107N01/"/>
-    <id>https://blog.huvjie.com/2020/11/07/201107N01/</id>
-    <published>2020-11-07T02:22:00.000Z</published>
-    <updated>2020-11-10T15:42:18.971Z</updated>
-    
-    <content type="html"><![CDATA[<p>OpenCV3 + Visual studio 2017 社区版，以及 OpenCV3 + Qt Creator。Windows 7，64bit。</p><a id="more"></a><h1 id="OpenCV-amp-amp-VS"><a href="#OpenCV-amp-amp-VS" class="headerlink" title="OpenCV &amp;&amp; VS"></a>OpenCV &amp;&amp; VS</h1><p>什么下载安装就不说了。主要配置四个地方：</p><ol><li>OpenCV 的<code>path</code>环境变量：<ul><li><code>。。。\opencv\build\x64\vc15\bin</code>;</li></ul></li><li><p><code>视图=》其他窗口=》属性管理器</code>,右键需要配置的配置方案。<code>VC++目录 -&gt; 包含目录</code>，将：</p><ul><li><code>。。。\opencv\build\include</code>；</li><li><code>。。。\opencv\build\include\opencv</code>；</li><li><p><code>。。。\opencv\build\include\opencv2</code>。</p><p>三个目录添加进去；</p></li></ul></li><li><p>继续上面：<code>VC++目录 -&gt; 库目录</code>，将：<code>。。。\opencv\build\x64\vc15\lib</code>目录添加进去；</p></li><li><p>继续上面：<code>连接器 -&gt; 输入 -&gt; 附加依赖项</code>将库文件添加进去(<strong>带上后缀</strong>)：</p><ul><li><code>opencv_world3412.lib</code>  <em>// release版</em></li><li><code>opencv_world3412d.lib</code> <em>// debug版</em></li></ul></li></ol><p>上面基本上就可以了，弄段代码测试一下：</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;opencv2/opencv.hpp&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> cv;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  Mat image = imread(<span class="string">"0.jpg"</span>);<span class="comment">// 一定要放到 cpp 同级目录，F5 调试运行才能加载。</span></span><br><span class="line">                              <span class="comment">// 如果手动直接运行 Debug 下生成的 exe，图片需要拷贝到 exe 的同级目录。</span></span><br><span class="line">  imshow(<span class="string">"测试配置"</span>, image);</span><br><span class="line">  waitKey(<span class="number">0</span>);</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>注意上面的图片相对位置的注释说明。不然绝对路径太长了，练习的时候有点麻烦。<strong>如果上面只配置了 x64，编译运行时一定要选好 x64，不要用 x86 编译运行。</strong></p><h1 id="OpenCV-amp-amp-Qt-Creator"><a href="#OpenCV-amp-amp-Qt-Creator" class="headerlink" title="OpenCV &amp;&amp; Qt Creator"></a>OpenCV &amp;&amp; Qt Creator</h1><p>首先，根据 Qt Creator 配置的编译器，选择好对应编译好的 OpenCV 版本，注意是<code>MinGW</code>还是<code>MSVC</code>。</p><p>这里以<code>MinGW</code>版本为例，三大步：</p><ol><li>添加 Qt 的<code>path</code>环境变量：<ul><li><code>。。。\Qt\Qt5.7.0\5.7\mingw530_32\bin</code></li><li><code>。。。\Qt\Qt5.7.0\Tools\mingw530_32\bin</code></li></ul></li><li>添加 OpenCV 的<code>path</code>的环境变量：<ul><li><code>\OpenCV\OpenCV328x64\x64\mingw\bin</code></li></ul></li><li>在 Qt 项目<code>pro</code>文件中添加包含目录和库目录： <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">INCLUDEPATH += D:/DiyProgram/OpenCV/OpenCV328x64/include \</span><br><span class="line">           D:/DiyProgram/OpenCV/OpenCV328x64/include/opencv \</span><br><span class="line">           D:/DiyProgram/OpenCV/OpenCV328x64/include/opencv2</span><br><span class="line"></span><br><span class="line">LIBS +=  D:/DiyProgram/OpenCV/OpenCV328x64/x64/mingw/lib/libopencv_*</span><br></pre></td></tr></table></figure></li></ol><p>上面的就算配置完成，可以用测试代码测试一下。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;OpenCV3 + Visual studio 2017 社区版，以及 OpenCV3 + Qt Creator。Windows 7，64bit。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="编程爱好" scheme="https://blog.huvjie.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
-    
-    
-      <category term="C#" scheme="https://blog.huvjie.com/tags/C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>C# Linq Xml 简单测试</title>
-    <link href="https://blog.huvjie.com/2020/11/03/201103N02/"/>
-    <id>https://blog.huvjie.com/2020/11/03/201103N02/</id>
-    <published>2020-11-03T02:22:00.000Z</published>
-    <updated>2020-11-03T15:07:27.224Z</updated>
-    
-    <content type="html"><![CDATA[<p>C# Linq 真的很强大啊!简单的测试下。</p><a id="more"></a><h1 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h1><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">XDocument xDoc = <span class="keyword">new</span> XDocument(</span><br><span class="line">     <span class="keyword">new</span> XDeclaration(<span class="string">"1.0"</span>, <span class="string">"utf-8"</span>, <span class="literal">null</span>),</span><br><span class="line">     <span class="keyword">new</span> XElement(<span class="string">"test"</span>,</span><br><span class="line">         <span class="keyword">new</span> XElement(<span class="string">"person"</span>,</span><br><span class="line">             <span class="keyword">new</span> XElement(<span class="string">"name"</span>, <span class="string">"小明"</span>),</span><br><span class="line">             <span class="keyword">new</span> XElement(<span class="string">"age"</span>, <span class="string">"8"</span>)),</span><br><span class="line">         <span class="keyword">new</span> XElement(<span class="string">"person"</span>,</span><br><span class="line">             <span class="keyword">new</span> XElement(<span class="string">"name"</span>, <span class="string">"小华"</span>),</span><br><span class="line">             <span class="keyword">new</span> XElement(<span class="string">"age"</span>, <span class="string">"9"</span>)),</span><br><span class="line">         <span class="keyword">new</span> XElement(<span class="string">"sum"</span>, <span class="string">"2"</span>)</span><br><span class="line">     )</span><br><span class="line"> );</span><br><span class="line"></span><br><span class="line">  xDoc.Save(<span class="string">"Test.xml"</span>);</span><br></pre></td></tr></table></figure><p>通过参数数组，类似结构的缩进，直接创建了xml文档。</p><p>xml:</p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">test</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">person</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>小明<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">age</span>&gt;</span>8<span class="tag">&lt;/<span class="name">age</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">person</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">person</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>小华<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">age</span>&gt;</span>9<span class="tag">&lt;/<span class="name">age</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">person</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">sum</span>&gt;</span>2<span class="tag">&lt;/<span class="name">sum</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">test</span>&gt;</span></span><br></pre></td></tr></table></figure><h1 id="读取"><a href="#读取" class="headerlink" title="读取"></a>读取</h1><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">XElement file = XElement.Load(<span class="string">"Test.xml"</span>);</span><br><span class="line">XElement xiaoming = file.Descendants(<span class="string">"person"</span>)</span><br><span class="line">    .Where(x =&gt; x.Element(<span class="string">"name"</span>).Value == <span class="string">"小明"</span>).SingleOrDefault();</span><br></pre></td></tr></table></figure><p><code>xiaoming.ToString()</code>直接读出：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">person</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">name</span>&gt;</span>小明<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">age</span>&gt;</span>8<span class="tag">&lt;/<span class="name">age</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">person</span>&gt;</span></span><br></pre></td></tr></table></figure></p><p><strong>如果直接读取<code>xioaming</code>的<code>value</code>值会输出多少？</strong></p><p>它会把它下面节点的<code>value</code>值全部读出来：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">小明8</span><br></pre></td></tr></table></figure><p>我猜它应该是个结果集序列。</p><h2 id="First-FirstOrDefault-Single-SingleOrDefault-有什么不一样？"><a href="#First-FirstOrDefault-Single-SingleOrDefault-有什么不一样？" class="headerlink" title="First,FirstOrDefault,Single,SingleOrDefault 有什么不一样？"></a>First,FirstOrDefault,Single,SingleOrDefault 有什么不一样？</h2><p><img src="http://image.huvjie.com/201103N02_img01.png" alt=""></p><p><code>SingleOrDefault</code> 含有多个元素的时候会抛异常。</p><hr><p>下面两片博文可以参考：</p><p><a href="https://www.cnblogs.com/lelehellow/p/6549404.html" target="_blank" rel="noopener">c#操作符 ??和First,FirstOrDefault,Single,SingleOrDefault。</a></p><p><a href="https://www.cnblogs.com/s7ven/articles/3575478.html" target="_blank" rel="noopener">c# XElement XML操作总结。</a></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;C# Linq 真的很强大啊!简单的测试下。&lt;/p&gt;
     
     </summary>
     
