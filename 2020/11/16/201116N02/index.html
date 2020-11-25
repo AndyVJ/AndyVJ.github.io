@@ -120,7 +120,7 @@
 <meta property="og:site_name" content="胡文杰">
 <meta property="og:description" content="类内的只读属性不能更改的是他的指向，例如，容器类List，如果是只内部可写，外部可读，只有类内部可以更改 List 字段的指向赋值，外部不能。而类外get到它的指向值后，是可以对它进行Add等操作的，因为没有更改它的指向。 有点绕，估计没讲清我想要说什么。~O(∩_∩)O~">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-11-16T13:57:00.178Z">
+<meta property="og:updated_time" content="2020-11-23T12:18:56.564Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C# 关于引用类型的类外只读属性">
 <meta name="twitter:description" content="类内的只读属性不能更改的是他的指向，例如，容器类List，如果是只内部可写，外部可读，只有类内部可以更改 List 字段的指向赋值，外部不能。而类外get到它的指向值后，是可以对它进行Add等操作的，因为没有更改它的指向。 有点绕，估计没讲清我想要说什么。~O(∩_∩)O~">
@@ -404,12 +404,24 @@
                 
               
 
-              <time title="创建时间：2020-11-16 10:22:00 / 修改时间：21:57:00" itemprop="dateCreated datePublished" datetime="2020-11-16T10:22:00+08:00">2020-11-16</time>
+              <time title="创建时间：2020-11-16 10:22:00" itemprop="dateCreated datePublished" datetime="2020-11-16T10:22:00+08:00">2020-11-16</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2020-11-23 20:18:56" itemprop="dateModified" datetime="2020-11-23T20:18:56+08:00">2020-11-23</time>
               
             
           </span>
@@ -486,6 +498,11 @@
 <p>下面这样重新指向一个新实例是不行的。</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">List&lt;<span class="keyword">string</span>&gt; nlist = <span class="keyword">new</span> List&lt;<span class="keyword">string</span>&gt;();  <span class="comment">// 新实例</span></span><br><span class="line">test.TList = nlist;  <span class="comment">// 不能从新指向</span></span><br></pre></td></tr></table></figure>
 <p><code>test.TList = nlist;  // 不能从新指向</code>，外部只读不能更改指向。</p>
+<p>再看：</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> System.Linq;</span><br><span class="line"><span class="keyword">using</span> System.Text;</span><br><span class="line"><span class="keyword">using</span> System.Threading.Tasks;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">ConsoleApp3</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">class</span> <span class="title">Program</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="keyword">string</span>[] args</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            Student stu = <span class="keyword">new</span> Student() &#123;Name = <span class="string">"Hi"</span>, Age = <span class="number">1</span> &#125;;</span><br><span class="line">            Console.WriteLine(stu.Name + <span class="string">"\n"</span> + stu.Age);</span><br><span class="line"></span><br><span class="line">            Student stu1 = stu;</span><br><span class="line">            stu1.Name = <span class="string">"Hello"</span>;</span><br><span class="line">            stu1.Age = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line">            Console.WriteLine(<span class="string">"\n"</span> + stu.Name + <span class="string">"\n"</span> + stu.Age);</span><br><span class="line"></span><br><span class="line">            Console.ReadKey();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">class</span> <span class="title">Student</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">string</span> Name &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">int</span> Age &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Hi</span><br><span class="line">1</span><br><span class="line"></span><br><span class="line">Hello</span><br><span class="line">10</span><br></pre></td></tr></table></figure>
+<p>只要不更改引用的指向，其应用内部的属性如果是可读可写的话，还是可以修改值的。</p>
 
       
     </div>
@@ -640,7 +657,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">184</span>
+                    <span class="site-state-item-count">186</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -720,7 +737,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">20</span>
+                      
+                    
+                    <span class="site-state-item-count">21</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>

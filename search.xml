@@ -12,9 +12,20 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[C#|::运算符和全局命名空间]]></title>
-    <url>%2F2020%2F11%2F23%2F201123N02%2F</url>
-    <content type="text"><![CDATA[发现 C# 还要和 C++ 一样的::运算符，来测试一下。 命名空间被赋值别名以后，可以隐藏掉原有的命名空间。想要访问需要完整路径。如果不用，可以用::运算法，它的优先级被高。 看下下面的例子： 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849using System;namespace ConsoleApp1&#123; // 同名的别名空间 using MyNamespaceAlias = MyRootNamespace.MyNestedNamespace; namespace MyRootNamespace &#123; namespace MyNamespaceAlias &#123; public class MyClass &#123; public static void Print() &#123; Console.WriteLine("MyRootNamespace.MyNamespaceAlias.MyClass.Print()"); &#125; &#125; &#125; namespace MyNestedNamespace &#123; public class MyClass &#123; public static void Print() &#123; Console.WriteLine("MyRootNamespace.MyNestedNamespace.MyClass.Print()"); &#125; &#125; &#125; class Program &#123; static void Main(string[] args) &#123; MyRootNamespace.MyNestedNamespace.MyClass.Print(); // 可简化名称如下 MyRootNamespace.MyNamespaceAlias.MyClass.Print(); // 原有的 MyNamespaceAlias 命名空间屏蔽了别名空间。 // 使用::运算符，迫使编译器使用别名 MyNamespaceAlias::MyClass.Print(); // MyRootNamespace. MyNamespaceAlias::MyClass.Print(); // 这样会报错不行，原因是显然的，::指向别名。 Console.ReadKey(); &#125; &#125; &#125;&#125; 对照输出顺序就，结合代码注释，可以看出区别： 123MyRootNamespace.MyNestedNamespace.MyClass.Print()MyRootNamespace.MyNamespaceAlias.MyClass.Print()MyRootNamespace.MyNestedNamespace.MyClass.Print() 这种方式在大项目出现别名和.NET命名空间重名的时候有用，一般用不上吧？! global是顶级根命名空间的别名，如果出现上面所说的那种情况，可以这样： 1global::System.Collections.Generic.List&lt;int&gt; // 一个示例 参考：《C#入门经典第三版》P305]]></content>
+    <title><![CDATA[C++｜wchar_t 简单认识]]></title>
+    <url>%2F2020%2F11%2F25%2F201125N02%2F</url>
+    <content type="text"><![CDATA[wchar_t输出用wcout。 1234567891011121314#include &lt;iostream&gt;using namespace std;int main()&#123; setlocale(LC_ALL, "chs"); wchar_t wc[] = L"中国"; wcout &lt;&lt; wc &lt;&lt; endl; getchar(); return 0;&#125; 输出： 1中国]]></content>
+      <categories>
+        <category>编程爱好</category>
+      </categories>
+      <tags>
+        <tag>C／C++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[如何实现C#和C++混合编程]]></title>
+    <url>%2F2020%2F11%2F24%2F201125N01%2F</url>
+    <content type="text"><![CDATA[最近在想如何实现C#和C++混合编程的问题，为什么会想到这个问题？是因为，在视觉方面我是有学习 OpenCV 的打算的。发现用托管 C++ 代码，包装非托管 C++ 代码；然后，C# 无缝衔接托管 C++。这种方式比较可行。 最开始想的是，用 Qt 去包 OpenCV，然后再 C# 里面调用 Qt 程序。了解了下，需要用到qtwinmigrate，试了下，发现比较麻烦，也没有搞成功。感觉这种方式还是可行。如果有时间折腾这个，那我还不如花时间精力学习下 Qt，直接在用 Qt 开发呢! 后面发现在互联网上，大家还有一种方法。用托管 C++ 代码，包装非托管 C++ 代码；然后，C# 无缝衔接托管 C++。看了一些互联网上的博客，感觉此路可行。在 Windows 下这可能是种最佳的解决方案。这种方式貌似可以使用类，而PInvoke的方式只能调用函数吧!？ 说的PInvoke,发现一个网站：http://pinvoke.net/。有需求的时候可以来这里查看。]]></content>
       <categories>
         <category>编程爱好</category>
       </categories>
@@ -26,6 +37,17 @@
     <title><![CDATA[C# try catch块内为空程序不会崩溃]]></title>
     <url>%2F2020%2F11%2F23%2F201123N03%2F</url>
     <content type="text"><![CDATA[catch块内为空程序不会崩溃, 只是代表它没有进行任何的处理而已。 12345678910111213141516171819202122232425262728using System;using System.Windows.Forms;namespace ConsoleApp2&#123; public partial class Form1 : Form &#123; public Form1() &#123; InitializeComponent(); &#125; private void button1_Click(object sender, EventArgs e) &#123; try &#123; int a = 0; int b = 1; int c = b / a; &#125; catch &#123; &#125; &#125; &#125;&#125; 上面这样程序不会蹦掉，只是没有处理异常而已。 很多时候，我们将错误信息Show出来。如下： 1234catch(Exception ex)&#123; MessageBox.Show(ex.Message);&#125; 当然，也可以进行其他的处理。]]></content>
+      <categories>
+        <category>编程爱好</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[C#｜::运算符和全局命名空间]]></title>
+    <url>%2F2020%2F11%2F23%2F201123N02%2F</url>
+    <content type="text"><![CDATA[发现 C# 还要和 C++ 一样的::运算符，来测试一下。 命名空间被赋值别名以后，可以隐藏掉原有的命名空间。想要访问需要完整路径。如果不用，可以用::运算法，它的优先级被高。 看下下面的例子： 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849using System;namespace ConsoleApp1&#123; // 同名的别名空间 using MyNamespaceAlias = MyRootNamespace.MyNestedNamespace; namespace MyRootNamespace &#123; namespace MyNamespaceAlias &#123; public class MyClass &#123; public static void Print() &#123; Console.WriteLine("MyRootNamespace.MyNamespaceAlias.MyClass.Print()"); &#125; &#125; &#125; namespace MyNestedNamespace &#123; public class MyClass &#123; public static void Print() &#123; Console.WriteLine("MyRootNamespace.MyNestedNamespace.MyClass.Print()"); &#125; &#125; &#125; class Program &#123; static void Main(string[] args) &#123; MyRootNamespace.MyNestedNamespace.MyClass.Print(); // 可简化名称如下 MyRootNamespace.MyNamespaceAlias.MyClass.Print(); // 原有的 MyNamespaceAlias 命名空间屏蔽了别名空间。 // 使用::运算符，迫使编译器使用别名 MyNamespaceAlias::MyClass.Print(); // MyRootNamespace. MyNamespaceAlias::MyClass.Print(); // 这样会报错不行，原因是显然的，::指向别名。 Console.ReadKey(); &#125; &#125; &#125;&#125; 对照输出顺序就，结合代码注释，可以看出区别： 123MyRootNamespace.MyNestedNamespace.MyClass.Print()MyRootNamespace.MyNamespaceAlias.MyClass.Print()MyRootNamespace.MyNestedNamespace.MyClass.Print() 这种方式在大项目出现别名和.NET命名空间重名的时候有用，一般用不上吧？! global是顶级根命名空间的别名，如果出现上面所说的那种情况，可以这样： 1global::System.Collections.Generic.List&lt;int&gt; // 一个示例 参考：《C#入门经典第三版》P305]]></content>
       <categories>
         <category>编程爱好</category>
       </categories>
@@ -124,7 +146,7 @@
   <entry>
     <title><![CDATA[C# 关于引用类型的类外只读属性]]></title>
     <url>%2F2020%2F11%2F16%2F201116N02%2F</url>
-    <content type="text"><![CDATA[类内的只读属性不能更改的是他的指向，例如，容器类List，如果是只内部可写，外部可读，只有类内部可以更改 List 字段的指向赋值，外部不能。而类外get到它的指向值后，是可以对它进行Add等操作的，因为没有更改它的指向。 有点绕，估计没讲清我想要说什么。~O(∩_∩)O~ 12345678910111213141516171819202122232425262728293031323334353637using System;using System.Collections.Generic;namespace ConsoleApp1&#123; class Program &#123; static void Main(string[] args) &#123; Test test = new Test(); List&lt;string&gt; tlist = test.TList; tlist.Add("Lily"); // 增加两个 tlist.Add("Lucy"); foreach (var item in tlist) &#123; Console.WriteLine(item); &#125; List&lt;string&gt; nlist = new List&lt;string&gt;(); // 新实例 // test.TList = nlist; // 不能从新指向 tlist = nlist; // 这个和test实例不相干，当然可以改指向 Console.Read(); &#125; &#125; class Test &#123; public List&lt;string&gt; TList &#123; get; private set; &#125; public Test() &#123; this.TList = new List&lt;string&gt;(); this.TList.Add("Tom"); &#125; &#125;&#125; 输出： 123TomLily // 后面这两个是可以增加的。Lucy 下面这样重新指向一个新实例是不行的。 12List&lt;string&gt; nlist = new List&lt;string&gt;(); // 新实例test.TList = nlist; // 不能从新指向 test.TList = nlist; // 不能从新指向，外部只读不能更改指向。]]></content>
+    <content type="text"><![CDATA[类内的只读属性不能更改的是他的指向，例如，容器类List，如果是只内部可写，外部可读，只有类内部可以更改 List 字段的指向赋值，外部不能。而类外get到它的指向值后，是可以对它进行Add等操作的，因为没有更改它的指向。 有点绕，估计没讲清我想要说什么。~O(∩_∩)O~ 12345678910111213141516171819202122232425262728293031323334353637using System;using System.Collections.Generic;namespace ConsoleApp1&#123; class Program &#123; static void Main(string[] args) &#123; Test test = new Test(); List&lt;string&gt; tlist = test.TList; tlist.Add("Lily"); // 增加两个 tlist.Add("Lucy"); foreach (var item in tlist) &#123; Console.WriteLine(item); &#125; List&lt;string&gt; nlist = new List&lt;string&gt;(); // 新实例 // test.TList = nlist; // 不能从新指向 tlist = nlist; // 这个和test实例不相干，当然可以改指向 Console.Read(); &#125; &#125; class Test &#123; public List&lt;string&gt; TList &#123; get; private set; &#125; public Test() &#123; this.TList = new List&lt;string&gt;(); this.TList.Add("Tom"); &#125; &#125;&#125; 输出： 123TomLily // 后面这两个是可以增加的。Lucy 下面这样重新指向一个新实例是不行的。 12List&lt;string&gt; nlist = new List&lt;string&gt;(); // 新实例test.TList = nlist; // 不能从新指向 test.TList = nlist; // 不能从新指向，外部只读不能更改指向。 再看： 12345678910111213141516171819202122232425262728293031using System;using System.Collections.Generic;using System.Linq;using System.Text;using System.Threading.Tasks;namespace ConsoleApp3&#123; class Program &#123; static void Main(string[] args) &#123; Student stu = new Student() &#123;Name = "Hi", Age = 1 &#125;; Console.WriteLine(stu.Name + "\n" + stu.Age); Student stu1 = stu; stu1.Name = "Hello"; stu1.Age = 10; Console.WriteLine("\n" + stu.Name + "\n" + stu.Age); Console.ReadKey(); &#125; &#125; class Student &#123; public string Name &#123; get; set; &#125; public int Age &#123; get; set; &#125; &#125;&#125; 输出： 12345Hi1Hello10 只要不更改引用的指向，其应用内部的属性如果是可读可写的话，还是可以修改值的。]]></content>
       <categories>
         <category>编程爱好</category>
       </categories>
@@ -178,8 +200,8 @@
   </entry>
   <entry>
     <title><![CDATA[C# 自定义鼠标样式]]></title>
-    <url>%2F2020%2F11%2F12%2F201112N02%2F</url>
-    <content type="text"><![CDATA[接上一篇，不调用 API 的方式。 ▲ 样式效果 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647using System;using System.Collections.Generic;using System.ComponentModel;using System.Data;using System.Drawing;using System.Text;using System.Windows.Forms;namespace MouseSt&#123; using System.Runtime.InteropServices; using System.Reflection; public partial class Form1 : Form &#123; public Form1() &#123; InitializeComponent(); &#125; private void Form1_Load(object sender, EventArgs e) &#123; Bitmap a = (Bitmap)Bitmap.FromFile("1.gif"); SetCursor(a, new Point(0, 0)); &#125; public void SetCursor(Bitmap cursor, Point hotPoint) &#123; int hotX = hotPoint.X; int hotY = hotPoint.Y; // 这里为什么要 * 2 Bitmap myNewCursor = new Bitmap(cursor.Width * 2 - hotX, cursor.Height * 2 - hotY); Graphics graphics = Graphics.FromImage(myNewCursor); graphics.Clear(Color.FromArgb(0, 0, 0, 0)); graphics.DrawImage(cursor, cursor.Width - hotX, cursor.Height - hotY, cursor.Width, cursor.Height); this.Cursor = new Cursor(myNewCursor.GetHicon()); graphics.Dispose(); myNewCursor.Dispose(); &#125; private void button1_Click(object sender, EventArgs e) &#123; MessageBox.Show("被点击!"); &#125; &#125;&#125; Bitmap myNewCursor 为什么要 *2？ 没看明白。 因为 Cursor 属性计算定位的是样式图片的中心点位置？ 参考：C# winForm 自定义鼠标样式的两种方法：https://www.cnblogs.com/tianguook/archive/2010/08/03/1791572.html]]></content>
+    <url>%2F2020%2F11%2F12%2F201112N01%2F</url>
+    <content type="text"><![CDATA[这里调用系统 API 的方式。 ▲ 样式效果 先准备好鼠标样式cur文件。 ▲ 鼠标样式文件 1234567891011121314151617181920212223242526272829303132333435363738394041424344using System;using System.Collections.Generic;using System.ComponentModel;using System.Data;using System.Drawing;using System.Text;using System.Windows.Forms;namespace MouseSt&#123; using System.Runtime.InteropServices; using System.Reflection; public partial class Form1 : Form &#123; public Form1() &#123; InitializeComponent(); &#125; private void Form1_Load(object sender, EventArgs e) &#123; Cursor myCursor = new Cursor(Cursor.Current.Handle); IntPtr colrCursorHandle = MouseStye.LoadCursorFromFile("hand.cur"); myCursor.GetType().InvokeMember("handle", BindingFlags.Public|BindingFlags.NonPublic|BindingFlags.Instance|BindingFlags.SetField, null, myCursor, new object[] &#123; colrCursorHandle &#125;); this.pictureBox1.Cursor = myCursor; // pictureBox区域 Cursor myCursor1 = new Cursor(Cursor.Current.Handle); IntPtr colrCursorHandle1 = MouseStye.LoadCursorFromFile("pen.cur"); myCursor.GetType().InvokeMember("handle", BindingFlags.Public|BindingFlags.NonPublic|BindingFlags.Instance|BindingFlags.SetField, null, myCursor1, new object[] &#123; colrCursorHandle1 &#125;); this.pictureBox2.Cursor = myCursor1; &#125; &#125; class MouseStye &#123; [DllImport("user32.dll")] public static extern IntPtr LoadCursorFromFile(string fileName); [DllImport("user32.dll")] public static extern IntPtr SetCursor(IntPtr cursorHandle); [DllImport("user32.dll")] public static extern uint DestroyCursor(IntPtr cursorHandle); &#125;&#125; InvokeMember 第二个选项参数具体还没有深究，先照着写吧。 参考：C# winForm 自定义鼠标样式的两种方法：https://www.cnblogs.com/tianguook/archive/2010/08/03/1791572.html]]></content>
       <categories>
         <category>编程爱好</category>
       </categories>
@@ -189,8 +211,8 @@
   </entry>
   <entry>
     <title><![CDATA[C# 自定义鼠标样式]]></title>
-    <url>%2F2020%2F11%2F12%2F201112N01%2F</url>
-    <content type="text"><![CDATA[这里调用系统 API 的方式。 ▲ 样式效果 先准备好鼠标样式cur文件。 ▲ 鼠标样式文件 1234567891011121314151617181920212223242526272829303132333435363738394041424344using System;using System.Collections.Generic;using System.ComponentModel;using System.Data;using System.Drawing;using System.Text;using System.Windows.Forms;namespace MouseSt&#123; using System.Runtime.InteropServices; using System.Reflection; public partial class Form1 : Form &#123; public Form1() &#123; InitializeComponent(); &#125; private void Form1_Load(object sender, EventArgs e) &#123; Cursor myCursor = new Cursor(Cursor.Current.Handle); IntPtr colrCursorHandle = MouseStye.LoadCursorFromFile("hand.cur"); myCursor.GetType().InvokeMember("handle", BindingFlags.Public|BindingFlags.NonPublic|BindingFlags.Instance|BindingFlags.SetField, null, myCursor, new object[] &#123; colrCursorHandle &#125;); this.pictureBox1.Cursor = myCursor; // pictureBox区域 Cursor myCursor1 = new Cursor(Cursor.Current.Handle); IntPtr colrCursorHandle1 = MouseStye.LoadCursorFromFile("pen.cur"); myCursor.GetType().InvokeMember("handle", BindingFlags.Public|BindingFlags.NonPublic|BindingFlags.Instance|BindingFlags.SetField, null, myCursor1, new object[] &#123; colrCursorHandle1 &#125;); this.pictureBox2.Cursor = myCursor1; &#125; &#125; class MouseStye &#123; [DllImport("user32.dll")] public static extern IntPtr LoadCursorFromFile(string fileName); [DllImport("user32.dll")] public static extern IntPtr SetCursor(IntPtr cursorHandle); [DllImport("user32.dll")] public static extern uint DestroyCursor(IntPtr cursorHandle); &#125;&#125; InvokeMember 第二个选项参数具体还没有深究，先照着写吧。 参考：C# winForm 自定义鼠标样式的两种方法：https://www.cnblogs.com/tianguook/archive/2010/08/03/1791572.html]]></content>
+    <url>%2F2020%2F11%2F12%2F201112N02%2F</url>
+    <content type="text"><![CDATA[接上一篇，不调用 API 的方式。 ▲ 样式效果 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647using System;using System.Collections.Generic;using System.ComponentModel;using System.Data;using System.Drawing;using System.Text;using System.Windows.Forms;namespace MouseSt&#123; using System.Runtime.InteropServices; using System.Reflection; public partial class Form1 : Form &#123; public Form1() &#123; InitializeComponent(); &#125; private void Form1_Load(object sender, EventArgs e) &#123; Bitmap a = (Bitmap)Bitmap.FromFile("1.gif"); SetCursor(a, new Point(0, 0)); &#125; public void SetCursor(Bitmap cursor, Point hotPoint) &#123; int hotX = hotPoint.X; int hotY = hotPoint.Y; // 这里为什么要 * 2 Bitmap myNewCursor = new Bitmap(cursor.Width * 2 - hotX, cursor.Height * 2 - hotY); Graphics graphics = Graphics.FromImage(myNewCursor); graphics.Clear(Color.FromArgb(0, 0, 0, 0)); graphics.DrawImage(cursor, cursor.Width - hotX, cursor.Height - hotY, cursor.Width, cursor.Height); this.Cursor = new Cursor(myNewCursor.GetHicon()); graphics.Dispose(); myNewCursor.Dispose(); &#125; private void button1_Click(object sender, EventArgs e) &#123; MessageBox.Show("被点击!"); &#125; &#125;&#125; Bitmap myNewCursor 为什么要 *2？ 没看明白。 因为 Cursor 属性计算定位的是样式图片的中心点位置？ 参考：C# winForm 自定义鼠标样式的两种方法：https://www.cnblogs.com/tianguook/archive/2010/08/03/1791572.html]]></content>
       <categories>
         <category>编程爱好</category>
       </categories>
@@ -232,9 +254,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[C# 读取环境变量，和字符串大小写转换]]></title>
-    <url>%2F2020%2F11%2F03%2F201103N01%2F</url>
-    <content type="text"><![CDATA[string.ToLower() 更改大小写返回的是副本，原来的字符串还是原来的。ToUper()应该也是一样的吧； ToLower()只改变字母大小写，其他的字符不改变； 读取(系统)环境变量时，自己新建的环境变量后，需要重启电脑，才能读取到。 1234567891011121314151617181920212223using System;namespace ConsoleApp1&#123; class Program &#123; static void Main(string[] args) &#123; string a = "abkj_KKOIHI_1234-_!你好！！！"; Console.WriteLine(a); string b = a.ToLower(); Console.WriteLine(b); Console.WriteLine(a); string str = Environment.GetEnvironmentVariable("RebSoft");// 系统环境变量 string s = Environment.GetEnvironmentVariable("RebSoft", EnvironmentVariableTarget.User); // 当前用户环境变量 Console.WriteLine(str); Console.WriteLine(s); Console.ReadKey(); &#125; &#125;&#125; 输出： 这里有一篇读取环境变量的博文，很全：https://www.cnblogs.com/tianma3798/p/5500279.html。]]></content>
+    <title><![CDATA[C# Linq Xml 简单测试]]></title>
+    <url>%2F2020%2F11%2F03%2F201103N02%2F</url>
+    <content type="text"><![CDATA[C# Linq 真的很强大啊!简单的测试下。 创建1234567891011121314XDocument xDoc = new XDocument( new XDeclaration("1.0", "utf-8", null), new XElement("test", new XElement("person", new XElement("name", "小明"), new XElement("age", "8")), new XElement("person", new XElement("name", "小华"), new XElement("age", "9")), new XElement("sum", "2") ) ); xDoc.Save("Test.xml"); 通过参数数组，类似结构的缩进，直接创建了xml文档。 xml: 123456789101112&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;test&gt; &lt;person&gt; &lt;name&gt;小明&lt;/name&gt; &lt;age&gt;8&lt;/age&gt; &lt;/person&gt; &lt;person&gt; &lt;name&gt;小华&lt;/name&gt; &lt;age&gt;9&lt;/age&gt; &lt;/person&gt; &lt;sum&gt;2&lt;/sum&gt;&lt;/test&gt; 读取123XElement file = XElement.Load("Test.xml");XElement xiaoming = file.Descendants("person") .Where(x =&gt; x.Element("name").Value == "小明").SingleOrDefault(); xiaoming.ToString()直接读出：1234&lt;person&gt; &lt;name&gt;小明&lt;/name&gt; &lt;age&gt;8&lt;/age&gt;&lt;/person&gt; 如果直接读取xioaming的value值会输出多少？ 它会把它下面节点的value值全部读出来： 1小明8 我猜它应该是个结果集序列。 First,FirstOrDefault,Single,SingleOrDefault 有什么不一样？ SingleOrDefault 含有多个元素的时候会抛异常。 下面两片博文可以参考： c#操作符 ??和First,FirstOrDefault,Single,SingleOrDefault。 c# XElement XML操作总结。]]></content>
       <categories>
         <category>编程爱好</category>
       </categories>
@@ -243,9 +265,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[C# Linq Xml 简单测试]]></title>
-    <url>%2F2020%2F11%2F03%2F201103N02%2F</url>
-    <content type="text"><![CDATA[C# Linq 真的很强大啊!简单的测试下。 创建1234567891011121314XDocument xDoc = new XDocument( new XDeclaration("1.0", "utf-8", null), new XElement("test", new XElement("person", new XElement("name", "小明"), new XElement("age", "8")), new XElement("person", new XElement("name", "小华"), new XElement("age", "9")), new XElement("sum", "2") ) ); xDoc.Save("Test.xml"); 通过参数数组，类似结构的缩进，直接创建了xml文档。 xml: 123456789101112&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;test&gt; &lt;person&gt; &lt;name&gt;小明&lt;/name&gt; &lt;age&gt;8&lt;/age&gt; &lt;/person&gt; &lt;person&gt; &lt;name&gt;小华&lt;/name&gt; &lt;age&gt;9&lt;/age&gt; &lt;/person&gt; &lt;sum&gt;2&lt;/sum&gt;&lt;/test&gt; 读取123XElement file = XElement.Load("Test.xml");XElement xiaoming = file.Descendants("person") .Where(x =&gt; x.Element("name").Value == "小明").SingleOrDefault(); xiaoming.ToString()直接读出：1234&lt;person&gt; &lt;name&gt;小明&lt;/name&gt; &lt;age&gt;8&lt;/age&gt;&lt;/person&gt; 如果直接读取xioaming的value值会输出多少？ 它会把它下面节点的value值全部读出来： 1小明8 我猜它应该是个结果集序列。 First,FirstOrDefault,Single,SingleOrDefault 有什么不一样？ SingleOrDefault 含有多个元素的时候会抛异常。 下面两片博文可以参考： c#操作符 ??和First,FirstOrDefault,Single,SingleOrDefault。 c# XElement XML操作总结。]]></content>
+    <title><![CDATA[C# 读取环境变量，和字符串大小写转换]]></title>
+    <url>%2F2020%2F11%2F03%2F201103N01%2F</url>
+    <content type="text"><![CDATA[string.ToLower() 更改大小写返回的是副本，原来的字符串还是原来的。ToUper()应该也是一样的吧； ToLower()只改变字母大小写，其他的字符不改变； 读取(系统)环境变量时，自己新建的环境变量后，需要重启电脑，才能读取到。 1234567891011121314151617181920212223using System;namespace ConsoleApp1&#123; class Program &#123; static void Main(string[] args) &#123; string a = "abkj_KKOIHI_1234-_!你好！！！"; Console.WriteLine(a); string b = a.ToLower(); Console.WriteLine(b); Console.WriteLine(a); string str = Environment.GetEnvironmentVariable("RebSoft");// 系统环境变量 string s = Environment.GetEnvironmentVariable("RebSoft", EnvironmentVariableTarget.User); // 当前用户环境变量 Console.WriteLine(str); Console.WriteLine(s); Console.ReadKey(); &#125; &#125;&#125; 输出： 这里有一篇读取环境变量的博文，很全：https://www.cnblogs.com/tianma3798/p/5500279.html。]]></content>
       <categories>
         <category>编程爱好</category>
       </categories>
