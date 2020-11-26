@@ -1,10 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://blog.huvjie.com/2020/11/25/201125N02/</loc>
-    <lastmod>2020-11-25</lastmod>
+    <loc>https://blog.huvjie.com/2020/11/26/201126N01/</loc>
+    <lastmod>2020-11-26</lastmod>
+  </url>  <url>
+    <loc>https://blog.huvjie.com/2020/06/01/200601N01/</loc>
+    <lastmod>2020-11-26</lastmod>
+  </url>  <url>
+    <loc>https://blog.huvjie.com/2020/11/26/201126N02/</loc>
+    <lastmod>2020-11-26</lastmod>
   </url>  <url>
     <loc>https://blog.huvjie.com/2020/11/24/201125N01/</loc>
+    <lastmod>2020-11-25</lastmod>
+  </url>  <url>
+    <loc>https://blog.huvjie.com/2020/11/25/201125N02/</loc>
     <lastmod>2020-11-25</lastmod>
   </url>  <url>
     <loc>https://blog.huvjie.com/2020/11/23/201123N02/</loc>
@@ -177,9 +186,6 @@
   </url>  <url>
     <loc>https://blog.huvjie.com/2020/06/11/200611N01/</loc>
     <lastmod>2020-06-14</lastmod>
-  </url>  <url>
-    <loc>https://blog.huvjie.com/2020/06/01/200601N01/</loc>
-    <lastmod>2020-06-08</lastmod>
   </url>  <url>
     <loc>https://blog.huvjie.com/2020/06/02/200602N01/</loc>
     <lastmod>2020-06-06</lastmod>

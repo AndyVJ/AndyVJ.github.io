@@ -12,6 +12,28 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[C#｜匿名类初识]]></title>
+    <url>%2F2020%2F11%2F26%2F201126N02%2F</url>
+    <content type="text"><![CDATA[之前的这篇https://blog.huvjie.com/2020/06/01/200601N01/，是不是也是匿名类？对这个知识点还没有什么认识，初识一下。 12345678static void Main()&#123; var Student = new &#123; Name = "XiaoFang", Age = 10 &#125;; Console.WriteLine("Name:&#123;0&#125; Age:&#123;1&#125;", Student.Name, Student.Age); Console.ReadKey();&#125; 输出： 1Name:XiaoFang Age:10 另外，投影初始化语句可以查看《图解教程》P355页。]]></content>
+      <categories>
+        <category>编程爱好</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[C# 好像没有类似 C++ 的 const 形参]]></title>
+    <url>%2F2020%2F11%2F26%2F201126N01%2F</url>
+    <content type="text"><![CDATA[这里只针对引用参数来说(非string类型)。我们能限制的只是引用的指向不能更改，而引用指向的内存值是可以修改的。是不是只要 C# 的类属性设计的够好，就不需要这样呢？ 这里是之前的思考：https://blog.huvjie.com/2020/06/01/200601N01/ 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647using System;namespace ConsoleApp1&#123; class A &#123; public string Message &#123; get; set; &#125; = "nihao"; &#125; class Programe &#123; private readonly A aa = new A(); private A Aa &#123; get; &#125; = new A(); static void Main() &#123; Programe programe = new Programe(); programe.DoSomeChange(programe.Aa); // 是可以更改的 // 下面这两句是不允许的，重新改变了引用的指向 //A Ab = new A(); //programe.Aa = Ab; Console.WriteLine(programe.Aa.Message); programe.OnlyShow(programe.Aa); programe.OnlyShow(); Console.ReadKey(); &#125; private void DoSomeChange(A a) &#123; a.Message = "hello"; &#125; private void OnlyShow(A a) &#123; a.Message = "hhhh"; Console.WriteLine(a.Message); &#125; private void OnlyShow() &#123; this.aa.Message = "Good!"; Console.WriteLine(this.aa.Message); &#125; &#125;&#125; 输出： 123hellohhhhGood! 类似下面这样是不行的：1private void DoSomeChange(const A a) &#123;&#125; 是不是 C# 没有类似 C++ 的 const 形参，或者有什么方法能够实现类似的功能呢？]]></content>
+      <categories>
+        <category>编程爱好</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[C++｜wchar_t 简单认识]]></title>
     <url>%2F2020%2F11%2F25%2F201125N02%2F</url>
     <content type="text"><![CDATA[wchar_t输出用wcout。 1234567891011121314#include &lt;iostream&gt;using namespace std;int main()&#123; setlocale(LC_ALL, "chs"); wchar_t wc[] = L"中国"; wcout &lt;&lt; wc &lt;&lt; endl; getchar(); return 0;&#125; 输出： 1中国]]></content>
@@ -25,18 +47,7 @@
   <entry>
     <title><![CDATA[如何实现C#和C++混合编程]]></title>
     <url>%2F2020%2F11%2F24%2F201125N01%2F</url>
-    <content type="text"><![CDATA[最近在想如何实现C#和C++混合编程的问题，为什么会想到这个问题？是因为，在视觉方面我是有学习 OpenCV 的打算的。发现用托管 C++ 代码，包装非托管 C++ 代码；然后，C# 无缝衔接托管 C++。这种方式比较可行。 最开始想的是，用 Qt 去包 OpenCV，然后再 C# 里面调用 Qt 程序。了解了下，需要用到qtwinmigrate，试了下，发现比较麻烦，也没有搞成功。感觉这种方式还是可行。如果有时间折腾这个，那我还不如花时间精力学习下 Qt，直接在用 Qt 开发呢! 后面发现在互联网上，大家还有一种方法。用托管 C++ 代码，包装非托管 C++ 代码；然后，C# 无缝衔接托管 C++。看了一些互联网上的博客，感觉此路可行。在 Windows 下这可能是种最佳的解决方案。这种方式貌似可以使用类，而PInvoke的方式只能调用函数吧!？ 说的PInvoke,发现一个网站：http://pinvoke.net/。有需求的时候可以来这里查看。]]></content>
-      <categories>
-        <category>编程爱好</category>
-      </categories>
-      <tags>
-        <tag>C#</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[C# try catch块内为空程序不会崩溃]]></title>
-    <url>%2F2020%2F11%2F23%2F201123N03%2F</url>
-    <content type="text"><![CDATA[catch块内为空程序不会崩溃, 只是代表它没有进行任何的处理而已。 12345678910111213141516171819202122232425262728using System;using System.Windows.Forms;namespace ConsoleApp2&#123; public partial class Form1 : Form &#123; public Form1() &#123; InitializeComponent(); &#125; private void button1_Click(object sender, EventArgs e) &#123; try &#123; int a = 0; int b = 1; int c = b / a; &#125; catch &#123; &#125; &#125; &#125;&#125; 上面这样程序不会蹦掉，只是没有处理异常而已。 很多时候，我们将错误信息Show出来。如下： 1234catch(Exception ex)&#123; MessageBox.Show(ex.Message);&#125; 当然，也可以进行其他的处理。]]></content>
+    <content type="text"><![CDATA[最近在想如何实现C#和C++混合编程的问题，为什么会想到这个问题？是因为，在视觉方面我是有学习 OpenCV 的打算的。发现用托管 C++ 代码，包装非托管 C++ 代码；然后，C# 无缝衔接托管 C++。这种方式比较可行。 最开始想的是，用 Qt 去包 OpenCV，然后再 C# 里面调用 Qt 程序。了解了下，需要用到qtwinmigrate，试了下，发现比较麻烦，也没有搞成功。感觉这种方式还是可行。如果有时间折腾这个，那我还不如花时间精力学习下 Qt，直接用 Qt 开发呢! 后面发现在互联网上，大家还有一种方法。用托管 C++ 代码，包装非托管 C++ 代码；然后，C# 无缝衔接托管 C++。看了一些互联网上的博客，感觉此路可行。在 Windows 下这可能是种最佳的解决方案。这种方式貌似可以使用类，而PInvoke的方式只能调用函数吧!？ 说的PInvoke,发现一个网站：http://pinvoke.net/。有需求的时候可以来这里查看。]]></content>
       <categories>
         <category>编程爱好</category>
       </categories>
@@ -48,6 +59,17 @@
     <title><![CDATA[C#｜::运算符和全局命名空间]]></title>
     <url>%2F2020%2F11%2F23%2F201123N02%2F</url>
     <content type="text"><![CDATA[发现 C# 还要和 C++ 一样的::运算符，来测试一下。 命名空间被赋值别名以后，可以隐藏掉原有的命名空间。想要访问需要完整路径。如果不用，可以用::运算法，它的优先级被高。 看下下面的例子： 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849using System;namespace ConsoleApp1&#123; // 同名的别名空间 using MyNamespaceAlias = MyRootNamespace.MyNestedNamespace; namespace MyRootNamespace &#123; namespace MyNamespaceAlias &#123; public class MyClass &#123; public static void Print() &#123; Console.WriteLine("MyRootNamespace.MyNamespaceAlias.MyClass.Print()"); &#125; &#125; &#125; namespace MyNestedNamespace &#123; public class MyClass &#123; public static void Print() &#123; Console.WriteLine("MyRootNamespace.MyNestedNamespace.MyClass.Print()"); &#125; &#125; &#125; class Program &#123; static void Main(string[] args) &#123; MyRootNamespace.MyNestedNamespace.MyClass.Print(); // 可简化名称如下 MyRootNamespace.MyNamespaceAlias.MyClass.Print(); // 原有的 MyNamespaceAlias 命名空间屏蔽了别名空间。 // 使用::运算符，迫使编译器使用别名 MyNamespaceAlias::MyClass.Print(); // MyRootNamespace. MyNamespaceAlias::MyClass.Print(); // 这样会报错不行，原因是显然的，::指向别名。 Console.ReadKey(); &#125; &#125; &#125;&#125; 对照输出顺序就，结合代码注释，可以看出区别： 123MyRootNamespace.MyNestedNamespace.MyClass.Print()MyRootNamespace.MyNamespaceAlias.MyClass.Print()MyRootNamespace.MyNestedNamespace.MyClass.Print() 这种方式在大项目出现别名和.NET命名空间重名的时候有用，一般用不上吧？! global是顶级根命名空间的别名，如果出现上面所说的那种情况，可以这样： 1global::System.Collections.Generic.List&lt;int&gt; // 一个示例 参考：《C#入门经典第三版》P305]]></content>
+      <categories>
+        <category>编程爱好</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[C# try catch块内为空程序不会崩溃]]></title>
+    <url>%2F2020%2F11%2F23%2F201123N03%2F</url>
+    <content type="text"><![CDATA[catch块内为空程序不会崩溃, 只是代表它没有进行任何的处理而已。 12345678910111213141516171819202122232425262728using System;using System.Windows.Forms;namespace ConsoleApp2&#123; public partial class Form1 : Form &#123; public Form1() &#123; InitializeComponent(); &#125; private void button1_Click(object sender, EventArgs e) &#123; try &#123; int a = 0; int b = 1; int c = b / a; &#125; catch &#123; &#125; &#125; &#125;&#125; 上面这样程序不会蹦掉，只是没有处理异常而已。 很多时候，我们将错误信息Show出来。如下： 1234catch(Exception ex)&#123; MessageBox.Show(ex.Message);&#125; 当然，也可以进行其他的处理。]]></content>
       <categories>
         <category>编程爱好</category>
       </categories>
@@ -133,6 +155,17 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[还是要学下 WPF]]></title>
+    <url>%2F2020%2F11%2F16%2F201116N01%2F</url>
+    <content type="text"><![CDATA[其实行业内大部分人都在用 winform，还是想学习一下 WPF。主要考虑一下几点： 技术更先进。 还是要向前一步。能够很好的实现前后台代码的分离。 后面想弄下安卓 Xamarin。 /**/ 学 WPF 不着急，慢慢学。]]></content>
+      <categories>
+        <category>编程爱好</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[C# 实例构建的执行顺序]]></title>
     <url>%2F2020%2F11%2F16%2F201116N03%2F</url>
     <content type="text"><![CDATA[先看看一般类的实例化构建顺序无继承的情况 静态字段 静态构造方法 实例字段 实例构造方法 有继承的情况 子类(派生类)的静态字段 子类(派生类)的静态构造方法 子类(派生类)的实例字段 父类(基类)的静态字段 父类(基类)的静态构造方法 父类(基类)的实例字段 父类(基类)的实例构造方法 子类(派生类)的实例构造方法 这两种情况还是很好理解的。总体来说字段是先于构造函数执行的，不然构造函数拿什么去执行。派生类的字段，和基类的实例先执行，然后再执行派生类的构造函数。这里是，基类的构造函数先执行，然后再执行派生类的构造函数。下面验证下： 1234567891011121314151617181920212223242526272829using System;namespace ConsoleApp1&#123; class Program &#123; static void Main(string[] args) &#123; A a = new A(); Console.ReadKey(); &#125; &#125; class A: B &#123; public A() &#123; Console.WriteLine("A"); &#125; &#125; class B &#123; public B() &#123; Console.WriteLine("B"); &#125; &#125;&#125; 输出： 12BA 基类的构造函数先执行，然后再执行派生类的构造函数。这里是对的。 C++ 的构造函数和析构函数执行顺序先调用父类(基类)的构造函数，再调用派生类的构造函数； 变量销毁时：先调用派生类的析构函数，再调用父类(基类)的析构函数。 123456789101112131415161718192021222324252627282930313233343536#include &lt;iostream&gt;using namespace std;class A&#123; public: A() &#123; cout&lt;&lt; "基类：AAAAAAAAAAAA" &lt;&lt;endl; &#125; ~A() &#123; cout &lt;&lt; "基类：~AAAAAAAAAAAA" &lt;&lt; endl; &#125; &#125;;class B:public A&#123; public: B() &#123; cout&lt;&lt; "派生类：BBBBBBBBB" &lt;&lt;endl; &#125; ~B() &#123; cout &lt;&lt; "派生类：~BBBBBBBBB" &lt;&lt; endl; &#125;&#125;;void solution() //当函数开始时，调用构造函数，当函数结束时，变量对象被销毁&#123; B b1;&#125;int main()&#123; solution(); return 0;&#125; 输出： 1234基类：AAAAAAAAAAAA派生类：BBBBBBBBB派生类：~BBBBBBBBB基类：~AAAAAAAAAAAA 看下对象初始化器和构造函数谁先执行结论：构造函数先于对象初始化器执行，然后，窗体程序的话，对象初始化器先于Load事件执行。 Form1.cs: 12345678910111213141516171819202122using System;using System.Windows.Forms;namespace WindowsFormsApp1&#123; public partial class Form1 : Form &#123; public Form1() &#123; InitializeComponent(); Console.WriteLine("Fomr1 构造函数!!"); &#125; private void button1_Click(object sender, EventArgs e) &#123; Form2 form2 = new Form2() &#123; Msg = "对象初始化器中赋值!!" &#125;; form2.Show(); &#125; &#125;&#125; Form2.cs： 12345678910111213141516171819202122232425262728using System;using System.Windows.Forms;namespace WindowsFormsApp1&#123; public partial class Form2 : Form &#123; public string Msg &#123; get; set; &#125; public Form2() &#123; InitializeComponent(); Console.WriteLine("Form2 构造函数!!"); this.StartPosition = FormStartPosition.CenterScreen; this.Msg = "构造函数后执行于对象初始化器!!"; &#125; private void Form2_Load(object sender, EventArgs e) &#123; if (this.Msg == null) Console.WriteLine("Load 事件先执行!!"); else Console.WriteLine(this.Msg); &#125; &#125;&#125; &gt; 参考：&gt; 1. https://www.cnblogs.com/nzbbody/archive/2011/12/29/2306403.html&gt; 2. https://www.cnblogs.com/qkqBeer/articles/10726173.html]]></content>
@@ -147,17 +180,6 @@
     <title><![CDATA[C# 关于引用类型的类外只读属性]]></title>
     <url>%2F2020%2F11%2F16%2F201116N02%2F</url>
     <content type="text"><![CDATA[类内的只读属性不能更改的是他的指向，例如，容器类List，如果是只内部可写，外部可读，只有类内部可以更改 List 字段的指向赋值，外部不能。而类外get到它的指向值后，是可以对它进行Add等操作的，因为没有更改它的指向。 有点绕，估计没讲清我想要说什么。~O(∩_∩)O~ 12345678910111213141516171819202122232425262728293031323334353637using System;using System.Collections.Generic;namespace ConsoleApp1&#123; class Program &#123; static void Main(string[] args) &#123; Test test = new Test(); List&lt;string&gt; tlist = test.TList; tlist.Add("Lily"); // 增加两个 tlist.Add("Lucy"); foreach (var item in tlist) &#123; Console.WriteLine(item); &#125; List&lt;string&gt; nlist = new List&lt;string&gt;(); // 新实例 // test.TList = nlist; // 不能从新指向 tlist = nlist; // 这个和test实例不相干，当然可以改指向 Console.Read(); &#125; &#125; class Test &#123; public List&lt;string&gt; TList &#123; get; private set; &#125; public Test() &#123; this.TList = new List&lt;string&gt;(); this.TList.Add("Tom"); &#125; &#125;&#125; 输出： 123TomLily // 后面这两个是可以增加的。Lucy 下面这样重新指向一个新实例是不行的。 12List&lt;string&gt; nlist = new List&lt;string&gt;(); // 新实例test.TList = nlist; // 不能从新指向 test.TList = nlist; // 不能从新指向，外部只读不能更改指向。 再看： 12345678910111213141516171819202122232425262728293031using System;using System.Collections.Generic;using System.Linq;using System.Text;using System.Threading.Tasks;namespace ConsoleApp3&#123; class Program &#123; static void Main(string[] args) &#123; Student stu = new Student() &#123;Name = "Hi", Age = 1 &#125;; Console.WriteLine(stu.Name + "\n" + stu.Age); Student stu1 = stu; stu1.Name = "Hello"; stu1.Age = 10; Console.WriteLine("\n" + stu.Name + "\n" + stu.Age); Console.ReadKey(); &#125; &#125; class Student &#123; public string Name &#123; get; set; &#125; public int Age &#123; get; set; &#125; &#125;&#125; 输出： 12345Hi1Hello10 只要不更改引用的指向，其应用内部的属性如果是可读可写的话，还是可以修改值的。]]></content>
-      <categories>
-        <category>编程爱好</category>
-      </categories>
-      <tags>
-        <tag>C#</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[还是要学下 WPF]]></title>
-    <url>%2F2020%2F11%2F16%2F201116N01%2F</url>
-    <content type="text"><![CDATA[其实行业内大部分人都在用 winform，还是想学习一下 WPF。主要考虑一下几点： 技术更先进。 还是要向前一步。能够很好的实现前后台代码的分离。 后面想弄下安卓 Xamarin。 /**/ 学 WPF 不着急，慢慢学。]]></content>
       <categories>
         <category>编程爱好</category>
       </categories>
@@ -200,17 +222,6 @@
   </entry>
   <entry>
     <title><![CDATA[C# 自定义鼠标样式]]></title>
-    <url>%2F2020%2F11%2F12%2F201112N01%2F</url>
-    <content type="text"><![CDATA[这里调用系统 API 的方式。 ▲ 样式效果 先准备好鼠标样式cur文件。 ▲ 鼠标样式文件 1234567891011121314151617181920212223242526272829303132333435363738394041424344using System;using System.Collections.Generic;using System.ComponentModel;using System.Data;using System.Drawing;using System.Text;using System.Windows.Forms;namespace MouseSt&#123; using System.Runtime.InteropServices; using System.Reflection; public partial class Form1 : Form &#123; public Form1() &#123; InitializeComponent(); &#125; private void Form1_Load(object sender, EventArgs e) &#123; Cursor myCursor = new Cursor(Cursor.Current.Handle); IntPtr colrCursorHandle = MouseStye.LoadCursorFromFile("hand.cur"); myCursor.GetType().InvokeMember("handle", BindingFlags.Public|BindingFlags.NonPublic|BindingFlags.Instance|BindingFlags.SetField, null, myCursor, new object[] &#123; colrCursorHandle &#125;); this.pictureBox1.Cursor = myCursor; // pictureBox区域 Cursor myCursor1 = new Cursor(Cursor.Current.Handle); IntPtr colrCursorHandle1 = MouseStye.LoadCursorFromFile("pen.cur"); myCursor.GetType().InvokeMember("handle", BindingFlags.Public|BindingFlags.NonPublic|BindingFlags.Instance|BindingFlags.SetField, null, myCursor1, new object[] &#123; colrCursorHandle1 &#125;); this.pictureBox2.Cursor = myCursor1; &#125; &#125; class MouseStye &#123; [DllImport("user32.dll")] public static extern IntPtr LoadCursorFromFile(string fileName); [DllImport("user32.dll")] public static extern IntPtr SetCursor(IntPtr cursorHandle); [DllImport("user32.dll")] public static extern uint DestroyCursor(IntPtr cursorHandle); &#125;&#125; InvokeMember 第二个选项参数具体还没有深究，先照着写吧。 参考：C# winForm 自定义鼠标样式的两种方法：https://www.cnblogs.com/tianguook/archive/2010/08/03/1791572.html]]></content>
-      <categories>
-        <category>编程爱好</category>
-      </categories>
-      <tags>
-        <tag>C#</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[C# 自定义鼠标样式]]></title>
     <url>%2F2020%2F11%2F12%2F201112N02%2F</url>
     <content type="text"><![CDATA[接上一篇，不调用 API 的方式。 ▲ 样式效果 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647using System;using System.Collections.Generic;using System.ComponentModel;using System.Data;using System.Drawing;using System.Text;using System.Windows.Forms;namespace MouseSt&#123; using System.Runtime.InteropServices; using System.Reflection; public partial class Form1 : Form &#123; public Form1() &#123; InitializeComponent(); &#125; private void Form1_Load(object sender, EventArgs e) &#123; Bitmap a = (Bitmap)Bitmap.FromFile("1.gif"); SetCursor(a, new Point(0, 0)); &#125; public void SetCursor(Bitmap cursor, Point hotPoint) &#123; int hotX = hotPoint.X; int hotY = hotPoint.Y; // 这里为什么要 * 2 Bitmap myNewCursor = new Bitmap(cursor.Width * 2 - hotX, cursor.Height * 2 - hotY); Graphics graphics = Graphics.FromImage(myNewCursor); graphics.Clear(Color.FromArgb(0, 0, 0, 0)); graphics.DrawImage(cursor, cursor.Width - hotX, cursor.Height - hotY, cursor.Width, cursor.Height); this.Cursor = new Cursor(myNewCursor.GetHicon()); graphics.Dispose(); myNewCursor.Dispose(); &#125; private void button1_Click(object sender, EventArgs e) &#123; MessageBox.Show("被点击!"); &#125; &#125;&#125; Bitmap myNewCursor 为什么要 *2？ 没看明白。 因为 Cursor 属性计算定位的是样式图片的中心点位置？ 参考：C# winForm 自定义鼠标样式的两种方法：https://www.cnblogs.com/tianguook/archive/2010/08/03/1791572.html]]></content>
       <categories>
@@ -221,9 +232,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[简单测试下 goto 语句]]></title>
-    <url>%2F2020%2F11%2F08%2F201108N01%2F</url>
-    <content type="text"><![CDATA[大家都建议不要用goto语句。我测试下goto语句怎么用。 goto语句执行是，跳转到标签位置后，又开始从标签位置往下执行。 12345678910111213141516171819202122232425class Program&#123; static void Main(string[] args) &#123; int i = 0; aMark: int a = 10; Console.WriteLine(a); int b = 20; Console.WriteLine(b); int c = a + b; Console.WriteLine(c + "\n"); i++; if (i &gt; 2) goto bMark; goto aMark; bMark: Console.WriteLine("程序结束!!"); Console.ReadKey();&#125; 输出：12345678910111213102030102030102030程序结束!!]]></content>
+    <title><![CDATA[C# 自定义鼠标样式]]></title>
+    <url>%2F2020%2F11%2F12%2F201112N01%2F</url>
+    <content type="text"><![CDATA[这里调用系统 API 的方式。 ▲ 样式效果 先准备好鼠标样式cur文件。 ▲ 鼠标样式文件 1234567891011121314151617181920212223242526272829303132333435363738394041424344using System;using System.Collections.Generic;using System.ComponentModel;using System.Data;using System.Drawing;using System.Text;using System.Windows.Forms;namespace MouseSt&#123; using System.Runtime.InteropServices; using System.Reflection; public partial class Form1 : Form &#123; public Form1() &#123; InitializeComponent(); &#125; private void Form1_Load(object sender, EventArgs e) &#123; Cursor myCursor = new Cursor(Cursor.Current.Handle); IntPtr colrCursorHandle = MouseStye.LoadCursorFromFile("hand.cur"); myCursor.GetType().InvokeMember("handle", BindingFlags.Public|BindingFlags.NonPublic|BindingFlags.Instance|BindingFlags.SetField, null, myCursor, new object[] &#123; colrCursorHandle &#125;); this.pictureBox1.Cursor = myCursor; // pictureBox区域 Cursor myCursor1 = new Cursor(Cursor.Current.Handle); IntPtr colrCursorHandle1 = MouseStye.LoadCursorFromFile("pen.cur"); myCursor.GetType().InvokeMember("handle", BindingFlags.Public|BindingFlags.NonPublic|BindingFlags.Instance|BindingFlags.SetField, null, myCursor1, new object[] &#123; colrCursorHandle1 &#125;); this.pictureBox2.Cursor = myCursor1; &#125; &#125; class MouseStye &#123; [DllImport("user32.dll")] public static extern IntPtr LoadCursorFromFile(string fileName); [DllImport("user32.dll")] public static extern IntPtr SetCursor(IntPtr cursorHandle); [DllImport("user32.dll")] public static extern uint DestroyCursor(IntPtr cursorHandle); &#125;&#125; InvokeMember 第二个选项参数具体还没有深究，先照着写吧。 参考：C# winForm 自定义鼠标样式的两种方法：https://www.cnblogs.com/tianguook/archive/2010/08/03/1791572.html]]></content>
       <categories>
         <category>编程爱好</category>
       </categories>
@@ -243,6 +254,17 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[简单测试下 goto 语句]]></title>
+    <url>%2F2020%2F11%2F08%2F201108N01%2F</url>
+    <content type="text"><![CDATA[大家都建议不要用goto语句。我测试下goto语句怎么用。 goto语句执行是，跳转到标签位置后，又开始从标签位置往下执行。 12345678910111213141516171819202122232425class Program&#123; static void Main(string[] args) &#123; int i = 0; aMark: int a = 10; Console.WriteLine(a); int b = 20; Console.WriteLine(b); int c = a + b; Console.WriteLine(c + "\n"); i++; if (i &gt; 2) goto bMark; goto aMark; bMark: Console.WriteLine("程序结束!!"); Console.ReadKey();&#125; 输出：12345678910111213102030102030102030程序结束!!]]></content>
+      <categories>
+        <category>编程爱好</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[配置 OpenCV 开发环境]]></title>
     <url>%2F2020%2F11%2F07%2F201107N01%2F</url>
     <content type="text"><![CDATA[OpenCV3 + Visual studio 2017 社区版，以及 OpenCV3 + Qt Creator。Windows 7，64bit。 OpenCV &amp;&amp; VS什么下载安装就不说了。主要配置四个地方： OpenCV 的path环境变量： 。。。\opencv\build\x64\vc15\bin; 视图=》其他窗口=》属性管理器,右键需要配置的配置方案。VC++目录 -&gt; 包含目录，将： 。。。\opencv\build\include； 。。。\opencv\build\include\opencv； 。。。\opencv\build\include\opencv2。 三个目录添加进去； 继续上面：VC++目录 -&gt; 库目录，将：。。。\opencv\build\x64\vc15\lib目录添加进去； 继续上面：连接器 -&gt; 输入 -&gt; 附加依赖项将库文件添加进去(带上后缀)： opencv_world3412.lib // release版 opencv_world3412d.lib // debug版 上面基本上就可以了，弄段代码测试一下： 123456789101112131415#include &lt;opencv2/opencv.hpp&gt;#include &lt;iostream&gt;using namespace std;using namespace cv;int main()&#123; Mat image = imread("0.jpg");// 一定要放到 cpp 同级目录，F5 调试运行才能加载。 // 如果手动直接运行 Debug 下生成的 exe，图片需要拷贝到 exe 的同级目录。 imshow("测试配置", image); waitKey(0); return 0;&#125; 注意上面的图片相对位置的注释说明。不然绝对路径太长了，练习的时候有点麻烦。如果上面只配置了 x64，编译运行时一定要选好 x64，不要用 x86 编译运行。 OpenCV &amp;&amp; Qt Creator首先，根据 Qt Creator 配置的编译器，选择好对应编译好的 OpenCV 版本，注意是MinGW还是MSVC。 这里以MinGW版本为例，三大步： 添加 Qt 的path环境变量： 。。。\Qt\Qt5.7.0\5.7\mingw530_32\bin 。。。\Qt\Qt5.7.0\Tools\mingw530_32\bin 添加 OpenCV 的path的环境变量： \OpenCV\OpenCV328x64\x64\mingw\bin 在 Qt 项目pro文件中添加包含目录和库目录： 12345INCLUDEPATH += D:/DiyProgram/OpenCV/OpenCV328x64/include \ D:/DiyProgram/OpenCV/OpenCV328x64/include/opencv \ D:/DiyProgram/OpenCV/OpenCV328x64/include/opencv2LIBS += D:/DiyProgram/OpenCV/OpenCV328x64/x64/mingw/lib/libopencv_* 上面的就算配置完成，可以用测试代码测试一下。]]></content>
@@ -254,9 +276,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[C# Linq Xml 简单测试]]></title>
-    <url>%2F2020%2F11%2F03%2F201103N02%2F</url>
-    <content type="text"><![CDATA[C# Linq 真的很强大啊!简单的测试下。 创建1234567891011121314XDocument xDoc = new XDocument( new XDeclaration("1.0", "utf-8", null), new XElement("test", new XElement("person", new XElement("name", "小明"), new XElement("age", "8")), new XElement("person", new XElement("name", "小华"), new XElement("age", "9")), new XElement("sum", "2") ) ); xDoc.Save("Test.xml"); 通过参数数组，类似结构的缩进，直接创建了xml文档。 xml: 123456789101112&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;test&gt; &lt;person&gt; &lt;name&gt;小明&lt;/name&gt; &lt;age&gt;8&lt;/age&gt; &lt;/person&gt; &lt;person&gt; &lt;name&gt;小华&lt;/name&gt; &lt;age&gt;9&lt;/age&gt; &lt;/person&gt; &lt;sum&gt;2&lt;/sum&gt;&lt;/test&gt; 读取123XElement file = XElement.Load("Test.xml");XElement xiaoming = file.Descendants("person") .Where(x =&gt; x.Element("name").Value == "小明").SingleOrDefault(); xiaoming.ToString()直接读出：1234&lt;person&gt; &lt;name&gt;小明&lt;/name&gt; &lt;age&gt;8&lt;/age&gt;&lt;/person&gt; 如果直接读取xioaming的value值会输出多少？ 它会把它下面节点的value值全部读出来： 1小明8 我猜它应该是个结果集序列。 First,FirstOrDefault,Single,SingleOrDefault 有什么不一样？ SingleOrDefault 含有多个元素的时候会抛异常。 下面两片博文可以参考： c#操作符 ??和First,FirstOrDefault,Single,SingleOrDefault。 c# XElement XML操作总结。]]></content>
+    <title><![CDATA[C# 读取环境变量，和字符串大小写转换]]></title>
+    <url>%2F2020%2F11%2F03%2F201103N01%2F</url>
+    <content type="text"><![CDATA[string.ToLower() 更改大小写返回的是副本，原来的字符串还是原来的。ToUper()应该也是一样的吧； ToLower()只改变字母大小写，其他的字符不改变； 读取(系统)环境变量时，自己新建的环境变量后，需要重启电脑，才能读取到。 1234567891011121314151617181920212223using System;namespace ConsoleApp1&#123; class Program &#123; static void Main(string[] args) &#123; string a = "abkj_KKOIHI_1234-_!你好！！！"; Console.WriteLine(a); string b = a.ToLower(); Console.WriteLine(b); Console.WriteLine(a); string str = Environment.GetEnvironmentVariable("RebSoft");// 系统环境变量 string s = Environment.GetEnvironmentVariable("RebSoft", EnvironmentVariableTarget.User); // 当前用户环境变量 Console.WriteLine(str); Console.WriteLine(s); Console.ReadKey(); &#125; &#125;&#125; 输出： 这里有一篇读取环境变量的博文，很全：https://www.cnblogs.com/tianma3798/p/5500279.html。]]></content>
       <categories>
         <category>编程爱好</category>
       </categories>
@@ -265,9 +287,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[C# 读取环境变量，和字符串大小写转换]]></title>
-    <url>%2F2020%2F11%2F03%2F201103N01%2F</url>
-    <content type="text"><![CDATA[string.ToLower() 更改大小写返回的是副本，原来的字符串还是原来的。ToUper()应该也是一样的吧； ToLower()只改变字母大小写，其他的字符不改变； 读取(系统)环境变量时，自己新建的环境变量后，需要重启电脑，才能读取到。 1234567891011121314151617181920212223using System;namespace ConsoleApp1&#123; class Program &#123; static void Main(string[] args) &#123; string a = "abkj_KKOIHI_1234-_!你好！！！"; Console.WriteLine(a); string b = a.ToLower(); Console.WriteLine(b); Console.WriteLine(a); string str = Environment.GetEnvironmentVariable("RebSoft");// 系统环境变量 string s = Environment.GetEnvironmentVariable("RebSoft", EnvironmentVariableTarget.User); // 当前用户环境变量 Console.WriteLine(str); Console.WriteLine(s); Console.ReadKey(); &#125; &#125;&#125; 输出： 这里有一篇读取环境变量的博文，很全：https://www.cnblogs.com/tianma3798/p/5500279.html。]]></content>
+    <title><![CDATA[C# Linq Xml 简单测试]]></title>
+    <url>%2F2020%2F11%2F03%2F201103N02%2F</url>
+    <content type="text"><![CDATA[C# Linq 真的很强大啊!简单的测试下。 创建1234567891011121314XDocument xDoc = new XDocument( new XDeclaration("1.0", "utf-8", null), new XElement("test", new XElement("person", new XElement("name", "小明"), new XElement("age", "8")), new XElement("person", new XElement("name", "小华"), new XElement("age", "9")), new XElement("sum", "2") ) ); xDoc.Save("Test.xml"); 通过参数数组，类似结构的缩进，直接创建了xml文档。 xml: 123456789101112&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;test&gt; &lt;person&gt; &lt;name&gt;小明&lt;/name&gt; &lt;age&gt;8&lt;/age&gt; &lt;/person&gt; &lt;person&gt; &lt;name&gt;小华&lt;/name&gt; &lt;age&gt;9&lt;/age&gt; &lt;/person&gt; &lt;sum&gt;2&lt;/sum&gt;&lt;/test&gt; 读取123XElement file = XElement.Load("Test.xml");XElement xiaoming = file.Descendants("person") .Where(x =&gt; x.Element("name").Value == "小明").SingleOrDefault(); xiaoming.ToString()直接读出：1234&lt;person&gt; &lt;name&gt;小明&lt;/name&gt; &lt;age&gt;8&lt;/age&gt;&lt;/person&gt; 如果直接读取xioaming的value值会输出多少？ 它会把它下面节点的value值全部读出来： 1小明8 我猜它应该是个结果集序列。 First,FirstOrDefault,Single,SingleOrDefault 有什么不一样？ SingleOrDefault 含有多个元素的时候会抛异常。 下面两片博文可以参考： c#操作符 ??和First,FirstOrDefault,Single,SingleOrDefault。 c# XElement XML操作总结。]]></content>
       <categories>
         <category>编程爱好</category>
       </categories>
@@ -641,7 +663,7 @@
   <entry>
     <title><![CDATA[C#引用类型作为值参数和引用参数]]></title>
     <url>%2F2020%2F06%2F01%2F200601N01%2F</url>
-    <content type="text"><![CDATA[引用类型作为值类型传递，形参和实参其实是两个指针，只不过指向的是同意块内存。新new一个对象是，它们两的联系就被切断了，指向了不同的内存块。 引用类型作为引用参数，此时的形参其实是实参的一个别名，它们两个其实是一个指针，新new一个对象是，指向的还是同一内存块，因为它们本身就是同一个指针。 两种情况的最后指向是不一样的。 以下情况是, 在方法内创建一个新对象并赋值给形参。 引用类型作为值参数12345678910111213141516171819202122232425262728293031using System;namespace RefParameter&#123; class MyClass &#123; public int test = 20; &#125; class Program &#123; static private void RefparameterTest( MyClass mc) &#123; mc.test = 50; Console.WriteLine("修改值之后：&#123;0&#125;", mc.test); mc = new MyClass(); Console.WriteLine("新创建之后：&#123;0&#125;", mc.test); &#125; static void Main(string[] args) &#123; MyClass mc = new MyClass(); Console.WriteLine("原始值：&#123;0&#125;\n=======", mc.test); RefparameterTest( mc); Console.WriteLine("=======\n最后值：&#123;0&#125;", mc.test); Console.ReadKey(); &#125; &#125;&#125; 输出：123456原始值：20=======修改值之后：50新创建之后：20=======最后值：50 // 被修改 引用类型作为引用参数123456789101112131415161718192021222324252627282930using System;namespace RefParameter&#123; class MyClass &#123; public int test = 20; &#125; class Program &#123; static private void RefparameterTest(ref MyClass mc) &#123; mc.test = 50; Console.WriteLine("修改值之后：&#123;0&#125;", mc.test); mc = new MyClass(); Console.WriteLine("新创建之后：&#123;0&#125;", mc.test); &#125; static void Main(string[] args) &#123; MyClass mc = new MyClass(); Console.WriteLine("原始值：&#123;0&#125;\n=======", mc.test); RefparameterTest(ref mc); Console.WriteLine("=======\n最后值：&#123;0&#125;", mc.test); Console.ReadKey(); &#125; &#125;&#125; 输出： 123456原始值：20=======修改值之后：50新创建之后：20=======最后值：20 // 还是原来 如果不在方法内部翻遍引用形参的指向，他们操纵的内存区域是一样的，结果也是一样的。 12345678910111213141516171819202122232425262728293031323334using System;namespace RefTest&#123; class Myclass &#123; public int val = 10; &#125; class Program &#123; static void Mymethod(Myclass a, int b) // 看这里 &#123; a.val += 5; b += 5; &#125; static void Main() &#123; Myclass a = new Myclass(); int b = 20; Console.WriteLine($"调用前：a = &#123;a.val&#125;, b = &#123;b&#125;"); Mymethod(a, b); // 看这里 Console.WriteLine($"调用后：a = &#123;a.val&#125;, b = &#123;b&#125;"); Console.ReadKey(); &#125; &#125;&#125; 输出： 12调用前：a = 10, b = 20调用后：a = 15, b = 20 // 可见 对象a的数值成员值改变了，值变量b没有改变。 12345678910111213141516171819202122232425262728293031323334using System;namespace RefTest&#123; class Myclass &#123; public int val = 10; &#125; class Program &#123; static void Mymethod(ref Myclass a, ref int b) // 看这里 &#123; a.val += 5; b += 5; &#125; static void Main() &#123; Myclass a = new Myclass(); int b = 20; Console.WriteLine($"调用前：a = &#123;a.val&#125;, b = &#123;b&#125;"); Mymethod(ref a, ref b); // 看这里 Console.WriteLine($"调用后：a = &#123;a.val&#125;, b = &#123;b&#125;"); Console.ReadKey(); &#125; &#125;&#125; 输出： 12调用前：a = 10, b = 20调用后：a = 15, b = 25 // 可见 都改变了。 参考： 《C#图解教程》 -&gt; P66]]></content>
+    <content type="text"><![CDATA[引用类型作为值类型传递，形参和实参其实是两个指针，只不过指向的是同一块内存。新new一个对象是，它们两的联系就被切断了，指向了不同的内存块。 引用类型作为引用参数，此时的形参其实是实参的一个别名，它们两个其实是一个指针，新new一个对象是，指向的还是同一内存块，因为它们本身就是同一个指针。 两种情况的最后指向是不一样的。 以下情况是, 在方法内创建一个新对象并赋值给形参。 引用类型作为值参数12345678910111213141516171819202122232425262728293031using System;namespace RefParameter&#123; class MyClass &#123; public int test = 20; &#125; class Program &#123; static private void RefparameterTest( MyClass mc) &#123; mc.test = 50; Console.WriteLine("修改值之后：&#123;0&#125;", mc.test); mc = new MyClass(); Console.WriteLine("新创建之后：&#123;0&#125;", mc.test); &#125; static void Main(string[] args) &#123; MyClass mc = new MyClass(); Console.WriteLine("原始值：&#123;0&#125;\n=======", mc.test); RefparameterTest( mc); Console.WriteLine("=======\n最后值：&#123;0&#125;", mc.test); Console.ReadKey(); &#125; &#125;&#125; 输出：123456原始值：20=======修改值之后：50新创建之后：20=======最后值：50 // 被修改 引用类型作为引用参数123456789101112131415161718192021222324252627282930using System;namespace RefParameter&#123; class MyClass &#123; public int test = 20; &#125; class Program &#123; static private void RefparameterTest(ref MyClass mc) &#123; mc.test = 50; Console.WriteLine("修改值之后：&#123;0&#125;", mc.test); mc = new MyClass(); Console.WriteLine("新创建之后：&#123;0&#125;", mc.test); &#125; static void Main(string[] args) &#123; MyClass mc = new MyClass(); Console.WriteLine("原始值：&#123;0&#125;\n=======", mc.test); RefparameterTest(ref mc); Console.WriteLine("=======\n最后值：&#123;0&#125;", mc.test); Console.ReadKey(); &#125; &#125;&#125; 输出： 123456原始值：20=======修改值之后：50新创建之后：20=======最后值：20 // 还是原来 如果不在方法内部改变引用形参的指向，他们操纵的内存区域是一样的，结果也是一样的。 12345678910111213141516171819202122232425262728293031323334using System;namespace RefTest&#123; class Myclass &#123; public int val = 10; &#125; class Program &#123; static void Mymethod(Myclass a, int b) // 看这里 &#123; a.val += 5; b += 5; &#125; static void Main() &#123; Myclass a = new Myclass(); int b = 20; Console.WriteLine($"调用前：a = &#123;a.val&#125;, b = &#123;b&#125;"); Mymethod(a, b); // 看这里 Console.WriteLine($"调用后：a = &#123;a.val&#125;, b = &#123;b&#125;"); Console.ReadKey(); &#125; &#125;&#125; 输出： 12调用前：a = 10, b = 20调用后：a = 15, b = 20 // 可见 对象a的数值成员值改变了，值变量b没有改变。 12345678910111213141516171819202122232425262728293031323334using System;namespace RefTest&#123; class Myclass &#123; public int val = 10; &#125; class Program &#123; static void Mymethod(ref Myclass a, ref int b) // 看这里 &#123; a.val += 5; b += 5; &#125; static void Main() &#123; Myclass a = new Myclass(); int b = 20; Console.WriteLine($"调用前：a = &#123;a.val&#125;, b = &#123;b&#125;"); Mymethod(ref a, ref b); // 看这里 Console.WriteLine($"调用后：a = &#123;a.val&#125;, b = &#123;b&#125;"); Console.ReadKey(); &#125; &#125;&#125; 输出： 12调用前：a = 10, b = 20调用后：a = 15, b = 25 // 可见 都改变了。 参考： 《C#图解教程》 -&gt; P66]]></content>
       <categories>
         <category>编程爱好</category>
       </categories>

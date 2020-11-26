@@ -44,6 +44,51 @@
   </entry>
   
   <entry>
+    <title>C#｜匿名类初识</title>
+    <link href="https://blog.huvjie.com/2020/11/26/201126N02/"/>
+    <id>https://blog.huvjie.com/2020/11/26/201126N02/</id>
+    <published>2020-11-26T02:22:00.000Z</published>
+    <updated>2020-11-26T12:11:57.745Z</updated>
+    
+    <content type="html"><![CDATA[<p>之前的这篇<a href="https://blog.huvjie.com/2020/06/01/200601N01/">https://blog.huvjie.com/2020/06/01/200601N01/</a>，是不是也是匿名类？对这个知识点还没有什么认识，初识一下。</p><a id="more"></a><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">var</span> Student = <span class="keyword">new</span> &#123; Name = <span class="string">"XiaoFang"</span>, Age = <span class="number">10</span> &#125;;</span><br><span class="line"></span><br><span class="line">    Console.WriteLine(<span class="string">"Name:&#123;0&#125; Age:&#123;1&#125;"</span>, Student.Name, Student.Age);</span><br><span class="line"></span><br><span class="line">    Console.ReadKey();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>输出：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Name:XiaoFang Age:10</span><br></pre></td></tr></table></figure><p>另外，<code>投影初始化语句</code>可以查看《图解教程》P355页。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;之前的这篇&lt;a href=&quot;https://blog.huvjie.com/2020/06/01/200601N01/&quot;&gt;https://blog.huvjie.com/2020/06/01/200601N01/&lt;/a&gt;，是不是也是匿名类？对这个知识点还没有什么认识，初识一下。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="编程爱好" scheme="https://blog.huvjie.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
+    
+    
+      <category term="C#" scheme="https://blog.huvjie.com/tags/C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>C# 好像没有类似 C++ 的 const 形参</title>
+    <link href="https://blog.huvjie.com/2020/11/26/201126N01/"/>
+    <id>https://blog.huvjie.com/2020/11/26/201126N01/</id>
+    <published>2020-11-26T02:22:00.000Z</published>
+    <updated>2020-11-26T12:18:49.553Z</updated>
+    
+    <content type="html"><![CDATA[<p>这里只针对引用参数来说(非string类型)。我们能限制的只是引用的指向不能更改，而引用指向的内存值是可以修改的。<span style="color:blue">是不是只要 C# 的类属性设计的够好，就不需要这样呢？</span></p><p>这里是之前的思考：<a href="https://blog.huvjie.com/2020/06/01/200601N01/">https://blog.huvjie.com/2020/06/01/200601N01/</a></p><a id="more"></a><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">ConsoleApp1</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">class</span> <span class="title">A</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">string</span> Message &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125; = <span class="string">"nihao"</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">class</span> <span class="title">Programe</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">readonly</span> A  aa = <span class="keyword">new</span> A();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">private</span> A Aa &#123; <span class="keyword">get</span>; &#125; = <span class="keyword">new</span> A();</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            Programe programe = <span class="keyword">new</span> Programe();</span><br><span class="line">            programe.DoSomeChange(programe.Aa); <span class="comment">// 是可以更改的</span></span><br><span class="line"></span><br><span class="line">            <span class="comment">// 下面这两句是不允许的，重新改变了引用的指向</span></span><br><span class="line">            <span class="comment">//A Ab = new A();</span></span><br><span class="line">            <span class="comment">//programe.Aa = Ab;</span></span><br><span class="line"></span><br><span class="line">            Console.WriteLine(programe.Aa.Message);</span><br><span class="line">            programe.OnlyShow(programe.Aa);</span><br><span class="line">            programe.OnlyShow();</span><br><span class="line"></span><br><span class="line">            Console.ReadKey();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">DoSomeChange</span>(<span class="params">A a</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            a.Message = <span class="string">"hello"</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">OnlyShow</span>(<span class="params">A a</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            a.Message = <span class="string">"hhhh"</span>;</span><br><span class="line">            Console.WriteLine(a.Message);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">OnlyShow</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            <span class="keyword">this</span>.aa.Message = <span class="string">"Good!"</span>;</span><br><span class="line">            Console.WriteLine(<span class="keyword">this</span>.aa.Message);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>输出：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hello</span><br><span class="line">hhhh</span><br><span class="line">Good!</span><br></pre></td></tr></table></figure><p>类似下面这样是不行的：<br><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">DoSomeChange</span>(<span class="params"><span class="keyword">const</span> A a</span>)</span> &#123;&#125;</span><br></pre></td></tr></table></figure></p><p><span style="color:red">是不是 C# 没有类似 C++ 的 const 形参，或者有什么方法能够实现类似的功能呢？</span></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;这里只针对引用参数来说(非string类型)。我们能限制的只是引用的指向不能更改，而引用指向的内存值是可以修改的。&lt;span style=&quot;color:blue&quot;&gt;是不是只要 C# 的类属性设计的够好，就不需要这样呢？&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;这里是之前的思考：&lt;a href=&quot;https://blog.huvjie.com/2020/06/01/200601N01/&quot;&gt;https://blog.huvjie.com/2020/06/01/200601N01/&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="编程爱好" scheme="https://blog.huvjie.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
+    
+    
+      <category term="C#" scheme="https://blog.huvjie.com/tags/C/"/>
+    
+  </entry>
+  
+  <entry>
     <title>C++｜wchar_t 简单认识</title>
     <link href="https://blog.huvjie.com/2020/11/25/201125N02/"/>
     <id>https://blog.huvjie.com/2020/11/25/201125N02/</id>
@@ -70,35 +115,13 @@
     <link href="https://blog.huvjie.com/2020/11/24/201125N01/"/>
     <id>https://blog.huvjie.com/2020/11/24/201125N01/</id>
     <published>2020-11-24T02:22:00.000Z</published>
-    <updated>2020-11-25T13:44:32.247Z</updated>
+    <updated>2020-11-25T14:10:08.830Z</updated>
     
-    <content type="html"><![CDATA[<p>最近在想如何实现C#和C++混合编程的问题，为什么会想到这个问题？是因为，在视觉方面我是有学习 OpenCV 的打算的。发现<strong>用托管 C++ 代码，包装非托管 C++ 代码；然后，C# 无缝衔接托管 C++。</strong>这种方式比较可行。</p><a id="more"></a><p>最开始想的是，用 Qt 去包 OpenCV，然后再 C# 里面调用 Qt 程序。了解了下，需要用到<code>qtwinmigrate</code>，试了下，发现比较麻烦，也没有搞成功。<strong>感觉这种方式还是可行。如果有时间折腾这个，那我还不如花时间精力学习下 Qt，直接在用 Qt 开发呢!</strong></p><p>后面发现在互联网上，大家还有一种方法。<strong>用托管 C++ 代码，包装非托管 C++ 代码；然后，C# 无缝衔接托管 C++。</strong>看了一些互联网上的博客，感觉此路可行。在 Windows 下这可能是种最佳的解决方案。这种方式貌似可以使用类，而<code>PInvoke</code>的方式只能调用函数吧!？</p><p>说的<code>PInvoke</code>,发现一个网站：<a href="http://pinvoke.net/" target="_blank" rel="noopener">http://pinvoke.net/</a>。有需求的时候可以来这里查看。</p>]]></content>
+    <content type="html"><![CDATA[<p>最近在想如何实现C#和C++混合编程的问题，为什么会想到这个问题？是因为，在视觉方面我是有学习 OpenCV 的打算的。发现<strong>用托管 C++ 代码，包装非托管 C++ 代码；然后，C# 无缝衔接托管 C++。</strong>这种方式比较可行。</p><a id="more"></a><p>最开始想的是，用 Qt 去包 OpenCV，然后再 C# 里面调用 Qt 程序。了解了下，需要用到<code>qtwinmigrate</code>，试了下，发现比较麻烦，也没有搞成功。<strong>感觉这种方式还是可行。如果有时间折腾这个，那我还不如花时间精力学习下 Qt，直接用 Qt 开发呢!</strong></p><p>后面发现在互联网上，大家还有一种方法。<strong>用托管 C++ 代码，包装非托管 C++ 代码；然后，C# 无缝衔接托管 C++。</strong>看了一些互联网上的博客，感觉此路可行。在 Windows 下这可能是种最佳的解决方案。这种方式貌似可以使用类，而<code>PInvoke</code>的方式只能调用函数吧!？</p><p>说的<code>PInvoke</code>,发现一个网站：<a href="http://pinvoke.net/" target="_blank" rel="noopener">http://pinvoke.net/</a>。有需求的时候可以来这里查看。</p>]]></content>
     
     <summary type="html">
     
       &lt;p&gt;最近在想如何实现C#和C++混合编程的问题，为什么会想到这个问题？是因为，在视觉方面我是有学习 OpenCV 的打算的。发现&lt;strong&gt;用托管 C++ 代码，包装非托管 C++ 代码；然后，C# 无缝衔接托管 C++。&lt;/strong&gt;这种方式比较可行。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="编程爱好" scheme="https://blog.huvjie.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
-    
-    
-      <category term="C#" scheme="https://blog.huvjie.com/tags/C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>C# try catch块内为空程序不会崩溃</title>
-    <link href="https://blog.huvjie.com/2020/11/23/201123N03/"/>
-    <id>https://blog.huvjie.com/2020/11/23/201123N03/</id>
-    <published>2020-11-23T02:22:00.000Z</published>
-    <updated>2020-11-23T12:10:21.079Z</updated>
-    
-    <content type="html"><![CDATA[<p>catch块内为空程序不会崩溃, 只是代表它没有进行任何的处理而已。</p><a id="more"></a><p><img src="http://image.huvjie.com/201123N03_img01.jpg" alt=""></p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Windows.Forms;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">ConsoleApp2</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">partial</span> <span class="keyword">class</span> <span class="title">Form1</span> : <span class="title">Form</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Form1</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            InitializeComponent();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">button1_Click</span>(<span class="params"><span class="keyword">object</span> sender, EventArgs e</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            <span class="keyword">try</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">int</span> a = <span class="number">0</span>;</span><br><span class="line">                <span class="keyword">int</span> b = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">                <span class="keyword">int</span> c = b / a;</span><br><span class="line">            &#125;</span><br><span class="line"><span class="keyword">catch</span> </span><br><span class="line">&#123;</span><br><span class="line">&#125;</span><br><span class="line">           </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>上面这样程序不会蹦掉，只是没有处理异常而已。</p><p>很多时候，我们将错误信息<code>Show</code>出来。如下：</p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">catch</span>(Exception ex)</span><br><span class="line">&#123;</span><br><span class="line">    MessageBox.Show(ex.Message);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>当然，也可以进行其他的处理。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;catch块内为空程序不会崩溃, 只是代表它没有进行任何的处理而已。&lt;/p&gt;
     
     </summary>
     
@@ -123,6 +146,28 @@
       &lt;p&gt;发现 C# 还要和 C++ 一样的&lt;code&gt;::&lt;/code&gt;运算符，来测试一下。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;命名空间被赋值别名以后，可以隐藏掉原有的命名空间。想要访问需要完整路径。如果不用，可以用&lt;code&gt;::&lt;/code&gt;运算法，它的优先级被高。&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;看下下面的例子：&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="编程爱好" scheme="https://blog.huvjie.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
+    
+    
+      <category term="C#" scheme="https://blog.huvjie.com/tags/C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>C# try catch块内为空程序不会崩溃</title>
+    <link href="https://blog.huvjie.com/2020/11/23/201123N03/"/>
+    <id>https://blog.huvjie.com/2020/11/23/201123N03/</id>
+    <published>2020-11-23T02:22:00.000Z</published>
+    <updated>2020-11-23T12:10:21.079Z</updated>
+    
+    <content type="html"><![CDATA[<p>catch块内为空程序不会崩溃, 只是代表它没有进行任何的处理而已。</p><a id="more"></a><p><img src="http://image.huvjie.com/201123N03_img01.jpg" alt=""></p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Windows.Forms;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">ConsoleApp2</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">partial</span> <span class="keyword">class</span> <span class="title">Form1</span> : <span class="title">Form</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Form1</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            InitializeComponent();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">button1_Click</span>(<span class="params"><span class="keyword">object</span> sender, EventArgs e</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            <span class="keyword">try</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">int</span> a = <span class="number">0</span>;</span><br><span class="line">                <span class="keyword">int</span> b = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">                <span class="keyword">int</span> c = b / a;</span><br><span class="line">            &#125;</span><br><span class="line"><span class="keyword">catch</span> </span><br><span class="line">&#123;</span><br><span class="line">&#125;</span><br><span class="line">           </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>上面这样程序不会蹦掉，只是没有处理异常而已。</p><p>很多时候，我们将错误信息<code>Show</code>出来。如下：</p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">catch</span>(Exception ex)</span><br><span class="line">&#123;</span><br><span class="line">    MessageBox.Show(ex.Message);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>当然，也可以进行其他的处理。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;catch块内为空程序不会崩溃, 只是代表它没有进行任何的处理而已。&lt;/p&gt;
     
     </summary>
     
@@ -301,6 +346,28 @@
   </entry>
   
   <entry>
+    <title>还是要学下 WPF</title>
+    <link href="https://blog.huvjie.com/2020/11/16/201116N01/"/>
+    <id>https://blog.huvjie.com/2020/11/16/201116N01/</id>
+    <published>2020-11-16T02:22:00.000Z</published>
+    <updated>2020-11-16T12:28:10.344Z</updated>
+    
+    <content type="html"><![CDATA[<p>其实行业内大部分人都在用 winform，还是想学习一下 WPF。主要考虑一下几点：</p><a id="more"></a><ol><li><p>技术更先进。</p><p> 还是要向前一步。能够很好的实现前后台代码的分离。</p></li><li><p>后面想弄下安卓 <code>Xamarin</code>。</p></li></ol><p>/<strong><strong><strong><strong><strong><strong><strong><em>**</em></strong></strong></strong></strong></strong></strong></strong>/</p><p>学 WPF 不着急，慢慢学。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;其实行业内大部分人都在用 winform，还是想学习一下 WPF。主要考虑一下几点：&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="编程爱好" scheme="https://blog.huvjie.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
+    
+    
+      <category term="C#" scheme="https://blog.huvjie.com/tags/C/"/>
+    
+  </entry>
+  
+  <entry>
     <title>C# 实例构建的执行顺序</title>
     <link href="https://blog.huvjie.com/2020/11/16/201116N03/"/>
     <id>https://blog.huvjie.com/2020/11/16/201116N03/</id>
@@ -338,28 +405,6 @@
     
       &lt;p&gt;类内的只读属性不能更改的是他的&lt;code&gt;指向&lt;/code&gt;，例如，容器类&lt;code&gt;List&lt;/code&gt;，如果是只内部可写，外部可读，只有类内部可以更改 &lt;code&gt;List&lt;/code&gt; 字段的指向赋值，外部不能。&lt;strong&gt;而类外&lt;code&gt;get&lt;/code&gt;到它的指向值后，是可以对它进行&lt;code&gt;Add&lt;/code&gt;等操作的，因为没有更改它的指向。&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;有点绕，估计没讲清我想要说什么。~O(∩_∩)O~&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="编程爱好" scheme="https://blog.huvjie.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
-    
-    
-      <category term="C#" scheme="https://blog.huvjie.com/tags/C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>还是要学下 WPF</title>
-    <link href="https://blog.huvjie.com/2020/11/16/201116N01/"/>
-    <id>https://blog.huvjie.com/2020/11/16/201116N01/</id>
-    <published>2020-11-16T02:22:00.000Z</published>
-    <updated>2020-11-16T12:28:10.344Z</updated>
-    
-    <content type="html"><![CDATA[<p>其实行业内大部分人都在用 winform，还是想学习一下 WPF。主要考虑一下几点：</p><a id="more"></a><ol><li><p>技术更先进。</p><p> 还是要向前一步。能够很好的实现前后台代码的分离。</p></li><li><p>后面想弄下安卓 <code>Xamarin</code>。</p></li></ol><p>/<strong><strong><strong><strong><strong><strong><strong><em>**</em></strong></strong></strong></strong></strong></strong></strong>/</p><p>学 WPF 不着急，慢慢学。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;其实行业内大部分人都在用 winform，还是想学习一下 WPF。主要考虑一下几点：&lt;/p&gt;
     
     </summary>
     
@@ -436,54 +481,6 @@
     
     
       <category term="点滴" scheme="https://blog.huvjie.com/tags/%E7%82%B9%E6%BB%B4/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>C# 自定义鼠标样式</title>
-    <link href="https://blog.huvjie.com/2020/11/12/201112N01/"/>
-    <id>https://blog.huvjie.com/2020/11/12/201112N01/</id>
-    <published>2020-11-12T02:22:00.000Z</published>
-    <updated>2020-11-14T01:34:24.702Z</updated>
-    
-    <content type="html"><![CDATA[<p>这里调用系统 API 的方式。</p><p><img src="http://image.huvjie.com/201112N01_img01.gif" alt=""></p><div style="font-size:13px;color:gray;text-align:center">▲ 样式效果</div><a id="more"></a><p>先准备好鼠标样式<code>cur</code>文件。</p><p><img src="http://image.huvjie.com/201112N01_img01.jpg" alt=""></p><div style="font-size:13px;color:gray;text-align:center">▲ 鼠标样式文件</div><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> System.ComponentModel;</span><br><span class="line"><span class="keyword">using</span> System.Data;</span><br><span class="line"><span class="keyword">using</span> System.Drawing;</span><br><span class="line"><span class="keyword">using</span> System.Text;</span><br><span class="line"><span class="keyword">using</span> System.Windows.Forms;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">MouseSt</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">using</span> System.Runtime.InteropServices;</span><br><span class="line">    <span class="keyword">using</span> System.Reflection;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">partial</span> <span class="keyword">class</span> <span class="title">Form1</span> : <span class="title">Form</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Form1</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            InitializeComponent();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">Form1_Load</span>(<span class="params"><span class="keyword">object</span> sender, EventArgs e</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            Cursor myCursor = <span class="keyword">new</span> Cursor(Cursor.Current.Handle);</span><br><span class="line">            IntPtr colrCursorHandle = MouseStye.LoadCursorFromFile(<span class="string">"hand.cur"</span>);</span><br><span class="line">            myCursor.GetType().InvokeMember(<span class="string">"handle"</span>, BindingFlags.Public|BindingFlags.NonPublic|BindingFlags.Instance|BindingFlags.SetField, <span class="literal">null</span>, myCursor, <span class="keyword">new</span> <span class="keyword">object</span>[] &#123; colrCursorHandle &#125;);</span><br><span class="line">            <span class="keyword">this</span>.pictureBox1.Cursor = myCursor; <span class="comment">// pictureBox区域</span></span><br><span class="line"></span><br><span class="line">            Cursor myCursor1 = <span class="keyword">new</span> Cursor(Cursor.Current.Handle);</span><br><span class="line">            IntPtr colrCursorHandle1 = MouseStye.LoadCursorFromFile(<span class="string">"pen.cur"</span>);</span><br><span class="line">            myCursor.GetType().InvokeMember(<span class="string">"handle"</span>, BindingFlags.Public|BindingFlags.NonPublic|BindingFlags.Instance|BindingFlags.SetField, <span class="literal">null</span>, myCursor1, <span class="keyword">new</span> <span class="keyword">object</span>[] &#123; colrCursorHandle1 &#125;);</span><br><span class="line">            <span class="keyword">this</span>.pictureBox2.Cursor = myCursor1;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">class</span> <span class="title">MouseStye</span></span><br><span class="line">    &#123;</span><br><span class="line">        [<span class="meta">DllImport(<span class="meta-string">"user32.dll"</span>)</span>]</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">extern</span> IntPtr <span class="title">LoadCursorFromFile</span>(<span class="params"><span class="keyword">string</span> fileName</span>)</span>;</span><br><span class="line">        [<span class="meta">DllImport(<span class="meta-string">"user32.dll"</span>)</span>]</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">extern</span> IntPtr <span class="title">SetCursor</span>(<span class="params">IntPtr cursorHandle</span>)</span>;</span><br><span class="line">        [<span class="meta">DllImport(<span class="meta-string">"user32.dll"</span>)</span>]</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">extern</span> <span class="keyword">uint</span> <span class="title">DestroyCursor</span>(<span class="params">IntPtr cursorHandle</span>)</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><code>InvokeMember</code> 第二个选项参数具体还没有深究，先照着写吧。</p><hr><div style="font-size:12px"><br>参考：<br>C# winForm 自定义鼠标样式的两种方法：<br><a href="https://www.cnblogs.com/tianguook/archive/2010/08/03/1791572.html" target="_blank" rel="noopener">https://www.cnblogs.com/tianguook/archive/2010/08/03/1791572.html</a><br></div>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;这里调用系统 API 的方式。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://image.huvjie.com/201112N01_img01.gif&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;div style=&quot;font-size:13px;color:gray;text-align:center&quot;&gt;▲ 样式效果&lt;/div&gt;
-    
-    </summary>
-    
-      <category term="编程爱好" scheme="https://blog.huvjie.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
-    
-    
-      <category term="C#" scheme="https://blog.huvjie.com/tags/C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>C# 自定义鼠标样式</title>
-    <link href="https://blog.huvjie.com/2020/11/12/201112N02/"/>
-    <id>https://blog.huvjie.com/2020/11/12/201112N02/</id>
-    <published>2020-11-12T02:22:00.000Z</published>
-    <updated>2020-11-12T13:08:27.873Z</updated>
-    
-    <content type="html"><![CDATA[<p>接上一篇，不调用 API 的方式。</p><p><img src="http://image.huvjie.com/201112N02_img01.gif" alt=""></p><div style="font-size:13px;color:gray;text-align:center">▲ 样式效果</div><a id="more"></a><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> System.ComponentModel;</span><br><span class="line"><span class="keyword">using</span> System.Data;</span><br><span class="line"><span class="keyword">using</span> System.Drawing;</span><br><span class="line"><span class="keyword">using</span> System.Text;</span><br><span class="line"><span class="keyword">using</span> System.Windows.Forms;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">MouseSt</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">using</span> System.Runtime.InteropServices;</span><br><span class="line">    <span class="keyword">using</span> System.Reflection;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">partial</span> <span class="keyword">class</span> <span class="title">Form1</span> : <span class="title">Form</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Form1</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            InitializeComponent();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">Form1_Load</span>(<span class="params"><span class="keyword">object</span> sender, EventArgs e</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            Bitmap a = (Bitmap)Bitmap.FromFile(<span class="string">"1.gif"</span>);</span><br><span class="line">            SetCursor(a, <span class="keyword">new</span> Point(<span class="number">0</span>, <span class="number">0</span>));</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">SetCursor</span>(<span class="params">Bitmap cursor, Point hotPoint</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            <span class="keyword">int</span> hotX = hotPoint.X;</span><br><span class="line">            <span class="keyword">int</span> hotY = hotPoint.Y;</span><br><span class="line"><span class="comment">// 这里为什么要 * 2</span></span><br><span class="line">            Bitmap myNewCursor = <span class="keyword">new</span> Bitmap(cursor.Width * <span class="number">2</span>  - hotX, cursor.Height * <span class="number">2</span> - hotY);</span><br><span class="line">            Graphics graphics = Graphics.FromImage(myNewCursor);</span><br><span class="line">            graphics.Clear(Color.FromArgb(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>));</span><br><span class="line">            graphics.DrawImage(cursor, cursor.Width - hotX, cursor.Height - hotY, cursor.Width, cursor.Height);</span><br><span class="line">            <span class="keyword">this</span>.Cursor = <span class="keyword">new</span> Cursor(myNewCursor.GetHicon());</span><br><span class="line"></span><br><span class="line">            graphics.Dispose();</span><br><span class="line">            myNewCursor.Dispose();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">button1_Click</span>(<span class="params"><span class="keyword">object</span> sender, EventArgs e</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            MessageBox.Show(<span class="string">"被点击!"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><span style="color:red"><code>Bitmap myNewCursor</code> 为什么要 <code>*2</code>？ 没看明白。</span> <span style="color:blue">因为 Cursor 属性计算定位的是样式图片的中心点位置？</span></p><hr><div style="font-size:12px"><br>参考：<br>C# winForm 自定义鼠标样式的两种方法：<br><a href="https://www.cnblogs.com/tianguook/archive/2010/08/03/1791572.html" target="_blank" rel="noopener">https://www.cnblogs.com/tianguook/archive/2010/08/03/1791572.html</a><br></div>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;接上一篇，不调用 API 的方式。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://image.huvjie.com/201112N02_img01.gif&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;div style=&quot;font-size:13px;color:gray;text-align:center&quot;&gt;▲ 样式效果&lt;/div&gt;
-    
-    </summary>
-    
-      <category term="编程爱好" scheme="https://blog.huvjie.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
-    
-    
-      <category term="C#" scheme="https://blog.huvjie.com/tags/C/"/>
     
   </entry>
   
