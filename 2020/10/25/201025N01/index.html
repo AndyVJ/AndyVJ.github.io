@@ -122,7 +122,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://image.huvjie.com/201025N01_img01.gif">
 <meta property="og:image" content="http://image.huvjie.com/201025N01_img02.gif">
-<meta property="og:updated_time" content="2020-10-25T02:16:47.637Z">
+<meta property="og:updated_time" content="2020-12-02T11:50:41.752Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C#跨线程访问控件需要注意的问题">
 <meta name="twitter:description" content="C#跨线程访问控件，我们一般 new 一个线程，多线程来操作。今天本以为是这样操作的，可还是卡死程序了。记录一下碰到的这些疑难杂症。">
@@ -407,12 +407,24 @@
                 
               
 
-              <time title="创建时间：2020-10-25 10:22:00 / 修改时间：10:16:47" itemprop="dateCreated datePublished" datetime="2020-10-25T10:22:00+08:00">2020-10-25</time>
+              <time title="创建时间：2020-10-25 10:22:00" itemprop="dateCreated datePublished" datetime="2020-10-25T10:22:00+08:00">2020-10-25</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2020-12-02 19:50:41" itemprop="dateModified" datetime="2020-12-02T19:50:41+08:00">2020-12-02</time>
               
             
           </span>
@@ -484,9 +496,9 @@
 <a id="more"></a>
 <h2 id="一、怀疑多界面问题"><a href="#一、怀疑多界面问题" class="headerlink" title="一、怀疑多界面问题"></a>一、怀疑多界面问题</h2><p><strong>其实，与嵌套多少个控件没关系。</strong></p>
 <p><img src="http://image.huvjie.com/201025N01_img01.gif" alt=""></p>
-<p>怀疑是在主窗体嵌入的两个<code>menu</code>，在<code>menu</code>里面这样操作不行。后面这种情况被我排除了。<strong>因为，我把代码复制到主页面，相同功能还是卡死。所以，还是代码有问题。</strong></p>
 <div style="font-size:13px;color:gray;text-align:center">▲ 我是在一个主窗体放了一个panel，然后，在panel里面加载menu1，menu1通过按钮加载menu2；再在么menu2里面new一个线程，跨线程访问textbox。可这样还是被卡死了。</div>
 
+<p>怀疑是在主窗体嵌入的两个<code>menu</code>，在<code>menu</code>里面这样操作不行。后面这种情况被我排除了。<strong>因为，我把代码复制到主页面，相同功能还是卡死。所以，还是代码有问题。</strong></p>
 <h2 id="二、聚焦代码问题"><a href="#二、聚焦代码问题" class="headerlink" title="二、聚焦代码问题"></a>二、聚焦代码问题</h2><p>问题其实是，<code>this.textBox1.Invoke(/*调用代码*/)</code>的<code>调用代码</code><strong>不能太耗时，与控件本身操作无关的代码</strong>。不然就<strong>卡死</strong>。</p>
 <p>开始我是这样写的：</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">0</span>;</span><br><span class="line">thread = <span class="keyword">new</span> Thread(() =&gt;</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.textBox1.InvokeRequired) &#123;</span><br><span class="line">        <span class="keyword">this</span>.textBox1.Invoke(<span class="keyword">new</span> Action(() =&gt; &#123;</span><br><span class="line">            <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">                <span class="keyword">this</span>.textBox1.Text = a++.ToString(); </span><br><span class="line">                Thread.Sleep(<span class="number">1000</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">thread.IsBackground = <span class="literal">true</span>;</span><br><span class="line">thread.Start();</span><br></pre></td></tr></table></figure>
