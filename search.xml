@@ -25,7 +25,7 @@
   <entry>
     <title><![CDATA[winform｜ListView 控件简单使用]]></title>
     <url>%2F2020%2F12%2F04%2F201204N01%2F</url>
-    <content type="text"><![CDATA[ListView 控件简单使用。 ▲ 简单样式 listView控件名：listView_SerailNum。 12345678910111213141516171819202122232425this.listView_SerailNum.FullRowSelect = true;ColumnHeader cameraName = new ColumnHeader();cameraName.Text = "相机";cameraName.Width = 75;cameraName.TextAlign = HorizontalAlignment.Center;ColumnHeader cameraSerialNum = new ColumnHeader();cameraSerialNum.Text = "序列号";cameraSerialNum.Width = this.listView_SerailNum.Width - cameraName.Width - 4;cameraSerialNum.TextAlign = HorizontalAlignment.Center;listView_SerailNum.Columns.AddRange(new ColumnHeader[] &#123; cameraName, cameraSerialNum &#125;);listView_SerailNum.View = View.Details;if (this.MachineHardware != null)&#123; ListViewItem lvItem1 = new ListViewItem(new string[] &#123; "相机" + CameraIndex.A.ToString(), this.MachineHardware.CameraA.GetSerialNum() &#125;); ListViewItem lvItem2 = new ListViewItem(new string[] &#123; "相机" + CameraIndex.B.ToString(), this.MachineHardware.CameraB.GetSerialNum() &#125;); ListViewItem lvItem3 = new ListViewItem(new string[] &#123; "相机" + CameraIndex.C.ToString(), this.MachineHardware.CameraC.GetSerialNum() &#125;); this.listView_SerailNum.Items.Add(lvItem1); this.listView_SerailNum.Items.Add(lvItem2); this.listView_SerailNum.Items.Add(lvItem3); this.textBox1.Text = this.MachineHardware.CameraA.GetSerialNum(); this.textBox2.Text = this.MachineHardware.CameraB.GetSerialNum(); this.textBox3.Text = this.MachineHardware.CameraC.GetSerialNum();&#125; 需要获取第二列的值是这样的，下标[1]直接去获取： 1string serialNum = this.listView_SerailNum.FocusedItem.SubItems[1].Text; FocusedItem是选中项。 可以对它进行判断，if (this.listView_SerailNum.FocusedItem == null) {}，判断有没有选中的项。]]></content>
+    <content type="text"><![CDATA[ListView 控件简单使用。 ▲ 简单样式 listView控件名：listView_SerailNum。 12345678910111213141516171819202122232425this.listView_SerailNum.FullRowSelect = true;ColumnHeader cameraName = new ColumnHeader();cameraName.Text = "相机";cameraName.Width = 75;cameraName.TextAlign = HorizontalAlignment.Center;ColumnHeader cameraSerialNum = new ColumnHeader();cameraSerialNum.Text = "序列号";cameraSerialNum.Width = this.listView_SerailNum.Width - cameraName.Width - 4;cameraSerialNum.TextAlign = HorizontalAlignment.Center;listView_SerailNum.Columns.AddRange(new ColumnHeader[] &#123; cameraName, cameraSerialNum &#125;);listView_SerailNum.View = View.Details;if (this.MachineHardware != null)&#123; ListViewItem lvItem1 = new ListViewItem(new string[] &#123; "相机" + CameraIndex.A.ToString(), this.MachineHardware.CameraA.GetSerialNum() &#125;); ListViewItem lvItem2 = new ListViewItem(new string[] &#123; "相机" + CameraIndex.B.ToString(), this.MachineHardware.CameraB.GetSerialNum() &#125;); ListViewItem lvItem3 = new ListViewItem(new string[] &#123; "相机" + CameraIndex.C.ToString(), this.MachineHardware.CameraC.GetSerialNum() &#125;); this.listView_SerailNum.Items.Add(lvItem1); this.listView_SerailNum.Items.Add(lvItem2); this.listView_SerailNum.Items.Add(lvItem3); this.textBox1.Text = this.MachineHardware.CameraA.GetSerialNum(); this.textBox2.Text = this.MachineHardware.CameraB.GetSerialNum(); this.textBox3.Text = this.MachineHardware.CameraC.GetSerialNum();&#125; 需要获取第二列的值是这样的，下标[1]直接去获取： 1string serialNum = this.listView_SerailNum.FocusedItem.SubItems[1].Text; FocusedItem是选中项。 可以对它进行判断，if (this.listView_SerailNum.FocusedItem == null) {}，判断有没有选中的项。 控制表头显示与否的属性是：HeaderStyle = None; // 不显示表头。]]></content>
       <categories>
         <category>编程爱好</category>
       </categories>
@@ -1736,9 +1736,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[UG NX 移动对象之『动态』技巧]]></title>
-    <url>%2F2019%2F02%2F19%2F190219-02%2F</url>
-    <content type="text"><![CDATA[动态绕某一点旋转，而旋转手柄又不在此点上，如何操作？ Ctrl + T 移动对象，勾选只移动手柄，将手柄点选移动到需要旋转的点。 取消勾选只移动手柄，点选手柄节点，输入旋转角度，确定。]]></content>
+    <title><![CDATA[UG NX 坐标对齐移动——解决实体与原始坐标不对齐的问题]]></title>
+    <url>%2F2019%2F02%2F19%2F190219-01%2F</url>
+    <content type="text"><![CDATA[有时候通过WAVE链接过来的实体会出现实体与原始坐标不对齐的情况，如： 可以用坐标到坐标移动的方式将实体摆正。 新建与实体对齐的坐标系。 Ctrl + T 移动。 这样后，实体就与原始坐标对齐了：]]></content>
       <categories>
         <category>机械结构</category>
       </categories>
@@ -1747,9 +1747,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[UG NX 坐标对齐移动——解决实体与原始坐标不对齐的问题]]></title>
-    <url>%2F2019%2F02%2F19%2F190219-01%2F</url>
-    <content type="text"><![CDATA[有时候通过WAVE链接过来的实体会出现实体与原始坐标不对齐的情况，如： 可以用坐标到坐标移动的方式将实体摆正。 新建与实体对齐的坐标系。 Ctrl + T 移动。 这样后，实体就与原始坐标对齐了：]]></content>
+    <title><![CDATA[UG NX 移动对象之『动态』技巧]]></title>
+    <url>%2F2019%2F02%2F19%2F190219-02%2F</url>
+    <content type="text"><![CDATA[动态绕某一点旋转，而旋转手柄又不在此点上，如何操作？ Ctrl + T 移动对象，勾选只移动手柄，将手柄点选移动到需要旋转的点。 取消勾选只移动手柄，点选手柄节点，输入旋转角度，确定。]]></content>
       <categories>
         <category>机械结构</category>
       </categories>
@@ -1833,17 +1833,6 @@
       </categories>
       <tags>
         <tag>随感</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[总结和展望：2019]]></title>
-    <url>%2F2019%2F02%2F02%2F190202-01%2F</url>
-    <content type="text"><![CDATA[2019 年的元月都已经过完，2 月都已经开始了，现在做一个“总结和展望”是不是有点太晚；好了，我们以农历春节为年终，时间却是刚刚好吧。 此刻媳妇还在屋里睡觉，还没起来。今天才是他们放假的第一天，好好补个觉，明天还要舟车劳顿回家过年。现在的我是睡不着懒觉了呢，因为焦虑无处不在。现在的我就在“胡思乱想”着，过去和现在，那也尝试做个总结和展望吧。 2018 年总结过去的一年，总体感受是：内心波澜动荡不安的一年，也是内心成长成熟的一年。 领证有很多事情我相信是命中注定，上天安排吧。既然这样，缘分到了就去领证吧，从此肩负责任和担当携手一生。可是因为缺钱，婚礼还没办，这也将是我在 2019 年最重要的一件事情。 买房在老家(湖北)买了房。还了一年的房贷，欠着银行的钱，些许压力。虽然去年的房价比较高，就算做个投资应该还是能保值的。 离职 JK四月份从工作四年的 JK 离职。原因有很多，主要考虑的是： 和媳妇距离隔得太远，虽然在同一座城市，但能在一起还是比较好； 内心躁动，和朋友合计着开个门面店(早餐店)； // 很快失败。原因：1. 没有经验，做之前对行业了解不够深入，过于理想化，不切实际；2. 没资金。钱只够把店开起来，而后续需要持续经营的投入却显得捉襟见肘； 找工作，换了几家公司，内心强烈的不适应感； // 在一家公司呆久了，就像关在笼子里太久的鸟，放飞后难以适应自然环境一样。心里建设不够，另外心里也没能完全投入工作中，想法太多。 对未来的迷茫、焦虑，想跳出现在的环境，趁还算年轻多经历一些环境，磨练积累下自己。 // 想要一份事业，而不是一份工作，现实和理想的差距，能力和理想的差距，让人窒息。 总结很多事情，人生总是需要去经历的，或早或晚。经历会让人懂得。我们其实懂得很多道理，却依然过不好这一生。我们需要从自身中找找原因。 2019 年规划展望一切都是为了对美好生活的向往。 结婚这是今年必须要完成的。媳妇想要个婚礼的愿望一定要满足。婚礼不在奢华，而有和没有却是质的区别。婚礼无论如何要在今年给办了。 工作我对现在的这份工作其实并不满意，虽然我有信心能找一个更好的，但明年还是不要离职。1. 工作中还有能深究的东西，工作还是要投入进去，收获肯定是会有的，也看看是否会有其他机会；2. 环境和时间相对自由，可以尝试自己搞点事情。 网店坚持时间和精力投入一下，不要浅尝辄止。目标：每月能额外的带来 1000~2000 元的收入。 感想 不能太理想化，凡事还是需要切合实际情况，理性分析； 理想很重要，赚钱才是王道； 要规划短期目标和长期目标； 做事情考虑金钱成本外，还要考虑时间成本； 前期的加法做的太多，现在应该学会做减法。 有很多想法细节上，有时间再另外展开来写。 希望一切都好，朝自己的理想方向发展。]]></content>
-      <categories>
-        <category>其他</category>
-      </categories>
-      <tags>
-        <tag>随想</tag>
       </tags>
   </entry>
   <entry>
