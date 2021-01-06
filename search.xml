@@ -1,17 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[理一下后面的思路]]></title>
-    <url>%2F2021%2F12%2F31%2F201121N01%2F</url>
-    <content type="text"><![CDATA[理一下接下来的思路。首先，最重要和迫切的是加强提高业务层面“体力活”部分的熟练、效率。后面的整体方向： 以 C# 技术栈为中心； 以工业视觉为技术核心； 加强英语和数学。 以 C# 技术栈为中心C# 是工控行业的主力语言，桌面程序为主，Windows 平台，开发容易且效率高。我们的主要精力点不应该局限于语言，而是以语言为工具载体展开的知识体系。行业内的另一大开发语言是 C++，之前用 MFC，现在应该是 Qt。自己不要花精力刻意去学习Qt，不要把时间和精力分散了，集中精力把 C# 技术栈深入一下。业务方面的体力活部分要做到很熟练，这样效率才能高；现在用的是 Winform 开发界面，其实可以学习一下 WPF，也可以了解下 Web 方面的知识。软件的架构设计，开发模式，面向对象的设计和分析(UML)等，也要有一定的能力。数据库方面的使用。 以工业视觉为技术核心我觉得工控控制的核心技术应该在工业视觉这里，这里的算法部分逃不过C/C++了，这里的C/C++语言部分应该是一个被动技能，不要刻意的深入到语言里面去，那是个复杂的无底洞，应该在学习过程中需要什么再去学习什么。这里我给自己定了两个方向。 Halcon；// 行业能用的最多的算法包 OpenCV；// 开源，图像处理算法肯定要学的。 MIL； // 公司用这个，但互联网上找不到太多资料，在工作中学习吧，不做主要。 另外，有时间学下 Python。至于，什么深度学习，人工智能啥的，太高端，后面再说。 加强英语和数学英语和数学，这一点不用多说。]]></content>
-      <categories>
-        <category>编程爱好</category>
-      </categories>
-      <tags>
-        <tag>C#</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[复杂问题要简单化]]></title>
     <url>%2F2021%2F01%2F06%2F210106N01%2F</url>
     <content type="text"><![CDATA[一定要学会把复杂问题简单化。 一个复杂的问题，往往是由若干个简单的问题组合起来的，以庖丁解牛的方式将复杂问题孤立出若干个简单的问题，然后各个击破。复杂问题就得以解决。 一个复杂的软件也是由很过个单一的功能的部分组合起来的。对，功能单一的原则。若将多个功能柔和在一起考虑那就将简单问题复杂化了。切记不能这样。]]></content>
@@ -56,17 +45,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[C++｜带参数的构造函数]]></title>
-    <url>%2F2020%2F12%2F03%2F201203N02%2F</url>
-    <content type="text"><![CDATA[基础语法而已。 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970#include &lt;iostream&gt;using namespace std;class Demo&#123; public: Demo() &#123; x = 0; cout &lt;&lt; "Demo 的默认构造函数!" &lt;&lt; x &lt;&lt; endl; &#125; Demo(int i) &#123; x = i; cout &lt;&lt; "Demo 的带一个参数的构造函数!!" &lt;&lt; x &lt;&lt; endl; &#125; ~Demo() &#123; cout &lt;&lt; "Demo 的析构函数!" &lt;&lt; x &lt;&lt; endl; &#125; int get_x() &#123; return x; &#125; void set_x(int i) &#123; x = i; &#125; private: int x;&#125;;class Rectangle&#123; public: Rectangle() &#123; x = 1000; cout &lt;&lt; "Rectangle 的默认构造函数!" &lt;&lt; x &lt;&lt; endl; &#125; Rectangle(int i, int j, int k):x(i), width(j), length(k) &#123; cout &lt;&lt; "Rectangle 的带三个参数的构造函数!" &lt;&lt; "长方形的面积 b 为：" &lt;&lt; length.get_x() * width.get_x() &lt;&lt; endl; &#125; ~Rectangle() &#123; cout &lt;&lt; "Rectangle 的默认析构函数!" &lt;&lt; x &lt;&lt; endl; &#125; int area() &#123; return length.get_x() * width.get_x(); &#125; private: Demo length; Demo width; int x;&#125;;int main()&#123; Rectangle rec(100, 200, 300); cout &lt;&lt; "\n=========\n" &lt;&lt; endl; Rectangle *rec1 = new Rectangle(100, 200, 300); delete rec1; return 0;&#125; 输出： 123456789101112131415Demo 的带一个参数的构造函数!!300Demo 的带一个参数的构造函数!!200Rectangle 的带三个参数的构造函数!长方形的面积 b 为：60000=========Demo 的带一个参数的构造函数!!300Demo 的带一个参数的构造函数!!200Rectangle 的带三个参数的构造函数!长方形的面积 b 为：60000Rectangle 的默认析构函数!100Demo 的析构函数!200Demo 的析构函数!300Rectangle 的默认析构函数!100Demo 的析构函数!200Demo 的析构函数!300 参考：《范磊：C++》P153]]></content>
-      <categories>
-        <category>编程爱好</category>
-      </categories>
-      <tags>
-        <tag>C/C+</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[C#｜Conditional特性的简单使用]]></title>
     <url>%2F2020%2F12%2F03%2F201203N01%2F</url>
     <content type="text"><![CDATA[可以用来做条件编译。 开始定义#define DEBUG，然后在方法前面使用特性[Conditional(&quot;DEBUG&quot;)]。 1234567891011121314151617181920212223242526272829#define DEBUG // 这里 define 了 DEBUG。using System;using System.Diagnostics;public class Myclass&#123; [Conditional("DEBUG")] // 声明特性 public static void Message(string msg) &#123; Console.WriteLine(msg); &#125;&#125;class Test&#123; static void function1() &#123; Myclass.Message("In Function 1."); function2(); &#125; static void function2() &#123; Myclass.Message("In Function 2."); &#125; public static void Main() &#123; Myclass.Message("In Main function."); function1(); Console.ReadKey(); &#125;&#125; 输出： 123In Main functionIn Function 1In Function 2 参考：https://www.runoob.com/csharp/csharp-attribute.html]]></content>
@@ -75,6 +53,17 @@
       </categories>
       <tags>
         <tag>C#</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[C++｜带参数的构造函数]]></title>
+    <url>%2F2020%2F12%2F03%2F201203N02%2F</url>
+    <content type="text"><![CDATA[基础语法而已。 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970#include &lt;iostream&gt;using namespace std;class Demo&#123; public: Demo() &#123; x = 0; cout &lt;&lt; "Demo 的默认构造函数!" &lt;&lt; x &lt;&lt; endl; &#125; Demo(int i) &#123; x = i; cout &lt;&lt; "Demo 的带一个参数的构造函数!!" &lt;&lt; x &lt;&lt; endl; &#125; ~Demo() &#123; cout &lt;&lt; "Demo 的析构函数!" &lt;&lt; x &lt;&lt; endl; &#125; int get_x() &#123; return x; &#125; void set_x(int i) &#123; x = i; &#125; private: int x;&#125;;class Rectangle&#123; public: Rectangle() &#123; x = 1000; cout &lt;&lt; "Rectangle 的默认构造函数!" &lt;&lt; x &lt;&lt; endl; &#125; Rectangle(int i, int j, int k):x(i), width(j), length(k) &#123; cout &lt;&lt; "Rectangle 的带三个参数的构造函数!" &lt;&lt; "长方形的面积 b 为：" &lt;&lt; length.get_x() * width.get_x() &lt;&lt; endl; &#125; ~Rectangle() &#123; cout &lt;&lt; "Rectangle 的默认析构函数!" &lt;&lt; x &lt;&lt; endl; &#125; int area() &#123; return length.get_x() * width.get_x(); &#125; private: Demo length; Demo width; int x;&#125;;int main()&#123; Rectangle rec(100, 200, 300); cout &lt;&lt; "\n=========\n" &lt;&lt; endl; Rectangle *rec1 = new Rectangle(100, 200, 300); delete rec1; return 0;&#125; 输出： 123456789101112131415Demo 的带一个参数的构造函数!!300Demo 的带一个参数的构造函数!!200Rectangle 的带三个参数的构造函数!长方形的面积 b 为：60000=========Demo 的带一个参数的构造函数!!300Demo 的带一个参数的构造函数!!200Rectangle 的带三个参数的构造函数!长方形的面积 b 为：60000Rectangle 的默认析构函数!100Demo 的析构函数!200Demo 的析构函数!300Rectangle 的默认析构函数!100Demo 的析构函数!200Demo 的析构函数!300 参考：《范磊：C++》P153]]></content>
+      <categories>
+        <category>编程爱好</category>
+      </categories>
+      <tags>
+        <tag>C/C+</tag>
       </tags>
   </entry>
   <entry>
@@ -254,6 +243,17 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[理一下后面的思路]]></title>
+    <url>%2F2020%2F11%2F21%2F201121N01%2F</url>
+    <content type="text"><![CDATA[理一下接下来的思路。首先，最重要和迫切的是加强提高业务层面“体力活”部分的熟练、效率。后面的整体方向： 以 C# 技术栈为中心； 以工业视觉为技术核心； 加强英语和数学。 以 C# 技术栈为中心C# 是工控行业的主力语言，桌面程序为主，Windows 平台，开发容易且效率高。我们的主要精力点不应该局限于语言，而是以语言为工具载体展开的知识体系。行业内的另一大开发语言是 C++，之前用 MFC，现在应该是 Qt。自己不要花精力刻意去学习Qt，不要把时间和精力分散了，集中精力把 C# 技术栈深入一下。业务方面的体力活部分要做到很熟练，这样效率才能高；现在用的是 Winform 开发界面，其实可以学习一下 WPF，也可以了解下 Web 方面的知识。软件的架构设计，开发模式，面向对象的设计和分析(UML)等，也要有一定的能力。数据库方面的使用。 以工业视觉为技术核心我觉得工控控制的核心技术应该在工业视觉这里，这里的算法部分逃不过C/C++了，这里的C/C++语言部分应该是一个被动技能，不要刻意的深入到语言里面去，那是个复杂的无底洞，应该在学习过程中需要什么再去学习什么。这里我给自己定了两个方向。 Halcon；// 行业能用的最多的算法包 OpenCV；// 开源，图像处理算法肯定要学的。 MIL； // 公司用这个，但互联网上找不到太多资料，在工作中学习吧，不做主要。 另外，有时间学下 Python。至于，什么深度学习，人工智能啥的，太高端，后面再说。 加强英语和数学英语和数学，这一点不用多说。]]></content>
+      <categories>
+        <category>编程爱好</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[WPF 事件｜硬编码的方式 winform 的方式使用]]></title>
     <url>%2F2020%2F11%2F21%2F201121N02%2F</url>
     <content type="text"><![CDATA[像winform一样，事件，赋值，硬编码的方式实现。 // 传说，WPF 有五种绑定方式。 ▲ 效果 12345678910111213&lt;Window x:Class="WpfApp1.MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:WpfApp1" mc:Ignorable="d" Title="MainWindow" Height="250" Width="300"&gt; &lt;Grid&gt; &lt;Button x:Name="btnTest" Click="BtnTest_Click" Content="点击测试" Width="100" Height="30"/&gt; &lt;Label x:Name="label" Content="Label" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="2.845,4.051" Margin="128,41,0,0"/&gt; &lt;/Grid&gt;&lt;/Window&gt; 12345678910111213141516171819202122using System.Windows;namespace WpfApp1&#123; /// &lt;summary&gt; /// MainWindow.xaml 的交互逻辑 /// &lt;/summary&gt; public partial class MainWindow : Window &#123; public MainWindow() &#123; InitializeComponent(); this.WindowStartupLocation = WindowStartupLocation.CenterScreen; &#125; private void BtnTest_Click(object sender, RoutedEventArgs e) &#123; MessageBox.Show("Hello!"); this.label.Content = "World!"; &#125; &#125;&#125;]]></content>
@@ -287,9 +287,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[C# 实例构建的执行顺序]]></title>
-    <url>%2F2020%2F11%2F16%2F201116N03%2F</url>
-    <content type="text"><![CDATA[先看看一般类的实例化构建顺序无继承的情况 静态字段 静态构造方法 实例字段 实例构造方法 有继承的情况 子类(派生类)的静态字段 子类(派生类)的静态构造方法 子类(派生类)的实例字段 父类(基类)的静态字段 父类(基类)的静态构造方法 父类(基类)的实例字段 父类(基类)的实例构造方法 子类(派生类)的实例构造方法 这两种情况还是很好理解的。总体来说字段是先于构造函数执行的，不然构造函数拿什么去执行。派生类的字段，和基类的实例先执行，然后再执行派生类的构造函数。这里是，基类的构造函数先执行，然后再执行派生类的构造函数。下面验证下： 1234567891011121314151617181920212223242526272829using System;namespace ConsoleApp1&#123; class Program &#123; static void Main(string[] args) &#123; A a = new A(); Console.ReadKey(); &#125; &#125; class A: B &#123; public A() &#123; Console.WriteLine("A"); &#125; &#125; class B &#123; public B() &#123; Console.WriteLine("B"); &#125; &#125;&#125; 输出： 12BA 基类的构造函数先执行，然后再执行派生类的构造函数。这里是对的。 C++ 的构造函数和析构函数执行顺序先调用父类(基类)的构造函数，再调用派生类的构造函数； 变量销毁时：先调用派生类的析构函数，再调用父类(基类)的析构函数。 123456789101112131415161718192021222324252627282930313233343536#include &lt;iostream&gt;using namespace std;class A&#123; public: A() &#123; cout&lt;&lt; "基类：AAAAAAAAAAAA" &lt;&lt;endl; &#125; ~A() &#123; cout &lt;&lt; "基类：~AAAAAAAAAAAA" &lt;&lt; endl; &#125; &#125;;class B:public A&#123; public: B() &#123; cout&lt;&lt; "派生类：BBBBBBBBB" &lt;&lt;endl; &#125; ~B() &#123; cout &lt;&lt; "派生类：~BBBBBBBBB" &lt;&lt; endl; &#125;&#125;;void solution() //当函数开始时，调用构造函数，当函数结束时，变量对象被销毁&#123; B b1;&#125;int main()&#123; solution(); return 0;&#125; 输出： 1234基类：AAAAAAAAAAAA派生类：BBBBBBBBB派生类：~BBBBBBBBB基类：~AAAAAAAAAAAA 看下对象初始化器和构造函数谁先执行结论：构造函数先于对象初始化器执行，然后，窗体程序的话，对象初始化器先于Load事件执行。 Form1.cs: 12345678910111213141516171819202122using System;using System.Windows.Forms;namespace WindowsFormsApp1&#123; public partial class Form1 : Form &#123; public Form1() &#123; InitializeComponent(); Console.WriteLine("Fomr1 构造函数!!"); &#125; private void button1_Click(object sender, EventArgs e) &#123; Form2 form2 = new Form2() &#123; Msg = "对象初始化器中赋值!!" &#125;; form2.Show(); &#125; &#125;&#125; Form2.cs： 12345678910111213141516171819202122232425262728using System;using System.Windows.Forms;namespace WindowsFormsApp1&#123; public partial class Form2 : Form &#123; public string Msg &#123; get; set; &#125; public Form2() &#123; InitializeComponent(); Console.WriteLine("Form2 构造函数!!"); this.StartPosition = FormStartPosition.CenterScreen; this.Msg = "构造函数后执行于对象初始化器!!"; &#125; private void Form2_Load(object sender, EventArgs e) &#123; if (this.Msg == null) Console.WriteLine("Load 事件先执行!!"); else Console.WriteLine(this.Msg); &#125; &#125;&#125; &gt; 参考：&gt; 1. https://www.cnblogs.com/nzbbody/archive/2011/12/29/2306403.html&gt; 2. https://www.cnblogs.com/qkqBeer/articles/10726173.html]]></content>
+    <title><![CDATA[C# 关于引用类型的类外只读属性]]></title>
+    <url>%2F2020%2F11%2F16%2F201116N02%2F</url>
+    <content type="text"><![CDATA[类内的只读属性不能更改的是他的指向，例如，容器类List，如果是只内部可写，外部可读，只有类内部可以更改 List 字段的指向赋值，外部不能。而类外get到它的指向值后，是可以对它进行Add等操作的，因为没有更改它的指向。 有点绕，估计没讲清我想要说什么。~O(∩_∩)O~ 12345678910111213141516171819202122232425262728293031323334353637using System;using System.Collections.Generic;namespace ConsoleApp1&#123; class Program &#123; static void Main(string[] args) &#123; Test test = new Test(); List&lt;string&gt; tlist = test.TList; tlist.Add("Lily"); // 增加两个 tlist.Add("Lucy"); foreach (var item in tlist) &#123; Console.WriteLine(item); &#125; List&lt;string&gt; nlist = new List&lt;string&gt;(); // 新实例 // test.TList = nlist; // 不能从新指向 tlist = nlist; // 这个和test实例不相干，当然可以改指向 Console.Read(); &#125; &#125; class Test &#123; public List&lt;string&gt; TList &#123; get; private set; &#125; public Test() &#123; this.TList = new List&lt;string&gt;(); this.TList.Add("Tom"); &#125; &#125;&#125; 输出： 123TomLily // 后面这两个是可以增加的。Lucy 下面这样重新指向一个新实例是不行的。 12List&lt;string&gt; nlist = new List&lt;string&gt;(); // 新实例test.TList = nlist; // 不能从新指向 test.TList = nlist; // 不能从新指向，外部只读不能更改指向。 再看： 12345678910111213141516171819202122232425262728293031using System;using System.Collections.Generic;using System.Linq;using System.Text;using System.Threading.Tasks;namespace ConsoleApp3&#123; class Program &#123; static void Main(string[] args) &#123; Student stu = new Student() &#123;Name = "Hi", Age = 1 &#125;; Console.WriteLine(stu.Name + "\n" + stu.Age); Student stu1 = stu; stu1.Name = "Hello"; stu1.Age = 10; Console.WriteLine("\n" + stu.Name + "\n" + stu.Age); Console.ReadKey(); &#125; &#125; class Student &#123; public string Name &#123; get; set; &#125; public int Age &#123; get; set; &#125; &#125;&#125; 输出： 12345Hi1Hello10 只要不更改引用的指向，其应用内部的属性如果是可读可写的话，还是可以修改值的。]]></content>
       <categories>
         <category>编程爱好</category>
       </categories>
@@ -298,9 +298,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[C# 关于引用类型的类外只读属性]]></title>
-    <url>%2F2020%2F11%2F16%2F201116N02%2F</url>
-    <content type="text"><![CDATA[类内的只读属性不能更改的是他的指向，例如，容器类List，如果是只内部可写，外部可读，只有类内部可以更改 List 字段的指向赋值，外部不能。而类外get到它的指向值后，是可以对它进行Add等操作的，因为没有更改它的指向。 有点绕，估计没讲清我想要说什么。~O(∩_∩)O~ 12345678910111213141516171819202122232425262728293031323334353637using System;using System.Collections.Generic;namespace ConsoleApp1&#123; class Program &#123; static void Main(string[] args) &#123; Test test = new Test(); List&lt;string&gt; tlist = test.TList; tlist.Add("Lily"); // 增加两个 tlist.Add("Lucy"); foreach (var item in tlist) &#123; Console.WriteLine(item); &#125; List&lt;string&gt; nlist = new List&lt;string&gt;(); // 新实例 // test.TList = nlist; // 不能从新指向 tlist = nlist; // 这个和test实例不相干，当然可以改指向 Console.Read(); &#125; &#125; class Test &#123; public List&lt;string&gt; TList &#123; get; private set; &#125; public Test() &#123; this.TList = new List&lt;string&gt;(); this.TList.Add("Tom"); &#125; &#125;&#125; 输出： 123TomLily // 后面这两个是可以增加的。Lucy 下面这样重新指向一个新实例是不行的。 12List&lt;string&gt; nlist = new List&lt;string&gt;(); // 新实例test.TList = nlist; // 不能从新指向 test.TList = nlist; // 不能从新指向，外部只读不能更改指向。 再看： 12345678910111213141516171819202122232425262728293031using System;using System.Collections.Generic;using System.Linq;using System.Text;using System.Threading.Tasks;namespace ConsoleApp3&#123; class Program &#123; static void Main(string[] args) &#123; Student stu = new Student() &#123;Name = "Hi", Age = 1 &#125;; Console.WriteLine(stu.Name + "\n" + stu.Age); Student stu1 = stu; stu1.Name = "Hello"; stu1.Age = 10; Console.WriteLine("\n" + stu.Name + "\n" + stu.Age); Console.ReadKey(); &#125; &#125; class Student &#123; public string Name &#123; get; set; &#125; public int Age &#123; get; set; &#125; &#125;&#125; 输出： 12345Hi1Hello10 只要不更改引用的指向，其应用内部的属性如果是可读可写的话，还是可以修改值的。]]></content>
+    <title><![CDATA[C# 实例构建的执行顺序]]></title>
+    <url>%2F2020%2F11%2F16%2F201116N03%2F</url>
+    <content type="text"><![CDATA[先看看一般类的实例化构建顺序无继承的情况 静态字段 静态构造方法 实例字段 实例构造方法 有继承的情况 子类(派生类)的静态字段 子类(派生类)的静态构造方法 子类(派生类)的实例字段 父类(基类)的静态字段 父类(基类)的静态构造方法 父类(基类)的实例字段 父类(基类)的实例构造方法 子类(派生类)的实例构造方法 这两种情况还是很好理解的。总体来说字段是先于构造函数执行的，不然构造函数拿什么去执行。派生类的字段，和基类的实例先执行，然后再执行派生类的构造函数。这里是，基类的构造函数先执行，然后再执行派生类的构造函数。下面验证下： 1234567891011121314151617181920212223242526272829using System;namespace ConsoleApp1&#123; class Program &#123; static void Main(string[] args) &#123; A a = new A(); Console.ReadKey(); &#125; &#125; class A: B &#123; public A() &#123; Console.WriteLine("A"); &#125; &#125; class B &#123; public B() &#123; Console.WriteLine("B"); &#125; &#125;&#125; 输出： 12BA 基类的构造函数先执行，然后再执行派生类的构造函数。这里是对的。 C++ 的构造函数和析构函数执行顺序先调用父类(基类)的构造函数，再调用派生类的构造函数； 变量销毁时：先调用派生类的析构函数，再调用父类(基类)的析构函数。 123456789101112131415161718192021222324252627282930313233343536#include &lt;iostream&gt;using namespace std;class A&#123; public: A() &#123; cout&lt;&lt; "基类：AAAAAAAAAAAA" &lt;&lt;endl; &#125; ~A() &#123; cout &lt;&lt; "基类：~AAAAAAAAAAAA" &lt;&lt; endl; &#125; &#125;;class B:public A&#123; public: B() &#123; cout&lt;&lt; "派生类：BBBBBBBBB" &lt;&lt;endl; &#125; ~B() &#123; cout &lt;&lt; "派生类：~BBBBBBBBB" &lt;&lt; endl; &#125;&#125;;void solution() //当函数开始时，调用构造函数，当函数结束时，变量对象被销毁&#123; B b1;&#125;int main()&#123; solution(); return 0;&#125; 输出： 1234基类：AAAAAAAAAAAA派生类：BBBBBBBBB派生类：~BBBBBBBBB基类：~AAAAAAAAAAAA 看下对象初始化器和构造函数谁先执行结论：构造函数先于对象初始化器执行，然后，窗体程序的话，对象初始化器先于Load事件执行。 Form1.cs: 12345678910111213141516171819202122using System;using System.Windows.Forms;namespace WindowsFormsApp1&#123; public partial class Form1 : Form &#123; public Form1() &#123; InitializeComponent(); Console.WriteLine("Fomr1 构造函数!!"); &#125; private void button1_Click(object sender, EventArgs e) &#123; Form2 form2 = new Form2() &#123; Msg = "对象初始化器中赋值!!" &#125;; form2.Show(); &#125; &#125;&#125; Form2.cs： 12345678910111213141516171819202122232425262728using System;using System.Windows.Forms;namespace WindowsFormsApp1&#123; public partial class Form2 : Form &#123; public string Msg &#123; get; set; &#125; public Form2() &#123; InitializeComponent(); Console.WriteLine("Form2 构造函数!!"); this.StartPosition = FormStartPosition.CenterScreen; this.Msg = "构造函数后执行于对象初始化器!!"; &#125; private void Form2_Load(object sender, EventArgs e) &#123; if (this.Msg == null) Console.WriteLine("Load 事件先执行!!"); else Console.WriteLine(this.Msg); &#125; &#125;&#125; &gt; 参考：&gt; 1. https://www.cnblogs.com/nzbbody/archive/2011/12/29/2306403.html&gt; 2. https://www.cnblogs.com/qkqBeer/articles/10726173.html]]></content>
       <categories>
         <category>编程爱好</category>
       </categories>
