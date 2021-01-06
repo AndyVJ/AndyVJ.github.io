@@ -44,6 +44,28 @@
   </entry>
   
   <entry>
+    <title>复杂问题要简单化</title>
+    <link href="https://blog.huvjie.com/2021/01/06/210106N01/"/>
+    <id>https://blog.huvjie.com/2021/01/06/210106N01/</id>
+    <published>2021-01-06T14:45:54.000Z</published>
+    <updated>2021-01-06T14:51:36.233Z</updated>
+    
+    <content type="html"><![CDATA[<p>一定要学会把<strong>复杂问题简单化</strong>。</p><a id="more"></a><p>一个复杂的问题，往往是由若干个简单的问题组合起来的，以<strong>庖丁解牛</strong>的方式将复杂问题孤立出若干个简单的问题，然后各个击破。复杂问题就得以解决。</p><p>一个复杂的软件也是由很过个单一的功能的部分组合起来的。对，功能单一的原则。若将多个功能柔和在一起考虑那就将<strong>简单问题复杂化了</strong>。切记不能这样。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;一定要学会把&lt;strong&gt;复杂问题简单化&lt;/strong&gt;。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="其他" scheme="https://blog.huvjie.com/categories/%E5%85%B6%E4%BB%96/"/>
+    
+    
+      <category term="点滴" scheme="https://blog.huvjie.com/tags/%E7%82%B9%E6%BB%B4/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Halcon｜创建图像窗口的几种方式</title>
     <link href="https://blog.huvjie.com/2020/12/04/201204N02/"/>
     <id>https://blog.huvjie.com/2020/12/04/201204N02/</id>
@@ -453,32 +475,6 @@
       &lt;p&gt;制作圆形的显示 label 当做双色球，效果如下：&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;http://image.huvjie.com/201122N03_img01.jpg&quot; alt=&quot;▲ 圆形双色球效果&quot;&gt;&lt;/p&gt;
 &lt;div style=&quot;font-size:13px;color:gray;text-align:center&quot;&gt;▲ 圆形双色球效果&lt;/div&gt;
-    
-    </summary>
-    
-      <category term="编程爱好" scheme="https://blog.huvjie.com/categories/%E7%BC%96%E7%A8%8B%E7%88%B1%E5%A5%BD/"/>
-    
-    
-      <category term="C#" scheme="https://blog.huvjie.com/tags/C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>面向对象的思考</title>
-    <link href="https://blog.huvjie.com/2020/11/22/201122N04/"/>
-    <id>https://blog.huvjie.com/2020/11/22/201122N04/</id>
-    <published>2020-11-22T02:22:00.000Z</published>
-    <updated>2020-11-22T13:39:48.962Z</updated>
-    
-    <content type="html"><![CDATA[<p>面向对象，数据的传输尽量以<code>对象</code>的形式封装起来传递会比较好。<code>实体类</code>是不是就是干这个事情的？!</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;面向对象，数据的传输尽量以&lt;code&gt;对象&lt;/code&gt;的形式封装起来传递会比较好。&lt;code&gt;实体类&lt;/code&gt;是不是就是干这个事情的？!&lt;/p&gt;
-
-      
     
     </summary>
     
