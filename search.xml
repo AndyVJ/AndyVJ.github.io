@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title></title>
+    <title><![CDATA[WPF 简单的单个 CLR 对象作为绑定的 Source 源]]></title>
     <url>%2F2021%2F04%2F10%2F210410N01%2F</url>
     <content type="text"><![CDATA[WPF 中如何用最直接的手段将 CLR 对象作为绑定的 Source 源？ ▲ 简单界面 XAML代码： 12345678910&lt;Window &lt;!--省略一些比较的命名空间--&gt; &lt;StackPanel Orientation="Vertical"&gt; &lt;TextBlock Text="姓名：" Width="150" FontSize="15" Margin="0 10 0 0"/&gt; &lt;TextBox x:Name="txbName" Height="50" Width="150" BorderBrush="Black" BorderThickness="1" VerticalContentAlignment="Center" FontSize="20" FontWeight="Bold"/&gt; &lt;TextBlock Text="年龄：" Width="150" FontSize="15" Margin="0 10 0 0"/&gt; &lt;TextBox x:Name="txbAge" Height="50" Width="150" BorderBrush="Black" BorderThickness="1" VerticalContentAlignment="Center" FontSize="20" FontWeight="Bold"/&gt; &lt;/StackPanel&gt;&lt;/Window&gt; C# 代码： 12345678910111213141516171819202122232425262728293031323334353637/// &lt;summary&gt;/// MainWindow.xaml 的交互逻辑/// &lt;/summary&gt;public partial class MainWindow : Window&#123; public MainWindow() &#123; InitializeComponent(); stu = new Student(); Binding binding = new Binding() &#123; Source = stu, Path = new PropertyPath(nameof(stu.Name)) &#125;; txbName.SetBinding(TextBox.TextProperty, binding); Binding binding1 = new Binding(nameof(stu.Age)) &#123; Source = stu &#125;; BindingOperations.SetBinding(txbAge, TextBox.TextProperty, binding1); &#125; private Student stu = null;&#125;public class Student:INotifyPropertyChanged&#123; public event PropertyChangedEventHandler PropertyChanged; private string _name = "小明"; public string Name &#123; get &#123; return _name; &#125; set &#123; _name = value; PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Name))); &#125; &#125; private int _age = 10; public int Age &#123; get &#123; return _age; &#125; set &#123; _age = value; PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Age))); &#125; &#125;&#125; 绑定的效果： ▲ 绑定效果]]></content>
+      <categories>
+        <category>编程爱好</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[目标一定要明确]]></title>
