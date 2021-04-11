@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[WPF 自定义路由事件]]></title>
+    <url>%2F2021%2F04%2F11%2F210411N01%2F</url>
+    <content type="text"><![CDATA[路由事件和依赖属性一样，都是注册到了 Hastable 里面去了。 路由事件的好处：不再受直接事件那种，需要一层一层往外传递的麻烦，能直接”飞来飞去”。 ▲ 运行结果 XAML 代码： 1234567891011121314151617181920212223&lt;Window x:Class="WpfApp1.MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:WpfApp1" mc:Ignorable="d" x:Name="window_1" local:TimeButton.ReportTime="ReportTimeHandler" Title="MainWindow" Height="350" Width="420"&gt; &lt;Grid x:Name="grid_1" local:TimeButton.ReportTime="ReportTimeHandler"&gt; &lt;Grid x:Name="grid_2" local:TimeButton.ReportTime="ReportTimeHandler"&gt; &lt;Grid x:Name="grid_3" local:TimeButton.ReportTime="ReportTimeHandler"&gt; &lt;StackPanel x:Name="stackPanel_1" Orientation="Vertical" local:TimeButton.ReportTime="ReportTimeHandler"&gt; &lt;ScrollViewer x:Name="scrollView_1" VerticalScrollBarVisibility="Auto" local:TimeButton.ReportTime="ReportTimeHandler"&gt; &lt;ListBox x:Name="listBox" BorderBrush="Black" BorderThickness="1" local:TimeButton.ReportTime="ReportTimeHandler" Margin="5" Height="240"/&gt; &lt;/ScrollViewer&gt; &lt;local:TimeButton x:Name="timeButton" Width="80" Height="40" Content="报时" Margin="10" local:TimeButton.ReportTime="ReportTimeHandler"/&gt; &lt;/StackPanel&gt; &lt;/Grid&gt; &lt;/Grid&gt; &lt;/Grid&gt;&lt;/Window&gt; C# Behind 代码： 12345678910111213141516171819202122namespace WpfApp1&#123; /// &lt;summary&gt; /// MainWindow.xaml 的交互逻辑 /// &lt;/summary&gt; public partial class MainWindow : Window &#123; public MainWindow() &#123; InitializeComponent(); &#125; private void ReportTimeHandler(object sender, ReportTimeEventArgs e) &#123; FrameworkElement element = sender as FrameworkElement; string timeStr = e.ClickTime.ToLongTimeString(); string content = $"&#123;timeStr&#125; 到达 &#123;element.Name&#125;"; listBox.Items.Add(content); &#125; &#125;&#125; 自定义路由事件： 1234567891011121314151617181920212223242526272829303132333435363738namespace WpfApp1&#123; // 用于承载事件消息的时间参数 class ReportTimeEventArgs : RoutedEventArgs &#123; public ReportTimeEventArgs(RoutedEvent routedEvent, object source) : base(routedEvent, source) &#123; &#125; public DateTime ClickTime &#123; get; set; &#125; &#125; class TimeButton : Button &#123; // 声明和注册路由事件 public static readonly RoutedEvent ReportTimeEvent = EventManager.RegisterRoutedEvent ("ReportTime", RoutingStrategy.Bubble, typeof(EventHandler&lt;ReportTimeEventArgs&gt;), typeof(TimeButton)); //CLR 事件包装器 public event RoutedEventHandler ReportTime &#123; add &#123; AddHandler(ReportTimeEvent, value); &#125; remove &#123; RemoveHandler(ReportTimeEvent, value); &#125; &#125; // 激发路由事件，借用 Click 事件的激发方法 protected override void OnClick() &#123; base.OnClick(); // 保证 Button 原有的功能正常使用， CLick 事件能被激发 ReportTimeEventArgs args = new ReportTimeEventArgs(ReportTimeEvent, this); args.ClickTime = DateTime.Now; RaiseEvent(args); &#125; &#125;&#125; 参考： 《WPF 深入浅出》-P166]]></content>
+      <categories>
+        <category>编程爱好</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[WPF 简单的单个 CLR 对象作为绑定的 Source 源]]></title>
     <url>%2F2021%2F04%2F10%2F210410N01%2F</url>
-    <content type="text"><![CDATA[WPF 中如何用最直接的手段将 CLR 对象作为绑定的 Source 源？ ▲ 简单界面 XAML代码： 12345678910&lt;Window &lt;!--省略一些比较的命名空间--&gt; &lt;StackPanel Orientation="Vertical"&gt; &lt;TextBlock Text="姓名：" Width="150" FontSize="15" Margin="0 10 0 0"/&gt; &lt;TextBox x:Name="txbName" Height="50" Width="150" BorderBrush="Black" BorderThickness="1" VerticalContentAlignment="Center" FontSize="20" FontWeight="Bold"/&gt; &lt;TextBlock Text="年龄：" Width="150" FontSize="15" Margin="0 10 0 0"/&gt; &lt;TextBox x:Name="txbAge" Height="50" Width="150" BorderBrush="Black" BorderThickness="1" VerticalContentAlignment="Center" FontSize="20" FontWeight="Bold"/&gt; &lt;/StackPanel&gt;&lt;/Window&gt; C# 代码： 12345678910111213141516171819202122232425262728293031323334353637/// &lt;summary&gt;/// MainWindow.xaml 的交互逻辑/// &lt;/summary&gt;public partial class MainWindow : Window&#123; public MainWindow() &#123; InitializeComponent(); stu = new Student(); Binding binding = new Binding() &#123; Source = stu, Path = new PropertyPath(nameof(stu.Name)) &#125;; txbName.SetBinding(TextBox.TextProperty, binding); Binding binding1 = new Binding(nameof(stu.Age)) &#123; Source = stu &#125;; BindingOperations.SetBinding(txbAge, TextBox.TextProperty, binding1); &#125; private Student stu = null;&#125;public class Student:INotifyPropertyChanged&#123; public event PropertyChangedEventHandler PropertyChanged; private string _name = "小明"; public string Name &#123; get &#123; return _name; &#125; set &#123; _name = value; PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Name))); &#125; &#125; private int _age = 10; public int Age &#123; get &#123; return _age; &#125; set &#123; _age = value; PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Age))); &#125; &#125;&#125; 绑定的效果： ▲ 绑定效果]]></content>
+    <content type="text"><![CDATA[WPF 中如何用最直接的手段将 CLR 对象作为绑定的 Source 源？ ▲ 简单界面 XAML代码： 12345678910&lt;Window &lt;!--省略一些必要的命名空间--&gt; &lt;StackPanel Orientation="Vertical"&gt; &lt;TextBlock Text="姓名：" Width="150" FontSize="15" Margin="0 10 0 0"/&gt; &lt;TextBox x:Name="txbName" Height="50" Width="150" BorderBrush="Black" BorderThickness="1" VerticalContentAlignment="Center" FontSize="20" FontWeight="Bold"/&gt; &lt;TextBlock Text="年龄：" Width="150" FontSize="15" Margin="0 10 0 0"/&gt; &lt;TextBox x:Name="txbAge" Height="50" Width="150" BorderBrush="Black" BorderThickness="1" VerticalContentAlignment="Center" FontSize="20" FontWeight="Bold"/&gt; &lt;/StackPanel&gt;&lt;/Window&gt; C# 代码： 12345678910111213141516171819202122232425262728293031323334353637/// &lt;summary&gt;/// MainWindow.xaml 的交互逻辑/// &lt;/summary&gt;public partial class MainWindow : Window&#123; public MainWindow() &#123; InitializeComponent(); stu = new Student(); Binding binding = new Binding() &#123; Source = stu, Path = new PropertyPath(nameof(stu.Name)) &#125;; txbName.SetBinding(TextBox.TextProperty, binding); Binding binding1 = new Binding(nameof(stu.Age)) &#123; Source = stu &#125;; BindingOperations.SetBinding(txbAge, TextBox.TextProperty, binding1); &#125; private Student stu = null;&#125;public class Student:INotifyPropertyChanged&#123; public event PropertyChangedEventHandler PropertyChanged; private string _name = "小明"; public string Name &#123; get &#123; return _name; &#125; set &#123; _name = value; PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Name))); &#125; &#125; private int _age = 10; public int Age &#123; get &#123; return _age; &#125; set &#123; _age = value; PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Age))); &#125; &#125;&#125; 绑定的效果： ▲ 绑定效果]]></content>
       <categories>
         <category>编程爱好</category>
       </categories>
@@ -67,17 +78,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[C++｜带参数的构造函数]]></title>
-    <url>%2F2020%2F12%2F03%2F201203N02%2F</url>
-    <content type="text"><![CDATA[基础语法而已。 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970#include &lt;iostream&gt;using namespace std;class Demo&#123; public: Demo() &#123; x = 0; cout &lt;&lt; "Demo 的默认构造函数!" &lt;&lt; x &lt;&lt; endl; &#125; Demo(int i) &#123; x = i; cout &lt;&lt; "Demo 的带一个参数的构造函数!!" &lt;&lt; x &lt;&lt; endl; &#125; ~Demo() &#123; cout &lt;&lt; "Demo 的析构函数!" &lt;&lt; x &lt;&lt; endl; &#125; int get_x() &#123; return x; &#125; void set_x(int i) &#123; x = i; &#125; private: int x;&#125;;class Rectangle&#123; public: Rectangle() &#123; x = 1000; cout &lt;&lt; "Rectangle 的默认构造函数!" &lt;&lt; x &lt;&lt; endl; &#125; Rectangle(int i, int j, int k):x(i), width(j), length(k) &#123; cout &lt;&lt; "Rectangle 的带三个参数的构造函数!" &lt;&lt; "长方形的面积 b 为：" &lt;&lt; length.get_x() * width.get_x() &lt;&lt; endl; &#125; ~Rectangle() &#123; cout &lt;&lt; "Rectangle 的默认析构函数!" &lt;&lt; x &lt;&lt; endl; &#125; int area() &#123; return length.get_x() * width.get_x(); &#125; private: Demo length; Demo width; int x;&#125;;int main()&#123; Rectangle rec(100, 200, 300); cout &lt;&lt; "\n=========\n" &lt;&lt; endl; Rectangle *rec1 = new Rectangle(100, 200, 300); delete rec1; return 0;&#125; 输出： 123456789101112131415Demo 的带一个参数的构造函数!!300Demo 的带一个参数的构造函数!!200Rectangle 的带三个参数的构造函数!长方形的面积 b 为：60000=========Demo 的带一个参数的构造函数!!300Demo 的带一个参数的构造函数!!200Rectangle 的带三个参数的构造函数!长方形的面积 b 为：60000Rectangle 的默认析构函数!100Demo 的析构函数!200Demo 的析构函数!300Rectangle 的默认析构函数!100Demo 的析构函数!200Demo 的析构函数!300 参考：《范磊：C++》P153]]></content>
-      <categories>
-        <category>编程爱好</category>
-      </categories>
-      <tags>
-        <tag>C/C+</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[C#｜Conditional特性的简单使用]]></title>
     <url>%2F2020%2F12%2F03%2F201203N01%2F</url>
     <content type="text"><![CDATA[可以用来做条件编译。 开始定义#define DEBUG，然后在方法前面使用特性[Conditional(&quot;DEBUG&quot;)]。 1234567891011121314151617181920212223242526272829#define DEBUG // 这里 define 了 DEBUG。using System;using System.Diagnostics;public class Myclass&#123; [Conditional("DEBUG")] // 声明特性 public static void Message(string msg) &#123; Console.WriteLine(msg); &#125;&#125;class Test&#123; static void function1() &#123; Myclass.Message("In Function 1."); function2(); &#125; static void function2() &#123; Myclass.Message("In Function 2."); &#125; public static void Main() &#123; Myclass.Message("In Main function."); function1(); Console.ReadKey(); &#125;&#125; 输出： 123In Main functionIn Function 1In Function 2 参考：https://www.runoob.com/csharp/csharp-attribute.html]]></content>
@@ -86,6 +86,17 @@
       </categories>
       <tags>
         <tag>C#</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[C++｜带参数的构造函数]]></title>
+    <url>%2F2020%2F12%2F03%2F201203N02%2F</url>
+    <content type="text"><![CDATA[基础语法而已。 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970#include &lt;iostream&gt;using namespace std;class Demo&#123; public: Demo() &#123; x = 0; cout &lt;&lt; "Demo 的默认构造函数!" &lt;&lt; x &lt;&lt; endl; &#125; Demo(int i) &#123; x = i; cout &lt;&lt; "Demo 的带一个参数的构造函数!!" &lt;&lt; x &lt;&lt; endl; &#125; ~Demo() &#123; cout &lt;&lt; "Demo 的析构函数!" &lt;&lt; x &lt;&lt; endl; &#125; int get_x() &#123; return x; &#125; void set_x(int i) &#123; x = i; &#125; private: int x;&#125;;class Rectangle&#123; public: Rectangle() &#123; x = 1000; cout &lt;&lt; "Rectangle 的默认构造函数!" &lt;&lt; x &lt;&lt; endl; &#125; Rectangle(int i, int j, int k):x(i), width(j), length(k) &#123; cout &lt;&lt; "Rectangle 的带三个参数的构造函数!" &lt;&lt; "长方形的面积 b 为：" &lt;&lt; length.get_x() * width.get_x() &lt;&lt; endl; &#125; ~Rectangle() &#123; cout &lt;&lt; "Rectangle 的默认析构函数!" &lt;&lt; x &lt;&lt; endl; &#125; int area() &#123; return length.get_x() * width.get_x(); &#125; private: Demo length; Demo width; int x;&#125;;int main()&#123; Rectangle rec(100, 200, 300); cout &lt;&lt; "\n=========\n" &lt;&lt; endl; Rectangle *rec1 = new Rectangle(100, 200, 300); delete rec1; return 0;&#125; 输出： 123456789101112131415Demo 的带一个参数的构造函数!!300Demo 的带一个参数的构造函数!!200Rectangle 的带三个参数的构造函数!长方形的面积 b 为：60000=========Demo 的带一个参数的构造函数!!300Demo 的带一个参数的构造函数!!200Rectangle 的带三个参数的构造函数!长方形的面积 b 为：60000Rectangle 的默认析构函数!100Demo 的析构函数!200Demo 的析构函数!300Rectangle 的默认析构函数!100Demo 的析构函数!200Demo 的析构函数!300 参考：《范磊：C++》P153]]></content>
+      <categories>
+        <category>编程爱好</category>
+      </categories>
+      <tags>
+        <tag>C/C+</tag>
       </tags>
   </entry>
   <entry>
@@ -199,9 +210,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[C# try catch块内为空程序不会崩溃]]></title>
-    <url>%2F2020%2F11%2F23%2F201123N03%2F</url>
-    <content type="text"><![CDATA[catch块内为空程序不会崩溃, 只是代表它没有进行任何的处理而已。 12345678910111213141516171819202122232425262728using System;using System.Windows.Forms;namespace ConsoleApp2&#123; public partial class Form1 : Form &#123; public Form1() &#123; InitializeComponent(); &#125; private void button1_Click(object sender, EventArgs e) &#123; try &#123; int a = 0; int b = 1; int c = b / a; &#125; catch &#123; &#125; &#125; &#125;&#125; 上面这样程序不会蹦掉，只是没有处理异常而已。 很多时候，我们将错误信息Show出来。如下： 1234catch(Exception ex)&#123; MessageBox.Show(ex.Message);&#125; 当然，也可以进行其他的处理。]]></content>
+    <title><![CDATA[C#｜::运算符和全局命名空间]]></title>
+    <url>%2F2020%2F11%2F23%2F201123N02%2F</url>
+    <content type="text"><![CDATA[发现 C# 还要和 C++ 一样的::运算符，来测试一下。 命名空间被赋值别名以后，可以隐藏掉原有的命名空间。想要访问需要完整路径。如果不用，可以用::运算法，它的优先级被高。 看下下面的例子： 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849using System;namespace ConsoleApp1&#123; // 同名的别名空间 using MyNamespaceAlias = MyRootNamespace.MyNestedNamespace; namespace MyRootNamespace &#123; namespace MyNamespaceAlias &#123; public class MyClass &#123; public static void Print() &#123; Console.WriteLine("MyRootNamespace.MyNamespaceAlias.MyClass.Print()"); &#125; &#125; &#125; namespace MyNestedNamespace &#123; public class MyClass &#123; public static void Print() &#123; Console.WriteLine("MyRootNamespace.MyNestedNamespace.MyClass.Print()"); &#125; &#125; &#125; class Program &#123; static void Main(string[] args) &#123; MyRootNamespace.MyNestedNamespace.MyClass.Print(); // 可简化名称如下 MyRootNamespace.MyNamespaceAlias.MyClass.Print(); // 原有的 MyNamespaceAlias 命名空间屏蔽了别名空间。 // 使用::运算符，迫使编译器使用别名 MyNamespaceAlias::MyClass.Print(); // MyRootNamespace. MyNamespaceAlias::MyClass.Print(); // 这样会报错不行，原因是显然的，::指向别名。 Console.ReadKey(); &#125; &#125; &#125;&#125; 对照输出顺序就，结合代码注释，可以看出区别： 123MyRootNamespace.MyNestedNamespace.MyClass.Print()MyRootNamespace.MyNamespaceAlias.MyClass.Print()MyRootNamespace.MyNestedNamespace.MyClass.Print() 这种方式在大项目出现别名和.NET命名空间重名的时候有用，一般用不上吧？! global是顶级根命名空间的别名，如果出现上面所说的那种情况，可以这样： 1global::System.Collections.Generic.List&lt;int&gt; // 一个示例 参考：《C#入门经典第三版》P305]]></content>
       <categories>
         <category>编程爱好</category>
       </categories>
@@ -210,9 +221,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[C#｜::运算符和全局命名空间]]></title>
-    <url>%2F2020%2F11%2F23%2F201123N02%2F</url>
-    <content type="text"><![CDATA[发现 C# 还要和 C++ 一样的::运算符，来测试一下。 命名空间被赋值别名以后，可以隐藏掉原有的命名空间。想要访问需要完整路径。如果不用，可以用::运算法，它的优先级被高。 看下下面的例子： 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849using System;namespace ConsoleApp1&#123; // 同名的别名空间 using MyNamespaceAlias = MyRootNamespace.MyNestedNamespace; namespace MyRootNamespace &#123; namespace MyNamespaceAlias &#123; public class MyClass &#123; public static void Print() &#123; Console.WriteLine("MyRootNamespace.MyNamespaceAlias.MyClass.Print()"); &#125; &#125; &#125; namespace MyNestedNamespace &#123; public class MyClass &#123; public static void Print() &#123; Console.WriteLine("MyRootNamespace.MyNestedNamespace.MyClass.Print()"); &#125; &#125; &#125; class Program &#123; static void Main(string[] args) &#123; MyRootNamespace.MyNestedNamespace.MyClass.Print(); // 可简化名称如下 MyRootNamespace.MyNamespaceAlias.MyClass.Print(); // 原有的 MyNamespaceAlias 命名空间屏蔽了别名空间。 // 使用::运算符，迫使编译器使用别名 MyNamespaceAlias::MyClass.Print(); // MyRootNamespace. MyNamespaceAlias::MyClass.Print(); // 这样会报错不行，原因是显然的，::指向别名。 Console.ReadKey(); &#125; &#125; &#125;&#125; 对照输出顺序就，结合代码注释，可以看出区别： 123MyRootNamespace.MyNestedNamespace.MyClass.Print()MyRootNamespace.MyNamespaceAlias.MyClass.Print()MyRootNamespace.MyNestedNamespace.MyClass.Print() 这种方式在大项目出现别名和.NET命名空间重名的时候有用，一般用不上吧？! global是顶级根命名空间的别名，如果出现上面所说的那种情况，可以这样： 1global::System.Collections.Generic.List&lt;int&gt; // 一个示例 参考：《C#入门经典第三版》P305]]></content>
+    <title><![CDATA[C# try catch块内为空程序不会崩溃]]></title>
+    <url>%2F2020%2F11%2F23%2F201123N03%2F</url>
+    <content type="text"><![CDATA[catch块内为空程序不会崩溃, 只是代表它没有进行任何的处理而已。 12345678910111213141516171819202122232425262728using System;using System.Windows.Forms;namespace ConsoleApp2&#123; public partial class Form1 : Form &#123; public Form1() &#123; InitializeComponent(); &#125; private void button1_Click(object sender, EventArgs e) &#123; try &#123; int a = 0; int b = 1; int c = b / a; &#125; catch &#123; &#125; &#125; &#125;&#125; 上面这样程序不会蹦掉，只是没有处理异常而已。 很多时候，我们将错误信息Show出来。如下： 1234catch(Exception ex)&#123; MessageBox.Show(ex.Message);&#125; 当然，也可以进行其他的处理。]]></content>
       <categories>
         <category>编程爱好</category>
       </categories>
@@ -397,9 +408,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[C# 委托和事件的区别]]></title>
-    <url>%2F2020%2F11%2F08%2F201108N02%2F</url>
-    <content type="text"><![CDATA[委托：委托是一种各类型，像类和结构一样。一般放在namespace里，当然也可以放在类里面，就像类里面也可以放类一样。 事件事件是类或结构的成员，像属性和方法一样。事件更像是委托变量。 有两点注意： 事件不能放在可执行代码段里面声明。也就是，只能做字段，不能做本地变量； 必须声明在类或结构中，做类或结构的成员； 1事件 ＋＝ 委托（事件处理程序） 定义一个事件和定义一个委托变量很像，只是在前面加了一个 event。 用委托的话，类外要么能访问，要么不能访问。public，在类外可以随意的调用，而改成 private后外部对委托就不能赋值了。委托 = null 后会把之前的赋值覆盖掉，就没用了。而事件在外部不能直接调用，只能在定义事件的类的内部调用，只能在 += 或 -= 的左边，在同一个类中使用可以用 =。 事件: 公有的方法调用了私有的委托。]]></content>
+    <title><![CDATA[简单测试下 goto 语句]]></title>
+    <url>%2F2020%2F11%2F08%2F201108N01%2F</url>
+    <content type="text"><![CDATA[大家都建议不要用goto语句。我测试下goto语句怎么用。 goto语句执行是，跳转到标签位置后，又开始从标签位置往下执行。 12345678910111213141516171819202122232425class Program&#123; static void Main(string[] args) &#123; int i = 0; aMark: int a = 10; Console.WriteLine(a); int b = 20; Console.WriteLine(b); int c = a + b; Console.WriteLine(c + "\n"); i++; if (i &gt; 2) goto bMark; goto aMark; bMark: Console.WriteLine("程序结束!!"); Console.ReadKey();&#125; 输出：12345678910111213102030102030102030程序结束!!]]></content>
       <categories>
         <category>编程爱好</category>
       </categories>
@@ -408,9 +419,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[简单测试下 goto 语句]]></title>
-    <url>%2F2020%2F11%2F08%2F201108N01%2F</url>
-    <content type="text"><![CDATA[大家都建议不要用goto语句。我测试下goto语句怎么用。 goto语句执行是，跳转到标签位置后，又开始从标签位置往下执行。 12345678910111213141516171819202122232425class Program&#123; static void Main(string[] args) &#123; int i = 0; aMark: int a = 10; Console.WriteLine(a); int b = 20; Console.WriteLine(b); int c = a + b; Console.WriteLine(c + "\n"); i++; if (i &gt; 2) goto bMark; goto aMark; bMark: Console.WriteLine("程序结束!!"); Console.ReadKey();&#125; 输出：12345678910111213102030102030102030程序结束!!]]></content>
+    <title><![CDATA[C# 委托和事件的区别]]></title>
+    <url>%2F2020%2F11%2F08%2F201108N02%2F</url>
+    <content type="text"><![CDATA[委托：委托是一种各类型，像类和结构一样。一般放在namespace里，当然也可以放在类里面，就像类里面也可以放类一样。 事件事件是类或结构的成员，像属性和方法一样。事件更像是委托变量。 有两点注意： 事件不能放在可执行代码段里面声明。也就是，只能做字段，不能做本地变量； 必须声明在类或结构中，做类或结构的成员； 1事件 ＋＝ 委托（事件处理程序） 定义一个事件和定义一个委托变量很像，只是在前面加了一个 event。 用委托的话，类外要么能访问，要么不能访问。public，在类外可以随意的调用，而改成 private后外部对委托就不能赋值了。委托 = null 后会把之前的赋值覆盖掉，就没用了。而事件在外部不能直接调用，只能在定义事件的类的内部调用，只能在 += 或 -= 的左边，在同一个类中使用可以用 =。 事件: 公有的方法调用了私有的委托。]]></content>
       <categories>
         <category>编程爱好</category>
       </categories>
@@ -430,9 +441,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[C# 读取环境变量，和字符串大小写转换]]></title>
-    <url>%2F2020%2F11%2F03%2F201103N01%2F</url>
-    <content type="text"><![CDATA[string.ToLower() 更改大小写返回的是副本，原来的字符串还是原来的。ToUper()应该也是一样的吧； ToLower()只改变字母大小写，其他的字符不改变； 读取(系统)环境变量时，自己新建的环境变量后，需要重启电脑，才能读取到。 1234567891011121314151617181920212223using System;namespace ConsoleApp1&#123; class Program &#123; static void Main(string[] args) &#123; string a = "abkj_KKOIHI_1234-_!你好！！！"; Console.WriteLine(a); string b = a.ToLower(); Console.WriteLine(b); Console.WriteLine(a); string str = Environment.GetEnvironmentVariable("RebSoft");// 系统环境变量 string s = Environment.GetEnvironmentVariable("RebSoft", EnvironmentVariableTarget.User); // 当前用户环境变量 Console.WriteLine(str); Console.WriteLine(s); Console.ReadKey(); &#125; &#125;&#125; 输出： 这里有一篇读取环境变量的博文，很全：https://www.cnblogs.com/tianma3798/p/5500279.html。]]></content>
+    <title><![CDATA[C# Linq Xml 简单测试]]></title>
+    <url>%2F2020%2F11%2F03%2F201103N02%2F</url>
+    <content type="text"><![CDATA[C# Linq 真的很强大啊!简单的测试下。 创建1234567891011121314XDocument xDoc = new XDocument( new XDeclaration("1.0", "utf-8", null), new XElement("test", new XElement("person", new XElement("name", "小明"), new XElement("age", "8")), new XElement("person", new XElement("name", "小华"), new XElement("age", "9")), new XElement("sum", "2") ) ); xDoc.Save("Test.xml"); 通过参数数组，类似结构的缩进，直接创建了xml文档。 xml: 123456789101112&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;test&gt; &lt;person&gt; &lt;name&gt;小明&lt;/name&gt; &lt;age&gt;8&lt;/age&gt; &lt;/person&gt; &lt;person&gt; &lt;name&gt;小华&lt;/name&gt; &lt;age&gt;9&lt;/age&gt; &lt;/person&gt; &lt;sum&gt;2&lt;/sum&gt;&lt;/test&gt; 读取123XElement file = XElement.Load("Test.xml");XElement xiaoming = file.Descendants("person") .Where(x =&gt; x.Element("name").Value == "小明").SingleOrDefault(); xiaoming.ToString()直接读出：1234&lt;person&gt; &lt;name&gt;小明&lt;/name&gt; &lt;age&gt;8&lt;/age&gt;&lt;/person&gt; 如果直接读取xioaming的value值会输出多少？ 它会把它下面节点的value值全部读出来： 1小明8 我猜它应该是个结果集序列。 First,FirstOrDefault,Single,SingleOrDefault 有什么不一样？ SingleOrDefault 含有多个元素的时候会抛异常。 下面两片博文可以参考： c#操作符 ??和First,FirstOrDefault,Single,SingleOrDefault。 c# XElement XML操作总结。]]></content>
       <categories>
         <category>编程爱好</category>
       </categories>
@@ -441,9 +452,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[C# Linq Xml 简单测试]]></title>
-    <url>%2F2020%2F11%2F03%2F201103N02%2F</url>
-    <content type="text"><![CDATA[C# Linq 真的很强大啊!简单的测试下。 创建1234567891011121314XDocument xDoc = new XDocument( new XDeclaration("1.0", "utf-8", null), new XElement("test", new XElement("person", new XElement("name", "小明"), new XElement("age", "8")), new XElement("person", new XElement("name", "小华"), new XElement("age", "9")), new XElement("sum", "2") ) ); xDoc.Save("Test.xml"); 通过参数数组，类似结构的缩进，直接创建了xml文档。 xml: 123456789101112&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;test&gt; &lt;person&gt; &lt;name&gt;小明&lt;/name&gt; &lt;age&gt;8&lt;/age&gt; &lt;/person&gt; &lt;person&gt; &lt;name&gt;小华&lt;/name&gt; &lt;age&gt;9&lt;/age&gt; &lt;/person&gt; &lt;sum&gt;2&lt;/sum&gt;&lt;/test&gt; 读取123XElement file = XElement.Load("Test.xml");XElement xiaoming = file.Descendants("person") .Where(x =&gt; x.Element("name").Value == "小明").SingleOrDefault(); xiaoming.ToString()直接读出：1234&lt;person&gt; &lt;name&gt;小明&lt;/name&gt; &lt;age&gt;8&lt;/age&gt;&lt;/person&gt; 如果直接读取xioaming的value值会输出多少？ 它会把它下面节点的value值全部读出来： 1小明8 我猜它应该是个结果集序列。 First,FirstOrDefault,Single,SingleOrDefault 有什么不一样？ SingleOrDefault 含有多个元素的时候会抛异常。 下面两片博文可以参考： c#操作符 ??和First,FirstOrDefault,Single,SingleOrDefault。 c# XElement XML操作总结。]]></content>
+    <title><![CDATA[C# 读取环境变量，和字符串大小写转换]]></title>
+    <url>%2F2020%2F11%2F03%2F201103N01%2F</url>
+    <content type="text"><![CDATA[string.ToLower() 更改大小写返回的是副本，原来的字符串还是原来的。ToUper()应该也是一样的吧； ToLower()只改变字母大小写，其他的字符不改变； 读取(系统)环境变量时，自己新建的环境变量后，需要重启电脑，才能读取到。 1234567891011121314151617181920212223using System;namespace ConsoleApp1&#123; class Program &#123; static void Main(string[] args) &#123; string a = "abkj_KKOIHI_1234-_!你好！！！"; Console.WriteLine(a); string b = a.ToLower(); Console.WriteLine(b); Console.WriteLine(a); string str = Environment.GetEnvironmentVariable("RebSoft");// 系统环境变量 string s = Environment.GetEnvironmentVariable("RebSoft", EnvironmentVariableTarget.User); // 当前用户环境变量 Console.WriteLine(str); Console.WriteLine(s); Console.ReadKey(); &#125; &#125;&#125; 输出： 这里有一篇读取环境变量的博文，很全：https://www.cnblogs.com/tianma3798/p/5500279.html。]]></content>
       <categories>
         <category>编程爱好</category>
       </categories>
