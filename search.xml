@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[WPF 中使用 OpenFIleDialog]]></title>
+    <url>%2F2021%2F06%2F01%2F210601N01%2F</url>
+    <content type="text"><![CDATA[WPF 中好像没有 OpenFileDialog 的空间，只能借用其他的了。 SaveFileDialog 应该也是类似的。 ▲ 测试界面 12345678&lt;Grid&gt; &lt;StackPanel Orientation=&quot;Vertical&quot; &gt; &lt;TextBox Height=&quot;50&quot; Margin=&quot;10&quot; BorderThickness=&quot;1&quot; VerticalContentAlignment=&quot;Center&quot; BorderBrush=&quot;Black&quot; x:Name=&quot;FileNameTextBox&quot;/&gt; &lt;Button x:Name=&quot;btnFileDialog&quot; Click=&quot;BtnFileDialog_Click&quot; Content=&quot;OpenFileDialog-win32&quot; FontSize=&quot;20&quot; FontWeight=&quot;Bold&quot; Margin=&quot;10&quot;/&gt; &lt;Button x:Name=&quot;btnFileDialog1&quot; Click=&quot;BtnFileDialog1_Click&quot; Content=&quot;OpenFileDialog-winform&quot; FontSize=&quot;20&quot; FontWeight=&quot;Bold&quot; Margin=&quot;10&quot;/&gt; &lt;Button x:Name=&quot;btnFileDialog2&quot; Click=&quot;BtnFileDialog2_Click&quot; Content=&quot;OpenFileDialog-winform&quot; FontSize=&quot;20&quot; FontWeight=&quot;Bold&quot; Margin=&quot;10&quot;/&gt; &lt;/StackPanel&gt;&lt;/Grid&gt; 直接在 button 的 click 事件中写个测试。 用 win32 控件中的 OpenFileDialog1234567891011121314151617// Create OpenFileDialog Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();// Set filter for file extension and default file extension dlg.DefaultExt = ".txt";dlg.Filter = "Text documents (.txt)|*.txt";// Display OpenFileDialog by calling ShowDialog method Nullable&lt;bool&gt; result = dlg.ShowDialog();// Get the selected file name and display in a TextBox if (result == true)&#123; // Open document string filename = dlg.FileName; FileNameTextBox.Text = filename;&#125; 用 Winform 中的 OpenFileDialog项目中需要引用一下 System.Windows.Forms。 1234567891011System.Windows.Forms.OpenFileDialog openFileDialog1 = new System.Windows.Forms.OpenFileDialog();openFileDialog1.InitialDirectory = @"C:\Users\Administrator\Desktop\";openFileDialog1.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";openFileDialog1.FilterIndex = 2;openFileDialog1.RestoreDirectory = true;if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)&#123; //此处做你想做的事 ... FileNameTextBox.Text = openFileDialog1.FileName; ;&#125; 类似的还有 FolderBrowserDialog 文件夹浏览对话框； 1234567System.Windows.Forms.FolderBrowserDialog folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();System.Windows.Forms.DialogResult result = folderBrowserDialog.ShowDialog();if (result == System.Windows.Forms.DialogResult.OK)&#123; FileNameTextBox.Text = folderBrowserDialog.SelectedPath;&#125; 至于 WPF 当然可以自己去实现一个，满足自己的定制需求。]]></content>
+      <categories>
+        <category>编程爱好</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[WPF 附加属性]]></title>
     <url>%2F2021%2F04%2F11%2F210411N04%2F</url>
     <content type="text"><![CDATA[附加属性本质也是依赖属性，依赖属性的宿主位置不一样。 XAML： 123456789101112&lt;Window x:Class="WpfApp1.MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:WpfApp1" mc:Ignorable="d" WindowStartupLocation="CenterScreen" Title="MainWindow" Height="250" Width="350"&gt; &lt;Grid&gt; &lt;Button Content="Grade" Width="100" Height="50" Click="Button_Click"/&gt; &lt;/Grid&gt;&lt;/Window&gt; C# Behind： 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051namespace WpfApp1&#123; /// &lt;summary&gt; /// MainWindow.xaml 的交互逻辑 /// &lt;/summary&gt; public partial class MainWindow : Window &#123; public MainWindow() &#123; InitializeComponent(); &#125; private void Button_Click(object sender, RoutedEventArgs e) &#123; Human human = new Human(); School.SetGrade(human, 6); int grade = School.GetGrade(human); MessageBox.Show(grade.ToString()); Student stu = new Student(); School.SetGrade(stu, 6); int g = School.GetGrade(stu); MessageBox.Show(g.ToString()); &#125; &#125; public class School:DependencyObject &#123; public static int GetGrade(DependencyObject obj) &#123; return (int)obj.GetValue(GradeProperty); &#125; public static void SetGrade(DependencyObject obj, int value) &#123; obj.SetValue(GradeProperty, value); &#125; // Using a DependencyProperty as the backing store for Grade. This enables animation, styling, binding, etc... public static readonly DependencyProperty GradeProperty = DependencyProperty.RegisterAttached("Grade", typeof(int), typeof(School), new PropertyMetadata(0)); &#125; public class Human:DependencyObject &#123; &#125; public class Student:DependencyObject &#123; &#125;&#125; 运行结果： ▲ 运行结果, 两个弹窗都显示 6 没有问题 以上可见，附加属性和依赖属性保存值过程是一样的。只是用来检索值的依赖属性(附加属性)并不是以Human为宿主，而是寄宿在School里面，而这是没有什么关系的。因为，CLR 属性名和宿主类型只是用来生成 hash code 和 GlobalIndex 的，保证键值对唯一。 另外，既然附加属性和依赖属性本质是一样的，那么附加属性也是可以用来 Binding 的。 XAML： 123456789101112131415&lt;Window x:Class="WpfApp1.MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:WpfApp1" mc:Ignorable="d" WindowStartupLocation="CenterScreen" Title="MainWindow" Height="250" Width="350"&gt; &lt;Canvas&gt; &lt;Slider x:Name="sliderX" Canvas.Top="10" Canvas.Left="10" Width="320" Minimum="50" Maximum="260"/&gt; &lt;Slider x:Name="sliderY" Canvas.Top="50" Canvas.Left="10" Width="320" Minimum="50" Maximum="260"/&gt; &lt;Rectangle x:Name="rect" Fill="Blue" Width="30" Height="30" Canvas.Left="&#123;Binding ElementName=sliderX, Path=Value&#125;" Canvas.Top="&#123;Binding Path=Value, ElementName=sliderY&#125;" /&gt; &lt;/Canvas&gt;&lt;/Window&gt; ▲ 移动两个滑条，方块会移动位置 参考： 《WPF 深入浅出》- P150]]></content>
@@ -177,17 +188,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[接下来一段时间内的自我构建的步骤]]></title>
-    <url>%2F2020%2F11%2F27%2F201127N01%2F</url>
-    <content type="text"><![CDATA[每个人关注的都是自己的利益，切勿把希望寄托于他人身上，万事得靠自己。 现在的人，大家都在说战略，说战术。我也来说下接下来自己的战术层面，如何自我构建到行业内一般水平。 对现在开发的这个机型： 一、先用现成的 DLL 自己全部实现一遍软件。 二、自己用源码实现一遍软件。 三、整理好自己的类库。 把这三个步骤搞下来，应该能出师了。构建起了自己的知识体系。天下无易事，无非熟能生巧罢了。方向定下来，坚持下去，反复折腾。 当软件层面达到一般水平后，再提高一把硬件到一般水平。这样应该可以算完全出师了。]]></content>
-      <categories>
-        <category>其他</category>
-      </categories>
-      <tags>
-        <tag>点滴</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[Xml 简单序列化和返序列化]]></title>
     <url>%2F2020%2F11%2F27%2F201127N02%2F</url>
     <content type="text"><![CDATA[结构体和类都能进行 xml 的序列化和反序列化。 必须包含的命名空间： 1234using System.IO;using System.Text;using System.Xml;using System.Xml.Serialization; 基本的序列化这里以结构体类型为例 ： 1234567891011public struct Student&#123; public string Name; public int Age; public Student(string name, int age) &#123; this.Name = name; this.Age = age; &#125;&#125; 这里访问类型必须要public。 123456789101112131415161718192021222324252627282930313233343536373839404142434445class XmlSerializerHelper&#123; public void XmlSerial(object obj, string xmlFile) &#123; // 序列化 using (MemoryStream ms = new MemoryStream()) &#123; XmlWriterSettings setting = new XmlWriterSettings() &#123; Encoding = new UTF8Encoding(false), Indent = true, &#125;; using (XmlWriter writer = XmlWriter.Create(ms, setting)) &#123; XmlSerializer xmlSerializer = new XmlSerializer(obj.GetType()); // 去掉命名空间 XmlSerializerNamespaces ns = new XmlSerializerNamespaces(); ns.Add("", ""); // 命名空间赋值为空 xmlSerializer.Serialize(writer, obj, ns); // 用StreamWriter string xmlContent = Encoding.UTF8.GetString(ms.ToArray()); // 转成字符转 StreamWriter streamWriter = new StreamWriter(xmlFile); streamWriter.Write(xmlContent); streamWriter.Close(); &#125; &#125; &#125; // 返序列化 public object XmlDeserial(object obj, string xmlFile) &#123; // 用 MemoryStream string xmlString = File.ReadAllText(xmlFile); // xml 内容提取出来 using (MemoryStream MS = new MemoryStream(Encoding.UTF8.GetBytes(xmlString))) &#123; using (XmlReader xr = XmlReader.Create(MS)) &#123; XmlSerializer xmlSerializer = new XmlSerializer(obj.GetType()); obj = xmlSerializer.Deserialize(xr); // 不要误写为 MS 流，有这个重载不会报错。但运行有错。 &#125; &#125; return obj; &#125;&#125; 123456789101112class Program&#123; static void Main(string[] args) &#123; Student student = new Student() &#123; Name = "毛泽东", Age = 18 &#125;; XmlSerializerHelper xmlSerializerHelper = new XmlSerializerHelper(); xmlSerializerHelper.XmlSerial(student, "Student.xml"); Console.ReadKey(); &#125;&#125; 输出，没什么问题： 12345&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Student&gt; &lt;Name&gt;毛泽东&lt;/Name&gt; &lt;Age&gt;18&lt;/Age&gt;&lt;/Student&gt; 简单反序列化12345678910111213class Program&#123; static void Main(string[] args) &#123; XmlSerializerHelper xmlSerializerHelper = new XmlSerializerHelper(); Student stu; stu = (Student)xmlSerializerHelper.XmlDeserial(new Student(), "Student.xml"); Console.WriteLine("Name = &#123;0&#125;\nAge = &#123;1&#125;", stu.Name, stu.Age); Console.ReadKey(); &#125;&#125; 输出，没什么问题： 12Name = 毛泽东Age = 18 测试一下嵌套序列化123456789101112public struct Student&#123; public string Name; public int Age; public OtherInfo OtherInfo; &#125;public struct OtherInfo&#123; public int Birth; public string Alisa;&#125; 12345678910111213class Program&#123; static void Main(string[] args) &#123; OtherInfo otherInfo = new OtherInfo() &#123; Birth = 1893, Alisa = "毛润之"&#125;; Student student = new Student() &#123; Name = "毛泽东", Age = 18, OtherInfo = otherInfo &#125;; XmlSerializerHelper xmlSerializerHelper = new XmlSerializerHelper(); xmlSerializerHelper.XmlSerial(student, "Student.xml"); Console.ReadKey(); &#125;&#125; 输出：123456789&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Student&gt; &lt;Name&gt;毛泽东&lt;/Name&gt; &lt;Age&gt;18&lt;/Age&gt; &lt;OtherInfo&gt; &lt;Birth&gt;1893&lt;/Birth&gt; &lt;Alisa&gt;毛润之&lt;/Alisa&gt; &lt;/OtherInfo&gt;&lt;/Student&gt; 测试下如果引用变量为null的情况123456789101112class Program&#123; static void Main(string[] args) &#123; Student student = new Student() ; XmlSerializerHelper xmlSerializerHelper = new XmlSerializerHelper(); xmlSerializerHelper.XmlSerial(student, "Student.xml"); Console.ReadKey(); &#125;&#125; 输出： 1234567&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Student&gt; &lt;Age&gt;0&lt;/Age&gt; &lt;OtherInfo&gt; &lt;Birth&gt;0&lt;/Birth&gt; &lt;/OtherInfo&gt;&lt;/Student&gt; 可见，null值不进行序列化，int类型会默认为0，所以存在。 把struct改成class： 123456789101112public class Student&#123; public string Name; public int Age; public OtherInfo OtherInfo; &#125;public class OtherInfo&#123; public int Birth; public string Alisa;&#125; 输出： 1234&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Student&gt; &lt;Age&gt;0&lt;/Age&gt;&lt;/Student&gt; class为引用类型，为 null 没输出了。 数组的序列化输出： 123456789101112131415161718public class Person&#123; public string Name &#123; get; set; &#125; public int Age &#123; get; set; &#125; public string Sex &#123; get; set; &#125; [XmlElement("Dog")] // 不要“再包一层” public List&lt;Dog&gt; Dog &#123; get; set; &#125; public string Good &#123; get; set; &#125; = "100"; private string valuePrivate &#123; get; set; &#125; = "0";&#125;public class Dog&#123; public string Name &#123; get; set; &#125; public int Age &#123; get; set; &#125;&#125; 12345678910111213141516171819202122class Program&#123; static void Main(string[] args) &#123; List&lt;Dog&gt; dogs = new List&lt;Dog&gt; &#123; new Dog() &#123; Name = "小黑", Age = 9 &#125;, new Dog() &#123; Name = "小黄", Age = 10 &#125; &#125;; Person person = new Person() &#123; Name = "孙悟空", Age = 500, Sex = "男", Dog = dogs &#125;; XmlSerializerHelper xmlSerializerHelper = new XmlSerializerHelper(); xmlSerializerHelper.XmlSerial(person, "Person.xml"); Console.ReadKey(); &#125;&#125; 123456789101112131415&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Person&gt; &lt;Name&gt;孙悟空&lt;/Name&gt; &lt;Age&gt;500&lt;/Age&gt; &lt;Sex&gt;男&lt;/Sex&gt; &lt;Dog&gt; &lt;Name&gt;小黑&lt;/Name&gt; &lt;Age&gt;9&lt;/Age&gt; &lt;/Dog&gt; &lt;Dog&gt; &lt;Name&gt;小黄&lt;/Name&gt; &lt;Age&gt;10&lt;/Age&gt; &lt;/Dog&gt; &lt;Good&gt;100&lt;/Good&gt;&lt;/Person&gt; 可见： 数组如果不要再包一层，[XmlElement(&quot;Dog&quot;)] // 不要“再包一层”显示的命名个节点。不然输出如下： 1234567891011121314151617&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Person&gt; &lt;Name&gt;孙悟空&lt;/Name&gt; &lt;Age&gt;500&lt;/Age&gt; &lt;Sex&gt;男&lt;/Sex&gt; &lt;Dog&gt; &lt;Dog&gt; &lt;Name&gt;小黑&lt;/Name&gt; &lt;Age&gt;9&lt;/Age&gt; &lt;/Dog&gt; &lt;Dog&gt; &lt;Name&gt;小黄&lt;/Name&gt; &lt;Age&gt;10&lt;/Age&gt; &lt;/Dog&gt; &lt;/Dog&gt; &lt;Good&gt;100&lt;/Good&gt;&lt;/Person&gt; Dog 数组外面包了一层&lt;Dog&gt;。 private string valuePrivate { get; set; } = &quot;0&quot;;私有成员没有被序列化。 参考：https://www.cnblogs.com/guogangj/p/7489218.html]]></content>
@@ -199,9 +199,20 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[C# 好像没有类似 C++ 的 const 形参]]></title>
-    <url>%2F2020%2F11%2F26%2F201126N01%2F</url>
-    <content type="text"><![CDATA[这里只针对引用参数来说(非string类型)。我们能限制的只是引用的指向不能更改，而引用指向的内存值是可以修改的。是不是只要 C# 的类属性设计的够好，就不需要这样呢？ 这里是之前的思考：https://blog.huvjie.com/2020/06/01/200601N01/ 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647using System;namespace ConsoleApp1&#123; class A &#123; public string Message &#123; get; set; &#125; = "nihao"; &#125; class Programe &#123; private readonly A aa = new A(); private A Aa &#123; get; &#125; = new A(); static void Main() &#123; Programe programe = new Programe(); programe.DoSomeChange(programe.Aa); // 是可以更改的 // 下面这两句是不允许的，重新改变了引用的指向 //A Ab = new A(); //programe.Aa = Ab; Console.WriteLine(programe.Aa.Message); programe.OnlyShow(programe.Aa); programe.OnlyShow(); Console.ReadKey(); &#125; private void DoSomeChange(A a) &#123; a.Message = "hello"; &#125; private void OnlyShow(A a) &#123; a.Message = "hhhh"; Console.WriteLine(a.Message); &#125; private void OnlyShow() &#123; this.aa.Message = "Good!"; Console.WriteLine(this.aa.Message); &#125; &#125;&#125; 输出： 123hellohhhhGood! 类似下面这样是不行的：1private void DoSomeChange(const A a) &#123;&#125; 是不是 C# 没有类似 C++ 的 const 形参，或者有什么方法能够实现类似的功能呢？]]></content>
+    <title><![CDATA[接下来一段时间内的自我构建的步骤]]></title>
+    <url>%2F2020%2F11%2F27%2F201127N01%2F</url>
+    <content type="text"><![CDATA[每个人关注的都是自己的利益，切勿把希望寄托于他人身上，万事得靠自己。 现在的人，大家都在说战略，说战术。我也来说下接下来自己的战术层面，如何自我构建到行业内一般水平。 对现在开发的这个机型： 一、先用现成的 DLL 自己全部实现一遍软件。 二、自己用源码实现一遍软件。 三、整理好自己的类库。 把这三个步骤搞下来，应该能出师了。构建起了自己的知识体系。天下无易事，无非熟能生巧罢了。方向定下来，坚持下去，反复折腾。 当软件层面达到一般水平后，再提高一把硬件到一般水平。这样应该可以算完全出师了。]]></content>
+      <categories>
+        <category>其他</category>
+      </categories>
+      <tags>
+        <tag>点滴</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[C#｜匿名类初识]]></title>
+    <url>%2F2020%2F11%2F26%2F201126N02%2F</url>
+    <content type="text"><![CDATA[之前的这篇https://blog.huvjie.com/2020/06/01/200601N01/，是不是也是匿名类？对这个知识点还没有什么认识，初识一下。 12345678static void Main()&#123; var Student = new &#123; Name = "XiaoFang", Age = 10 &#125;; Console.WriteLine("Name:&#123;0&#125; Age:&#123;1&#125;", Student.Name, Student.Age); Console.ReadKey();&#125; 输出： 1Name:XiaoFang Age:10 另外，投影初始化语句可以查看《图解教程》P355页。]]></content>
       <categories>
         <category>编程爱好</category>
       </categories>
@@ -210,9 +221,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[C#｜匿名类初识]]></title>
-    <url>%2F2020%2F11%2F26%2F201126N02%2F</url>
-    <content type="text"><![CDATA[之前的这篇https://blog.huvjie.com/2020/06/01/200601N01/，是不是也是匿名类？对这个知识点还没有什么认识，初识一下。 12345678static void Main()&#123; var Student = new &#123; Name = "XiaoFang", Age = 10 &#125;; Console.WriteLine("Name:&#123;0&#125; Age:&#123;1&#125;", Student.Name, Student.Age); Console.ReadKey();&#125; 输出： 1Name:XiaoFang Age:10 另外，投影初始化语句可以查看《图解教程》P355页。]]></content>
+    <title><![CDATA[C# 好像没有类似 C++ 的 const 形参]]></title>
+    <url>%2F2020%2F11%2F26%2F201126N01%2F</url>
+    <content type="text"><![CDATA[这里只针对引用参数来说(非string类型)。我们能限制的只是引用的指向不能更改，而引用指向的内存值是可以修改的。是不是只要 C# 的类属性设计的够好，就不需要这样呢？ 这里是之前的思考：https://blog.huvjie.com/2020/06/01/200601N01/ 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647using System;namespace ConsoleApp1&#123; class A &#123; public string Message &#123; get; set; &#125; = "nihao"; &#125; class Programe &#123; private readonly A aa = new A(); private A Aa &#123; get; &#125; = new A(); static void Main() &#123; Programe programe = new Programe(); programe.DoSomeChange(programe.Aa); // 是可以更改的 // 下面这两句是不允许的，重新改变了引用的指向 //A Ab = new A(); //programe.Aa = Ab; Console.WriteLine(programe.Aa.Message); programe.OnlyShow(programe.Aa); programe.OnlyShow(); Console.ReadKey(); &#125; private void DoSomeChange(A a) &#123; a.Message = "hello"; &#125; private void OnlyShow(A a) &#123; a.Message = "hhhh"; Console.WriteLine(a.Message); &#125; private void OnlyShow() &#123; this.aa.Message = "Good!"; Console.WriteLine(this.aa.Message); &#125; &#125;&#125; 输出： 123hellohhhhGood! 类似下面这样是不行的：1private void DoSomeChange(const A a) &#123;&#125; 是不是 C# 没有类似 C++ 的 const 形参，或者有什么方法能够实现类似的功能呢？]]></content>
       <categories>
         <category>编程爱好</category>
       </categories>
@@ -265,9 +276,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[面向对象的思考]]></title>
-    <url>%2F2020%2F11%2F22%2F201122N04%2F</url>
-    <content type="text"><![CDATA[面向对象，数据的传输尽量以对象的形式封装起来传递会比较好。实体类是不是就是干这个事情的？!]]></content>
+    <title><![CDATA[Winform ｜制作圆形label标签双色球]]></title>
+    <url>%2F2020%2F11%2F22%2F201122N03%2F</url>
+    <content type="text"><![CDATA[制作圆形的显示 label 当做双色球，效果如下： ▲ 圆形双色球效果 一、找两个圆形底色为白色的图片 ▲ 底图 二、label 标签设置 拖入label标签； AutoSize属性置为false； Width和Height属性设置相等且适当尺寸； Image属性导入底图； Text属性先默认设置成00，字体大小调至适当; TextAlign属性设置成居中。]]></content>
       <categories>
         <category>编程爱好</category>
       </categories>
@@ -276,9 +287,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Winform ｜制作圆形label标签双色球]]></title>
-    <url>%2F2020%2F11%2F22%2F201122N03%2F</url>
-    <content type="text"><![CDATA[制作圆形的显示 label 当做双色球，效果如下： ▲ 圆形双色球效果 一、找两个圆形底色为白色的图片 ▲ 底图 二、label 标签设置 拖入label标签； AutoSize属性置为false； Width和Height属性设置相等且适当尺寸； Image属性导入底图； Text属性先默认设置成00，字体大小调至适当; TextAlign属性设置成居中。]]></content>
+    <title><![CDATA[面向对象的思考]]></title>
+    <url>%2F2020%2F11%2F22%2F201122N04%2F</url>
+    <content type="text"><![CDATA[面向对象，数据的传输尽量以对象的形式封装起来传递会比较好。实体类是不是就是干这个事情的？!]]></content>
       <categories>
         <category>编程爱好</category>
       </categories>
@@ -309,9 +320,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[理一下后面的思路]]></title>
-    <url>%2F2020%2F11%2F21%2F201121N01%2F</url>
-    <content type="text"><![CDATA[理一下接下来的思路。首先，最重要和迫切的是加强提高业务层面“体力活”部分的熟练、效率。后面的整体方向： 以 C# 技术栈为中心； 以工业视觉为技术核心； 加强英语和数学。 以 C# 技术栈为中心C# 是工控行业的主力语言，桌面程序为主，Windows 平台，开发容易且效率高。我们的主要精力点不应该局限于语言，而是以语言为工具载体展开的知识体系。行业内的另一大开发语言是 C++，之前用 MFC，现在应该是 Qt。自己不要花精力刻意去学习Qt，不要把时间和精力分散了，集中精力把 C# 技术栈深入一下。业务方面的体力活部分要做到很熟练，这样效率才能高；现在用的是 Winform 开发界面，其实可以学习一下 WPF，也可以了解下 Web 方面的知识。软件的架构设计，开发模式，面向对象的设计和分析(UML)等，也要有一定的能力。数据库方面的使用。 以工业视觉为技术核心我觉得工控控制的核心技术应该在工业视觉这里，这里的算法部分逃不过C/C++了，这里的C/C++语言部分应该是一个被动技能，不要刻意的深入到语言里面去，那是个复杂的无底洞，应该在学习过程中需要什么再去学习什么。这里我给自己定了两个方向。 Halcon；// 行业能用的最多的算法包 OpenCV；// 开源，图像处理算法肯定要学的。 MIL； // 公司用这个，但互联网上找不到太多资料，在工作中学习吧，不做主要。 另外，有时间学下 Python。至于，什么深度学习，人工智能啥的，太高端，后面再说。 加强英语和数学英语和数学，这一点不用多说。]]></content>
+    <title><![CDATA[WPF 事件｜硬编码的方式 winform 的方式使用]]></title>
+    <url>%2F2020%2F11%2F21%2F201121N02%2F</url>
+    <content type="text"><![CDATA[像winform一样，事件，赋值，硬编码的方式实现。 // 传说，WPF 有五种绑定方式。 ▲ 效果 12345678910111213&lt;Window x:Class="WpfApp1.MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:WpfApp1" mc:Ignorable="d" Title="MainWindow" Height="250" Width="300"&gt; &lt;Grid&gt; &lt;Button x:Name="btnTest" Click="BtnTest_Click" Content="点击测试" Width="100" Height="30"/&gt; &lt;Label x:Name="label" Content="Label" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="2.845,4.051" Margin="128,41,0,0"/&gt; &lt;/Grid&gt;&lt;/Window&gt; 12345678910111213141516171819202122using System.Windows;namespace WpfApp1&#123; /// &lt;summary&gt; /// MainWindow.xaml 的交互逻辑 /// &lt;/summary&gt; public partial class MainWindow : Window &#123; public MainWindow() &#123; InitializeComponent(); this.WindowStartupLocation = WindowStartupLocation.CenterScreen; &#125; private void BtnTest_Click(object sender, RoutedEventArgs e) &#123; MessageBox.Show("Hello!"); this.label.Content = "World!"; &#125; &#125;&#125;]]></content>
       <categories>
         <category>编程爱好</category>
       </categories>
@@ -320,9 +331,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[WPF 事件｜硬编码的方式 winform 的方式使用]]></title>
-    <url>%2F2020%2F11%2F21%2F201121N02%2F</url>
-    <content type="text"><![CDATA[像winform一样，事件，赋值，硬编码的方式实现。 // 传说，WPF 有五种绑定方式。 ▲ 效果 12345678910111213&lt;Window x:Class="WpfApp1.MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:WpfApp1" mc:Ignorable="d" Title="MainWindow" Height="250" Width="300"&gt; &lt;Grid&gt; &lt;Button x:Name="btnTest" Click="BtnTest_Click" Content="点击测试" Width="100" Height="30"/&gt; &lt;Label x:Name="label" Content="Label" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="2.845,4.051" Margin="128,41,0,0"/&gt; &lt;/Grid&gt;&lt;/Window&gt; 12345678910111213141516171819202122using System.Windows;namespace WpfApp1&#123; /// &lt;summary&gt; /// MainWindow.xaml 的交互逻辑 /// &lt;/summary&gt; public partial class MainWindow : Window &#123; public MainWindow() &#123; InitializeComponent(); this.WindowStartupLocation = WindowStartupLocation.CenterScreen; &#125; private void BtnTest_Click(object sender, RoutedEventArgs e) &#123; MessageBox.Show("Hello!"); this.label.Content = "World!"; &#125; &#125;&#125;]]></content>
+    <title><![CDATA[理一下后面的思路]]></title>
+    <url>%2F2020%2F11%2F21%2F201121N01%2F</url>
+    <content type="text"><![CDATA[理一下接下来的思路。首先，最重要和迫切的是加强提高业务层面“体力活”部分的熟练、效率。后面的整体方向： 以 C# 技术栈为中心； 以工业视觉为技术核心； 加强英语和数学。 以 C# 技术栈为中心C# 是工控行业的主力语言，桌面程序为主，Windows 平台，开发容易且效率高。我们的主要精力点不应该局限于语言，而是以语言为工具载体展开的知识体系。行业内的另一大开发语言是 C++，之前用 MFC，现在应该是 Qt。自己不要花精力刻意去学习Qt，不要把时间和精力分散了，集中精力把 C# 技术栈深入一下。业务方面的体力活部分要做到很熟练，这样效率才能高；现在用的是 Winform 开发界面，其实可以学习一下 WPF，也可以了解下 Web 方面的知识。软件的架构设计，开发模式，面向对象的设计和分析(UML)等，也要有一定的能力。数据库方面的使用。 以工业视觉为技术核心我觉得工控控制的核心技术应该在工业视觉这里，这里的算法部分逃不过C/C++了，这里的C/C++语言部分应该是一个被动技能，不要刻意的深入到语言里面去，那是个复杂的无底洞，应该在学习过程中需要什么再去学习什么。这里我给自己定了两个方向。 Halcon；// 行业能用的最多的算法包 OpenCV；// 开源，图像处理算法肯定要学的。 MIL； // 公司用这个，但互联网上找不到太多资料，在工作中学习吧，不做主要。 另外，有时间学下 Python。至于，什么深度学习，人工智能啥的，太高端，后面再说。 加强英语和数学英语和数学，这一点不用多说。]]></content>
       <categories>
         <category>编程爱好</category>
       </categories>
@@ -353,6 +364,17 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[C# 实例构建的执行顺序]]></title>
+    <url>%2F2020%2F11%2F16%2F201116N03%2F</url>
+    <content type="text"><![CDATA[先看看一般类的实例化构建顺序无继承的情况 静态字段 静态构造方法 实例字段 实例构造方法 有继承的情况 子类(派生类)的静态字段 子类(派生类)的静态构造方法 子类(派生类)的实例字段 父类(基类)的静态字段 父类(基类)的静态构造方法 父类(基类)的实例字段 父类(基类)的实例构造方法 子类(派生类)的实例构造方法 这两种情况还是很好理解的。总体来说字段是先于构造函数执行的，不然构造函数拿什么去执行。派生类的字段，和基类的实例先执行，然后再执行派生类的构造函数。这里是，基类的构造函数先执行，然后再执行派生类的构造函数。下面验证下： 1234567891011121314151617181920212223242526272829using System;namespace ConsoleApp1&#123; class Program &#123; static void Main(string[] args) &#123; A a = new A(); Console.ReadKey(); &#125; &#125; class A: B &#123; public A() &#123; Console.WriteLine("A"); &#125; &#125; class B &#123; public B() &#123; Console.WriteLine("B"); &#125; &#125;&#125; 输出： 12BA 基类的构造函数先执行，然后再执行派生类的构造函数。这里是对的。 C++ 的构造函数和析构函数执行顺序先调用父类(基类)的构造函数，再调用派生类的构造函数； 变量销毁时：先调用派生类的析构函数，再调用父类(基类)的析构函数。 123456789101112131415161718192021222324252627282930313233343536#include &lt;iostream&gt;using namespace std;class A&#123; public: A() &#123; cout&lt;&lt; "基类：AAAAAAAAAAAA" &lt;&lt;endl; &#125; ~A() &#123; cout &lt;&lt; "基类：~AAAAAAAAAAAA" &lt;&lt; endl; &#125; &#125;;class B:public A&#123; public: B() &#123; cout&lt;&lt; "派生类：BBBBBBBBB" &lt;&lt;endl; &#125; ~B() &#123; cout &lt;&lt; "派生类：~BBBBBBBBB" &lt;&lt; endl; &#125;&#125;;void solution() //当函数开始时，调用构造函数，当函数结束时，变量对象被销毁&#123; B b1;&#125;int main()&#123; solution(); return 0;&#125; 输出： 1234基类：AAAAAAAAAAAA派生类：BBBBBBBBB派生类：~BBBBBBBBB基类：~AAAAAAAAAAAA 看下对象初始化器和构造函数谁先执行结论：构造函数先于对象初始化器执行，然后，窗体程序的话，对象初始化器先于Load事件执行。 Form1.cs: 12345678910111213141516171819202122using System;using System.Windows.Forms;namespace WindowsFormsApp1&#123; public partial class Form1 : Form &#123; public Form1() &#123; InitializeComponent(); Console.WriteLine("Fomr1 构造函数!!"); &#125; private void button1_Click(object sender, EventArgs e) &#123; Form2 form2 = new Form2() &#123; Msg = "对象初始化器中赋值!!" &#125;; form2.Show(); &#125; &#125;&#125; Form2.cs： 12345678910111213141516171819202122232425262728using System;using System.Windows.Forms;namespace WindowsFormsApp1&#123; public partial class Form2 : Form &#123; public string Msg &#123; get; set; &#125; public Form2() &#123; InitializeComponent(); Console.WriteLine("Form2 构造函数!!"); this.StartPosition = FormStartPosition.CenterScreen; this.Msg = "构造函数后执行于对象初始化器!!"; &#125; private void Form2_Load(object sender, EventArgs e) &#123; if (this.Msg == null) Console.WriteLine("Load 事件先执行!!"); else Console.WriteLine(this.Msg); &#125; &#125;&#125; &gt; 参考：&gt; 1. https://www.cnblogs.com/nzbbody/archive/2011/12/29/2306403.html&gt; 2. https://www.cnblogs.com/qkqBeer/articles/10726173.html]]></content>
+      <categories>
+        <category>编程爱好</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[C# 关于引用类型的类外只读属性]]></title>
     <url>%2F2020%2F11%2F16%2F201116N02%2F</url>
     <content type="text"><![CDATA[类内的只读属性不能更改的是他的指向，例如，容器类List，如果是只内部可写，外部可读，只有类内部可以更改 List 字段的指向赋值，外部不能。而类外get到它的指向值后，是可以对它进行Add等操作的，因为没有更改它的指向。 有点绕，估计没讲清我想要说什么。~O(∩_∩)O~ 12345678910111213141516171819202122232425262728293031323334353637using System;using System.Collections.Generic;namespace ConsoleApp1&#123; class Program &#123; static void Main(string[] args) &#123; Test test = new Test(); List&lt;string&gt; tlist = test.TList; tlist.Add("Lily"); // 增加两个 tlist.Add("Lucy"); foreach (var item in tlist) &#123; Console.WriteLine(item); &#125; List&lt;string&gt; nlist = new List&lt;string&gt;(); // 新实例 // test.TList = nlist; // 不能从新指向 tlist = nlist; // 这个和test实例不相干，当然可以改指向 Console.Read(); &#125; &#125; class Test &#123; public List&lt;string&gt; TList &#123; get; private set; &#125; public Test() &#123; this.TList = new List&lt;string&gt;(); this.TList.Add("Tom"); &#125; &#125;&#125; 输出： 123TomLily // 后面这两个是可以增加的。Lucy 下面这样重新指向一个新实例是不行的。 12List&lt;string&gt; nlist = new List&lt;string&gt;(); // 新实例test.TList = nlist; // 不能从新指向 test.TList = nlist; // 不能从新指向，外部只读不能更改指向。 再看： 12345678910111213141516171819202122232425262728293031using System;using System.Collections.Generic;using System.Linq;using System.Text;using System.Threading.Tasks;namespace ConsoleApp3&#123; class Program &#123; static void Main(string[] args) &#123; Student stu = new Student() &#123;Name = "Hi", Age = 1 &#125;; Console.WriteLine(stu.Name + "\n" + stu.Age); Student stu1 = stu; stu1.Name = "Hello"; stu1.Age = 10; Console.WriteLine("\n" + stu.Name + "\n" + stu.Age); Console.ReadKey(); &#125; &#125; class Student &#123; public string Name &#123; get; set; &#125; public int Age &#123; get; set; &#125; &#125;&#125; 输出： 12345Hi1Hello10 只要不更改引用的指向，其应用内部的属性如果是可读可写的话，还是可以修改值的。]]></content>
@@ -367,17 +389,6 @@
     <title><![CDATA[还是要学下 WPF]]></title>
     <url>%2F2020%2F11%2F16%2F201116N01%2F</url>
     <content type="text"><![CDATA[其实行业内大部分人都在用 winform，还是想学习一下 WPF。主要考虑一下几点： 技术更先进。 还是要向前一步。能够很好的实现前后台代码的分离。 后面想弄下安卓 Xamarin。 /**/ 学 WPF 不着急，慢慢学。]]></content>
-      <categories>
-        <category>编程爱好</category>
-      </categories>
-      <tags>
-        <tag>C#</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[C# 实例构建的执行顺序]]></title>
-    <url>%2F2020%2F11%2F16%2F201116N03%2F</url>
-    <content type="text"><![CDATA[先看看一般类的实例化构建顺序无继承的情况 静态字段 静态构造方法 实例字段 实例构造方法 有继承的情况 子类(派生类)的静态字段 子类(派生类)的静态构造方法 子类(派生类)的实例字段 父类(基类)的静态字段 父类(基类)的静态构造方法 父类(基类)的实例字段 父类(基类)的实例构造方法 子类(派生类)的实例构造方法 这两种情况还是很好理解的。总体来说字段是先于构造函数执行的，不然构造函数拿什么去执行。派生类的字段，和基类的实例先执行，然后再执行派生类的构造函数。这里是，基类的构造函数先执行，然后再执行派生类的构造函数。下面验证下： 1234567891011121314151617181920212223242526272829using System;namespace ConsoleApp1&#123; class Program &#123; static void Main(string[] args) &#123; A a = new A(); Console.ReadKey(); &#125; &#125; class A: B &#123; public A() &#123; Console.WriteLine("A"); &#125; &#125; class B &#123; public B() &#123; Console.WriteLine("B"); &#125; &#125;&#125; 输出： 12BA 基类的构造函数先执行，然后再执行派生类的构造函数。这里是对的。 C++ 的构造函数和析构函数执行顺序先调用父类(基类)的构造函数，再调用派生类的构造函数； 变量销毁时：先调用派生类的析构函数，再调用父类(基类)的析构函数。 123456789101112131415161718192021222324252627282930313233343536#include &lt;iostream&gt;using namespace std;class A&#123; public: A() &#123; cout&lt;&lt; "基类：AAAAAAAAAAAA" &lt;&lt;endl; &#125; ~A() &#123; cout &lt;&lt; "基类：~AAAAAAAAAAAA" &lt;&lt; endl; &#125; &#125;;class B:public A&#123; public: B() &#123; cout&lt;&lt; "派生类：BBBBBBBBB" &lt;&lt;endl; &#125; ~B() &#123; cout &lt;&lt; "派生类：~BBBBBBBBB" &lt;&lt; endl; &#125;&#125;;void solution() //当函数开始时，调用构造函数，当函数结束时，变量对象被销毁&#123; B b1;&#125;int main()&#123; solution(); return 0;&#125; 输出： 1234基类：AAAAAAAAAAAA派生类：BBBBBBBBB派生类：~BBBBBBBBB基类：~AAAAAAAAAAAA 看下对象初始化器和构造函数谁先执行结论：构造函数先于对象初始化器执行，然后，窗体程序的话，对象初始化器先于Load事件执行。 Form1.cs: 12345678910111213141516171819202122using System;using System.Windows.Forms;namespace WindowsFormsApp1&#123; public partial class Form1 : Form &#123; public Form1() &#123; InitializeComponent(); Console.WriteLine("Fomr1 构造函数!!"); &#125; private void button1_Click(object sender, EventArgs e) &#123; Form2 form2 = new Form2() &#123; Msg = "对象初始化器中赋值!!" &#125;; form2.Show(); &#125; &#125;&#125; Form2.cs： 12345678910111213141516171819202122232425262728using System;using System.Windows.Forms;namespace WindowsFormsApp1&#123; public partial class Form2 : Form &#123; public string Msg &#123; get; set; &#125; public Form2() &#123; InitializeComponent(); Console.WriteLine("Form2 构造函数!!"); this.StartPosition = FormStartPosition.CenterScreen; this.Msg = "构造函数后执行于对象初始化器!!"; &#125; private void Form2_Load(object sender, EventArgs e) &#123; if (this.Msg == null) Console.WriteLine("Load 事件先执行!!"); else Console.WriteLine(this.Msg); &#125; &#125;&#125; &gt; 参考：&gt; 1. https://www.cnblogs.com/nzbbody/archive/2011/12/29/2306403.html&gt; 2. https://www.cnblogs.com/qkqBeer/articles/10726173.html]]></content>
       <categories>
         <category>编程爱好</category>
       </categories>
@@ -420,17 +431,6 @@
   </entry>
   <entry>
     <title><![CDATA[C# 自定义鼠标样式]]></title>
-    <url>%2F2020%2F11%2F12%2F201112N02%2F</url>
-    <content type="text"><![CDATA[接上一篇，不调用 API 的方式。 ▲ 样式效果 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647using System;using System.Collections.Generic;using System.ComponentModel;using System.Data;using System.Drawing;using System.Text;using System.Windows.Forms;namespace MouseSt&#123; using System.Runtime.InteropServices; using System.Reflection; public partial class Form1 : Form &#123; public Form1() &#123; InitializeComponent(); &#125; private void Form1_Load(object sender, EventArgs e) &#123; Bitmap a = (Bitmap)Bitmap.FromFile("1.gif"); SetCursor(a, new Point(0, 0)); &#125; public void SetCursor(Bitmap cursor, Point hotPoint) &#123; int hotX = hotPoint.X; int hotY = hotPoint.Y; // 这里为什么要 * 2 Bitmap myNewCursor = new Bitmap(cursor.Width * 2 - hotX, cursor.Height * 2 - hotY); Graphics graphics = Graphics.FromImage(myNewCursor); graphics.Clear(Color.FromArgb(0, 0, 0, 0)); graphics.DrawImage(cursor, cursor.Width - hotX, cursor.Height - hotY, cursor.Width, cursor.Height); this.Cursor = new Cursor(myNewCursor.GetHicon()); graphics.Dispose(); myNewCursor.Dispose(); &#125; private void button1_Click(object sender, EventArgs e) &#123; MessageBox.Show("被点击!"); &#125; &#125;&#125; Bitmap myNewCursor 为什么要 *2？ 没看明白。 因为 Cursor 属性计算定位的是样式图片的中心点位置？ 参考：C# winForm 自定义鼠标样式的两种方法：https://www.cnblogs.com/tianguook/archive/2010/08/03/1791572.html]]></content>
-      <categories>
-        <category>编程爱好</category>
-      </categories>
-      <tags>
-        <tag>C#</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[C# 自定义鼠标样式]]></title>
     <url>%2F2020%2F11%2F12%2F201112N01%2F</url>
     <content type="text"><![CDATA[这里调用系统 API 的方式。 ▲ 样式效果 先准备好鼠标样式cur文件。 ▲ 鼠标样式文件 1234567891011121314151617181920212223242526272829303132333435363738394041424344using System;using System.Collections.Generic;using System.ComponentModel;using System.Data;using System.Drawing;using System.Text;using System.Windows.Forms;namespace MouseSt&#123; using System.Runtime.InteropServices; using System.Reflection; public partial class Form1 : Form &#123; public Form1() &#123; InitializeComponent(); &#125; private void Form1_Load(object sender, EventArgs e) &#123; Cursor myCursor = new Cursor(Cursor.Current.Handle); IntPtr colrCursorHandle = MouseStye.LoadCursorFromFile("hand.cur"); myCursor.GetType().InvokeMember("handle", BindingFlags.Public|BindingFlags.NonPublic|BindingFlags.Instance|BindingFlags.SetField, null, myCursor, new object[] &#123; colrCursorHandle &#125;); this.pictureBox1.Cursor = myCursor; // pictureBox区域 Cursor myCursor1 = new Cursor(Cursor.Current.Handle); IntPtr colrCursorHandle1 = MouseStye.LoadCursorFromFile("pen.cur"); myCursor.GetType().InvokeMember("handle", BindingFlags.Public|BindingFlags.NonPublic|BindingFlags.Instance|BindingFlags.SetField, null, myCursor1, new object[] &#123; colrCursorHandle1 &#125;); this.pictureBox2.Cursor = myCursor1; &#125; &#125; class MouseStye &#123; [DllImport("user32.dll")] public static extern IntPtr LoadCursorFromFile(string fileName); [DllImport("user32.dll")] public static extern IntPtr SetCursor(IntPtr cursorHandle); [DllImport("user32.dll")] public static extern uint DestroyCursor(IntPtr cursorHandle); &#125;&#125; InvokeMember 第二个选项参数具体还没有深究，先照着写吧。 参考：C# winForm 自定义鼠标样式的两种方法：https://www.cnblogs.com/tianguook/archive/2010/08/03/1791572.html]]></content>
       <categories>
@@ -441,9 +441,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[C# 委托和事件的区别]]></title>
-    <url>%2F2020%2F11%2F08%2F201108N02%2F</url>
-    <content type="text"><![CDATA[委托：委托是一种各类型，像类和结构一样。一般放在namespace里，当然也可以放在类里面，就像类里面也可以放类一样。 事件事件是类或结构的成员，像属性和方法一样。事件更像是委托变量。 有两点注意： 事件不能放在可执行代码段里面声明。也就是，只能做字段，不能做本地变量； 必须声明在类或结构中，做类或结构的成员； 1事件 ＋＝ 委托（事件处理程序） 定义一个事件和定义一个委托变量很像，只是在前面加了一个 event。 用委托的话，类外要么能访问，要么不能访问。public，在类外可以随意的调用，而改成 private后外部对委托就不能赋值了。委托 = null 后会把之前的赋值覆盖掉，就没用了。而事件在外部不能直接调用，只能在定义事件的类的内部调用，只能在 += 或 -= 的左边，在同一个类中使用可以用 =。 事件: 公有的方法调用了私有的委托。]]></content>
+    <title><![CDATA[C# 自定义鼠标样式]]></title>
+    <url>%2F2020%2F11%2F12%2F201112N02%2F</url>
+    <content type="text"><![CDATA[接上一篇，不调用 API 的方式。 ▲ 样式效果 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647using System;using System.Collections.Generic;using System.ComponentModel;using System.Data;using System.Drawing;using System.Text;using System.Windows.Forms;namespace MouseSt&#123; using System.Runtime.InteropServices; using System.Reflection; public partial class Form1 : Form &#123; public Form1() &#123; InitializeComponent(); &#125; private void Form1_Load(object sender, EventArgs e) &#123; Bitmap a = (Bitmap)Bitmap.FromFile("1.gif"); SetCursor(a, new Point(0, 0)); &#125; public void SetCursor(Bitmap cursor, Point hotPoint) &#123; int hotX = hotPoint.X; int hotY = hotPoint.Y; // 这里为什么要 * 2 Bitmap myNewCursor = new Bitmap(cursor.Width * 2 - hotX, cursor.Height * 2 - hotY); Graphics graphics = Graphics.FromImage(myNewCursor); graphics.Clear(Color.FromArgb(0, 0, 0, 0)); graphics.DrawImage(cursor, cursor.Width - hotX, cursor.Height - hotY, cursor.Width, cursor.Height); this.Cursor = new Cursor(myNewCursor.GetHicon()); graphics.Dispose(); myNewCursor.Dispose(); &#125; private void button1_Click(object sender, EventArgs e) &#123; MessageBox.Show("被点击!"); &#125; &#125;&#125; Bitmap myNewCursor 为什么要 *2？ 没看明白。 因为 Cursor 属性计算定位的是样式图片的中心点位置？ 参考：C# winForm 自定义鼠标样式的两种方法：https://www.cnblogs.com/tianguook/archive/2010/08/03/1791572.html]]></content>
       <categories>
         <category>编程爱好</category>
       </categories>
@@ -455,6 +455,17 @@
     <title><![CDATA[简单测试下 goto 语句]]></title>
     <url>%2F2020%2F11%2F08%2F201108N01%2F</url>
     <content type="text"><![CDATA[大家都建议不要用goto语句。我测试下goto语句怎么用。 goto语句执行是，跳转到标签位置后，又开始从标签位置往下执行。 12345678910111213141516171819202122232425class Program&#123; static void Main(string[] args) &#123; int i = 0; aMark: int a = 10; Console.WriteLine(a); int b = 20; Console.WriteLine(b); int c = a + b; Console.WriteLine(c + "\n"); i++; if (i &gt; 2) goto bMark; goto aMark; bMark: Console.WriteLine("程序结束!!"); Console.ReadKey();&#125; 输出：12345678910111213102030102030102030程序结束!!]]></content>
+      <categories>
+        <category>编程爱好</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[C# 委托和事件的区别]]></title>
+    <url>%2F2020%2F11%2F08%2F201108N02%2F</url>
+    <content type="text"><![CDATA[委托：委托是一种各类型，像类和结构一样。一般放在namespace里，当然也可以放在类里面，就像类里面也可以放类一样。 事件事件是类或结构的成员，像属性和方法一样。事件更像是委托变量。 有两点注意： 事件不能放在可执行代码段里面声明。也就是，只能做字段，不能做本地变量； 必须声明在类或结构中，做类或结构的成员； 1事件 ＋＝ 委托（事件处理程序） 定义一个事件和定义一个委托变量很像，只是在前面加了一个 event。 用委托的话，类外要么能访问，要么不能访问。public，在类外可以随意的调用，而改成 private后外部对委托就不能赋值了。委托 = null 后会把之前的赋值覆盖掉，就没用了。而事件在外部不能直接调用，只能在定义事件的类的内部调用，只能在 += 或 -= 的左边，在同一个类中使用可以用 =。 事件: 公有的方法调用了私有的委托。]]></content>
       <categories>
         <category>编程爱好</category>
       </categories>
@@ -1813,9 +1824,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[UG NX 坐标对齐移动——解决实体与原始坐标不对齐的问题]]></title>
-    <url>%2F2019%2F02%2F19%2F190219-01%2F</url>
-    <content type="text"><![CDATA[有时候通过WAVE链接过来的实体会出现实体与原始坐标不对齐的情况，如： 可以用坐标到坐标移动的方式将实体摆正。 新建与实体对齐的坐标系。 Ctrl + T 移动。 这样后，实体就与原始坐标对齐了：]]></content>
+    <title><![CDATA[UG NX 移动对象之『动态』技巧]]></title>
+    <url>%2F2019%2F02%2F19%2F190219-02%2F</url>
+    <content type="text"><![CDATA[动态绕某一点旋转，而旋转手柄又不在此点上，如何操作？ Ctrl + T 移动对象，勾选只移动手柄，将手柄点选移动到需要旋转的点。 取消勾选只移动手柄，点选手柄节点，输入旋转角度，确定。]]></content>
       <categories>
         <category>机械结构</category>
       </categories>
@@ -1824,9 +1835,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[UG NX 移动对象之『动态』技巧]]></title>
-    <url>%2F2019%2F02%2F19%2F190219-02%2F</url>
-    <content type="text"><![CDATA[动态绕某一点旋转，而旋转手柄又不在此点上，如何操作？ Ctrl + T 移动对象，勾选只移动手柄，将手柄点选移动到需要旋转的点。 取消勾选只移动手柄，点选手柄节点，输入旋转角度，确定。]]></content>
+    <title><![CDATA[UG NX 坐标对齐移动——解决实体与原始坐标不对齐的问题]]></title>
+    <url>%2F2019%2F02%2F19%2F190219-01%2F</url>
+    <content type="text"><![CDATA[有时候通过WAVE链接过来的实体会出现实体与原始坐标不对齐的情况，如： 可以用坐标到坐标移动的方式将实体摆正。 新建与实体对齐的坐标系。 Ctrl + T 移动。 这样后，实体就与原始坐标对齐了：]]></content>
       <categories>
         <category>机械结构</category>
       </categories>
