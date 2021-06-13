@@ -4,7 +4,7 @@
 
 # Site
 title: 胡文杰
-subtitle: 专业道路上的自我修养
+subtitle: 工控自动化编程爱好者
 description: 定一个目标并为之努力吧
 author: huvjie
 language: zh-CN
@@ -88,6 +88,6 @@ theme: next
 deploy:
   type: git  
   repo: 
-    github: git@github.com:AndyVJ/AndyVJ.github.io.git
     coding: https://git.dev.tencent.com/AndyVJ/AndyVJ.coding.me.git 
+    #github: git@github.com:AndyVJ/AndyVJ.github.io.git
   branch: master  
